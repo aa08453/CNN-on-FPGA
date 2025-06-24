@@ -32,7 +32,7 @@ add_executable(opencl_test
  #"src/openCLTest.cpp"
  "src/Convolution.cpp" 
  #"src/cudaTesting.cu"
- "src/Layer.cpp" "src/RELU.cpp" "src/main.cpp")
+ "src/Layer.cpp" "src/RELU.cpp" "src/main.cpp" "src/MaxPool.cpp")
 
 # Link OpenCL to your executable
 target_link_libraries(opencl_test ${OpenCL_LIBRARY} 

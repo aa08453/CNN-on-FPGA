@@ -53,6 +53,8 @@ void ReLU::forward() {
 
 }
 
+
+
 ReLU::~ReLU() {
 	clReleaseMemObject(inputBuf);
 	clReleaseMemObject(outputBuf);

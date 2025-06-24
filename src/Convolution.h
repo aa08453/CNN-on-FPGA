@@ -21,10 +21,11 @@ class Convolution : public Layer{
 	cl_mem weightsBuf;
 	cl_mem outputBuf;
 
-	int Cin, Cout, N, Hin, Win, K;
-	int H_out, W_out;
+	
 
 public:
+	int Cin, Cout, N, Hin, Win, K;
+	int H_out, W_out;
 	Convolution(cl_context ctx, cl_command_queue cmdQueue, cl_program prog, 
 		float* img, float* wghts,
 		int cin, int cout, int n, int hin, int win, int k);

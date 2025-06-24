@@ -3,6 +3,7 @@
 #include<cmath>
 #include "Convolution.h"
 #include "RELU.h"
+#include "MaxPool.h"
 #include <CL/cl.h>
 #include "cnpy.h"
 #include <fstream>
@@ -101,6 +102,9 @@ int main() {
 
     ReLU* relu = new ReLU(context, queue, program, conv->getOutput(), conv->getOutputSize());
     relu->forward();
+
+    MaxPool* pool = new MaxPool(context, queue, program, relu->getOutput(), conv->Cout, N, conv->H_out, conv->W_out, 3);
+    pool->forward();
 
 
     clReleaseProgram(program);
