@@ -6,6 +6,13 @@ project(CNNConvRe)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+
+file(COPY ${CMAKE_SOURCE_DIR}/src/input_image.npy DESTINATION ${CMAKE_BINARY_DIR})
+file(COPY ${CMAKE_SOURCE_DIR}/src/weights.npy DESTINATION ${CMAKE_BINARY_DIR})
+file(COPY ${CMAKE_SOURCE_DIR}/src/expected_output.npy DESTINATION ${CMAKE_BINARY_DIR})
+file(COPY ${CMAKE_SOURCE_DIR}/src/conv.cl DESTINATION ${CMAKE_BINARY_DIR})
+
+
 set(OPENCL_ROOT "C:/Program Files (x86)/Intel/oneAPI/compiler/2025.1") 
 
 set(OpenCL_INCLUDE_DIR "${OPENCL_ROOT}/include")
@@ -38,7 +45,7 @@ add_executable(opencl_test
  "src/Layer.cpp" "src/RELU.cpp" 
  "src/main.cpp" "src/MaxPool.cpp" 
  #"src/afTest.cpp"
-)
+ "src/LayerDense.cpp" "src/LayerDense.h" "src/ReluActivation.h" "src/ActivationFunction.h" "src/SoftMaxActivation.h")
 
 # Link OpenCL to your executable
 target_link_libraries(opencl_test ${OpenCL_LIBRARY} 
