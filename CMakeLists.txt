@@ -15,12 +15,15 @@ set(OpenCL_LIBRARY "${OPENCL_ROOT}/lib/OpenCL.lib")
 find_package(OpenCL REQUIRED)
 
 include_directories(${OpenCL_INCLUDE_DIR}
-"D:/zlib-develop")
+"${PROJECT_SOURCE_DIR}/external/zlib-develop"
+${PROJECT_SOURCE_DIR}/external/eigen-3.4.0)
+
 link_directories(${OPENCL_ROOT}/lib
-"D:/zlib-develop/build/Release")
+"${PROJECT_SOURCE_DIR}/external/zlib-develop/build/Release")
 
-find_library(ZLIB_LIBRARY NAMES zslib PATHS "D:/zlib-develop/build/Release")
+find_library(ZLIB_LIBRARY NAMES zs.lib PATHS "${PROJECT_SOURCE_DIR}/external/zlib-develop/build/Release")
 
+add_definitions(-DAF_USE_OPENCL)
 
 # Add your executable and source files
 add_executable(opencl_test 
@@ -32,7 +35,10 @@ add_executable(opencl_test
  #"src/openCLTest.cpp"
  "src/Convolution.cpp" 
  #"src/cudaTesting.cu"
- "src/Layer.cpp" "src/RELU.cpp" "src/main.cpp" "src/MaxPool.cpp")
+ "src/Layer.cpp" "src/RELU.cpp" 
+ "src/main.cpp" "src/MaxPool.cpp" 
+ #"src/afTest.cpp"
+)
 
 # Link OpenCL to your executable
 target_link_libraries(opencl_test ${OpenCL_LIBRARY} 

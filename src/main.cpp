@@ -8,12 +8,16 @@
 #include "cnpy.h"
 #include <fstream>
 
+#include <Eigen/Dense>
+using namespace Eigen;
+
 using namespace std;
 
 #define CHECK_CL(err, msg) if (err != CL_SUCCESS) { cerr << msg << ": " << err << endl; exit(1); }
 
 int main() {
     cout << "at start" << endl;
+
 
     // Load data
     auto Z_array = cnpy::npy_load("input_image.npy");
@@ -105,7 +109,36 @@ int main() {
 
     MaxPool* pool = new MaxPool(context, queue, program, relu->getOutput(), conv->Cout, N, conv->H_out, conv->W_out, 3);
     pool->forward();
+    
+    //// fc layer implementation - make class later
+    //size_t fcInputSize = pool->getOutputSize();
+    //af::dim4 fcInputDims(1, fcInputSize);
+    //cl_mem buf = pool->getOutputBuffer();
+    //void* rawPtr = reinterpret_cast<void*>(buf);
+    //af::array afInput(fcInputDims, rawPtr, f32, afDevice);
 
+
+
+    //// num classes
+    //int outNeurons = 10;
+
+    //af::array weights = af::randu(fcInputSize, outNeurons);
+    //af::array bias = af::randu(1, outNeurons);
+
+    //af::array fcOut = af::matmul(afInput, weights) + bias;
+
+    //cl_mem fcClOut = *fcOut.device<cl_mem>();
+    //fcOut.unlock();
+
+    //clEnqueueReadBuffer(queue, fcClOut, CL_TRUE, 0,
+    //    outNeurons * sizeof(float), output, 0, nullptr, nullptr);
+    //CHECK_CL(err, "clEnqueueReadBuffer");
+
+    Eigen::Map<Eigen::Matrix<float, Eigen::Dynamic, Eigen::Dynamic, Eigen::RowMajor>> mat(pool->getOutput(), N, pool->getOutputSize() / N);
+
+    delete conv;
+    delete relu;
+    delete pool;
 
     clReleaseProgram(program);
     clReleaseCommandQueue(queue);

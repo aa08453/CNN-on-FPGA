@@ -22,6 +22,10 @@ public:
         float* img, 
         int cin, int n, int hin, int win, int p);
     void forward() override;
-    float* getOutput() override { return output; }
+    float* getOutput() override { return output; };
+    size_t getOutputSize() {
+        return N * Hout * Wout * C;
+    }
+    cl_mem getOutputBuffer() { return outputBuf; };
     ~MaxPool();
 };

@@ -15,8 +15,6 @@ build/
 *.exe
 *.log
 
-x64/
-!x64/Debug/**/*.cl
 
 
 CMakeFiles/

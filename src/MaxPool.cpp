@@ -51,8 +51,6 @@ void MaxPool::forward() {
     err |= clSetKernelArg(kernel, 4, sizeof(int), &Win);
     err |= clSetKernelArg(kernel, 5, sizeof(int), &C);
     err |= clSetKernelArg(kernel, 6, sizeof(int), &P);
-    err |= clSetKernelArg(kernel, 7, sizeof(int), &Hout);
-    err |= clSetKernelArg(kernel, 8, sizeof(int), &Wout);
     CHECK_CL(err, "clSetKernelArg pool");
 
     size_t global[3] = { (size_t)N, (size_t)(Hout * Wout), (size_t)C };
