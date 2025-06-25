@@ -3,10 +3,10 @@
 LayerDense::LayerDense(int n_inputs, int n_neurons) {
     // std::random_device rd;
     std::mt19937 gen(0);                 // Mersenne Twister engine seeded from rd
-    std::normal_distribution<> d(0.0, 1.0);
+    std::normal_distribution<> d(0.0f, 1.0f);
 
 
-    weights = Eigen::MatrixXd(n_inputs, n_neurons);
+    weights = Eigen::MatrixXf(n_inputs, n_neurons);
 
     for (int i = 0; i < n_inputs; ++i) {
         for (int j = 0; j < n_neurons; ++j) {
@@ -14,28 +14,50 @@ LayerDense::LayerDense(int n_inputs, int n_neurons) {
         }
     }
 
-    biases = Eigen::RowVectorXd::Zero(n_neurons);
+    biases = Eigen::RowVectorXf::Zero(n_neurons);
 }
 
 
-void LayerDense::forward(const Eigen::MatrixXd& inputs){
+void LayerDense::forward(const Eigen::MatrixXf& inputs){
     output = inputs * weights;
     output.rowwise() += biases;
+    input= inputs; // store the inputs to be used in the backward pass
 }
 
+// void LayerDense::backward(const Eigen::MatrixXf& dvalues) {
+//     // Gradients on parameters
+//     dweights = input.transpose() * dvalues;
+//     dbiases = dvalues.colwise().sum();
+    
+//     // Gradient on values
+//     dinputs = dvalues * weights.transpose();
+// }
 
-const Eigen::MatrixXd& LayerDense::getOutput() const{
+
+const Eigen::MatrixXf& LayerDense::getOutput() const{
     return output;
 }
 
-const Eigen::MatrixXd& LayerDense::getWeights() const {
+const Eigen::MatrixXf& LayerDense::getWeights() const {
     return weights;
 }
 
 
-const Eigen::RowVectorXd& LayerDense::getBiases() const {
+const Eigen::RowVectorXf& LayerDense::getBiases() const {
     return biases;
 }
+
+// const Eigen::MatrixXf& LayerDense::getDWeights() const {
+//     return dweights;
+// }
+
+// const Eigen::RowVectorXf& LayerDense::getDBiases() const {
+//     return dbiases;
+// }
+
+// const Eigen::MatrixXf& LayerDense::getDInputs() const {
+//     return dinputs;
+// }
 
 
 

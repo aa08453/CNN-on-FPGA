@@ -12,22 +12,37 @@ class LayerDense {
     private:
         int n_inputs;
         int n_neurons;
-        Eigen::RowVectorXd biases;
-        Eigen::MatrixXd weights;
-        Eigen::MatrixXd output;
+        Eigen::RowVectorXf biases;
+        Eigen::MatrixXf weights;
+        Eigen::MatrixXf output;
+        Eigen::MatrixXf input;
+
+        //Gradients 
+        Eigen::MatrixXf dweights;
+        Eigen::RowVectorXf dbiases;
+        Eigen::MatrixXf dinputs;
+
 
     public:
         LayerDense(int n_inputs, int n_neurons);
 
-        void forward(const Eigen::MatrixXd& inputs);
+        void forward(const Eigen::MatrixXf& inputs);
 
-        const Eigen::MatrixXd& getOutput() const;
+        // void backward(const Eigen::MatrixXf& dvalues);
+
+
+        const Eigen::MatrixXf& getOutput() const;
 
         // void applyReLU();
 
-        const Eigen::MatrixXd& getWeights() const;
+        const Eigen::MatrixXf& getWeights() const;
 
-        const Eigen::RowVectorXd& getBiases() const;
+        const Eigen::RowVectorXf& getBiases() const;
+
+        // const Eigen::MatrixXf& getDWeights() const;
+        // const Eigen::RowVectorXf& getDBiases() const;
+        // const Eigen::MatrixXf& getDInputs() const;
+    
 
         
 };

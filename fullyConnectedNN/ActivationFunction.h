@@ -7,15 +7,17 @@ class ActivationFunction {
     public:
         virtual ~ActivationFunction() = default;
 
-        virtual void forward(const Eigen::MatrixXd& input) = 0;
+        virtual void forward(const Eigen::MatrixXf& input) = 0;
 
-        // virtual void backward() = 0; // override this when implementing backpropagation
+        // virtual void backward(const Eigen::MatrixXf& dvalues) = 0; // override this when implementing backpropagation
 
-        const Eigen::MatrixXd& getOutput() const {
+        const Eigen::MatrixXf& getOutput() const {
             return output;
         }
+        
     protected:
-        Eigen::MatrixXd output;
+        Eigen::MatrixXf output;
+        // Eigen::MatrixXf dinputs; // Gradients on inputs 
 };
 
 #endif
