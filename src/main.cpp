@@ -8,9 +8,17 @@
 #include "cnpy.h"
 #include <fstream>
 
+#include <filesystem>
+
 #include "LayerDense.h"
 #include "ReluActivation.h"
 #include "SoftMaxActivation.h"
+
+#define USE_MNIST_LOADER
+#define MNIST_STATIC
+//#define MNIST_HDR_ONLY
+
+#include "mnist.h"
 
 #include <Eigen/Dense>
 using namespace Eigen;
@@ -21,22 +29,50 @@ using namespace std;
 
 int main() {
     cout << "at start" << endl;
+    mnist_data* mnist;
+    unsigned int count;
 
 
-    // Load data
-    auto Z_array = cnpy::npy_load("input_image.npy");
-    auto W_array = cnpy::npy_load("weights.npy");
-    auto expected_array = cnpy::npy_load("expected_output.npy");
+    std::cout << "Current path: " << std::filesystem::current_path() << std::endl;
 
-    float* Z2 = Z_array.data<float>();
+
+    ifstream test1("../../../data/train-images.idx3-ubyte", ios::binary);
+    ifstream test2("../../../data/train-labels.idx1-ubyte", ios::binary);
+    cout << "Image file exists? " << test1.is_open() << endl;
+    cout << "Label file exists? " << test2.is_open() << endl;
+
+
+    int status = mnist_load("../../../data/train-images.idx3-ubyte", "../../../data/train-labels.idx1-ubyte", &mnist, &count);
+    if (status != 0) {
+        cerr << "Failed to load MNIST data: " << status << endl;
+        return 1;
+    }
+
+    int N = count;
+    int H = 28, W_in = 28, C_in = 1; 
+
+    int K = 3;
+
+    float* Z2 = new float[N * H * W_in * C_in];
+    for (int i = 0; i < N; ++i) {
+        for (int r = 0; r < H; ++r) {
+            for (int c = 0; c < W_in; ++c) {
+#ifdef MNIST_DOUBLE
+                Z2[i * H * W_in + r * W_in + c] = static_cast<float>(mnist[i].data[r][c]);
+#else
+                Z2[i * H * W_in + r * W_in + c] = mnist[i].data[r][c] / 255.0f;
+#endif
+            }
+        }
+    }
+
+    auto W_array = cnpy::npy_load("../../../src/weights.npy");
     float* weight2 = W_array.data<float>();
-    float* expected = expected_array.data<float>();
-
-    vector<size_t> inpShape = Z_array.shape;
+   
     vector<size_t> weightShape = W_array.shape;
 
-    int N = inpShape[0], H = inpShape[1], W_in = inpShape[2], C_in = inpShape[3];
-    int K = weightShape[0], C_out = weightShape[3];
+   
+    int C_out = weightShape[3];
     int H_out = H - K + 1;
     int W_out = W_in - K + 1;
 
@@ -96,17 +132,6 @@ int main() {
     conv->forward();
 
 
-    bool match = true;
-    float* convOutput = conv->getOutput();
-    for (size_t i = 0; i < outSize; ++i) {
-        if (fabs(convOutput[i] - expected[i]) > 1e-3f) {
-            cout << "Mismatch at " << i << ": " << convOutput[i] << " != " << expected[i] << endl;
-            match = false;
-            break;
-        }
-    }
-    if (match) cout << "convolution matches expected output\n";
-    else cout << "convolution does NOT match expected output\n";
 
     ReLU* relu = new ReLU(context, queue, program, conv->getOutput(), conv->getOutputSize());
     relu->forward();
@@ -129,7 +154,7 @@ int main() {
     SoftMaxActivation* soft = new SoftMaxActivation();
     soft->forward(relu2->getOutput());
 
-    std::cout << soft->getOutput() << std::endl;
+    //std::cout << soft->getOutput() << std::endl;
 
 
     delete conv;

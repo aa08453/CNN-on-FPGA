@@ -45,7 +45,10 @@ add_executable(opencl_test
  "src/Layer.cpp" "src/RELU.cpp" 
  "src/main.cpp" "src/MaxPool.cpp" 
  #"src/afTest.cpp"
- "src/LayerDense.cpp" "src/LayerDense.h" "src/ReluActivation.h" "src/ActivationFunction.h" "src/SoftMaxActivation.h")
+ "src/LayerDense.cpp" "src/LayerDense.h" "src/ReluActivation.h" "src/ActivationFunction.h" "src/SoftMaxActivation.h" 
+ "src/mnist.h" 
+ #"src/datasTest.cpp"
+)
 
 # Link OpenCL to your executable
 target_link_libraries(opencl_test ${OpenCL_LIBRARY} 
