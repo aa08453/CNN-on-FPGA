@@ -9,8 +9,7 @@
 
 x64/
 Debug/
-Release/
-build/
+
 *.obj
 *.exe
 *.log

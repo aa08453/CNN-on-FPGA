@@ -135,6 +135,9 @@ int main() {
     delete conv;
     delete relu;
     delete pool;
+    delete dense;
+    delete relu2;
+    delete soft;
 
     clReleaseProgram(program);
     clReleaseCommandQueue(queue);
