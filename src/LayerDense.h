@@ -10,8 +10,6 @@
 
 class LayerDense {
 private:
-    int n_inputs;
-    int n_neurons;
     Eigen::RowVectorXf biases;
     Eigen::MatrixXf weights;
     Eigen::MatrixXf output;

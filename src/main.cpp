@@ -36,10 +36,6 @@ int main() {
     std::cout << "Current path: " << std::filesystem::current_path() << std::endl;
 
 
-    ifstream test1("../../../data/train-images.idx3-ubyte", ios::binary);
-    ifstream test2("../../../data/train-labels.idx1-ubyte", ios::binary);
-    cout << "Image file exists? " << test1.is_open() << endl;
-    cout << "Label file exists? " << test2.is_open() << endl;
 
 
     int status = mnist_load("../../../data/train-images.idx3-ubyte", "../../../data/train-labels.idx1-ubyte", &mnist, &count);
@@ -49,9 +45,7 @@ int main() {
     }
 
     int N = count;
-    int H = 28, W_in = 28, C_in = 1; 
-
-    int K = 3;
+    int H = 28, W_in = 28, C_in = 1;
 
     float* Z2 = new float[N * H * W_in * C_in];
     for (int i = 0; i < N; ++i) {
@@ -66,25 +60,36 @@ int main() {
         }
     }
 
-    auto W_array = cnpy::npy_load("../../../src/weights.npy");
-    float* weight2 = W_array.data<float>();
+    auto W_array = cnpy::npy_load("../../../src/reorderedWeights1.npy");
+    float* weight = W_array.data<float>();
    
     vector<size_t> weightShape = W_array.shape;
 
    
     int C_out = weightShape[3];
+    std::cout << "weight shape: " << "(" << weightShape[0] << ", " << weightShape[1] << ", " << weightShape[2] << ", " << weightShape[3] << ")" << std::endl;
+
+    int K = weightShape[0];       // kernel height
     int H_out = H - K + 1;
-    int W_out = W_in - K + 1;
+    int W_out = W_in - K + 1;/*
 
     size_t Z_size = N * H * W_in * C_in;
     size_t W_size = K * K * C_in * C_out;
-    size_t outSize = N * H_out * W_out * C_out;
+    size_t outSize = N * H_out * W_out * C_out;*/
 
 
-    cout << "starting opencl testing" << endl;
+    //cout << "starting opencl testing" << endl;
+
+    auto W_array2 = cnpy::npy_load("../../../src/reorderedWeights2.npy");
+    float* weight2 = W_array2.data<float>();
+
+    vector<size_t> weightShape2 = W_array2.shape;
+    std::cout << "weight2 shape: " << "(" << weightShape2[0] << ", " << weightShape2[1] << ", " << weightShape2[2] << ", " << weightShape2[3] << ")" << std::endl;
+
+
 
     // Load kernel
-    ifstream kernelFile("conv.cl");
+    ifstream kernelFile("../../../src/conv.cl");
     if (!kernelFile.is_open()) {
         cerr << "Failed to open conv.cl\n";
         return 1;
@@ -127,41 +132,62 @@ int main() {
 
 
 
-    Convolution* conv = new Convolution(context, queue, program, Z2, weight2,
+    Convolution* conv = new Convolution(context, queue, program, Z2, weight,
         C_in, C_out, N, H, W_in, K);
     conv->forward();
+    std::cout << "Output shape: " << conv->N << ", " << conv->H_out << ", " << conv->W_out << ", " << conv->Cout << std::endl;
 
 
 
     ReLU* relu = new ReLU(context, queue, program, conv->getOutput(), conv->getOutputSize());
     relu->forward();
+    /*std::cout << "Output shape: " << relu->N << ", " << relu->Hout << ", " << conv->Wout << ", " << relu->Cout << std::endl;*/
 
-    MaxPool* pool = new MaxPool(context, queue, program, relu->getOutput(), conv->Cout, N, conv->H_out, conv->W_out, 3);
+
+    MaxPool* pool = new MaxPool(context, queue, program, relu->getOutput(), conv->Cout, N, conv->H_out, conv->W_out, 2, 2);
     pool->forward();
-    
+    std::cout << "Output shape: " << pool->N << ", " << pool->Hout << ", " << pool->Wout << ", " << pool->C << std::endl;
 
-    Eigen::Map<Eigen::Matrix<float, Eigen::Dynamic, Eigen::Dynamic, Eigen::RowMajor>> poolOutput(pool->getOutput(), N, pool->getOutputSize() / N);
-    std::cout << poolOutput.rows() << " " << poolOutput.cols() << std::endl;
+
+    Convolution* conv2 = new Convolution(context, queue, program, pool->getOutput(), weight2,
+        conv->Cout, 16, N, pool->getHeight(), pool->getWidth(), K);
+    conv->forward();
+    std::cout << "Output shape: " << conv2->N << ", " << conv2->H_out << ", " << conv2->W_out << ", " << conv2->Cout << std::endl;
+
+
+    ReLU* relu2 = new ReLU(context, queue, program, conv2->getOutput(), conv2->getOutputSize());
+    relu2->forward();
+
+    MaxPool* pool2 = new MaxPool(context, queue, program, relu2->getOutput(), conv2->Cout, N, conv2->H_out, conv2->W_out, 2, 2);
+    pool2->forward();
+    std::cout << "Output shape: " << pool2->N << ", " << pool2->Hout << ", " << pool2->Wout << ", " << pool2->C << std::endl;
+
+    //
+
+    Eigen::Map<Eigen::Matrix<float, Eigen::Dynamic, Eigen::Dynamic, Eigen::RowMajor>> poolOutput(pool2->getOutput(), N, pool2->Hout * pool2->Wout * pool2->C);
+    /*std::cout << poolOutput.rows() << " " << poolOutput.cols() << std::endl;*/
 
     int numClasses = 10;
 
-    LayerDense* dense = new LayerDense(pool->getOutputSize()/N, numClasses);
+    LayerDense* dense = new LayerDense(pool2->getOutputSize()/N, numClasses);
     dense->forward(poolOutput);
 
-    ReluActivation* relu2 = new ReluActivation();
-    relu2->forward(dense->getOutput());
+    ReluActivation* relu3 = new ReluActivation();
+    relu3->forward(dense->getOutput());
 
     SoftMaxActivation* soft = new SoftMaxActivation();
-    soft->forward(relu2->getOutput());
+    soft->forward(relu3->getOutput());
 
-    //std::cout << soft->getOutput() << std::endl;
+    std::cout << soft->getOutput().topRows(10) << std::endl;
 
 
     delete conv;
     delete relu;
     delete pool;
-    delete dense;
+    delete conv2;
     delete relu2;
+    delete dense;
+    delete relu3;
     delete soft;
 
     clReleaseProgram(program);

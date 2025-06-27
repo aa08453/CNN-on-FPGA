@@ -32,6 +32,9 @@ public:
 	void forward() override;
 	float* getOutput() override { return output; }
 	size_t getOutputSize();
+	int getOutputChannels() { return Cout; };
+	int getInputChannels() { return Cin; };
+	int getHeight() { return H_out; };
+	int getWeight() { return W_out; };
 	~Convolution();
 };
-// TODO: Reference additional headers your program requires here.

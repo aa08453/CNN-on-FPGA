@@ -28,8 +28,8 @@ Convolution::Convolution(cl_context ctx, cl_command_queue cmdQueue, cl_program p
         std::cerr << "Failed to create kernel: " << err << std::endl;
         exit(1);
     }
-    H_out = Hin - K + 1;
-    W_out = Win - K + 1;
+    H_out = Hin;
+    W_out = Win;
     output = new float[N * H_out * W_out * Cout];
 
 

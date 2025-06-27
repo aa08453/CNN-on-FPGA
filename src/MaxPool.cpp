@@ -15,10 +15,10 @@ using namespace std;
 
 MaxPool::MaxPool(cl_context ctx, cl_command_queue cmdQueue, cl_program prog,
     float* img,
-    int cin, int n, int hin, int win, int p) 
+    int cin, int n, int hin, int win, int p, int s) 
     : context(ctx), queue(cmdQueue), program(prog),
     input(img), 
-    C(cin), N(n), Hin(hin), Win(win), P(p){
+    C(cin), N(n), Hin(hin), Win(win), P(p), stride(s){
 
     cl_int err;
     kernel = clCreateKernel(program, "maxPoolKernel", &err);
@@ -26,8 +26,8 @@ MaxPool::MaxPool(cl_context ctx, cl_command_queue cmdQueue, cl_program prog,
         std::cerr << "Failed to create kernel: " << err << std::endl;
         exit(1);
     }
-    Hout = Hin - P + 1;
-    Wout = Win - P + 1;
+    Hout = (Hin - P) / stride + 1;;
+    Wout = (Win - P) / stride + 1;
     output = new float[N * Hout * Wout * C];
 
 
@@ -51,6 +51,7 @@ void MaxPool::forward() {
     err |= clSetKernelArg(kernel, 4, sizeof(int), &Win);
     err |= clSetKernelArg(kernel, 5, sizeof(int), &C);
     err |= clSetKernelArg(kernel, 6, sizeof(int), &P);
+    err |= clSetKernelArg(kernel, 7, sizeof(int), &stride);
     CHECK_CL(err, "clSetKernelArg pool");
 
     size_t global[3] = { (size_t)N, (size_t)(Hout * Wout), (size_t)C };

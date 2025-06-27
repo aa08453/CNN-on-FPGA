@@ -48,6 +48,7 @@ add_executable(opencl_test
  "src/LayerDense.cpp" "src/LayerDense.h" "src/ReluActivation.h" "src/ActivationFunction.h" "src/SoftMaxActivation.h" 
  "src/mnist.h" 
  #"src/datasTest.cpp"
+ #"src/reordering.cpp"
 )
 
 # Link OpenCL to your executable
