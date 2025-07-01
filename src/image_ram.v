@@ -8,11 +8,13 @@ module image_mem
 
     reg [7:0] mem [0:783];
 
-    initial begin
+    initial 
+    begin
         $readmemh("mem_files/image.mem", mem);  // Use your actual image hex file
     end
 
-    always @(posedge clk) begin
+    always @(posedge clk) 
+    begin
         data_out <= mem[addr];
     end
 

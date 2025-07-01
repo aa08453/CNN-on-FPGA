@@ -1,30 +1,19 @@
-
 module products_reg
 (
     input clk,
     input [15:0] sum,
-    output [15:0] result,
+    output reg [15:0] result,
     input rst,
-    input load
+    input flush_acc,
+    input acc_enable
 );
 
-reg [15:0] reg0, reg1, reg2;
-
-always @(posedge clk or posedge rst) 
+always @(posedge clk or negedge rst) 
 begin
-    if (rst) 
-    begin
-        reg0 <= 16'd0;
-        reg1 <= 16'd0;
-        reg2 <= 16'd0;
-    end 
-    else if (load) 
-    begin
-        reg0 <= reg1;
-        reg1 <= reg2;
-        reg2 <= sum;
-    end
+    if (!rst || flush_acc) 
+        result <= 16'd0;
+    else if (acc_enable) 
+        result <= result + sum;
 end
-assign result = reg0 + reg1 + reg2;
 
 endmodule

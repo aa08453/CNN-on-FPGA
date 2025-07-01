@@ -8,10 +8,10 @@ module top
     input wire clk,
     input wire rst,
     // input wire start,
-    output wire [15:0] result
+    output [15:0] result
 );
 
-    wire load, acc_enable, flush_acc, count_enable, load_full_patch;
+    wire load, acc_enable, flush_acc, count_enable, load_full_patch, addr;
     wire [1:0] mux_sel;
 
     wire [7:0] image_reg0, image_reg1, image_reg2,
@@ -21,6 +21,8 @@ module top
     reg [7:0] kernel0, kernel1, kernel2,
               kernel3, kernel4, kernel5,
               kernel6, kernel7, kernel8;
+
+    wire [9:0] pixel_addrs [0:8];
 
     wire [15:0] sum;
     wire [7:0] pixels [0:8]; // Assuming patch module outputs 9 pixels
@@ -35,20 +37,23 @@ module top
     );
 
     control control_inst(
-        .clk(clk), .rst_n(~rst), .done(done), .load(load), .mux_sel(mux_sel),
-        .acc_enable(acc_enable), .flush_acc(flush_acc), .counter_enable(count_enable)
+        .clk(clk), .rst_n(rst), .done(done), .load(load), .mux_sel(mux_sel),
+        .acc_enable(acc_enable), .flush_acc(flush_acc), .counter_enable(count_enable), .addr(addr)
     );
 
-    counters counters_inst(
-        .clk(clk), .rst_n(rst),
+    counters counters_inst(.clk(clk), .rst_n(rst),
         //  .start(start),
-        .count_enable(count_enable), .i(i), .j(j), .done(done)
-    );
+        .count_enable(count_enable), .i(i), .j(j), .done(done));
 
-    patch #(.H(H),.W(W)) patch_inst (
-        .clk(clk), .rst(rst), .load(load),
-        .i(i), .j(j), .pixels(pixels), .load_full_patch(load_full_patch)
-    );
+    // patch #(.H(H),.W(W)) 
+    // patch_inst (.clk(clk), .rst(rst), .load(load),
+    //     .i(i), .j(j), .pixels(pixels), .load_full_patch(load_full_patch));
+
+    patch_addr_gen #(.H(H),.W(W)) 
+    patch_addr_inst(.clk(clk),.rst(rst),.addr(addr),.i(i), .j(j),
+    .pixel_addrs(pixel_addrs),.load_full_patch(load_full_patch));
+
+    patch_data_latch patch_data_inst(.clk(clk),.rst(rst),.load(load), .pixel_addrs(pixel_addrs), .pixels(pixels));
 
     image_reg image_reg_inst (
         .clk(clk), .rst(rst), .pixels(pixels), .load_full_patch(load_full_patch),
@@ -67,8 +72,6 @@ module top
         .kernel_data6(kernel6), .kernel_data7(kernel7), .kernel_data8(kernel8)
     );
 
-    products_reg products_reg_inst (
-        .clk(clk), .sum(sum), .result(result), .rst(rst), .load(load)
-    );
+    products_reg products_reg_inst (.clk(clk), .sum(sum), .result(result), .rst(rst), .flush_acc(flush_acc), .acc_enable(acc_enable));
 
 endmodule

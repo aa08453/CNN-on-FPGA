@@ -1,4 +1,5 @@
-module image_reg (
+module image_reg 
+(
     input wire clk,
     input wire rst,
     input wire load_full_patch,             // 1 = load full patch, 0 = load column only
