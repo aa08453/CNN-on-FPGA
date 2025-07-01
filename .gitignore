@@ -1,4 +1,3 @@
-
 .vscode/
 .vs/
 *.user
@@ -6,6 +5,17 @@
 *.userosscache
 *.sln.docstates
 
+src/afTest.cpp
+src/all_conv2_relu.npy
+src/all_fc1.npy
+src/all_pool1.npy
+src/all_pool2.npy
+src/convCheck.py
+src/cudaConv1.npy
+src/err_code.c
+src/expected_output.npy
+src/input_image.npy
+src/weights.npy
 
 x64/
 Debug/
@@ -44,3 +54,4 @@ Makefile
 *.opendb
 *.VC.db
 *.VC.VC.opendb
+

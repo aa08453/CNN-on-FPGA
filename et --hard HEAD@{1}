@@ -1,0 +1,21 @@
+[33m1c3e8e6[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mLayers[m[33m)[m HEAD@{0}: reset: moving to HEAD~1
+[33m823cbe3[m HEAD@{1}: reset: moving to HEAD~1
+[33m5d7c2e3[m HEAD@{2}: reset: moving to HEAD~1
+[33mabb73ca[m HEAD@{3}: commit: fixed accuracy
+[33m5d7c2e3[m HEAD@{4}: commit: fixed accuracy
+[33m823cbe3[m HEAD@{5}: commit: fixed accuracy
+[33m1c3e8e6[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mLayers[m[33m)[m HEAD@{6}: commit: fwd pass
+[33m5c11a3e[m[33m ([m[1;31morigin/Layers[m[33m)[m HEAD@{7}: commit: complete run
+[33m2a4ad2f[m HEAD@{8}: commit: input
+[33ma66ef83[m HEAD@{9}: commit: rm build
+[33meec6190[m HEAD@{10}: commit: test files
+[33m6495f9c[m HEAD@{11}: commit: fnn
+[33m382c87f[m HEAD@{12}: commit: eigen matrix
+[33me556812[m HEAD@{13}: commit: maxpool
+[33m6d8bd30[m HEAD@{14}: checkout: moving from main to Layers
+[33m1cdd96e[m[33m ([m[1;31morigin/main[m[33m, [m[1;32mmain[m[33m)[m HEAD@{15}: checkout: moving from temp-fix-branch to main
+[33m6d8bd30[m HEAD@{16}: checkout: moving from main to temp-fix-branch
+[33m6d8bd30[m HEAD@{17}: checkout: moving from Layers to main
+[33m6d8bd30[m HEAD@{18}: checkout: moving from main to Layers
+[33m6d8bd30[m HEAD@{19}: checkout: moving from Layers to main
+[33m6d8bd30[m HEAD@{20}: commit (initial): fwd conv relu
