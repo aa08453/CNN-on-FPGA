@@ -5,11 +5,13 @@
 #include "cnpy.h"
 
 int main() {
-    auto W_array = cnpy::npy_load("../../../src/conv1_weight.npy");
+    auto W_array = cnpy::npy_load("../../../src/conv2_weight.npy");
     float* weight2 = W_array.data<float>();
 
     std::vector<size_t> weightShape = W_array.shape;
     std::cout << "weight shape: " << "(" << weightShape[0] << ", " << weightShape[1] << ", " << weightShape[2] << ", " << weightShape[3] << ")" << std::endl;
+
+    
 
     int K = weightShape[2];       // kernel height
     int C_in = weightShape[1];    // input channels
@@ -33,6 +35,14 @@ int main() {
     std::vector<size_t> shape = { static_cast<size_t>(K), static_cast<size_t>(K),
                                  static_cast<size_t>(C_in), static_cast<size_t>(C_out) };
 
-    cnpy::npy_save("../../../src/reorderedWeights1.npy", reorderedWeights, shape, "w"); // "w" to overwrite
+    cnpy::npy_save("../../../src/reorderedWeights2.npy", reorderedWeights, shape, "w"); // "w" to overwrite
+
+    float min_w = FLT_MAX, max_w = -FLT_MAX;
+    for (int i = 0; i < K*K*C_in*C_out; ++i) {
+        if (weight2[i] < min_w) min_w = weight2[i];
+        if (weight2[i] > max_w) max_w = weight2[i];
+    }
+    std::cout << "Weight2 min: " << min_w << ", max: " << max_w << std::endl;
+
 
 }

@@ -54,6 +54,13 @@ int main() {
         cout << endl;
     }
 
+    for (int i = 0; i < 28; ++i) {
+        for (int j = 0; j < 28; ++j) {
+            cout << (Z2[i * 28 + j] > 0.5 ? '#' : '.');
+        }
+        cout << endl;
+    }
+
     delete[] Z2;
     free(mnist); // malloc used in mnist_load
 
