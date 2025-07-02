@@ -1,19 +1,24 @@
 module products_reg
 (
     input clk,
-    input [16:0] sum,
-    output reg [17:0] result,
+    input [17:0] sum,
+    output reg [18:0] result,
     input rst,
     input flush_acc,
     input acc_enable
 );
 
+reg [18:0] inter;
+
 always @(posedge clk or negedge rst) 
 begin
     if (!rst || flush_acc) 
-        result <= 18'd0;
-    else if (acc_enable) 
-        result <= result + sum;
+        result <= 19'd0;
+    else 
+        inter <= result + sum;
+
+    if (acc_enable)
+        result <= inter;
 end
 
 endmodule

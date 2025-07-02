@@ -9,7 +9,7 @@ module comp
     input [1:0] select,
     input clk,
     input rst,
-    output reg [16:0] sum
+    output reg [17:0] sum
 );
 
     wire [15:0] p1, p2, p3;
@@ -30,7 +30,7 @@ module comp
     begin
         if (!rst)
         begin
-            sum <= 16'd0;
+            sum <= 18'd0;
         end
         else
         begin

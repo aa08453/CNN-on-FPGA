@@ -3,6 +3,7 @@ module patch_data_latch
     input wire clk,
     input wire rst,
     input wire load,
+    input wire load_full_patch,
     
     input wire [9:0] pixel_addr0,
     input wire [9:0] pixel_addr1,
@@ -51,7 +52,7 @@ module patch_data_latch
             pixel7 <= 8'd0;
             pixel8 <= 8'd0;
         end 
-        else if (load) 
+        else if (load && load_full_patch) 
         begin
             pixel0 <= data0;
             pixel1 <= data1;
@@ -63,6 +64,20 @@ module patch_data_latch
             pixel7 <= data7;
             pixel8 <= data8;
         end
+        else if (load && !load_full_patch)
+        begin
+            pixel0 <= pixel3;
+            pixel1 <= pixel4;
+            pixel2 <= pixel5;
+            pixel3 <= pixel6;
+            pixel4 <= pixel7;
+            pixel5 <= pixel8;
+            pixel6 <= data6;
+            pixel7 <= data7;
+            pixel8 <= data8;
+
+        end
     end
+    
 
 endmodule
