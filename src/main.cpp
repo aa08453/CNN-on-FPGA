@@ -4,15 +4,16 @@
 #include "Convolution.h"
 #include "RELU.h"
 #include "MaxPool.h"
+#include "Dense.h"
 #include <CL/cl.h>
 #include "cnpy.h"
 #include <fstream>
 
 #include <filesystem>
 
-#include "LayerDense.h"
-#include "ReluActivation.h"
-#include "SoftMaxActivation.h"
+//#include "LayerDense.h"
+//#include "ReluActivation.h"
+//#include "SoftMaxActivation.h"
 
 #define USE_MNIST_LOADER
 #define MNIST_STATIC
@@ -25,29 +26,34 @@ using namespace Eigen;
 
 using namespace std;
 
+//// creation of output buffer
+//int outputSize = 28 * 28 * 8;
+//static float input_padded[30 * 30 * 1] = { 0 };
+float output[28 * 28 * 8] = { 0 };
+int outputSize = 28 * 28 * 8;
+
+
 #define CHECK_CL(err, msg) if (err != CL_SUCCESS) { cerr << msg << ": " << err << endl; exit(1); }
 
 int main() {
     cout << "Start" << endl;
+    
 
     // load conv1 weights
     auto W_array = cnpy::npy_load("../../../src/conv1_weight.npy");
-    float* weight = W_array.data<float>();
+    float * weight = W_array.data<float>();
 
     // load conv1 bias
     auto B_array = cnpy::npy_load("../../../src/conv1_bias.npy");
     float* bias = B_array.data<float>();
-
+    
     // load conv2 bias
     auto B2_array = cnpy::npy_load("../../../src/conv2_bias.npy");
     float* bias2 = B2_array.data<float>();
-    
+
     // load conv2 weights
     auto W_array2 = cnpy::npy_load("../../../src/conv2_weight.npy");
     float* weight2 = W_array2.data<float>();
-    std::cout << "Weight 1: " << weight2[0] << ", " << weight2[1] << ", ..., " << weight2[10] << std::endl;
-
-
 
 
     // Load kernel
@@ -102,79 +108,114 @@ int main() {
     
     // output params -- conv1
     int C_out = 8;
-    int H_out = H - K + 1;
-    int W_out = W_in - K + 1;
-
-    // forward pass
-    // [60000, 1, 28, 28]
-    Convolution* conv = new Convolution(context, queue, program, weight, bias,
-        C_in, C_out, N, H, W_in, K, 1);
-    conv->forward();
-    std::cout << "Output shape: " << conv->N << ", " << conv->H_out << ", " << conv->W_out << ", " << conv->Cout << std::endl;
-    // [60000, 8, 28, 28]
-
-    ReLU* relu = new ReLU(context, queue, program, conv->getOutput(), conv->getOutputSize());
-    relu->forward();
-    // [60000, 8, 28, 28]
-   
-    MaxPool* pool = new MaxPool(context, queue, program, relu->getOutput(), conv->Cout, N, conv->H_out, conv->W_out, 2, 2);
-    pool->forward(); 
-    std::cout << "Output shape: " << pool->N << ", " << pool->Hout << ", " << pool->Wout << ", " << pool->C << std::endl;
-    // [60000, 8, 14, 14]
-
-    Convolution* conv2 = new Convolution(context, queue, program, pool->getOutput(), weight2, bias2,
-        8, 16, N, pool->getHeight(), pool->getWidth(), K, 1);
-    conv2->forward();
-    std::cout << "Output shape: " << conv2->N << ", " << conv2->H_out << ", " << conv2->W_out << ", " << conv2->Cout << std::endl;
-    // [60000, 16, 14, 14]
-
-    ReLU* relu2 = new ReLU(context, queue, program, conv2->getOutput(), conv2->getOutputSize());
-    relu2->forward();
-    // [60000, 16, 14, 14]
- 
-    MaxPool* pool2 = new MaxPool(context, queue, program, relu2->getOutput(), conv2->Cout, N, conv2->H_out, conv2->W_out, 2, 2);
-    pool2->forward();
-    std::cout << "Output shape: " << pool2->N << ", " << pool2->Hout << ", " << pool2->Wout << ", " << pool2->C << std::endl;
-    // [60000, 16, 7, 7]
-
-    // converting to eigen
-    Eigen::Map<Eigen::Matrix<float, Eigen::Dynamic, Eigen::Dynamic, Eigen::RowMajor>> poolOutput(pool2->getOutput(), N, pool2->C * pool2->Hout * pool2->Wout);
-
-    // fc layer
-    int numClasses = 10;
-    LayerDense* dense = new LayerDense(pool2->getOutputSize()/N, numClasses);
-    dense->forward(poolOutput);
-
-    // check accuracy
-    int correct = 0;
-    Eigen::MatrixXf predictions = dense->getOutput();
+    
+    
     mnist_data* mnist;
     unsigned int count;
-
     int status = mnist_load("../../../data/train-images.idx3-ubyte", "../../../data/train-labels.idx1-ubyte", &mnist, &count);
     if (status != 0) {
         cerr << "Failed to load MNIST data: " << status << endl;
     }
-    for (int i = 0; i < N; ++i) {
+
+    if (N != count) {
+        cerr << "Not all images loaded." << endl;
+    }
+
+
+    int inputSize = 30*30*8;
+
+    
+    
+    
+    
+    int correct = 0;
+
+    int padding = 1, paddedH = 30, paddedW = 30;
+
+    // create padded out through pool????
+    
+    for (int n = 0; n < N; ++n) {
+        std::fill(output, output + (28 * 28 * 8), 0.0f);
+
+        for (int h = 0; h < H; ++h) {
+            for (int w = 0; w < W_in; ++w) {
+                for (int c = 0; c < C_in; ++c) {
+                    int idx = c * paddedH * paddedW +
+                        (h + padding) * paddedW +
+                        (w + padding);
+                        #ifdef MNIST_DOUBLE
+                                           output[idx] = static_cast<float>(mnist[n].data[h][w]);
+                        #else
+                                            output[idx] = mnist[n].data[h][w] / 255.0f;
+                        #endif
+
+                }
+            }
+        }
+        /*for (int i = 0; i < 30; i++) {
+            for (int j = 0; j < 30; j++) {
+                if (output[i * 30 + j] > 0) cout << "#";
+                else cout << ".";
+            } cout << endl;
+        }*/
+        
+        {
+            Convolution conv(context, queue, program, output, 1, weight, bias, C_in, C_out, 1, H, W_in, K, 1);
+            conv.forward(output);
+            /*for (int i = 0; i < 28; i++) {
+                for (int j = 0; j < 28; j++) {
+                    if (output[i * 28 + j] > 0) std::cout << "#";
+                    else cout << ".";
+                } cout << endl;
+            }
+            std::cout << "did conv" << std::endl;*/
+
+            ReLU relu(context, queue, program, output, outputSize);
+
+            relu.forward(output);
+
+            MaxPool pool(context, queue, program, output, 8, 1, 28, 28, 2, 2, 1);
+            std::fill(output, output + (28 * 28 * 8), 0.0f);
+            pool.forward(output);
+
+            Convolution conv2(context, queue, program, output, 2, weight2, bias2, 8, 16, 1, 14, 14, K, 1);
+            std::fill(output, output + (28 * 28 * 8), 0.0f);
+            conv2.forward(output);
+
+            ReLU relu2(context, queue, program, output, 14 * 14 * 16);
+            relu2.forward(output);
+
+            MaxPool pool2(context, queue, program, output, 16, 1, 14, 14, 2, 2, 0);
+            pool2.forward(output);
+
+
+            DenseLayer dense(context, queue, program, output, 784, 10);
+            dense.forward(output);
+            
+            
+
+        }
+
+        // compare with label
         int predictedLabel = -1;
-        predictions.row(i).maxCoeff(&predictedLabel); // Get index of max prob
-        int trueLabel = mnist[i].label;
+        int max = -FLT_MAX;
+        for (int col = 0; col < 10; col++) {
+            if (output[col] >max) {
+                max = output[col];
+                predictedLabel = col;
+            }
+        }
+        
+        int trueLabel = mnist[n].label;
         if (predictedLabel == trueLabel) {
             correct++;
+        } std::cout << "correct: " << correct << std::endl;
         }
-    }
 
     float accuracy = static_cast<float>(correct) / N;
     std::cout << "Accuracy: " << accuracy * 100.0f << "%" << std::endl;
 
-
-    // release mem
-    delete conv;
-    delete relu;
-    delete pool;
-    delete conv2;
-    delete relu2;
-    delete dense;
+    
 
     // release cl_mem
     clReleaseProgram(program);

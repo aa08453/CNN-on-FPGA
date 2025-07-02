@@ -25,12 +25,12 @@ LayerDense::LayerDense(int n_inputs, int n_neurons) {
 }
 
 
-void LayerDense::forward(const Eigen::MatrixXf& inputs) {
+void LayerDense::forward(Eigen::MatrixXf& inputs) {
     std::cout << "Fc Layer" << std::endl;
     
     // operations
-    this->output = inputs * weights.transpose();
-    this->output.rowwise() += biases;
+    inputs = inputs * weights.transpose();
+    inputs.rowwise() += biases;
 
 
 }

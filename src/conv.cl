@@ -123,31 +123,32 @@ __kernel void conv1d_kernel(
     __global const float* W,
     __global float* out,
     __global float* bias,
-    int N, int H, int W_in, int C_in,
+    
+    int paddedH, int paddedW, int C_in,
     int K, int C_out,
     int H_out, int W_out)
 {
-    int n = get_global_id(0);
-    int flat_hw = get_global_id(1);
-    int co = get_global_id(2);
+    /*int n = get_global_id(0);*/
+    int flat_hw = get_global_id(0);
+    int co = get_global_id(1);
 
     int h = flat_hw / W_out;
     int w = flat_hw % W_out;
 
     
 
-    if (n < N && co < C_out && h < H_out && w < W_out) {
+    if (co < C_out && h < H_out && w < W_out) {
         float sum = bias[co];
         for (int ci = 0; ci < C_in; ++ci)
             for (int kw = 0; kw < K; ++kw)
                 for (int kh = 0; kh < K; ++kh) {
                     int in_h = h + kh;
                     int in_w = w + kw;
-                    int input_idx = n * C_in * H * W_in + ci * H * W_in + in_h * W_in + in_w;
+                    int input_idx = ci * paddedH * paddedW + in_h * paddedW + in_w;
                     int weight_idx = co * C_in * K * K + ci * K * K + kh * K + kw;
                     sum += Z[input_idx] * W[weight_idx];
                 }
-        int out_idx = (n * H_out * W_out * C_out) + (co * W_out * H_out) + (h * W_out) + w;
+        int out_idx = (co * W_out * H_out) + (h * W_out) + w;
         out[out_idx] = sum;
     }
 }
@@ -162,7 +163,7 @@ __kernel void reluKernel(__global const float* input, __global float* output, in
 __kernel void maxPoolKernel(__global const float* input, __global float* output,
     int N, int H, int W, int C,
     int poolSize,
-    int stride) {
+    int stride, int padding) {
     int n = get_global_id(0);
     int flat_hw = get_global_id(1);
     int co = get_global_id(2);
@@ -171,26 +172,50 @@ __kernel void maxPoolKernel(__global const float* input, __global float* output,
     int Hout = (H-poolSize) / stride + 1;
     int Wout = (W - poolSize) / stride + 1;
 
+    /*Hout += 2 * padding;
+    Wout += 2 * padding;*/
+
     int h = flat_hw / Wout;
     int w = flat_hw % Wout;
 
-    if (n < N && co < C && h < Hout && w < Wout) {
+    if ( co < C && h < Hout && w < Wout) {
         float max = -FLT_MAX;  
-        
- 
             for (int ph = 0; ph < poolSize; ++ph) {
                 for (int pw =0; pw < poolSize; ++pw) {
                     int in_h = h * stride + ph;
                     int in_w = w * stride + pw;
 
-                    int inputIdx = (n * H * W * C) + (co * H * W) + (in_h * W) + in_w;
+                    int inputIdx = (co * H * W) + (in_h * W) + in_w;
                     max = fmax(input[inputIdx], max);
 
                 }
             }
-            size_t outIdx = (n * Hout * Wout * C) + (co * Wout * Hout) + (h * Wout) + w;
+            // Write to padded location in output
+            int paddedHout = Hout + 2 * padding;
+            int paddedWout = Wout + 2 * padding;
+
+            int outIdx = co * paddedHout * paddedWout + (h + padding) * paddedWout + (w + padding);
             output[outIdx] = max;
+            
         
-        
+    }
+}
+
+__kernel void denseKernel(
+    __global const float* input,
+    __global const float* weight,
+    __global const float* bias,
+    __global float* output,
+    int inputFeatures, // 784
+    int numClasses // outputFeatures
+) {
+    int idx = get_global_id(0);
+    float sum;
+    if (idx < numClasses) {
+        sum = bias[idx];
+        for (int i = 0; i < inputFeatures; i++) {
+            sum += input[i] * weight[idx * inputFeatures + i];
+        }
+        output[idx] = sum;
     }
 }

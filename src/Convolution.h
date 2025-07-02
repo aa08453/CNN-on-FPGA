@@ -5,9 +5,9 @@
 
 #include <iostream>
 #include <CL/cl.h>
-#include "Layer.h"
+//#include "Layer.h"
 
-class Convolution : public Layer{
+class Convolution{
 	cl_context context;
 	cl_command_queue queue;
 	cl_program program;
@@ -16,7 +16,7 @@ class Convolution : public Layer{
 
 	float* image;
 	float* weights;
-	float* output;
+	//float* output;
 	float* bias;
 
 	cl_mem inputBuf;
@@ -30,14 +30,14 @@ public:
 	int Cin, Cout, N, Hin, Win, K;
 	int H_out, W_out;
 	int paddedH, paddedW;
-	Convolution(cl_context ctx, cl_command_queue cmdQueue, cl_program prog, 
+	/*Convolution(cl_context ctx, cl_command_queue cmdQueue, cl_program prog, 
 		float* wghts, float* b,
-		int cin, int cout, int n, int hin, int win, int k, int pad);
+		int cin, int cout, int n, int hin, int win, int k, int pad);*/
 	Convolution(cl_context ctx, cl_command_queue cmdQueue, cl_program prog,
-		float* img, float* wghts, float* b,
+		float img[], int num, float* wghts, float* b,
 		int cin, int cout, int n, int hin, int win, int k, int pad);
-	void forward() override;
-	float* getOutput() override { return output; }
+	void forward(float output[]);
+	//float* getOutput() { return output; }
 	size_t getOutputSize();
 	int getOutputChannels() { return Cout; };
 	int getInputChannels() { return Cin; };

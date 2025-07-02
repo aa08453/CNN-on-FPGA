@@ -24,7 +24,7 @@ private:
 public:
     LayerDense(int n_inputs, int n_neurons);
 
-    void forward(const Eigen::MatrixXf& inputs);
+    void forward(Eigen::MatrixXf& inputs);
 
     // void backward(const Eigen::MatrixXf& dvalues);
 

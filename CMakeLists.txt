@@ -49,7 +49,7 @@ add_executable(opencl_test
  "src/mnist.h" 
  #"src/datasTest.cpp"
  #"src/reordering.cpp"
-)
+ "src/Dense.h" "src/Dense.cpp")
 
 # Link OpenCL to your executable
 target_link_libraries(opencl_test ${OpenCL_LIBRARY} 
