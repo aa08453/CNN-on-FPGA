@@ -1,4 +1,3 @@
-
 module patch_addr_gen
 #(
     parameter H = 28,
@@ -9,66 +8,95 @@ module patch_addr_gen
     input wire rst,
     input wire addr,
     input wire [4:0] i, j,
-    output reg [9:0] pixel_addrs [0:8],
+
+    output reg [9:0] pixel_addr0,
+    output reg [9:0] pixel_addr1,
+    output reg [9:0] pixel_addr2,
+    output reg [9:0] pixel_addr3,
+    output reg [9:0] pixel_addr4,
+    output reg [9:0] pixel_addr5,
+    output reg [9:0] pixel_addr6,
+    output reg [9:0] pixel_addr7,
+    output reg [9:0] pixel_addr8,
+
     output reg load_full_patch
 );
 
     reg [4:0] prev_i;
 
-    integer x, y;
-    integer mv, nv;
     integer row, col;
+    integer mv, nv;
 
     always @(posedge clk or negedge rst) 
     begin
         if (!rst) 
         begin
-            prev_i <= 28;
+            prev_i <= 5'd28;  // Something invalid 
             load_full_patch <= 1'b1;
-            for (x = 0; x < 9; x = x + 1)
-                pixel_addrs[x] <= 10'd0;
-        end
+
+            pixel_addr0 <= 10'd0;
+            pixel_addr1 <= 10'd0;
+            pixel_addr2 <= 10'd0;
+            pixel_addr3 <= 10'd0;
+            pixel_addr4 <= 10'd0;
+            pixel_addr5 <= 10'd0;
+            pixel_addr6 <= 10'd0;
+            pixel_addr7 <= 10'd0;
+            pixel_addr8 <= 10'd0;
+
+        end 
         else if (addr) 
         begin
-            mv = i - 1;
-            nv = j - 1;
+            mv = i - 1; //i*S - P = i*1 - 1
+            nv = j - 1; //j*S - P = j*1 - 1
             load_full_patch <= (i != prev_i);
 
-            // Rightmost column
-            for (x = 0; x < 3; x = x + 1) 
-            begin
-                row = mv + x;
-                col = nv + 2;
-                if (row >= 0 && row < H && col >= 0 && col < W)
-                    pixel_addrs[x * 3 + 2] <= row * W + col;
-                else
-                    pixel_addrs[x * 3 + 2] <= 10'd0;
-            end
+            // Rightmost column (pixel6,7,8) (-1,1)
+            col = nv + 2; // j*S - P + K - 1 
+            row = mv; // i*S - P + 0 
+            // (0, 2)
+            pixel_addr6 <= (row >= 0 && row < H && col >= 0 && col < W) ? row * W + col : 10'd0;
+            //(1,2)
+            row += 1; // i*S - P + 1
+            pixel_addr7 <= (row >= 0 && row < H && col >= 0 && col < W) ? row * W + col : 10'd0;
+            //(2,2)
+            row += 1; // i*S - P + 2 = i*S - P + (K - 1)
+            pixel_addr8 <= (row >= 0 && row < H && col >= 0 && col < W) ? row * W + col : 10'd0;
 
-            if (i != prev_i) 
+            if (load_full_patch) 
             begin
-                for (x = 0; x < 3; x = x + 1)
-                    for (y = 0; y < 2; y = y + 1) 
-                    begin
-                        row = mv + x;
-                        col = nv + y;
-                        if (row >= 0 && row < H && col >= 0 && col < W)
-                            pixel_addrs[x * 3 + y] <= row * W + col;
-                        else
-                            pixel_addrs[x * 3 + y] <= 10'd0;
-                    end
-            end
-            else 
-            begin
-                pixel_addrs[0] <= 10'd0;
-                pixel_addrs[1] <= 10'd0;
-                pixel_addrs[3] <= 10'd0;
-                pixel_addrs[4] <= 10'd0;
-                pixel_addrs[6] <= 10'd0;
-                pixel_addrs[7] <= 10'd0;
-            end
+                // Load remaining pixels: 0,1,2,3,4,5 
+                row = mv; col = nv; //(0,0)
+                pixel_addr0 <= (row >= 0 && row < H && col >= 0 && col < W) ? row * W + col : 10'd0;
+                //(1,0)
+                row += 1; 
+                pixel_addr1 <= (row >= 0 && row < H && col >= 0 && col < W) ? row * W + col : 10'd0;
+                // (2,0)
+                row += 1;
+                pixel_addr2 <= (row >= 0 && row < H && col >= 0 && col < W) ? row * W + col : 10'd0;
+                // (0,1)
+                col += 1; row = mv;
+                pixel_addr3 <= (row >= 0 && row < H && col >= 0 && col < W) ? row * W + col : 10'd0;
+                // (1,1)
+                row += 1;
+                pixel_addr4 <= (row >= 0 && row < H && col >= 0 && col < W) ? row * W + col : 10'd0;
+                // (2,1)
+                row += 1;
+                pixel_addr5 <= (row >= 0 && row < H && col >= 0 && col < W) ? row * W + col : 10'd0;
+            end 
+            // else 
+            // begin
+            //     // Clear unused patch addresses
+            //     pixel_addr0 <= 10'd0;
+            //     pixel_addr1 <= 10'd0;
+            //     pixel_addr3 <= 10'd0;
+            //     pixel_addr4 <= 10'd0;
+            //     pixel_addr6 <= 10'd0;
+            //     pixel_addr7 <= 10'd0;
+            // end
 
             prev_i <= i;
         end
     end
+
 endmodule

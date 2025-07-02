@@ -11,14 +11,15 @@ module control (
     output reg counter_enable
 );
 
-parameter ADDR            = 3'd0;
-parameter LOAD            = 3'd1;
-parameter MAC0            = 3'd2;
-parameter MAC1            = 3'd3;
-parameter MAC2            = 3'd4;
-parameter ACC             = 3'd5;
-parameter UPDATE_COUNTERS = 3'd6;
-parameter CHECK_DONE      = 3'd7;
+parameter ADDR            = 4'd0;
+parameter LOAD            = 4'd1;
+parameter MAC0            = 4'd2;
+parameter MAC1            = 4'd3;
+parameter MAC2            = 4'd4;
+parameter SUM             = 4'd5;
+parameter ACC             = 4'd6;
+parameter UPDATE_COUNTERS = 4'd7;
+parameter CHECK_DONE      = 4'd8;
 
 reg [2:0] state;
 reg [2:0] next_state;
@@ -60,22 +61,28 @@ begin
 
         MAC0: 
         begin
-            mux_sel    = 2'b00;
+            mux_sel    = 2'b01;
             // acc_enable = 1'b1;
             next_state = MAC1;
         end
 
         MAC1: 
         begin
-            mux_sel    = 2'b01;
+            mux_sel    = 2'b10;
             // acc_enable = 1'b1;
             next_state = MAC2;
         end
 
         MAC2: 
         begin
-            mux_sel    = 2'b10;
+            mux_sel    = 2'b11;
             // acc_enable = 1'b1;
+            next_state = SUM;
+        end
+
+        SUM:
+        begin
+            mux_sel = 2'b00;
             next_state = ACC;
         end
 

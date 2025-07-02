@@ -1,8 +1,8 @@
 module products_reg
 (
     input clk,
-    input [15:0] sum,
-    output reg [15:0] result,
+    input [16:0] sum,
+    output reg [17:0] result,
     input rst,
     input flush_acc,
     input acc_enable
@@ -11,7 +11,7 @@ module products_reg
 always @(posedge clk or negedge rst) 
 begin
     if (!rst || flush_acc) 
-        result <= 16'd0;
+        result <= 18'd0;
     else if (acc_enable) 
         result <= result + sum;
 end

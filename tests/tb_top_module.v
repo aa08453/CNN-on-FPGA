@@ -13,7 +13,7 @@ module top_tb;
     // reg start;
 
     // Outputs
-    wire [15:0] result;
+    wire [17:0] result;
 
     // Instantiate the DUT
     top #(.H(H), .W(W)) dut (
@@ -42,8 +42,8 @@ module top_tb;
         // Deassert reset and start the process
         rst = 1;
 
-        #200
-        rst = 0;
+        // #20
+        // rst = 0;
 
         #50 
         rst = 1;

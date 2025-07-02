@@ -3,7 +3,19 @@ module image_reg
     input wire clk,
     input wire rst,
     input wire load_full_patch,             // 1 = load full patch, 0 = load column only
-    input wire [7:0] pixels [0:8],          // Full patch from patch module
+
+    // Flattened input pixels
+    input wire [7:0] pixel0,
+    input wire [7:0] pixel1,
+    input wire [7:0] pixel2,
+    input wire [7:0] pixel3,
+    input wire [7:0] pixel4,
+    input wire [7:0] pixel5,
+    input wire [7:0] pixel6,
+    input wire [7:0] pixel7,
+    input wire [7:0] pixel8,
+
+    // Flattened output image registers
     output wire [7:0] image_reg0,
     output wire [7:0] image_reg1,
     output wire [7:0] image_reg2,
@@ -19,9 +31,9 @@ module image_reg
 
     integer i;
 
-    always @(posedge clk or posedge rst) 
+    always @(posedge clk or negedge rst) 
     begin
-        if (rst) 
+        if (!rst) 
         begin
             for (i = 0; i < 9; i = i + 1)
                 regs[i] <= 8'd0;
@@ -29,8 +41,15 @@ module image_reg
         else if (load_full_patch) 
         begin
             // Load entire patch directly
-            for (i = 0; i < 9; i = i + 1)
-                regs[i] <= pixels[i];
+            regs[0] <= pixel0;
+            regs[1] <= pixel1;
+            regs[2] <= pixel2;
+            regs[3] <= pixel3;
+            regs[4] <= pixel4;
+            regs[5] <= pixel5;
+            regs[6] <= pixel6;
+            regs[7] <= pixel7;
+            regs[8] <= pixel8;
         end 
         else 
         begin
@@ -41,9 +60,9 @@ module image_reg
             regs[3] <= regs[6];
             regs[4] <= regs[7];
             regs[5] <= regs[8];
-            regs[6] <= pixels[2];
-            regs[7] <= pixels[5];
-            regs[8] <= pixels[8];
+            regs[6] <= pixel6;
+            regs[7] <= pixel7;
+            regs[8] <= pixel8;
         end
     end
 
