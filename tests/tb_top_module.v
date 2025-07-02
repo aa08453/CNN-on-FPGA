@@ -13,7 +13,7 @@ module top_tb;
     // reg start;
 
     // Outputs
-    wire [17:0] result;
+    wire [18:0] result;
 
     // Instantiate the DUT
     top #(.H(H), .W(W)) dut (

@@ -12,7 +12,7 @@ reg [18:0] inter;
 
 always @(posedge clk or negedge rst) 
 begin
-    if (!rst || flush_acc) 
+    if (!rst) 
         result <= 19'd0;
     else 
         inter <= result + sum;
