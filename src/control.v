@@ -8,7 +8,8 @@ module control (
     // output reg bias_enable,
     output reg load,
     output reg flush_acc,
-    output reg counter_enable
+    output reg counter_enable,
+    output reg store
 );
 
 parameter ADDR            = 4'd0;
@@ -18,8 +19,9 @@ parameter MAC1            = 4'd3;
 parameter MAC2            = 4'd4;
 parameter SUM             = 4'd5;
 parameter ACC             = 4'd6;
-parameter UPDATE_COUNTERS = 4'd7;
-parameter CHECK_DONE      = 4'd8;
+parameter STORE           = 4'd7;
+parameter UPDATE_COUNTERS = 4'd8;
+parameter CHECK_DONE      = 4'd9;
 
 reg [2:0] state;
 reg [2:0] next_state;
@@ -41,6 +43,7 @@ begin
     mux_sel        = 2'b00;
     acc_enable     = 1'b0;
     addr = 1'b0;
+    store = 1'b0;
     // bias_enable    = 1'b0;
     flush_acc      = 1'b0;
     counter_enable = 1'b0;
@@ -90,7 +93,7 @@ begin
         begin
             acc_enable = 1'b1;
             // next_state = ADD_BIAS;
-            next_state = UPDATE_COUNTERS;
+            next_state = STORE;
         end
 
         // ADD_BIAS: 
@@ -98,6 +101,13 @@ begin
         //     bias_enable = 1'b1;
         //     next_state  = UPDATE_COUNTERS;
         // end
+        
+        STORE:
+        begin
+            store = 1'b1;
+            next_state = UPDATE_COUNTERS;
+        end
+         
 
         UPDATE_COUNTERS: 
         begin

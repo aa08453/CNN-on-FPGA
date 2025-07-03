@@ -27,8 +27,12 @@ module top
     wire [17:0] sum;
     wire [4:0] i, j;
     wire done;
+    wire store;
 
-    // Load kernel weights
+    // Add wires for register file
+    wire [9:0] write_index;
+
+    // All your existing module instantiations...
     load_kernel load_kernel_inst (
         .clk(clk), .rst(rst),
         .kernel0(kernel0), .kernel1(kernel1), .kernel2(kernel2),
@@ -36,20 +40,17 @@ module top
         .kernel6(kernel6), .kernel7(kernel7), .kernel8(kernel8)
     );
 
-    // FSM control
     control control_inst(
         .clk(clk), .rst_n(rst), .done(done), .load(load), .mux_sel(mux_sel),
         .acc_enable(acc_enable), .flush_acc(flush_acc),
-        .counter_enable(count_enable), .addr(addr)
+        .counter_enable(count_enable), .addr(addr), .store(store)
     );
 
-    // Counter for i, j
     counters counters_inst(
         .clk(clk), .rst_n(rst), .count_enable(count_enable),
         .i(i), .j(j), .done(done)
     );
 
-    // Patch address generator
     patch_addr_gen #(.H(H), .W(W)) patch_addr_inst (
         .clk(clk), .rst(rst), .addr(addr), .i(i), .j(j),
         .pixel_addr0(pixel_addr0), .pixel_addr1(pixel_addr1), .pixel_addr2(pixel_addr2),
@@ -58,9 +59,8 @@ module top
         .load_full_patch(load_full_patch)
     );
 
-    // Patch data latching
     patch_data_latch patch_data_inst (
-        .clk(clk), .rst(rst), .load(load),.load_full_patch(load_full_patch),
+        .clk(clk), .rst(rst), .load(load), .load_full_patch(load_full_patch),
         .pixel_addr0(pixel_addr0), .pixel_addr1(pixel_addr1), .pixel_addr2(pixel_addr2),
         .pixel_addr3(pixel_addr3), .pixel_addr4(pixel_addr4), .pixel_addr5(pixel_addr5),
         .pixel_addr6(pixel_addr6), .pixel_addr7(pixel_addr7), .pixel_addr8(pixel_addr8),
@@ -69,7 +69,6 @@ module top
         .pixel6(pixel6), .pixel7(pixel7), .pixel8(pixel8)
     );
 
-    // Image patch shift register
     comp comp_inst (
         .clk(clk), .select(mux_sel), .sum(sum), .rst(rst),
         .image_data0(pixel0), .image_data1(pixel1), .image_data2(pixel2),
@@ -80,10 +79,23 @@ module top
         .kernel_data6(kernel6), .kernel_data7(kernel7), .kernel_data8(kernel8)
     );
 
-    // Accumulator register
     products_reg products_reg_inst (
         .clk(clk), .rst(rst), .flush_acc(flush_acc),
         .acc_enable(acc_enable), .sum(sum), .result(result)
     );
+
+    // Replace write_result with result_registerFile
+    result_registerFile #( .W(W))
+         result_store_inst (
+        .clk(clk),
+        .rst(rst),
+        .store(store),
+        .result(result),
+        .i(i),
+        .j(j)
+    );
+
+    // Connect outputs
+    assign results_count = write_index;
 
 endmodule
