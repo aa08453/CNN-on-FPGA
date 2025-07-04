@@ -53,7 +53,7 @@ module top_tb;
         // start = 0; // One pulse
 
         // Run simulation long enough to see processing
-        #100000;
+        #330000;
 
         $finish;
     end

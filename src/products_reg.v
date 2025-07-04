@@ -8,7 +8,7 @@ module products_reg
     input acc_enable
 );
 
-reg [18:0] inter;
+reg [18:0] inter; //intermediate value
 
 always @(posedge clk or negedge rst) 
 begin

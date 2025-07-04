@@ -7,32 +7,34 @@ module result_registerFile
     input wire rst,
     input wire store,
     input wire [18:0] result,
-    input wire [4:0] i, j
-    
-    // output reg [18:0] readData,
+    input wire [4:0] i, j,
+    input wire done
 );
     reg [18:0] result_mem [0:783];
 
-    reg [9:0] write_index;
+    integer k;
+    // reg [18:0] write_index;
 
     always @(posedge clk or negedge rst) 
     begin
-        if (!rst) 
+        if (!rst)
         begin
-            write_index <= 10'd0;
+            for (k = 0; k < 784; k++)
+                result_mem[i] <= 19'd0;
+        end 
+        if (store) 
+        begin
+            integer idx;
+            idx = i * W + j;
+            result_mem[idx] <= result;          
         end
-        else if (store) 
+        if (done)
         begin
-            write_index = i * W + j; 
-            result_mem[write_index] <= result;
-            
-            // Display each result as it's stored
-            $display("Result[%0d] = %05h (i=%0d, j=%0d)", 
-                     write_index, result, i, j);
-            
+            $writememh("mem_files/result.mem", result_mem);
         end
     end
-    
-    
+
+
+      
 
 endmodule

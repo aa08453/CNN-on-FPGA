@@ -23,8 +23,8 @@ parameter STORE           = 4'd7;
 parameter UPDATE_COUNTERS = 4'd8;
 parameter CHECK_DONE      = 4'd9;
 
-reg [2:0] state;
-reg [2:0] next_state;
+reg [3:0] state;
+reg [3:0] next_state;
 
 // Sequential logic: state register
 always @(posedge clk or negedge rst_n) 

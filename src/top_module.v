@@ -9,7 +9,7 @@ module top
     output [18:0] result
 );
 
-    wire load, acc_enable, flush_acc, count_enable, load_full_patch, addr;
+    wire load, acc_enable, flush_acc, count_enable, load_full_patch, addr, store, done;
     wire [1:0] mux_sel;
 
     reg [7:0] kernel0, kernel1, kernel2,
@@ -26,8 +26,6 @@ module top
 
     wire [17:0] sum;
     wire [4:0] i, j;
-    wire done;
-    wire store;
 
     // Add wires for register file
     wire [9:0] write_index;
@@ -86,16 +84,9 @@ module top
 
     // Replace write_result with result_registerFile
     result_registerFile #( .W(W))
-         result_store_inst (
-        .clk(clk),
-        .rst(rst),
-        .store(store),
-        .result(result),
-        .i(i),
-        .j(j)
-    );
+    result_store_inst (.clk(clk), .rst(rst), .store(store), .result(result),.i(i), .j(j),.done(done));
 
     // Connect outputs
-    assign results_count = write_index;
+    // assign results_count = write_index;
 
 endmodule

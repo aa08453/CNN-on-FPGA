@@ -75,7 +75,7 @@ module patch_addr_gen
                 row += 1;
                 pixel_addr2 <= (row >= 0 && row < H && col >= 0 && col < W) ? row * W + col : 10'd0;
                 // (0,1)
-                col += 1; row = mv;
+                row = mv; col += 1; 
                 pixel_addr3 <= (row >= 0 && row < H && col >= 0 && col < W) ? row * W + col : 10'd0;
                 // (1,1)
                 row += 1;
@@ -84,17 +84,7 @@ module patch_addr_gen
                 row += 1;
                 pixel_addr5 <= (row >= 0 && row < H && col >= 0 && col < W) ? row * W + col : 10'd0;
             end 
-            // else 
-            // begin
-            //     // Clear unused patch addresses
-            //     pixel_addr0 <= 10'd0;
-            //     pixel_addr1 <= 10'd0;
-            //     pixel_addr3 <= 10'd0;
-            //     pixel_addr4 <= 10'd0;
-            //     pixel_addr6 <= 10'd0;
-            //     pixel_addr7 <= 10'd0;
-            // end
-
+            
             prev_i <= i;
         end
     end
