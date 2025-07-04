@@ -6,11 +6,12 @@ module result_registerFile
     input wire clk,
     input wire rst,
     input wire store,
-    input wire [18:0] result,
-    input wire [4:0] i, j,
+    input wire bias_init,
+    input wire [31:0] value,
+    input wire [9:0] addr,
     input wire done
 );
-    reg [18:0] result_mem [0:783];
+    reg [31:0] result_mem [0:783];
 
     integer k;
     // reg [18:0] write_index;
@@ -20,13 +21,16 @@ module result_registerFile
         if (!rst)
         begin
             for (k = 0; k < 784; k++)
-                result_mem[i] <= 19'd0;
+                result_mem[k] <= 32'd0;
         end 
         if (store) 
         begin
-            integer idx;
-            idx = i * W + j;
-            result_mem[idx] <= result;          
+            result_mem[addr] <= value + result_mem[addr];          
+        end
+        if (bias_init)
+        begin
+            for (k = 0; k < 784; k++)
+                result_mem[k] <= value;
         end
         if (done)
         begin

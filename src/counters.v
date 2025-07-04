@@ -1,4 +1,5 @@
-module counters (
+module counters 
+(
     input wire clk,
     input wire rst_n,
     input wire count_enable,

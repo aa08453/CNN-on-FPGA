@@ -1,15 +1,15 @@
-module control (
+module conv_control (
     input wire clk,
     input wire rst_n,
-    input wire done,            // Asserted when all patches processed
+
+    input wire done,
+
     output reg addr,
+    output reg load,
     output reg [1:0] mux_sel,
     output reg acc_enable,
-    // output reg bias_enable,
-    output reg load,
-    output reg flush_acc,
+    output reg store,
     output reg counter_enable,
-    output reg store
 );
 
 parameter ADDR            = 4'd0;
@@ -39,20 +39,19 @@ end
 always @(*) 
 begin
     // Default outputs
+    addr           = 1'b0;
     load           = 1'b0;
     mux_sel        = 2'b00;
     acc_enable     = 1'b0;
-    addr = 1'b0;
-    store = 1'b0;
-    // bias_enable    = 1'b0;
-    flush_acc      = 1'b0;
+    store          = 1'b0;
     counter_enable = 1'b0;
+    result_store   = 1'b0;
+
 
     case (state)
         ADDR:
         begin
             addr = 1'b1;
-            flush_acc = 1'b1;
             next_state = LOAD;
         end
 
@@ -65,21 +64,18 @@ begin
         MAC0: 
         begin
             mux_sel    = 2'b01;
-            // acc_enable = 1'b1;
             next_state = MAC1;
         end
 
         MAC1: 
         begin
             mux_sel    = 2'b10;
-            // acc_enable = 1'b1;
             next_state = MAC2;
         end
 
         MAC2: 
         begin
             mux_sel    = 2'b11;
-            // acc_enable = 1'b1;
             next_state = SUM;
         end
 
@@ -92,51 +88,24 @@ begin
         ACC:
         begin
             acc_enable = 1'b1;
-            // next_state = ADD_BIAS;
             next_state = STORE;
         end
 
-        // ADD_BIAS: 
-        // begin
-        //     bias_enable = 1'b1;
-        //     next_state  = UPDATE_COUNTERS;
-        // end
-        
         STORE:
         begin
             store = 1'b1;
             next_state = UPDATE_COUNTERS;
         end
-         
 
         UPDATE_COUNTERS: 
         begin
             counter_enable = 1'b1;
-            next_state     = CHECK_DONE;
+            next_state = CHECK_DONE;
         end
 
         CHECK_DONE: 
         begin
-            if (done)
-                next_state = CHECK_DONE; 
-            else
-                next_state = ADDR;
-        end
-
-        // EXIT:
-        // begin
-        //     load           = 1'b0;
-        //     mux_sel        = 2'b00;
-        //     acc_enable     = 1'b0;
-        //     // bias_enable    = 1'b0;
-        //     flush_acc      = 1'b0;
-        //     counter_enable = 1'b0;
-        //     next_state = EXIT;
-        // end
-
-        default: 
-        begin
-            next_state = ADDR;
+            next_state = done ? CHECK_DONE : ADDR;
         end
     endcase
 end

@@ -1,74 +1,29 @@
 
 module kernel_mem 
+#
 (
-    // output wire [7:0] kernel0,
-    // output wire [7:0] kernel1,
-    // output wire [7:0] kernel2,
-    // output wire [7:0] kernel3,
-    // output wire [7:0] kernel4,
-    // output wire [7:0] kernel5,
-    // output wire [7:0] kernel6,
-    // output wire [7:0] kernel7,
-    // output wire [7:0] kernel8,
-    output wire [7:0] k_values [0:8]
+    parameter VAL = 71 //total values in weights file - 1 = out_channels*in_channels*kernel_size - 1 
+)
+(
+    input wire [3:0] addr,
+    output wire [7:0] k0, k1, k2, k3, k4, k5, k6, k7, k8
 );
-    reg [7:0] rom_data [0:71];  // Enough space for 8 kernels of 3x3 = 72 values
+    reg [7:0] rom_data [0:VAL];  // Enough space for 8 kernels of 3x3 = 72 values
 
     initial 
     begin
-        $readmemh("mem_files/conv1_weight.mem", rom_data);  // Your file with all kernels
+        $readmemh("mem_files/conv1_weight.mem", rom_data);  
+        // will need to add string argument to module to change between weight files
     end
 
-    genvar i;
-    generate
-        for (i = 0; i < 9; i = i + 1) 
-        begin : kernel_out
-            assign k_values[i] = rom_data[i];  // Only use the first kernel
-        end
-    endgenerate
-
-    // assign kernel0  = rom_data[0];
-    // assign kernel1  = rom_data[1];        
-    // assign kernel2  = rom_data[2];
-    // assign kernel3  = rom_data[3];
-    // assign kernel4  = rom_data[4];
-    // assign kernel5  = rom_data[5];
-    // assign kernel6  = rom_data[6];
-    // assign kernel7  = rom_data[7];
-
-
-
-
-
-
-
-
-
-
-
-
+    assign k0 = rom_data[addr * 9];
+    assign k1 = rom_data[addr * 9 + 1];
+    assign k2 = rom_data[addr * 9 + 2];
+    assign k3 = rom_data[addr * 9 + 3];
+    assign k4 = rom_data[addr * 9 + 4];
+    assign k5 = rom_data[addr * 9 + 5];
+    assign k6 = rom_data[addr * 9 + 6];
+    assign k7 = rom_data[addr * 9 + 7];
+    assign k8 = rom_data[addr * 9 + 8];
 
 endmodule
-
-
-// module kernel_mem 
-// (
-//     output wire [7:0] k_values [0:8]
-// );
-
-//     reg [7:0] rom_data [0:8];
-
-//     initial begin
-//         $readmemh("kernel.mem", rom_data);  // works with space-separated values
-//     end
-
-//     genvar i;
-//     generate
-//         for (i = 0; i < 9; i = i + 1) 
-//         begin : gen_kernel_outputs
-//             assign k_values[i] = rom_data[i];
-//         end
-//     endgenerate
-
-// endmodule
-// 

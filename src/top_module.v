@@ -1,92 +1,61 @@
+
+
 module top
 #(
     parameter H = 28,
-    parameter W = 28
+    parameter W = 28,
+    parameter OC = 7
 )
 (
     input wire clk,
-    input wire rst,
-    output [18:0] result
+    input wire rst
 );
 
-    wire load, acc_enable, flush_acc, count_enable, load_full_patch, addr, store, done;
-    wire [1:0] mux_sel;
+    wire cout, c_load, bias_init, cin, conv, result_store, relu, output_store;
+
+    wire conv_done, cin_done, cout_done; 
 
     reg [7:0] kernel0, kernel1, kernel2,
               kernel3, kernel4, kernel5,
               kernel6, kernel7, kernel8;
 
-    wire [9:0] pixel_addr0, pixel_addr1, pixel_addr2,
-               pixel_addr3, pixel_addr4, pixel_addr5,
-               pixel_addr6, pixel_addr7, pixel_addr8;
+    reg [7:0] bias;
 
-    wire [7:0] pixel0, pixel1, pixel2,
-               pixel3, pixel4, pixel5,
-               pixel6, pixel7, pixel8;
+    wire [2:0] out_c;
+    // wire [2:0] in_c;
 
-    wire [17:0] sum;
-    wire [4:0] i, j;
-
-    // Add wires for register file
-    wire [9:0] write_index;
-
-    // All your existing module instantiations...
+    
     load_kernel load_kernel_inst (
-        .clk(clk), .rst(rst),
+        .clk(clk), .rst(rst), .cout(out_c), .c_load(c_load),
         .kernel0(kernel0), .kernel1(kernel1), .kernel2(kernel2),
         .kernel3(kernel3), .kernel4(kernel4), .kernel5(kernel5),
         .kernel6(kernel6), .kernel7(kernel7), .kernel8(kernel8)
-    );
+        );
+
+    load_bias #(.OC(OC)) load_bias_inst (
+        .clk(clk), .rst(rst), .c_load(c_load), .bias(bias)
+    )
+
+    result_registerFile #( .W(W))
+    result_inst (.clk(clk), .rst(rst), .store(bias_init), .result(bias),.addr(0),.done(0));
 
     control control_inst(
-        .clk(clk), .rst_n(rst), .done(done), .load(load), .mux_sel(mux_sel),
-        .acc_enable(acc_enable), .flush_acc(flush_acc),
-        .counter_enable(count_enable), .addr(addr), .store(store)
+        .clk(clk), .rst_n(rst),  .cout(cout), .c_load(c_load), .relu(relu), .cin(cin), 
+        .result_store(result_store), .output_store(output_store), .conv(conv), .bias_init(bias_init)
     );
 
-    counters counters_inst(
-        .clk(clk), .rst_n(rst), .count_enable(count_enable),
-        .i(i), .j(j), .done(done)
+    counter out_counter(
+        .clk(clk), .rst_n(rst), .signal(cout),
+        .count(out_c), .complete(cout_done)
     );
 
-    patch_addr_gen #(.H(H), .W(W)) patch_addr_inst (
-        .clk(clk), .rst(rst), .addr(addr), .i(i), .j(j),
-        .pixel_addr0(pixel_addr0), .pixel_addr1(pixel_addr1), .pixel_addr2(pixel_addr2),
-        .pixel_addr3(pixel_addr3), .pixel_addr4(pixel_addr4), .pixel_addr5(pixel_addr5),
-        .pixel_addr6(pixel_addr6), .pixel_addr7(pixel_addr7), .pixel_addr8(pixel_addr8),
-        .load_full_patch(load_full_patch)
+    conv conv_inst (.clk(clk), .rst(rst), .conv(conv),
+        .kernel0(kernel0), .kernel1(kernel1), .kernel2(kernel2),
+        .kernel3(kernel3), .kernel4(kernel4), .kernel5(kernel5),
+        .kernel6(kernel6), .kernel7(kernel7), .kernel8(kernel8),
+        .conv_done(conv_done), 
     );
 
-    patch_data_latch patch_data_inst (
-        .clk(clk), .rst(rst), .load(load), .load_full_patch(load_full_patch),
-        .pixel_addr0(pixel_addr0), .pixel_addr1(pixel_addr1), .pixel_addr2(pixel_addr2),
-        .pixel_addr3(pixel_addr3), .pixel_addr4(pixel_addr4), .pixel_addr5(pixel_addr5),
-        .pixel_addr6(pixel_addr6), .pixel_addr7(pixel_addr7), .pixel_addr8(pixel_addr8),
-        .pixel0(pixel0), .pixel1(pixel1), .pixel2(pixel2),
-        .pixel3(pixel3), .pixel4(pixel4), .pixel5(pixel5),
-        .pixel6(pixel6), .pixel7(pixel7), .pixel8(pixel8)
-    );
-
-    comp comp_inst (
-        .clk(clk), .select(mux_sel), .sum(sum), .rst(rst),
-        .image_data0(pixel0), .image_data1(pixel1), .image_data2(pixel2),
-        .image_data3(pixel3), .image_data4(pixel4), .image_data5(pixel5),
-        .image_data6(pixel6), .image_data7(pixel7), .image_data8(pixel8),
-        .kernel_data0(kernel0), .kernel_data1(kernel1), .kernel_data2(kernel2),
-        .kernel_data3(kernel3), .kernel_data4(kernel4), .kernel_data5(kernel5),
-        .kernel_data6(kernel6), .kernel_data7(kernel7), .kernel_data8(kernel8)
-    );
-
-    products_reg products_reg_inst (
-        .clk(clk), .rst(rst), .flush_acc(flush_acc),
-        .acc_enable(acc_enable), .sum(sum), .result(result)
-    );
-
-    // Replace write_result with result_registerFile
-    result_registerFile #( .W(W))
-    result_store_inst (.clk(clk), .rst(rst), .store(store), .result(result),.i(i), .j(j),.done(done));
-
-    // Connect outputs
-    // assign results_count = write_index;
+    
 
 endmodule
