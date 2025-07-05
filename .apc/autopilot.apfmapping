@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
   <source>
-    <originFiles name="bias1.h" path="D:\CNN2.0\hls\cnn\src\bias1.h"/>
-    <originFiles name="bias2.h" path="D:\CNN2.0\hls\cnn\src\bias2.h"/>
     <originFiles name="conv.cpp" path="D:\CNN2.0\hls\cnn\src\conv.cpp"/>
     <originFiles name="conv.h" path="D:\CNN2.0\hls\cnn\src\conv.h"/>
     <originFiles name="conv1_bias.h" path="D:\CNN2.0\hls\cnn\src\conv1_bias.h"/>
@@ -14,14 +12,10 @@
     <originFiles name="eight.cpp" path="D:\CNN2.0\hls\cnn\src\eight.cpp"/>
     <originFiles name="fc1_bias.h" path="D:\CNN2.0\hls\cnn\src\fc1_bias.h"/>
     <originFiles name="fc1_weight.h" path="D:\CNN2.0\hls\cnn\src\fc1_weight.h"/>
-    <originFiles name="fcBias.h" path="D:\CNN2.0\hls\cnn\src\fcBias.h"/>
-    <originFiles name="fcWeight.h" path="D:\CNN2.0\hls\cnn\src\fcWeight.h"/>
     <originFiles name="mnist_dataset.h" path="D:\CNN2.0\hls\cnn\src\mnist_dataset.h"/>
     <originFiles name="pool.cpp" path="D:\CNN2.0\hls\cnn\src\pool.cpp"/>
     <originFiles name="pool.h" path="D:\CNN2.0\hls\cnn\src\pool.h"/>
     <originFiles name="testbench.cpp" path="D:\CNN2.0\hls\cnn\src\testbench.cpp"/>
-    <originFiles name="weight1.h" path="D:\CNN2.0\hls\cnn\src\weight1.h"/>
-    <originFiles name="weight2.h" path="D:\CNN2.0\hls\cnn\src\weight2.h"/>
   </source>
   <testbench>
     <originFiles name="testbench.cpp" path="D:\CNN2.0\hls\cnn\src\testbench.cpp"/>

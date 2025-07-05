@@ -5,8 +5,6 @@
 ############################################################
 open_project cnn
 set_top top
-add_files cnn/src/bias1.h
-add_files cnn/src/bias2.h
 add_files cnn/src/conv.cpp
 add_files cnn/src/conv.h
 add_files cnn/src/conv1_bias.h
@@ -18,14 +16,10 @@ add_files cnn/src/dense.h
 add_files cnn/src/eight.cpp
 add_files cnn/src/fc1_bias.h
 add_files cnn/src/fc1_weight.h
-add_files cnn/src/fcBias.h
-add_files cnn/src/fcWeight.h
 add_files cnn/src/mnist_dataset.h
 add_files cnn/src/pool.cpp
 add_files cnn/src/pool.h
 add_files cnn/src/testbench.cpp
-add_files cnn/src/weight1.h
-add_files cnn/src/weight2.h
 add_files -tb cnn/src/testbench.cpp
 open_solution "solution1"
 set_part {xc7k70t-fbv676-1}

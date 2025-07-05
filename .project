@@ -42,16 +42,6 @@
 			<location>D:/CNN2.0/hls/cnn/solution1/.tcls</location>
 		</link>
 		<link>
-			<name>source/bias1.h</name>
-			<type>1</type>
-			<location>D:/CNN2.0/hls/cnn/src/bias1.h</location>
-		</link>
-		<link>
-			<name>source/bias2.h</name>
-			<type>1</type>
-			<location>D:/CNN2.0/hls/cnn/src/bias2.h</location>
-		</link>
-		<link>
 			<name>source/conv.cpp</name>
 			<type>1</type>
 			<location>D:/CNN2.0/hls/cnn/src/conv.cpp</location>
@@ -107,16 +97,6 @@
 			<location>D:/CNN2.0/hls/cnn/src/fc1_weight.h</location>
 		</link>
 		<link>
-			<name>source/fcBias.h</name>
-			<type>1</type>
-			<location>D:/CNN2.0/hls/cnn/src/fcBias.h</location>
-		</link>
-		<link>
-			<name>source/fcWeight.h</name>
-			<type>1</type>
-			<location>D:/CNN2.0/hls/cnn/src/fcWeight.h</location>
-		</link>
-		<link>
 			<name>source/mnist_dataset.h</name>
 			<type>1</type>
 			<location>D:/CNN2.0/hls/cnn/src/mnist_dataset.h</location>
@@ -135,16 +115,6 @@
 			<name>source/testbench.cpp</name>
 			<type>1</type>
 			<location>D:/CNN2.0/hls/cnn/src/testbench.cpp</location>
-		</link>
-		<link>
-			<name>source/weight1.h</name>
-			<type>1</type>
-			<location>D:/CNN2.0/hls/cnn/src/weight1.h</location>
-		</link>
-		<link>
-			<name>source/weight2.h</name>
-			<type>1</type>
-			<location>D:/CNN2.0/hls/cnn/src/weight2.h</location>
 		</link>
 		<link>
 			<name>testbench/testbench.cpp</name>
