@@ -12,8 +12,11 @@
 #include "pool.h"
 
 
-typedef ap_fixed<16, 8> fixed;
+//typedef ap_fixed<16, 8> fixed;
 //typedef float fixed;
+
+//typedef ap_fixed<8, 4> fixed;
+typedef ap_fixed<8, 5> fixed;
 
 void top(
     fixed input[],
@@ -94,6 +97,7 @@ int main() {
                         int idx = 0 * HoutPool * WoutPool + h * 14 + w;
                         if(outputPool[idx]>0) std::cout << "#";
                         else std::cout << ".";
+//                        std::cout << outputPool[idx] << "\t";
                     }
                     std::cout << "\n";
                 }
@@ -105,6 +109,7 @@ int main() {
 					int idx = 0 * HoutPool * WoutPool + h * 14 + w;
 					if(outputConv2[idx]>0) std::cout << "#";
 					else std::cout << ".";
+//					std::cout << outputConv2[idx] << "\t";
 				}
 				std::cout << "\n";
 			}
@@ -115,6 +120,7 @@ int main() {
 							int idx = 0 * HoutPool2 * WoutPool2 + h * 7 + w;
 							if(outputPool2[idx]>0) std::cout << "#";
 							else std::cout << ".";
+//							std::cout << outputPool2[idx] << "\t";
 				}
 				std::cout << "\n";
 			}
@@ -123,10 +129,11 @@ int main() {
 		fixed maxVal = outputDense[0];
 		int predictedVal = 0;
 		for(int p=0; p<10; p++) {
+			std::cout << outputDense[p] << "\t";
 			if(outputDense[p] > maxVal) {maxVal = outputDense[p];
 			predictedVal = p;}
 		}
-		std::cout << "Predicted value: " << predictedVal << std::endl;
+		std::cout << "\nPredicted value: " << predictedVal << std::endl;
 		std::cout << "###############################################" << std::endl;
     }
 

@@ -4963,3 +4963,801 @@ INFO: [SIM 211-3] *************** CSIM finish ***************
 Command   csim_design done; 19.166 sec.
 Command ap_source done; 21.607 sec.
 Execute cleanup_all 
+INFO-FLOW: Workspace D:/CNN2.0/hls/cnn/solution1 opened at Sun Jul 06 01:50:21 +0500 2025
+Execute     config_clock -quiet -name default -period 10 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+WARNING: [HLS 200-40] Cannot find library 'D:/vivado/2020.1/common/technology/xilinx/Kintex-7/Kintex-7.lib'.
+WARNING: [HLS 200-40] Cannot find library 'xilinx/Kintex-7/Kintex-7'.
+WARNING: [HLS 200-40] Cannot find library 'D:/vivado/2020.1/common/technology/xilinx/Kintex-7/Kintex-7_fpv7.lib'.
+WARNING: [HLS 200-40] Cannot find library 'xilinx/Kintex-7/Kintex-7_fpv7'.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib D:/vivado/2020.1/common/technology/xilinx/kintex7/kintex7 
+Execute       source D:/vivado/2020.1/common/technology/xilinx/common/xilinx.lib 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/interface/xilinx_interface.lib 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/plb46.lib 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/fsl.lib 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/axi4.lib 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/maxi.lib 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/saxilite.lib 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/common/dsp48.lib 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/ip/dds_compiler.lib 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/ip/xfft.lib 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/ip/xfir.lib 
+Execute       source D:/vivado/2020.1/common/technology/xilinx/common/xilinx.hlp 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/common/target_info.tcl 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/maxi.hlp 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/common/dsp48.hlp 
+Execute       source D:/vivado/2020.1/common/technology/xilinx/kintex7/dsp48e1.hlp 
+Execute       source D:/vivado/2020.1/common/technology/xilinx/common/xilinx.hlp 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/common/target_info.tcl 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/maxi.hlp 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/common/dsp48.hlp 
+Execute     source D:/vivado/2020.1/common/technology/xilinx/kintex7/kintex7.gen 
+Execute       source D:/vivado/2020.1/common/technology/xilinx/common/xilinx.gen 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/interface/plb46.gen 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/interface/fsl.gen 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/interface/axi4.gen 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/saxilite.gen 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/maxi.gen 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/ip/util.gen 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/ip/xfft.gen 
+Command         ap_source done; 0.201 sec.
+Execute         source D:/vivado/2020.1/common/technology/xilinx/ip/xfir.gen 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/common/dsp48.gen 
+Command       ap_source done; 0.314 sec.
+Command     ap_source done; 0.316 sec.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib D:/vivado/2020.1/common/technology/xilinx/kintex7/kintex7_fpv6 
+Execute       source D:/vivado/2020.1/common/technology/xilinx/common/xilinx_fp.lib 
+Execute       source D:/vivado/2020.1/common/technology/xilinx/common/xilinx_fp.hlp 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/common/xilinx.hlp 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/common/target_info.tcl 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute             source D:/vivado/2020.1/common/technology/xilinx/interface/maxi.hlp 
+Execute             source D:/vivado/2020.1/common/technology/xilinx/interface/saxilite.hlp 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/common/dsp48.hlp 
+Execute     source D:/vivado/2020.1/common/technology/xilinx/kintex7/kintex7_fpv6.gen 
+Execute       source D:/vivado/2020.1/common/technology/xilinx/common/xilinx_fp.gen 
+Execute     set_part xc7k70t-fbv676-1 
+Execute       ap_part_info -name xc7k70t-fbv676-1 -data single -quiet 
+Command       ap_part_info done; 1.106 sec.
+Execute       ap_part_info -name xc7k70t-fbv676-1 -data info 
+Execute       add_library xilinx/kintex7/kintex7:xc7k70t:-fbv676:-1 
+Execute         get_default_platform 
+Execute         ap_part_info -data single -name xc7k70t-fbv676-1 
+Execute         ap_part_info -name xc7k70t-fbv676-1 -data resources 
+Execute         ap_part_info -name xc7k70t-fbv676-1 -data info 
+Execute         ap_part_info -name xc7k70t-fbv676-1 -data info 
+Execute         config_chip_info -quiet -resource {SLICE 10250} {LUT 41000} {FF 82000} {DSP48E 240} {BRAM 270} {URAM 0} 
+Execute         ap_part_info -name xc7k70t-fbv676-1 -data info 
+Execute         config_chip_info -quiet -speed slow 
+Execute       add_library xilinx/kintex7/kintex7_fpv6 
+Execute         get_default_platform 
+INFO: [HLS 200-10] Setting target device to 'xc7k70t-fbv676-1'
+Execute       ap_part_info -name xc7k70t-fbv676-1 -data info 
+Execute       get_default_platform 
+Command     set_part done; 1.411 sec.
+Execute     ap_part_info -data single -name xc7k70t-fbv676-1 
+Execute     ap_part_info -name xc7k70t-fbv676-1 -data resources 
+Execute     ap_part_info -name xc7k70t-fbv676-1 -data info 
+Execute     ap_part_info -name xc7k70t-fbv676-1 -data info 
+Execute     config_chip_info -quiet -resource {SLICE 10250} {LUT 41000} {FF 82000} {DSP48E 240} {BRAM 270} {URAM 0} 
+Execute     ap_part_info -name xc7k70t-fbv676-1 -data info 
+Execute     config_chip_info -quiet -speed slow 
+Command   open_solution done; 1.874 sec.
+Execute   csim_design -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/testbench.cpp 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/testbench.cpp 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/conv.cpp 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/conv.cpp 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/conv.h 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/conv.h 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/conv1_bias.h 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/conv1_bias.h 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/conv1_weight.h 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/conv1_weight.h 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/conv2_bias.h 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/conv2_bias.h 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/conv2_weight.h 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/conv2_weight.h 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/dense.cpp 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/dense.cpp 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/dense.h 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/dense.h 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/eight.cpp 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/eight.cpp 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/fc1_bias.h 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/fc1_bias.h 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/fc1_weight.h 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/fc1_weight.h 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/mnist_dataset.h 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/mnist_dataset.h 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/pool.cpp 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/pool.cpp 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/pool.h 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/pool.h 
+Execute     ap_part_info -name xc7k70t-fbv676-1 -data info 
+Execute     source run_sim.tcl 
+Command     ap_source done; 1.105 sec.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+Command   csim_design done; 19.7 sec.
+Command ap_source done; 21.588 sec.
+Execute cleanup_all 
+INFO-FLOW: Workspace D:/CNN2.0/hls/cnn/solution1 opened at Sun Jul 06 14:54:10 +0500 2025
+Execute     config_clock -quiet -name default -period 10 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+WARNING: [HLS 200-40] Cannot find library 'D:/vivado/2020.1/common/technology/xilinx/Kintex-7/Kintex-7.lib'.
+WARNING: [HLS 200-40] Cannot find library 'xilinx/Kintex-7/Kintex-7'.
+WARNING: [HLS 200-40] Cannot find library 'D:/vivado/2020.1/common/technology/xilinx/Kintex-7/Kintex-7_fpv7.lib'.
+WARNING: [HLS 200-40] Cannot find library 'xilinx/Kintex-7/Kintex-7_fpv7'.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib D:/vivado/2020.1/common/technology/xilinx/kintex7/kintex7 
+Execute       source D:/vivado/2020.1/common/technology/xilinx/common/xilinx.lib 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/interface/xilinx_interface.lib 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/plb46.lib 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/fsl.lib 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/axi4.lib 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/maxi.lib 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/saxilite.lib 
+Command         ap_source done; 0.265 sec.
+Execute         source D:/vivado/2020.1/common/technology/xilinx/common/dsp48.lib 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/ip/dds_compiler.lib 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/ip/xfft.lib 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/ip/xfir.lib 
+Command       ap_source done; 0.399 sec.
+Execute       source D:/vivado/2020.1/common/technology/xilinx/common/xilinx.hlp 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/common/target_info.tcl 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/maxi.hlp 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/common/dsp48.hlp 
+Command       ap_source done; 0.188 sec.
+Execute       source D:/vivado/2020.1/common/technology/xilinx/kintex7/dsp48e1.hlp 
+Execute       source D:/vivado/2020.1/common/technology/xilinx/common/xilinx.hlp 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/common/target_info.tcl 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/maxi.hlp 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/common/dsp48.hlp 
+Command     import_lib done; 0.67 sec.
+Execute     source D:/vivado/2020.1/common/technology/xilinx/kintex7/kintex7.gen 
+Execute       source D:/vivado/2020.1/common/technology/xilinx/common/xilinx.gen 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/interface/plb46.gen 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/interface/fsl.gen 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/interface/axi4.gen 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/saxilite.gen 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/maxi.gen 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/ip/util.gen 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/ip/xfft.gen 
+Command         ap_source done; 0.18 sec.
+Execute         source D:/vivado/2020.1/common/technology/xilinx/ip/xfir.gen 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/common/dsp48.gen 
+Command       ap_source done; 0.547 sec.
+Command     ap_source done; 0.558 sec.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib D:/vivado/2020.1/common/technology/xilinx/kintex7/kintex7_fpv6 
+Execute       source D:/vivado/2020.1/common/technology/xilinx/common/xilinx_fp.lib 
+Execute       source D:/vivado/2020.1/common/technology/xilinx/common/xilinx_fp.hlp 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/common/xilinx.hlp 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/common/target_info.tcl 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute             source D:/vivado/2020.1/common/technology/xilinx/interface/maxi.hlp 
+Execute             source D:/vivado/2020.1/common/technology/xilinx/interface/saxilite.hlp 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/common/dsp48.hlp 
+Execute     source D:/vivado/2020.1/common/technology/xilinx/kintex7/kintex7_fpv6.gen 
+Execute       source D:/vivado/2020.1/common/technology/xilinx/common/xilinx_fp.gen 
+Execute     set_part xc7k70t-fbv676-1 
+Execute       ap_part_info -name xc7k70t-fbv676-1 -data single -quiet 
+Command       ap_part_info done; 1.773 sec.
+Execute       ap_part_info -name xc7k70t-fbv676-1 -data info 
+Execute       add_library xilinx/kintex7/kintex7:xc7k70t:-fbv676:-1 
+Execute         get_default_platform 
+Execute         ap_part_info -data single -name xc7k70t-fbv676-1 
+Execute         ap_part_info -name xc7k70t-fbv676-1 -data resources 
+Execute         ap_part_info -name xc7k70t-fbv676-1 -data info 
+Execute         ap_part_info -name xc7k70t-fbv676-1 -data info 
+Execute         config_chip_info -quiet -resource {SLICE 10250} {LUT 41000} {FF 82000} {DSP48E 240} {BRAM 270} {URAM 0} 
+Execute         ap_part_info -name xc7k70t-fbv676-1 -data info 
+Execute         config_chip_info -quiet -speed slow 
+Command       add_library done; 0.143 sec.
+Execute       add_library xilinx/kintex7/kintex7_fpv6 
+Execute         get_default_platform 
+INFO: [HLS 200-10] Setting target device to 'xc7k70t-fbv676-1'
+Execute       ap_part_info -name xc7k70t-fbv676-1 -data info 
+Execute       get_default_platform 
+Command     set_part done; 2.426 sec.
+Execute     ap_part_info -data single -name xc7k70t-fbv676-1 
+Execute     ap_part_info -name xc7k70t-fbv676-1 -data resources 
+Execute     ap_part_info -name xc7k70t-fbv676-1 -data info 
+Execute     ap_part_info -name xc7k70t-fbv676-1 -data info 
+Execute     config_chip_info -quiet -resource {SLICE 10250} {LUT 41000} {FF 82000} {DSP48E 240} {BRAM 270} {URAM 0} 
+Execute     ap_part_info -name xc7k70t-fbv676-1 -data info 
+Execute     config_chip_info -quiet -speed slow 
+Command   open_solution done; 4.037 sec.
+Execute   csim_design -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/testbench.cpp 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/testbench.cpp 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/conv.cpp 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/conv.cpp 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/conv.h 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/conv.h 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/conv1_bias.h 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/conv1_bias.h 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/conv1_weight.h 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/conv1_weight.h 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/conv2_bias.h 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/conv2_bias.h 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/conv2_weight.h 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/conv2_weight.h 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/dense.cpp 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/dense.cpp 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/dense.h 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/dense.h 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/eight.cpp 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/eight.cpp 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/fc1_bias.h 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/fc1_bias.h 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/fc1_weight.h 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/fc1_weight.h 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/mnist_dataset.h 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/mnist_dataset.h 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/pool.cpp 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/pool.cpp 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/pool.h 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/pool.h 
+Execute     ap_part_info -name xc7k70t-fbv676-1 -data info 
+Execute     source run_sim.tcl 
+Command     ap_source done; 1.701 sec.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+Command   csim_design done; 30.999 sec.
+Command ap_source done; 35.152 sec.
+Execute cleanup_all 
+INFO-FLOW: Workspace D:/CNN2.0/hls/cnn/solution1 opened at Sun Jul 06 14:58:22 +0500 2025
+Execute     config_clock -quiet -name default -period 10 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+WARNING: [HLS 200-40] Cannot find library 'D:/vivado/2020.1/common/technology/xilinx/Kintex-7/Kintex-7.lib'.
+WARNING: [HLS 200-40] Cannot find library 'xilinx/Kintex-7/Kintex-7'.
+WARNING: [HLS 200-40] Cannot find library 'D:/vivado/2020.1/common/technology/xilinx/Kintex-7/Kintex-7_fpv7.lib'.
+WARNING: [HLS 200-40] Cannot find library 'xilinx/Kintex-7/Kintex-7_fpv7'.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib D:/vivado/2020.1/common/technology/xilinx/kintex7/kintex7 
+Execute       source D:/vivado/2020.1/common/technology/xilinx/common/xilinx.lib 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/interface/xilinx_interface.lib 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/plb46.lib 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/fsl.lib 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/axi4.lib 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/maxi.lib 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/saxilite.lib 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/common/dsp48.lib 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/ip/dds_compiler.lib 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/ip/xfft.lib 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/ip/xfir.lib 
+Execute       source D:/vivado/2020.1/common/technology/xilinx/common/xilinx.hlp 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/common/target_info.tcl 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/maxi.hlp 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/common/dsp48.hlp 
+Execute       source D:/vivado/2020.1/common/technology/xilinx/kintex7/dsp48e1.hlp 
+Execute       source D:/vivado/2020.1/common/technology/xilinx/common/xilinx.hlp 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/common/target_info.tcl 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/maxi.hlp 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/common/dsp48.hlp 
+Execute     source D:/vivado/2020.1/common/technology/xilinx/kintex7/kintex7.gen 
+Execute       source D:/vivado/2020.1/common/technology/xilinx/common/xilinx.gen 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/interface/plb46.gen 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/interface/fsl.gen 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/interface/axi4.gen 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/saxilite.gen 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/maxi.gen 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/ip/util.gen 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/ip/xfft.gen 
+Command         ap_source done; 0.228 sec.
+Execute         source D:/vivado/2020.1/common/technology/xilinx/ip/xfir.gen 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/common/dsp48.gen 
+Command       ap_source done; 0.386 sec.
+Command     ap_source done; 0.387 sec.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib D:/vivado/2020.1/common/technology/xilinx/kintex7/kintex7_fpv6 
+Execute       source D:/vivado/2020.1/common/technology/xilinx/common/xilinx_fp.lib 
+Execute       source D:/vivado/2020.1/common/technology/xilinx/common/xilinx_fp.hlp 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/common/xilinx.hlp 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/common/target_info.tcl 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute             source D:/vivado/2020.1/common/technology/xilinx/interface/maxi.hlp 
+Execute             source D:/vivado/2020.1/common/technology/xilinx/interface/saxilite.hlp 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/common/dsp48.hlp 
+Execute     source D:/vivado/2020.1/common/technology/xilinx/kintex7/kintex7_fpv6.gen 
+Execute       source D:/vivado/2020.1/common/technology/xilinx/common/xilinx_fp.gen 
+Execute     set_part xc7k70t-fbv676-1 
+Execute       ap_part_info -name xc7k70t-fbv676-1 -data single -quiet 
+Command       ap_part_info done; 1.378 sec.
+Execute       ap_part_info -name xc7k70t-fbv676-1 -data info 
+Execute       add_library xilinx/kintex7/kintex7:xc7k70t:-fbv676:-1 
+Execute         get_default_platform 
+Execute         ap_part_info -data single -name xc7k70t-fbv676-1 
+Execute         ap_part_info -name xc7k70t-fbv676-1 -data resources 
+Execute         ap_part_info -name xc7k70t-fbv676-1 -data info 
+Execute         ap_part_info -name xc7k70t-fbv676-1 -data info 
+Execute         config_chip_info -quiet -resource {SLICE 10250} {LUT 41000} {FF 82000} {DSP48E 240} {BRAM 270} {URAM 0} 
+Execute         ap_part_info -name xc7k70t-fbv676-1 -data info 
+Execute         config_chip_info -quiet -speed slow 
+Command       add_library done; 0.112 sec.
+Execute       add_library xilinx/kintex7/kintex7_fpv6 
+Execute         get_default_platform 
+INFO: [HLS 200-10] Setting target device to 'xc7k70t-fbv676-1'
+Execute       ap_part_info -name xc7k70t-fbv676-1 -data info 
+Execute       get_default_platform 
+Command     set_part done; 1.86 sec.
+Execute     ap_part_info -data single -name xc7k70t-fbv676-1 
+Execute     ap_part_info -name xc7k70t-fbv676-1 -data resources 
+Execute     ap_part_info -name xc7k70t-fbv676-1 -data info 
+Execute     ap_part_info -name xc7k70t-fbv676-1 -data info 
+Execute     config_chip_info -quiet -resource {SLICE 10250} {LUT 41000} {FF 82000} {DSP48E 240} {BRAM 270} {URAM 0} 
+Execute     ap_part_info -name xc7k70t-fbv676-1 -data info 
+Execute     config_chip_info -quiet -speed slow 
+Command   open_solution done; 2.506 sec.
+Execute   csim_design -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/testbench.cpp 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/testbench.cpp 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/conv.cpp 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/conv.cpp 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/conv.h 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/conv.h 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/conv1_bias.h 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/conv1_bias.h 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/conv1_weight.h 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/conv1_weight.h 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/conv2_bias.h 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/conv2_bias.h 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/conv2_weight.h 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/conv2_weight.h 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/dense.cpp 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/dense.cpp 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/dense.h 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/dense.h 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/eight.cpp 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/eight.cpp 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/fc1_bias.h 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/fc1_bias.h 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/fc1_weight.h 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/fc1_weight.h 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/mnist_dataset.h 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/mnist_dataset.h 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/pool.cpp 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/pool.cpp 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/pool.h 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/pool.h 
+Execute     ap_part_info -name xc7k70t-fbv676-1 -data info 
+Execute     source run_sim.tcl 
+Command     ap_source done; 1.589 sec.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+Command   csim_design done; 13.982 sec.
+Command ap_source done; 16.503 sec.
+Execute cleanup_all 
+INFO-FLOW: Workspace D:/CNN2.0/hls/cnn/solution1 opened at Sun Jul 06 15:06:00 +0500 2025
+Execute     config_clock -quiet -name default -period 10 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+WARNING: [HLS 200-40] Cannot find library 'D:/vivado/2020.1/common/technology/xilinx/Kintex-7/Kintex-7.lib'.
+WARNING: [HLS 200-40] Cannot find library 'xilinx/Kintex-7/Kintex-7'.
+WARNING: [HLS 200-40] Cannot find library 'D:/vivado/2020.1/common/technology/xilinx/Kintex-7/Kintex-7_fpv7.lib'.
+WARNING: [HLS 200-40] Cannot find library 'xilinx/Kintex-7/Kintex-7_fpv7'.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib D:/vivado/2020.1/common/technology/xilinx/kintex7/kintex7 
+Execute       source D:/vivado/2020.1/common/technology/xilinx/common/xilinx.lib 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/interface/xilinx_interface.lib 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/plb46.lib 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/fsl.lib 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/axi4.lib 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/maxi.lib 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/saxilite.lib 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/common/dsp48.lib 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/ip/dds_compiler.lib 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/ip/xfft.lib 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/ip/xfir.lib 
+Execute       source D:/vivado/2020.1/common/technology/xilinx/common/xilinx.hlp 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/common/target_info.tcl 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/maxi.hlp 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/common/dsp48.hlp 
+Execute       source D:/vivado/2020.1/common/technology/xilinx/kintex7/dsp48e1.hlp 
+Execute       source D:/vivado/2020.1/common/technology/xilinx/common/xilinx.hlp 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/common/target_info.tcl 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/maxi.hlp 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/common/dsp48.hlp 
+Execute     source D:/vivado/2020.1/common/technology/xilinx/kintex7/kintex7.gen 
+Execute       source D:/vivado/2020.1/common/technology/xilinx/common/xilinx.gen 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/interface/plb46.gen 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/interface/fsl.gen 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/interface/axi4.gen 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/saxilite.gen 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/maxi.gen 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/ip/util.gen 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/ip/xfft.gen 
+Command         ap_source done; 0.273 sec.
+Execute         source D:/vivado/2020.1/common/technology/xilinx/ip/xfir.gen 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/common/dsp48.gen 
+Command       ap_source done; 0.412 sec.
+Command     ap_source done; 0.413 sec.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib D:/vivado/2020.1/common/technology/xilinx/kintex7/kintex7_fpv6 
+Execute       source D:/vivado/2020.1/common/technology/xilinx/common/xilinx_fp.lib 
+Execute       source D:/vivado/2020.1/common/technology/xilinx/common/xilinx_fp.hlp 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/common/xilinx.hlp 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/common/target_info.tcl 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute             source D:/vivado/2020.1/common/technology/xilinx/interface/maxi.hlp 
+Execute             source D:/vivado/2020.1/common/technology/xilinx/interface/saxilite.hlp 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/common/dsp48.hlp 
+Execute     source D:/vivado/2020.1/common/technology/xilinx/kintex7/kintex7_fpv6.gen 
+Execute       source D:/vivado/2020.1/common/technology/xilinx/common/xilinx_fp.gen 
+Execute     set_part xc7k70t-fbv676-1 
+Execute       ap_part_info -name xc7k70t-fbv676-1 -data single -quiet 
+Command       ap_part_info done; 1.244 sec.
+Execute       ap_part_info -name xc7k70t-fbv676-1 -data info 
+Execute       add_library xilinx/kintex7/kintex7:xc7k70t:-fbv676:-1 
+Execute         get_default_platform 
+Execute         ap_part_info -data single -name xc7k70t-fbv676-1 
+Execute         ap_part_info -name xc7k70t-fbv676-1 -data resources 
+Execute         ap_part_info -name xc7k70t-fbv676-1 -data info 
+Execute         ap_part_info -name xc7k70t-fbv676-1 -data info 
+Execute         config_chip_info -quiet -resource {SLICE 10250} {LUT 41000} {FF 82000} {DSP48E 240} {BRAM 270} {URAM 0} 
+Execute         ap_part_info -name xc7k70t-fbv676-1 -data info 
+Execute         config_chip_info -quiet -speed slow 
+Execute       add_library xilinx/kintex7/kintex7_fpv6 
+Execute         get_default_platform 
+INFO: [HLS 200-10] Setting target device to 'xc7k70t-fbv676-1'
+Execute       ap_part_info -name xc7k70t-fbv676-1 -data info 
+Execute       get_default_platform 
+Command     set_part done; 1.71 sec.
+Execute     ap_part_info -data single -name xc7k70t-fbv676-1 
+Execute     ap_part_info -name xc7k70t-fbv676-1 -data resources 
+Execute     ap_part_info -name xc7k70t-fbv676-1 -data info 
+Execute     ap_part_info -name xc7k70t-fbv676-1 -data info 
+Execute     config_chip_info -quiet -resource {SLICE 10250} {LUT 41000} {FF 82000} {DSP48E 240} {BRAM 270} {URAM 0} 
+Execute     ap_part_info -name xc7k70t-fbv676-1 -data info 
+Execute     config_chip_info -quiet -speed slow 
+Command   open_solution done; 2.347 sec.
+Execute   csim_design -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/testbench.cpp 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/testbench.cpp 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/conv.cpp 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/conv.cpp 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/conv.h 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/conv.h 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/conv1_bias.h 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/conv1_bias.h 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/conv1_weight.h 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/conv1_weight.h 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/conv2_bias.h 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/conv2_bias.h 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/conv2_weight.h 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/conv2_weight.h 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/dense.cpp 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/dense.cpp 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/dense.h 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/dense.h 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/eight.cpp 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/eight.cpp 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/fc1_bias.h 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/fc1_bias.h 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/fc1_weight.h 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/fc1_weight.h 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/mnist_dataset.h 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/mnist_dataset.h 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/pool.cpp 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/pool.cpp 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/pool.h 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/pool.h 
+Execute     ap_part_info -name xc7k70t-fbv676-1 -data info 
+Execute     source run_sim.tcl 
+Command     ap_source done; 1.433 sec.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+Command   csim_design done; 24.337 sec.
+Command ap_source done; 26.695 sec.
+Execute cleanup_all 
+INFO-FLOW: Workspace D:/CNN2.0/hls/cnn/solution1 opened at Sun Jul 06 15:07:27 +0500 2025
+Execute     config_clock -quiet -name default -period 10 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+WARNING: [HLS 200-40] Cannot find library 'D:/vivado/2020.1/common/technology/xilinx/Kintex-7/Kintex-7.lib'.
+WARNING: [HLS 200-40] Cannot find library 'xilinx/Kintex-7/Kintex-7'.
+WARNING: [HLS 200-40] Cannot find library 'D:/vivado/2020.1/common/technology/xilinx/Kintex-7/Kintex-7_fpv7.lib'.
+WARNING: [HLS 200-40] Cannot find library 'xilinx/Kintex-7/Kintex-7_fpv7'.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib D:/vivado/2020.1/common/technology/xilinx/kintex7/kintex7 
+Execute       source D:/vivado/2020.1/common/technology/xilinx/common/xilinx.lib 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/interface/xilinx_interface.lib 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/plb46.lib 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/fsl.lib 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/axi4.lib 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/maxi.lib 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/saxilite.lib 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/common/dsp48.lib 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/ip/dds_compiler.lib 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/ip/xfft.lib 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/ip/xfir.lib 
+Execute       source D:/vivado/2020.1/common/technology/xilinx/common/xilinx.hlp 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/common/target_info.tcl 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/maxi.hlp 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/common/dsp48.hlp 
+Execute       source D:/vivado/2020.1/common/technology/xilinx/kintex7/dsp48e1.hlp 
+Execute       source D:/vivado/2020.1/common/technology/xilinx/common/xilinx.hlp 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/common/target_info.tcl 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/maxi.hlp 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/common/dsp48.hlp 
+Execute     source D:/vivado/2020.1/common/technology/xilinx/kintex7/kintex7.gen 
+Execute       source D:/vivado/2020.1/common/technology/xilinx/common/xilinx.gen 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/interface/plb46.gen 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/interface/fsl.gen 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/interface/axi4.gen 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/saxilite.gen 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/maxi.gen 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/ip/util.gen 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/ip/xfft.gen 
+Command         ap_source done; 0.197 sec.
+Execute         source D:/vivado/2020.1/common/technology/xilinx/ip/xfir.gen 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/common/dsp48.gen 
+Command       ap_source done; 0.321 sec.
+Command     ap_source done; 0.322 sec.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib D:/vivado/2020.1/common/technology/xilinx/kintex7/kintex7_fpv6 
+Execute       source D:/vivado/2020.1/common/technology/xilinx/common/xilinx_fp.lib 
+Execute       source D:/vivado/2020.1/common/technology/xilinx/common/xilinx_fp.hlp 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/common/xilinx.hlp 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/common/target_info.tcl 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute             source D:/vivado/2020.1/common/technology/xilinx/interface/maxi.hlp 
+Execute             source D:/vivado/2020.1/common/technology/xilinx/interface/saxilite.hlp 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/common/dsp48.hlp 
+Execute     source D:/vivado/2020.1/common/technology/xilinx/kintex7/kintex7_fpv6.gen 
+Execute       source D:/vivado/2020.1/common/technology/xilinx/common/xilinx_fp.gen 
+Execute     set_part xc7k70t-fbv676-1 
+Execute       ap_part_info -name xc7k70t-fbv676-1 -data single -quiet 
+Command       ap_part_info done; 1.228 sec.
+Execute       ap_part_info -name xc7k70t-fbv676-1 -data info 
+Execute       add_library xilinx/kintex7/kintex7:xc7k70t:-fbv676:-1 
+Execute         get_default_platform 
+Execute         ap_part_info -data single -name xc7k70t-fbv676-1 
+Execute         ap_part_info -name xc7k70t-fbv676-1 -data resources 
+Execute         ap_part_info -name xc7k70t-fbv676-1 -data info 
+Execute         ap_part_info -name xc7k70t-fbv676-1 -data info 
+Execute         config_chip_info -quiet -resource {SLICE 10250} {LUT 41000} {FF 82000} {DSP48E 240} {BRAM 270} {URAM 0} 
+Execute         ap_part_info -name xc7k70t-fbv676-1 -data info 
+Execute         config_chip_info -quiet -speed slow 
+Execute       add_library xilinx/kintex7/kintex7_fpv6 
+Execute         get_default_platform 
+INFO: [HLS 200-10] Setting target device to 'xc7k70t-fbv676-1'
+Execute       ap_part_info -name xc7k70t-fbv676-1 -data info 
+Execute       get_default_platform 
+Command     set_part done; 1.608 sec.
+Execute     ap_part_info -data single -name xc7k70t-fbv676-1 
+Execute     ap_part_info -name xc7k70t-fbv676-1 -data resources 
+Execute     ap_part_info -name xc7k70t-fbv676-1 -data info 
+Execute     ap_part_info -name xc7k70t-fbv676-1 -data info 
+Execute     config_chip_info -quiet -resource {SLICE 10250} {LUT 41000} {FF 82000} {DSP48E 240} {BRAM 270} {URAM 0} 
+Execute     ap_part_info -name xc7k70t-fbv676-1 -data info 
+Execute     config_chip_info -quiet -speed slow 
+Command   open_solution done; 2.119 sec.
+Execute   csim_design -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/testbench.cpp 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/testbench.cpp 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/conv.cpp 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/conv.cpp 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/conv.h 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/conv.h 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/conv1_bias.h 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/conv1_bias.h 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/conv1_weight.h 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/conv1_weight.h 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/conv2_bias.h 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/conv2_bias.h 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/conv2_weight.h 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/conv2_weight.h 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/dense.cpp 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/dense.cpp 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/dense.h 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/dense.h 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/eight.cpp 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/eight.cpp 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/fc1_bias.h 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/fc1_bias.h 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/fc1_weight.h 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/fc1_weight.h 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/mnist_dataset.h 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/mnist_dataset.h 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/pool.cpp 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/pool.cpp 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/pool.h 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/pool.h 
+Execute     ap_part_info -name xc7k70t-fbv676-1 -data info 
+Execute     source run_sim.tcl 
+Command     ap_source done; 1.153 sec.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+Command   csim_design done; 11.411 sec.
+Command ap_source done; 13.541 sec.
+Execute cleanup_all 
+INFO-FLOW: Workspace D:/CNN2.0/hls/cnn/solution1 opened at Sun Jul 06 15:09:05 +0500 2025
+Execute     config_clock -quiet -name default -period 10 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+WARNING: [HLS 200-40] Cannot find library 'D:/vivado/2020.1/common/technology/xilinx/Kintex-7/Kintex-7.lib'.
+WARNING: [HLS 200-40] Cannot find library 'xilinx/Kintex-7/Kintex-7'.
+WARNING: [HLS 200-40] Cannot find library 'D:/vivado/2020.1/common/technology/xilinx/Kintex-7/Kintex-7_fpv7.lib'.
+WARNING: [HLS 200-40] Cannot find library 'xilinx/Kintex-7/Kintex-7_fpv7'.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib D:/vivado/2020.1/common/technology/xilinx/kintex7/kintex7 
+Execute       source D:/vivado/2020.1/common/technology/xilinx/common/xilinx.lib 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/interface/xilinx_interface.lib 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/plb46.lib 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/fsl.lib 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/axi4.lib 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/maxi.lib 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/saxilite.lib 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/common/dsp48.lib 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/ip/dds_compiler.lib 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/ip/xfft.lib 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/ip/xfir.lib 
+Execute       source D:/vivado/2020.1/common/technology/xilinx/common/xilinx.hlp 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/common/target_info.tcl 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/maxi.hlp 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/common/dsp48.hlp 
+Execute       source D:/vivado/2020.1/common/technology/xilinx/kintex7/dsp48e1.hlp 
+Execute       source D:/vivado/2020.1/common/technology/xilinx/common/xilinx.hlp 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/common/target_info.tcl 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/maxi.hlp 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/common/dsp48.hlp 
+Execute     source D:/vivado/2020.1/common/technology/xilinx/kintex7/kintex7.gen 
+Execute       source D:/vivado/2020.1/common/technology/xilinx/common/xilinx.gen 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/interface/plb46.gen 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/interface/fsl.gen 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/interface/axi4.gen 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/saxilite.gen 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/maxi.gen 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/ip/util.gen 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/ip/xfft.gen 
+Command         ap_source done; 0.178 sec.
+Execute         source D:/vivado/2020.1/common/technology/xilinx/ip/xfir.gen 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/common/dsp48.gen 
+Command       ap_source done; 0.283 sec.
+Command     ap_source done; 0.284 sec.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib D:/vivado/2020.1/common/technology/xilinx/kintex7/kintex7_fpv6 
+Execute       source D:/vivado/2020.1/common/technology/xilinx/common/xilinx_fp.lib 
+Execute       source D:/vivado/2020.1/common/technology/xilinx/common/xilinx_fp.hlp 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/common/xilinx.hlp 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/common/target_info.tcl 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute             source D:/vivado/2020.1/common/technology/xilinx/interface/maxi.hlp 
+Execute             source D:/vivado/2020.1/common/technology/xilinx/interface/saxilite.hlp 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/common/dsp48.hlp 
+Execute     source D:/vivado/2020.1/common/technology/xilinx/kintex7/kintex7_fpv6.gen 
+Execute       source D:/vivado/2020.1/common/technology/xilinx/common/xilinx_fp.gen 
+Execute     set_part xc7k70t-fbv676-1 
+Execute       ap_part_info -name xc7k70t-fbv676-1 -data single -quiet 
+Command       ap_part_info done; 1.097 sec.
+Execute       ap_part_info -name xc7k70t-fbv676-1 -data info 
+Execute       add_library xilinx/kintex7/kintex7:xc7k70t:-fbv676:-1 
+Execute         get_default_platform 
+Execute         ap_part_info -data single -name xc7k70t-fbv676-1 
+Execute         ap_part_info -name xc7k70t-fbv676-1 -data resources 
+Execute         ap_part_info -name xc7k70t-fbv676-1 -data info 
+Execute         ap_part_info -name xc7k70t-fbv676-1 -data info 
+Execute         config_chip_info -quiet -resource {SLICE 10250} {LUT 41000} {FF 82000} {DSP48E 240} {BRAM 270} {URAM 0} 
+Execute         ap_part_info -name xc7k70t-fbv676-1 -data info 
+Execute         config_chip_info -quiet -speed slow 
+Execute       add_library xilinx/kintex7/kintex7_fpv6 
+Execute         get_default_platform 
+INFO: [HLS 200-10] Setting target device to 'xc7k70t-fbv676-1'
+Execute       ap_part_info -name xc7k70t-fbv676-1 -data info 
+Execute       get_default_platform 
+Command     set_part done; 1.417 sec.
+Execute     ap_part_info -data single -name xc7k70t-fbv676-1 
+Execute     ap_part_info -name xc7k70t-fbv676-1 -data resources 
+Execute     ap_part_info -name xc7k70t-fbv676-1 -data info 
+Execute     ap_part_info -name xc7k70t-fbv676-1 -data info 
+Execute     config_chip_info -quiet -resource {SLICE 10250} {LUT 41000} {FF 82000} {DSP48E 240} {BRAM 270} {URAM 0} 
+Execute     ap_part_info -name xc7k70t-fbv676-1 -data info 
+Execute     config_chip_info -quiet -speed slow 
+Command   open_solution done; 1.86 sec.
+Execute   csim_design -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/testbench.cpp 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/testbench.cpp 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/conv.cpp 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/conv.cpp 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/conv.h 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/conv.h 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/conv1_bias.h 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/conv1_bias.h 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/conv1_weight.h 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/conv1_weight.h 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/conv2_bias.h 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/conv2_bias.h 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/conv2_weight.h 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/conv2_weight.h 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/dense.cpp 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/dense.cpp 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/dense.h 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/dense.h 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/eight.cpp 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/eight.cpp 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/fc1_bias.h 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/fc1_bias.h 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/fc1_weight.h 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/fc1_weight.h 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/mnist_dataset.h 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/mnist_dataset.h 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/pool.cpp 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/pool.cpp 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/pool.h 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/pool.h 
+Execute     ap_part_info -name xc7k70t-fbv676-1 -data info 
+Execute     source run_sim.tcl 
+Command     ap_source done; 1.198 sec.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+Command   csim_design done; 11.837 sec.
+Command ap_source done; 13.707 sec.
+Execute cleanup_all 
