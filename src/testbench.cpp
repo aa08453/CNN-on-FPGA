@@ -10,6 +10,7 @@
 #include "fc1_bias.h"
 #include "conv.h"
 #include "pool.h"
+#include "labels.h"
 
 
 //typedef ap_fixed<16, 8> fixed;
@@ -59,7 +60,9 @@ int main() {
     fixed outputPool2[Cout2*HoutPool2*WoutPool2];
     fixed outputDense[10];
 
-    for (int img = 0; img < 5; img++) { // Try 5 images for now
+    int correct =0;
+
+    for (int img = 0; img < 50; img++) { // Try 5 images for now
         std::cout << "Testing image " << img << ":\n";
 
         for (int h = 0; h < H; h++) {
@@ -78,64 +81,66 @@ int main() {
 				outputDense,
 				fc1_weight, fc1_bias);
 
-        // Print output for channel 0
-        std::cout << "Output Channel 0";
-        for (int h = 0; h < 28; h++) {
-            for (int w = 0; w < 28; w++) {
-                int idx = 0 * HoutConv * WoutConv + h * WoutConv + w;
-                if(outputImage[idx]>0) std::cout << "#";
-                else std::cout << ".";
-//                std::cout << outputImage[idx] << "\t";
-            }
-            std::cout << "\n";
-        }
-
-        std::cout << "-----------------------------------\n";
-
-        for (int h = 0; h < 14; h++) {
-                    for (int w = 0; w < 14; w++) {
-                        int idx = 0 * HoutPool * WoutPool + h * 14 + w;
-                        if(outputPool[idx]>0) std::cout << "#";
-                        else std::cout << ".";
-//                        std::cout << outputPool[idx] << "\t";
-                    }
-                    std::cout << "\n";
-                }
-
-                std::cout << "-----------------------------------\n";
-
-		for (int h = 0; h < 14; h++) {
-				for (int w = 0; w < 14; w++) {
-					int idx = 0 * HoutPool * WoutPool + h * 14 + w;
-					if(outputConv2[idx]>0) std::cout << "#";
-					else std::cout << ".";
-//					std::cout << outputConv2[idx] << "\t";
-				}
-				std::cout << "\n";
-			}
-
-				std::cout << "-----------------------------------\n";
-		for (int h = 0; h < 7; h++) {
-						for (int w = 0; w < 7; w++) {
-							int idx = 0 * HoutPool2 * WoutPool2 + h * 7 + w;
-							if(outputPool2[idx]>0) std::cout << "#";
-							else std::cout << ".";
-//							std::cout << outputPool2[idx] << "\t";
-				}
-				std::cout << "\n";
-			}
-
-				std::cout << "-----------------------------------\n";
+//        // Print output for channel 0
+//        std::cout << "Output Channel 0";
+//        for (int h = 0; h < 28; h++) {
+//            for (int w = 0; w < 28; w++) {
+//                int idx = 0 * HoutConv * WoutConv + h * WoutConv + w;
+//                if(outputImage[idx]>0) std::cout << "#";
+//                else std::cout << ".";
+////                std::cout << outputImage[idx] << "\t";
+//            }
+//            std::cout << "\n";
+//        }
+//
+//        std::cout << "-----------------------------------\n";
+//
+//        for (int h = 0; h < 14; h++) {
+//                    for (int w = 0; w < 14; w++) {
+//                        int idx = 0 * HoutPool * WoutPool + h * 14 + w;
+//                        if(outputPool[idx]>0) std::cout << "#";
+//                        else std::cout << ".";
+////                        std::cout << outputPool[idx] << "\t";
+//                    }
+//                    std::cout << "\n";
+//                }
+//
+//                std::cout << "-----------------------------------\n";
+//
+//		for (int h = 0; h < 14; h++) {
+//				for (int w = 0; w < 14; w++) {
+//					int idx = 0 * HoutPool * WoutPool + h * 14 + w;
+//					if(outputConv2[idx]>0) std::cout << "#";
+//					else std::cout << ".";
+////					std::cout << outputConv2[idx] << "\t";
+//				}
+//				std::cout << "\n";
+//			}
+//
+//				std::cout << "-----------------------------------\n";
+//		for (int h = 0; h < 7; h++) {
+//						for (int w = 0; w < 7; w++) {
+//							int idx = 0 * HoutPool2 * WoutPool2 + h * 7 + w;
+//							if(outputPool2[idx]>0) std::cout << "#";
+//							else std::cout << ".";
+////							std::cout << outputPool2[idx] << "\t";
+//				}
+//				std::cout << "\n";
+//			}
+//
+//				std::cout << "-----------------------------------\n";
 		fixed maxVal = outputDense[0];
 		int predictedVal = 0;
 		for(int p=0; p<10; p++) {
-			std::cout << outputDense[p] << "\t";
+//			std::cout << outputDense[p] << "\t";
 			if(outputDense[p] > maxVal) {maxVal = outputDense[p];
 			predictedVal = p;}
 		}
 		std::cout << "\nPredicted value: " << predictedVal << std::endl;
-		std::cout << "###############################################" << std::endl;
+		if(predictedVal == labels[img]) correct++;
+//		std::cout << "###############################################" << std::endl;
     }
+    std::cout << "Accuracy: " << (static_cast<float>(correct) / 50.0f) * 100 << "%" << std::endl;
 
     return 0;
 }

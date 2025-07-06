@@ -3,6 +3,7 @@
   <errorLogs>
     <logs>
       <csimLog>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="cnn" solutionName="solution1" date="2025-07-06T15:44:54.861+0500"/>
         <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="cnn" solutionName="solution1" date="2025-07-06T00:02:39.473+0500"/>
         <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="cnn" solutionName="solution1" date="2025-07-06T00:01:31.269+0500"/>
         <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="cnn" solutionName="solution1" date="2025-07-05T01:30:32.638+0500"/>
@@ -22,6 +23,22 @@
   <warningLogs>
     <logs>
       <csimLog>
+        <logs message="WARNING: [HLS 200-40] Cannot find library 'xilinx/Kintex-7/Kintex-7_fpv7'." projectName="cnn" solutionName="solution1" date="2025-07-06T15:50:47.307+0500" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] Cannot find library 'D:/vivado/2020.1/common/technology/xilinx/Kintex-7/Kintex-7_fpv7.lib'." projectName="cnn" solutionName="solution1" date="2025-07-06T15:50:45.640+0500" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] Cannot find library 'xilinx/Kintex-7/Kintex-7'." projectName="cnn" solutionName="solution1" date="2025-07-06T15:50:45.609+0500" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] Cannot find library 'D:/vivado/2020.1/common/technology/xilinx/Kintex-7/Kintex-7.lib'." projectName="cnn" solutionName="solution1" date="2025-07-06T15:50:45.549+0500" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] Cannot find library 'xilinx/Kintex-7/Kintex-7_fpv7'." projectName="cnn" solutionName="solution1" date="2025-07-06T15:47:31.269+0500" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] Cannot find library 'D:/vivado/2020.1/common/technology/xilinx/Kintex-7/Kintex-7_fpv7.lib'." projectName="cnn" solutionName="solution1" date="2025-07-06T15:47:29.679+0500" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] Cannot find library 'xilinx/Kintex-7/Kintex-7'." projectName="cnn" solutionName="solution1" date="2025-07-06T15:47:29.648+0500" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] Cannot find library 'D:/vivado/2020.1/common/technology/xilinx/Kintex-7/Kintex-7.lib'." projectName="cnn" solutionName="solution1" date="2025-07-06T15:47:29.605+0500" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] Cannot find library 'xilinx/Kintex-7/Kintex-7_fpv7'." projectName="cnn" solutionName="solution1" date="2025-07-06T15:46:25.495+0500" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] Cannot find library 'D:/vivado/2020.1/common/technology/xilinx/Kintex-7/Kintex-7_fpv7.lib'." projectName="cnn" solutionName="solution1" date="2025-07-06T15:46:23.952+0500" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] Cannot find library 'xilinx/Kintex-7/Kintex-7'." projectName="cnn" solutionName="solution1" date="2025-07-06T15:46:23.927+0500" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] Cannot find library 'D:/vivado/2020.1/common/technology/xilinx/Kintex-7/Kintex-7.lib'." projectName="cnn" solutionName="solution1" date="2025-07-06T15:46:23.891+0500" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] Cannot find library 'xilinx/Kintex-7/Kintex-7_fpv7'." projectName="cnn" solutionName="solution1" date="2025-07-06T15:44:51.747+0500" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] Cannot find library 'D:/vivado/2020.1/common/technology/xilinx/Kintex-7/Kintex-7_fpv7.lib'." projectName="cnn" solutionName="solution1" date="2025-07-06T15:44:47.690+0500" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] Cannot find library 'xilinx/Kintex-7/Kintex-7'." projectName="cnn" solutionName="solution1" date="2025-07-06T15:44:47.657+0500" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] Cannot find library 'D:/vivado/2020.1/common/technology/xilinx/Kintex-7/Kintex-7.lib'." projectName="cnn" solutionName="solution1" date="2025-07-06T15:44:47.634+0500" type="Warning"/>
         <logs message="WARNING: [HLS 200-40] Cannot find library 'xilinx/Kintex-7/Kintex-7_fpv7'." projectName="cnn" solutionName="solution1" date="2025-07-06T15:09:07.402+0500" type="Warning"/>
         <logs message="WARNING: [HLS 200-40] Cannot find library 'D:/vivado/2020.1/common/technology/xilinx/Kintex-7/Kintex-7_fpv7.lib'." projectName="cnn" solutionName="solution1" date="2025-07-06T15:09:05.923+0500" type="Warning"/>
         <logs message="WARNING: [HLS 200-40] Cannot find library 'xilinx/Kintex-7/Kintex-7'." projectName="cnn" solutionName="solution1" date="2025-07-06T15:09:05.892+0500" type="Warning"/>

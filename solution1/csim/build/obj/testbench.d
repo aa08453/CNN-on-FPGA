@@ -16,4 +16,4 @@ obj/testbench.o: ../../../src/testbench.cpp \
  ../../../src/conv1_weight.h ../../../src/conv1_bias.h \
  ../../../src/conv2_weight.h ../../../src/conv2_bias.h \
  ../../../src/fc1_weight.h ../../../src/fc1_bias.h ../../../src/conv.h \
- ../../../src/pool.h
+ ../../../src/pool.h ../../../src/labels.h

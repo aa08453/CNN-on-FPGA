@@ -16,6 +16,7 @@
     <originFiles name="pool.cpp" path="D:\CNN2.0\hls\cnn\src\pool.cpp"/>
     <originFiles name="pool.h" path="D:\CNN2.0\hls\cnn\src\pool.h"/>
     <originFiles name="testbench.cpp" path="D:\CNN2.0\hls\cnn\src\testbench.cpp"/>
+    <originFiles name="labels.h" path="D:\CNN2.0\hls\cnn\src\labels.h"/>
   </source>
   <testbench>
     <originFiles name="testbench.cpp" path="D:\CNN2.0\hls\cnn\src\testbench.cpp"/>

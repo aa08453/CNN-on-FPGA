@@ -16,6 +16,7 @@ add_files cnn/src/dense.h
 add_files cnn/src/eight.cpp
 add_files cnn/src/fc1_bias.h
 add_files cnn/src/fc1_weight.h
+add_files cnn/src/labels.h
 add_files cnn/src/mnist_dataset.h
 add_files cnn/src/pool.cpp
 add_files cnn/src/pool.h

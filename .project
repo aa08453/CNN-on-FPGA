@@ -97,6 +97,11 @@
 			<location>D:/CNN2.0/hls/cnn/src/fc1_weight.h</location>
 		</link>
 		<link>
+			<name>source/labels.h</name>
+			<type>1</type>
+			<location>D:/CNN2.0/hls/cnn/src/labels.h</location>
+		</link>
+		<link>
 			<name>source/mnist_dataset.h</name>
 			<type>1</type>
 			<location>D:/CNN2.0/hls/cnn/src/mnist_dataset.h</location>

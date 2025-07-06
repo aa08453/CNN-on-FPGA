@@ -1,5 +1,6 @@
 <project xmlns="com.autoesl.autopilot.project" name="cnn" top="top">
     <files>
+        <file name="../src/testbench.cpp" sc="0" tb="1" cflags=""/>
         <file name="cnn/src/conv.cpp" sc="0" tb="false" cflags="" blackbox="false"/>
         <file name="cnn/src/conv.h" sc="0" tb="false" cflags="" blackbox="false"/>
         <file name="cnn/src/conv1_bias.h" sc="0" tb="false" cflags="" blackbox="false"/>
@@ -11,11 +12,11 @@
         <file name="cnn/src/eight.cpp" sc="0" tb="false" cflags="" blackbox="false"/>
         <file name="cnn/src/fc1_bias.h" sc="0" tb="false" cflags="" blackbox="false"/>
         <file name="cnn/src/fc1_weight.h" sc="0" tb="false" cflags="" blackbox="false"/>
+        <file name="cnn/src/labels.h" sc="0" tb="false" cflags="" blackbox="false"/>
         <file name="cnn/src/mnist_dataset.h" sc="0" tb="false" cflags="" blackbox="false"/>
         <file name="cnn/src/pool.cpp" sc="0" tb="false" cflags="" blackbox="false"/>
         <file name="cnn/src/pool.h" sc="0" tb="false" cflags="" blackbox="false"/>
         <file name="cnn/src/testbench.cpp" sc="0" tb="false" cflags="" blackbox="false"/>
-        <file name="../src/testbench.cpp" sc="0" tb="1" cflags=""/>
     </files>
     <includePaths/>
     <libraryPaths/>
