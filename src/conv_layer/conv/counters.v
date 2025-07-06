@@ -3,6 +3,7 @@ module counters
     input wire clk,
     input wire rst_n,
     input wire count_enable,
+    input wire conv,
     output reg [4:0] i,
     output reg [4:0] j,
     output reg done
@@ -15,7 +16,14 @@ begin
         i <= 0;
         j <= 0;
         done <= 0;
-    end 
+    end
+    else if (conv && done) 
+    begin
+        // Synchronous reset on conv & done
+        i <= 0;
+        j <= 0;
+        done <= 0;
+    end
     else if (count_enable && !done) 
     begin
         if (j < 27) 

@@ -10,15 +10,18 @@ module conv
     
     input wire [7:0] kernel0, kernel1, kernel2,
         kernel3, kernel4, kernel5,
-        kernel6, kernel7, kernel8;
+        kernel6, kernel7, kernel8,
 
-    output [31:0] result
+    output [31:0] result,
+    output [9:0] address,
+    output wire store,
+    output wire done
 );
 
-    wire addr, load, acc_enable, store, count_enable;
+    wire add, load, acc_enable, count_enable;
     wire [1:0] mux_sel;
 
-    wire done, load_full_patch; 
+    wire load_full_patch; 
 
     wire [9:0] pixel_addr0, pixel_addr1, pixel_addr2,
                pixel_addr3, pixel_addr4, pixel_addr5,
@@ -30,20 +33,19 @@ module conv
 
     wire [31:0] sum;
     wire [4:0] i, j;
-    wire [9:0] addr;
 
-    control control_inst(
-        .clk(clk), .rst_n(rst), .done(done), .load(load), .mux_sel(mux_sel),
-        .acc_enable(acc_enable), .counter_enable(count_enable), .addr(addr), .store(store)
+    conv_control control_inst(
+        .clk(clk), .rst_n(rst), .done(done), .load(load), .mux_sel(mux_sel), .conv(conv),
+        .acc_enable(acc_enable), .counter_enable(count_enable), .addr(add), .store(store)
     );
 
     counters counters_inst(
         .clk(clk), .rst_n(rst), .count_enable(count_enable),
-        .i(i), .j(j), .done(done)
+        .i(i), .j(j), .done(done), .conv(conv)
     );
 
     patch_addr_gen #(.H(H), .W(W)) patch_addr_inst (
-        .clk(clk), .rst(rst), .addr(addr), .i(i), .j(j),
+        .clk(clk), .rst(rst), .addr(add), .i(i), .j(j),
         .pixel_addr0(pixel_addr0), .pixel_addr1(pixel_addr1), .pixel_addr2(pixel_addr2),
         .pixel_addr3(pixel_addr3), .pixel_addr4(pixel_addr4), .pixel_addr5(pixel_addr5),
         .pixel_addr6(pixel_addr6), .pixel_addr7(pixel_addr7), .pixel_addr8(pixel_addr8),
@@ -72,11 +74,7 @@ module conv
 
     products_reg products_reg_inst (
         .clk(clk), .rst(rst), .i(i), .j(j),
-        .acc_enable(acc_enable), .sum(sum), .result(result), .addr(addr)
+        .acc_enable(acc_enable), .sum(sum), .result(result), .addr(address)
     );
-
-    // Replace write_result with result_registerFile
-    result_registerFile #( .W(W))
-    result_store_inst (.clk(clk), .rst(rst), .store(store), .result(result),.addr(addr),.done(conv_done));
 
 endmodule

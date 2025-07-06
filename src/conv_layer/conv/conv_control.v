@@ -1,6 +1,7 @@
 module conv_control (
     input wire clk,
     input wire rst_n,
+    input wire conv,
 
     input wire done,
 
@@ -8,20 +9,22 @@ module conv_control (
     output reg load,
     output reg [1:0] mux_sel,
     output reg acc_enable,
-    output reg store,
     output reg counter_enable,
+    output reg store
 );
 
-parameter ADDR            = 4'd0;
-parameter LOAD            = 4'd1;
-parameter MAC0            = 4'd2;
-parameter MAC1            = 4'd3;
-parameter MAC2            = 4'd4;
-parameter SUM             = 4'd5;
-parameter ACC             = 4'd6;
-parameter STORE           = 4'd7;
-parameter UPDATE_COUNTERS = 4'd8;
-parameter CHECK_DONE      = 4'd9;
+
+parameter IDLE            = 4'd0;
+parameter ADDR            = 4'd1;
+parameter LOAD            = 4'd2;
+parameter MAC0            = 4'd3;
+parameter MAC1            = 4'd4;
+parameter MAC2            = 4'd5;
+parameter SUM             = 4'd6;
+parameter ACC             = 4'd7;
+parameter STORE           = 4'd8;
+parameter UPDATE_COUNTERS = 4'd9;
+parameter CHECK_DONE      = 4'd10;
 
 reg [3:0] state;
 reg [3:0] next_state;
@@ -45,10 +48,14 @@ begin
     acc_enable     = 1'b0;
     store          = 1'b0;
     counter_enable = 1'b0;
-    result_store   = 1'b0;
 
 
     case (state)
+        IDLE: 
+        begin
+            next_state = conv ? ADDR : IDLE;
+        end
+
         ADDR:
         begin
             addr = 1'b1;
@@ -105,7 +112,12 @@ begin
 
         CHECK_DONE: 
         begin
-            next_state = done ? CHECK_DONE : ADDR;
+            next_state = done ? IDLE : ADDR;
+        end
+
+        default: 
+        begin
+            next_state = IDLE;
         end
     endcase
 end

@@ -2,7 +2,7 @@
 module channel_counter 
 #
 (
-    parameter CHANNELS = 7 // out_channels - 1
+    parameter CHANNELS = 7 // out_channels
 )
 (
     input wire clk,
