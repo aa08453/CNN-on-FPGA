@@ -8,7 +8,7 @@ module top_tb;
     parameter H = 28;
     parameter W = 28;
     parameter OC = 7;
-    parameter IC = 0;
+    parameter IC = 3;
 
     // Testbench signals
     reg clk;
@@ -42,7 +42,7 @@ module top_tb;
         rst = 1;
 
         // Wait and let internal FSM run
-        #1500000;  // Adjust as needed for simulation to finish
+        #6000000;  // Adjust as needed for simulation to finish
 
         $display("Simulation finished.");
         $finish;

@@ -19,6 +19,11 @@ begin
         count <= 0;
         complete <= 0;
     end 
+    else if (signal && complete)
+    begin
+        count <= 0;
+        complete <= 0;
+    end
     else if (signal && !complete) 
     begin
         if (count < CHANNELS) 
