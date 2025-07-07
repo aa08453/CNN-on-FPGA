@@ -6,21 +6,23 @@ void conv1(
     fixed weight[], fixed bias[],
     int Cin, int Cout, int H, int W, int K
 ) {
-#pragma HLS ARRAY_PARTITION variable=weight complete dim=1
-#pragma HLS ARRAY_PARTITION variable=bias complete dim=1
+//#pragma HLS ARRAY_PARTITION variable=weight complete dim=1
+//#pragma HLS ARRAY_PARTITION variable=bias complete dim=1
 
     for (int co = 0; co < Cout; co++) {
-#pragma HLS PIPELINE
+
         for (int h = 0; h < H; h++) {
             for (int w = 0; w < W; w++) {
 
                 fixed sum = bias[co];
-#pragma HLS UNROLL factor = 2;
                 for (int ci = 0; ci < Cin; ci++) {
-#pragma HLS UNROLL
-                    for (int kh = 0; kh < K; kh++) {
-#pragma HLS UNROLL
-                        for (int kw = 0; kw < K; kw++) {
+
+                    for (int kh = 0; kh < 3; kh++) {
+
+
+                        for (int kw = 0; kw < 3; kw++) {
+
+
                             int inh = h + kh - K / 2;
                             int inw = w + kw - K / 2;
 

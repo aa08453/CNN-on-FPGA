@@ -29,6 +29,7 @@ void top(
 
 	fixed weight2[],
 	fixed bias2[],
+
 	fixed outputConv2[],
 
 	fixed outputPool2[],

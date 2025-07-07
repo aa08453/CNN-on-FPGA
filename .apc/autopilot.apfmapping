@@ -12,11 +12,11 @@
     <originFiles name="eight.cpp" path="D:\CNN2.0\hls\cnn\src\eight.cpp"/>
     <originFiles name="fc1_bias.h" path="D:\CNN2.0\hls\cnn\src\fc1_bias.h"/>
     <originFiles name="fc1_weight.h" path="D:\CNN2.0\hls\cnn\src\fc1_weight.h"/>
+    <originFiles name="labels.h" path="D:\CNN2.0\hls\cnn\src\labels.h"/>
     <originFiles name="mnist_dataset.h" path="D:\CNN2.0\hls\cnn\src\mnist_dataset.h"/>
     <originFiles name="pool.cpp" path="D:\CNN2.0\hls\cnn\src\pool.cpp"/>
     <originFiles name="pool.h" path="D:\CNN2.0\hls\cnn\src\pool.h"/>
     <originFiles name="testbench.cpp" path="D:\CNN2.0\hls\cnn\src\testbench.cpp"/>
-    <originFiles name="labels.h" path="D:\CNN2.0\hls\cnn\src\labels.h"/>
   </source>
   <testbench>
     <originFiles name="testbench.cpp" path="D:\CNN2.0\hls\cnn\src\testbench.cpp"/>

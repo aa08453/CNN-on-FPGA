@@ -6,7 +6,7 @@ void pool(
     int Cin, int H, int W,
 	int P, int stride
 ) {
-#pragma HLS ARRAY_PARTITION variable=input cyclic factor=4 dim=1
+
 
 	const int Hout = (H-P) / stride + 1;
 	const int Wout = (W - P) / stride + 1;
@@ -16,10 +16,11 @@ void pool(
             for (int w = 0; w < Wout; w++) {
 #pragma HLS PIPELINE II=1
                 	fixed max = input[co * H * W + h * stride * W + w * stride];
+
+                	for (int ph = 0; ph < 2; ph++) {
 #pragma HLS UNROLL
-                	for (int ph = 0; ph < P; ph++) {
+                        for (int pw = 0; pw < 2; pw++) {
 #pragma HLS UNROLL
-                        for (int pw = 0; pw < P; pw++) {
 
                         	int in_h = h * stride + ph;
 							int in_w = w * stride + pw;
