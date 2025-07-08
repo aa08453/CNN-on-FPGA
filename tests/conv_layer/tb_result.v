@@ -14,8 +14,8 @@ module result_registerFile_tb;
     reg bias_init;
     reg relu;
     reg [3:0] out_c;
-    reg [31:0] bias;
-    reg [31:0] value;
+    reg [7:0] bias;
+    reg [7:0] value;
     reg [9:0] addr;
     reg done;
 
@@ -62,7 +62,7 @@ module result_registerFile_tb;
         // Apply bias_init for out_c = 1
         #20;
         out_c = 1;
-        bias = 32'd5;
+        bias = 8'd5;
         bias_init = 1;
         #20;
         bias_init = 0;
@@ -70,7 +70,7 @@ module result_registerFile_tb;
         // Store a value at specific address
         #20;
         addr = 4;
-        value = 32'd10;
+        value = 8'd10;
         store = 1;
         #20;
         store = 0;
@@ -78,7 +78,7 @@ module result_registerFile_tb;
         // Store a negative value to test ReLU
         #20;
         addr = 5;
-        value = -32;
+        value = -8;
         store = 1;
         #20;
         store = 0;

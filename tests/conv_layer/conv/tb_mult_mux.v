@@ -7,7 +7,7 @@ module mult_mux_tb;
     reg [7:0] a0, k0;
     reg [7:0] a1, k1;
     reg [7:0] a2, k2;
-    wire [15:0] product;
+    wire [7:0] product;
 
     // Instantiate the design under test (DUT)
     mult_mux dut (

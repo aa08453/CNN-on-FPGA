@@ -9,10 +9,11 @@ module comp
     input [1:0] select,
     input clk,
     input rst,
-    output reg [31:0] sum
+    output reg [7:0] sum
 );
 
-    wire [15:0] p1, p2, p3;
+    wire [7:0] p1, p2, p3;
+    reg [15:0] total;
 
     mult_mux mux1 (.sel(select), .clk(clk), .product(p1),
         .a0(image_data0), .a1(image_data1), .a2(image_data2),
@@ -29,9 +30,15 @@ module comp
     always @(posedge clk or negedge rst) 
     begin
         if (!rst)
-            sum <= 18'd0;
+        begin
+            sum <= 8'd0;
+            total <= 16'd0;
+        end
         else
-            sum <= p1 + p2 + p3;
+        begin
+            total <= p1 + p2 + p3;
+            sum <= total >> 1;
+        end
     end
 
 endmodule

@@ -42,7 +42,7 @@ module top_tb;
         rst = 1;
 
         // Wait and let internal FSM run
-        #6000000;  // Adjust as needed for simulation to finish
+        #9000000;  // Adjust as needed for simulation to finish
 
         $display("Simulation finished.");
         $finish;

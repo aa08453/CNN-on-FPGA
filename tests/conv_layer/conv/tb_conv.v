@@ -17,7 +17,7 @@ module conv_tb;
               kernel6, kernel7, kernel8;
 
     // Outputs
-    wire [31:0] result;
+    wire [7:0] result;
     wire [9:0] addr;
 
     // Instantiate DUT

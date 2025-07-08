@@ -10,7 +10,7 @@ module comp_tb;
     reg clk;
 
     // Outputs
-    wire [15:0] sum;
+    wire [7:0] sum;
 
     // Instantiate the DUT
     comp dut (

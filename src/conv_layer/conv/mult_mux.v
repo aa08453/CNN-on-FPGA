@@ -8,7 +8,7 @@ module mult_mux
     input [7:0] a2,
     input [7:0] k2,
     input clk,
-    output reg [15:0] product
+    output reg [7:0] product
 );
 
     reg [15:0] next_product;
@@ -26,7 +26,7 @@ module mult_mux
 
     always @(posedge clk) 
     begin
-        product <= next_product;
+        product <= next_product >> 1;
     end
 
 endmodule

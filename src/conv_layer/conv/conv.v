@@ -12,7 +12,7 @@ module conv
         kernel3, kernel4, kernel5,
         kernel6, kernel7, kernel8,
 
-    output [31:0] result,
+    output [7:0] result,
     output [9:0] address,
     output wire store,
     output wire done
@@ -31,7 +31,7 @@ module conv
                pixel3, pixel4, pixel5,
                pixel6, pixel7, pixel8;
 
-    wire [31:0] sum;
+    wire [7:0] sum;
     wire [4:0] i, j;
 
     conv_control control_inst(

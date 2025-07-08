@@ -1,35 +1,33 @@
 module products_reg
-#
-(
+#(
     parameter W = 28
 )
 (
-    input clk,
-    input [31:0] sum,
-    input rst,
-    input acc_enable,
+    input wire clk,
+    input wire rst,
+    input wire acc_enable,
+    input wire [7:0] sum,
     input wire [4:0] i,
     input wire [4:0] j,
-    output reg [31:0] result,
+    output reg [7:0] result,
     output reg [9:0] addr
 );
 
-reg [31:0] inter; //intermediate value
+reg [15:0] inter; // Intermediate value
 
 always @(posedge clk or negedge rst) 
 begin
     if (!rst) 
     begin
-        result <= 32'd0;
+        result <= 8'd0;
         addr <= 10'd0;
-    end
-    else 
-        inter <= result + sum;
-
-    if (acc_enable)
+        inter <= 16'd0;
+    end 
+    else if (acc_enable)
     begin
-        result <= inter;
-        addr <= i*W + j;
+        inter <= result + sum;
+        result <= inter >> 1;
+        addr <= i * W + j;
     end
 end
 

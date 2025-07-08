@@ -7,10 +7,10 @@ module products_reg_tb;
     reg clk;
     reg rst;
     reg load;
-    reg [15:0] sum;
+    reg [7:0] sum;
 
     // Output
-    wire [15:0] result;
+    wire [7:0] result;
 
     // Instantiate the DUT
     products_reg dut (
@@ -39,29 +39,29 @@ module products_reg_tb;
         rst = 0; // Release reset
 
         // First value, load = 1
-        sum = 16'd10;
+        sum = 8'd10;
         load = 1; #10;
 
         $display("After 1st load: result = %d", result); // Expected: 0
 
         // Second value
-        sum = 16'd20;
+        sum = 8'd20;
         #10;
         $display("After 2nd load: result = %d", result); // Expected: 10
 
         // Third value
-        sum = 16'd30;
+        sum = 8'd30;
         #10;
         $display("After 3rd load: result = %d", result); // Expected: 10+20 = 30
 
         // Fourth value
-        sum = 16'd40;
+        sum = 8'd40;
         #10;
         $display("After 4th load: result = %d", result); // Expected: 10+20+30 = 60
 
         // Deassert load
         load = 0;
-        sum = 16'd100;
+        sum = 8'd100;
         #10;
         $display("Load=0: result should remain the same -> %d", result); // Still 60
 

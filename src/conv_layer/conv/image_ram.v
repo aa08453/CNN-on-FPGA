@@ -6,7 +6,7 @@ module image_mem
     output reg [7:0] data_out
 );
 
-    reg [7:0] mem [0:783];
+    (* ram_style = "block" *)  reg [7:0] mem [0:783];
 
     initial 
     begin

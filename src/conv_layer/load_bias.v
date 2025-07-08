@@ -9,7 +9,7 @@ module load_bias
     input clk,
     input rst,
     input c_load,
-    input [2:0] cout,
+    input [3:0] cout,
     output reg [7:0] bias
 );
 
