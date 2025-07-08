@@ -52,7 +52,7 @@ begin
         COUNT_OUT:
         begin
             cout = 1'b1;
-            next_state = cout_done ? POOL: CHANNEL_LOAD;
+            next_state = cout_done ? IDLE: CHANNEL_LOAD;
         end
 
         CHANNEL_LOAD:
@@ -64,20 +64,20 @@ begin
         COUNT_IN:
         begin
             cin = 1'b1;
-            next_state = cin_done ? COUNT_OUT : CONV;
+            next_state = cin_done ? POOL : CONV;
         end
 
         CONV:
         begin
             conv = 1'b1;
-            next_state = conv_done ? (is_single_input_channel ? COUNT_OUT : COUNT_IN) : CONV;
+            next_state = conv_done ? (is_single_input_channel ? POOL : COUNT_IN) : CONV;
         end
 
-         POOL:
-         begin
-             pool = 1'b1;
-             next_state = pool_done ? IDLE : POOL;
-         end  
+        POOL:
+        begin
+            pool = 1'b1;
+            next_state = pool_done ? COUNT_OUT : POOL;
+        end  
 
         IDLE:
         begin

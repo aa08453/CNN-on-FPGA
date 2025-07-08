@@ -12,7 +12,8 @@ module kernel_mem
 
     initial 
     begin
-        $readmemh("conv1_weight.mem", rom_data);  
+        // $readmemh("conv1_weight.mem", rom_data);  
+        $readmemh("mem_files/conv1_weight.mem", rom_data); 
         // will need to add string argument to module to change between weight files
     end
 

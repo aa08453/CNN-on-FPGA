@@ -17,7 +17,8 @@ module load_bias
 
     initial 
     begin
-        $readmemh("conv1_bias.mem", rom_data);  
+        $readmemh("mem_files/conv1_bias.mem", rom_data);  
+        // $readmemh("conv1_bias.mem", rom_data);  
     end
 
     always @(posedge clk or negedge rst) 

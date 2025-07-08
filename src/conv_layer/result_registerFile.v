@@ -1,3 +1,22 @@
+`define POOL(mem, max, next_addr) \
+begin \
+    max = next_addr; \
+    if (mem[next_addr + 1] > mem[max]) max = next_addr + 1; \
+    if (mem[next_addr + 28] > mem[max]) max = next_addr + 28; \
+    if (mem[next_addr + 29] > mem[max]) max = next_addr + 29; \
+    mem[next_addr] <= (mem[max] > 0) ? mem[max] : 0; \
+end 
+
+`define STORE(mem, tmp, inter, first_write, addr, bias, value) \
+    tmp = mem[addr]; \
+    if (first_write) \
+        mem[addr] <= bias; \
+    else \
+    begin \
+        inter = tmp + value; \
+        mem[addr] <= (inter >> 1); \
+    end
+
 module result_registerFile
 #(
     parameter CHANNEL_SIZE = 783
@@ -15,9 +34,9 @@ module result_registerFile
     input wire [7:0] bias,          // Bias to initialize with
     input wire [7:0] value,          // Value to store
     input wire first_write,
-    output reg [9:0] next_addr,
-    output reg pool_done,
-    output [3:0] x
+
+    output reg [3:0] y, // for synthesis
+    output reg pool_done
 );
 
     // Eight independent memory banks for eight output channels
@@ -32,12 +51,17 @@ module result_registerFile
 
     reg [15:0] inter0, inter1, inter2, inter3, inter4, inter5, inter6, inter7;
     reg [9:0] max0,max1,max2,max3,max4,max5,max6,max7;
+    reg [7:0] tmp0, tmp1, tmp2, tmp3, tmp4, tmp5, tmp6, tmp7;
+    reg [3:0] pool_count;
+    reg [9:0] next_addr;
     // Core logic
     always @(posedge clk or negedge rst) 
     begin
         if (!rst)
         begin
             next_addr <= 0;
+            pool_count <= 0;
+            pool_done <= 0;
             inter0 <= 0;
             inter1 <= 0;
             inter2 <= 0;
@@ -50,188 +74,51 @@ module result_registerFile
         else if (store) 
         begin
             case (out_c)
-                4'd0: 
-                begin
-                    if (first_write)
-                        result_mem0[addr] <= 0;
-                    else
-                    begin
-                    inter0 = result_mem0[addr] + value + bias;
-                    result_mem0[addr] <= (inter0 >> 1);
-                    end
-                end
-                4'd1: 
-                begin
-                    if (first_write)
-                        result_mem1[addr] <= 0;
-                    else
-                    begin
-                    inter1 = result_mem1[addr] + value + bias;
-                    result_mem1[addr] <= (inter1 >> 1);
-                    end
-                end
-                4'd2: 
-                begin
-                    if (first_write)
-                        result_mem2[addr] <= 0;
-                    else
-                    begin
-                    inter2 = result_mem2[addr] + value + bias;
-                    result_mem2[addr] <= (inter2 >> 1);
-                    end
-                end
-                4'd3: 
-                begin
-                    if (first_write)
-                        result_mem3[addr] <= 0;
-                    else
-                    begin
-                    inter3 = result_mem3[addr] + value + bias;
-                    result_mem3[addr] <= (inter3 >> 1);
-                    end
-                end
-                4'd4: 
-                begin
-                    if (first_write)
-                        result_mem4[addr] <= 0;
-                    else
-                    begin
-                    inter4 = result_mem4[addr] + value + bias;
-                    result_mem4[addr] <= (inter4 >> 1);
-                    end
-                end
-                4'd5: 
-                begin
-                    if (first_write)
-                        result_mem5[addr] <= 0;
-                    else
-                    begin 
-                    inter5 = result_mem5[addr] + value + bias;
-                    result_mem5[addr] <= (inter5 >> 1);
-                    end
-                end
-                4'd6: 
-                begin
-                    if (first_write)
-                        result_mem6[addr] <= 0;
-                    else 
-                    begin 
-                    inter6 = result_mem6[addr] + value + bias;
-                    result_mem6[addr] <= (inter6 >> 1);
-                    end
-                end
-                4'd7: 
-                begin
-                    if (first_write)
-                        result_mem7[addr] <= 0;
-                    else 
-                    begin
-                    inter7 = result_mem7[addr] + value + bias;
-                    result_mem7[addr] <= (inter7 >> 1);
-                    end
-                end
-                // 4'd1: result_mem1[addr] <= result_mem1[addr] + value + bias;
-                // 4'd2: result_mem2[addr] <= result_mem2[addr] + value + bias;
-                // 4'd3: result_mem3[addr] <= result_mem3[addr] + value + bias;
-                // 4'd4: result_mem4[addr] <= result_mem4[addr] + value + bias;
-                // 4'd5: result_mem5[addr] <= result_mem5[addr] + value + bias;
-                // 4'd6: result_mem6[addr] <= result_mem6[addr] + value + bias;
-                // 4'd7: result_mem7[addr] <= result_mem7[addr] + value + bias;
+                4'd0: begin `STORE(result_mem0,tmp0, inter0, first_write, addr, bias, value); end 
+                4'd1: begin `STORE(result_mem1,tmp1, inter1, first_write, addr, bias, value); end
+                4'd2: begin `STORE(result_mem2,tmp2, inter2, first_write, addr, bias, value); end
+                4'd3: begin `STORE(result_mem3,tmp3, inter3, first_write, addr, bias, value); end
+                4'd4: begin `STORE(result_mem4,tmp4, inter4, first_write, addr, bias, value); end
+                4'd5: begin `STORE(result_mem5,tmp5, inter5, first_write, addr, bias, value); end
+                4'd6: begin `STORE(result_mem6,tmp6, inter6, first_write, addr, bias, value); end
+                4'd7: begin `STORE(result_mem7,tmp7, inter7, first_write, addr, bias, value); end
                 default: ; // Do nothing
             endcase
         end
         else if (pool) 
         begin
-        
-           max0 = addr;
-           if (result_mem0[addr+1] > result_mem0[max0])
-           max0 = addr+1;
-           else if (result_mem0[addr+2] > result_mem0[max0])
-           max0 = addr+2;
-           else if (result_mem0[addr+3] > result_mem0[max0])
-           max0 = addr+3;
-
-           result_mem0[addr] = (result_mem0[max0] > 0) ? result_mem0[max0] : 0;
-
-           max1 = addr;
-           if (result_mem1[addr+1] > result_mem1[max1])
-           max1 = addr+1;
-           else if (result_mem1[addr+2] > result_mem1[max1])
-           max1 = addr+2;
-           else if (result_mem1[addr+3] > result_mem1[max1])
-           max1 = addr+3;
-
-           result_mem1[addr] = (result_mem1[max1] > 0) ? result_mem1[max1] : 0;
-
-           max2 = addr;
-           if (result_mem2[addr+1] > result_mem2[max2])
-           max2 = addr+1;
-           else if (result_mem2[addr+2] > result_mem2[max2])
-           max2 = addr+2;
-           else if (result_mem2[addr+3] > result_mem2[max2])
-           max2 = addr+3;
-
-           result_mem2[addr] = (result_mem2[max2] > 0) ? result_mem2[max2] : 0;
-
-           max3 = addr;
-           if (result_mem3[addr+1] > result_mem3[max3])
-           max3 = addr+1;
-           else if (result_mem3[addr+2] > result_mem3[max3])
-           max3 = addr+2;
-           else if (result_mem3[addr+3] > result_mem3[max3])
-           max3 = addr+3;
-
-           result_mem3[addr] = (result_mem3[max3] > 0) ? result_mem3[max3] : 0;
-
-           max4 = addr;
-           if (result_mem4[addr+1] > result_mem4[max4])
-           max4 = addr+1;
-           else if (result_mem4[addr+2] > result_mem4[max4])
-           max4 = addr+2;
-           else if (result_mem4[addr+3] > result_mem4[max4])
-           max4 = addr+3;
-
-           result_mem4[addr] = (result_mem4[max4] > 0) ? result_mem4[max4] : 0;
-
-           max5 = addr;
-           if (result_mem5[addr+1] > result_mem5[max5])
-           max5 = addr+1;
-           else if (result_mem5[addr+2] > result_mem5[max5])
-           max5 = addr+2;
-           else if (result_mem5[addr+3] > result_mem5[max5])
-           max5 = addr+3;
-
-           result_mem5[addr] = (result_mem5[max5] > 0) ? result_mem5[max5] : 0;
-
-           max6 = addr;
-           if (result_mem6[addr+1] > result_mem6[max6])
-           max6 = addr+1;
-           else if (result_mem6[addr+2] > result_mem6[max6])
-           max6 = addr+2;
-           else if (result_mem6[addr+3] > result_mem6[max6])
-           max6 = addr+3;
-
-           result_mem6[addr] = (result_mem6[max6] > 0) ? result_mem6[max6] : 0;
-
-           max7 = addr;
-           if (result_mem7[addr+1] > result_mem7[max7])
-           max7 = addr+1;
-           else if (result_mem7[addr+2] > result_mem7[max7])
-           max7 = addr+2;
-           else if (result_mem7[addr+3] > result_mem7[max7])
-           max7 = addr+3;
-
-           result_mem7[addr] = (result_mem7[max7] > 0) ? result_mem7[max7] : 0;
             
-           next_addr <= addr + 4;
-           if (next_addr == 10'd784)
-                pool_done <= 1'b1;
-           else
-                pool_done <= 0;
+            `POOL(result_mem0, max0, next_addr);
+            `POOL(result_mem1, max1, next_addr);
+            `POOL(result_mem2, max2, next_addr);
+            `POOL(result_mem3, max3, next_addr);
+            `POOL(result_mem4, max4, next_addr);
+            `POOL(result_mem5, max5, next_addr);
+            `POOL(result_mem6, max6, next_addr);
+            `POOL(result_mem7, max7, next_addr);
         
-end        
+            if (pool_count < 14)
+            begin
+                next_addr <= next_addr + 2;
+                pool_count <= pool_count + 1;
+            end
+            else
+            begin
+                next_addr <= next_addr + 28;
+                pool_count <= 0;
+            end
 
-        else if (cout_done) begin
+            if (next_addr == 10'd784)
+            begin
+                pool_done <= 1'b1;
+                next_addr <= 0;
+                pool_count <= 0;
+            end
+        
+        end        
+
+        else if (cout_done) 
+        begin
             // Optional: write to file for verification
             $writememh("result_mem0.mem", result_mem0);
             $writememh("result_mem1.mem", result_mem1);
@@ -244,6 +131,6 @@ end
         end
     end
     
-    assign x = out_c;
+    assign y = out_c;
 
 endmodule
