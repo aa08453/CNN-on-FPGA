@@ -13,11 +13,11 @@ module load_bias
     output reg [7:0] bias
 );
 
-    reg [7:0] rom_data [0:OC];  // Enough space for 8 out channels
+    (* ram_style = "distributed" *) reg [7:0] rom_data [0:OC];  // Enough space for 8 out channels
 
     initial 
     begin
-        $readmemh("mem_files/conv1_bias.mem", rom_data);  
+        $readmemh("conv1_bias.mem", rom_data);  
     end
 
     always @(posedge clk or negedge rst) 

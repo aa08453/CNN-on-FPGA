@@ -10,7 +10,7 @@ module image_mem
 
     initial 
     begin
-        $readmemh("mem_files/image.mem", mem);  // Use your actual image hex file
+        $readmemh("image.mem", mem);  // Use your actual image hex file
     end
 
     always @(posedge clk) 
