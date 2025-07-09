@@ -11,7 +11,6 @@ module mult_mux
     output reg [15:0] product
 );
 
-    reg [15:0] next_product;
 
     always @(*) 
     begin
@@ -24,9 +23,6 @@ module mult_mux
         endcase
     end
 
-    always @(posedge clk) 
-    begin
-        product <= next_product;
-    end
+    
 
 endmodule
