@@ -3,6 +3,7 @@
 #include "conv.h"
 #include "pool.h"
 #include "dense.h"
+#include <hls_stream.h>
 
 void top(
 	fixed input[],
@@ -38,7 +39,7 @@ void top(
 	conv1(input, outputConv, weight, bias, 1, 8, 28, 28, 3);
 	pool(outputConv, outputPool, 8, 28, 28, 2, 2);
 
-	conv1(outputPool, outputConv2, weight2, bias2, 8, 16, 14, 14, 3);
+	conv2(outputPool, outputConv2, weight2, bias2);
 	pool(outputConv2, outputPool2, 16, 14, 14, 2, 2);
 
 	dense(outputPool2, outputDense, fcWeight, fcBias, 784, 10);

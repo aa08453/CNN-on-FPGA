@@ -1,0 +1,161 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch GCC as the compiler.
+   Compiling ../../../src/testbench.cpp in debug mode
+   Compiling ../../../src/pool.cpp in debug mode
+   Compiling ../../../src/eight.cpp in debug mode
+   Compiling ../../../src/dense.cpp in debug mode
+   Compiling ../../../src/conv.cpp in debug mode
+   Generating csim.exe
+Testing image 0:
+
+Predicted value: 3
+Testing image 1:
+
+Predicted value: 0
+Testing image 2:
+
+Predicted value: 4
+Testing image 3:
+
+Predicted value: 1
+Testing image 4:
+
+Predicted value: 9
+Testing image 5:
+
+Predicted value: 2
+Testing image 6:
+
+Predicted value: 1
+Testing image 7:
+
+Predicted value: 6
+Testing image 8:
+
+Predicted value: 1
+Testing image 9:
+
+Predicted value: 4
+Testing image 10:
+
+Predicted value: 9
+Testing image 11:
+
+Predicted value: 5
+Testing image 12:
+
+Predicted value: 3
+Testing image 13:
+
+Predicted value: 6
+Testing image 14:
+
+Predicted value: 1
+Testing image 15:
+
+Predicted value: 7
+Testing image 16:
+
+Predicted value: 2
+Testing image 17:
+
+Predicted value: 8
+Testing image 18:
+
+Predicted value: 6
+Testing image 19:
+
+Predicted value: 9
+Testing image 20:
+
+Predicted value: 4
+Testing image 21:
+
+Predicted value: 0
+Testing image 22:
+
+Predicted value: 9
+Testing image 23:
+
+Predicted value: 1
+Testing image 24:
+
+Predicted value: 1
+Testing image 25:
+
+Predicted value: 2
+Testing image 26:
+
+Predicted value: 4
+Testing image 27:
+
+Predicted value: 6
+Testing image 28:
+
+Predicted value: 6
+Testing image 29:
+
+Predicted value: 2
+Testing image 30:
+
+Predicted value: 3
+Testing image 31:
+
+Predicted value: 8
+Testing image 32:
+
+Predicted value: 6
+Testing image 33:
+
+Predicted value: 9
+Testing image 34:
+
+Predicted value: 0
+Testing image 35:
+
+Predicted value: 5
+Testing image 36:
+
+Predicted value: 6
+Testing image 37:
+
+Predicted value: 0
+Testing image 38:
+
+Predicted value: 6
+Testing image 39:
+
+Predicted value: 6
+Testing image 40:
+
+Predicted value: 1
+Testing image 41:
+
+Predicted value: 8
+Testing image 42:
+
+Predicted value: 7
+Testing image 43:
+
+Predicted value: 9
+Testing image 44:
+
+Predicted value: 3
+Testing image 45:
+
+Predicted value: 6
+Testing image 46:
+
+Predicted value: 8
+Testing image 47:
+
+Predicted value: 5
+Testing image 48:
+
+Predicted value: 9
+Testing image 49:
+
+Predicted value: 3
+Accuracy: 84%
+INFO: [SIM 1] CSim done with 0 errors.
+INFO: [SIM 3] *************** CSIM finish ***************

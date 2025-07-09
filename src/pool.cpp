@@ -14,7 +14,6 @@ void pool(
     for (int co = 0; co < Cin; co++) {
         for (int h = 0; h < Hout; h++) {
             for (int w = 0; w < Wout; w++) {
-#pragma HLS PIPELINE II=1
                 	fixed max = input[co * H * W + h * stride * W + w * stride];
 
                 	for (int ph = 0; ph < 2; ph++) {

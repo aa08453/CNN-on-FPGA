@@ -1,0 +1,1342 @@
+INFO-FLOW: Workspace D:/CNN2.0/hls/cnn/solution1 opened at Wed Jul 09 15:06:22 +0500 2025
+Execute     config_clock -quiet -name default -period 10 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+Execute     config_clock -quiet -name default -uncertainty 1.25 -unit % 
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib D:/vivado/2020.1/common/technology/xilinx/zynq/zynq 
+Execute       source D:/vivado/2020.1/common/technology/xilinx/common/xilinx.lib 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/interface/xilinx_interface.lib 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/plb46.lib 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/fsl.lib 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/axi4.lib 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/maxi.lib 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/saxilite.lib 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/common/dsp48.lib 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/ip/dds_compiler.lib 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/ip/xfft.lib 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/ip/xfir.lib 
+Execute       source D:/vivado/2020.1/common/technology/xilinx/common/xilinx.hlp 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/common/target_info.tcl 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/maxi.hlp 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/common/dsp48.hlp 
+Execute       source D:/vivado/2020.1/common/technology/xilinx/zynq/dsp48e1.hlp 
+Execute       source D:/vivado/2020.1/common/technology/xilinx/common/xilinx.hlp 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/common/target_info.tcl 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/maxi.hlp 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/common/dsp48.hlp 
+Command     import_lib done; 0.153 sec.
+Execute     source D:/vivado/2020.1/common/technology/xilinx/zynq/zynq.gen 
+Execute       source D:/vivado/2020.1/common/technology/xilinx/common/xilinx.gen 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/interface/plb46.gen 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/interface/fsl.gen 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/interface/axi4.gen 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/saxilite.gen 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/maxi.gen 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/ip/util.gen 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/ip/xfft.gen 
+Command         ap_source done; 0.102 sec.
+Execute         source D:/vivado/2020.1/common/technology/xilinx/ip/xfir.gen 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/common/dsp48.gen 
+Command       ap_source done; 0.266 sec.
+Command     ap_source done; 0.267 sec.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib D:/vivado/2020.1/common/technology/xilinx/zynq/zynq_fpv6 
+Execute       source D:/vivado/2020.1/common/technology/xilinx/common/xilinx_fp.lib 
+Execute       source D:/vivado/2020.1/common/technology/xilinx/common/xilinx_fp.hlp 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/common/xilinx.hlp 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/common/target_info.tcl 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute             source D:/vivado/2020.1/common/technology/xilinx/interface/maxi.hlp 
+Execute             source D:/vivado/2020.1/common/technology/xilinx/interface/saxilite.hlp 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/common/dsp48.hlp 
+Execute     source D:/vivado/2020.1/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute       source D:/vivado/2020.1/common/technology/xilinx/common/xilinx_fp.gen 
+Execute     set_part xc7z020-clg484-1 
+Execute       ap_part_info -name xc7z020-clg484-1 -data single -quiet 
+Command       ap_part_info done; 1.762 sec.
+Execute       ap_part_info -name xc7z020-clg484-1 -data info 
+Execute       add_library xilinx/zynq/zynq:xc7z020:-clg484:-1 
+Execute         get_default_platform 
+Execute         ap_part_info -data single -name xc7z020-clg484-1 
+Execute         ap_part_info -name xc7z020-clg484-1 -data resources 
+Execute         ap_part_info -name xc7z020-clg484-1 -data info 
+Execute         ap_part_info -name xc7z020-clg484-1 -data info 
+Execute         config_chip_info -quiet -resource {SLICE 13300} {LUT 53200} {FF 106400} {DSP48E 220} {BRAM 280} {URAM 0} 
+Execute         ap_part_info -name xc7z020-clg484-1 -data info 
+Execute         config_chip_info -quiet -speed slow 
+Execute       add_library xilinx/zynq/zynq_fpv6 
+Execute         get_default_platform 
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+Execute       ap_part_info -name xc7z020-clg484-1 -data info 
+Execute       get_default_platform 
+Command     set_part done; 1.957 sec.
+Execute     ap_part_info -data single -name xc7z020-clg484-1 
+Execute     ap_part_info -name xc7z020-clg484-1 -data resources 
+Execute     ap_part_info -name xc7z020-clg484-1 -data info 
+Execute     ap_part_info -name xc7z020-clg484-1 -data info 
+Execute     config_chip_info -quiet -resource {SLICE 13300} {LUT 53200} {FF 106400} {DSP48E 220} {BRAM 280} {URAM 0} 
+Execute     ap_part_info -name xc7z020-clg484-1 -data info 
+Execute     config_chip_info -quiet -speed slow 
+Execute     config_sdx -optimization_level=none 
+Execute       send_msg_by_id INFO @200-435@%s%s 'config_sdx -optimization_level' config_export -vivado_optimization_level=2 
+INFO: [HLS 200-435] Setting 'config_sdx -optimization_level' configuration: config_export -vivado_optimization_level=2
+Execute       config_export -vivado_optimization_level=2 
+Execute         get_config_export -vivado_impl_strategy 
+Execute         get_config_export -vivado_phys_opt 
+Execute     config_sdx -target=none 
+Execute       send_msg_by_id INFO @200-435@%s%s 'config_sdx -target' config_export -vivado_optimization_level=2 
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: config_export -vivado_optimization_level=2
+Execute       config_export -vivado_optimization_level=2 
+Execute         get_config_export -vivado_impl_strategy 
+Execute         get_config_export -vivado_phys_opt 
+Execute       get_config_compile -pipeline_loops 
+Execute       get_config_compile -name_max_length 
+Execute       get_config_schedule -enable_dsp_full_reg 
+Execute       get_config_rtl -register_reset_num 
+Execute       get_config_rtl -module_auto_prefix 
+Execute       get_config_interface -m_axi_addr64 
+Execute       send_msg_by_id INFO @200-435@%s%s 'config_sdx -target' set_clock_uncertainty default 
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: set_clock_uncertainty default
+Execute       set_clock_uncertainty default 
+Execute     config_export -vivado_optimization_level=2 
+Execute       get_config_export -vivado_impl_strategy 
+Execute       get_config_export -vivado_phys_opt 
+Command   open_solution done; 2.521 sec.
+Execute   set_part xc7z020-clg484-1 
+Execute     ap_part_info -name xc7z020-clg484-1 -data single -quiet 
+Execute     ap_part_info -name xc7z020-clg484-1 -data info 
+Execute     add_library xilinx/zynq/zynq:xc7z020:-clg484:-1 
+Execute       get_default_platform 
+Execute       ap_part_info -data single -name xc7z020-clg484-1 
+Execute       ap_part_info -name xc7z020-clg484-1 -data resources 
+Execute       ap_part_info -name xc7z020-clg484-1 -data info 
+Execute       ap_part_info -name xc7z020-clg484-1 -data info 
+Execute       config_chip_info -quiet -resource {SLICE 13300} {LUT 53200} {FF 106400} {DSP48E 220} {BRAM 280} {URAM 0} 
+Execute       ap_part_info -name xc7z020-clg484-1 -data info 
+Execute       config_chip_info -quiet -speed slow 
+Execute     add_library xilinx/zynq/zynq_fpv6 
+Execute       get_default_platform 
+Execute     ap_part_info -name xc7z020-clg484-1 -data info 
+Execute     get_default_platform 
+Command   set_part done; 0.149 sec.
+Execute   create_clock -period 10 -name default 
+Execute   config_sdx -optimization_level none -target none 
+WARNING: [HLS 200-483] The 'config_sdx -optimization_level' command is deprecated and will be removed in a future release. Use 'config_export -vivado_optimization_level' as its replacement.
+Execute     send_msg_by_id INFO @200-435@%s%s 'config_sdx -optimization_level' config_export -vivado_optimization_level=2 
+INFO: [HLS 200-435] Setting 'config_sdx -optimization_level' configuration: config_export -vivado_optimization_level=2
+Execute     config_export -vivado_optimization_level=2 
+Execute       get_config_export -vivado_impl_strategy 
+Execute       get_config_export -vivado_phys_opt 
+Execute     send_msg_by_id INFO @200-435@%s%s 'config_sdx -target' config_export -vivado_optimization_level=2 
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: config_export -vivado_optimization_level=2
+Execute     config_export -vivado_optimization_level=2 
+Execute       get_config_export -vivado_impl_strategy 
+Execute       get_config_export -vivado_phys_opt 
+Execute     get_config_compile -pipeline_loops 
+Execute     get_config_compile -name_max_length 
+Execute     get_config_schedule -enable_dsp_full_reg 
+Execute     get_config_rtl -register_reset_num 
+Execute     get_config_rtl -module_auto_prefix 
+Execute     get_config_interface -m_axi_addr64 
+Execute     send_msg_by_id INFO @200-435@%s%s 'config_sdx -target' set_clock_uncertainty default 
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: set_clock_uncertainty default
+Execute     set_clock_uncertainty default 
+WARNING: [HLS 200-484] The 'config_sdx -optimization_level' command is deprecated and will be removed in a future release.
+Execute   config_export -vivado_optimization_level 2 
+Execute     get_config_export -vivado_impl_strategy 
+Execute     get_config_export -vivado_phys_opt 
+Execute   set_clock_uncertainty 12.5% 
+Execute   csynth_design 
+Execute     get_config_compile -dump_cfg 
+Execute     get_config_compile -effort 
+Execute     get_config_compile -enable_clang39 
+Execute     get_config_compile -g 
+Execute     get_config_compile -ng 
+Execute     get_config_compile -opt_fp 
+Execute     get_config_compile -skip_cdt 
+Execute     get_config_compile -skip_syncheck 
+Execute     get_config_compile -skip_transform 
+Execute     get_config_compile -keep_printf 
+Execute     elaborate -effort=medium -skip_syncheck=0 -keep_printf=0 -skip_cdt=0 -skip_transform=0 -ng=0 -g=0 -opt_fp=0 -from_csynth_design=1 
+Execute       get_config_schedule -relax_ii_for_timing 
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+Execute       get_config_schedule -suppress_dependence_error_break 
+INFO: [HLS 200-10] Analyzing design file 'cnn/src/conv.cpp' ... 
+INFO-FLOW: Compiling one TU...
+Execute       is_m_axi_addr64 
+INFO-FLOW: Handling cnn/src/conv.cpp as C++
+Execute       ap_part_info -name xc7z020-clg484-1 -data info 
+Execute       is_encrypted cnn/src/conv.cpp 
+Execute       ap_part_info -name xc7z020-clg484-1 -data info 
+INFO-FLOW: Running: GCC PP
+INFO-FLOW: Source preprocessing
+Execute       clang  -fno-limit-debug-info -gcc-toolchain "D:/vivado/2020.1/msys" -hls  -fno-exceptions  -D__llvm__  -E "cnn/src/conv.cpp"     -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "D:/vivado/2020.1/common/technology/autopilot" -I "D:/vivado/2020.1/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  -o "D:/CNN2.0/hls/cnn/solution1/.autopilot/db/conv.pp.0.cpp" 
+INFO-FLOW: exec D:/vivado/2020.1/win64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain D:/vivado/2020.1/msys -hls -fno-exceptions -D__llvm__ -E cnn/src/conv.cpp -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I D:/vivado/2020.1/common/technology/autopilot -I D:/vivado/2020.1/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -o D:/CNN2.0/hls/cnn/solution1/.autopilot/db/conv.pp.0.cpp
+Command       clang done; 1.682 sec.
+Execute       tidy_31 xilinx-xfmat-array-geometry D:/CNN2.0/hls/cnn/solution1/.autopilot/db/conv.pp.0.cpp std=gnu++98 
+INFO-FLOW: exec D:/vivado/2020.1/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-xfmat-array-geometry -quiet -fix D:/CNN2.0/hls/cnn/solution1/.autopilot/db/conv.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
+Command       tidy_31 done; 0.903 sec.
+INFO-FLOW: Syntax Checking before pre-processing...
+Execute       clang -syntaxcheck -src D:/CNN2.0/hls/cnn/solution1/.autopilot/db/conv.pp.0.cpp  -fno-limit-debug-info -gcc-toolchain "D:/vivado/2020.1/msys" -hls    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "D:/vivado/2020.1/common/technology/autopilot" -I "D:/vivado/2020.1/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  "D:/CNN2.0/hls/cnn/solution1/.autopilot/db/conv.pp.0.cpp"  -o "D:/CNN2.0/hls/cnn/solution1/.autopilot/db/useless.bc"  
+INFO-FLOW: exec D:/vivado/2020.1/win64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain D:/vivado/2020.1/msys -hls -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I D:/vivado/2020.1/common/technology/autopilot -I D:/vivado/2020.1/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ D:/CNN2.0/hls/cnn/solution1/.autopilot/db/conv.pp.0.cpp -o D:/CNN2.0/hls/cnn/solution1/.autopilot/db/useless.bc
+Command       clang done; 1.672 sec.
+INFO-FLOW: Done: GCC PP time: 4.3 seconds per iteration
+Execute       source D:/vivado/2020.1/tps/tcl/tcllib1.11.1/yaml/huddle.tcl 
+Execute       source D:/vivado/2020.1/tps/tcl/tcllib1.11.1/yaml/json2huddle.tcl 
+Execute         source D:/vivado/2020.1/tps/tcl/tcllib1.11.1/try/try.tcl 
+Execute       list_core -type functional_unit 
+Execute       tidy_31 xilinx-systemc-detector D:/CNN2.0/hls/cnn/solution1/.autopilot/db/conv.pp.0.cpp std=gnu++98 -directive=D:/CNN2.0/hls/cnn/solution1/.autopilot/db/.systemc_flag 
+INFO-FLOW: exec D:/vivado/2020.1/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-systemc-detector -import-directive=D:/CNN2.0/hls/cnn/solution1/.autopilot/db/.systemc_flag -quiet -fix-errors D:/CNN2.0/hls/cnn/solution1/.autopilot/db/conv.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
+Command       tidy_31 done; 0.728 sec.
+INFO-FLOW: Running: tidy-3.1 CDT preprocess
+Execute       tidy_31 xilinx-directive2pragma D:/CNN2.0/hls/cnn/solution1/.autopilot/db/conv.pp.0.cpp std=gnu++98 -directive=D:/CNN2.0/hls/cnn/solution1/.autopilot/db/all.directive.json 
+INFO-FLOW: exec D:/vivado/2020.1/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-directive2pragma -import-directive=D:/CNN2.0/hls/cnn/solution1/.autopilot/db/all.directive.json -quiet -fix-errors D:/CNN2.0/hls/cnn/solution1/.autopilot/db/conv.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
+Command       tidy_31 done; 0.692 sec.
+Execute       get_config_dataflow -strict_mode 
+Execute       ap_eval exec -ignorestderr D:/vivado/2020.1/win64/tools/clang-3.9-csynth/bin/xilinx-dataflow-lawyer -export-fixes=D:/CNN2.0/hls/cnn/solution1/.autopilot/db/xilinx-dataflow-lawyer.conv.pp.0.cpp.diag.yml D:/CNN2.0/hls/cnn/solution1/.autopilot/db/conv.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0 -fstrict-dataflow > D:/CNN2.0/hls/cnn/solution1/.autopilot/db/xilinx-dataflow-lawyer.conv.pp.0.cpp.out.log 2> D:/CNN2.0/hls/cnn/solution1/.autopilot/db/xilinx-dataflow-lawyer.conv.pp.0.cpp.err.log 
+Command       ap_eval done; 0.718 sec.
+Execute       tidy_31 -errorcheck xilinx-constantarray-param,xilinx-resource-pragma-transformer,xilinx-xfmat-array-geometry D:/CNN2.0/hls/cnn/solution1/.autopilot/db/conv.pp.0.cpp std=gnu++98 
+Execute         ap_eval exec -ignorestderr D:/vivado/2020.1/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -export-fixes=D:/CNN2.0/hls/cnn/solution1/.autopilot/db/tidy-3.1.conv.pp.0.cpp.diag.yml -header-filter=.* -checks=-*,xilinx-constantarray-param,xilinx-resource-pragma-transformer,xilinx-xfmat-array-geometry -quiet -fix-errors D:/CNN2.0/hls/cnn/solution1/.autopilot/db/conv.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0 > D:/CNN2.0/hls/cnn/solution1/.autopilot/db/tidy-3.1.conv.pp.0.cpp.out.log 2> D:/CNN2.0/hls/cnn/solution1/.autopilot/db/tidy-3.1.conv.pp.0.cpp.err.log 
+Command         ap_eval done; 0.871 sec.
+Execute         ap_eval exec -ignorestderr D:/vivado/2020.1/win64/tools/clang-3.9-csynth/bin/xilinx-legacy-rewriter D:/CNN2.0/hls/cnn/solution1/.autopilot/db/conv.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0 > D:/CNN2.0/hls/cnn/solution1/.autopilot/db/xilinx-legacy-rewriter.conv.pp.0.cpp.out.log 2> D:/CNN2.0/hls/cnn/solution1/.autopilot/db/xilinx-legacy-rewriter.conv.pp.0.cpp.err.log 
+Command         ap_eval done; 0.495 sec.
+Command       tidy_31 done; 1.37 sec.
+INFO-FLOW: Done: tidy-3.1 CDT preprocess time: 2.8 seconds per iteration
+INFO-FLOW: Pragma Handling...
+Execute       tidy_31 xilinx-ssdm-intrinsics-arguments D:/CNN2.0/hls/cnn/solution1/.autopilot/db/conv.pragma.1.cpp std=gnu++98 
+INFO-FLOW: exec D:/vivado/2020.1/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-ssdm-intrinsics-arguments -quiet -fix-errors D:/CNN2.0/hls/cnn/solution1/.autopilot/db/conv.pragma.1.cpp -- -std=gnu++98 -fhls -ferror-limit=0
+Command       tidy_31 done; 1.302 sec.
+Execute       ap_part_info -name xc7z020-clg484-1 -data info 
+INFO-FLOW: Processing labels
+Execute       clang -src D:/CNN2.0/hls/cnn/solution1/.autopilot/db/conv.pragma.2.cpp  -fno-limit-debug-info -gcc-toolchain D:/vivado/2020.1/msys -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions  -D__llvm__  -w  "D:/CNN2.0/hls/cnn/solution1/.autopilot/db/conv.pragma.2.cpp"    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "D:/vivado/2020.1/common/technology/autopilot" -I "D:/vivado/2020.1/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o "D:/CNN2.0/hls/cnn/solution1/.autopilot/db/conv.bc" 
+INFO-FLOW: exec D:/vivado/2020.1/win64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain D:/vivado/2020.1/msys -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions -D__llvm__ -w D:/CNN2.0/hls/cnn/solution1/.autopilot/db/conv.pragma.2.cpp -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I D:/vivado/2020.1/common/technology/autopilot -I D:/vivado/2020.1/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o D:/CNN2.0/hls/cnn/solution1/.autopilot/db/conv.bc
+Command       clang done; 1.66 sec.
+INFO: [HLS 200-10] Analyzing design file 'cnn/src/dense.cpp' ... 
+INFO-FLOW: Compiling one TU...
+Execute       is_m_axi_addr64 
+INFO-FLOW: Handling cnn/src/dense.cpp as C++
+Execute       ap_part_info -name xc7z020-clg484-1 -data info 
+Execute       is_encrypted cnn/src/dense.cpp 
+Execute       ap_part_info -name xc7z020-clg484-1 -data info 
+INFO-FLOW: Running: GCC PP
+INFO-FLOW: Source preprocessing
+Execute       clang  -fno-limit-debug-info -gcc-toolchain "D:/vivado/2020.1/msys" -hls  -fno-exceptions  -D__llvm__  -E "cnn/src/dense.cpp"     -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "D:/vivado/2020.1/common/technology/autopilot" -I "D:/vivado/2020.1/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  -o "D:/CNN2.0/hls/cnn/solution1/.autopilot/db/dense.pp.0.cpp" 
+INFO-FLOW: exec D:/vivado/2020.1/win64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain D:/vivado/2020.1/msys -hls -fno-exceptions -D__llvm__ -E cnn/src/dense.cpp -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I D:/vivado/2020.1/common/technology/autopilot -I D:/vivado/2020.1/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -o D:/CNN2.0/hls/cnn/solution1/.autopilot/db/dense.pp.0.cpp
+Command       clang done; 1.325 sec.
+Execute       tidy_31 xilinx-xfmat-array-geometry D:/CNN2.0/hls/cnn/solution1/.autopilot/db/dense.pp.0.cpp std=gnu++98 
+INFO-FLOW: exec D:/vivado/2020.1/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-xfmat-array-geometry -quiet -fix D:/CNN2.0/hls/cnn/solution1/.autopilot/db/dense.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
+Command       tidy_31 done; 0.68 sec.
+INFO-FLOW: Syntax Checking before pre-processing...
+Execute       clang -syntaxcheck -src D:/CNN2.0/hls/cnn/solution1/.autopilot/db/dense.pp.0.cpp  -fno-limit-debug-info -gcc-toolchain "D:/vivado/2020.1/msys" -hls    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "D:/vivado/2020.1/common/technology/autopilot" -I "D:/vivado/2020.1/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  "D:/CNN2.0/hls/cnn/solution1/.autopilot/db/dense.pp.0.cpp"  -o "D:/CNN2.0/hls/cnn/solution1/.autopilot/db/useless.bc"  
+INFO-FLOW: exec D:/vivado/2020.1/win64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain D:/vivado/2020.1/msys -hls -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I D:/vivado/2020.1/common/technology/autopilot -I D:/vivado/2020.1/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ D:/CNN2.0/hls/cnn/solution1/.autopilot/db/dense.pp.0.cpp -o D:/CNN2.0/hls/cnn/solution1/.autopilot/db/useless.bc
+Command       clang done; 1.779 sec.
+INFO-FLOW: Done: GCC PP time: 3.8 seconds per iteration
+Execute       list_core -type functional_unit 
+Execute       tidy_31 xilinx-systemc-detector D:/CNN2.0/hls/cnn/solution1/.autopilot/db/dense.pp.0.cpp std=gnu++98 -directive=D:/CNN2.0/hls/cnn/solution1/.autopilot/db/.systemc_flag 
+INFO-FLOW: exec D:/vivado/2020.1/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-systemc-detector -import-directive=D:/CNN2.0/hls/cnn/solution1/.autopilot/db/.systemc_flag -quiet -fix-errors D:/CNN2.0/hls/cnn/solution1/.autopilot/db/dense.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
+Command       tidy_31 done; 0.664 sec.
+INFO-FLOW: Running: tidy-3.1 CDT preprocess
+Execute       tidy_31 xilinx-directive2pragma D:/CNN2.0/hls/cnn/solution1/.autopilot/db/dense.pp.0.cpp std=gnu++98 -directive=D:/CNN2.0/hls/cnn/solution1/.autopilot/db/all.directive.json 
+INFO-FLOW: exec D:/vivado/2020.1/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-directive2pragma -import-directive=D:/CNN2.0/hls/cnn/solution1/.autopilot/db/all.directive.json -quiet -fix-errors D:/CNN2.0/hls/cnn/solution1/.autopilot/db/dense.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
+Command       tidy_31 done; 0.664 sec.
+Execute       get_config_dataflow -strict_mode 
+Execute       ap_eval exec -ignorestderr D:/vivado/2020.1/win64/tools/clang-3.9-csynth/bin/xilinx-dataflow-lawyer -export-fixes=D:/CNN2.0/hls/cnn/solution1/.autopilot/db/xilinx-dataflow-lawyer.dense.pp.0.cpp.diag.yml D:/CNN2.0/hls/cnn/solution1/.autopilot/db/dense.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0 -fstrict-dataflow > D:/CNN2.0/hls/cnn/solution1/.autopilot/db/xilinx-dataflow-lawyer.dense.pp.0.cpp.out.log 2> D:/CNN2.0/hls/cnn/solution1/.autopilot/db/xilinx-dataflow-lawyer.dense.pp.0.cpp.err.log 
+Command       ap_eval done; 0.617 sec.
+Execute       tidy_31 -errorcheck xilinx-constantarray-param,xilinx-resource-pragma-transformer,xilinx-xfmat-array-geometry D:/CNN2.0/hls/cnn/solution1/.autopilot/db/dense.pp.0.cpp std=gnu++98 
+Execute         ap_eval exec -ignorestderr D:/vivado/2020.1/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -export-fixes=D:/CNN2.0/hls/cnn/solution1/.autopilot/db/tidy-3.1.dense.pp.0.cpp.diag.yml -header-filter=.* -checks=-*,xilinx-constantarray-param,xilinx-resource-pragma-transformer,xilinx-xfmat-array-geometry -quiet -fix-errors D:/CNN2.0/hls/cnn/solution1/.autopilot/db/dense.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0 > D:/CNN2.0/hls/cnn/solution1/.autopilot/db/tidy-3.1.dense.pp.0.cpp.out.log 2> D:/CNN2.0/hls/cnn/solution1/.autopilot/db/tidy-3.1.dense.pp.0.cpp.err.log 
+Command         ap_eval done; 0.842 sec.
+Execute         ap_eval exec -ignorestderr D:/vivado/2020.1/win64/tools/clang-3.9-csynth/bin/xilinx-legacy-rewriter D:/CNN2.0/hls/cnn/solution1/.autopilot/db/dense.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0 > D:/CNN2.0/hls/cnn/solution1/.autopilot/db/xilinx-legacy-rewriter.dense.pp.0.cpp.out.log 2> D:/CNN2.0/hls/cnn/solution1/.autopilot/db/xilinx-legacy-rewriter.dense.pp.0.cpp.err.log 
+Command         ap_eval done; 0.454 sec.
+Command       tidy_31 done; 1.298 sec.
+INFO-FLOW: Done: tidy-3.1 CDT preprocess time: 2.6 seconds per iteration
+INFO-FLOW: Pragma Handling...
+Execute       tidy_31 xilinx-ssdm-intrinsics-arguments D:/CNN2.0/hls/cnn/solution1/.autopilot/db/dense.pragma.1.cpp std=gnu++98 
+INFO-FLOW: exec D:/vivado/2020.1/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-ssdm-intrinsics-arguments -quiet -fix-errors D:/CNN2.0/hls/cnn/solution1/.autopilot/db/dense.pragma.1.cpp -- -std=gnu++98 -fhls -ferror-limit=0
+Command       tidy_31 done; 1.25 sec.
+Execute       ap_part_info -name xc7z020-clg484-1 -data info 
+INFO-FLOW: Processing labels
+Execute       clang -src D:/CNN2.0/hls/cnn/solution1/.autopilot/db/dense.pragma.2.cpp  -fno-limit-debug-info -gcc-toolchain D:/vivado/2020.1/msys -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions  -D__llvm__  -w  "D:/CNN2.0/hls/cnn/solution1/.autopilot/db/dense.pragma.2.cpp"    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "D:/vivado/2020.1/common/technology/autopilot" -I "D:/vivado/2020.1/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o "D:/CNN2.0/hls/cnn/solution1/.autopilot/db/dense.bc" 
+INFO-FLOW: exec D:/vivado/2020.1/win64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain D:/vivado/2020.1/msys -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions -D__llvm__ -w D:/CNN2.0/hls/cnn/solution1/.autopilot/db/dense.pragma.2.cpp -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I D:/vivado/2020.1/common/technology/autopilot -I D:/vivado/2020.1/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o D:/CNN2.0/hls/cnn/solution1/.autopilot/db/dense.bc
+Command       clang done; 1.642 sec.
+INFO: [HLS 200-10] Analyzing design file 'cnn/src/eight.cpp' ... 
+INFO-FLOW: Compiling one TU...
+Execute       is_m_axi_addr64 
+INFO-FLOW: Handling cnn/src/eight.cpp as C++
+Execute       ap_part_info -name xc7z020-clg484-1 -data info 
+Execute       is_encrypted cnn/src/eight.cpp 
+Execute       ap_part_info -name xc7z020-clg484-1 -data info 
+INFO-FLOW: Running: GCC PP
+INFO-FLOW: Source preprocessing
+Execute       clang  -fno-limit-debug-info -gcc-toolchain "D:/vivado/2020.1/msys" -hls  -fno-exceptions  -D__llvm__  -E "cnn/src/eight.cpp"     -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "D:/vivado/2020.1/common/technology/autopilot" -I "D:/vivado/2020.1/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  -o "D:/CNN2.0/hls/cnn/solution1/.autopilot/db/eight.pp.0.cpp" 
+INFO-FLOW: exec D:/vivado/2020.1/win64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain D:/vivado/2020.1/msys -hls -fno-exceptions -D__llvm__ -E cnn/src/eight.cpp -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I D:/vivado/2020.1/common/technology/autopilot -I D:/vivado/2020.1/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -o D:/CNN2.0/hls/cnn/solution1/.autopilot/db/eight.pp.0.cpp
+Command       clang done; 1.326 sec.
+Execute       tidy_31 xilinx-xfmat-array-geometry D:/CNN2.0/hls/cnn/solution1/.autopilot/db/eight.pp.0.cpp std=gnu++98 
+INFO-FLOW: exec D:/vivado/2020.1/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-xfmat-array-geometry -quiet -fix D:/CNN2.0/hls/cnn/solution1/.autopilot/db/eight.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
+Command       tidy_31 done; 0.577 sec.
+INFO-FLOW: Syntax Checking before pre-processing...
+Execute       clang -syntaxcheck -src D:/CNN2.0/hls/cnn/solution1/.autopilot/db/eight.pp.0.cpp  -fno-limit-debug-info -gcc-toolchain "D:/vivado/2020.1/msys" -hls    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "D:/vivado/2020.1/common/technology/autopilot" -I "D:/vivado/2020.1/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  "D:/CNN2.0/hls/cnn/solution1/.autopilot/db/eight.pp.0.cpp"  -o "D:/CNN2.0/hls/cnn/solution1/.autopilot/db/useless.bc"  
+INFO-FLOW: exec D:/vivado/2020.1/win64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain D:/vivado/2020.1/msys -hls -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I D:/vivado/2020.1/common/technology/autopilot -I D:/vivado/2020.1/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ D:/CNN2.0/hls/cnn/solution1/.autopilot/db/eight.pp.0.cpp -o D:/CNN2.0/hls/cnn/solution1/.autopilot/db/useless.bc
+Command       clang done; 1.585 sec.
+INFO-FLOW: Done: GCC PP time: 3.5 seconds per iteration
+Execute       list_core -type functional_unit 
+Execute       tidy_31 xilinx-systemc-detector D:/CNN2.0/hls/cnn/solution1/.autopilot/db/eight.pp.0.cpp std=gnu++98 -directive=D:/CNN2.0/hls/cnn/solution1/.autopilot/db/.systemc_flag 
+INFO-FLOW: exec D:/vivado/2020.1/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-systemc-detector -import-directive=D:/CNN2.0/hls/cnn/solution1/.autopilot/db/.systemc_flag -quiet -fix-errors D:/CNN2.0/hls/cnn/solution1/.autopilot/db/eight.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
+Command       tidy_31 done; 0.541 sec.
+INFO-FLOW: Running: tidy-3.1 CDT preprocess
+Execute       tidy_31 xilinx-directive2pragma D:/CNN2.0/hls/cnn/solution1/.autopilot/db/eight.pp.0.cpp std=gnu++98 -directive=D:/CNN2.0/hls/cnn/solution1/.autopilot/db/all.directive.json 
+INFO-FLOW: exec D:/vivado/2020.1/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-directive2pragma -import-directive=D:/CNN2.0/hls/cnn/solution1/.autopilot/db/all.directive.json -quiet -fix-errors D:/CNN2.0/hls/cnn/solution1/.autopilot/db/eight.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
+Command       tidy_31 done; 0.57 sec.
+Execute       get_config_dataflow -strict_mode 
+Execute       ap_eval exec -ignorestderr D:/vivado/2020.1/win64/tools/clang-3.9-csynth/bin/xilinx-dataflow-lawyer -export-fixes=D:/CNN2.0/hls/cnn/solution1/.autopilot/db/xilinx-dataflow-lawyer.eight.pp.0.cpp.diag.yml D:/CNN2.0/hls/cnn/solution1/.autopilot/db/eight.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0 -fstrict-dataflow > D:/CNN2.0/hls/cnn/solution1/.autopilot/db/xilinx-dataflow-lawyer.eight.pp.0.cpp.out.log 2> D:/CNN2.0/hls/cnn/solution1/.autopilot/db/xilinx-dataflow-lawyer.eight.pp.0.cpp.err.log 
+Command       ap_eval done; 0.517 sec.
+Execute       tidy_31 -errorcheck xilinx-constantarray-param,xilinx-resource-pragma-transformer,xilinx-xfmat-array-geometry D:/CNN2.0/hls/cnn/solution1/.autopilot/db/eight.pp.0.cpp std=gnu++98 
+Execute         ap_eval exec -ignorestderr D:/vivado/2020.1/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -export-fixes=D:/CNN2.0/hls/cnn/solution1/.autopilot/db/tidy-3.1.eight.pp.0.cpp.diag.yml -header-filter=.* -checks=-*,xilinx-constantarray-param,xilinx-resource-pragma-transformer,xilinx-xfmat-array-geometry -quiet -fix-errors D:/CNN2.0/hls/cnn/solution1/.autopilot/db/eight.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0 > D:/CNN2.0/hls/cnn/solution1/.autopilot/db/tidy-3.1.eight.pp.0.cpp.out.log 2> D:/CNN2.0/hls/cnn/solution1/.autopilot/db/tidy-3.1.eight.pp.0.cpp.err.log 
+Command         ap_eval done; 0.633 sec.
+Execute         ap_eval exec -ignorestderr D:/vivado/2020.1/win64/tools/clang-3.9-csynth/bin/xilinx-legacy-rewriter D:/CNN2.0/hls/cnn/solution1/.autopilot/db/eight.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0 > D:/CNN2.0/hls/cnn/solution1/.autopilot/db/xilinx-legacy-rewriter.eight.pp.0.cpp.out.log 2> D:/CNN2.0/hls/cnn/solution1/.autopilot/db/xilinx-legacy-rewriter.eight.pp.0.cpp.err.log 
+Command         ap_eval done; 0.401 sec.
+Command       tidy_31 done; 1.043 sec.
+INFO-FLOW: Done: tidy-3.1 CDT preprocess time: 2.1 seconds per iteration
+INFO-FLOW: Pragma Handling...
+Execute       tidy_31 xilinx-ssdm-intrinsics-arguments D:/CNN2.0/hls/cnn/solution1/.autopilot/db/eight.pragma.1.cpp std=gnu++98 
+INFO-FLOW: exec D:/vivado/2020.1/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-ssdm-intrinsics-arguments -quiet -fix-errors D:/CNN2.0/hls/cnn/solution1/.autopilot/db/eight.pragma.1.cpp -- -std=gnu++98 -fhls -ferror-limit=0
+Command       tidy_31 done; 1.285 sec.
+Execute       ap_part_info -name xc7z020-clg484-1 -data info 
+INFO-FLOW: Processing labels
+Execute       clang -src D:/CNN2.0/hls/cnn/solution1/.autopilot/db/eight.pragma.2.cpp  -fno-limit-debug-info -gcc-toolchain D:/vivado/2020.1/msys -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions  -D__llvm__  -w  "D:/CNN2.0/hls/cnn/solution1/.autopilot/db/eight.pragma.2.cpp"    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "D:/vivado/2020.1/common/technology/autopilot" -I "D:/vivado/2020.1/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o "D:/CNN2.0/hls/cnn/solution1/.autopilot/db/eight.bc" 
+INFO-FLOW: exec D:/vivado/2020.1/win64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain D:/vivado/2020.1/msys -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions -D__llvm__ -w D:/CNN2.0/hls/cnn/solution1/.autopilot/db/eight.pragma.2.cpp -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I D:/vivado/2020.1/common/technology/autopilot -I D:/vivado/2020.1/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o D:/CNN2.0/hls/cnn/solution1/.autopilot/db/eight.bc
+Command       clang done; 1.652 sec.
+INFO: [HLS 200-10] Analyzing design file 'cnn/src/pool.cpp' ... 
+INFO-FLOW: Compiling one TU...
+Execute       is_m_axi_addr64 
+INFO-FLOW: Handling cnn/src/pool.cpp as C++
+Execute       ap_part_info -name xc7z020-clg484-1 -data info 
+Execute       is_encrypted cnn/src/pool.cpp 
+Execute       ap_part_info -name xc7z020-clg484-1 -data info 
+INFO-FLOW: Running: GCC PP
+INFO-FLOW: Source preprocessing
+Execute       clang  -fno-limit-debug-info -gcc-toolchain "D:/vivado/2020.1/msys" -hls  -fno-exceptions  -D__llvm__  -E "cnn/src/pool.cpp"     -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "D:/vivado/2020.1/common/technology/autopilot" -I "D:/vivado/2020.1/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  -o "D:/CNN2.0/hls/cnn/solution1/.autopilot/db/pool.pp.0.cpp" 
+INFO-FLOW: exec D:/vivado/2020.1/win64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain D:/vivado/2020.1/msys -hls -fno-exceptions -D__llvm__ -E cnn/src/pool.cpp -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I D:/vivado/2020.1/common/technology/autopilot -I D:/vivado/2020.1/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -o D:/CNN2.0/hls/cnn/solution1/.autopilot/db/pool.pp.0.cpp
+Command       clang done; 1.348 sec.
+Execute       tidy_31 xilinx-xfmat-array-geometry D:/CNN2.0/hls/cnn/solution1/.autopilot/db/pool.pp.0.cpp std=gnu++98 
+INFO-FLOW: exec D:/vivado/2020.1/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-xfmat-array-geometry -quiet -fix D:/CNN2.0/hls/cnn/solution1/.autopilot/db/pool.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
+Command       tidy_31 done; 0.658 sec.
+INFO-FLOW: Syntax Checking before pre-processing...
+Execute       clang -syntaxcheck -src D:/CNN2.0/hls/cnn/solution1/.autopilot/db/pool.pp.0.cpp  -fno-limit-debug-info -gcc-toolchain "D:/vivado/2020.1/msys" -hls    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "D:/vivado/2020.1/common/technology/autopilot" -I "D:/vivado/2020.1/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  "D:/CNN2.0/hls/cnn/solution1/.autopilot/db/pool.pp.0.cpp"  -o "D:/CNN2.0/hls/cnn/solution1/.autopilot/db/useless.bc"  
+INFO-FLOW: exec D:/vivado/2020.1/win64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain D:/vivado/2020.1/msys -hls -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I D:/vivado/2020.1/common/technology/autopilot -I D:/vivado/2020.1/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ D:/CNN2.0/hls/cnn/solution1/.autopilot/db/pool.pp.0.cpp -o D:/CNN2.0/hls/cnn/solution1/.autopilot/db/useless.bc
+Command       clang done; 1.621 sec.
+INFO-FLOW: Done: GCC PP time: 3.6 seconds per iteration
+Execute       list_core -type functional_unit 
+Execute       tidy_31 xilinx-systemc-detector D:/CNN2.0/hls/cnn/solution1/.autopilot/db/pool.pp.0.cpp std=gnu++98 -directive=D:/CNN2.0/hls/cnn/solution1/.autopilot/db/.systemc_flag 
+INFO-FLOW: exec D:/vivado/2020.1/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-systemc-detector -import-directive=D:/CNN2.0/hls/cnn/solution1/.autopilot/db/.systemc_flag -quiet -fix-errors D:/CNN2.0/hls/cnn/solution1/.autopilot/db/pool.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
+Command       tidy_31 done; 0.593 sec.
+INFO-FLOW: Running: tidy-3.1 CDT preprocess
+Execute       tidy_31 xilinx-directive2pragma D:/CNN2.0/hls/cnn/solution1/.autopilot/db/pool.pp.0.cpp std=gnu++98 -directive=D:/CNN2.0/hls/cnn/solution1/.autopilot/db/all.directive.json 
+INFO-FLOW: exec D:/vivado/2020.1/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-directive2pragma -import-directive=D:/CNN2.0/hls/cnn/solution1/.autopilot/db/all.directive.json -quiet -fix-errors D:/CNN2.0/hls/cnn/solution1/.autopilot/db/pool.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
+Command       tidy_31 done; 0.603 sec.
+Execute       get_config_dataflow -strict_mode 
+Execute       ap_eval exec -ignorestderr D:/vivado/2020.1/win64/tools/clang-3.9-csynth/bin/xilinx-dataflow-lawyer -export-fixes=D:/CNN2.0/hls/cnn/solution1/.autopilot/db/xilinx-dataflow-lawyer.pool.pp.0.cpp.diag.yml D:/CNN2.0/hls/cnn/solution1/.autopilot/db/pool.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0 -fstrict-dataflow > D:/CNN2.0/hls/cnn/solution1/.autopilot/db/xilinx-dataflow-lawyer.pool.pp.0.cpp.out.log 2> D:/CNN2.0/hls/cnn/solution1/.autopilot/db/xilinx-dataflow-lawyer.pool.pp.0.cpp.err.log 
+Command       ap_eval done; 0.563 sec.
+Execute       tidy_31 -errorcheck xilinx-constantarray-param,xilinx-resource-pragma-transformer,xilinx-xfmat-array-geometry D:/CNN2.0/hls/cnn/solution1/.autopilot/db/pool.pp.0.cpp std=gnu++98 
+Execute         ap_eval exec -ignorestderr D:/vivado/2020.1/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -export-fixes=D:/CNN2.0/hls/cnn/solution1/.autopilot/db/tidy-3.1.pool.pp.0.cpp.diag.yml -header-filter=.* -checks=-*,xilinx-constantarray-param,xilinx-resource-pragma-transformer,xilinx-xfmat-array-geometry -quiet -fix-errors D:/CNN2.0/hls/cnn/solution1/.autopilot/db/pool.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0 > D:/CNN2.0/hls/cnn/solution1/.autopilot/db/tidy-3.1.pool.pp.0.cpp.out.log 2> D:/CNN2.0/hls/cnn/solution1/.autopilot/db/tidy-3.1.pool.pp.0.cpp.err.log 
+Command         ap_eval done; 0.7 sec.
+Execute         ap_eval exec -ignorestderr D:/vivado/2020.1/win64/tools/clang-3.9-csynth/bin/xilinx-legacy-rewriter D:/CNN2.0/hls/cnn/solution1/.autopilot/db/pool.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0 > D:/CNN2.0/hls/cnn/solution1/.autopilot/db/xilinx-legacy-rewriter.pool.pp.0.cpp.out.log 2> D:/CNN2.0/hls/cnn/solution1/.autopilot/db/xilinx-legacy-rewriter.pool.pp.0.cpp.err.log 
+Command         ap_eval done; 0.368 sec.
+Command       tidy_31 done; 1.072 sec.
+INFO-FLOW: Done: tidy-3.1 CDT preprocess time: 2.2 seconds per iteration
+INFO-FLOW: Pragma Handling...
+Execute       tidy_31 xilinx-ssdm-intrinsics-arguments D:/CNN2.0/hls/cnn/solution1/.autopilot/db/pool.pragma.1.cpp std=gnu++98 
+INFO-FLOW: exec D:/vivado/2020.1/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-ssdm-intrinsics-arguments -quiet -fix-errors D:/CNN2.0/hls/cnn/solution1/.autopilot/db/pool.pragma.1.cpp -- -std=gnu++98 -fhls -ferror-limit=0
+Command       tidy_31 done; 0.735 sec.
+Execute       ap_part_info -name xc7z020-clg484-1 -data info 
+INFO-FLOW: Processing labels
+Execute       clang -src D:/CNN2.0/hls/cnn/solution1/.autopilot/db/pool.pragma.2.cpp  -fno-limit-debug-info -gcc-toolchain D:/vivado/2020.1/msys -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions  -D__llvm__  -w  "D:/CNN2.0/hls/cnn/solution1/.autopilot/db/pool.pragma.2.cpp"    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "D:/vivado/2020.1/common/technology/autopilot" -I "D:/vivado/2020.1/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o "D:/CNN2.0/hls/cnn/solution1/.autopilot/db/pool.bc" 
+INFO-FLOW: exec D:/vivado/2020.1/win64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain D:/vivado/2020.1/msys -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions -D__llvm__ -w D:/CNN2.0/hls/cnn/solution1/.autopilot/db/pool.pragma.2.cpp -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I D:/vivado/2020.1/common/technology/autopilot -I D:/vivado/2020.1/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o D:/CNN2.0/hls/cnn/solution1/.autopilot/db/pool.bc
+Command       clang done; 1.631 sec.
+INFO: [HLS 200-10] Analyzing design file 'cnn/src/testbench.cpp' ... 
+INFO-FLOW: Compiling one TU...
+Execute       is_m_axi_addr64 
+INFO-FLOW: Handling cnn/src/testbench.cpp as C++
+Execute       ap_part_info -name xc7z020-clg484-1 -data info 
+Execute       is_encrypted cnn/src/testbench.cpp 
+Execute       ap_part_info -name xc7z020-clg484-1 -data info 
+INFO-FLOW: Running: GCC PP
+INFO-FLOW: Source preprocessing
+Execute       clang  -fno-limit-debug-info -gcc-toolchain "D:/vivado/2020.1/msys" -hls  -fno-exceptions  -D__llvm__  -E "cnn/src/testbench.cpp"     -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "D:/vivado/2020.1/common/technology/autopilot" -I "D:/vivado/2020.1/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  -o "D:/CNN2.0/hls/cnn/solution1/.autopilot/db/testbench.pp.0.cpp" 
+INFO-FLOW: exec D:/vivado/2020.1/win64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain D:/vivado/2020.1/msys -hls -fno-exceptions -D__llvm__ -E cnn/src/testbench.cpp -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I D:/vivado/2020.1/common/technology/autopilot -I D:/vivado/2020.1/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -o D:/CNN2.0/hls/cnn/solution1/.autopilot/db/testbench.pp.0.cpp
+Command       clang done; 1.806 sec.
+Execute       tidy_31 xilinx-xfmat-array-geometry D:/CNN2.0/hls/cnn/solution1/.autopilot/db/testbench.pp.0.cpp std=gnu++98 
+INFO-FLOW: exec D:/vivado/2020.1/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-xfmat-array-geometry -quiet -fix D:/CNN2.0/hls/cnn/solution1/.autopilot/db/testbench.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
+Command       tidy_31 done; 6.252 sec.
+INFO-FLOW: Syntax Checking before pre-processing...
+Execute       clang -syntaxcheck -src D:/CNN2.0/hls/cnn/solution1/.autopilot/db/testbench.pp.0.cpp  -fno-limit-debug-info -gcc-toolchain "D:/vivado/2020.1/msys" -hls    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "D:/vivado/2020.1/common/technology/autopilot" -I "D:/vivado/2020.1/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  "D:/CNN2.0/hls/cnn/solution1/.autopilot/db/testbench.pp.0.cpp"  -o "D:/CNN2.0/hls/cnn/solution1/.autopilot/db/useless.bc"  
+INFO-FLOW: exec D:/vivado/2020.1/win64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain D:/vivado/2020.1/msys -hls -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I D:/vivado/2020.1/common/technology/autopilot -I D:/vivado/2020.1/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ D:/CNN2.0/hls/cnn/solution1/.autopilot/db/testbench.pp.0.cpp -o D:/CNN2.0/hls/cnn/solution1/.autopilot/db/useless.bc
+Command       clang done; 4.624 sec.
+INFO-FLOW: Done: GCC PP time: 12.7 seconds per iteration
+Execute       list_core -type functional_unit 
+Execute       tidy_31 xilinx-systemc-detector D:/CNN2.0/hls/cnn/solution1/.autopilot/db/testbench.pp.0.cpp std=gnu++98 -directive=D:/CNN2.0/hls/cnn/solution1/.autopilot/db/.systemc_flag 
+INFO-FLOW: exec D:/vivado/2020.1/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-systemc-detector -import-directive=D:/CNN2.0/hls/cnn/solution1/.autopilot/db/.systemc_flag -quiet -fix-errors D:/CNN2.0/hls/cnn/solution1/.autopilot/db/testbench.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
+Command       tidy_31 done; 6.269 sec.
+INFO-FLOW: Running: tidy-3.1 CDT preprocess
+Execute       tidy_31 xilinx-directive2pragma D:/CNN2.0/hls/cnn/solution1/.autopilot/db/testbench.pp.0.cpp std=gnu++98 -directive=D:/CNN2.0/hls/cnn/solution1/.autopilot/db/all.directive.json 
+INFO-FLOW: exec D:/vivado/2020.1/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-directive2pragma -import-directive=D:/CNN2.0/hls/cnn/solution1/.autopilot/db/all.directive.json -quiet -fix-errors D:/CNN2.0/hls/cnn/solution1/.autopilot/db/testbench.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
+Command       tidy_31 done; 6.092 sec.
+Execute       get_config_dataflow -strict_mode 
+Execute       ap_eval exec -ignorestderr D:/vivado/2020.1/win64/tools/clang-3.9-csynth/bin/xilinx-dataflow-lawyer -export-fixes=D:/CNN2.0/hls/cnn/solution1/.autopilot/db/xilinx-dataflow-lawyer.testbench.pp.0.cpp.diag.yml D:/CNN2.0/hls/cnn/solution1/.autopilot/db/testbench.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0 -fstrict-dataflow > D:/CNN2.0/hls/cnn/solution1/.autopilot/db/xilinx-dataflow-lawyer.testbench.pp.0.cpp.out.log 2> D:/CNN2.0/hls/cnn/solution1/.autopilot/db/xilinx-dataflow-lawyer.testbench.pp.0.cpp.err.log 
+Command       ap_eval done; 5.994 sec.
+Execute       tidy_31 -errorcheck xilinx-constantarray-param,xilinx-resource-pragma-transformer,xilinx-xfmat-array-geometry D:/CNN2.0/hls/cnn/solution1/.autopilot/db/testbench.pp.0.cpp std=gnu++98 
+Execute         ap_eval exec -ignorestderr D:/vivado/2020.1/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -export-fixes=D:/CNN2.0/hls/cnn/solution1/.autopilot/db/tidy-3.1.testbench.pp.0.cpp.diag.yml -header-filter=.* -checks=-*,xilinx-constantarray-param,xilinx-resource-pragma-transformer,xilinx-xfmat-array-geometry -quiet -fix-errors D:/CNN2.0/hls/cnn/solution1/.autopilot/db/testbench.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0 > D:/CNN2.0/hls/cnn/solution1/.autopilot/db/tidy-3.1.testbench.pp.0.cpp.out.log 2> D:/CNN2.0/hls/cnn/solution1/.autopilot/db/tidy-3.1.testbench.pp.0.cpp.err.log 
+Command         ap_eval done; 6.32 sec.
+Execute         ap_eval exec -ignorestderr D:/vivado/2020.1/win64/tools/clang-3.9-csynth/bin/xilinx-legacy-rewriter D:/CNN2.0/hls/cnn/solution1/.autopilot/db/testbench.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0 > D:/CNN2.0/hls/cnn/solution1/.autopilot/db/xilinx-legacy-rewriter.testbench.pp.0.cpp.out.log 2> D:/CNN2.0/hls/cnn/solution1/.autopilot/db/xilinx-legacy-rewriter.testbench.pp.0.cpp.err.log 
+Command         ap_eval done; 3.148 sec.
+Command       tidy_31 done; 9.472 sec.
+INFO-FLOW: Done: tidy-3.1 CDT preprocess time: 21.6 seconds per iteration
+INFO-FLOW: Pragma Handling...
+Execute       tidy_31 xilinx-ssdm-intrinsics-arguments D:/CNN2.0/hls/cnn/solution1/.autopilot/db/testbench.pragma.1.cpp std=gnu++98 
+INFO-FLOW: exec D:/vivado/2020.1/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-ssdm-intrinsics-arguments -quiet -fix-errors D:/CNN2.0/hls/cnn/solution1/.autopilot/db/testbench.pragma.1.cpp -- -std=gnu++98 -fhls -ferror-limit=0
+Command       tidy_31 done; 7 sec.
+Execute       ap_part_info -name xc7z020-clg484-1 -data info 
+INFO-FLOW: Processing labels
+Execute       clang -src D:/CNN2.0/hls/cnn/solution1/.autopilot/db/testbench.pragma.2.cpp  -fno-limit-debug-info -gcc-toolchain D:/vivado/2020.1/msys -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions  -D__llvm__  -w  "D:/CNN2.0/hls/cnn/solution1/.autopilot/db/testbench.pragma.2.cpp"    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "D:/vivado/2020.1/common/technology/autopilot" -I "D:/vivado/2020.1/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o "D:/CNN2.0/hls/cnn/solution1/.autopilot/db/testbench.bc" 
+INFO-FLOW: exec D:/vivado/2020.1/win64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain D:/vivado/2020.1/msys -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions -D__llvm__ -w D:/CNN2.0/hls/cnn/solution1/.autopilot/db/testbench.pragma.2.cpp -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I D:/vivado/2020.1/common/technology/autopilot -I D:/vivado/2020.1/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o D:/CNN2.0/hls/cnn/solution1/.autopilot/db/testbench.bc
+Command       clang done; 4.147 sec.
+INFO-FLOW: Linking Debug ...
+Execute       llvm-ld D:/CNN2.0/hls/cnn/solution1/.autopilot/db/conv.g.bc D:/CNN2.0/hls/cnn/solution1/.autopilot/db/dense.g.bc D:/CNN2.0/hls/cnn/solution1/.autopilot/db/eight.g.bc D:/CNN2.0/hls/cnn/solution1/.autopilot/db/pool.g.bc D:/CNN2.0/hls/cnn/solution1/.autopilot/db/testbench.g.bc -hls-opt -except-internalize top -LD:/vivado/2020.1/win64/lib -lhlsm -lhlsmc++ -o D:/CNN2.0/hls/cnn/solution1/.autopilot/db/a.g 
+Command       llvm-ld done; 2.15 sec.
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:02 ; elapsed = 00:01:38 . Memory (MB): peak = 947.461 ; gain = 876.121
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:02 ; elapsed = 00:01:38 . Memory (MB): peak = 947.461 ; gain = 876.121
+Execute       get_config_sdx -target 
+Execute       opt_and_import_c a -opt_level=2 -skip_syncheck=0 -ng=0 -keep_printf=0 
+Execute         cleanup_all_models 
+INFO: [HLS 200-10] Starting code transformations ...
+Execute         transform -promote-dbg-pointer D:/CNN2.0/hls/cnn/solution1/.autopilot/db/a.pp.bc -o D:/CNN2.0/hls/cnn/solution1/.autopilot/db/a.pp.0.bc -f 
+Execute         llvm-ld D:/CNN2.0/hls/cnn/solution1/.autopilot/db/a.pp.0.bc -disable-opt -LD:/vivado/2020.1/win64/lib -lfloatconversion -o D:/CNN2.0/hls/cnn/solution1/.autopilot/db/a.g.0 
+Command         llvm-ld done; 0.742 sec.
+INFO-FLOW: Running Standard Transforms...
+Execute         transform -hls -share-std-xform -demangle-name -inline-byval-memcpy -always-inline -stream-depth-lower -promote-dbg-pointer -interface-preproc -mem2reg -scalarrepl -mem2reg -keep-read-access -instcombine -dce -promote-dbg-pointer -bitop-raise -loop-simplify -indvarspre -indvars -loop-simplify -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -simplifycfg -mem2reg -globalopt -global-constprop -deadargelim -instcombine -simplifycfg -prune-eh -simplifycfg -scalarrepl -instcombine -reassociate -licm -simplifycfg -loop-simplify -indvars -instcombine -simplifycfg -mem2reg -loop-simplify -indvars -instcombine -gvn -gvn -instcombine -adce -break-crit-edges -simplifycfg -loop-delete -global-array-opt -dce -dse -adce -find-syn-modules -top top -deadargelim -mem2reg -instcombine -dce -presyn-prepare -auto-rom-infer -interface-preproc -syn-check -check-rec-only -find-region -simplifycfg -func-extr -function-inline -globaldce -mem2reg -instcombine -dce -gvn -globaldce -adce -adse -constprop -instcombine -bit-constprop -instcombine -dce -simplifycfg -bitop-raise -simplifycfg -dce -loop-delete -reassociate -globalopt -global-privatize -mem2reg -dce -global-constprop -pointer-simplify -constprop -dce -func-inst -deadargelim -auto-shift-reg-idiom -promote-dbg-pointer -norm-name D:/CNN2.0/hls/cnn/solution1/.autopilot/db/a.g.0.bc -o D:/CNN2.0/hls/cnn/solution1/.autopilot/db/a.g.1.bc -f -phase std-opt 
+Command         transform done; 9.541 sec.
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:11 ; elapsed = 00:01:48 . Memory (MB): peak = 947.461 ; gain = 876.121
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO-FLOW: Checking Synthesizability 1/2..
+Execute         transform -hls -syn-check -check-rec-only -disaggr -scalarrepl -norm-name -dce -mem2reg -instcombine -function-uniquify -directive-preproc -mem2reg -dse -dce -auto-rom-infer -dce -pag -array-normalize -instcombine -dce -warn-fifo-pointer -array-seg-normalize -instcombine -dce -array-flatten -instcombine -dce -array-burst -dce -deadargelim -promote-global-argument -simplifycfg -mem2reg -globaldce -dce -deadargelim -dce -instcombine -function-inline -globaldce -dce -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -dse -adse -instcombine -ptrLegalization -simplifycfg -dce -instcombine -pointer-simplify -ptrArgReplace -dce -instcombine -resolve-double-ptr -disaggr -scalarrepl -norm-name -dce -mem2reg -instcombine -ptrLegalization -simplifycfg -deadargelim -instcombine -dce -inst-simplify -function-uniquify -directive-preproc -mem2reg -dse -dce -globaldce -check-dspbuiltin D:/CNN2.0/hls/cnn/solution1/.autopilot/db/a.g.1.bc -o D:/CNN2.0/hls/cnn/solution1/.autopilot/db/a.g.2.prechk.bc -f 
+Command         transform done; 6.863 sec.
+INFO-FLOW: Checking Synthesizability 2/2..
+Execute         transform -syn-check D:/CNN2.0/hls/cnn/solution1/.autopilot/db/a.g.2.prechk.bc -o D:/CNN2.0/hls/cnn/solution1/.autopilot/db/a.g.2.bc -f -phase syn-check 
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:18 ; elapsed = 00:01:55 . Memory (MB): peak = 947.461 ; gain = 876.121
+INFO-FLOW: Compiler optimizing ...
+INFO-FLOW: Share syncheck's 1.bc for syn flow: copy D:/CNN2.0/hls/cnn/solution1/.autopilot/db/a.g.1.bc to D:/CNN2.0/hls/cnn/solution1/.autopilot/db/a.o.1.bc
+INFO-FLOW: Presyn 1...
+Execute         transform -hls -tmp D:/CNN2.0/hls/cnn/solution1/.autopilot/db -interface-port-rename -type-info -function-uniquify -directive-preproc -mem2reg -dse -dce -disaggr -scalarrepl -norm-name -deadargelim -mem2reg -instcombine -dce -simplifycfg -auto-rom-infer -dce -function-uniquify -resource-proc -clib-intrinsic-prepare -dce -func-buffer -dce -pag -array-normalize -func-legal -instcombine -gvn -constprop -dce -simplifycfg -mem2reg -globaldce -resolve-double-ptr -dce -deadargelim -dce -instcombine -ptrArgReplace -mem2reg -dce -array-seg-normalize -deadargelim -instcombine -dce -pointer-simplify -dce -port-alignment -dce -interface-preproc -data-pack -instcombine -dce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -loop-simplify -indvars -instcombine -gvn -loop-simplify -mem2reg -dce -find-region -instcombine -auto-loop-pipeline -inst-simplify -interface-preproc -cfgopt -instcombine -indvars -auto-loop-unroll -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -clean-region -attach-range -gvn -inst-simplify -constprop -simplifycfg -dce -pointer-simplify -dce -globalopt -constprop -dce -array-promote -constprop -dce -ptrArgReplace -mem2reg -simplifycfg -dce -auto-par -instcombine -dce -array-transform-check -array-reshape -instcombine -simplifycfg -dce -ptrArgReplace -deadargelim -mem2reg -instcombine -simplifycfg -dce -indvars -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -duplicate-dataflow-processes -globaldce -instcombine -array-partition -instcombine -simplifycfg -dce -ptrArgReplace -global-constprop -deadargelim -mem2reg -func-legal -dce -global-constprop -deadargelim -mem2reg -simplifycfg -dce -merge-param -deadargelim -globalopt -constprop -dce -array-promote -constprop -dce -ptrArgReplace -mem2reg -simplifycfg -dce -mem-intrinsic-preproc -dce -global-internalize -global-privatize -mem2reg -globaldce -promote-global-argument -ptrArgReplace -mem2reg -dce -globalopt -mergereturn -simplify-global-access -mem2reg -dce -pointer-simplify -dce -functionattrs -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -dce -norm-name -function-inline -complex-op-raise -inst-simplify -globaldce -func-inst -constprop -instcombine -simplifycfg -dce -func-legal -dce -loop-bound -arraycheck -bitwidthmin -on-by-dataflow -loop-delete -instcombine -simplifycfg -globaldce -dce -gvn -deadargelim -dce -loop-simplify -clean-region -simplifycfg -propagate-stable-arguments -loop-stream -instcombine -simplifycfg -dce -globaldce -duplicate-dataflow-processes -stream-intrinsic-preproc -dce -check-ap-stream -loop-simplify -eliminate-keepreads -extract-dataflow-in-loop -loop-simplify -dce -gvn -deadargelim -dse -check-dataflow-syntax -legalize-stream-variable -legalize-global -extract-subproc -dce -dead-channel-elimination -canonicalize-gep -globaldce -dce -gvn -deadargelim -annotate-dataflow-channels -scalar-propagation -deadargelim -globaldce -mem2reg -check-dataflow-channels -function-stream -dce -globaldce -prop-fifo-spec -internal-stream-gen -canonicalize-gep -globaldce -dce -gvn -deadargelim -mergereturn -indvars -loop-simplify -instcombine -array-stream -array-seg-normalize -array-partition -func-legal -instcombine -simplifycfg -dce -bundle-memfifo-ops -deadargelim -function-uniquify -directive-preproc -mem2reg -dse -dce -group-axi-access -licm -simplifycfg -dce -loop-delete -norm-name D:/CNN2.0/hls/cnn/solution1/.autopilot/db/a.o.1.bc -o D:/CNN2.0/hls/cnn/solution1/.autopilot/db/a.o.1.tmp.bc -f 
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'Loop-2.1.1' (cnn/src/conv.cpp:69) in function 'conv2' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'Loop-2.1.1' (cnn/src/conv.cpp:21) in function 'conv1' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1.1.1' (cnn/src/pool.cpp:19) in function 'pool' completely with a factor of 2.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1.1.1.1' (cnn/src/pool.cpp:21) in function 'pool' completely with a factor of 2.
+INFO: [XFORM 203-501] Unrolling loop 'Loop-2.1' (cnn/src/dense.cpp:23) in function 'dense' partially with a factor of 28.
+INFO: [HLS 200-489] Unrolling loop 'Loop-2.1.1.1' (cnn/src/conv.cpp:72) in function 'conv2' completely with a factor of 8.
+INFO: [HLS 200-489] Unrolling loop 'Loop-2.1.1.1.1' (cnn/src/conv.cpp:74) in function 'conv2' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'Loop-2.1.1.1.1.1' (cnn/src/conv.cpp:77) in function 'conv2' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'Loop-2.1.1.1' (cnn/src/conv.cpp:24) in function 'conv1' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'Loop-2.1.1.1.1' (cnn/src/conv.cpp:26) in function 'conv1' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'Loop-2.1.1.1.1.1' (cnn/src/conv.cpp:29) in function 'conv1' completely with a factor of 3.
+INFO: [XFORM 203-101] Partitioning array 'temp.V' (cnn/src/dense.cpp:12) in dimension 1 with a cyclic factor 16.
+INFO: [XFORM 203-101] Partitioning array 'temp.V' (cnn/src/conv.cpp:57) in dimension 1 with a block factor 28.
+INFO: [XFORM 203-101] Partitioning array 'temp.V' (cnn/src/conv.cpp:10) in dimension 1 with a block factor 28.
+Command         transform done; 8.316 sec.
+INFO-FLOW: Presyn 2...
+Execute         transform -hls -keep-callgraph -scalarrepl -mem2reg -port-alignment -attach-range -dce -pipe-mux-gen -indvars -loop-bound -inst-simplify -instcombine -dce -merge-array-access -mem2reg -dce -clean-region -mergereturn -if-conv -instcombine -dce -constprop -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -scalarrepl -mem2reg -global-constprop -deadargelim -deadargelim -instcombine -dce -simplifycfg -ptrArgReplace -mem2reg -function-inline -globaldce -mem2reg -instcombine -dce -expr-balance -instcombine -dce -bitwidthmin -interface-preproc -directive-preproc -inst-rectify -instcombine -dce -functionattrs -constprop -instcombine -bit-constprop -simplify-global-access -globalopt -globaldce -inst-simplify -instcombine -elimdeaddata -dce -loop-delete -simplifycfg -loop-simplify -auto-burst -norm-name D:/CNN2.0/hls/cnn/solution1/.autopilot/db/a.o.1.tmp.bc -o D:/CNN2.0/hls/cnn/solution1/.autopilot/db/a.o.2.bc -f -phase presyn 
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (cnn/src/conv.cpp:84:74) to (cnn/src/conv.cpp:87:29) in function 'conv2'... converting 4 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (cnn/src/conv.cpp:84:74) to (cnn/src/conv.cpp:87:29) in function 'conv2'... converting 4 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (cnn/src/conv.cpp:84:74) to (cnn/src/conv.cpp:87:29) in function 'conv2'... converting 4 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (cnn/src/conv.cpp:84:74) to (cnn/src/conv.cpp:87:29) in function 'conv2'... converting 4 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (cnn/src/conv.cpp:84:74) to (cnn/src/conv.cpp:83:29) in function 'conv2'... converting 4 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (cnn/src/conv.cpp:84:74) to (cnn/src/conv.cpp:87:29) in function 'conv2'... converting 4 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (cnn/src/conv.cpp:84:74) to (cnn/src/conv.cpp:87:29) in function 'conv2'... converting 4 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (cnn/src/conv.cpp:84:74) to (cnn/src/conv.cpp:87:29) in function 'conv2'... converting 4 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (cnn/src/conv.cpp:84:74) to (cnn/src/conv.cpp:87:29) in function 'conv2'... converting 4 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (cnn/src/conv.cpp:84:74) to (cnn/src/conv.cpp:87:29) in function 'conv2'... converting 4 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (cnn/src/conv.cpp:84:74) to (cnn/src/conv.cpp:87:29) in function 'conv2'... converting 4 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (cnn/src/conv.cpp:84:74) to (cnn/src/conv.cpp:87:29) in function 'conv2'... converting 4 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (cnn/src/conv.cpp:84:74) to (cnn/src/conv.cpp:87:29) in function 'conv2'... converting 4 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (cnn/src/conv.cpp:84:74) to (cnn/src/conv.cpp:83:29) in function 'conv2'... converting 4 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (cnn/src/conv.cpp:84:74) to (cnn/src/conv.cpp:87:29) in function 'conv2'... converting 4 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (cnn/src/conv.cpp:84:74) to (cnn/src/conv.cpp:87:29) in function 'conv2'... converting 4 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (cnn/src/conv.cpp:84:74) to (cnn/src/conv.cpp:87:29) in function 'conv2'... converting 4 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (cnn/src/conv.cpp:84:74) to (cnn/src/conv.cpp:87:29) in function 'conv2'... converting 4 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (cnn/src/conv.cpp:84:74) to (cnn/src/conv.cpp:87:29) in function 'conv2'... converting 4 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (cnn/src/conv.cpp:84:74) to (cnn/src/conv.cpp:87:29) in function 'conv2'... converting 4 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (cnn/src/conv.cpp:84:74) to (cnn/src/conv.cpp:87:29) in function 'conv2'... converting 4 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (cnn/src/conv.cpp:84:74) to (cnn/src/conv.cpp:87:29) in function 'conv2'... converting 4 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (cnn/src/conv.cpp:84:74) to (cnn/src/conv.cpp:83:29) in function 'conv2'... converting 4 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (cnn/src/conv.cpp:84:74) to (cnn/src/conv.cpp:87:29) in function 'conv2'... converting 4 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (cnn/src/conv.cpp:84:74) to (cnn/src/conv.cpp:87:29) in function 'conv2'... converting 4 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (cnn/src/conv.cpp:84:74) to (cnn/src/conv.cpp:87:29) in function 'conv2'... converting 4 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (cnn/src/conv.cpp:84:74) to (cnn/src/conv.cpp:87:29) in function 'conv2'... converting 4 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (cnn/src/conv.cpp:84:74) to (cnn/src/conv.cpp:87:29) in function 'conv2'... converting 4 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (cnn/src/conv.cpp:84:74) to (cnn/src/conv.cpp:87:29) in function 'conv2'... converting 4 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (cnn/src/conv.cpp:84:74) to (cnn/src/conv.cpp:87:29) in function 'conv2'... converting 4 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (cnn/src/conv.cpp:84:74) to (cnn/src/conv.cpp:87:29) in function 'conv2'... converting 4 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (cnn/src/conv.cpp:84:74) to (cnn/src/conv.cpp:83:29) in function 'conv2'... converting 4 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (cnn/src/conv.cpp:84:74) to (cnn/src/conv.cpp:87:29) in function 'conv2'... converting 4 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (cnn/src/conv.cpp:84:74) to (cnn/src/conv.cpp:87:29) in function 'conv2'... converting 4 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (cnn/src/conv.cpp:84:74) to (cnn/src/conv.cpp:87:29) in function 'conv2'... converting 4 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (cnn/src/conv.cpp:84:74) to (cnn/src/conv.cpp:87:29) in function 'conv2'... converting 4 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (cnn/src/conv.cpp:84:74) to (cnn/src/conv.cpp:87:29) in function 'conv2'... converting 4 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (cnn/src/conv.cpp:84:74) to (cnn/src/conv.cpp:87:29) in function 'conv2'... converting 4 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (cnn/src/conv.cpp:84:74) to (cnn/src/conv.cpp:87:29) in function 'conv2'... converting 4 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (cnn/src/conv.cpp:84:74) to (cnn/src/conv.cpp:87:29) in function 'conv2'... converting 4 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (cnn/src/conv.cpp:84:74) to (cnn/src/conv.cpp:83:29) in function 'conv2'... converting 4 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (cnn/src/conv.cpp:84:74) to (cnn/src/conv.cpp:87:29) in function 'conv2'... converting 4 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (cnn/src/conv.cpp:84:74) to (cnn/src/conv.cpp:87:29) in function 'conv2'... converting 4 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (cnn/src/conv.cpp:84:74) to (cnn/src/conv.cpp:87:29) in function 'conv2'... converting 4 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (cnn/src/conv.cpp:84:74) to (cnn/src/conv.cpp:87:29) in function 'conv2'... converting 4 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (cnn/src/conv.cpp:84:74) to (cnn/src/conv.cpp:87:29) in function 'conv2'... converting 4 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (cnn/src/conv.cpp:84:74) to (cnn/src/conv.cpp:87:29) in function 'conv2'... converting 4 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (cnn/src/conv.cpp:84:74) to (cnn/src/conv.cpp:87:29) in function 'conv2'... converting 4 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (cnn/src/conv.cpp:84:74) to (cnn/src/conv.cpp:87:29) in function 'conv2'... converting 4 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (cnn/src/conv.cpp:84:74) to (cnn/src/conv.cpp:83:29) in function 'conv2'... converting 4 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (cnn/src/conv.cpp:84:74) to (cnn/src/conv.cpp:87:29) in function 'conv2'... converting 4 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (cnn/src/conv.cpp:84:74) to (cnn/src/conv.cpp:87:29) in function 'conv2'... converting 4 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (cnn/src/conv.cpp:84:74) to (cnn/src/conv.cpp:87:29) in function 'conv2'... converting 4 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (cnn/src/conv.cpp:84:74) to (cnn/src/conv.cpp:87:29) in function 'conv2'... converting 4 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (cnn/src/conv.cpp:84:74) to (cnn/src/conv.cpp:87:29) in function 'conv2'... converting 4 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (cnn/src/conv.cpp:84:74) to (cnn/src/conv.cpp:87:29) in function 'conv2'... converting 4 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (cnn/src/conv.cpp:84:74) to (cnn/src/conv.cpp:87:29) in function 'conv2'... converting 4 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (cnn/src/conv.cpp:84:74) to (cnn/src/conv.cpp:87:29) in function 'conv2'... converting 4 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (cnn/src/conv.cpp:84:74) to (cnn/src/conv.cpp:83:29) in function 'conv2'... converting 4 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (cnn/src/conv.cpp:84:74) to (cnn/src/conv.cpp:87:29) in function 'conv2'... converting 4 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (cnn/src/conv.cpp:84:74) to (cnn/src/conv.cpp:87:29) in function 'conv2'... converting 4 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (cnn/src/conv.cpp:84:74) to (cnn/src/conv.cpp:87:29) in function 'conv2'... converting 4 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (cnn/src/conv.cpp:84:74) to (cnn/src/conv.cpp:87:29) in function 'conv2'... converting 4 basic blocks.
+Command         transform done; 2.386 sec.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:27 ; elapsed = 00:02:06 . Memory (MB): peak = 947.461 ; gain = 876.121
+INFO-FLOW: Building ssdm...
+Execute         transform -hls -function-uniquify -auto-function-inline -globaldce -ptrArgReplace -mem2reg -dce -reset-lda -loop-simplify -indvars -licm -loop-dep -loop-bound -licm -loop-simplify -flattenloopnest -array-flatten -gvn -instcombine -dce -array-map -dce -func-legal -gvn -adce -instcombine -cfgopt -simplifycfg -loop-simplify -array-burst -promote-global-argument -dce -ptrLegalization -axi4-lower -array-seg-normalize -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -gvn -gvn -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -dse -adse -adce -licm -inst-simplify -dce -globaldce -instcombine -array-stream -eliminate-keepreads -instcombine -dce -deadargelim -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -mem2reg -disaggr -norm-name -mem2reg -instcombine -dse -adse -adce -ptrLegalization -dce -auto-rom-infer -array-flatten -dce -instcombine -check-doubleptr -loop-rot -constprop -cfgopt -simplifycfg -loop-simplify -indvars -pointer-simplify -dce -loop-bound -loop-simplify -loop-preproc -constprop -global-constprop -gvn -mem2reg -instcombine -dce -loop-bound -loop-merge -dce -bitwidthmin -deadargelim -dce -canonicalize-dataflow -dce -scalar-propagation -deadargelim -globaldce -mem2reg -read-loop-dep -interface-preproc -directive-preproc -interface-gen -bram-byte-enable -deadargelim -inst-simplify -dce -gvn -mem2reg -instcombine -dce -adse -loop-bound -instcombine -cfgopt -simplifycfg -loop-simplify -clean-region -io-protocol -find-region -mem2reg -bitop-raise -complex-op-raise -inst-simplify -inst-rectify -instcombine -adce -deadargelim -loop-simplify -phi-opt -bitop-raise -cfgopt -simplifycfg -strip-dead-prototypes -interface-lower -bitop-lower -intrinsic-lower -auto-function-inline -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -inst-simplify -simplifycfg -loop-simplify -mergereturn -inst-simplify -inst-rectify -dce -load-elim -bitop-lower -loop-rewind -pointer-simplify -dce -cfgopt -dce -loop-bound -loop-dep -read-loop-dep -dce -check-stream -norm-name -legalize -validate-dataflow -inst-clarity -bitwidth -dump-loop-dep-to-ir -check-all-ssdm -cdfg-build D:/CNN2.0/hls/cnn/solution1/.autopilot/db/a.o.2.bc -o D:/CNN2.0/hls/cnn/solution1/.autopilot/db/a.o.3.bc -f -phase build-ssdm 
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-2.1' (cnn/src/conv.cpp:67:23) in function 'conv2'.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-2' (cnn/src/conv.cpp:65:20) in function 'conv2'.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-2.1' (cnn/src/conv.cpp:20:23) in function 'conv1'.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-2' (cnn/src/conv.cpp:18:17) in function 'conv1'.
+INFO: [HLS 200-444] Inferring multiple bus burst read of a total cumulative length 784 on port 'input.V' (cnn/src/dense.cpp:14:4). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst read of a total cumulative length 6272 on port 'input.V' (cnn/src/conv.cpp:59:4). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst read of a total cumulative length 784 on port 'input.V' (cnn/src/conv.cpp:12:3). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-472] Inferring partial write operation for 'temp[0].V' (cnn/src/dense.cpp:14:4)
+INFO: [HLS 200-472] Inferring partial write operation for 'temp[0].V' (cnn/src/conv.cpp:59:4)
+INFO: [HLS 200-472] Inferring partial write operation for 'temp[0].V' (cnn/src/conv.cpp:12:3)
+Command         transform done; 11.319 sec.
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:38 ; elapsed = 00:02:17 . Memory (MB): peak = 947.461 ; gain = 876.121
+INFO-FLOW: Finish building internal data model.
+Command       opt_and_import_c done; 39.318 sec.
+Command     elaborate done; 132.878 sec.
+Execute     autosyn -from_csynth_design=1 
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO-FLOW: Synthesizing C/C++ design ...
+INFO: [HLS 200-10] Synthesizing 'top' ...
+Execute       ap_set_top_model top 
+Execute       get_model_list top -filter all-wo-channel -topdown 
+Execute       preproc_iomode -model top 
+Execute       preproc_iomode -model dense 
+Execute       preproc_iomode -model conv2 
+Execute       preproc_iomode -model pool 
+Execute       preproc_iomode -model conv1 
+Execute       get_model_list top -filter all-wo-channel 
+INFO-FLOW: Model list for configure: conv1 pool conv2 dense top
+INFO-FLOW: Configuring Module : conv1 ...
+Execute       set_default_model conv1 
+Execute       apply_spec_resource_limit conv1 
+INFO-FLOW: Configuring Module : pool ...
+Execute       set_default_model pool 
+Execute       apply_spec_resource_limit pool 
+INFO-FLOW: Configuring Module : conv2 ...
+Execute       set_default_model conv2 
+Execute       apply_spec_resource_limit conv2 
+INFO-FLOW: Configuring Module : dense ...
+Execute       set_default_model dense 
+Execute       apply_spec_resource_limit dense 
+INFO-FLOW: Configuring Module : top ...
+Execute       set_default_model top 
+Execute       apply_spec_resource_limit top 
+INFO-FLOW: Model list for preprocess: conv1 pool conv2 dense top
+INFO-FLOW: Preprocessing Module: conv1 ...
+Execute       set_default_model conv1 
+Execute       cdfg_preprocess -model conv1 
+Execute       rtl_gen_preprocess conv1 
+INFO-FLOW: Preprocessing Module: pool ...
+Execute       set_default_model pool 
+Execute       cdfg_preprocess -model pool 
+Execute       rtl_gen_preprocess pool 
+INFO-FLOW: Preprocessing Module: conv2 ...
+Execute       set_default_model conv2 
+Execute       cdfg_preprocess -model conv2 
+Command       cdfg_preprocess done; 0.303 sec.
+Execute       rtl_gen_preprocess conv2 
+INFO-FLOW: Preprocessing Module: dense ...
+Execute       set_default_model dense 
+Execute       cdfg_preprocess -model dense 
+Execute       rtl_gen_preprocess dense 
+INFO-FLOW: Preprocessing Module: top ...
+Execute       set_default_model top 
+Execute       cdfg_preprocess -model top 
+Execute       rtl_gen_preprocess top 
+INFO-FLOW: Model list for synthesis: conv1 pool conv2 dense top
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'conv1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model conv1 
+Execute       schedule -model conv1 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop 2'.
+WARNING: [SCHED 204-69] Unable to schedule bus request on port 'input_V' (cnn/src/conv.cpp:38) due to limited memory ports. Please consider using a memory core with more ports or partitioning the array.
+INFO: [SCHED 204-61] Discarding stage scheduling solution.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 10, Depth = 37.
+WARNING: [SCHED 204-21] Estimated clock period (11.169ns) exceeds the target (target clock period: 10ns, clock uncertainty: 1.25ns, effective delay budget: 8.75ns).
+WARNING: [SCHED 204-21] The critical path in module 'conv1' consists of the following:
+	'mul' operation of DSP[435] ('mul_ln1192', cnn/src/conv.cpp:38) [433]  (3.36 ns)
+	'add' operation of DSP[435] ('add_ln1192', cnn/src/conv.cpp:38) [435]  (3.02 ns)
+	multiplexor before 'phi' operation ('sum.V') with incoming values : ('sum.V', cnn/src/conv.cpp:23) ('trunc_ln', cnn/src/conv.cpp:38) [439]  (1.77 ns)
+	'phi' operation ('sum.V') with incoming values : ('sum.V', cnn/src/conv.cpp:23) ('trunc_ln', cnn/src/conv.cpp:38) [439]  (0 ns)
+	'add' operation of DSP[518] ('add_ln1192_99', cnn/src/conv.cpp:38) [518]  (3.02 ns)
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 1.719 sec.
+INFO: [HLS 200-111]  Elapsed time: 139.601 seconds; current allocated memory: 215.480 MB.
+Execute       syn_report -verbosereport -o D:/CNN2.0/hls/cnn/solution1/.autopilot/db/conv1.verbose.sched.rpt 
+Command       syn_report done; 0.846 sec.
+Execute       db_write -o D:/CNN2.0/hls/cnn/solution1/.autopilot/db/conv1.sched.adb -f 
+Command       db_write done; 0.346 sec.
+INFO-FLOW: Finish scheduling conv1.
+Execute       set_default_model conv1 
+Execute       bind -model conv1 
+BIND OPTION: model=conv1
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 0.251 sec.
+INFO: [HLS 200-111]  Elapsed time: 1.501 seconds; current allocated memory: 219.623 MB.
+Execute       syn_report -verbosereport -o D:/CNN2.0/hls/cnn/solution1/.autopilot/db/conv1.verbose.bind.rpt 
+Command       syn_report done; 0.841 sec.
+Execute       db_write -o D:/CNN2.0/hls/cnn/solution1/.autopilot/db/conv1.bind.adb -f 
+Command       db_write done; 0.373 sec.
+INFO-FLOW: Finish binding conv1.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'pool' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model pool 
+Execute       schedule -model pool 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 1.371 seconds; current allocated memory: 220.347 MB.
+Execute       syn_report -verbosereport -o D:/CNN2.0/hls/cnn/solution1/.autopilot/db/pool.verbose.sched.rpt 
+Execute       db_write -o D:/CNN2.0/hls/cnn/solution1/.autopilot/db/pool.sched.adb -f 
+INFO-FLOW: Finish scheduling pool.
+Execute       set_default_model pool 
+Execute       bind -model pool 
+BIND OPTION: model=pool
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.2 seconds; current allocated memory: 220.829 MB.
+Execute       syn_report -verbosereport -o D:/CNN2.0/hls/cnn/solution1/.autopilot/db/pool.verbose.bind.rpt 
+Execute       db_write -o D:/CNN2.0/hls/cnn/solution1/.autopilot/db/pool.bind.adb -f 
+INFO-FLOW: Finish binding pool.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'conv2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model conv2 
+Execute       schedule -model conv2 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop 2'.
+WARNING: [SCHED 204-69] Unable to schedule bus request on port 'input_V' (cnn/src/conv.cpp:86) due to limited memory ports. Please consider using a memory core with more ports or partitioning the array.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 73, Depth = 95.
+WARNING: [SCHED 204-21] Estimated clock period (10.693ns) exceeds the target (target clock period: 10ns, clock uncertainty: 1.25ns, effective delay budget: 8.75ns).
+WARNING: [SCHED 204-21] The critical path in module 'conv2' consists of the following:
+	'mul' operation of DSP[2361] ('mul_ln1192_98', cnn/src/conv.cpp:86) [2359]  (3.36 ns)
+	'add' operation of DSP[2361] ('add_ln1192_98', cnn/src/conv.cpp:86) [2361]  (3.02 ns)
+	multiplexor before 'phi' operation ('sum_4_7_2_2', cnn/src/conv.cpp:86) with incoming values : ('trunc_ln708_66', cnn/src/conv.cpp:86) ('trunc_ln708_67', cnn/src/conv.cpp:86) ('trunc_ln708_68', cnn/src/conv.cpp:86) ('trunc_ln708_69', cnn/src/conv.cpp:86) ('trunc_ln708_70', cnn/src/conv.cpp:86) [2365]  (1.77 ns)
+	'phi' operation ('sum_4_7_2_2', cnn/src/conv.cpp:86) with incoming values : ('trunc_ln708_66', cnn/src/conv.cpp:86) ('trunc_ln708_67', cnn/src/conv.cpp:86) ('trunc_ln708_68', cnn/src/conv.cpp:86) ('trunc_ln708_69', cnn/src/conv.cpp:86) ('trunc_ln708_70', cnn/src/conv.cpp:86) [2365]  (0 ns)
+	'icmp' operation ('icmp_ln1494', cnn/src/conv.cpp:92) [2372]  (1.55 ns)
+	'select' operation ('select_ln92', cnn/src/conv.cpp:92) [2373]  (0.993 ns)
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 9.12 sec.
+INFO: [HLS 200-111]  Elapsed time: 9.365 seconds; current allocated memory: 229.538 MB.
+Execute       syn_report -verbosereport -o D:/CNN2.0/hls/cnn/solution1/.autopilot/db/conv2.verbose.sched.rpt 
+Command       syn_report done; 1.711 sec.
+Execute       db_write -o D:/CNN2.0/hls/cnn/solution1/.autopilot/db/conv2.sched.adb -f 
+Command       db_write done; 0.904 sec.
+INFO-FLOW: Finish scheduling conv2.
+Execute       set_default_model conv2 
+Execute       bind -model conv2 
+BIND OPTION: model=conv2
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 1.101 sec.
+INFO: [HLS 200-111]  Elapsed time: 3.799 seconds; current allocated memory: 242.118 MB.
+Execute       syn_report -verbosereport -o D:/CNN2.0/hls/cnn/solution1/.autopilot/db/conv2.verbose.bind.rpt 
+Command       syn_report done; 2.073 sec.
+Execute       db_write -o D:/CNN2.0/hls/cnn/solution1/.autopilot/db/conv2.bind.adb -f 
+Command       db_write done; 1 sec.
+INFO-FLOW: Finish binding conv2.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'dense' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model dense 
+Execute       schedule -model dense 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.882 sec.
+INFO: [HLS 200-111]  Elapsed time: 4.066 seconds; current allocated memory: 245.953 MB.
+Execute       syn_report -verbosereport -o D:/CNN2.0/hls/cnn/solution1/.autopilot/db/dense.verbose.sched.rpt 
+Command       syn_report done; 0.425 sec.
+Execute       db_write -o D:/CNN2.0/hls/cnn/solution1/.autopilot/db/dense.sched.adb -f 
+Command       db_write done; 0.381 sec.
+INFO-FLOW: Finish scheduling dense.
+Execute       set_default_model dense 
+Execute       bind -model dense 
+BIND OPTION: model=dense
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 0.209 sec.
+INFO: [HLS 200-111]  Elapsed time: 1.102 seconds; current allocated memory: 250.430 MB.
+Execute       syn_report -verbosereport -o D:/CNN2.0/hls/cnn/solution1/.autopilot/db/dense.verbose.bind.rpt 
+Command       syn_report done; 0.555 sec.
+Execute       db_write -o D:/CNN2.0/hls/cnn/solution1/.autopilot/db/dense.bind.adb -f 
+Command       db_write done; 0.366 sec.
+INFO-FLOW: Finish binding dense.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'top' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model top 
+Execute       schedule -model top 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 1.071 seconds; current allocated memory: 250.573 MB.
+Execute       syn_report -verbosereport -o D:/CNN2.0/hls/cnn/solution1/.autopilot/db/top.verbose.sched.rpt 
+Execute       db_write -o D:/CNN2.0/hls/cnn/solution1/.autopilot/db/top.sched.adb -f 
+INFO-FLOW: Finish scheduling top.
+Execute       set_default_model top 
+Execute       bind -model top 
+BIND OPTION: model=top
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 1.424 sec.
+INFO: [HLS 200-111]  Elapsed time: 1.545 seconds; current allocated memory: 251.794 MB.
+Execute       syn_report -verbosereport -o D:/CNN2.0/hls/cnn/solution1/.autopilot/db/top.verbose.bind.rpt 
+Command       syn_report done; 1.217 sec.
+Execute       db_write -o D:/CNN2.0/hls/cnn/solution1/.autopilot/db/top.bind.adb -f 
+INFO-FLOW: Finish binding top.
+Execute       get_model_list top -filter all-wo-channel 
+INFO-FLOW: Preprocessing for RTLGen ...
+Execute       rtl_gen_preprocess conv1 
+Execute       rtl_gen_preprocess pool 
+Execute       rtl_gen_preprocess conv2 
+Execute       rtl_gen_preprocess dense 
+Execute       rtl_gen_preprocess top 
+INFO-FLOW: Model list for RTL generation: conv1 pool conv2 dense top
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'conv1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -module_prefix 
+Execute       get_config_rtl -module_auto_prefix 
+Execute       create_rtl_model conv1 -vendor xilinx -mg_file D:/CNN2.0/hls/cnn/solution1/.autopilot/db/conv1.compgen.tcl 
+INFO: [SYN 201-210] Renamed object name 'top_urem_13ns_6ns_13_17_1' to 'top_urem_13ns_6nsbkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'top_urem_12ns_6ns_12_16_1' to 'top_urem_12ns_6nscud' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'top_mul_mul_12ns_14ns_26_1_1' to 'top_mul_mul_12ns_dEe' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'top_mul_mul_13ns_15ns_28_1_1' to 'top_mul_mul_13ns_eOg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'top_mac_muladd_8s_8s_11ns_11_1_1' to 'top_mac_muladd_8sfYi' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'top_mac_muladd_8sfYi': 9 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'top_mul_mul_12ns_dEe': 3 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'top_mul_mul_13ns_eOg': 6 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'top_mux_2832_8_1_1': 9 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'top_urem_12ns_6nscud': 3 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'top_urem_13ns_6nsbkb': 6 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'conv1'.
+Command       create_rtl_model done; 0.492 sec.
+INFO: [HLS 200-111]  Elapsed time: 1.86 seconds; current allocated memory: 259.022 MB.
+Execute       source D:/CNN2.0/hls/cnn/solution1/.autopilot/db/top.rtl_wrap.cfg.tcl 
+Execute       gen_rtl conv1 -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o D:/CNN2.0/hls/cnn/solution1/syn/systemc/conv1 -synmodules conv1 pool conv2 dense top 
+Execute       gen_rtl conv1 -style xilinx -f -lang vhdl -o D:/CNN2.0/hls/cnn/solution1/syn/vhdl/conv1 
+Execute       gen_rtl conv1 -style xilinx -f -lang vlog -o D:/CNN2.0/hls/cnn/solution1/syn/verilog/conv1 
+Execute       syn_report -csynth -model conv1 -o D:/CNN2.0/hls/cnn/solution1/syn/report/conv1_csynth.rpt 
+Command       syn_report done; 0.222 sec.
+Execute       syn_report -rtlxml -model conv1 -o D:/CNN2.0/hls/cnn/solution1/syn/report/conv1_csynth.xml 
+Command       syn_report done; 0.102 sec.
+Execute       syn_report -verbosereport -model conv1 -o D:/CNN2.0/hls/cnn/solution1/.autopilot/db/conv1.verbose.rpt 
+Command       syn_report done; 0.973 sec.
+Execute       db_write -model conv1 -f -o D:/CNN2.0/hls/cnn/solution1/.autopilot/db/conv1.adb 
+Command       db_write done; 0.566 sec.
+Execute       gen_tb_info conv1 -p D:/CNN2.0/hls/cnn/solution1/.autopilot/db -o D:/CNN2.0/hls/cnn/solution1/.autopilot/db/conv1 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'pool' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -module_prefix 
+Execute       get_config_rtl -module_auto_prefix 
+Execute       create_rtl_model pool -vendor xilinx -mg_file D:/CNN2.0/hls/cnn/solution1/.autopilot/db/pool.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'pool'.
+INFO: [HLS 200-111]  Elapsed time: 2.569 seconds; current allocated memory: 272.714 MB.
+Execute       source D:/CNN2.0/hls/cnn/solution1/.autopilot/db/top.rtl_wrap.cfg.tcl 
+Execute       gen_rtl pool -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o D:/CNN2.0/hls/cnn/solution1/syn/systemc/pool -synmodules conv1 pool conv2 dense top 
+Execute       gen_rtl pool -style xilinx -f -lang vhdl -o D:/CNN2.0/hls/cnn/solution1/syn/vhdl/pool 
+Execute       gen_rtl pool -style xilinx -f -lang vlog -o D:/CNN2.0/hls/cnn/solution1/syn/verilog/pool 
+Execute       syn_report -csynth -model pool -o D:/CNN2.0/hls/cnn/solution1/syn/report/pool_csynth.rpt 
+Execute       syn_report -rtlxml -model pool -o D:/CNN2.0/hls/cnn/solution1/syn/report/pool_csynth.xml 
+Execute       syn_report -verbosereport -model pool -o D:/CNN2.0/hls/cnn/solution1/.autopilot/db/pool.verbose.rpt 
+Execute       db_write -model pool -f -o D:/CNN2.0/hls/cnn/solution1/.autopilot/db/pool.adb 
+Command       db_write done; 0.137 sec.
+Execute       gen_tb_info pool -p D:/CNN2.0/hls/cnn/solution1/.autopilot/db -o D:/CNN2.0/hls/cnn/solution1/.autopilot/db/pool 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'conv2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -module_prefix 
+Execute       get_config_rtl -module_auto_prefix 
+Execute       create_rtl_model conv2 -vendor xilinx -mg_file D:/CNN2.0/hls/cnn/solution1/.autopilot/db/conv2.compgen.tcl 
+INFO: [SYN 201-210] Renamed object name 'top_urem_10ns_9ns_10_14_1' to 'top_urem_10ns_9nsg8j' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'top_urem_11ns_9ns_11_15_1' to 'top_urem_11ns_9nshbi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'top_urem_9ns_9ns_9_13_1' to 'top_urem_9ns_9ns_ibs' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'top_mac_muladd_8sfYi': 72 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'top_urem_10ns_9nsg8j': 29 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'top_urem_11ns_9nshbi': 31 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'top_urem_9ns_9ns_ibs': 9 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'conv2'.
+Command       create_rtl_model done; 1.449 sec.
+INFO: [HLS 200-111]  Elapsed time: 1.957 seconds; current allocated memory: 294.252 MB.
+Execute       source D:/CNN2.0/hls/cnn/solution1/.autopilot/db/top.rtl_wrap.cfg.tcl 
+Execute       gen_rtl conv2 -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o D:/CNN2.0/hls/cnn/solution1/syn/systemc/conv2 -synmodules conv1 pool conv2 dense top 
+Execute       gen_rtl conv2 -style xilinx -f -lang vhdl -o D:/CNN2.0/hls/cnn/solution1/syn/vhdl/conv2 
+Execute       gen_rtl conv2 -style xilinx -f -lang vlog -o D:/CNN2.0/hls/cnn/solution1/syn/verilog/conv2 
+Execute       syn_report -csynth -model conv2 -o D:/CNN2.0/hls/cnn/solution1/syn/report/conv2_csynth.rpt 
+Command       syn_report done; 0.763 sec.
+Execute       syn_report -rtlxml -model conv2 -o D:/CNN2.0/hls/cnn/solution1/syn/report/conv2_csynth.xml 
+Command       syn_report done; 0.355 sec.
+Execute       syn_report -verbosereport -model conv2 -o D:/CNN2.0/hls/cnn/solution1/.autopilot/db/conv2.verbose.rpt 
+Command       syn_report done; 3.325 sec.
+Execute       db_write -model conv2 -f -o D:/CNN2.0/hls/cnn/solution1/.autopilot/db/conv2.adb 
+Command       db_write done; 2.081 sec.
+Execute       gen_tb_info conv2 -p D:/CNN2.0/hls/cnn/solution1/.autopilot/db -o D:/CNN2.0/hls/cnn/solution1/.autopilot/db/conv2 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'dense' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -module_prefix 
+Execute       get_config_rtl -module_auto_prefix 
+Execute       create_rtl_model dense -vendor xilinx -mg_file D:/CNN2.0/hls/cnn/solution1/.autopilot/db/dense.compgen.tcl 
+INFO: [RTGEN 206-100] Generating core module 'top_mac_muladd_8sfYi': 28 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dense'.
+Command       create_rtl_model done; 0.489 sec.
+INFO: [HLS 200-111]  Elapsed time: 8.684 seconds; current allocated memory: 337.741 MB.
+Execute       source D:/CNN2.0/hls/cnn/solution1/.autopilot/db/top.rtl_wrap.cfg.tcl 
+Execute       gen_rtl dense -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o D:/CNN2.0/hls/cnn/solution1/syn/systemc/dense -synmodules conv1 pool conv2 dense top 
+Execute       gen_rtl dense -style xilinx -f -lang vhdl -o D:/CNN2.0/hls/cnn/solution1/syn/vhdl/dense 
+Execute       gen_rtl dense -style xilinx -f -lang vlog -o D:/CNN2.0/hls/cnn/solution1/syn/verilog/dense 
+Execute       syn_report -csynth -model dense -o D:/CNN2.0/hls/cnn/solution1/syn/report/dense_csynth.rpt 
+Command       syn_report done; 0.2 sec.
+Execute       syn_report -rtlxml -model dense -o D:/CNN2.0/hls/cnn/solution1/syn/report/dense_csynth.xml 
+Execute       syn_report -verbosereport -model dense -o D:/CNN2.0/hls/cnn/solution1/.autopilot/db/dense.verbose.rpt 
+Command       syn_report done; 0.735 sec.
+Execute       db_write -model dense -f -o D:/CNN2.0/hls/cnn/solution1/.autopilot/db/dense.adb 
+Command       db_write done; 1.682 sec.
+Execute       gen_tb_info dense -p D:/CNN2.0/hls/cnn/solution1/.autopilot/db -o D:/CNN2.0/hls/cnn/solution1/.autopilot/db/dense 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'top' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -module_prefix 
+Execute       get_config_rtl -module_auto_prefix 
+Execute       create_rtl_model top -vendor xilinx -mg_file D:/CNN2.0/hls/cnn/solution1/.autopilot/db/top.compgen.tcl 
+INFO: [RTGEN 206-500] Setting interface mode on port 'top/gmem' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'top/input_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'top/outputConv_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'top/weight_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'top/bias_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'top/outputPool_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'top/weight2_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'top/bias2_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'top/outputConv2_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'top/outputPool2_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'top/outputDense_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'top/fcWeight_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'top/fcBias_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'top' to 's_axilite & ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'return', 'input_V', 'outputConv_V', 'weight_V', 'bias_V', 'weight2_V', 'bias2_V', 'outputConv2_V', 'outputPool2_V', 'outputDense_V', 'fcWeight_V' and 'fcBias_V' to AXI-Lite port control.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'top'.
+Command       create_rtl_model done; 0.417 sec.
+INFO: [HLS 200-111]  Elapsed time: 4.193 seconds; current allocated memory: 351.903 MB.
+Execute       source D:/CNN2.0/hls/cnn/solution1/.autopilot/db/top.rtl_wrap.cfg.tcl 
+Execute       gen_rtl top -istop -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o D:/CNN2.0/hls/cnn/solution1/syn/systemc/top -synmodules conv1 pool conv2 dense top 
+Execute       gen_rtl top -istop -style xilinx -f -lang vhdl -o D:/CNN2.0/hls/cnn/solution1/syn/vhdl/top 
+Execute       gen_rtl top -istop -style xilinx -f -lang vlog -o D:/CNN2.0/hls/cnn/solution1/syn/verilog/top 
+Execute       syn_report -csynth -model top -o D:/CNN2.0/hls/cnn/solution1/syn/report/top_csynth.rpt 
+Execute       syn_report -rtlxml -model top -o D:/CNN2.0/hls/cnn/solution1/syn/report/top_csynth.xml 
+Execute       syn_report -verbosereport -model top -o D:/CNN2.0/hls/cnn/solution1/.autopilot/db/top.verbose.rpt 
+Command       syn_report done; 2.542 sec.
+Execute       db_write -model top -f -o D:/CNN2.0/hls/cnn/solution1/.autopilot/db/top.adb 
+Command       db_write done; 0.326 sec.
+Execute       gen_tb_info top -p D:/CNN2.0/hls/cnn/solution1/.autopilot/db -o D:/CNN2.0/hls/cnn/solution1/.autopilot/db/top 
+Execute       export_constraint_db -f -tool general -o D:/CNN2.0/hls/cnn/solution1/.autopilot/db/top.constraint.tcl 
+Execute       syn_report -designview -model top -o D:/CNN2.0/hls/cnn/solution1/.autopilot/db/top.design.xml 
+Command       syn_report done; 1.518 sec.
+Execute       get_config_rtl -disable_wave_debug 
+Execute       syn_report -wcfg -model top -o D:/CNN2.0/hls/cnn/solution1/.autopilot/db/top_dataflow_ana.wcfg 
+Execute       syn_report -protoinst -model top -o D:/CNN2.0/hls/cnn/solution1/.autopilot/db/top.protoinst 
+Execute       get_config_debug -directory 
+Execute       sc_get_clocks top 
+Execute       get_config_export -vivado_clock 
+Execute       sc_get_portdomain top 
+INFO-FLOW: Model list for RTL component generation: conv1 pool conv2 dense top
+INFO-FLOW: Handling components in module [conv1] ... 
+Execute       source D:/CNN2.0/hls/cnn/solution1/.autopilot/db/conv1.compgen.tcl 
+INFO-FLOW: Found component top_urem_13ns_6nsbkb.
+INFO-FLOW: Append model top_urem_13ns_6nsbkb
+INFO-FLOW: Found component top_urem_12ns_6nscud.
+INFO-FLOW: Append model top_urem_12ns_6nscud
+INFO-FLOW: Found component top_mux_2832_8_1_1.
+INFO-FLOW: Append model top_mux_2832_8_1_1
+INFO-FLOW: Found component top_mul_mul_12ns_dEe.
+INFO-FLOW: Append model top_mul_mul_12ns_dEe
+INFO-FLOW: Found component top_mul_mul_13ns_eOg.
+INFO-FLOW: Append model top_mul_mul_13ns_eOg
+INFO-FLOW: Found component top_mac_muladd_8sfYi.
+INFO-FLOW: Append model top_mac_muladd_8sfYi
+INFO-FLOW: Found component conv1_temp_0_V.
+INFO-FLOW: Append model conv1_temp_0_V
+INFO-FLOW: Handling components in module [pool] ... 
+Execute       source D:/CNN2.0/hls/cnn/solution1/.autopilot/db/pool.compgen.tcl 
+INFO-FLOW: Handling components in module [conv2] ... 
+Execute       source D:/CNN2.0/hls/cnn/solution1/.autopilot/db/conv2.compgen.tcl 
+INFO-FLOW: Found component top_urem_10ns_9nsg8j.
+INFO-FLOW: Append model top_urem_10ns_9nsg8j
+INFO-FLOW: Found component top_urem_11ns_9nshbi.
+INFO-FLOW: Append model top_urem_11ns_9nshbi
+INFO-FLOW: Found component top_urem_9ns_9ns_ibs.
+INFO-FLOW: Append model top_urem_9ns_9ns_ibs
+INFO-FLOW: Found component conv2_temp_0_V.
+INFO-FLOW: Append model conv2_temp_0_V
+INFO-FLOW: Found component conv2_temp_2_V.
+INFO-FLOW: Append model conv2_temp_2_V
+INFO-FLOW: Handling components in module [dense] ... 
+Execute       source D:/CNN2.0/hls/cnn/solution1/.autopilot/db/dense.compgen.tcl 
+INFO-FLOW: Found component dense_temp_0_V.
+INFO-FLOW: Append model dense_temp_0_V
+INFO-FLOW: Handling components in module [top] ... 
+Execute       source D:/CNN2.0/hls/cnn/solution1/.autopilot/db/top.compgen.tcl 
+INFO-FLOW: Found component top_control_s_axi.
+INFO-FLOW: Append model top_control_s_axi
+INFO-FLOW: Found component top_gmem_m_axi.
+INFO-FLOW: Append model top_gmem_m_axi
+INFO-FLOW: Append model conv1
+INFO-FLOW: Append model pool
+INFO-FLOW: Append model conv2
+INFO-FLOW: Append model dense
+INFO-FLOW: Append model top
+INFO-FLOW: Generating RTL model list ...
+INFO-FLOW: All models in this session: top_urem_13ns_6nsbkb top_urem_12ns_6nscud top_mux_2832_8_1_1 top_mul_mul_12ns_dEe top_mul_mul_13ns_eOg top_mac_muladd_8sfYi conv1_temp_0_V top_urem_10ns_9nsg8j top_urem_11ns_9nshbi top_urem_9ns_9ns_ibs conv2_temp_0_V conv2_temp_2_V dense_temp_0_V top_control_s_axi top_gmem_m_axi conv1 pool conv2 dense top
+INFO-FLOW: To file: write model top_urem_13ns_6nsbkb
+INFO-FLOW: To file: write model top_urem_12ns_6nscud
+INFO-FLOW: To file: write model top_mux_2832_8_1_1
+INFO-FLOW: To file: write model top_mul_mul_12ns_dEe
+INFO-FLOW: To file: write model top_mul_mul_13ns_eOg
+INFO-FLOW: To file: write model top_mac_muladd_8sfYi
+INFO-FLOW: To file: write model conv1_temp_0_V
+INFO-FLOW: To file: write model top_urem_10ns_9nsg8j
+INFO-FLOW: To file: write model top_urem_11ns_9nshbi
+INFO-FLOW: To file: write model top_urem_9ns_9ns_ibs
+INFO-FLOW: To file: write model conv2_temp_0_V
+INFO-FLOW: To file: write model conv2_temp_2_V
+INFO-FLOW: To file: write model dense_temp_0_V
+INFO-FLOW: To file: write model top_control_s_axi
+INFO-FLOW: To file: write model top_gmem_m_axi
+INFO-FLOW: To file: write model conv1
+INFO-FLOW: To file: write model pool
+INFO-FLOW: To file: write model conv2
+INFO-FLOW: To file: write model dense
+INFO-FLOW: To file: write model top
+INFO-FLOW: Finished generating RTL model list.
+
+
+INFO-FLOW: RTL Generation done.
+INFO-FLOW: CAS Generation done.
+INFO-FLOW: CBC Generation done.
+Execute       syn_report -model top -printsummary 
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were NOT satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 89.53 MHz
+INFO-FLOW: DBG:CMD: auto_generate_csynth_design
+INFO-FLOW: DBG:CMD:     auto_generate --sim-model -phase csynth_design -d D:/CNN2.0/hls/cnn/solution1
+Execute       source D:/CNN2.0/hls/cnn/solution1/.autopilot/db/global.setting.tcl 
+INFO-FLOW: DBG:CMD: read_platform_lib D:/CNN2.0/hls/cnn/solution1/.autopilot/db/global.setting.tcl
+Execute       source D:/vivado/2020.1/common/technology/generic/autopilot/common.gen 
+Execute         source D:/vivado/2020.1/common/technology/generic/autopilot/APCoreGen.gen 
+Execute       source D:/vivado/2020.1/common/technology/generic/autopilot/op.gen 
+Execute       source D:/vivado/2020.1/common/technology/generic/autopilot/op_simcore.gen 
+Execute       source D:/vivado/2020.1/common/technology/generic/autopilot/interface.gen 
+Execute       source D:/CNN2.0/hls/cnn/solution1/.autopilot/db/global.setting.tcl 
+Execute       source D:/vivado/2020.1/common/technology/xilinx/zynq/zynq.gen 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/common/xilinx.gen 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/plb46.gen 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/fsl.gen 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/axi4.gen 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute             source D:/vivado/2020.1/common/technology/xilinx/interface/saxilite.gen 
+Execute             source D:/vivado/2020.1/common/technology/xilinx/interface/maxi.gen 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/ip/util.gen 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/ip/xfft.gen 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/ip/xfir.gen 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/common/dsp48.gen 
+Command         ap_source done; 0.157 sec.
+Command       ap_source done; 0.157 sec.
+Execute       source D:/vivado/2020.1/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/common/xilinx_fp.gen 
+INFO-FLOW: DBG:CMD:   using AESL_AUTOCG::g_clock_period=10.000 (was NA)
+INFO-FLOW: DBG:CMD:       generate_ip_cores sim=1 export=0 expOnly=0 dstVlogDir=syn/verilog
+Execute       source D:/CNN2.0/hls/cnn/solution1/.autopilot/db/global.setting.tcl 
+Execute       ap_part_info -name xc7z020-clg484-1 -data names -quiet 
+Execute       ap_part_info -name xc7z020-clg484-1 -data info -quiet 
+Execute       source D:/CNN2.0/hls/cnn/solution1/.autopilot/db/global.setting.tcl 
+Execute       source D:/CNN2.0/hls/cnn/solution1/.autopilot/db/global.setting.tcl 
+Execute       source D:/CNN2.0/hls/cnn/solution1/.autopilot/db/conv1.compgen.tcl 
+Execute         ap_part_info -name xc7z020-clg484-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg484-1 -data info -quiet 
+INFO: [RTMG 210-282] Generating pipelined core: 'top_urem_13ns_6nsbkb_div'
+Execute         ap_part_info -name xc7z020-clg484-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg484-1 -data info -quiet 
+INFO: [RTMG 210-282] Generating pipelined core: 'top_urem_12ns_6nscud_div'
+Execute         ap_part_info -name xc7z020-clg484-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg484-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg484-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg484-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg484-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg484-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg484-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg484-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg484-1 -data info 
+INFO: [RTMG 210-278] Implementing memory 'conv1_temp_0_V_ram (RAM)' using distributed RAMs.
+Execute         ap_part_info -name xc7z020-clg484-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg484-1 -data info -quiet 
+Command       ap_source done; 0.407 sec.
+Execute       source D:/CNN2.0/hls/cnn/solution1/.autopilot/db/pool.compgen.tcl 
+Execute       source D:/CNN2.0/hls/cnn/solution1/.autopilot/db/conv2.compgen.tcl 
+Execute         ap_part_info -name xc7z020-clg484-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg484-1 -data info -quiet 
+INFO: [RTMG 210-282] Generating pipelined core: 'top_urem_10ns_9nsg8j_div'
+Execute         ap_part_info -name xc7z020-clg484-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg484-1 -data info -quiet 
+INFO: [RTMG 210-282] Generating pipelined core: 'top_urem_11ns_9nshbi_div'
+Execute         ap_part_info -name xc7z020-clg484-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg484-1 -data info -quiet 
+INFO: [RTMG 210-282] Generating pipelined core: 'top_urem_9ns_9ns_ibs_div'
+INFO: [RTMG 210-278] Implementing memory 'conv2_temp_0_V_ram (RAM)' using block RAMs.
+Execute         ap_part_info -name xc7z020-clg484-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg484-1 -data info -quiet 
+INFO: [RTMG 210-278] Implementing memory 'conv2_temp_2_V_ram (RAM)' using block RAMs.
+Execute         ap_part_info -name xc7z020-clg484-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg484-1 -data info -quiet 
+Command       ap_source done; 0.26 sec.
+Execute       source D:/CNN2.0/hls/cnn/solution1/.autopilot/db/dense.compgen.tcl 
+INFO: [RTMG 210-278] Implementing memory 'dense_temp_0_V_ram (RAM)' using distributed RAMs.
+Execute         ap_part_info -name xc7z020-clg484-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg484-1 -data info -quiet 
+Execute       source D:/CNN2.0/hls/cnn/solution1/.autopilot/db/top.compgen.tcl 
+Execute         source ./control.slave.tcl 
+Execute         is_m_axi_addr64 
+Execute         ap_part_info -name xc7z020-clg484-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg484-1 -data info -quiet 
+Command       ap_source done; 0.156 sec.
+INFO-FLOW: DBG:CMD:     auto_generate -export -impltomg_flag -rtl both -tool Vivado -pcore_version 1.00.a -phase csynth_design -d D:/CNN2.0/hls/cnn/solution1
+Execute       source D:/CNN2.0/hls/cnn/solution1/.autopilot/db/global.setting.tcl 
+INFO-FLOW: DBG:CMD: read_platform_lib D:/CNN2.0/hls/cnn/solution1/.autopilot/db/global.setting.tcl
+Execute       source D:/vivado/2020.1/common/technology/generic/autopilot/common.gen 
+Execute         source D:/vivado/2020.1/common/technology/generic/autopilot/APCoreGen.gen 
+Execute       source D:/vivado/2020.1/common/technology/generic/autopilot/op.gen 
+Execute       source D:/vivado/2020.1/common/technology/generic/autopilot/op_simcore.gen 
+Execute       source D:/vivado/2020.1/common/technology/generic/autopilot/interface.gen 
+Execute       source D:/CNN2.0/hls/cnn/solution1/.autopilot/db/global.setting.tcl 
+Execute       source D:/vivado/2020.1/common/technology/xilinx/zynq/zynq.gen 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/common/xilinx.gen 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/plb46.gen 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/fsl.gen 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/axi4.gen 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute             source D:/vivado/2020.1/common/technology/xilinx/interface/saxilite.gen 
+Execute             source D:/vivado/2020.1/common/technology/xilinx/interface/maxi.gen 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/ip/util.gen 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/ip/xfft.gen 
+Command           ap_source done; 0.144 sec.
+Execute           source D:/vivado/2020.1/common/technology/xilinx/ip/xfir.gen 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/common/dsp48.gen 
+Command         ap_source done; 0.228 sec.
+Command       ap_source done; 0.229 sec.
+Execute       source D:/vivado/2020.1/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/common/xilinx_fp.gen 
+INFO-FLOW: DBG:CMD:       initCTypeInfo top_module=top xml_exists=0
+Execute       source D:/CNN2.0/hls/cnn/solution1/.autopilot/db/top.rtl_wrap.cfg.tcl 
+Execute       source D:/CNN2.0/hls/cnn/solution1/.autopilot/db/top.rtl_wrap.cfg.tcl 
+Execute       source D:/CNN2.0/hls/cnn/solution1/.autopilot/db/top.rtl_wrap.cfg.tcl 
+Execute       source D:/CNN2.0/hls/cnn/solution1/.autopilot/db/top.tbgen.tcl 
+Execute       source D:/CNN2.0/hls/cnn/solution1/.autopilot/db/top.tbgen.tcl 
+INFO-FLOW: DBG:CMD:       export_impl_rtl
+INFO-FLOW: DBG:CMD:       generate_ip_cores sim=0 export=0 expOnly=0 dstVlogDir=impl/.verilog
+Execute       source D:/CNN2.0/hls/cnn/solution1/.autopilot/db/global.setting.tcl 
+Execute       source D:/CNN2.0/hls/cnn/solution1/.autopilot/db/conv1.compgen.tcl 
+Execute       source D:/CNN2.0/hls/cnn/solution1/.autopilot/db/pool.compgen.tcl 
+Execute       source D:/CNN2.0/hls/cnn/solution1/.autopilot/db/conv2.compgen.tcl 
+Execute       source D:/CNN2.0/hls/cnn/solution1/.autopilot/db/dense.compgen.tcl 
+Execute       source D:/CNN2.0/hls/cnn/solution1/.autopilot/db/top.compgen.tcl 
+INFO-FLOW: DBG:CMD:       generate_ip_cores sim=0 export=1 expOnly=1 dstVlogDir=impl/.pcores/verilog
+Execute       source D:/CNN2.0/hls/cnn/solution1/.autopilot/db/global.setting.tcl 
+Execute       source D:/CNN2.0/hls/cnn/solution1/.autopilot/db/conv1.compgen.tcl 
+Execute       source D:/CNN2.0/hls/cnn/solution1/.autopilot/db/pool.compgen.tcl 
+Execute       source D:/CNN2.0/hls/cnn/solution1/.autopilot/db/conv2.compgen.tcl 
+Execute       source D:/CNN2.0/hls/cnn/solution1/.autopilot/db/dense.compgen.tcl 
+Execute       source D:/CNN2.0/hls/cnn/solution1/.autopilot/db/top.compgen.tcl 
+Execute         ap_part_info -name xc7z020-clg484-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg484-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg484-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg484-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg484-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg484-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg484-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg484-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg484-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg484-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg484-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg484-1 -data info -quiet 
+Execute       ap_part_info -name xc7z020-clg484-1 -data names -quiet 
+Execute       ap_part_info -name xc7z020-clg484-1 -data info -quiet 
+INFO-FLOW: DBG:CMD:       generate_ip_cores sim=0 export=0 expOnly=0 dstVlogDir=impl/.pcores/verilog_sim
+Execute       source D:/CNN2.0/hls/cnn/solution1/.autopilot/db/global.setting.tcl 
+Execute       source D:/CNN2.0/hls/cnn/solution1/.autopilot/db/conv1.compgen.tcl 
+Execute       source D:/CNN2.0/hls/cnn/solution1/.autopilot/db/pool.compgen.tcl 
+Execute       source D:/CNN2.0/hls/cnn/solution1/.autopilot/db/conv2.compgen.tcl 
+Execute       source D:/CNN2.0/hls/cnn/solution1/.autopilot/db/dense.compgen.tcl 
+Execute       source D:/CNN2.0/hls/cnn/solution1/.autopilot/db/top.compgen.tcl 
+Execute       ap_part_info -name xc7z020-clg484-1 -data names -quiet 
+Execute       ap_part_info -name xc7z020-clg484-1 -data info -quiet 
+Execute       ap_part_info -name xc7z020-clg484-1 -data names -quiet 
+Execute       ap_part_info -name xc7z020-clg484-1 -data info -quiet 
+Execute       source D:/CNN2.0/hls/cnn/solution1/.autopilot/db/global.setting.tcl 
+Execute       ap_part_info -name xc7z020-clg484-1 -data names -quiet 
+Execute       ap_part_info -name xc7z020-clg484-1 -data info -quiet 
+Execute       source D:/CNN2.0/hls/cnn/solution1/.autopilot/db/top.constraint.tcl 
+Execute       source D:/CNN2.0/hls/cnn/solution1/.autopilot/db/top.tbgen.tcl 
+INFO-FLOW: DBG:CMD:       hasPcoreIpAdapter=false #gSsdmPorts=0
+INFO-FLOW: DBG:CMD: Skipping loadAnalyze_DB, #g_database=13
+INFO-FLOW: DBG:CMD:       generate_json is_phase_csynth=1 g_has_adaptors=false generate_bd_files=0 #modelList=20 #gSsdmPorts=0
+Execute       source D:/vivado/2020.1/tps/tcl/tcllib1.11.1/fileutil/fileutil.tcl 
+Execute         source D:/vivado/2020.1/tps/tcl/tcllib1.11.1/cmdline/cmdline.tcl 
+Execute       source D:/CNN2.0/hls/cnn/solution1/.autopilot/db/global.setting.tcl 
+Execute       source D:/CNN2.0/hls/cnn/solution1/.autopilot/db/global.setting.tcl 
+Execute       get_config_export -xo 
+Execute       source D:/CNN2.0/hls/cnn/solution1/.autopilot/db/top.tbgen.tcl 
+Execute       source D:/CNN2.0/hls/cnn/solution1/.autopilot/db/top.compgen.dataonly.tcl 
+Execute       source D:/CNN2.0/hls/cnn/solution1/.autopilot/db/top.compgen.dataonly.tcl 
+Execute       source D:/CNN2.0/hls/cnn/solution1/.autopilot/db/top.tbgen.tcl 
+Execute       source D:/CNN2.0/hls/cnn/solution1/.autopilot/db/global.setting.tcl 
+Execute       get_config_sdx -target 
+Execute       source D:/CNN2.0/hls/cnn/solution1/.autopilot/db/top.rtl_wrap.cfg.tcl 
+Execute       source D:/CNN2.0/hls/cnn/solution1/.autopilot/db/top.compgen.dataonly.tcl 
+Execute       source D:/CNN2.0/hls/cnn/solution1/.autopilot/db/global.setting.tcl 
+Execute       ap_part_info -name xc7z020-clg484-1 -data names -quiet 
+Execute       ap_part_info -name xc7z020-clg484-1 -data info -quiet 
+Execute       source D:/CNN2.0/hls/cnn/solution1/.autopilot/db/top.constraint.tcl 
+Execute       sc_get_clocks top 
+Execute       ap_part_info -name xc7z020-clg484-1 -data names -quiet 
+Execute       ap_part_info -name xc7z020-clg484-1 -data info -quiet 
+Execute       source D:/CNN2.0/hls/cnn/solution1/.autopilot/db/global.setting.tcl 
+Execute       get_config_debug -directory 
+Execute       source D:/CNN2.0/hls/cnn/solution1/.autopilot/db/conv1.tbgen.tcl 
+Execute       source D:/CNN2.0/hls/cnn/solution1/.autopilot/db/pool.tbgen.tcl 
+Execute       source D:/CNN2.0/hls/cnn/solution1/.autopilot/db/conv2.tbgen.tcl 
+Execute       source D:/CNN2.0/hls/cnn/solution1/.autopilot/db/dense.tbgen.tcl 
+Execute       source D:/CNN2.0/hls/cnn/solution1/.autopilot/db/top.tbgen.tcl 
+Execute       get_config_sdx -target 
+Execute       get_config_sdx -profile 
+Execute       get_config_rtl -kernel_profile 
+Execute       get_config_rtl -stall_sig_gen 
+Execute       get_config_rtl -profile 
+INFO-FLOW: DBG:CMD: add_json_sdx_info kernel file does not exist, skipping opencl info: D:/CNN2.0/hls/cnn/solution1/.autopilot/db/kernel.internal.xml
+INFO-FLOW: DBG:CMD:       delete-temp-dirs (skipped for debug)
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:01:18 ; elapsed = 00:03:11 . Memory (MB): peak = 947.461 ; gain = 876.121
+INFO: [VHDL 208-304] Generating VHDL RTL for top.
+INFO: [VLOG 209-307] Generating Verilog RTL for top.
+Command     autosyn done; 53.637 sec.
+Command   csynth_design done; 186.527 sec.
+Command ap_source done; 189.286 sec.
+Execute cleanup_all 
+Command cleanup_all done; 0.114 sec.
+INFO-FLOW: Workspace D:/CNN2.0/hls/cnn/solution1 opened at Wed Jul 09 15:12:28 +0500 2025
+Execute     config_clock -quiet -name default -period 10 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+Execute     config_clock -quiet -name default -uncertainty 1.25 -unit % 
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib D:/vivado/2020.1/common/technology/xilinx/zynq/zynq 
+Execute       source D:/vivado/2020.1/common/technology/xilinx/common/xilinx.lib 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/interface/xilinx_interface.lib 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/plb46.lib 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/fsl.lib 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/axi4.lib 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/maxi.lib 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/saxilite.lib 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/common/dsp48.lib 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/ip/dds_compiler.lib 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/ip/xfft.lib 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/ip/xfir.lib 
+Execute       source D:/vivado/2020.1/common/technology/xilinx/common/xilinx.hlp 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/common/target_info.tcl 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/maxi.hlp 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/common/dsp48.hlp 
+Execute       source D:/vivado/2020.1/common/technology/xilinx/zynq/dsp48e1.hlp 
+Execute       source D:/vivado/2020.1/common/technology/xilinx/common/xilinx.hlp 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/common/target_info.tcl 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/maxi.hlp 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/common/dsp48.hlp 
+Execute     source D:/vivado/2020.1/common/technology/xilinx/zynq/zynq.gen 
+Execute       source D:/vivado/2020.1/common/technology/xilinx/common/xilinx.gen 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/interface/plb46.gen 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/interface/fsl.gen 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/interface/axi4.gen 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/saxilite.gen 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/maxi.gen 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/ip/util.gen 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/ip/xfft.gen 
+Command         ap_source done; 0.131 sec.
+Execute         source D:/vivado/2020.1/common/technology/xilinx/ip/xfir.gen 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/common/dsp48.gen 
+Command       ap_source done; 0.202 sec.
+Command     ap_source done; 0.203 sec.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib D:/vivado/2020.1/common/technology/xilinx/zynq/zynq_fpv6 
+Execute       source D:/vivado/2020.1/common/technology/xilinx/common/xilinx_fp.lib 
+Execute       source D:/vivado/2020.1/common/technology/xilinx/common/xilinx_fp.hlp 
+Execute         source D:/vivado/2020.1/common/technology/xilinx/common/xilinx.hlp 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/common/target_info.tcl 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute             source D:/vivado/2020.1/common/technology/xilinx/interface/maxi.hlp 
+Execute             source D:/vivado/2020.1/common/technology/xilinx/interface/saxilite.hlp 
+Execute           source D:/vivado/2020.1/common/technology/xilinx/common/dsp48.hlp 
+Execute     source D:/vivado/2020.1/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute       source D:/vivado/2020.1/common/technology/xilinx/common/xilinx_fp.gen 
+Execute     set_part xc7z020-clg484-1 
+Execute       ap_part_info -name xc7z020-clg484-1 -data single -quiet 
+Command       ap_part_info done; 0.757 sec.
+Execute       ap_part_info -name xc7z020-clg484-1 -data info 
+Execute       add_library xilinx/zynq/zynq:xc7z020:-clg484:-1 
+Execute         get_default_platform 
+Execute         ap_part_info -data single -name xc7z020-clg484-1 
+Execute         ap_part_info -name xc7z020-clg484-1 -data resources 
+Execute         ap_part_info -name xc7z020-clg484-1 -data info 
+Execute         ap_part_info -name xc7z020-clg484-1 -data info 
+Execute         config_chip_info -quiet -resource {SLICE 13300} {LUT 53200} {FF 106400} {DSP48E 220} {BRAM 280} {URAM 0} 
+Execute         ap_part_info -name xc7z020-clg484-1 -data info 
+Execute         config_chip_info -quiet -speed slow 
+Execute       add_library xilinx/zynq/zynq_fpv6 
+Execute         get_default_platform 
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+Execute       ap_part_info -name xc7z020-clg484-1 -data info 
+Execute       get_default_platform 
+Command     set_part done; 1.018 sec.
+Execute     ap_part_info -data single -name xc7z020-clg484-1 
+Execute     ap_part_info -name xc7z020-clg484-1 -data resources 
+Execute     ap_part_info -name xc7z020-clg484-1 -data info 
+Execute     ap_part_info -name xc7z020-clg484-1 -data info 
+Execute     config_chip_info -quiet -resource {SLICE 13300} {LUT 53200} {FF 106400} {DSP48E 220} {BRAM 280} {URAM 0} 
+Execute     ap_part_info -name xc7z020-clg484-1 -data info 
+Execute     config_chip_info -quiet -speed slow 
+Execute     config_sdx -optimization_level=none 
+Execute       send_msg_by_id INFO @200-435@%s%s 'config_sdx -optimization_level' config_export -vivado_optimization_level=2 
+INFO: [HLS 200-435] Setting 'config_sdx -optimization_level' configuration: config_export -vivado_optimization_level=2
+Execute       config_export -vivado_optimization_level=2 
+Execute         get_config_export -vivado_impl_strategy 
+Execute         get_config_export -vivado_phys_opt 
+Execute     config_sdx -target=none 
+Execute       send_msg_by_id INFO @200-435@%s%s 'config_sdx -target' config_export -vivado_optimization_level=2 
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: config_export -vivado_optimization_level=2
+Execute       config_export -vivado_optimization_level=2 
+Execute         get_config_export -vivado_impl_strategy 
+Execute         get_config_export -vivado_phys_opt 
+Execute       get_config_compile -pipeline_loops 
+Execute       get_config_compile -name_max_length 
+Execute       get_config_schedule -enable_dsp_full_reg 
+Execute       get_config_rtl -register_reset_num 
+Execute       get_config_rtl -module_auto_prefix 
+Execute       get_config_interface -m_axi_addr64 
+Execute       send_msg_by_id INFO @200-435@%s%s 'config_sdx -target' set_clock_uncertainty default 
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: set_clock_uncertainty default
+Execute       set_clock_uncertainty default 
+Execute     config_export -vivado_optimization_level=2 
+Execute       get_config_export -vivado_impl_strategy 
+Execute       get_config_export -vivado_phys_opt 
+Command   open_solution done; 1.446 sec.
+Execute   csim_design -quiet 
+Execute     source D:/CNN2.0/hls/cnn/solution1/.autopilot/db/global.setting.tcl 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/testbench.cpp 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/testbench.cpp 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/pool.h 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/pool.h 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/pool.cpp 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/pool.cpp 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/mnist_dataset.h 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/mnist_dataset.h 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/labels.h 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/labels.h 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/fc1_weight.h 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/fc1_weight.h 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/fc1_bias.h 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/fc1_bias.h 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/eight.cpp 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/eight.cpp 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/dense.h 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/dense.h 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/dense.cpp 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/dense.cpp 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/conv2_weight.h 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/conv2_weight.h 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/conv2_bias.h 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/conv2_bias.h 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/conv1_weight.h 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/conv1_weight.h 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/conv1_bias.h 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/conv1_bias.h 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/conv.h 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/conv.h 
+Execute     is_encrypted D:/CNN2.0/hls/cnn/src/conv.cpp 
+Execute     is_xip D:/CNN2.0/hls/cnn/src/conv.cpp 
+Execute     ap_part_info -name xc7z020-clg484-1 -data info 
+Execute     source run_sim.tcl 
+Command     ap_source done; 5.497 sec.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+Command   csim_design done; 28.196 sec.
+Command ap_source done; 29.662 sec.
+Execute cleanup_all 

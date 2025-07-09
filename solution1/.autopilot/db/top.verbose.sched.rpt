@@ -1,0 +1,218 @@
+
+
+================================================================
+== Vivado HLS Report for 'top'
+================================================================
+* Date:           Wed Jul  9 15:09:02 2025
+
+* Version:        2020.1 (Build 2897737 on Wed May 27 20:21:37 MDT 2020)
+* Project:        cnn
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020-clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+-----------+------------+
+    |  Clock |  Target  | Estimated | Uncertainty|
+    +--------+----------+-----------+------------+
+    |ap_clk  | 10.00 ns | 11.169 ns |   1.25 ns  |
+    +--------+----------+-----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+--------+--------+---------+
+    |  Latency (cycles) |  Latency (absolute) |     Interval    | Pipeline|
+    |   min   |   max   |    min   |    max   |   min  |   max  |   Type  |
+    +---------+---------+----------+----------+--------+--------+---------+
+    |   423377|   677313| 4.729 ms | 7.565 ms |  423377|  677313|   none  |
+    +---------+---------+----------+----------+--------+--------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 11
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 5 
+5 --> 6 
+6 --> 7 
+7 --> 8 
+8 --> 9 
+9 --> 10 
+10 --> 11 
+11 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.00>
+ST_1 : Operation 12 [1/1] (1.00ns)   --->   "%fcBias_V_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %fcBias_V)" [cnn/src/eight.cpp:9]   --->   Operation 12 'read' 'fcBias_V_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 13 [1/1] (1.00ns)   --->   "%fcWeight_V_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %fcWeight_V)" [cnn/src/eight.cpp:9]   --->   Operation 13 'read' 'fcWeight_V_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 14 [1/1] (1.00ns)   --->   "%outputDense_V_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %outputDense_V)" [cnn/src/eight.cpp:9]   --->   Operation 14 'read' 'outputDense_V_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 15 [1/1] (1.00ns)   --->   "%outputPool2_V_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %outputPool2_V)" [cnn/src/eight.cpp:9]   --->   Operation 15 'read' 'outputPool2_V_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 16 [1/1] (1.00ns)   --->   "%outputConv2_V_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %outputConv2_V)" [cnn/src/eight.cpp:9]   --->   Operation 16 'read' 'outputConv2_V_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 17 [1/1] (1.00ns)   --->   "%bias2_V_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %bias2_V)" [cnn/src/eight.cpp:9]   --->   Operation 17 'read' 'bias2_V_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 18 [1/1] (1.00ns)   --->   "%weight2_V_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %weight2_V)" [cnn/src/eight.cpp:9]   --->   Operation 18 'read' 'weight2_V_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 19 [1/1] (1.00ns)   --->   "%outputPool_V_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %outputPool_V)" [cnn/src/eight.cpp:9]   --->   Operation 19 'read' 'outputPool_V_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 20 [1/1] (1.00ns)   --->   "%bias_V_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %bias_V)" [cnn/src/eight.cpp:9]   --->   Operation 20 'read' 'bias_V_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 21 [1/1] (1.00ns)   --->   "%weight_V_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %weight_V)" [cnn/src/eight.cpp:9]   --->   Operation 21 'read' 'weight_V_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 22 [1/1] (1.00ns)   --->   "%outputConv_V_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %outputConv_V)" [cnn/src/eight.cpp:9]   --->   Operation 22 'read' 'outputConv_V_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 23 [1/1] (1.00ns)   --->   "%input_V_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %input_V)" [cnn/src/eight.cpp:9]   --->   Operation 23 'read' 'input_V_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+
+State 2 <SV = 1> <Delay = 8.75>
+ST_2 : Operation 24 [2/2] (8.75ns)   --->   "call fastcc void @conv1(i8* %gmem, i32 %input_V_read, i32 %outputConv_V_read, i32 %weight_V_read, i32 %bias_V_read)" [cnn/src/eight.cpp:39]   --->   Operation 24 'call' <Predicate = true> <Delay = 8.75> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 3 <SV = 2> <Delay = 0.00>
+ST_3 : Operation 25 [1/2] (0.00ns)   --->   "call fastcc void @conv1(i8* %gmem, i32 %input_V_read, i32 %outputConv_V_read, i32 %weight_V_read, i32 %bias_V_read)" [cnn/src/eight.cpp:39]   --->   Operation 25 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 4 <SV = 3> <Delay = 5.28>
+ST_4 : Operation 26 [2/2] (5.28ns)   --->   "call fastcc void @pool(i8* %gmem, i32 %outputConv_V_read, i32 %outputPool_V_read, i6 8, i6 28, i6 28)" [cnn/src/eight.cpp:40]   --->   Operation 26 'call' <Predicate = true> <Delay = 5.28> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 5 <SV = 4> <Delay = 0.00>
+ST_5 : Operation 27 [1/2] (0.00ns)   --->   "call fastcc void @pool(i8* %gmem, i32 %outputConv_V_read, i32 %outputPool_V_read, i6 8, i6 28, i6 28)" [cnn/src/eight.cpp:40]   --->   Operation 27 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 6 <SV = 5> <Delay = 8.75>
+ST_6 : Operation 28 [2/2] (8.75ns)   --->   "call fastcc void @conv2(i8* %gmem, i32 %outputPool_V_read, i32 %outputConv2_V_read, i32 %weight2_V_read, i32 %bias2_V_read)" [cnn/src/eight.cpp:42]   --->   Operation 28 'call' <Predicate = true> <Delay = 8.75> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 7 <SV = 6> <Delay = 0.00>
+ST_7 : Operation 29 [1/2] (0.00ns)   --->   "call fastcc void @conv2(i8* %gmem, i32 %outputPool_V_read, i32 %outputConv2_V_read, i32 %weight2_V_read, i32 %bias2_V_read)" [cnn/src/eight.cpp:42]   --->   Operation 29 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 8 <SV = 7> <Delay = 5.28>
+ST_8 : Operation 30 [2/2] (5.28ns)   --->   "call fastcc void @pool(i8* %gmem, i32 %outputConv2_V_read, i32 %outputPool2_V_read, i6 16, i6 14, i6 14)" [cnn/src/eight.cpp:43]   --->   Operation 30 'call' <Predicate = true> <Delay = 5.28> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 9 <SV = 8> <Delay = 0.00>
+ST_9 : Operation 31 [1/2] (0.00ns)   --->   "call fastcc void @pool(i8* %gmem, i32 %outputConv2_V_read, i32 %outputPool2_V_read, i6 16, i6 14, i6 14)" [cnn/src/eight.cpp:43]   --->   Operation 31 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 10 <SV = 9> <Delay = 8.75>
+ST_10 : Operation 32 [2/2] (8.75ns)   --->   "call fastcc void @dense(i8* %gmem, i32 %outputPool2_V_read, i32 %outputDense_V_read, i32 %fcWeight_V_read, i32 %fcBias_V_read)" [cnn/src/eight.cpp:45]   --->   Operation 32 'call' <Predicate = true> <Delay = 8.75> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 11 <SV = 10> <Delay = 0.00>
+ST_11 : Operation 33 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i8* %gmem), !map !170"   --->   Operation 33 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 34 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %outputPool_V, [10 x i8]* @mode7, i32 0, i32 0, [1 x i8]* @p_str18, i32 0, i32 0, [1 x i8]* @bundle8, [6 x i8]* @p_str310, [1 x i8]* @p_str18, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str18, [1 x i8]* @p_str18) nounwind"   --->   Operation 34 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 35 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecTopModule([4 x i8]* @top_str) nounwind"   --->   Operation 35 'spectopmodule' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 36 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8* %gmem, [6 x i8]* @p_str7, i32 0, i32 0, [1 x i8]* @p_str18, i32 0, i32 0, [5 x i8]* @p_str29, [6 x i8]* @p_str310, [1 x i8]* @p_str18, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str18, [1 x i8]* @p_str18) nounwind" [cnn/src/eight.cpp:25]   --->   Operation 36 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 37 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %input_V, [10 x i8]* @mode, i32 0, i32 0, [1 x i8]* @p_str18, i32 0, i32 0, [1 x i8]* @bundle, [6 x i8]* @p_str310, [1 x i8]* @p_str18, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str18, [1 x i8]* @p_str18) nounwind" [cnn/src/eight.cpp:25]   --->   Operation 37 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 38 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %outputConv_V, [10 x i8]* @mode1, i32 0, i32 0, [1 x i8]* @p_str18, i32 0, i32 0, [1 x i8]* @bundle2, [6 x i8]* @p_str310, [1 x i8]* @p_str18, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str18, [1 x i8]* @p_str18) nounwind" [cnn/src/eight.cpp:26]   --->   Operation 38 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 39 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %weight_V, [10 x i8]* @mode3, i32 0, i32 0, [1 x i8]* @p_str18, i32 0, i32 0, [1 x i8]* @bundle4, [6 x i8]* @p_str310, [1 x i8]* @p_str18, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str18, [1 x i8]* @p_str18) nounwind" [cnn/src/eight.cpp:27]   --->   Operation 39 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 40 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %bias_V, [10 x i8]* @mode5, i32 0, i32 0, [1 x i8]* @p_str18, i32 0, i32 0, [1 x i8]* @bundle6, [6 x i8]* @p_str310, [1 x i8]* @p_str18, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str18, [1 x i8]* @p_str18) nounwind" [cnn/src/eight.cpp:28]   --->   Operation 40 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 41 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %weight2_V, [10 x i8]* @mode9, i32 0, i32 0, [1 x i8]* @p_str18, i32 0, i32 0, [1 x i8]* @bundle10, [6 x i8]* @p_str310, [1 x i8]* @p_str18, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str18, [1 x i8]* @p_str18) nounwind" [cnn/src/eight.cpp:29]   --->   Operation 41 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 42 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %bias2_V, [10 x i8]* @mode11, i32 0, i32 0, [1 x i8]* @p_str18, i32 0, i32 0, [1 x i8]* @bundle12, [6 x i8]* @p_str310, [1 x i8]* @p_str18, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str18, [1 x i8]* @p_str18) nounwind" [cnn/src/eight.cpp:30]   --->   Operation 42 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 43 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %outputConv2_V, [10 x i8]* @mode13, i32 0, i32 0, [1 x i8]* @p_str18, i32 0, i32 0, [1 x i8]* @bundle14, [6 x i8]* @p_str310, [1 x i8]* @p_str18, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str18, [1 x i8]* @p_str18) nounwind" [cnn/src/eight.cpp:31]   --->   Operation 43 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 44 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %outputPool2_V, [10 x i8]* @mode15, i32 0, i32 0, [1 x i8]* @p_str18, i32 0, i32 0, [1 x i8]* @bundle16, [6 x i8]* @p_str310, [1 x i8]* @p_str18, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str18, [1 x i8]* @p_str18) nounwind" [cnn/src/eight.cpp:32]   --->   Operation 44 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 45 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %outputDense_V, [10 x i8]* @mode17, i32 0, i32 0, [1 x i8]* @p_str18, i32 0, i32 0, [1 x i8]* @bundle18, [6 x i8]* @p_str310, [1 x i8]* @p_str18, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str18, [1 x i8]* @p_str18) nounwind" [cnn/src/eight.cpp:33]   --->   Operation 45 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 46 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %fcWeight_V, [10 x i8]* @mode19, i32 0, i32 0, [1 x i8]* @p_str18, i32 0, i32 0, [1 x i8]* @bundle20, [6 x i8]* @p_str310, [1 x i8]* @p_str18, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str18, [1 x i8]* @p_str18) nounwind" [cnn/src/eight.cpp:34]   --->   Operation 46 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 47 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %fcBias_V, [10 x i8]* @mode21, i32 0, i32 0, [1 x i8]* @p_str18, i32 0, i32 0, [1 x i8]* @bundle22, [6 x i8]* @p_str310, [1 x i8]* @p_str18, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str18, [1 x i8]* @p_str18) nounwind" [cnn/src/eight.cpp:35]   --->   Operation 47 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 48 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 0, [10 x i8]* @p_str411, i32 0, i32 0, [1 x i8]* @p_str18, i32 0, i32 0, [8 x i8]* @p_str5, [1 x i8]* @p_str18, [1 x i8]* @p_str18, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str18, [1 x i8]* @p_str18) nounwind" [cnn/src/eight.cpp:37]   --->   Operation 48 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 49 [1/2] (0.00ns)   --->   "call fastcc void @dense(i8* %gmem, i32 %outputPool2_V_read, i32 %outputDense_V_read, i32 %fcWeight_V_read, i32 %fcBias_V_read)" [cnn/src/eight.cpp:45]   --->   Operation 49 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_11 : Operation 50 [1/1] (0.00ns)   --->   "ret void" [cnn/src/eight.cpp:48]   --->   Operation 50 'ret' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 1ns
+The critical path consists of the following:
+	s_axi read on port 'fcBias_V' (cnn/src/eight.cpp:9) [17]  (1 ns)
+
+ <State 2>: 8.75ns
+The critical path consists of the following:
+	'call' operation ('call_ln39', cnn/src/eight.cpp:39) to 'conv1' [42]  (8.75 ns)
+
+ <State 3>: 0ns
+The critical path consists of the following:
+
+ <State 4>: 5.28ns
+The critical path consists of the following:
+	'call' operation ('call_ln40', cnn/src/eight.cpp:40) to 'pool' [43]  (5.28 ns)
+
+ <State 5>: 0ns
+The critical path consists of the following:
+
+ <State 6>: 8.75ns
+The critical path consists of the following:
+	'call' operation ('call_ln42', cnn/src/eight.cpp:42) to 'conv2' [44]  (8.75 ns)
+
+ <State 7>: 0ns
+The critical path consists of the following:
+
+ <State 8>: 5.28ns
+The critical path consists of the following:
+	'call' operation ('call_ln43', cnn/src/eight.cpp:43) to 'pool' [45]  (5.28 ns)
+
+ <State 9>: 0ns
+The critical path consists of the following:
+
+ <State 10>: 8.75ns
+The critical path consists of the following:
+	'call' operation ('call_ln45', cnn/src/eight.cpp:45) to 'dense' [46]  (8.75 ns)
+
+ <State 11>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

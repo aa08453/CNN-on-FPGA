@@ -15,6 +15,10 @@ void conv1(
     int Cin, int Cout, int H, int W, int K
 );
 
+void conv2(fixed input[], fixed outputConv[],
+	    fixed weight[], fixed bias[]
+	);
+
 
 
 #endif
