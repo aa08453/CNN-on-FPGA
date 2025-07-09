@@ -54,6 +54,7 @@ module result_registerFile
     reg [7:0] tmp0, tmp1, tmp2, tmp3, tmp4, tmp5, tmp6, tmp7;
     reg [3:0] pool_count;
     reg [9:0] next_addr;
+    reg [3:0] channel_count;
     // Core logic
     always @(posedge clk or negedge rst) 
     begin
@@ -62,6 +63,7 @@ module result_registerFile
             next_addr <= 0;
             pool_count <= 0;
             pool_done <= 0;
+            channel_count <= 0;
             inter0 <= 0;
             inter1 <= 0;
             inter2 <= 0;
@@ -85,7 +87,7 @@ module result_registerFile
                 default: ; // Do nothing
             endcase
         end
-        else if (pool) 
+        else if (pool && !pool_done) 
         begin
             
             `POOL(result_mem0, max0, next_addr);
@@ -96,11 +98,12 @@ module result_registerFile
             `POOL(result_mem5, max5, next_addr);
             `POOL(result_mem6, max6, next_addr);
             `POOL(result_mem7, max7, next_addr);
+
+            pool_count <= pool_count + 1;
         
             if (pool_count < 14)
             begin
                 next_addr <= next_addr + 2;
-                pool_count <= pool_count + 1;
             end
             else
             begin
@@ -110,12 +113,13 @@ module result_registerFile
 
             if (next_addr == 10'd784)
             begin
-                pool_done <= 1'b1;
+                pool_done <= (channel_count == 7) ? 1'b1 : 0;
                 next_addr <= 0;
                 pool_count <= 0;
+                channel_count <= channel_count + 1;
             end
         
-        end        
+        end      
 
         else if (cout_done) 
         begin
@@ -128,6 +132,18 @@ module result_registerFile
             $writememh("result_mem5.mem", result_mem5);
             $writememh("result_mem6.mem", result_mem6);
             $writememh("result_mem7.mem", result_mem7);
+        end
+
+        if (pool_done)
+        begin
+            $writememh("pool0.mem", result_mem0);
+            $writememh("pool1.mem", result_mem1);
+            $writememh("pool2.mem", result_mem2);
+            $writememh("pool3.mem", result_mem3);
+            $writememh("pool4.mem", result_mem4);
+            $writememh("pool5.mem", result_mem5);
+            $writememh("pool6.mem", result_mem6);
+            $writememh("pool7.mem", result_mem7);
         end
     end
     

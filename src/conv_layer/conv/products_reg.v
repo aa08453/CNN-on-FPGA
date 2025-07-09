@@ -13,7 +13,7 @@ module products_reg
     output reg [9:0] addr
 );
 
-reg [15:0] inter; // Intermediate value
+reg [7:0] inter; // Intermediate value
 
 always @(posedge clk or negedge rst) 
 begin
@@ -21,12 +21,12 @@ begin
     begin
         result <= 8'd0;
         addr <= 10'd0;
-        inter <= 16'd0;
+        inter <= 8'd0;
     end 
     else if (acc_enable)
     begin
         inter <= result + sum;
-        result <= inter >> 1;
+        result <= inter;
         addr <= i * W + j;
     end
 end
