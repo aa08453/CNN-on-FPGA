@@ -31,8 +31,8 @@ module result_registerFile
 
     input wire [3:0] out_c,         // Output channel index [0–7]
     input wire [9:0] addr,          // Address within the channel
-    input wire [7:0] bias,          // Bias to initialize with
-    input wire [7:0] value,          // Value to store
+    input wire signed [7:0] bias,          // Bias to initialize with
+    input wire signed [7:0] value,          // Value to store
     input wire first_write,
 
     output reg [3:0] y, // for synthesis
@@ -59,9 +59,9 @@ module result_registerFile
     (* ram_style = "block" *) reg [7:0] result_mem6 [0:CHANNEL_SIZE];
     (* ram_style = "block" *) reg [7:0] result_mem7 [0:CHANNEL_SIZE];
 
-    reg [15:0] inter0, inter1, inter2, inter3, inter4, inter5, inter6, inter7;
+    reg signed [15:0] inter0, inter1, inter2, inter3, inter4, inter5, inter6, inter7;
     reg [9:0] max0,max1,max2,max3,max4,max5,max6,max7;
-    reg [7:0] tmp0, tmp1, tmp2, tmp3, tmp4, tmp5, tmp6, tmp7;
+    reg signed [7:0] tmp0, tmp1, tmp2, tmp3, tmp4, tmp5, tmp6, tmp7;
     reg [3:0] pool_count;
     reg [9:0] next_addr;
     reg [3:0] channel_count;
@@ -74,14 +74,14 @@ module result_registerFile
             pool_count <= 0;
             pool_done <= 0;
             channel_count <= 0;
-            inter0 <= 0;
-            inter1 <= 0;
-            inter2 <= 0;
-            inter3 <= 0;
-            inter4 <= 0;
-            inter5 <= 0;
-            inter6 <= 0;
-            inter7 <= 0;
+            inter0 <= 16'sd0;
+            inter1 <= 16'sd0;
+            inter2 <= 16'sd0;
+            inter3 <= 16'sd0;
+            inter4 <= 16'sd0;
+            inter5 <= 16'sd0;
+            inter6 <= 16'sd0;
+            inter7 <= 16'sd0;
         end
         else if (store) 
         begin

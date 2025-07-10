@@ -4,10 +4,12 @@ module conv_control (
     input wire conv,
 
     input wire done,
+    input wire load_done,
 
     output reg addr,
     output reg load,
     output reg [1:0] mux_sel,
+    output reg add,
     output reg acc_enable,
     output reg counter_enable,
     output reg flush_acc,
@@ -44,10 +46,11 @@ always @(*)
 begin
     // Default outputs
     addr           = 1'b0;
+    flush_acc      = 1'b0;
     load           = 1'b0;
     mux_sel        = 2'b00;
+    add            = 1'b0;
     acc_enable     = 1'b0;
-    flush_acc      = 1'b0;
     store          = 1'b0;
     counter_enable = 1'b0;
 
@@ -68,30 +71,36 @@ begin
         LOAD: 
         begin
             load = 1'b1;
-            next_state = MAC0;
+            next_state = load_done ? MAC0 : LOAD;
         end
 
         MAC0: 
         begin
+            add = 1'b1;
             mux_sel    = 2'b01;
             next_state = MAC1;
         end
 
         MAC1: 
         begin
+            add        = 1'b1;
             mux_sel    = 2'b10;
             next_state = MAC2;
         end
 
         MAC2: 
         begin
+            acc_enable = 1'b1;
+            add        = 1'b1;
             mux_sel    = 2'b11;
             next_state = SUM;
         end
 
         SUM:
         begin
-            mux_sel = 2'b00;
+            acc_enable = 1'b1;
+            add        = 1'b1;      
+            mux_sel    = 2'b00;
             next_state = ACC;
         end
 

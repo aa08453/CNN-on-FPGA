@@ -6,7 +6,7 @@ module kernel_mem
 )
 (
     input wire [3:0] addr,
-    output wire [7:0] k0, k1, k2, k3, k4, k5, k6, k7, k8
+    output wire signed [7:0] k0, k1, k2, k3, k4, k5, k6, k7, k8
 );
     (* ram_style = "distributed" *) reg [7:0] rom_data [0:VAL];  // Enough space for 8 kernels of 3x3 = 72 values
 

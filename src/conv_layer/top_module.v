@@ -18,11 +18,11 @@ module top
 
     wire conv_done, cin_done, cout_done, pool_done; 
 
-    reg [7:0] kernel0, kernel1, kernel2,
+    reg signed [7:0] kernel0, kernel1, kernel2,
               kernel3, kernel4, kernel5,
               kernel6, kernel7, kernel8;
 
-    reg [7:0] bias;
+    reg signed [7:0] bias;
 
     wire [3:0] out_c;
     wire [3:0] y;
@@ -55,18 +55,9 @@ module top
         .clk(clk), .rst_n(rst), .signal(cout),
         .count(out_c), .complete(cout_done));
 
-    generate
-    if (IC > 0) 
-    begin : gen_input_counter
-        channel_counter #(.CHANNELS(IC)) 
-        in_counter (.clk(clk), .rst_n(rst), .signal(cin),.count(in_c),.complete(cin_done));
-    end 
-    else 
-    begin : no_gen
-        assign cin_done = 1'b1;
-        assign in_c = 3'd0;
-    end
-    endgenerate
+ 
+    assign cin_done = 1'b1;
+    assign in_c = 3'd0;
 
     conv conv_inst (.clk(clk), .rst(rst), .conv(conv), .store(store),
         .kernel0(kernel0), .kernel1(kernel1), .kernel2(kernel2),

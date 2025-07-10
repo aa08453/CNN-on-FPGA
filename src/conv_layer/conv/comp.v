@@ -1,18 +1,33 @@
+function signed [7:0] clamp;
+  input signed [15:0] val;
+  begin
+    if (val > 127)
+      clamp = 8'sd127;
+    else if (val < -128)
+      clamp = -8'sd128;
+    else
+      clamp = val[7:0];
+  end
+endfunction
+
+
 module comp 
 (
-    input [7:0] image_data0, image_data1, image_data2,
-    input [7:0] image_data3, image_data4, image_data5,
-    input [7:0] image_data6, image_data7, image_data8,
-    input [7:0] kernel_data0, kernel_data1, kernel_data2,
-    input [7:0] kernel_data3, kernel_data4, kernel_data5,
-    input [7:0] kernel_data6, kernel_data7, kernel_data8,
+    input wire signed [7:0]  image_data0, image_data1, image_data2,
+    input wire signed [7:0]  image_data3, image_data4, image_data5,
+    input wire signed [7:0]  image_data6, image_data7, image_data8,
+    input wire signed [7:0]  kernel_data0, kernel_data1, kernel_data2,
+    input wire signed [7:0]  kernel_data3, kernel_data4, kernel_data5,
+    input wire signed [7:0]  kernel_data6, kernel_data7, kernel_data8,
     input [1:0] select,
+    input wire add,
     input clk,
     input rst,
-    output reg [7:0] sum
+    output reg signed [7:0] sum
 );
 
-    wire [7:0] p1, p2, p3;
+    wire signed [7:0] p1, p2, p3;
+    reg signed [15:0] inter;
 
     mult_mux mux1 (.sel(select), .clk(clk), .product(p1),
         .a0(image_data0), .a1(image_data1), .a2(image_data2),
@@ -29,9 +44,15 @@ module comp
     always @(posedge clk or negedge rst) 
     begin
         if (!rst)
-            sum <= 8'd0;
-        else
-            sum <= p1 + p2 + p3;
+        begin
+            sum <= 8'sd0;
+            // inter <= 16'sd0;
+        end
+        else if (add)
+        begin
+            sum <= clamp(p1 + p2 + p3);
+            // sum <= clamp(inter);inter
+        end
     end
 
 endmodule

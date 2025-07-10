@@ -15,15 +15,17 @@ module patch_data_latch
     input wire [9:0] pixel_addr7,
     input wire [9:0] pixel_addr8,
 
-    output reg [7:0] pixel0,
-    output reg [7:0] pixel1,
-    output reg [7:0] pixel2,
-    output reg [7:0] pixel3,
-    output reg [7:0] pixel4,
-    output reg [7:0] pixel5,
-    output reg [7:0] pixel6,
-    output reg [7:0] pixel7,
-    output reg [7:0] pixel8
+    output reg signed [7:0] pixel0,
+    output reg signed [7:0] pixel1,
+    output reg signed [7:0] pixel2,
+    output reg signed [7:0] pixel3,
+    output reg signed [7:0] pixel4,
+    output reg signed [7:0] pixel5,
+    output reg signed [7:0] pixel6,
+    output reg signed [7:0] pixel7,
+    output reg signed [7:0] pixel8,
+
+    output reg load_done
 );
 
     wire [7:0] data0, data1, data2, data3, data4, data5, data6, data7, data8;
@@ -42,15 +44,17 @@ module patch_data_latch
     begin
         if (!rst) 
         begin
-            pixel0 <= 8'd0;
-            pixel1 <= 8'd0;
-            pixel2 <= 8'd0;
-            pixel3 <= 8'd0;
-            pixel4 <= 8'd0;
-            pixel5 <= 8'd0;
-            pixel6 <= 8'd0;
-            pixel7 <= 8'd0;
-            pixel8 <= 8'd0;
+            load_done <= 0;
+            
+            pixel0 <= 8'sd0;
+            pixel1 <= 8'sd0;
+            pixel2 <= 8'sd0;
+            pixel3 <= 8'sd0;
+            pixel4 <= 8'sd0;
+            pixel5 <= 8'sd0;
+            pixel6 <= 8'sd0;
+            pixel7 <= 8'sd0;
+            pixel8 <= 8'sd0;
         end 
         else if (load && load_full_patch) 
         begin
@@ -63,6 +67,8 @@ module patch_data_latch
             pixel6 <= data6;
             pixel7 <= data7;
             pixel8 <= data8;
+
+            load_done <= 1;
         end
         else if (load && !load_full_patch)
         begin
@@ -75,6 +81,8 @@ module patch_data_latch
             pixel6 <= data6;
             pixel7 <= data7;
             pixel8 <= data8;
+
+            load_done <= 1;
 
         end
     end

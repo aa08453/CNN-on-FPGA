@@ -10,7 +10,7 @@ module load_bias
     input rst,
     input c_load,
     input [3:0] cout,
-    output reg [7:0] bias
+    output reg signed [7:0] bias
 );
 
     (* ram_style = "distributed" *) reg [7:0] rom_data [0:OC];  // Enough space for 8 out channels
@@ -24,7 +24,7 @@ module load_bias
     always @(posedge clk or negedge rst) 
     begin
         if (!rst) 
-            bias <= 0;
+            bias <= 8'sd0;
         else if (c_load)
             bias <= rom_data[cout]; 
     end

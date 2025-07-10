@@ -12,13 +12,15 @@ module conv_tb;
     reg conv;
 
     // Kernel (dummy values for testing)
-    reg [7:0] kernel0, kernel1, kernel2,
+    reg signed [7:0] kernel0, kernel1, kernel2,
               kernel3, kernel4, kernel5,
               kernel6, kernel7, kernel8;
 
     // Outputs
-    wire [7:0] result;
+    wire signed [7:0] result;
     wire [9:0] addr;
+    reg store;
+    reg done;
 
     // Instantiate DUT
     conv #(.H(H), .W(W)) dut (
@@ -31,7 +33,9 @@ module conv_tb;
         .kernel6(kernel6), .kernel7(kernel7), .kernel8(kernel8),
 
         .result(result),
-        .addr(addr)
+        .address(addr),
+        .store(store),
+        .done(done)
     );
 
     // Clock generation: 25MHz
@@ -45,21 +49,20 @@ module conv_tb;
         // Initial state
         clk = 0;
         rst = 0;
-        conv = 0;
+        conv = 1;
 
-        kernel0 = 8'd1;  kernel1 = 8'd2;  kernel2 = 8'd1;
-        kernel3 = 8'd0;  kernel4 = 8'd0;  kernel5 = 8'd0;
-        kernel6 = -8'd1; kernel7 = -8'd2; kernel8 = -8'd1; // Simple Sobel kernel (Y-dir)
+        kernel0 = 8'sd1;  kernel1 = 8'sd2;  kernel2 = 8'sd1;
+        kernel3 = 8'sd0;  kernel4 = 8'sd0;  kernel5 = 8'sd0;
+        kernel6 = -8'sd1; kernel7 = -8'sd2; kernel8 = -8'sd1; // Simple Sobel kernel (Y-dir)
 
         // Apply reset
         #100;
         rst = 1;
 
         // Wait and then pulse `conv` to start
-        #40;
-        conv = 1;
-        #40;
-        conv = 0;
+
+        // #40;
+        // conv = 0;
 
         // Run simulation for enough cycles to cover all patch iterations
         #1000000;

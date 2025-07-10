@@ -53,7 +53,7 @@ result:
 	gtkwave w_result.vcd &
 
 conv:
-	iverilog $(VFLAGS) -o conv.vvp $(SRC)/conv_layer/conv/*.v $(TESTS)/tb_conv.v
+	iverilog $(VFLAGS) -o conv.vvp $(SRC)/conv_layer/conv/*.v $(TESTS)/conv_layer/conv/tb_conv.v
 	vvp conv.vvp
 	gtkwave w_conv.vcd &
 
