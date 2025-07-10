@@ -16,7 +16,7 @@ module kernel_mem
 
     initial 
     begin
-        $readmemh("mem_files/conv1_weight.mem", rom_data);  // Your file with all kernels
+        $readmemh("conv1_weight.mem", rom_data);  // Your file with all kernels
     end
 
     genvar i;
