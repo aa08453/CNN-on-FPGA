@@ -5,28 +5,28 @@
 <ModuleName>top</ModuleName>
 <InstancesList>
 <Instance>
-<InstName>grp_dense_fu_188</InstName>
-<ModuleName>dense</ModuleName>
-<IsCompInst>true</IsCompInst>
-<ID>188</ID>
-</Instance>
-<Instance>
-<InstName>grp_conv2_fu_198</InstName>
+<InstName>grp_conv2_fu_206</InstName>
 <ModuleName>conv2</ModuleName>
 <IsCompInst>true</IsCompInst>
-<ID>198</ID>
+<ID>206</ID>
 </Instance>
 <Instance>
-<InstName>grp_conv1_fu_208</InstName>
+<InstName>grp_dense_fu_216</InstName>
+<ModuleName>dense</ModuleName>
+<IsCompInst>true</IsCompInst>
+<ID>216</ID>
+</Instance>
+<Instance>
+<InstName>grp_conv1_fu_226</InstName>
 <ModuleName>conv1</ModuleName>
 <IsCompInst>true</IsCompInst>
-<ID>208</ID>
+<ID>226</ID>
 </Instance>
 <Instance>
-<InstName>grp_pool_fu_218</InstName>
+<InstName>grp_pool_fu_236</InstName>
 <ModuleName>pool</ModuleName>
 <IsCompInst>true</IsCompInst>
-<ID>218</ID>
+<ID>236</ID>
 </Instance>
 </InstancesList>
 </TopModule>
@@ -2041,13 +2041,13 @@
 <EstimatedClockPeriod>8.750</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
-<Best-caseLatency>26977</Best-caseLatency>
-<Average-caseLatency>26977</Average-caseLatency>
-<Worst-caseLatency>26977</Worst-caseLatency>
-<Best-caseRealTimeLatency>0.270 ms</Best-caseRealTimeLatency>
-<Average-caseRealTimeLatency>0.270 ms</Average-caseRealTimeLatency>
-<Worst-caseRealTimeLatency>0.270 ms</Worst-caseRealTimeLatency>
-<PipelineInitiationInterval>26977</PipelineInitiationInterval>
+<Best-caseLatency>26837</Best-caseLatency>
+<Average-caseLatency>26837</Average-caseLatency>
+<Worst-caseLatency>26837</Worst-caseLatency>
+<Best-caseRealTimeLatency>0.268 ms</Best-caseRealTimeLatency>
+<Average-caseRealTimeLatency>0.268 ms</Average-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>0.268 ms</Worst-caseRealTimeLatency>
+<PipelineInitiationInterval>26837</PipelineInitiationInterval>
 <PipelineType>none</PipelineType>
 </SummaryOfOverallLatency>
 <SummaryOfLoopLatency>
@@ -2068,15 +2068,15 @@
 <Loop3>
 <Name>Loop 3</Name>
 <TripCount>10</TripCount>
-<Latency>1090</Latency>
-<IterationLatency>109</IterationLatency>
-<PipelineDepth>109</PipelineDepth>
+<Latency>950</Latency>
+<IterationLatency>95</IterationLatency>
+<PipelineDepth>95</PipelineDepth>
 <Loop3.1>
 <Name>Loop 3.1</Name>
 <TripCount>7</TripCount>
-<Latency>91</Latency>
-<IterationLatency>13</IterationLatency>
-<PipelineDepth>13</PipelineDepth>
+<Latency>77</Latency>
+<IterationLatency>11</IterationLatency>
+<PipelineDepth>11</PipelineDepth>
 </Loop3.1>
 </Loop3>
 </SummaryOfLoopLatency>
@@ -2085,8 +2085,8 @@
 <Resources>
 <BRAM_18K>8</BRAM_18K>
 <DSP48E>0</DSP48E>
-<FF>1658</FF>
-<LUT>15419</LUT>
+<FF>1783</FF>
+<LUT>11091</LUT>
 <URAM>0</URAM>
 </Resources>
 </AreaEstimates>
@@ -2707,13 +2707,13 @@
 <EstimatedClockPeriod>8.750</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
-<Best-caseLatency>358926</Best-caseLatency>
+<Best-caseLatency>358786</Best-caseLatency>
 <Average-caseLatency>undef</Average-caseLatency>
-<Worst-caseLatency>606590</Worst-caseLatency>
-<Best-caseRealTimeLatency>3.589 ms</Best-caseRealTimeLatency>
+<Worst-caseLatency>606450</Worst-caseLatency>
+<Best-caseRealTimeLatency>3.588 ms</Best-caseRealTimeLatency>
 <Average-caseRealTimeLatency>undef</Average-caseRealTimeLatency>
-<Worst-caseRealTimeLatency>6.066 ms</Worst-caseRealTimeLatency>
-<PipelineInitiationInterval>358927 ~ 606591</PipelineInitiationInterval>
+<Worst-caseRealTimeLatency>6.064 ms</Worst-caseRealTimeLatency>
+<PipelineInitiationInterval>358787 ~ 606451</PipelineInitiationInterval>
 <PipelineType>none</PipelineType>
 </SummaryOfOverallLatency>
 </PerformanceEstimates>
@@ -2721,8 +2721,8 @@
 <Resources>
 <BRAM_18K>12</BRAM_18K>
 <DSP48E>0</DSP48E>
-<FF>9679</FF>
-<LUT>34771</LUT>
+<FF>9804</FF>
+<LUT>30443</LUT>
 <URAM>0</URAM>
 </Resources>
 </AreaEstimates>

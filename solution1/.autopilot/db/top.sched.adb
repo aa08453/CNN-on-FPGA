@@ -382,7 +382,7 @@
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>17</id>
+						<id>16</id>
 						<name>fcBias_V_read</name>
 						<fileName>cnn/src/eight.cpp</fileName>
 						<fileDirectory>D:\CNN2.0\hls</fileDirectory>
@@ -431,7 +431,7 @@
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>18</id>
+						<id>17</id>
 						<name>fcWeight_V_read</name>
 						<fileName>cnn/src/eight.cpp</fileName>
 						<fileDirectory>D:\CNN2.0\hls</fileDirectory>
@@ -480,7 +480,7 @@
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>19</id>
+						<id>18</id>
 						<name>outputDense_V_read</name>
 						<fileName>cnn/src/eight.cpp</fileName>
 						<fileDirectory>D:\CNN2.0\hls</fileDirectory>
@@ -529,7 +529,7 @@
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>20</id>
+						<id>19</id>
 						<name>outputPool2_V_read</name>
 						<fileName>cnn/src/eight.cpp</fileName>
 						<fileDirectory>D:\CNN2.0\hls</fileDirectory>
@@ -578,7 +578,7 @@
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>21</id>
+						<id>20</id>
 						<name>outputConv2_V_read</name>
 						<fileName>cnn/src/eight.cpp</fileName>
 						<fileDirectory>D:\CNN2.0\hls</fileDirectory>
@@ -627,7 +627,7 @@
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>22</id>
+						<id>21</id>
 						<name>bias2_V_read</name>
 						<fileName>cnn/src/eight.cpp</fileName>
 						<fileDirectory>D:\CNN2.0\hls</fileDirectory>
@@ -676,7 +676,7 @@
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>23</id>
+						<id>22</id>
 						<name>weight2_V_read</name>
 						<fileName>cnn/src/eight.cpp</fileName>
 						<fileDirectory>D:\CNN2.0\hls</fileDirectory>
@@ -725,7 +725,7 @@
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>24</id>
+						<id>23</id>
 						<name>outputPool_V_read</name>
 						<fileName>cnn/src/eight.cpp</fileName>
 						<fileDirectory>D:\CNN2.0\hls</fileDirectory>
@@ -774,7 +774,7 @@
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>25</id>
+						<id>24</id>
 						<name>bias_V_read</name>
 						<fileName>cnn/src/eight.cpp</fileName>
 						<fileDirectory>D:\CNN2.0\hls</fileDirectory>
@@ -823,7 +823,7 @@
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>26</id>
+						<id>25</id>
 						<name>weight_V_read</name>
 						<fileName>cnn/src/eight.cpp</fileName>
 						<fileDirectory>D:\CNN2.0\hls</fileDirectory>
@@ -872,7 +872,7 @@
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>27</id>
+						<id>26</id>
 						<name>outputConv_V_read</name>
 						<fileName>cnn/src/eight.cpp</fileName>
 						<fileDirectory>D:\CNN2.0\hls</fileDirectory>
@@ -921,7 +921,7 @@
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>28</id>
+						<id>27</id>
 						<name>input_V_read</name>
 						<fileName>cnn/src/eight.cpp</fileName>
 						<fileDirectory>D:\CNN2.0\hls</fileDirectory>
@@ -971,10 +971,10 @@
 					<Obj>
 						<type>0</type>
 						<id>42</id>
-						<name>_ln40</name>
+						<name>_ln41</name>
 						<fileName>cnn/src/eight.cpp</fileName>
 						<fileDirectory>D:\CNN2.0\hls</fileDirectory>
-						<lineNumber>40</lineNumber>
+						<lineNumber>41</lineNumber>
 						<contextFuncName>top</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -989,7 +989,7 @@
 											<first>cnn/src/eight.cpp</first>
 											<second>top</second>
 										</first>
-										<second>40</second>
+										<second>41</second>
 									</item>
 								</second>
 							</item>
@@ -1024,10 +1024,10 @@
 					<Obj>
 						<type>0</type>
 						<id>43</id>
-						<name>_ln41</name>
+						<name>_ln42</name>
 						<fileName>cnn/src/eight.cpp</fileName>
 						<fileDirectory>D:\CNN2.0\hls</fileDirectory>
-						<lineNumber>41</lineNumber>
+						<lineNumber>42</lineNumber>
 						<contextFuncName>top</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -1042,7 +1042,7 @@
 											<first>cnn/src/eight.cpp</first>
 											<second>top</second>
 										</first>
-										<second>41</second>
+										<second>42</second>
 									</item>
 								</second>
 							</item>
@@ -1063,8 +1063,8 @@
 					<item>87</item>
 					<item>89</item>
 					<item>90</item>
-					<item>402</item>
-					<item>403</item>
+					<item>411</item>
+					<item>412</item>
 				</oprand_edges>
 				<opcode>call</opcode>
 				<m_Display>0</m_Display>
@@ -1080,61 +1080,6 @@
 					<Obj>
 						<type>0</type>
 						<id>44</id>
-						<name>_ln43</name>
-						<fileName>cnn/src/eight.cpp</fileName>
-						<fileDirectory>D:\CNN2.0\hls</fileDirectory>
-						<lineNumber>43</lineNumber>
-						<contextFuncName>top</contextFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>D:\CNN2.0\hls</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>cnn/src/eight.cpp</first>
-											<second>top</second>
-										</first>
-										<second>43</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<coreName></coreName>
-					</Obj>
-					<bitwidth>0</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>8</count>
-					<item_version>0</item_version>
-					<item>92</item>
-					<item>93</item>
-					<item>94</item>
-					<item>95</item>
-					<item>96</item>
-					<item>97</item>
-					<item>401</item>
-					<item>404</item>
-				</oprand_edges>
-				<opcode>call</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>8.75</m_delay>
-				<m_topoIndex>15</m_topoIndex>
-				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_29">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>45</id>
 						<name>_ln44</name>
 						<fileName>cnn/src/eight.cpp</fileName>
 						<fileDirectory>D:\CNN2.0\hls</fileDirectory>
@@ -1165,6 +1110,61 @@
 					<bitwidth>0</bitwidth>
 				</Value>
 				<oprand_edges>
+					<count>8</count>
+					<item_version>0</item_version>
+					<item>92</item>
+					<item>93</item>
+					<item>94</item>
+					<item>95</item>
+					<item>96</item>
+					<item>97</item>
+					<item>410</item>
+					<item>413</item>
+				</oprand_edges>
+				<opcode>call</opcode>
+				<m_Display>0</m_Display>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
+				<m_isLCDNode>0</m_isLCDNode>
+				<m_isStartOfPath>0</m_isStartOfPath>
+				<m_delay>8.75</m_delay>
+				<m_topoIndex>15</m_topoIndex>
+				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
+			</item>
+			<item class_id_reference="9" object_id="_29">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>45</id>
+						<name>_ln45</name>
+						<fileName>cnn/src/eight.cpp</fileName>
+						<fileDirectory>D:\CNN2.0\hls</fileDirectory>
+						<lineNumber>45</lineNumber>
+						<contextFuncName>top</contextFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>D:\CNN2.0\hls</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>cnn/src/eight.cpp</first>
+											<second>top</second>
+										</first>
+										<second>45</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<coreName></coreName>
+					</Obj>
+					<bitwidth>0</bitwidth>
+				</Value>
+				<oprand_edges>
 					<count>9</count>
 					<item_version>0</item_version>
 					<item>98</item>
@@ -1174,8 +1174,8 @@
 					<item>103</item>
 					<item>105</item>
 					<item>106</item>
-					<item>400</item>
-					<item>405</item>
+					<item>409</item>
+					<item>414</item>
 				</oprand_edges>
 				<opcode>call</opcode>
 				<m_Display>0</m_Display>
@@ -1191,10 +1191,10 @@
 					<Obj>
 						<type>0</type>
 						<id>46</id>
-						<name>_ln46</name>
+						<name>_ln47</name>
 						<fileName>cnn/src/eight.cpp</fileName>
 						<fileDirectory>D:\CNN2.0\hls</fileDirectory>
-						<lineNumber>46</lineNumber>
+						<lineNumber>47</lineNumber>
 						<contextFuncName>top</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -1209,7 +1209,7 @@
 											<first>cnn/src/eight.cpp</first>
 											<second>top</second>
 										</first>
-										<second>46</second>
+										<second>47</second>
 									</item>
 								</second>
 							</item>
@@ -1229,8 +1229,8 @@
 					<item>111</item>
 					<item>112</item>
 					<item>113</item>
-					<item>399</item>
-					<item>406</item>
+					<item>408</item>
+					<item>415</item>
 				</oprand_edges>
 				<opcode>call</opcode>
 				<m_Display>0</m_Display>
@@ -1246,10 +1246,10 @@
 					<Obj>
 						<type>0</type>
 						<id>47</id>
-						<name>_ln49</name>
+						<name>_ln50</name>
 						<fileName>cnn/src/eight.cpp</fileName>
 						<fileDirectory>D:\CNN2.0\hls</fileDirectory>
-						<lineNumber>49</lineNumber>
+						<lineNumber>50</lineNumber>
 						<contextFuncName>top</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -1264,7 +1264,7 @@
 											<first>cnn/src/eight.cpp</first>
 											<second>top</second>
 										</first>
-										<second>49</second>
+										<second>50</second>
 									</item>
 								</second>
 							</item>
@@ -1500,6 +1500,7 @@
 				<node_objs>
 					<count>18</count>
 					<item_version>0</item_version>
+					<item>16</item>
 					<item>17</item>
 					<item>18</item>
 					<item>19</item>
@@ -1511,7 +1512,6 @@
 					<item>25</item>
 					<item>26</item>
 					<item>27</item>
-					<item>28</item>
 					<item>42</item>
 					<item>43</item>
 					<item>44</item>
@@ -1528,84 +1528,84 @@
 				<id>51</id>
 				<edge_type>1</edge_type>
 				<source_obj>13</source_obj>
-				<sink_obj>17</sink_obj>
+				<sink_obj>16</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_42">
 				<id>53</id>
 				<edge_type>1</edge_type>
 				<source_obj>12</source_obj>
-				<sink_obj>18</sink_obj>
+				<sink_obj>17</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_43">
 				<id>55</id>
 				<edge_type>1</edge_type>
 				<source_obj>11</source_obj>
-				<sink_obj>19</sink_obj>
+				<sink_obj>18</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_44">
 				<id>57</id>
 				<edge_type>1</edge_type>
 				<source_obj>10</source_obj>
-				<sink_obj>20</sink_obj>
+				<sink_obj>19</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_45">
 				<id>59</id>
 				<edge_type>1</edge_type>
 				<source_obj>9</source_obj>
-				<sink_obj>21</sink_obj>
+				<sink_obj>20</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_46">
 				<id>61</id>
 				<edge_type>1</edge_type>
 				<source_obj>8</source_obj>
-				<sink_obj>22</sink_obj>
+				<sink_obj>21</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_47">
 				<id>63</id>
 				<edge_type>1</edge_type>
 				<source_obj>7</source_obj>
-				<sink_obj>23</sink_obj>
+				<sink_obj>22</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_48">
 				<id>65</id>
 				<edge_type>1</edge_type>
 				<source_obj>6</source_obj>
-				<sink_obj>24</sink_obj>
+				<sink_obj>23</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_49">
 				<id>67</id>
 				<edge_type>1</edge_type>
 				<source_obj>5</source_obj>
-				<sink_obj>25</sink_obj>
+				<sink_obj>24</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_50">
 				<id>69</id>
 				<edge_type>1</edge_type>
 				<source_obj>4</source_obj>
-				<sink_obj>26</sink_obj>
+				<sink_obj>25</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_51">
 				<id>71</id>
 				<edge_type>1</edge_type>
 				<source_obj>3</source_obj>
-				<sink_obj>27</sink_obj>
+				<sink_obj>26</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_52">
 				<id>73</id>
 				<edge_type>1</edge_type>
 				<source_obj>2</source_obj>
-				<sink_obj>28</sink_obj>
+				<sink_obj>27</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_53">
@@ -1625,28 +1625,28 @@
 			<item class_id_reference="20" object_id="_55">
 				<id>77</id>
 				<edge_type>1</edge_type>
-				<source_obj>28</source_obj>
+				<source_obj>27</source_obj>
 				<sink_obj>42</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_56">
 				<id>78</id>
 				<edge_type>1</edge_type>
-				<source_obj>27</source_obj>
+				<source_obj>26</source_obj>
 				<sink_obj>42</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_57">
 				<id>79</id>
 				<edge_type>1</edge_type>
-				<source_obj>26</source_obj>
+				<source_obj>25</source_obj>
 				<sink_obj>42</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_58">
 				<id>80</id>
 				<edge_type>1</edge_type>
-				<source_obj>25</source_obj>
+				<source_obj>24</source_obj>
 				<sink_obj>42</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
@@ -1667,14 +1667,14 @@
 			<item class_id_reference="20" object_id="_61">
 				<id>84</id>
 				<edge_type>1</edge_type>
-				<source_obj>27</source_obj>
+				<source_obj>26</source_obj>
 				<sink_obj>43</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_62">
 				<id>85</id>
 				<edge_type>1</edge_type>
-				<source_obj>24</source_obj>
+				<source_obj>23</source_obj>
 				<sink_obj>43</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
@@ -1716,28 +1716,28 @@
 			<item class_id_reference="20" object_id="_68">
 				<id>94</id>
 				<edge_type>1</edge_type>
-				<source_obj>24</source_obj>
+				<source_obj>23</source_obj>
 				<sink_obj>44</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_69">
 				<id>95</id>
 				<edge_type>1</edge_type>
-				<source_obj>21</source_obj>
+				<source_obj>20</source_obj>
 				<sink_obj>44</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_70">
 				<id>96</id>
 				<edge_type>1</edge_type>
-				<source_obj>23</source_obj>
+				<source_obj>22</source_obj>
 				<sink_obj>44</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_71">
 				<id>97</id>
 				<edge_type>1</edge_type>
-				<source_obj>22</source_obj>
+				<source_obj>21</source_obj>
 				<sink_obj>44</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
@@ -1758,14 +1758,14 @@
 			<item class_id_reference="20" object_id="_74">
 				<id>100</id>
 				<edge_type>1</edge_type>
-				<source_obj>21</source_obj>
+				<source_obj>20</source_obj>
 				<sink_obj>45</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_75">
 				<id>101</id>
 				<edge_type>1</edge_type>
-				<source_obj>20</source_obj>
+				<source_obj>19</source_obj>
 				<sink_obj>45</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
@@ -1807,82 +1807,82 @@
 			<item class_id_reference="20" object_id="_81">
 				<id>110</id>
 				<edge_type>1</edge_type>
-				<source_obj>20</source_obj>
+				<source_obj>19</source_obj>
 				<sink_obj>46</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_82">
 				<id>111</id>
 				<edge_type>1</edge_type>
-				<source_obj>19</source_obj>
+				<source_obj>18</source_obj>
 				<sink_obj>46</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_83">
 				<id>112</id>
 				<edge_type>1</edge_type>
-				<source_obj>18</source_obj>
+				<source_obj>17</source_obj>
 				<sink_obj>46</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_84">
 				<id>113</id>
 				<edge_type>1</edge_type>
-				<source_obj>17</source_obj>
+				<source_obj>16</source_obj>
 				<sink_obj>46</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_85">
-				<id>399</id>
+				<id>408</id>
 				<edge_type>4</edge_type>
 				<source_obj>45</source_obj>
 				<sink_obj>46</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_86">
-				<id>400</id>
+				<id>409</id>
 				<edge_type>4</edge_type>
 				<source_obj>44</source_obj>
 				<sink_obj>45</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_87">
-				<id>401</id>
+				<id>410</id>
 				<edge_type>4</edge_type>
 				<source_obj>43</source_obj>
 				<sink_obj>44</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_88">
-				<id>402</id>
+				<id>411</id>
 				<edge_type>4</edge_type>
 				<source_obj>42</source_obj>
 				<sink_obj>43</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_89">
-				<id>403</id>
+				<id>412</id>
 				<edge_type>4</edge_type>
 				<source_obj>42</source_obj>
 				<sink_obj>43</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_90">
-				<id>404</id>
+				<id>413</id>
 				<edge_type>4</edge_type>
 				<source_obj>43</source_obj>
 				<sink_obj>44</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_91">
-				<id>405</id>
+				<id>414</id>
 				<edge_type>4</edge_type>
 				<source_obj>44</source_obj>
 				<sink_obj>45</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_92">
-				<id>406</id>
+				<id>415</id>
 				<edge_type>4</edge_type>
 				<source_obj>45</source_obj>
 				<sink_obj>46</sink_obj>
@@ -1910,8 +1910,8 @@
 			<mDepth>-1</mDepth>
 			<mMinTripCount>-1</mMinTripCount>
 			<mMaxTripCount>-1</mMaxTripCount>
-			<mMinLatency>358926</mMinLatency>
-			<mMaxLatency>606590</mMaxLatency>
+			<mMinLatency>358786</mMinLatency>
+			<mMaxLatency>606450</mMaxLatency>
 			<mIsDfPipe>0</mIsDfPipe>
 			<mDfPipe class_id="-1"></mDfPipe>
 		</item>
@@ -1922,8 +1922,15 @@
 		<count>18</count>
 		<item_version>0</item_version>
 		<item class_id="27" tracking_level="0" version="0">
-			<first>17</first>
+			<first>16</first>
 			<second class_id="28" tracking_level="0" version="0">
+				<first>0</first>
+				<second>0</second>
+			</second>
+		</item>
+		<item>
+			<first>17</first>
+			<second>
 				<first>0</first>
 				<second>0</second>
 			</second>
@@ -1993,13 +2000,6 @@
 		</item>
 		<item>
 			<first>27</first>
-			<second>
-				<first>0</first>
-				<second>0</second>
-			</second>
-		</item>
-		<item>
-			<first>28</first>
 			<second>
 				<first>0</first>
 				<second>0</second>

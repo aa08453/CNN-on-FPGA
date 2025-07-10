@@ -137,7 +137,7 @@
     "ClockPeriod": "10",
     "IsCombLogic": "0",
     "II": "x",
-    "Latency": "358926",
+    "Latency": "358786",
     "Uncertainty": "1.25"
   },
   "Xdc": {"OocClocks": ["create_clock -name ap_clk -period 10.000 [get_ports ap_clk]"]},
@@ -1080,20 +1080,20 @@
       "ModuleName": "top",
       "Instances": [
         {
-          "ModuleName": "dense",
-          "InstanceName": "grp_dense_fu_188"
+          "ModuleName": "conv2",
+          "InstanceName": "grp_conv2_fu_206"
         },
         {
-          "ModuleName": "conv2",
-          "InstanceName": "grp_conv2_fu_198"
+          "ModuleName": "dense",
+          "InstanceName": "grp_dense_fu_216"
         },
         {
           "ModuleName": "conv1",
-          "InstanceName": "grp_conv1_fu_208"
+          "InstanceName": "grp_conv1_fu_226"
         },
         {
           "ModuleName": "pool",
-          "InstanceName": "grp_pool_fu_218"
+          "InstanceName": "grp_pool_fu_236"
         }
       ]
     },
@@ -1268,10 +1268,10 @@
       },
       "dense": {
         "Latency": {
-          "LatencyBest": "26977",
-          "LatencyAvg": "26977",
-          "LatencyWorst": "26977",
-          "PipelineII": "26977",
+          "LatencyBest": "26837",
+          "LatencyAvg": "26837",
+          "LatencyWorst": "26837",
+          "PipelineII": "26837",
           "PipelineDepth": "",
           "PipelineType": "none"
         },
@@ -1298,34 +1298,34 @@
           {
             "Name": "Loop 3",
             "TripCount": "10",
-            "Latency": "1090",
+            "Latency": "950",
             "PipelineII": "",
-            "PipelineDepth": "109",
+            "PipelineDepth": "95",
             "Loops": [{
                 "Name": "Loop 3.1",
                 "TripCount": "7",
-                "Latency": "91",
+                "Latency": "77",
                 "PipelineII": "",
-                "PipelineDepth": "13"
+                "PipelineDepth": "11"
               }]
           }
         ],
         "Area": {
           "BRAM_18K": "8",
           "DSP48E": "0",
-          "FF": "1658",
-          "LUT": "15419",
+          "FF": "1783",
+          "LUT": "11091",
           "URAM": "0"
         }
       },
       "top": {
         "Latency": {
-          "LatencyBest": "358926",
+          "LatencyBest": "358786",
           "LatencyAvg": "",
-          "LatencyWorst": "606590",
-          "PipelineIIMin": "358927",
-          "PipelineIIMax": "606591",
-          "PipelineII": "358927 ~ 606591",
+          "LatencyWorst": "606450",
+          "PipelineIIMin": "358787",
+          "PipelineIIMax": "606451",
+          "PipelineII": "358787 ~ 606451",
           "PipelineDepth": "",
           "PipelineType": "none"
         },
@@ -1337,8 +1337,8 @@
         "Area": {
           "BRAM_18K": "12",
           "DSP48E": "0",
-          "FF": "9679",
-          "LUT": "34771",
+          "FF": "9804",
+          "LUT": "30443",
           "URAM": "0"
         }
       }
@@ -1354,7 +1354,7 @@
   },
   "GenData": {
     "DataVersion": "0.2",
-    "Time": "2025-07-10 14:53:30 +0500",
+    "Time": "2025-07-10 17:07:10 +0500",
     "ToolName": "vivado_hls",
     "ToolVersion": "2020.1"
   }

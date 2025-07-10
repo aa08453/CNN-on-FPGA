@@ -33,7 +33,7 @@ void dense(
         for (int i = 0; i < inputFeatures; i++) {
             #pragma HLS UNROLL factor=112
         	int offset = c*inputFeatures + i;
-        	int multRes = temp[i] * tempWeight[offset];
+        	fixed multRes = temp[i] * tempWeight[offset];
                 sum += multRes;
             }
         outputDense[c] = sum;

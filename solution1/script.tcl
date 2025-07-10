@@ -31,5 +31,5 @@ set_clock_uncertainty 12.5%
 #source "./cnn/solution1/directives.tcl"
 csim_design
 csynth_design
-cosim_design
+cosim_design -tool xsim
 export_design -flow impl -rtl verilog -format ip_catalog

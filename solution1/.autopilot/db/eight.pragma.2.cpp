@@ -6628,17 +6628,18 @@ void top(
  fixed fcWeight[], fixed fcBias[]
 ) {
 
-_ssdm_op_SpecInterface(input, "m_axi", 0, 0, "", 0, 0, "gmem", "slave", "", 16, 16, 16, 16, "", "");
-_ssdm_op_SpecInterface(outputConv, "m_axi", 0, 0, "", 0, 0, "gmem", "slave", "", 16, 16, 16, 16, "", "");
-_ssdm_op_SpecInterface(weight, "m_axi", 0, 0, "", 0, 0, "gmem", "slave", "", 16, 16, 16, 16, "", "");
-_ssdm_op_SpecInterface(bias, "m_axi", 0, 0, "", 0, 0, "gmem", "slave", "", 16, 16, 16, 16, "", "");
-_ssdm_op_SpecInterface(weight2, "m_axi", 0, 0, "", 0, 0, "gmem", "slave", "", 16, 16, 16, 16, "", "");
-_ssdm_op_SpecInterface(bias2, "m_axi", 0, 0, "", 0, 0, "gmem", "slave", "", 16, 16, 16, 16, "", "");
-_ssdm_op_SpecInterface(outputConv2, "m_axi", 0, 0, "", 0, 0, "gmem", "slave", "", 16, 16, 16, 16, "", "");
-_ssdm_op_SpecInterface(outputPool2, "m_axi", 0, 0, "", 0, 0, "gmem", "slave", "", 16, 16, 16, 16, "", "");
-_ssdm_op_SpecInterface(outputDense, "m_axi", 0, 0, "", 0, 0, "gmem", "slave", "", 16, 16, 16, 16, "", "");
-_ssdm_op_SpecInterface(fcWeight, "m_axi", 0, 0, "", 0, 0, "gmem", "slave", "", 16, 16, 16, 16, "", "");
-_ssdm_op_SpecInterface(fcBias, "m_axi", 0, 0, "", 0, 0, "gmem", "slave", "", 16, 16, 16, 16, "", "");
+_ssdm_op_SpecInterface(input, "m_axi", 0, 0, "", 0, 784, "gmem", "slave", "", 16, 16, 16, 16, "", "");
+_ssdm_op_SpecInterface(outputConv, "m_axi", 0, 0, "", 0, 6272, "gmem", "slave", "", 16, 16, 16, 16, "", "");
+_ssdm_op_SpecInterface(weight, "m_axi", 0, 0, "", 0, 72, "gmem", "slave", "", 16, 16, 16, 16, "", "");
+_ssdm_op_SpecInterface(bias, "m_axi", 0, 0, "", 0, 8, "gmem", "slave", "", 16, 16, 16, 16, "", "");
+_ssdm_op_SpecInterface(outputPool, "m_axi", 0, 0, "", 0, 1568, "gmem", "slave", "", 16, 16, 16, 16, "", "");
+_ssdm_op_SpecInterface(weight2, "m_axi", 0, 0, "", 0, 1152, "gmem", "slave", "", 16, 16, 16, 16, "", "");
+_ssdm_op_SpecInterface(bias2, "m_axi", 0, 0, "", 0, 16, "gmem", "slave", "", 16, 16, 16, 16, "", "");
+_ssdm_op_SpecInterface(outputConv2, "m_axi", 0, 0, "", 0, 3136, "gmem", "slave", "", 16, 16, 16, 16, "", "");
+_ssdm_op_SpecInterface(outputPool2, "m_axi", 0, 0, "", 0, 784, "gmem", "slave", "", 16, 16, 16, 16, "", "");
+_ssdm_op_SpecInterface(outputDense, "m_axi", 0, 0, "", 0, 10, "gmem", "slave", "", 16, 16, 16, 16, "", "");
+_ssdm_op_SpecInterface(fcWeight, "m_axi", 0, 0, "", 0, 7840, "gmem", "slave", "", 16, 16, 16, 16, "", "");
+_ssdm_op_SpecInterface(fcBias, "m_axi", 0, 0, "", 0, 10, "gmem", "slave", "", 16, 16, 16, 16, "", "");
 
 _ssdm_op_SpecInterface(0, "s_axilite", 0, 0, "", 0, 0, "control", "", "", 0, 0, 0, 0, "", "");
 

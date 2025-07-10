@@ -77,9 +77,9 @@
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="17" bw="32" op_0_bw="32" op_1_bw="32">
+<Node id="16" bw="32" op_0_bw="32" op_1_bw="32">
 <![CDATA[
-:3  %fcBias_V_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %fcBias_V)
+:2  %fcBias_V_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %fcBias_V)
 
 ]]></Node>
 <StgValue><ssdm name="fcBias_V_read"/></StgValue>
@@ -92,9 +92,9 @@
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="18" bw="32" op_0_bw="32" op_1_bw="32">
+<Node id="17" bw="32" op_0_bw="32" op_1_bw="32">
 <![CDATA[
-:4  %fcWeight_V_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %fcWeight_V)
+:3  %fcWeight_V_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %fcWeight_V)
 
 ]]></Node>
 <StgValue><ssdm name="fcWeight_V_read"/></StgValue>
@@ -107,9 +107,9 @@
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="19" bw="32" op_0_bw="32" op_1_bw="32">
+<Node id="18" bw="32" op_0_bw="32" op_1_bw="32">
 <![CDATA[
-:5  %outputDense_V_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %outputDense_V)
+:4  %outputDense_V_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %outputDense_V)
 
 ]]></Node>
 <StgValue><ssdm name="outputDense_V_read"/></StgValue>
@@ -122,9 +122,9 @@
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="20" bw="32" op_0_bw="32" op_1_bw="32">
+<Node id="19" bw="32" op_0_bw="32" op_1_bw="32">
 <![CDATA[
-:6  %outputPool2_V_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %outputPool2_V)
+:5  %outputPool2_V_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %outputPool2_V)
 
 ]]></Node>
 <StgValue><ssdm name="outputPool2_V_read"/></StgValue>
@@ -137,9 +137,9 @@
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="21" bw="32" op_0_bw="32" op_1_bw="32">
+<Node id="20" bw="32" op_0_bw="32" op_1_bw="32">
 <![CDATA[
-:7  %outputConv2_V_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %outputConv2_V)
+:6  %outputConv2_V_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %outputConv2_V)
 
 ]]></Node>
 <StgValue><ssdm name="outputConv2_V_read"/></StgValue>
@@ -152,9 +152,9 @@
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="22" bw="32" op_0_bw="32" op_1_bw="32">
+<Node id="21" bw="32" op_0_bw="32" op_1_bw="32">
 <![CDATA[
-:8  %bias2_V_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %bias2_V)
+:7  %bias2_V_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %bias2_V)
 
 ]]></Node>
 <StgValue><ssdm name="bias2_V_read"/></StgValue>
@@ -167,9 +167,9 @@
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="23" bw="32" op_0_bw="32" op_1_bw="32">
+<Node id="22" bw="32" op_0_bw="32" op_1_bw="32">
 <![CDATA[
-:9  %weight2_V_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %weight2_V)
+:8  %weight2_V_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %weight2_V)
 
 ]]></Node>
 <StgValue><ssdm name="weight2_V_read"/></StgValue>
@@ -182,9 +182,9 @@
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="24" bw="32" op_0_bw="32" op_1_bw="32">
+<Node id="23" bw="32" op_0_bw="32" op_1_bw="32">
 <![CDATA[
-:10  %outputPool_V_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %outputPool_V)
+:9  %outputPool_V_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %outputPool_V)
 
 ]]></Node>
 <StgValue><ssdm name="outputPool_V_read"/></StgValue>
@@ -197,9 +197,9 @@
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="25" bw="32" op_0_bw="32" op_1_bw="32">
+<Node id="24" bw="32" op_0_bw="32" op_1_bw="32">
 <![CDATA[
-:11  %bias_V_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %bias_V)
+:10  %bias_V_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %bias_V)
 
 ]]></Node>
 <StgValue><ssdm name="bias_V_read"/></StgValue>
@@ -212,9 +212,9 @@
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="26" bw="32" op_0_bw="32" op_1_bw="32">
+<Node id="25" bw="32" op_0_bw="32" op_1_bw="32">
 <![CDATA[
-:12  %weight_V_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %weight_V)
+:11  %weight_V_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %weight_V)
 
 ]]></Node>
 <StgValue><ssdm name="weight_V_read"/></StgValue>
@@ -227,9 +227,9 @@
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="27" bw="32" op_0_bw="32" op_1_bw="32">
+<Node id="26" bw="32" op_0_bw="32" op_1_bw="32">
 <![CDATA[
-:13  %outputConv_V_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %outputConv_V)
+:12  %outputConv_V_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %outputConv_V)
 
 ]]></Node>
 <StgValue><ssdm name="outputConv_V_read"/></StgValue>
@@ -242,9 +242,9 @@
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="28" bw="32" op_0_bw="32" op_1_bw="32">
+<Node id="27" bw="32" op_0_bw="32" op_1_bw="32">
 <![CDATA[
-:14  %input_V_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %input_V)
+:13  %input_V_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %input_V)
 
 ]]></Node>
 <StgValue><ssdm name="input_V_read"/></StgValue>
@@ -265,7 +265,7 @@
 :28  call fastcc void @conv1(i8* %gmem, i32 %input_V_read, i32 %outputConv_V_read, i32 %weight_V_read, i32 %bias_V_read)
 
 ]]></Node>
-<StgValue><ssdm name="call_ln40"/></StgValue>
+<StgValue><ssdm name="call_ln41"/></StgValue>
 </operation>
 </state>
 
@@ -283,7 +283,7 @@
 :28  call fastcc void @conv1(i8* %gmem, i32 %input_V_read, i32 %outputConv_V_read, i32 %weight_V_read, i32 %bias_V_read)
 
 ]]></Node>
-<StgValue><ssdm name="call_ln40"/></StgValue>
+<StgValue><ssdm name="call_ln41"/></StgValue>
 </operation>
 </state>
 
@@ -301,7 +301,7 @@
 :29  call fastcc void @pool(i8* %gmem, i32 %outputConv_V_read, i32 %outputPool_V_read, i6 8, i6 28, i6 28)
 
 ]]></Node>
-<StgValue><ssdm name="call_ln41"/></StgValue>
+<StgValue><ssdm name="call_ln42"/></StgValue>
 </operation>
 </state>
 
@@ -319,7 +319,7 @@
 :29  call fastcc void @pool(i8* %gmem, i32 %outputConv_V_read, i32 %outputPool_V_read, i6 8, i6 28, i6 28)
 
 ]]></Node>
-<StgValue><ssdm name="call_ln41"/></StgValue>
+<StgValue><ssdm name="call_ln42"/></StgValue>
 </operation>
 </state>
 
@@ -337,7 +337,7 @@
 :30  call fastcc void @conv2(i8* %gmem, i32 %outputPool_V_read, i32 %outputConv2_V_read, i32 %weight2_V_read, i32 %bias2_V_read)
 
 ]]></Node>
-<StgValue><ssdm name="call_ln43"/></StgValue>
+<StgValue><ssdm name="call_ln44"/></StgValue>
 </operation>
 </state>
 
@@ -355,7 +355,7 @@
 :30  call fastcc void @conv2(i8* %gmem, i32 %outputPool_V_read, i32 %outputConv2_V_read, i32 %weight2_V_read, i32 %bias2_V_read)
 
 ]]></Node>
-<StgValue><ssdm name="call_ln43"/></StgValue>
+<StgValue><ssdm name="call_ln44"/></StgValue>
 </operation>
 </state>
 
@@ -373,7 +373,7 @@
 :31  call fastcc void @pool(i8* %gmem, i32 %outputConv2_V_read, i32 %outputPool2_V_read, i6 16, i6 14, i6 14)
 
 ]]></Node>
-<StgValue><ssdm name="call_ln44"/></StgValue>
+<StgValue><ssdm name="call_ln45"/></StgValue>
 </operation>
 </state>
 
@@ -391,7 +391,7 @@
 :31  call fastcc void @pool(i8* %gmem, i32 %outputConv2_V_read, i32 %outputPool2_V_read, i6 16, i6 14, i6 14)
 
 ]]></Node>
-<StgValue><ssdm name="call_ln44"/></StgValue>
+<StgValue><ssdm name="call_ln45"/></StgValue>
 </operation>
 </state>
 
@@ -409,7 +409,7 @@
 :32  call fastcc void @dense(i8* %gmem, i32 %outputPool2_V_read, i32 %outputDense_V_read, i32 %fcWeight_V_read, i32 %fcBias_V_read)
 
 ]]></Node>
-<StgValue><ssdm name="call_ln46"/></StgValue>
+<StgValue><ssdm name="call_ln47"/></StgValue>
 </operation>
 </state>
 
@@ -424,7 +424,7 @@
 
 <Node id="14" bw="0" op_0_bw="0" op_1_bw="8">
 <![CDATA[
-:0  call void (...)* @_ssdm_op_SpecBitsMap(i8* %gmem), !map !178
+:0  call void (...)* @_ssdm_op_SpecBitsMap(i8* %gmem), !map !169
 
 ]]></Node>
 <StgValue><ssdm name="specbitsmap_ln0"/></StgValue>
@@ -437,12 +437,12 @@
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="15" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0">
+<Node id="15" bw="0" op_0_bw="0" op_1_bw="0">
 <![CDATA[
-:1  call void (...)* @_ssdm_op_SpecInterface(i32 %outputPool_V, [10 x i8]* @mode7, i32 0, i32 0, [1 x i8]* @p_str110, i32 0, i32 0, [1 x i8]* @bundle8, [6 x i8]* @p_str312, [1 x i8]* @p_str110, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str110, [1 x i8]* @p_str110) nounwind
+:1  call void (...)* @_ssdm_op_SpecTopModule([4 x i8]* @top_str) nounwind
 
 ]]></Node>
-<StgValue><ssdm name="specinterface_ln0"/></StgValue>
+<StgValue><ssdm name="spectopmodule_ln0"/></StgValue>
 </operation>
 
 <operation id="35" st_id="11" stage="1" lat="1">
@@ -452,12 +452,12 @@
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="16" bw="0" op_0_bw="0" op_1_bw="0">
+<Node id="28" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0">
 <![CDATA[
-:2  call void (...)* @_ssdm_op_SpecTopModule([4 x i8]* @top_str) nounwind
+:14  call void (...)* @_ssdm_op_SpecInterface(i8* %gmem, [6 x i8]* @p_str9, i32 0, i32 0, [1 x i8]* @p_str110, i32 0, i32 7840, [5 x i8]* @p_str211, [6 x i8]* @p_str312, [1 x i8]* @p_str110, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str110, [1 x i8]* @p_str110) nounwind
 
 ]]></Node>
-<StgValue><ssdm name="spectopmodule_ln0"/></StgValue>
+<StgValue><ssdm name="specinterface_ln26"/></StgValue>
 </operation>
 
 <operation id="36" st_id="11" stage="1" lat="1">
@@ -467,9 +467,9 @@
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="29" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0">
+<Node id="29" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0">
 <![CDATA[
-:15  call void (...)* @_ssdm_op_SpecInterface(i8* %gmem, [6 x i8]* @p_str9, i32 0, i32 0, [1 x i8]* @p_str110, i32 0, i32 0, [5 x i8]* @p_str211, [6 x i8]* @p_str312, [1 x i8]* @p_str110, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str110, [1 x i8]* @p_str110) nounwind
+:15  call void (...)* @_ssdm_op_SpecInterface(i32 %input_V, [10 x i8]* @mode, i32 0, i32 0, [1 x i8]* @p_str110, i32 0, i32 784, [1 x i8]* @bundle, [6 x i8]* @p_str312, [1 x i8]* @p_str110, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str110, [1 x i8]* @p_str110) nounwind
 
 ]]></Node>
 <StgValue><ssdm name="specinterface_ln26"/></StgValue>
@@ -484,10 +484,10 @@
 
 <Node id="30" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0">
 <![CDATA[
-:16  call void (...)* @_ssdm_op_SpecInterface(i32 %input_V, [10 x i8]* @mode, i32 0, i32 0, [1 x i8]* @p_str110, i32 0, i32 0, [1 x i8]* @bundle, [6 x i8]* @p_str312, [1 x i8]* @p_str110, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str110, [1 x i8]* @p_str110) nounwind
+:16  call void (...)* @_ssdm_op_SpecInterface(i32 %outputConv_V, [10 x i8]* @mode1, i32 0, i32 0, [1 x i8]* @p_str110, i32 0, i32 6272, [1 x i8]* @bundle2, [6 x i8]* @p_str312, [1 x i8]* @p_str110, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str110, [1 x i8]* @p_str110) nounwind
 
 ]]></Node>
-<StgValue><ssdm name="specinterface_ln26"/></StgValue>
+<StgValue><ssdm name="specinterface_ln27"/></StgValue>
 </operation>
 
 <operation id="38" st_id="11" stage="1" lat="1">
@@ -499,10 +499,10 @@
 
 <Node id="31" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0">
 <![CDATA[
-:17  call void (...)* @_ssdm_op_SpecInterface(i32 %outputConv_V, [10 x i8]* @mode1, i32 0, i32 0, [1 x i8]* @p_str110, i32 0, i32 0, [1 x i8]* @bundle2, [6 x i8]* @p_str312, [1 x i8]* @p_str110, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str110, [1 x i8]* @p_str110) nounwind
+:17  call void (...)* @_ssdm_op_SpecInterface(i32 %weight_V, [10 x i8]* @mode3, i32 0, i32 0, [1 x i8]* @p_str110, i32 0, i32 72, [1 x i8]* @bundle4, [6 x i8]* @p_str312, [1 x i8]* @p_str110, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str110, [1 x i8]* @p_str110) nounwind
 
 ]]></Node>
-<StgValue><ssdm name="specinterface_ln27"/></StgValue>
+<StgValue><ssdm name="specinterface_ln28"/></StgValue>
 </operation>
 
 <operation id="39" st_id="11" stage="1" lat="1">
@@ -514,10 +514,10 @@
 
 <Node id="32" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0">
 <![CDATA[
-:18  call void (...)* @_ssdm_op_SpecInterface(i32 %weight_V, [10 x i8]* @mode3, i32 0, i32 0, [1 x i8]* @p_str110, i32 0, i32 0, [1 x i8]* @bundle4, [6 x i8]* @p_str312, [1 x i8]* @p_str110, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str110, [1 x i8]* @p_str110) nounwind
+:18  call void (...)* @_ssdm_op_SpecInterface(i32 %bias_V, [10 x i8]* @mode5, i32 0, i32 0, [1 x i8]* @p_str110, i32 0, i32 8, [1 x i8]* @bundle6, [6 x i8]* @p_str312, [1 x i8]* @p_str110, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str110, [1 x i8]* @p_str110) nounwind
 
 ]]></Node>
-<StgValue><ssdm name="specinterface_ln28"/></StgValue>
+<StgValue><ssdm name="specinterface_ln29"/></StgValue>
 </operation>
 
 <operation id="40" st_id="11" stage="1" lat="1">
@@ -529,10 +529,10 @@
 
 <Node id="33" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0">
 <![CDATA[
-:19  call void (...)* @_ssdm_op_SpecInterface(i32 %bias_V, [10 x i8]* @mode5, i32 0, i32 0, [1 x i8]* @p_str110, i32 0, i32 0, [1 x i8]* @bundle6, [6 x i8]* @p_str312, [1 x i8]* @p_str110, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str110, [1 x i8]* @p_str110) nounwind
+:19  call void (...)* @_ssdm_op_SpecInterface(i32 %outputPool_V, [10 x i8]* @mode7, i32 0, i32 0, [1 x i8]* @p_str110, i32 0, i32 1568, [1 x i8]* @bundle8, [6 x i8]* @p_str312, [1 x i8]* @p_str110, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str110, [1 x i8]* @p_str110) nounwind
 
 ]]></Node>
-<StgValue><ssdm name="specinterface_ln29"/></StgValue>
+<StgValue><ssdm name="specinterface_ln30"/></StgValue>
 </operation>
 
 <operation id="41" st_id="11" stage="1" lat="1">
@@ -544,10 +544,10 @@
 
 <Node id="34" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0">
 <![CDATA[
-:20  call void (...)* @_ssdm_op_SpecInterface(i32 %weight2_V, [10 x i8]* @mode9, i32 0, i32 0, [1 x i8]* @p_str110, i32 0, i32 0, [1 x i8]* @bundle10, [6 x i8]* @p_str312, [1 x i8]* @p_str110, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str110, [1 x i8]* @p_str110) nounwind
+:20  call void (...)* @_ssdm_op_SpecInterface(i32 %weight2_V, [10 x i8]* @mode9, i32 0, i32 0, [1 x i8]* @p_str110, i32 0, i32 1152, [1 x i8]* @bundle10, [6 x i8]* @p_str312, [1 x i8]* @p_str110, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str110, [1 x i8]* @p_str110) nounwind
 
 ]]></Node>
-<StgValue><ssdm name="specinterface_ln30"/></StgValue>
+<StgValue><ssdm name="specinterface_ln31"/></StgValue>
 </operation>
 
 <operation id="42" st_id="11" stage="1" lat="1">
@@ -559,10 +559,10 @@
 
 <Node id="35" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0">
 <![CDATA[
-:21  call void (...)* @_ssdm_op_SpecInterface(i32 %bias2_V, [10 x i8]* @mode11, i32 0, i32 0, [1 x i8]* @p_str110, i32 0, i32 0, [1 x i8]* @bundle12, [6 x i8]* @p_str312, [1 x i8]* @p_str110, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str110, [1 x i8]* @p_str110) nounwind
+:21  call void (...)* @_ssdm_op_SpecInterface(i32 %bias2_V, [10 x i8]* @mode11, i32 0, i32 0, [1 x i8]* @p_str110, i32 0, i32 16, [1 x i8]* @bundle12, [6 x i8]* @p_str312, [1 x i8]* @p_str110, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str110, [1 x i8]* @p_str110) nounwind
 
 ]]></Node>
-<StgValue><ssdm name="specinterface_ln31"/></StgValue>
+<StgValue><ssdm name="specinterface_ln32"/></StgValue>
 </operation>
 
 <operation id="43" st_id="11" stage="1" lat="1">
@@ -574,10 +574,10 @@
 
 <Node id="36" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0">
 <![CDATA[
-:22  call void (...)* @_ssdm_op_SpecInterface(i32 %outputConv2_V, [10 x i8]* @mode13, i32 0, i32 0, [1 x i8]* @p_str110, i32 0, i32 0, [1 x i8]* @bundle14, [6 x i8]* @p_str312, [1 x i8]* @p_str110, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str110, [1 x i8]* @p_str110) nounwind
+:22  call void (...)* @_ssdm_op_SpecInterface(i32 %outputConv2_V, [10 x i8]* @mode13, i32 0, i32 0, [1 x i8]* @p_str110, i32 0, i32 3136, [1 x i8]* @bundle14, [6 x i8]* @p_str312, [1 x i8]* @p_str110, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str110, [1 x i8]* @p_str110) nounwind
 
 ]]></Node>
-<StgValue><ssdm name="specinterface_ln32"/></StgValue>
+<StgValue><ssdm name="specinterface_ln33"/></StgValue>
 </operation>
 
 <operation id="44" st_id="11" stage="1" lat="1">
@@ -589,10 +589,10 @@
 
 <Node id="37" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0">
 <![CDATA[
-:23  call void (...)* @_ssdm_op_SpecInterface(i32 %outputPool2_V, [10 x i8]* @mode15, i32 0, i32 0, [1 x i8]* @p_str110, i32 0, i32 0, [1 x i8]* @bundle16, [6 x i8]* @p_str312, [1 x i8]* @p_str110, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str110, [1 x i8]* @p_str110) nounwind
+:23  call void (...)* @_ssdm_op_SpecInterface(i32 %outputPool2_V, [10 x i8]* @mode15, i32 0, i32 0, [1 x i8]* @p_str110, i32 0, i32 784, [1 x i8]* @bundle16, [6 x i8]* @p_str312, [1 x i8]* @p_str110, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str110, [1 x i8]* @p_str110) nounwind
 
 ]]></Node>
-<StgValue><ssdm name="specinterface_ln33"/></StgValue>
+<StgValue><ssdm name="specinterface_ln34"/></StgValue>
 </operation>
 
 <operation id="45" st_id="11" stage="1" lat="1">
@@ -604,10 +604,10 @@
 
 <Node id="38" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0">
 <![CDATA[
-:24  call void (...)* @_ssdm_op_SpecInterface(i32 %outputDense_V, [10 x i8]* @mode17, i32 0, i32 0, [1 x i8]* @p_str110, i32 0, i32 0, [1 x i8]* @bundle18, [6 x i8]* @p_str312, [1 x i8]* @p_str110, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str110, [1 x i8]* @p_str110) nounwind
+:24  call void (...)* @_ssdm_op_SpecInterface(i32 %outputDense_V, [10 x i8]* @mode17, i32 0, i32 0, [1 x i8]* @p_str110, i32 0, i32 10, [1 x i8]* @bundle18, [6 x i8]* @p_str312, [1 x i8]* @p_str110, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str110, [1 x i8]* @p_str110) nounwind
 
 ]]></Node>
-<StgValue><ssdm name="specinterface_ln34"/></StgValue>
+<StgValue><ssdm name="specinterface_ln35"/></StgValue>
 </operation>
 
 <operation id="46" st_id="11" stage="1" lat="1">
@@ -619,10 +619,10 @@
 
 <Node id="39" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0">
 <![CDATA[
-:25  call void (...)* @_ssdm_op_SpecInterface(i32 %fcWeight_V, [10 x i8]* @mode19, i32 0, i32 0, [1 x i8]* @p_str110, i32 0, i32 0, [1 x i8]* @bundle20, [6 x i8]* @p_str312, [1 x i8]* @p_str110, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str110, [1 x i8]* @p_str110) nounwind
+:25  call void (...)* @_ssdm_op_SpecInterface(i32 %fcWeight_V, [10 x i8]* @mode19, i32 0, i32 0, [1 x i8]* @p_str110, i32 0, i32 7840, [1 x i8]* @bundle20, [6 x i8]* @p_str312, [1 x i8]* @p_str110, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str110, [1 x i8]* @p_str110) nounwind
 
 ]]></Node>
-<StgValue><ssdm name="specinterface_ln35"/></StgValue>
+<StgValue><ssdm name="specinterface_ln36"/></StgValue>
 </operation>
 
 <operation id="47" st_id="11" stage="1" lat="1">
@@ -634,10 +634,10 @@
 
 <Node id="40" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0">
 <![CDATA[
-:26  call void (...)* @_ssdm_op_SpecInterface(i32 %fcBias_V, [10 x i8]* @mode21, i32 0, i32 0, [1 x i8]* @p_str110, i32 0, i32 0, [1 x i8]* @bundle22, [6 x i8]* @p_str312, [1 x i8]* @p_str110, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str110, [1 x i8]* @p_str110) nounwind
+:26  call void (...)* @_ssdm_op_SpecInterface(i32 %fcBias_V, [10 x i8]* @mode21, i32 0, i32 0, [1 x i8]* @p_str110, i32 0, i32 10, [1 x i8]* @bundle22, [6 x i8]* @p_str312, [1 x i8]* @p_str110, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str110, [1 x i8]* @p_str110) nounwind
 
 ]]></Node>
-<StgValue><ssdm name="specinterface_ln36"/></StgValue>
+<StgValue><ssdm name="specinterface_ln37"/></StgValue>
 </operation>
 
 <operation id="48" st_id="11" stage="1" lat="1">
@@ -652,7 +652,7 @@
 :27  call void (...)* @_ssdm_op_SpecInterface(i32 0, [10 x i8]* @p_str413, i32 0, i32 0, [1 x i8]* @p_str110, i32 0, i32 0, [8 x i8]* @p_str514, [1 x i8]* @p_str110, [1 x i8]* @p_str110, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str110, [1 x i8]* @p_str110) nounwind
 
 ]]></Node>
-<StgValue><ssdm name="specinterface_ln38"/></StgValue>
+<StgValue><ssdm name="specinterface_ln39"/></StgValue>
 </operation>
 
 <operation id="49" st_id="11" stage="1" lat="2">
@@ -667,7 +667,7 @@
 :32  call fastcc void @dense(i8* %gmem, i32 %outputPool2_V_read, i32 %outputDense_V_read, i32 %fcWeight_V_read, i32 %fcBias_V_read)
 
 ]]></Node>
-<StgValue><ssdm name="call_ln46"/></StgValue>
+<StgValue><ssdm name="call_ln47"/></StgValue>
 </operation>
 
 <operation id="50" st_id="11" stage="1" lat="1">
@@ -682,7 +682,7 @@
 :33  ret void
 
 ]]></Node>
-<StgValue><ssdm name="ret_ln49"/></StgValue>
+<StgValue><ssdm name="ret_ln50"/></StgValue>
 </operation>
 </state>
 </state_list>
@@ -780,617 +780,617 @@
 </dataflow>
 <dataflow id="98" from="input_V" to="input_V_read" fromId="62" toId="23">
 </dataflow>
-<dataflow id="100" from="conv1" to="call_ln40" fromId="99" toId="24">
+<dataflow id="100" from="conv1" to="call_ln41" fromId="99" toId="24">
 </dataflow>
-<dataflow id="101" from="gmem" to="call_ln40" fromId="61" toId="24">
+<dataflow id="101" from="gmem" to="call_ln41" fromId="61" toId="24">
 </dataflow>
-<dataflow id="102" from="input_V_read" to="call_ln40" fromId="23" toId="24">
+<dataflow id="102" from="input_V_read" to="call_ln41" fromId="23" toId="24">
 </dataflow>
-<dataflow id="103" from="outputConv_V_read" to="call_ln40" fromId="22" toId="24">
+<dataflow id="103" from="outputConv_V_read" to="call_ln41" fromId="22" toId="24">
 </dataflow>
-<dataflow id="104" from="weight_V_read" to="call_ln40" fromId="21" toId="24">
+<dataflow id="104" from="weight_V_read" to="call_ln41" fromId="21" toId="24">
 </dataflow>
-<dataflow id="105" from="bias_V_read" to="call_ln40" fromId="20" toId="24">
+<dataflow id="105" from="bias_V_read" to="call_ln41" fromId="20" toId="24">
 </dataflow>
-<dataflow id="106" from="conv1" to="call_ln40" fromId="99" toId="25">
+<dataflow id="106" from="conv1" to="call_ln41" fromId="99" toId="25">
 </dataflow>
-<dataflow id="107" from="gmem" to="call_ln40" fromId="61" toId="25">
+<dataflow id="107" from="gmem" to="call_ln41" fromId="61" toId="25">
 </dataflow>
-<dataflow id="108" from="input_V_read" to="call_ln40" fromId="23" toId="25">
+<dataflow id="108" from="input_V_read" to="call_ln41" fromId="23" toId="25">
 </dataflow>
-<dataflow id="109" from="outputConv_V_read" to="call_ln40" fromId="22" toId="25">
+<dataflow id="109" from="outputConv_V_read" to="call_ln41" fromId="22" toId="25">
 </dataflow>
-<dataflow id="110" from="weight_V_read" to="call_ln40" fromId="21" toId="25">
+<dataflow id="110" from="weight_V_read" to="call_ln41" fromId="21" toId="25">
 </dataflow>
-<dataflow id="111" from="bias_V_read" to="call_ln40" fromId="20" toId="25">
+<dataflow id="111" from="bias_V_read" to="call_ln41" fromId="20" toId="25">
 </dataflow>
-<dataflow id="113" from="pool" to="call_ln41" fromId="112" toId="26">
+<dataflow id="113" from="pool" to="call_ln42" fromId="112" toId="26">
 </dataflow>
-<dataflow id="114" from="gmem" to="call_ln41" fromId="61" toId="26">
+<dataflow id="114" from="gmem" to="call_ln42" fromId="61" toId="26">
 </dataflow>
-<dataflow id="115" from="outputConv_V_read" to="call_ln41" fromId="22" toId="26">
+<dataflow id="115" from="outputConv_V_read" to="call_ln42" fromId="22" toId="26">
 </dataflow>
-<dataflow id="116" from="outputPool_V_read" to="call_ln41" fromId="19" toId="26">
+<dataflow id="116" from="outputPool_V_read" to="call_ln42" fromId="19" toId="26">
 </dataflow>
-<dataflow id="118" from="StgValue_117" to="call_ln41" fromId="117" toId="26">
+<dataflow id="118" from="StgValue_117" to="call_ln42" fromId="117" toId="26">
 </dataflow>
-<dataflow id="120" from="StgValue_119" to="call_ln41" fromId="119" toId="26">
+<dataflow id="120" from="StgValue_119" to="call_ln42" fromId="119" toId="26">
 </dataflow>
-<dataflow id="121" from="StgValue_119" to="call_ln41" fromId="119" toId="26">
+<dataflow id="121" from="StgValue_119" to="call_ln42" fromId="119" toId="26">
 </dataflow>
-<dataflow id="122" from="pool" to="call_ln41" fromId="112" toId="27">
+<dataflow id="122" from="pool" to="call_ln42" fromId="112" toId="27">
 </dataflow>
-<dataflow id="123" from="gmem" to="call_ln41" fromId="61" toId="27">
+<dataflow id="123" from="gmem" to="call_ln42" fromId="61" toId="27">
 </dataflow>
-<dataflow id="124" from="outputConv_V_read" to="call_ln41" fromId="22" toId="27">
+<dataflow id="124" from="outputConv_V_read" to="call_ln42" fromId="22" toId="27">
 </dataflow>
-<dataflow id="125" from="outputPool_V_read" to="call_ln41" fromId="19" toId="27">
+<dataflow id="125" from="outputPool_V_read" to="call_ln42" fromId="19" toId="27">
 </dataflow>
-<dataflow id="126" from="StgValue_117" to="call_ln41" fromId="117" toId="27">
+<dataflow id="126" from="StgValue_117" to="call_ln42" fromId="117" toId="27">
 </dataflow>
-<dataflow id="127" from="StgValue_119" to="call_ln41" fromId="119" toId="27">
+<dataflow id="127" from="StgValue_119" to="call_ln42" fromId="119" toId="27">
 </dataflow>
-<dataflow id="128" from="StgValue_119" to="call_ln41" fromId="119" toId="27">
+<dataflow id="128" from="StgValue_119" to="call_ln42" fromId="119" toId="27">
 </dataflow>
-<dataflow id="130" from="conv2" to="call_ln43" fromId="129" toId="28">
+<dataflow id="130" from="conv2" to="call_ln44" fromId="129" toId="28">
 </dataflow>
-<dataflow id="131" from="gmem" to="call_ln43" fromId="61" toId="28">
+<dataflow id="131" from="gmem" to="call_ln44" fromId="61" toId="28">
 </dataflow>
-<dataflow id="132" from="outputPool_V_read" to="call_ln43" fromId="19" toId="28">
+<dataflow id="132" from="outputPool_V_read" to="call_ln44" fromId="19" toId="28">
 </dataflow>
-<dataflow id="133" from="outputConv2_V_read" to="call_ln43" fromId="16" toId="28">
+<dataflow id="133" from="outputConv2_V_read" to="call_ln44" fromId="16" toId="28">
 </dataflow>
-<dataflow id="134" from="weight2_V_read" to="call_ln43" fromId="18" toId="28">
+<dataflow id="134" from="weight2_V_read" to="call_ln44" fromId="18" toId="28">
 </dataflow>
-<dataflow id="135" from="bias2_V_read" to="call_ln43" fromId="17" toId="28">
+<dataflow id="135" from="bias2_V_read" to="call_ln44" fromId="17" toId="28">
 </dataflow>
-<dataflow id="136" from="conv2" to="call_ln43" fromId="129" toId="29">
+<dataflow id="136" from="conv2" to="call_ln44" fromId="129" toId="29">
 </dataflow>
-<dataflow id="137" from="gmem" to="call_ln43" fromId="61" toId="29">
+<dataflow id="137" from="gmem" to="call_ln44" fromId="61" toId="29">
 </dataflow>
-<dataflow id="138" from="outputPool_V_read" to="call_ln43" fromId="19" toId="29">
+<dataflow id="138" from="outputPool_V_read" to="call_ln44" fromId="19" toId="29">
 </dataflow>
-<dataflow id="139" from="outputConv2_V_read" to="call_ln43" fromId="16" toId="29">
+<dataflow id="139" from="outputConv2_V_read" to="call_ln44" fromId="16" toId="29">
 </dataflow>
-<dataflow id="140" from="weight2_V_read" to="call_ln43" fromId="18" toId="29">
+<dataflow id="140" from="weight2_V_read" to="call_ln44" fromId="18" toId="29">
 </dataflow>
-<dataflow id="141" from="bias2_V_read" to="call_ln43" fromId="17" toId="29">
+<dataflow id="141" from="bias2_V_read" to="call_ln44" fromId="17" toId="29">
 </dataflow>
-<dataflow id="142" from="pool" to="call_ln44" fromId="112" toId="30">
+<dataflow id="142" from="pool" to="call_ln45" fromId="112" toId="30">
 </dataflow>
-<dataflow id="143" from="gmem" to="call_ln44" fromId="61" toId="30">
+<dataflow id="143" from="gmem" to="call_ln45" fromId="61" toId="30">
 </dataflow>
-<dataflow id="144" from="outputConv2_V_read" to="call_ln44" fromId="16" toId="30">
+<dataflow id="144" from="outputConv2_V_read" to="call_ln45" fromId="16" toId="30">
 </dataflow>
-<dataflow id="145" from="outputPool2_V_read" to="call_ln44" fromId="15" toId="30">
+<dataflow id="145" from="outputPool2_V_read" to="call_ln45" fromId="15" toId="30">
 </dataflow>
-<dataflow id="147" from="StgValue_146" to="call_ln44" fromId="146" toId="30">
+<dataflow id="147" from="StgValue_146" to="call_ln45" fromId="146" toId="30">
 </dataflow>
-<dataflow id="149" from="StgValue_148" to="call_ln44" fromId="148" toId="30">
+<dataflow id="149" from="StgValue_148" to="call_ln45" fromId="148" toId="30">
 </dataflow>
-<dataflow id="150" from="StgValue_148" to="call_ln44" fromId="148" toId="30">
+<dataflow id="150" from="StgValue_148" to="call_ln45" fromId="148" toId="30">
 </dataflow>
-<dataflow id="151" from="pool" to="call_ln44" fromId="112" toId="31">
+<dataflow id="151" from="pool" to="call_ln45" fromId="112" toId="31">
 </dataflow>
-<dataflow id="152" from="gmem" to="call_ln44" fromId="61" toId="31">
+<dataflow id="152" from="gmem" to="call_ln45" fromId="61" toId="31">
 </dataflow>
-<dataflow id="153" from="outputConv2_V_read" to="call_ln44" fromId="16" toId="31">
+<dataflow id="153" from="outputConv2_V_read" to="call_ln45" fromId="16" toId="31">
 </dataflow>
-<dataflow id="154" from="outputPool2_V_read" to="call_ln44" fromId="15" toId="31">
+<dataflow id="154" from="outputPool2_V_read" to="call_ln45" fromId="15" toId="31">
 </dataflow>
-<dataflow id="155" from="StgValue_146" to="call_ln44" fromId="146" toId="31">
+<dataflow id="155" from="StgValue_146" to="call_ln45" fromId="146" toId="31">
 </dataflow>
-<dataflow id="156" from="StgValue_148" to="call_ln44" fromId="148" toId="31">
+<dataflow id="156" from="StgValue_148" to="call_ln45" fromId="148" toId="31">
 </dataflow>
-<dataflow id="157" from="StgValue_148" to="call_ln44" fromId="148" toId="31">
+<dataflow id="157" from="StgValue_148" to="call_ln45" fromId="148" toId="31">
 </dataflow>
-<dataflow id="159" from="dense" to="call_ln46" fromId="158" toId="32">
+<dataflow id="159" from="dense" to="call_ln47" fromId="158" toId="32">
 </dataflow>
-<dataflow id="160" from="gmem" to="call_ln46" fromId="61" toId="32">
+<dataflow id="160" from="gmem" to="call_ln47" fromId="61" toId="32">
 </dataflow>
-<dataflow id="161" from="outputPool2_V_read" to="call_ln46" fromId="15" toId="32">
+<dataflow id="161" from="outputPool2_V_read" to="call_ln47" fromId="15" toId="32">
 </dataflow>
-<dataflow id="162" from="outputDense_V_read" to="call_ln46" fromId="14" toId="32">
+<dataflow id="162" from="outputDense_V_read" to="call_ln47" fromId="14" toId="32">
 </dataflow>
-<dataflow id="163" from="fcWeight_V_read" to="call_ln46" fromId="13" toId="32">
+<dataflow id="163" from="fcWeight_V_read" to="call_ln47" fromId="13" toId="32">
 </dataflow>
-<dataflow id="164" from="fcBias_V_read" to="call_ln46" fromId="12" toId="32">
+<dataflow id="164" from="fcBias_V_read" to="call_ln47" fromId="12" toId="32">
 </dataflow>
 <dataflow id="166" from="_ssdm_op_SpecBitsMap" to="specbitsmap_ln0" fromId="165" toId="33">
 </dataflow>
 <dataflow id="167" from="gmem" to="specbitsmap_ln0" fromId="61" toId="33">
 </dataflow>
-<dataflow id="169" from="_ssdm_op_SpecInterface" to="specinterface_ln0" fromId="168" toId="34">
+<dataflow id="169" from="_ssdm_op_SpecTopModule" to="spectopmodule_ln0" fromId="168" toId="34">
 </dataflow>
-<dataflow id="170" from="outputPool_V" to="specinterface_ln0" fromId="66" toId="34">
+<dataflow id="171" from="top_str" to="spectopmodule_ln0" fromId="170" toId="34">
 </dataflow>
-<dataflow id="172" from="mode7" to="specinterface_ln0" fromId="171" toId="34">
+<dataflow id="173" from="_ssdm_op_SpecInterface" to="specinterface_ln26" fromId="172" toId="35">
 </dataflow>
-<dataflow id="174" from="StgValue_173" to="specinterface_ln0" fromId="173" toId="34">
+<dataflow id="174" from="gmem" to="specinterface_ln26" fromId="61" toId="35">
 </dataflow>
-<dataflow id="175" from="StgValue_173" to="specinterface_ln0" fromId="173" toId="34">
+<dataflow id="176" from="p_str9" to="specinterface_ln26" fromId="175" toId="35">
 </dataflow>
-<dataflow id="177" from="p_str110" to="specinterface_ln0" fromId="176" toId="34">
+<dataflow id="178" from="StgValue_177" to="specinterface_ln26" fromId="177" toId="35">
 </dataflow>
-<dataflow id="178" from="StgValue_173" to="specinterface_ln0" fromId="173" toId="34">
+<dataflow id="179" from="StgValue_177" to="specinterface_ln26" fromId="177" toId="35">
 </dataflow>
-<dataflow id="179" from="StgValue_173" to="specinterface_ln0" fromId="173" toId="34">
+<dataflow id="181" from="p_str110" to="specinterface_ln26" fromId="180" toId="35">
 </dataflow>
-<dataflow id="181" from="bundle8" to="specinterface_ln0" fromId="180" toId="34">
+<dataflow id="182" from="StgValue_177" to="specinterface_ln26" fromId="177" toId="35">
 </dataflow>
-<dataflow id="183" from="p_str312" to="specinterface_ln0" fromId="182" toId="34">
+<dataflow id="184" from="StgValue_183" to="specinterface_ln26" fromId="183" toId="35">
 </dataflow>
-<dataflow id="184" from="p_str110" to="specinterface_ln0" fromId="176" toId="34">
+<dataflow id="186" from="p_str211" to="specinterface_ln26" fromId="185" toId="35">
 </dataflow>
-<dataflow id="186" from="StgValue_185" to="specinterface_ln0" fromId="185" toId="34">
+<dataflow id="188" from="p_str312" to="specinterface_ln26" fromId="187" toId="35">
 </dataflow>
-<dataflow id="187" from="StgValue_185" to="specinterface_ln0" fromId="185" toId="34">
+<dataflow id="189" from="p_str110" to="specinterface_ln26" fromId="180" toId="35">
 </dataflow>
-<dataflow id="188" from="StgValue_185" to="specinterface_ln0" fromId="185" toId="34">
+<dataflow id="191" from="StgValue_190" to="specinterface_ln26" fromId="190" toId="35">
 </dataflow>
-<dataflow id="189" from="StgValue_185" to="specinterface_ln0" fromId="185" toId="34">
+<dataflow id="192" from="StgValue_190" to="specinterface_ln26" fromId="190" toId="35">
 </dataflow>
-<dataflow id="190" from="p_str110" to="specinterface_ln0" fromId="176" toId="34">
+<dataflow id="193" from="StgValue_190" to="specinterface_ln26" fromId="190" toId="35">
 </dataflow>
-<dataflow id="191" from="p_str110" to="specinterface_ln0" fromId="176" toId="34">
+<dataflow id="194" from="StgValue_190" to="specinterface_ln26" fromId="190" toId="35">
 </dataflow>
-<dataflow id="193" from="_ssdm_op_SpecTopModule" to="spectopmodule_ln0" fromId="192" toId="35">
+<dataflow id="195" from="p_str110" to="specinterface_ln26" fromId="180" toId="35">
 </dataflow>
-<dataflow id="195" from="top_str" to="spectopmodule_ln0" fromId="194" toId="35">
+<dataflow id="196" from="p_str110" to="specinterface_ln26" fromId="180" toId="35">
 </dataflow>
-<dataflow id="196" from="_ssdm_op_SpecInterface" to="specinterface_ln26" fromId="168" toId="36">
+<dataflow id="197" from="_ssdm_op_SpecInterface" to="specinterface_ln26" fromId="172" toId="36">
 </dataflow>
-<dataflow id="197" from="gmem" to="specinterface_ln26" fromId="61" toId="36">
+<dataflow id="198" from="input_V" to="specinterface_ln26" fromId="62" toId="36">
 </dataflow>
-<dataflow id="199" from="p_str9" to="specinterface_ln26" fromId="198" toId="36">
+<dataflow id="200" from="mode" to="specinterface_ln26" fromId="199" toId="36">
 </dataflow>
-<dataflow id="200" from="StgValue_173" to="specinterface_ln26" fromId="173" toId="36">
+<dataflow id="201" from="StgValue_177" to="specinterface_ln26" fromId="177" toId="36">
 </dataflow>
-<dataflow id="201" from="StgValue_173" to="specinterface_ln26" fromId="173" toId="36">
+<dataflow id="202" from="StgValue_177" to="specinterface_ln26" fromId="177" toId="36">
 </dataflow>
-<dataflow id="202" from="p_str110" to="specinterface_ln26" fromId="176" toId="36">
+<dataflow id="203" from="p_str110" to="specinterface_ln26" fromId="180" toId="36">
 </dataflow>
-<dataflow id="203" from="StgValue_173" to="specinterface_ln26" fromId="173" toId="36">
+<dataflow id="204" from="StgValue_177" to="specinterface_ln26" fromId="177" toId="36">
 </dataflow>
-<dataflow id="204" from="StgValue_173" to="specinterface_ln26" fromId="173" toId="36">
+<dataflow id="206" from="StgValue_205" to="specinterface_ln26" fromId="205" toId="36">
 </dataflow>
-<dataflow id="206" from="p_str211" to="specinterface_ln26" fromId="205" toId="36">
+<dataflow id="208" from="bundle" to="specinterface_ln26" fromId="207" toId="36">
 </dataflow>
-<dataflow id="207" from="p_str312" to="specinterface_ln26" fromId="182" toId="36">
+<dataflow id="209" from="p_str312" to="specinterface_ln26" fromId="187" toId="36">
 </dataflow>
-<dataflow id="208" from="p_str110" to="specinterface_ln26" fromId="176" toId="36">
+<dataflow id="210" from="p_str110" to="specinterface_ln26" fromId="180" toId="36">
 </dataflow>
-<dataflow id="209" from="StgValue_185" to="specinterface_ln26" fromId="185" toId="36">
+<dataflow id="211" from="StgValue_190" to="specinterface_ln26" fromId="190" toId="36">
 </dataflow>
-<dataflow id="210" from="StgValue_185" to="specinterface_ln26" fromId="185" toId="36">
+<dataflow id="212" from="StgValue_190" to="specinterface_ln26" fromId="190" toId="36">
 </dataflow>
-<dataflow id="211" from="StgValue_185" to="specinterface_ln26" fromId="185" toId="36">
+<dataflow id="213" from="StgValue_190" to="specinterface_ln26" fromId="190" toId="36">
 </dataflow>
-<dataflow id="212" from="StgValue_185" to="specinterface_ln26" fromId="185" toId="36">
+<dataflow id="214" from="StgValue_190" to="specinterface_ln26" fromId="190" toId="36">
 </dataflow>
-<dataflow id="213" from="p_str110" to="specinterface_ln26" fromId="176" toId="36">
+<dataflow id="215" from="p_str110" to="specinterface_ln26" fromId="180" toId="36">
 </dataflow>
-<dataflow id="214" from="p_str110" to="specinterface_ln26" fromId="176" toId="36">
+<dataflow id="216" from="p_str110" to="specinterface_ln26" fromId="180" toId="36">
 </dataflow>
-<dataflow id="215" from="_ssdm_op_SpecInterface" to="specinterface_ln26" fromId="168" toId="37">
+<dataflow id="217" from="_ssdm_op_SpecInterface" to="specinterface_ln27" fromId="172" toId="37">
 </dataflow>
-<dataflow id="216" from="input_V" to="specinterface_ln26" fromId="62" toId="37">
+<dataflow id="218" from="outputConv_V" to="specinterface_ln27" fromId="63" toId="37">
 </dataflow>
-<dataflow id="218" from="mode" to="specinterface_ln26" fromId="217" toId="37">
+<dataflow id="220" from="mode1" to="specinterface_ln27" fromId="219" toId="37">
 </dataflow>
-<dataflow id="219" from="StgValue_173" to="specinterface_ln26" fromId="173" toId="37">
+<dataflow id="221" from="StgValue_177" to="specinterface_ln27" fromId="177" toId="37">
 </dataflow>
-<dataflow id="220" from="StgValue_173" to="specinterface_ln26" fromId="173" toId="37">
+<dataflow id="222" from="StgValue_177" to="specinterface_ln27" fromId="177" toId="37">
 </dataflow>
-<dataflow id="221" from="p_str110" to="specinterface_ln26" fromId="176" toId="37">
+<dataflow id="223" from="p_str110" to="specinterface_ln27" fromId="180" toId="37">
 </dataflow>
-<dataflow id="222" from="StgValue_173" to="specinterface_ln26" fromId="173" toId="37">
+<dataflow id="224" from="StgValue_177" to="specinterface_ln27" fromId="177" toId="37">
 </dataflow>
-<dataflow id="223" from="StgValue_173" to="specinterface_ln26" fromId="173" toId="37">
+<dataflow id="226" from="StgValue_225" to="specinterface_ln27" fromId="225" toId="37">
 </dataflow>
-<dataflow id="225" from="bundle" to="specinterface_ln26" fromId="224" toId="37">
+<dataflow id="228" from="bundle2" to="specinterface_ln27" fromId="227" toId="37">
 </dataflow>
-<dataflow id="226" from="p_str312" to="specinterface_ln26" fromId="182" toId="37">
+<dataflow id="229" from="p_str312" to="specinterface_ln27" fromId="187" toId="37">
 </dataflow>
-<dataflow id="227" from="p_str110" to="specinterface_ln26" fromId="176" toId="37">
+<dataflow id="230" from="p_str110" to="specinterface_ln27" fromId="180" toId="37">
 </dataflow>
-<dataflow id="228" from="StgValue_185" to="specinterface_ln26" fromId="185" toId="37">
+<dataflow id="231" from="StgValue_190" to="specinterface_ln27" fromId="190" toId="37">
 </dataflow>
-<dataflow id="229" from="StgValue_185" to="specinterface_ln26" fromId="185" toId="37">
+<dataflow id="232" from="StgValue_190" to="specinterface_ln27" fromId="190" toId="37">
 </dataflow>
-<dataflow id="230" from="StgValue_185" to="specinterface_ln26" fromId="185" toId="37">
+<dataflow id="233" from="StgValue_190" to="specinterface_ln27" fromId="190" toId="37">
 </dataflow>
-<dataflow id="231" from="StgValue_185" to="specinterface_ln26" fromId="185" toId="37">
+<dataflow id="234" from="StgValue_190" to="specinterface_ln27" fromId="190" toId="37">
 </dataflow>
-<dataflow id="232" from="p_str110" to="specinterface_ln26" fromId="176" toId="37">
+<dataflow id="235" from="p_str110" to="specinterface_ln27" fromId="180" toId="37">
 </dataflow>
-<dataflow id="233" from="p_str110" to="specinterface_ln26" fromId="176" toId="37">
+<dataflow id="236" from="p_str110" to="specinterface_ln27" fromId="180" toId="37">
 </dataflow>
-<dataflow id="234" from="_ssdm_op_SpecInterface" to="specinterface_ln27" fromId="168" toId="38">
+<dataflow id="237" from="_ssdm_op_SpecInterface" to="specinterface_ln28" fromId="172" toId="38">
 </dataflow>
-<dataflow id="235" from="outputConv_V" to="specinterface_ln27" fromId="63" toId="38">
+<dataflow id="238" from="weight_V" to="specinterface_ln28" fromId="64" toId="38">
 </dataflow>
-<dataflow id="237" from="mode1" to="specinterface_ln27" fromId="236" toId="38">
+<dataflow id="240" from="mode3" to="specinterface_ln28" fromId="239" toId="38">
 </dataflow>
-<dataflow id="238" from="StgValue_173" to="specinterface_ln27" fromId="173" toId="38">
+<dataflow id="241" from="StgValue_177" to="specinterface_ln28" fromId="177" toId="38">
 </dataflow>
-<dataflow id="239" from="StgValue_173" to="specinterface_ln27" fromId="173" toId="38">
+<dataflow id="242" from="StgValue_177" to="specinterface_ln28" fromId="177" toId="38">
 </dataflow>
-<dataflow id="240" from="p_str110" to="specinterface_ln27" fromId="176" toId="38">
+<dataflow id="243" from="p_str110" to="specinterface_ln28" fromId="180" toId="38">
 </dataflow>
-<dataflow id="241" from="StgValue_173" to="specinterface_ln27" fromId="173" toId="38">
+<dataflow id="244" from="StgValue_177" to="specinterface_ln28" fromId="177" toId="38">
 </dataflow>
-<dataflow id="242" from="StgValue_173" to="specinterface_ln27" fromId="173" toId="38">
+<dataflow id="246" from="StgValue_245" to="specinterface_ln28" fromId="245" toId="38">
 </dataflow>
-<dataflow id="244" from="bundle2" to="specinterface_ln27" fromId="243" toId="38">
+<dataflow id="248" from="bundle4" to="specinterface_ln28" fromId="247" toId="38">
 </dataflow>
-<dataflow id="245" from="p_str312" to="specinterface_ln27" fromId="182" toId="38">
+<dataflow id="249" from="p_str312" to="specinterface_ln28" fromId="187" toId="38">
 </dataflow>
-<dataflow id="246" from="p_str110" to="specinterface_ln27" fromId="176" toId="38">
+<dataflow id="250" from="p_str110" to="specinterface_ln28" fromId="180" toId="38">
 </dataflow>
-<dataflow id="247" from="StgValue_185" to="specinterface_ln27" fromId="185" toId="38">
+<dataflow id="251" from="StgValue_190" to="specinterface_ln28" fromId="190" toId="38">
 </dataflow>
-<dataflow id="248" from="StgValue_185" to="specinterface_ln27" fromId="185" toId="38">
+<dataflow id="252" from="StgValue_190" to="specinterface_ln28" fromId="190" toId="38">
 </dataflow>
-<dataflow id="249" from="StgValue_185" to="specinterface_ln27" fromId="185" toId="38">
+<dataflow id="253" from="StgValue_190" to="specinterface_ln28" fromId="190" toId="38">
 </dataflow>
-<dataflow id="250" from="StgValue_185" to="specinterface_ln27" fromId="185" toId="38">
+<dataflow id="254" from="StgValue_190" to="specinterface_ln28" fromId="190" toId="38">
 </dataflow>
-<dataflow id="251" from="p_str110" to="specinterface_ln27" fromId="176" toId="38">
+<dataflow id="255" from="p_str110" to="specinterface_ln28" fromId="180" toId="38">
 </dataflow>
-<dataflow id="252" from="p_str110" to="specinterface_ln27" fromId="176" toId="38">
+<dataflow id="256" from="p_str110" to="specinterface_ln28" fromId="180" toId="38">
 </dataflow>
-<dataflow id="253" from="_ssdm_op_SpecInterface" to="specinterface_ln28" fromId="168" toId="39">
+<dataflow id="257" from="_ssdm_op_SpecInterface" to="specinterface_ln29" fromId="172" toId="39">
 </dataflow>
-<dataflow id="254" from="weight_V" to="specinterface_ln28" fromId="64" toId="39">
+<dataflow id="258" from="bias_V" to="specinterface_ln29" fromId="65" toId="39">
 </dataflow>
-<dataflow id="256" from="mode3" to="specinterface_ln28" fromId="255" toId="39">
+<dataflow id="260" from="mode5" to="specinterface_ln29" fromId="259" toId="39">
 </dataflow>
-<dataflow id="257" from="StgValue_173" to="specinterface_ln28" fromId="173" toId="39">
+<dataflow id="261" from="StgValue_177" to="specinterface_ln29" fromId="177" toId="39">
 </dataflow>
-<dataflow id="258" from="StgValue_173" to="specinterface_ln28" fromId="173" toId="39">
+<dataflow id="262" from="StgValue_177" to="specinterface_ln29" fromId="177" toId="39">
 </dataflow>
-<dataflow id="259" from="p_str110" to="specinterface_ln28" fromId="176" toId="39">
+<dataflow id="263" from="p_str110" to="specinterface_ln29" fromId="180" toId="39">
 </dataflow>
-<dataflow id="260" from="StgValue_173" to="specinterface_ln28" fromId="173" toId="39">
+<dataflow id="264" from="StgValue_177" to="specinterface_ln29" fromId="177" toId="39">
 </dataflow>
-<dataflow id="261" from="StgValue_173" to="specinterface_ln28" fromId="173" toId="39">
+<dataflow id="266" from="StgValue_265" to="specinterface_ln29" fromId="265" toId="39">
 </dataflow>
-<dataflow id="263" from="bundle4" to="specinterface_ln28" fromId="262" toId="39">
+<dataflow id="268" from="bundle6" to="specinterface_ln29" fromId="267" toId="39">
 </dataflow>
-<dataflow id="264" from="p_str312" to="specinterface_ln28" fromId="182" toId="39">
+<dataflow id="269" from="p_str312" to="specinterface_ln29" fromId="187" toId="39">
 </dataflow>
-<dataflow id="265" from="p_str110" to="specinterface_ln28" fromId="176" toId="39">
+<dataflow id="270" from="p_str110" to="specinterface_ln29" fromId="180" toId="39">
 </dataflow>
-<dataflow id="266" from="StgValue_185" to="specinterface_ln28" fromId="185" toId="39">
+<dataflow id="271" from="StgValue_190" to="specinterface_ln29" fromId="190" toId="39">
 </dataflow>
-<dataflow id="267" from="StgValue_185" to="specinterface_ln28" fromId="185" toId="39">
+<dataflow id="272" from="StgValue_190" to="specinterface_ln29" fromId="190" toId="39">
 </dataflow>
-<dataflow id="268" from="StgValue_185" to="specinterface_ln28" fromId="185" toId="39">
+<dataflow id="273" from="StgValue_190" to="specinterface_ln29" fromId="190" toId="39">
 </dataflow>
-<dataflow id="269" from="StgValue_185" to="specinterface_ln28" fromId="185" toId="39">
+<dataflow id="274" from="StgValue_190" to="specinterface_ln29" fromId="190" toId="39">
 </dataflow>
-<dataflow id="270" from="p_str110" to="specinterface_ln28" fromId="176" toId="39">
+<dataflow id="275" from="p_str110" to="specinterface_ln29" fromId="180" toId="39">
 </dataflow>
-<dataflow id="271" from="p_str110" to="specinterface_ln28" fromId="176" toId="39">
+<dataflow id="276" from="p_str110" to="specinterface_ln29" fromId="180" toId="39">
 </dataflow>
-<dataflow id="272" from="_ssdm_op_SpecInterface" to="specinterface_ln29" fromId="168" toId="40">
+<dataflow id="277" from="_ssdm_op_SpecInterface" to="specinterface_ln30" fromId="172" toId="40">
 </dataflow>
-<dataflow id="273" from="bias_V" to="specinterface_ln29" fromId="65" toId="40">
+<dataflow id="278" from="outputPool_V" to="specinterface_ln30" fromId="66" toId="40">
 </dataflow>
-<dataflow id="275" from="mode5" to="specinterface_ln29" fromId="274" toId="40">
+<dataflow id="280" from="mode7" to="specinterface_ln30" fromId="279" toId="40">
 </dataflow>
-<dataflow id="276" from="StgValue_173" to="specinterface_ln29" fromId="173" toId="40">
+<dataflow id="281" from="StgValue_177" to="specinterface_ln30" fromId="177" toId="40">
 </dataflow>
-<dataflow id="277" from="StgValue_173" to="specinterface_ln29" fromId="173" toId="40">
+<dataflow id="282" from="StgValue_177" to="specinterface_ln30" fromId="177" toId="40">
 </dataflow>
-<dataflow id="278" from="p_str110" to="specinterface_ln29" fromId="176" toId="40">
+<dataflow id="283" from="p_str110" to="specinterface_ln30" fromId="180" toId="40">
 </dataflow>
-<dataflow id="279" from="StgValue_173" to="specinterface_ln29" fromId="173" toId="40">
+<dataflow id="284" from="StgValue_177" to="specinterface_ln30" fromId="177" toId="40">
 </dataflow>
-<dataflow id="280" from="StgValue_173" to="specinterface_ln29" fromId="173" toId="40">
+<dataflow id="286" from="StgValue_285" to="specinterface_ln30" fromId="285" toId="40">
 </dataflow>
-<dataflow id="282" from="bundle6" to="specinterface_ln29" fromId="281" toId="40">
+<dataflow id="288" from="bundle8" to="specinterface_ln30" fromId="287" toId="40">
 </dataflow>
-<dataflow id="283" from="p_str312" to="specinterface_ln29" fromId="182" toId="40">
+<dataflow id="289" from="p_str312" to="specinterface_ln30" fromId="187" toId="40">
 </dataflow>
-<dataflow id="284" from="p_str110" to="specinterface_ln29" fromId="176" toId="40">
+<dataflow id="290" from="p_str110" to="specinterface_ln30" fromId="180" toId="40">
 </dataflow>
-<dataflow id="285" from="StgValue_185" to="specinterface_ln29" fromId="185" toId="40">
+<dataflow id="291" from="StgValue_190" to="specinterface_ln30" fromId="190" toId="40">
 </dataflow>
-<dataflow id="286" from="StgValue_185" to="specinterface_ln29" fromId="185" toId="40">
+<dataflow id="292" from="StgValue_190" to="specinterface_ln30" fromId="190" toId="40">
 </dataflow>
-<dataflow id="287" from="StgValue_185" to="specinterface_ln29" fromId="185" toId="40">
+<dataflow id="293" from="StgValue_190" to="specinterface_ln30" fromId="190" toId="40">
 </dataflow>
-<dataflow id="288" from="StgValue_185" to="specinterface_ln29" fromId="185" toId="40">
+<dataflow id="294" from="StgValue_190" to="specinterface_ln30" fromId="190" toId="40">
 </dataflow>
-<dataflow id="289" from="p_str110" to="specinterface_ln29" fromId="176" toId="40">
+<dataflow id="295" from="p_str110" to="specinterface_ln30" fromId="180" toId="40">
 </dataflow>
-<dataflow id="290" from="p_str110" to="specinterface_ln29" fromId="176" toId="40">
+<dataflow id="296" from="p_str110" to="specinterface_ln30" fromId="180" toId="40">
 </dataflow>
-<dataflow id="291" from="_ssdm_op_SpecInterface" to="specinterface_ln30" fromId="168" toId="41">
+<dataflow id="297" from="_ssdm_op_SpecInterface" to="specinterface_ln31" fromId="172" toId="41">
 </dataflow>
-<dataflow id="292" from="weight2_V" to="specinterface_ln30" fromId="67" toId="41">
+<dataflow id="298" from="weight2_V" to="specinterface_ln31" fromId="67" toId="41">
 </dataflow>
-<dataflow id="294" from="mode9" to="specinterface_ln30" fromId="293" toId="41">
+<dataflow id="300" from="mode9" to="specinterface_ln31" fromId="299" toId="41">
 </dataflow>
-<dataflow id="295" from="StgValue_173" to="specinterface_ln30" fromId="173" toId="41">
+<dataflow id="301" from="StgValue_177" to="specinterface_ln31" fromId="177" toId="41">
 </dataflow>
-<dataflow id="296" from="StgValue_173" to="specinterface_ln30" fromId="173" toId="41">
+<dataflow id="302" from="StgValue_177" to="specinterface_ln31" fromId="177" toId="41">
 </dataflow>
-<dataflow id="297" from="p_str110" to="specinterface_ln30" fromId="176" toId="41">
+<dataflow id="303" from="p_str110" to="specinterface_ln31" fromId="180" toId="41">
 </dataflow>
-<dataflow id="298" from="StgValue_173" to="specinterface_ln30" fromId="173" toId="41">
+<dataflow id="304" from="StgValue_177" to="specinterface_ln31" fromId="177" toId="41">
 </dataflow>
-<dataflow id="299" from="StgValue_173" to="specinterface_ln30" fromId="173" toId="41">
+<dataflow id="306" from="StgValue_305" to="specinterface_ln31" fromId="305" toId="41">
 </dataflow>
-<dataflow id="301" from="bundle10" to="specinterface_ln30" fromId="300" toId="41">
+<dataflow id="308" from="bundle10" to="specinterface_ln31" fromId="307" toId="41">
 </dataflow>
-<dataflow id="302" from="p_str312" to="specinterface_ln30" fromId="182" toId="41">
+<dataflow id="309" from="p_str312" to="specinterface_ln31" fromId="187" toId="41">
 </dataflow>
-<dataflow id="303" from="p_str110" to="specinterface_ln30" fromId="176" toId="41">
+<dataflow id="310" from="p_str110" to="specinterface_ln31" fromId="180" toId="41">
 </dataflow>
-<dataflow id="304" from="StgValue_185" to="specinterface_ln30" fromId="185" toId="41">
+<dataflow id="311" from="StgValue_190" to="specinterface_ln31" fromId="190" toId="41">
 </dataflow>
-<dataflow id="305" from="StgValue_185" to="specinterface_ln30" fromId="185" toId="41">
+<dataflow id="312" from="StgValue_190" to="specinterface_ln31" fromId="190" toId="41">
 </dataflow>
-<dataflow id="306" from="StgValue_185" to="specinterface_ln30" fromId="185" toId="41">
+<dataflow id="313" from="StgValue_190" to="specinterface_ln31" fromId="190" toId="41">
 </dataflow>
-<dataflow id="307" from="StgValue_185" to="specinterface_ln30" fromId="185" toId="41">
+<dataflow id="314" from="StgValue_190" to="specinterface_ln31" fromId="190" toId="41">
 </dataflow>
-<dataflow id="308" from="p_str110" to="specinterface_ln30" fromId="176" toId="41">
+<dataflow id="315" from="p_str110" to="specinterface_ln31" fromId="180" toId="41">
 </dataflow>
-<dataflow id="309" from="p_str110" to="specinterface_ln30" fromId="176" toId="41">
+<dataflow id="316" from="p_str110" to="specinterface_ln31" fromId="180" toId="41">
 </dataflow>
-<dataflow id="310" from="_ssdm_op_SpecInterface" to="specinterface_ln31" fromId="168" toId="42">
+<dataflow id="317" from="_ssdm_op_SpecInterface" to="specinterface_ln32" fromId="172" toId="42">
 </dataflow>
-<dataflow id="311" from="bias2_V" to="specinterface_ln31" fromId="68" toId="42">
+<dataflow id="318" from="bias2_V" to="specinterface_ln32" fromId="68" toId="42">
 </dataflow>
-<dataflow id="313" from="mode11" to="specinterface_ln31" fromId="312" toId="42">
+<dataflow id="320" from="mode11" to="specinterface_ln32" fromId="319" toId="42">
 </dataflow>
-<dataflow id="314" from="StgValue_173" to="specinterface_ln31" fromId="173" toId="42">
+<dataflow id="321" from="StgValue_177" to="specinterface_ln32" fromId="177" toId="42">
 </dataflow>
-<dataflow id="315" from="StgValue_173" to="specinterface_ln31" fromId="173" toId="42">
+<dataflow id="322" from="StgValue_177" to="specinterface_ln32" fromId="177" toId="42">
 </dataflow>
-<dataflow id="316" from="p_str110" to="specinterface_ln31" fromId="176" toId="42">
+<dataflow id="323" from="p_str110" to="specinterface_ln32" fromId="180" toId="42">
 </dataflow>
-<dataflow id="317" from="StgValue_173" to="specinterface_ln31" fromId="173" toId="42">
+<dataflow id="324" from="StgValue_177" to="specinterface_ln32" fromId="177" toId="42">
 </dataflow>
-<dataflow id="318" from="StgValue_173" to="specinterface_ln31" fromId="173" toId="42">
+<dataflow id="325" from="StgValue_190" to="specinterface_ln32" fromId="190" toId="42">
 </dataflow>
-<dataflow id="320" from="bundle12" to="specinterface_ln31" fromId="319" toId="42">
+<dataflow id="327" from="bundle12" to="specinterface_ln32" fromId="326" toId="42">
 </dataflow>
-<dataflow id="321" from="p_str312" to="specinterface_ln31" fromId="182" toId="42">
+<dataflow id="328" from="p_str312" to="specinterface_ln32" fromId="187" toId="42">
 </dataflow>
-<dataflow id="322" from="p_str110" to="specinterface_ln31" fromId="176" toId="42">
+<dataflow id="329" from="p_str110" to="specinterface_ln32" fromId="180" toId="42">
 </dataflow>
-<dataflow id="323" from="StgValue_185" to="specinterface_ln31" fromId="185" toId="42">
+<dataflow id="330" from="StgValue_190" to="specinterface_ln32" fromId="190" toId="42">
 </dataflow>
-<dataflow id="324" from="StgValue_185" to="specinterface_ln31" fromId="185" toId="42">
+<dataflow id="331" from="StgValue_190" to="specinterface_ln32" fromId="190" toId="42">
 </dataflow>
-<dataflow id="325" from="StgValue_185" to="specinterface_ln31" fromId="185" toId="42">
+<dataflow id="332" from="StgValue_190" to="specinterface_ln32" fromId="190" toId="42">
 </dataflow>
-<dataflow id="326" from="StgValue_185" to="specinterface_ln31" fromId="185" toId="42">
+<dataflow id="333" from="StgValue_190" to="specinterface_ln32" fromId="190" toId="42">
 </dataflow>
-<dataflow id="327" from="p_str110" to="specinterface_ln31" fromId="176" toId="42">
+<dataflow id="334" from="p_str110" to="specinterface_ln32" fromId="180" toId="42">
 </dataflow>
-<dataflow id="328" from="p_str110" to="specinterface_ln31" fromId="176" toId="42">
+<dataflow id="335" from="p_str110" to="specinterface_ln32" fromId="180" toId="42">
 </dataflow>
-<dataflow id="329" from="_ssdm_op_SpecInterface" to="specinterface_ln32" fromId="168" toId="43">
+<dataflow id="336" from="_ssdm_op_SpecInterface" to="specinterface_ln33" fromId="172" toId="43">
 </dataflow>
-<dataflow id="330" from="outputConv2_V" to="specinterface_ln32" fromId="69" toId="43">
+<dataflow id="337" from="outputConv2_V" to="specinterface_ln33" fromId="69" toId="43">
 </dataflow>
-<dataflow id="332" from="mode13" to="specinterface_ln32" fromId="331" toId="43">
+<dataflow id="339" from="mode13" to="specinterface_ln33" fromId="338" toId="43">
 </dataflow>
-<dataflow id="333" from="StgValue_173" to="specinterface_ln32" fromId="173" toId="43">
+<dataflow id="340" from="StgValue_177" to="specinterface_ln33" fromId="177" toId="43">
 </dataflow>
-<dataflow id="334" from="StgValue_173" to="specinterface_ln32" fromId="173" toId="43">
+<dataflow id="341" from="StgValue_177" to="specinterface_ln33" fromId="177" toId="43">
 </dataflow>
-<dataflow id="335" from="p_str110" to="specinterface_ln32" fromId="176" toId="43">
+<dataflow id="342" from="p_str110" to="specinterface_ln33" fromId="180" toId="43">
 </dataflow>
-<dataflow id="336" from="StgValue_173" to="specinterface_ln32" fromId="173" toId="43">
+<dataflow id="343" from="StgValue_177" to="specinterface_ln33" fromId="177" toId="43">
 </dataflow>
-<dataflow id="337" from="StgValue_173" to="specinterface_ln32" fromId="173" toId="43">
+<dataflow id="345" from="StgValue_344" to="specinterface_ln33" fromId="344" toId="43">
 </dataflow>
-<dataflow id="339" from="bundle14" to="specinterface_ln32" fromId="338" toId="43">
+<dataflow id="347" from="bundle14" to="specinterface_ln33" fromId="346" toId="43">
 </dataflow>
-<dataflow id="340" from="p_str312" to="specinterface_ln32" fromId="182" toId="43">
+<dataflow id="348" from="p_str312" to="specinterface_ln33" fromId="187" toId="43">
 </dataflow>
-<dataflow id="341" from="p_str110" to="specinterface_ln32" fromId="176" toId="43">
+<dataflow id="349" from="p_str110" to="specinterface_ln33" fromId="180" toId="43">
 </dataflow>
-<dataflow id="342" from="StgValue_185" to="specinterface_ln32" fromId="185" toId="43">
+<dataflow id="350" from="StgValue_190" to="specinterface_ln33" fromId="190" toId="43">
 </dataflow>
-<dataflow id="343" from="StgValue_185" to="specinterface_ln32" fromId="185" toId="43">
+<dataflow id="351" from="StgValue_190" to="specinterface_ln33" fromId="190" toId="43">
 </dataflow>
-<dataflow id="344" from="StgValue_185" to="specinterface_ln32" fromId="185" toId="43">
+<dataflow id="352" from="StgValue_190" to="specinterface_ln33" fromId="190" toId="43">
 </dataflow>
-<dataflow id="345" from="StgValue_185" to="specinterface_ln32" fromId="185" toId="43">
+<dataflow id="353" from="StgValue_190" to="specinterface_ln33" fromId="190" toId="43">
 </dataflow>
-<dataflow id="346" from="p_str110" to="specinterface_ln32" fromId="176" toId="43">
+<dataflow id="354" from="p_str110" to="specinterface_ln33" fromId="180" toId="43">
 </dataflow>
-<dataflow id="347" from="p_str110" to="specinterface_ln32" fromId="176" toId="43">
+<dataflow id="355" from="p_str110" to="specinterface_ln33" fromId="180" toId="43">
 </dataflow>
-<dataflow id="348" from="_ssdm_op_SpecInterface" to="specinterface_ln33" fromId="168" toId="44">
+<dataflow id="356" from="_ssdm_op_SpecInterface" to="specinterface_ln34" fromId="172" toId="44">
 </dataflow>
-<dataflow id="349" from="outputPool2_V" to="specinterface_ln33" fromId="70" toId="44">
+<dataflow id="357" from="outputPool2_V" to="specinterface_ln34" fromId="70" toId="44">
 </dataflow>
-<dataflow id="351" from="mode15" to="specinterface_ln33" fromId="350" toId="44">
+<dataflow id="359" from="mode15" to="specinterface_ln34" fromId="358" toId="44">
 </dataflow>
-<dataflow id="352" from="StgValue_173" to="specinterface_ln33" fromId="173" toId="44">
+<dataflow id="360" from="StgValue_177" to="specinterface_ln34" fromId="177" toId="44">
 </dataflow>
-<dataflow id="353" from="StgValue_173" to="specinterface_ln33" fromId="173" toId="44">
+<dataflow id="361" from="StgValue_177" to="specinterface_ln34" fromId="177" toId="44">
 </dataflow>
-<dataflow id="354" from="p_str110" to="specinterface_ln33" fromId="176" toId="44">
+<dataflow id="362" from="p_str110" to="specinterface_ln34" fromId="180" toId="44">
 </dataflow>
-<dataflow id="355" from="StgValue_173" to="specinterface_ln33" fromId="173" toId="44">
+<dataflow id="363" from="StgValue_177" to="specinterface_ln34" fromId="177" toId="44">
 </dataflow>
-<dataflow id="356" from="StgValue_173" to="specinterface_ln33" fromId="173" toId="44">
+<dataflow id="364" from="StgValue_205" to="specinterface_ln34" fromId="205" toId="44">
 </dataflow>
-<dataflow id="358" from="bundle16" to="specinterface_ln33" fromId="357" toId="44">
+<dataflow id="366" from="bundle16" to="specinterface_ln34" fromId="365" toId="44">
 </dataflow>
-<dataflow id="359" from="p_str312" to="specinterface_ln33" fromId="182" toId="44">
+<dataflow id="367" from="p_str312" to="specinterface_ln34" fromId="187" toId="44">
 </dataflow>
-<dataflow id="360" from="p_str110" to="specinterface_ln33" fromId="176" toId="44">
+<dataflow id="368" from="p_str110" to="specinterface_ln34" fromId="180" toId="44">
 </dataflow>
-<dataflow id="361" from="StgValue_185" to="specinterface_ln33" fromId="185" toId="44">
+<dataflow id="369" from="StgValue_190" to="specinterface_ln34" fromId="190" toId="44">
 </dataflow>
-<dataflow id="362" from="StgValue_185" to="specinterface_ln33" fromId="185" toId="44">
+<dataflow id="370" from="StgValue_190" to="specinterface_ln34" fromId="190" toId="44">
 </dataflow>
-<dataflow id="363" from="StgValue_185" to="specinterface_ln33" fromId="185" toId="44">
+<dataflow id="371" from="StgValue_190" to="specinterface_ln34" fromId="190" toId="44">
 </dataflow>
-<dataflow id="364" from="StgValue_185" to="specinterface_ln33" fromId="185" toId="44">
+<dataflow id="372" from="StgValue_190" to="specinterface_ln34" fromId="190" toId="44">
 </dataflow>
-<dataflow id="365" from="p_str110" to="specinterface_ln33" fromId="176" toId="44">
+<dataflow id="373" from="p_str110" to="specinterface_ln34" fromId="180" toId="44">
 </dataflow>
-<dataflow id="366" from="p_str110" to="specinterface_ln33" fromId="176" toId="44">
+<dataflow id="374" from="p_str110" to="specinterface_ln34" fromId="180" toId="44">
 </dataflow>
-<dataflow id="367" from="_ssdm_op_SpecInterface" to="specinterface_ln34" fromId="168" toId="45">
+<dataflow id="375" from="_ssdm_op_SpecInterface" to="specinterface_ln35" fromId="172" toId="45">
 </dataflow>
-<dataflow id="368" from="outputDense_V" to="specinterface_ln34" fromId="71" toId="45">
+<dataflow id="376" from="outputDense_V" to="specinterface_ln35" fromId="71" toId="45">
 </dataflow>
-<dataflow id="370" from="mode17" to="specinterface_ln34" fromId="369" toId="45">
+<dataflow id="378" from="mode17" to="specinterface_ln35" fromId="377" toId="45">
 </dataflow>
-<dataflow id="371" from="StgValue_173" to="specinterface_ln34" fromId="173" toId="45">
+<dataflow id="379" from="StgValue_177" to="specinterface_ln35" fromId="177" toId="45">
 </dataflow>
-<dataflow id="372" from="StgValue_173" to="specinterface_ln34" fromId="173" toId="45">
+<dataflow id="380" from="StgValue_177" to="specinterface_ln35" fromId="177" toId="45">
 </dataflow>
-<dataflow id="373" from="p_str110" to="specinterface_ln34" fromId="176" toId="45">
+<dataflow id="381" from="p_str110" to="specinterface_ln35" fromId="180" toId="45">
 </dataflow>
-<dataflow id="374" from="StgValue_173" to="specinterface_ln34" fromId="173" toId="45">
+<dataflow id="382" from="StgValue_177" to="specinterface_ln35" fromId="177" toId="45">
 </dataflow>
-<dataflow id="375" from="StgValue_173" to="specinterface_ln34" fromId="173" toId="45">
+<dataflow id="384" from="StgValue_383" to="specinterface_ln35" fromId="383" toId="45">
 </dataflow>
-<dataflow id="377" from="bundle18" to="specinterface_ln34" fromId="376" toId="45">
+<dataflow id="386" from="bundle18" to="specinterface_ln35" fromId="385" toId="45">
 </dataflow>
-<dataflow id="378" from="p_str312" to="specinterface_ln34" fromId="182" toId="45">
+<dataflow id="387" from="p_str312" to="specinterface_ln35" fromId="187" toId="45">
 </dataflow>
-<dataflow id="379" from="p_str110" to="specinterface_ln34" fromId="176" toId="45">
+<dataflow id="388" from="p_str110" to="specinterface_ln35" fromId="180" toId="45">
 </dataflow>
-<dataflow id="380" from="StgValue_185" to="specinterface_ln34" fromId="185" toId="45">
+<dataflow id="389" from="StgValue_190" to="specinterface_ln35" fromId="190" toId="45">
 </dataflow>
-<dataflow id="381" from="StgValue_185" to="specinterface_ln34" fromId="185" toId="45">
+<dataflow id="390" from="StgValue_190" to="specinterface_ln35" fromId="190" toId="45">
 </dataflow>
-<dataflow id="382" from="StgValue_185" to="specinterface_ln34" fromId="185" toId="45">
+<dataflow id="391" from="StgValue_190" to="specinterface_ln35" fromId="190" toId="45">
 </dataflow>
-<dataflow id="383" from="StgValue_185" to="specinterface_ln34" fromId="185" toId="45">
+<dataflow id="392" from="StgValue_190" to="specinterface_ln35" fromId="190" toId="45">
 </dataflow>
-<dataflow id="384" from="p_str110" to="specinterface_ln34" fromId="176" toId="45">
+<dataflow id="393" from="p_str110" to="specinterface_ln35" fromId="180" toId="45">
 </dataflow>
-<dataflow id="385" from="p_str110" to="specinterface_ln34" fromId="176" toId="45">
+<dataflow id="394" from="p_str110" to="specinterface_ln35" fromId="180" toId="45">
 </dataflow>
-<dataflow id="386" from="_ssdm_op_SpecInterface" to="specinterface_ln35" fromId="168" toId="46">
+<dataflow id="395" from="_ssdm_op_SpecInterface" to="specinterface_ln36" fromId="172" toId="46">
 </dataflow>
-<dataflow id="387" from="fcWeight_V" to="specinterface_ln35" fromId="72" toId="46">
+<dataflow id="396" from="fcWeight_V" to="specinterface_ln36" fromId="72" toId="46">
 </dataflow>
-<dataflow id="389" from="mode19" to="specinterface_ln35" fromId="388" toId="46">
+<dataflow id="398" from="mode19" to="specinterface_ln36" fromId="397" toId="46">
 </dataflow>
-<dataflow id="390" from="StgValue_173" to="specinterface_ln35" fromId="173" toId="46">
+<dataflow id="399" from="StgValue_177" to="specinterface_ln36" fromId="177" toId="46">
 </dataflow>
-<dataflow id="391" from="StgValue_173" to="specinterface_ln35" fromId="173" toId="46">
+<dataflow id="400" from="StgValue_177" to="specinterface_ln36" fromId="177" toId="46">
 </dataflow>
-<dataflow id="392" from="p_str110" to="specinterface_ln35" fromId="176" toId="46">
+<dataflow id="401" from="p_str110" to="specinterface_ln36" fromId="180" toId="46">
 </dataflow>
-<dataflow id="393" from="StgValue_173" to="specinterface_ln35" fromId="173" toId="46">
+<dataflow id="402" from="StgValue_177" to="specinterface_ln36" fromId="177" toId="46">
 </dataflow>
-<dataflow id="394" from="StgValue_173" to="specinterface_ln35" fromId="173" toId="46">
+<dataflow id="403" from="StgValue_183" to="specinterface_ln36" fromId="183" toId="46">
 </dataflow>
-<dataflow id="396" from="bundle20" to="specinterface_ln35" fromId="395" toId="46">
+<dataflow id="405" from="bundle20" to="specinterface_ln36" fromId="404" toId="46">
 </dataflow>
-<dataflow id="397" from="p_str312" to="specinterface_ln35" fromId="182" toId="46">
+<dataflow id="406" from="p_str312" to="specinterface_ln36" fromId="187" toId="46">
 </dataflow>
-<dataflow id="398" from="p_str110" to="specinterface_ln35" fromId="176" toId="46">
+<dataflow id="407" from="p_str110" to="specinterface_ln36" fromId="180" toId="46">
 </dataflow>
-<dataflow id="399" from="StgValue_185" to="specinterface_ln35" fromId="185" toId="46">
+<dataflow id="408" from="StgValue_190" to="specinterface_ln36" fromId="190" toId="46">
 </dataflow>
-<dataflow id="400" from="StgValue_185" to="specinterface_ln35" fromId="185" toId="46">
+<dataflow id="409" from="StgValue_190" to="specinterface_ln36" fromId="190" toId="46">
 </dataflow>
-<dataflow id="401" from="StgValue_185" to="specinterface_ln35" fromId="185" toId="46">
+<dataflow id="410" from="StgValue_190" to="specinterface_ln36" fromId="190" toId="46">
 </dataflow>
-<dataflow id="402" from="StgValue_185" to="specinterface_ln35" fromId="185" toId="46">
+<dataflow id="411" from="StgValue_190" to="specinterface_ln36" fromId="190" toId="46">
 </dataflow>
-<dataflow id="403" from="p_str110" to="specinterface_ln35" fromId="176" toId="46">
+<dataflow id="412" from="p_str110" to="specinterface_ln36" fromId="180" toId="46">
 </dataflow>
-<dataflow id="404" from="p_str110" to="specinterface_ln35" fromId="176" toId="46">
+<dataflow id="413" from="p_str110" to="specinterface_ln36" fromId="180" toId="46">
 </dataflow>
-<dataflow id="405" from="_ssdm_op_SpecInterface" to="specinterface_ln36" fromId="168" toId="47">
+<dataflow id="414" from="_ssdm_op_SpecInterface" to="specinterface_ln37" fromId="172" toId="47">
 </dataflow>
-<dataflow id="406" from="fcBias_V" to="specinterface_ln36" fromId="73" toId="47">
+<dataflow id="415" from="fcBias_V" to="specinterface_ln37" fromId="73" toId="47">
 </dataflow>
-<dataflow id="408" from="mode21" to="specinterface_ln36" fromId="407" toId="47">
+<dataflow id="417" from="mode21" to="specinterface_ln37" fromId="416" toId="47">
 </dataflow>
-<dataflow id="409" from="StgValue_173" to="specinterface_ln36" fromId="173" toId="47">
+<dataflow id="418" from="StgValue_177" to="specinterface_ln37" fromId="177" toId="47">
 </dataflow>
-<dataflow id="410" from="StgValue_173" to="specinterface_ln36" fromId="173" toId="47">
+<dataflow id="419" from="StgValue_177" to="specinterface_ln37" fromId="177" toId="47">
 </dataflow>
-<dataflow id="411" from="p_str110" to="specinterface_ln36" fromId="176" toId="47">
+<dataflow id="420" from="p_str110" to="specinterface_ln37" fromId="180" toId="47">
 </dataflow>
-<dataflow id="412" from="StgValue_173" to="specinterface_ln36" fromId="173" toId="47">
+<dataflow id="421" from="StgValue_177" to="specinterface_ln37" fromId="177" toId="47">
 </dataflow>
-<dataflow id="413" from="StgValue_173" to="specinterface_ln36" fromId="173" toId="47">
+<dataflow id="422" from="StgValue_383" to="specinterface_ln37" fromId="383" toId="47">
 </dataflow>
-<dataflow id="415" from="bundle22" to="specinterface_ln36" fromId="414" toId="47">
+<dataflow id="424" from="bundle22" to="specinterface_ln37" fromId="423" toId="47">
 </dataflow>
-<dataflow id="416" from="p_str312" to="specinterface_ln36" fromId="182" toId="47">
+<dataflow id="425" from="p_str312" to="specinterface_ln37" fromId="187" toId="47">
 </dataflow>
-<dataflow id="417" from="p_str110" to="specinterface_ln36" fromId="176" toId="47">
+<dataflow id="426" from="p_str110" to="specinterface_ln37" fromId="180" toId="47">
 </dataflow>
-<dataflow id="418" from="StgValue_185" to="specinterface_ln36" fromId="185" toId="47">
+<dataflow id="427" from="StgValue_190" to="specinterface_ln37" fromId="190" toId="47">
 </dataflow>
-<dataflow id="419" from="StgValue_185" to="specinterface_ln36" fromId="185" toId="47">
+<dataflow id="428" from="StgValue_190" to="specinterface_ln37" fromId="190" toId="47">
 </dataflow>
-<dataflow id="420" from="StgValue_185" to="specinterface_ln36" fromId="185" toId="47">
+<dataflow id="429" from="StgValue_190" to="specinterface_ln37" fromId="190" toId="47">
 </dataflow>
-<dataflow id="421" from="StgValue_185" to="specinterface_ln36" fromId="185" toId="47">
+<dataflow id="430" from="StgValue_190" to="specinterface_ln37" fromId="190" toId="47">
 </dataflow>
-<dataflow id="422" from="p_str110" to="specinterface_ln36" fromId="176" toId="47">
+<dataflow id="431" from="p_str110" to="specinterface_ln37" fromId="180" toId="47">
 </dataflow>
-<dataflow id="423" from="p_str110" to="specinterface_ln36" fromId="176" toId="47">
+<dataflow id="432" from="p_str110" to="specinterface_ln37" fromId="180" toId="47">
 </dataflow>
-<dataflow id="424" from="_ssdm_op_SpecInterface" to="specinterface_ln38" fromId="168" toId="48">
+<dataflow id="433" from="_ssdm_op_SpecInterface" to="specinterface_ln39" fromId="172" toId="48">
 </dataflow>
-<dataflow id="425" from="StgValue_173" to="specinterface_ln38" fromId="173" toId="48">
+<dataflow id="434" from="StgValue_177" to="specinterface_ln39" fromId="177" toId="48">
 </dataflow>
-<dataflow id="427" from="p_str413" to="specinterface_ln38" fromId="426" toId="48">
+<dataflow id="436" from="p_str413" to="specinterface_ln39" fromId="435" toId="48">
 </dataflow>
-<dataflow id="428" from="StgValue_173" to="specinterface_ln38" fromId="173" toId="48">
+<dataflow id="437" from="StgValue_177" to="specinterface_ln39" fromId="177" toId="48">
 </dataflow>
-<dataflow id="429" from="StgValue_173" to="specinterface_ln38" fromId="173" toId="48">
+<dataflow id="438" from="StgValue_177" to="specinterface_ln39" fromId="177" toId="48">
 </dataflow>
-<dataflow id="430" from="p_str110" to="specinterface_ln38" fromId="176" toId="48">
+<dataflow id="439" from="p_str110" to="specinterface_ln39" fromId="180" toId="48">
 </dataflow>
-<dataflow id="431" from="StgValue_173" to="specinterface_ln38" fromId="173" toId="48">
+<dataflow id="440" from="StgValue_177" to="specinterface_ln39" fromId="177" toId="48">
 </dataflow>
-<dataflow id="432" from="StgValue_173" to="specinterface_ln38" fromId="173" toId="48">
+<dataflow id="441" from="StgValue_177" to="specinterface_ln39" fromId="177" toId="48">
 </dataflow>
-<dataflow id="434" from="p_str514" to="specinterface_ln38" fromId="433" toId="48">
+<dataflow id="443" from="p_str514" to="specinterface_ln39" fromId="442" toId="48">
 </dataflow>
-<dataflow id="435" from="p_str110" to="specinterface_ln38" fromId="176" toId="48">
+<dataflow id="444" from="p_str110" to="specinterface_ln39" fromId="180" toId="48">
 </dataflow>
-<dataflow id="436" from="p_str110" to="specinterface_ln38" fromId="176" toId="48">
+<dataflow id="445" from="p_str110" to="specinterface_ln39" fromId="180" toId="48">
 </dataflow>
-<dataflow id="437" from="StgValue_173" to="specinterface_ln38" fromId="173" toId="48">
+<dataflow id="446" from="StgValue_177" to="specinterface_ln39" fromId="177" toId="48">
 </dataflow>
-<dataflow id="438" from="StgValue_173" to="specinterface_ln38" fromId="173" toId="48">
+<dataflow id="447" from="StgValue_177" to="specinterface_ln39" fromId="177" toId="48">
 </dataflow>
-<dataflow id="439" from="StgValue_173" to="specinterface_ln38" fromId="173" toId="48">
+<dataflow id="448" from="StgValue_177" to="specinterface_ln39" fromId="177" toId="48">
 </dataflow>
-<dataflow id="440" from="StgValue_173" to="specinterface_ln38" fromId="173" toId="48">
+<dataflow id="449" from="StgValue_177" to="specinterface_ln39" fromId="177" toId="48">
 </dataflow>
-<dataflow id="441" from="p_str110" to="specinterface_ln38" fromId="176" toId="48">
+<dataflow id="450" from="p_str110" to="specinterface_ln39" fromId="180" toId="48">
 </dataflow>
-<dataflow id="442" from="p_str110" to="specinterface_ln38" fromId="176" toId="48">
+<dataflow id="451" from="p_str110" to="specinterface_ln39" fromId="180" toId="48">
 </dataflow>
-<dataflow id="443" from="dense" to="call_ln46" fromId="158" toId="49">
+<dataflow id="452" from="dense" to="call_ln47" fromId="158" toId="49">
 </dataflow>
-<dataflow id="444" from="gmem" to="call_ln46" fromId="61" toId="49">
+<dataflow id="453" from="gmem" to="call_ln47" fromId="61" toId="49">
 </dataflow>
-<dataflow id="445" from="outputPool2_V_read" to="call_ln46" fromId="15" toId="49">
+<dataflow id="454" from="outputPool2_V_read" to="call_ln47" fromId="15" toId="49">
 </dataflow>
-<dataflow id="446" from="outputDense_V_read" to="call_ln46" fromId="14" toId="49">
+<dataflow id="455" from="outputDense_V_read" to="call_ln47" fromId="14" toId="49">
 </dataflow>
-<dataflow id="447" from="fcWeight_V_read" to="call_ln46" fromId="13" toId="49">
+<dataflow id="456" from="fcWeight_V_read" to="call_ln47" fromId="13" toId="49">
 </dataflow>
-<dataflow id="448" from="fcBias_V_read" to="call_ln46" fromId="12" toId="49">
+<dataflow id="457" from="fcBias_V_read" to="call_ln47" fromId="12" toId="49">
 </dataflow>
 </dataflows>
 

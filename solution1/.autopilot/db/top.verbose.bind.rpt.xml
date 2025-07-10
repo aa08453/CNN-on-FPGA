@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'top'" level="0">
-<item name = "Date">Thu Jul 10 14:52:55 2025
+<item name = "Date">Thu Jul 10 17:06:40 2025
 </item>
 <item name = "Version">2020.1 (Build 2897737 on Wed May 27 20:21:37 MDT 2020)</item>
 <item name = "Project">cnn</item>
@@ -24,17 +24,17 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">358926, 606590, 3.589 ms, 6.066 ms, 358926, 606590, none</column>
+<column name="">358786, 606450, 3.588 ms, 6.064 ms, 358786, 606450, none</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="grp_dense_fu_188">dense, 26977, 26977, 0.270 ms, 0.270 ms, 26977, 26977, none</column>
-<column name="grp_conv2_fu_198">conv2, 232089, 232089, 2.321 ms, 2.321 ms, 232089, 232089, none</column>
-<column name="grp_conv1_fu_208">conv1, 64312, 64312, 0.643 ms, 0.643 ms, 64312, 64312, none</column>
-<column name="grp_pool_fu_218">pool, 17769, 141601, 0.178 ms, 1.416 ms, 17769, 141601, none</column>
+<column name="grp_conv2_fu_206">conv2, 232089, 232089, 2.321 ms, 2.321 ms, 232089, 232089, none</column>
+<column name="grp_dense_fu_216">dense, 26837, 26837, 0.268 ms, 0.268 ms, 26837, 26837, none</column>
+<column name="grp_conv1_fu_226">conv1, 64312, 64312, 0.643 ms, 0.643 ms, 64312, 64312, none</column>
+<column name="grp_pool_fu_236">pool, 17769, 141601, 0.178 ms, 1.416 ms, 17769, 141601, none</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">

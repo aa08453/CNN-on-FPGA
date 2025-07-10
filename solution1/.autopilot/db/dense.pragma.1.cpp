@@ -6403,7 +6403,7 @@ _ssdm_SpecArrayPartition( tempWeight, 1, "CYCLIC", 8, "");
         for (int i = 0; i < inputFeatures; i++) {
 _ssdm_Unroll(1, 0, 112, "");
  int offset = c*inputFeatures + i;
-         int multRes = temp[i] * tempWeight[offset];
+         fixed multRes = temp[i] * tempWeight[offset];
                 sum += multRes;
             }
         outputDense[c] = sum;

@@ -23,17 +23,18 @@ void top(
 	fixed fcWeight[], fixed fcBias[]
 ) {
 	// for later storage in external mem
-#pragma HLS INTERFACE m_axi port=input       offset=slave bundle=gmem
-#pragma HLS INTERFACE m_axi port=outputConv  offset=slave bundle=gmem
-#pragma HLS INTERFACE m_axi port=weight      offset=slave bundle=gmem
-#pragma HLS INTERFACE m_axi port=bias        offset=slave bundle=gmem
-#pragma HLS INTERFACE m_axi port=weight2    offset=slave bundle=gmem
-#pragma HLS INTERFACE m_axi port=bias2      offset=slave bundle=gmem
-#pragma HLS INTERFACE m_axi port=outputConv2 offset=slave bundle=gmem
-#pragma HLS INTERFACE m_axi port=outputPool2 offset=slave bundle=gmem
-#pragma HLS INTERFACE m_axi port=outputDense offset=slave bundle=gmem
-#pragma HLS INTERFACE m_axi port=fcWeight    offset=slave bundle=gmem
-#pragma HLS INTERFACE m_axi port=fcBias      offset=slave bundle=gmem
+#pragma HLS INTERFACE m_axi port=input       depth=784     offset=slave bundle=gmem1
+#pragma HLS INTERFACE m_axi port=outputConv  depth=6272 offset=slave bundle=gmem2
+#pragma HLS INTERFACE m_axi port=weight      depth=72   offset=slave bundle=gmem3
+#pragma HLS INTERFACE m_axi port=bias        depth=8   offset=slave bundle=gmem4
+#pragma HLS INTERFACE m_axi port=outputPool  depth=1568 offset=slave bundle=gmem5
+#pragma HLS INTERFACE m_axi port=weight2     depth=1152  offset=slave bundle=gmem6
+#pragma HLS INTERFACE m_axi port=bias2       depth=16    offset=slave bundle=gmem7
+#pragma HLS INTERFACE m_axi port=outputConv2 depth=3136 offset=slave bundle=gmem8
+#pragma HLS INTERFACE m_axi port=outputPool2 depth=784 offset=slave bundle=gmem9
+#pragma HLS INTERFACE m_axi port=outputDense depth=10 offset=slave bundle=gmem10
+#pragma HLS INTERFACE m_axi port=fcWeight    depth=7840 offset=slave bundle=gmem11
+#pragma HLS INTERFACE m_axi port=fcBias      depth=10 offset=slave bundle=gmem12
 
 #pragma HLS INTERFACE s_axilite port=return  bundle=control
 

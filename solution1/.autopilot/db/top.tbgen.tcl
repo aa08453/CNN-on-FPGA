@@ -29,7 +29,7 @@ set C_modelArgList {
 	{ fcBias_V int 32 regular {axi_slave 0}  }
 }
 set C_modelArgMapList {[ 
-	{ "Name" : "gmem", "interface" : "axi_master", "bitwidth" : 8, "direction" : "READWRITE", "bitSlice":[{"low":0,"up":7,"cElement": [{"cName": "input.V","cData": "int8","bit_use": { "low": 0,"up": 7},"offset": { "type": "dynamic","port_name": "input_V","bundle": "AXILiteS"},"direction": "READONLY","cArray": [{"low" : 0,"up" : 0,"step" : 1}]},{"cName": "outputConv.V","cData": "int8","bit_use": { "low": 0,"up": 7},"offset": { "type": "dynamic","port_name": "outputConv_V","bundle": "AXILiteS"},"direction": "READWRITE","cArray": [{"low" : 0,"up" : 0,"step" : 1}]},{"cName": "weight.V","cData": "int8","bit_use": { "low": 0,"up": 7},"offset": { "type": "dynamic","port_name": "weight_V","bundle": "AXILiteS"},"direction": "READONLY","cArray": [{"low" : 0,"up" : 0,"step" : 1}]},{"cName": "bias.V","cData": "int8","bit_use": { "low": 0,"up": 7},"offset": { "type": "dynamic","port_name": "bias_V","bundle": "AXILiteS"},"direction": "READONLY","cArray": [{"low" : 0,"up" : 0,"step" : 1}]},{"cName": "outputPool.V","cData": "int8","bit_use": { "low": 0,"up": 7},"offset": { "type": "dynamic","port_name": "outputPool_V","bundle": "AXILiteS"},"direction": "READWRITE","cArray": [{"low" : 0,"up" : 0,"step" : 1}]},{"cName": "weight2.V","cData": "int8","bit_use": { "low": 0,"up": 7},"offset": { "type": "dynamic","port_name": "weight2_V","bundle": "AXILiteS"},"direction": "READONLY","cArray": [{"low" : 0,"up" : 0,"step" : 1}]},{"cName": "bias2.V","cData": "int8","bit_use": { "low": 0,"up": 7},"offset": { "type": "dynamic","port_name": "bias2_V","bundle": "AXILiteS"},"direction": "READONLY","cArray": [{"low" : 0,"up" : 0,"step" : 1}]},{"cName": "outputConv2.V","cData": "int8","bit_use": { "low": 0,"up": 7},"offset": { "type": "dynamic","port_name": "outputConv2_V","bundle": "AXILiteS"},"direction": "READWRITE","cArray": [{"low" : 0,"up" : 0,"step" : 1}]},{"cName": "outputPool2.V","cData": "int8","bit_use": { "low": 0,"up": 7},"offset": { "type": "dynamic","port_name": "outputPool2_V","bundle": "AXILiteS"},"direction": "READWRITE","cArray": [{"low" : 0,"up" : 0,"step" : 1}]},{"cName": "outputDense.V","cData": "int8","bit_use": { "low": 0,"up": 7},"offset": { "type": "dynamic","port_name": "outputDense_V","bundle": "AXILiteS"},"direction": "WRITEONLY","cArray": [{"low" : 0,"up" : 0,"step" : 1}]},{"cName": "fcWeight.V","cData": "int8","bit_use": { "low": 0,"up": 7},"offset": { "type": "dynamic","port_name": "fcWeight_V","bundle": "AXILiteS"},"direction": "READONLY","cArray": [{"low" : 0,"up" : 0,"step" : 1}]},{"cName": "fcBias.V","cData": "int8","bit_use": { "low": 0,"up": 7},"offset": { "type": "dynamic","port_name": "fcBias_V","bundle": "AXILiteS"},"direction": "READONLY","cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}]} , 
+	{ "Name" : "gmem", "interface" : "axi_master", "bitwidth" : 8, "direction" : "READWRITE", "bitSlice":[{"low":0,"up":7,"cElement": [{"cName": "input.V","cData": "int8","bit_use": { "low": 0,"up": 7},"offset": { "type": "dynamic","port_name": "input_V","bundle": "AXILiteS"},"direction": "READONLY","cArray": [{"low" : 0,"up" : 783,"step" : 1}]},{"cName": "outputConv.V","cData": "int8","bit_use": { "low": 0,"up": 7},"offset": { "type": "dynamic","port_name": "outputConv_V","bundle": "AXILiteS"},"direction": "READWRITE","cArray": [{"low" : 0,"up" : 6271,"step" : 1}]},{"cName": "weight.V","cData": "int8","bit_use": { "low": 0,"up": 7},"offset": { "type": "dynamic","port_name": "weight_V","bundle": "AXILiteS"},"direction": "READONLY","cArray": [{"low" : 0,"up" : 71,"step" : 1}]},{"cName": "bias.V","cData": "int8","bit_use": { "low": 0,"up": 7},"offset": { "type": "dynamic","port_name": "bias_V","bundle": "AXILiteS"},"direction": "READONLY","cArray": [{"low" : 0,"up" : 7,"step" : 1}]},{"cName": "outputPool.V","cData": "int8","bit_use": { "low": 0,"up": 7},"offset": { "type": "dynamic","port_name": "outputPool_V","bundle": "AXILiteS"},"direction": "READWRITE","cArray": [{"low" : 0,"up" : 1567,"step" : 1}]},{"cName": "weight2.V","cData": "int8","bit_use": { "low": 0,"up": 7},"offset": { "type": "dynamic","port_name": "weight2_V","bundle": "AXILiteS"},"direction": "READONLY","cArray": [{"low" : 0,"up" : 1151,"step" : 1}]},{"cName": "bias2.V","cData": "int8","bit_use": { "low": 0,"up": 7},"offset": { "type": "dynamic","port_name": "bias2_V","bundle": "AXILiteS"},"direction": "READONLY","cArray": [{"low" : 0,"up" : 15,"step" : 1}]},{"cName": "outputConv2.V","cData": "int8","bit_use": { "low": 0,"up": 7},"offset": { "type": "dynamic","port_name": "outputConv2_V","bundle": "AXILiteS"},"direction": "READWRITE","cArray": [{"low" : 0,"up" : 3135,"step" : 1}]},{"cName": "outputPool2.V","cData": "int8","bit_use": { "low": 0,"up": 7},"offset": { "type": "dynamic","port_name": "outputPool2_V","bundle": "AXILiteS"},"direction": "READWRITE","cArray": [{"low" : 0,"up" : 783,"step" : 1}]},{"cName": "outputDense.V","cData": "int8","bit_use": { "low": 0,"up": 7},"offset": { "type": "dynamic","port_name": "outputDense_V","bundle": "AXILiteS"},"direction": "WRITEONLY","cArray": [{"low" : 0,"up" : 9,"step" : 1}]},{"cName": "fcWeight.V","cData": "int8","bit_use": { "low": 0,"up": 7},"offset": { "type": "dynamic","port_name": "fcWeight_V","bundle": "AXILiteS"},"direction": "READONLY","cArray": [{"low" : 0,"up" : 7839,"step" : 1}]},{"cName": "fcBias.V","cData": "int8","bit_use": { "low": 0,"up": 7},"offset": { "type": "dynamic","port_name": "fcBias_V","bundle": "AXILiteS"},"direction": "READONLY","cArray": [{"low" : 0,"up" : 9,"step" : 1}]}]}]} , 
  	{ "Name" : "input_V", "interface" : "axi_slave", "bundle":"control","type":"ap_none","bitwidth" : 32, "direction" : "READONLY", "offset" : {"in":16}, "offset_end" : {"in":23}} , 
  	{ "Name" : "outputConv_V", "interface" : "axi_slave", "bundle":"control","type":"ap_none","bitwidth" : 32, "direction" : "READONLY", "offset" : {"in":24}, "offset_end" : {"in":31}} , 
  	{ "Name" : "weight_V", "interface" : "axi_slave", "bundle":"control","type":"ap_none","bitwidth" : 32, "direction" : "READONLY", "offset" : {"in":32}, "offset_end" : {"in":39}} , 
@@ -179,13 +179,13 @@ set NewPortList {[
  	{ "name": "m_axi_gmem_BUSER", "direction": "in", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "gmem", "role": "BUSER" }}  ]}
 
 set RtlHierarchyInfo {[
-	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "", "Child" : ["1", "2", "3", "20", "22", "24"],
+	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "", "Child" : ["1", "2", "3", "5", "22", "24"],
 		"CDFG" : "top",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1",
 		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
 		"II" : "0",
-		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "358926", "EstimateLatencyMax" : "606590",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "358786", "EstimateLatencyMax" : "606450",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
@@ -193,18 +193,18 @@ set RtlHierarchyInfo {[
 		"InDataflowNetwork" : "0",
 		"HasNonBlockingOperation" : "0",
 		"WaitState" : [
-			{"State" : "ap_ST_fsm_state11", "FSM" : "ap_CS_fsm", "SubInstance" : "grp_dense_fu_188"},
-			{"State" : "ap_ST_fsm_state7", "FSM" : "ap_CS_fsm", "SubInstance" : "grp_conv2_fu_198"},
-			{"State" : "ap_ST_fsm_state3", "FSM" : "ap_CS_fsm", "SubInstance" : "grp_conv1_fu_208"},
-			{"State" : "ap_ST_fsm_state5", "FSM" : "ap_CS_fsm", "SubInstance" : "grp_pool_fu_218"},
-			{"State" : "ap_ST_fsm_state9", "FSM" : "ap_CS_fsm", "SubInstance" : "grp_pool_fu_218"}],
+			{"State" : "ap_ST_fsm_state7", "FSM" : "ap_CS_fsm", "SubInstance" : "grp_conv2_fu_206"},
+			{"State" : "ap_ST_fsm_state11", "FSM" : "ap_CS_fsm", "SubInstance" : "grp_dense_fu_216"},
+			{"State" : "ap_ST_fsm_state3", "FSM" : "ap_CS_fsm", "SubInstance" : "grp_conv1_fu_226"},
+			{"State" : "ap_ST_fsm_state5", "FSM" : "ap_CS_fsm", "SubInstance" : "grp_pool_fu_236"},
+			{"State" : "ap_ST_fsm_state9", "FSM" : "ap_CS_fsm", "SubInstance" : "grp_pool_fu_236"}],
 		"Port" : [
 			{"Name" : "gmem", "Type" : "MAXI", "Direction" : "IO",
 				"SubConnect" : [
-					{"ID" : "22", "SubInstance" : "grp_conv1_fu_208", "Port" : "input_V"},
-					{"ID" : "3", "SubInstance" : "grp_dense_fu_188", "Port" : "input_V"},
-					{"ID" : "20", "SubInstance" : "grp_conv2_fu_198", "Port" : "input_V"},
-					{"ID" : "24", "SubInstance" : "grp_pool_fu_218", "Port" : "input_V"}]},
+					{"ID" : "5", "SubInstance" : "grp_dense_fu_216", "Port" : "input_V"},
+					{"ID" : "24", "SubInstance" : "grp_pool_fu_236", "Port" : "input_V"},
+					{"ID" : "3", "SubInstance" : "grp_conv2_fu_206", "Port" : "input_V"},
+					{"ID" : "22", "SubInstance" : "grp_conv1_fu_226", "Port" : "input_V"}]},
 			{"Name" : "input_V", "Type" : "None", "Direction" : "I"},
 			{"Name" : "outputConv_V", "Type" : "None", "Direction" : "I"},
 			{"Name" : "weight_V", "Type" : "None", "Direction" : "I"},
@@ -219,48 +219,7 @@ set RtlHierarchyInfo {[
 			{"Name" : "fcBias_V", "Type" : "None", "Direction" : "I"}]},
 	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.top_control_s_axi_U", "Parent" : "0"},
 	{"ID" : "2", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.top_gmem_m_axi_U", "Parent" : "0"},
-	{"ID" : "3", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_dense_fu_188", "Parent" : "0", "Child" : ["4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19"],
-		"CDFG" : "dense",
-		"Protocol" : "ap_ctrl_hs",
-		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1",
-		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
-		"II" : "0",
-		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "26977", "EstimateLatencyMax" : "26977",
-		"Combinational" : "0",
-		"Datapath" : "0",
-		"ClockEnable" : "0",
-		"HasSubDataflow" : "0",
-		"InDataflowNetwork" : "0",
-		"HasNonBlockingOperation" : "0",
-		"Port" : [
-			{"Name" : "input_V", "Type" : "MAXI", "Direction" : "IO",
-				"BlockSignal" : [
-					{"Name" : "input_V_blk_n_AR", "Type" : "RtlSignal"},
-					{"Name" : "input_V_blk_n_R", "Type" : "RtlSignal"},
-					{"Name" : "input_V_blk_n_AW", "Type" : "RtlSignal"},
-					{"Name" : "input_V_blk_n_W", "Type" : "RtlSignal"},
-					{"Name" : "input_V_blk_n_B", "Type" : "RtlSignal"}]},
-			{"Name" : "input_V_offset", "Type" : "None", "Direction" : "I"},
-			{"Name" : "outputDense_V_offset", "Type" : "None", "Direction" : "I"},
-			{"Name" : "fcWeight_V_offset", "Type" : "None", "Direction" : "I"},
-			{"Name" : "fcBias_V_offset", "Type" : "None", "Direction" : "I"}]},
-	{"ID" : "4", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_dense_fu_188.temp_0_V_U", "Parent" : "3"},
-	{"ID" : "5", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_dense_fu_188.temp_1_V_U", "Parent" : "3"},
-	{"ID" : "6", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_dense_fu_188.temp_2_V_U", "Parent" : "3"},
-	{"ID" : "7", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_dense_fu_188.temp_3_V_U", "Parent" : "3"},
-	{"ID" : "8", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_dense_fu_188.temp_4_V_U", "Parent" : "3"},
-	{"ID" : "9", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_dense_fu_188.temp_5_V_U", "Parent" : "3"},
-	{"ID" : "10", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_dense_fu_188.temp_6_V_U", "Parent" : "3"},
-	{"ID" : "11", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_dense_fu_188.temp_7_V_U", "Parent" : "3"},
-	{"ID" : "12", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_dense_fu_188.tempWeight_0_V_U", "Parent" : "3"},
-	{"ID" : "13", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_dense_fu_188.tempWeight_1_V_U", "Parent" : "3"},
-	{"ID" : "14", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_dense_fu_188.tempWeight_2_V_U", "Parent" : "3"},
-	{"ID" : "15", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_dense_fu_188.tempWeight_3_V_U", "Parent" : "3"},
-	{"ID" : "16", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_dense_fu_188.tempWeight_4_V_U", "Parent" : "3"},
-	{"ID" : "17", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_dense_fu_188.tempWeight_5_V_U", "Parent" : "3"},
-	{"ID" : "18", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_dense_fu_188.tempWeight_6_V_U", "Parent" : "3"},
-	{"ID" : "19", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_dense_fu_188.tempWeight_7_V_U", "Parent" : "3"},
-	{"ID" : "20", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_conv2_fu_198", "Parent" : "0", "Child" : ["21"],
+	{"ID" : "3", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_conv2_fu_206", "Parent" : "0", "Child" : ["4"],
 		"CDFG" : "conv2",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1",
@@ -285,8 +244,49 @@ set RtlHierarchyInfo {[
 			{"Name" : "outputConv_V_offset", "Type" : "None", "Direction" : "I"},
 			{"Name" : "weight_V_offset", "Type" : "None", "Direction" : "I"},
 			{"Name" : "bias_V_offset", "Type" : "None", "Direction" : "I"}]},
-	{"ID" : "21", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_conv2_fu_198.temp_V_U", "Parent" : "20"},
-	{"ID" : "22", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_conv1_fu_208", "Parent" : "0", "Child" : ["23"],
+	{"ID" : "4", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_conv2_fu_206.temp_V_U", "Parent" : "3"},
+	{"ID" : "5", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_dense_fu_216", "Parent" : "0", "Child" : ["6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21"],
+		"CDFG" : "dense",
+		"Protocol" : "ap_ctrl_hs",
+		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1",
+		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
+		"II" : "0",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "26837", "EstimateLatencyMax" : "26837",
+		"Combinational" : "0",
+		"Datapath" : "0",
+		"ClockEnable" : "0",
+		"HasSubDataflow" : "0",
+		"InDataflowNetwork" : "0",
+		"HasNonBlockingOperation" : "0",
+		"Port" : [
+			{"Name" : "input_V", "Type" : "MAXI", "Direction" : "IO",
+				"BlockSignal" : [
+					{"Name" : "input_V_blk_n_AR", "Type" : "RtlSignal"},
+					{"Name" : "input_V_blk_n_R", "Type" : "RtlSignal"},
+					{"Name" : "input_V_blk_n_AW", "Type" : "RtlSignal"},
+					{"Name" : "input_V_blk_n_W", "Type" : "RtlSignal"},
+					{"Name" : "input_V_blk_n_B", "Type" : "RtlSignal"}]},
+			{"Name" : "input_V_offset", "Type" : "None", "Direction" : "I"},
+			{"Name" : "outputDense_V_offset", "Type" : "None", "Direction" : "I"},
+			{"Name" : "fcWeight_V_offset", "Type" : "None", "Direction" : "I"},
+			{"Name" : "fcBias_V_offset", "Type" : "None", "Direction" : "I"}]},
+	{"ID" : "6", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_dense_fu_216.temp_0_V_U", "Parent" : "5"},
+	{"ID" : "7", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_dense_fu_216.temp_1_V_U", "Parent" : "5"},
+	{"ID" : "8", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_dense_fu_216.temp_2_V_U", "Parent" : "5"},
+	{"ID" : "9", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_dense_fu_216.temp_3_V_U", "Parent" : "5"},
+	{"ID" : "10", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_dense_fu_216.temp_4_V_U", "Parent" : "5"},
+	{"ID" : "11", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_dense_fu_216.temp_5_V_U", "Parent" : "5"},
+	{"ID" : "12", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_dense_fu_216.temp_6_V_U", "Parent" : "5"},
+	{"ID" : "13", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_dense_fu_216.temp_7_V_U", "Parent" : "5"},
+	{"ID" : "14", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_dense_fu_216.tempWeight_0_V_U", "Parent" : "5"},
+	{"ID" : "15", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_dense_fu_216.tempWeight_1_V_U", "Parent" : "5"},
+	{"ID" : "16", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_dense_fu_216.tempWeight_2_V_U", "Parent" : "5"},
+	{"ID" : "17", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_dense_fu_216.tempWeight_3_V_U", "Parent" : "5"},
+	{"ID" : "18", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_dense_fu_216.tempWeight_4_V_U", "Parent" : "5"},
+	{"ID" : "19", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_dense_fu_216.tempWeight_5_V_U", "Parent" : "5"},
+	{"ID" : "20", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_dense_fu_216.tempWeight_6_V_U", "Parent" : "5"},
+	{"ID" : "21", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_dense_fu_216.tempWeight_7_V_U", "Parent" : "5"},
+	{"ID" : "22", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_conv1_fu_226", "Parent" : "0", "Child" : ["23"],
 		"CDFG" : "conv1",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1",
@@ -311,8 +311,8 @@ set RtlHierarchyInfo {[
 			{"Name" : "outputConv_V_offset", "Type" : "None", "Direction" : "I"},
 			{"Name" : "weight_V_offset", "Type" : "None", "Direction" : "I"},
 			{"Name" : "bias_V_offset", "Type" : "None", "Direction" : "I"}]},
-	{"ID" : "23", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_conv1_fu_208.temp_V_U", "Parent" : "22"},
-	{"ID" : "24", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_pool_fu_218", "Parent" : "0",
+	{"ID" : "23", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_conv1_fu_226.temp_V_U", "Parent" : "22"},
+	{"ID" : "24", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_pool_fu_236", "Parent" : "0",
 		"CDFG" : "pool",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1",
@@ -355,18 +355,18 @@ set ArgLastReadFirstWriteLatency {
 		outputDense_V {Type I LastRead 0 FirstWrite -1}
 		fcWeight_V {Type I LastRead 0 FirstWrite -1}
 		fcBias_V {Type I LastRead 0 FirstWrite -1}}
-	dense {
-		input_V {Type IO LastRead 28 FirstWrite 27}
-		input_V_offset {Type I LastRead 0 FirstWrite -1}
-		outputDense_V_offset {Type I LastRead 6 FirstWrite -1}
-		fcWeight_V_offset {Type I LastRead 6 FirstWrite -1}
-		fcBias_V_offset {Type I LastRead 6 FirstWrite -1}}
 	conv2 {
 		input_V {Type IO LastRead 93 FirstWrite 92}
 		input_V_offset {Type I LastRead 0 FirstWrite -1}
 		outputConv_V_offset {Type I LastRead 6 FirstWrite -1}
 		weight_V_offset {Type I LastRead 6 FirstWrite -1}
 		bias_V_offset {Type I LastRead 6 FirstWrite -1}}
+	dense {
+		input_V {Type IO LastRead 28 FirstWrite 27}
+		input_V_offset {Type I LastRead 0 FirstWrite -1}
+		outputDense_V_offset {Type I LastRead 6 FirstWrite -1}
+		fcWeight_V_offset {Type I LastRead 6 FirstWrite -1}
+		fcBias_V_offset {Type I LastRead 6 FirstWrite -1}}
 	conv1 {
 		input_V {Type IO LastRead 29 FirstWrite 28}
 		input_V_offset {Type I LastRead 0 FirstWrite -1}
@@ -384,8 +384,8 @@ set ArgLastReadFirstWriteLatency {
 set hasDtUnsupportedChannel 0
 
 set PerformanceInfo {[
-	{"Name" : "Latency", "Min" : "358926", "Max" : "606590"}
-	, {"Name" : "Interval", "Min" : "358927", "Max" : "606591"}
+	{"Name" : "Latency", "Min" : "358786", "Max" : "606450"}
+	, {"Name" : "Interval", "Min" : "358787", "Max" : "606451"}
 ]}
 
 set PipelineEnableSignalInfo {[
