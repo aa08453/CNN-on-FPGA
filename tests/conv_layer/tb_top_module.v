@@ -8,11 +8,12 @@ module top_tb;
     parameter H = 28;
     parameter W = 28;
     parameter OC = 7;
-    parameter IC = 3;
+    parameter IC = 0;
 
     // Testbench signals
     reg clk;
     reg rst;
+    reg [3:0] res;
 
     // DUT instantiation
     top #(
@@ -23,7 +24,8 @@ module top_tb;
         .IC(IC)
     ) dut (
         .clk(clk),
-        .rst(rst)
+        .rst(rst),
+        .res(res)
     );
 
     // Clock generation (20ns period = 50MHz)
@@ -38,11 +40,11 @@ module top_tb;
         rst = 0;
 
         // Apply reset
-        #50;
+        #10;
         rst = 1;
 
         // Wait and let internal FSM run
-        #15000000;  // Adjust as needed for simulation to finish
+        #10000000;  // Adjust as needed for simulation to finish
 
         $display("Simulation finished.");
         $finish;

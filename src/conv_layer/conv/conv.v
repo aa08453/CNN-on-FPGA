@@ -8,35 +8,35 @@ module conv
     input wire rst,
     input wire conv,
     
-    input wire [7:0] kernel0, kernel1, kernel2,
+    input wire signed [7:0] kernel0, kernel1, kernel2,
         kernel3, kernel4, kernel5,
         kernel6, kernel7, kernel8,
 
-    output [7:0] result,
+    output signed [7:0] result,
     output [9:0] address,
     output wire store,
     output wire done
 );
 
-    wire add, load, acc_enable, count_enable, flush_acc;
+    wire addre, load, acc_enable, count_enable, flush_acc;
     wire [1:0] mux_sel;
 
-    wire load_full_patch; 
+    wire load_full_patch, load_done; 
 
     wire [9:0] pixel_addr0, pixel_addr1, pixel_addr2,
                pixel_addr3, pixel_addr4, pixel_addr5,
                pixel_addr6, pixel_addr7, pixel_addr8;
 
-    wire [7:0] pixel0, pixel1, pixel2,
+    wire signed [7:0] pixel0, pixel1, pixel2,
                pixel3, pixel4, pixel5,
                pixel6, pixel7, pixel8;
 
-    wire [7:0] sum;
+    wire signed [7:0] sum;
     wire [4:0] i, j;
 
     conv_control control_inst(
-        .clk(clk), .rst_n(rst), .done(done), .load(load), .mux_sel(mux_sel), .conv(conv),
-        .acc_enable(acc_enable), .counter_enable(count_enable), .addr(add), .store(store), .flush_acc(flush_acc)
+        .clk(clk), .rst_n(rst), .done(done), .load(load), .mux_sel(mux_sel), .conv(conv), .add(add), .load_done(load_done),
+        .acc_enable(acc_enable), .counter_enable(count_enable), .addr(addre), .store(store), .flush_acc(flush_acc)
     );
 
     counters counters_inst(
@@ -45,7 +45,7 @@ module conv
     );
 
     patch_addr_gen #(.H(H), .W(W)) patch_addr_inst (
-        .clk(clk), .rst(rst), .addr(add), .i(i), .j(j),
+        .clk(clk), .rst(rst), .addr(addre), .i(i), .j(j),
         .pixel_addr0(pixel_addr0), .pixel_addr1(pixel_addr1), .pixel_addr2(pixel_addr2),
         .pixel_addr3(pixel_addr3), .pixel_addr4(pixel_addr4), .pixel_addr5(pixel_addr5),
         .pixel_addr6(pixel_addr6), .pixel_addr7(pixel_addr7), .pixel_addr8(pixel_addr8),
@@ -53,7 +53,7 @@ module conv
     );
 
     patch_data_latch patch_data_inst (
-        .clk(clk), .rst(rst), .load(load), .load_full_patch(load_full_patch),
+        .clk(clk), .rst(rst), .load(load), .load_full_patch(load_full_patch), .load_done(load_done),
         .pixel_addr0(pixel_addr0), .pixel_addr1(pixel_addr1), .pixel_addr2(pixel_addr2),
         .pixel_addr3(pixel_addr3), .pixel_addr4(pixel_addr4), .pixel_addr5(pixel_addr5),
         .pixel_addr6(pixel_addr6), .pixel_addr7(pixel_addr7), .pixel_addr8(pixel_addr8),
@@ -63,7 +63,7 @@ module conv
     );
 
     comp comp_inst (
-        .clk(clk), .select(mux_sel), .sum(sum), .rst(rst),
+        .clk(clk), .select(mux_sel), .sum(sum), .rst(rst), .add(add),
         .image_data0(pixel0), .image_data1(pixel1), .image_data2(pixel2),
         .image_data3(pixel3), .image_data4(pixel4), .image_data5(pixel5),
         .image_data6(pixel6), .image_data7(pixel7), .image_data8(pixel8),

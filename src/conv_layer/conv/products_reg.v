@@ -7,29 +7,35 @@ module products_reg
     input wire rst,
     input wire acc_enable,
     input wire flush_acc,
-    input wire [7:0] sum,
+    input wire signed [7:0] sum,
     input wire [4:0] i,
     input wire [4:0] j,
-    output reg [7:0] result,
+    output reg signed [7:0] result,
     output reg [9:0] addr
 );
 
-reg [7:0] inter; // Intermediate value
+// reg signed [7:0] inter; // Intermediate value
 
 always @(posedge clk or negedge rst) 
 begin
-    if (!rst or flush_acc) 
+    if (!rst) 
     begin
-        result <= 8'd0;
+        result <= 8'sd0;
+        // inter <= 8'sd0;
         addr <= 10'd0;
-        inter <= 8'd0;
     end 
     else if (acc_enable)
     begin
-        inter <= result + sum;
-        result <= inter;
+        // inter <= result + sum;
+        result <= clamp(result + sum);
         addr <= i * W + j;
     end
+    else if (flush_acc)
+    begin
+        // inter <= 8'sd0;
+        result <= 8'sd0;
+    end
+
 end
 
 endmodule
