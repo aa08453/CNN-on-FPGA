@@ -25,9 +25,9 @@ module top
     reg [7:0] bias;
 
     wire [3:0] out_c;
-    wire [3:0] x;
+    wire [3:0] y;
     wire [2:0] in_c;
-    wire [9:0] addr, next_addr;
+    wire [9:0] addr;
     wire [7:0] result;
     
     load_kernel load_kernel_inst (
@@ -41,8 +41,9 @@ module top
         .clk(clk), .rst(rst), .c_load(c_load), .bias(bias));
 
     result_registerFile #( .CHANNEL_SIZE(CHANNEL_SIZE))
-    result_inst (.clk(clk), .rst(rst), .out_c(out_c), .store(store), .pool(pool), .pool_done(pool_done), .next_addr(next_addr), 
-            .bias(bias),.addr(pool ? next_addr : addr),.cout_done(cout_done), .value(result), .first_write(in_c == 3'b001), .x(x));
+    result_inst (.clk(clk), .rst(rst), .out_c(out_c), .store(store), .pool(pool), .pool_done(pool_done), .y(y), 
+            .bias(bias),.addr(addr),.cout_done(cout_done), .value(result), .first_write(in_c == 3'b001) 
+        );
 
     top_control control_inst(
         .clk(clk), .rst_n(rst),  .cout(cout), .c_load(c_load), .pool(pool), 
@@ -73,7 +74,7 @@ module top
         .kernel6(kernel6), .kernel7(kernel7), .kernel8(kernel8),
         .done(conv_done), .result(result), .address(addr));
         
-   assign res = x;
+   assign res = y;
 
 
 endmodule

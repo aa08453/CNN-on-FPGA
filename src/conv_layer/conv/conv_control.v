@@ -10,6 +10,7 @@ module conv_control (
     output reg [1:0] mux_sel,
     output reg acc_enable,
     output reg counter_enable,
+    output reg flush_acc,
     output reg store
 );
 
@@ -46,6 +47,7 @@ begin
     load           = 1'b0;
     mux_sel        = 2'b00;
     acc_enable     = 1'b0;
+    flush_acc      = 1'b0;
     store          = 1'b0;
     counter_enable = 1'b0;
 
@@ -59,6 +61,7 @@ begin
         ADDR:
         begin
             addr = 1'b1;
+            flush_acc = 1'b1;
             next_state = LOAD;
         end
 

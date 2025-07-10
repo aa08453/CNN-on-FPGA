@@ -73,11 +73,11 @@ begin
             next_state = conv_done ? (is_single_input_channel ? COUNT_OUT : COUNT_IN) : CONV;
         end
 
-         POOL:
-         begin
-             pool = 1'b1;
-             next_state = pool_done ? IDLE : POOL;
-         end  
+        POOL:
+        begin
+            pool = 1'b1;
+            next_state = pool_done ? IDLE : POOL;
+        end  
 
         IDLE:
         begin

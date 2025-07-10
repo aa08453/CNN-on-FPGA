@@ -18,7 +18,7 @@ module conv
     output wire done
 );
 
-    wire add, load, acc_enable, count_enable;
+    wire add, load, acc_enable, count_enable, flush_acc;
     wire [1:0] mux_sel;
 
     wire load_full_patch; 
@@ -36,7 +36,7 @@ module conv
 
     conv_control control_inst(
         .clk(clk), .rst_n(rst), .done(done), .load(load), .mux_sel(mux_sel), .conv(conv),
-        .acc_enable(acc_enable), .counter_enable(count_enable), .addr(add), .store(store)
+        .acc_enable(acc_enable), .counter_enable(count_enable), .addr(add), .store(store), .flush_acc(flush_acc)
     );
 
     counters counters_inst(
@@ -73,7 +73,7 @@ module conv
     );
 
     products_reg products_reg_inst (
-        .clk(clk), .rst(rst), .i(i), .j(j),
+        .clk(clk), .rst(rst), .i(i), .j(j), .flush_acc(flush_acc),
         .acc_enable(acc_enable), .sum(sum), .result(result), .addr(address)
     );
 
