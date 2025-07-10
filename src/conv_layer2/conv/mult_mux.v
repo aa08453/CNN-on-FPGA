@@ -1,6 +1,6 @@
 module mult_mux 
 (
-    input mul,
+    input [1:0] sel,
     input [7:0] a0,
     input [7:0] k0,
     input [7:0] a1,
@@ -20,8 +20,7 @@ module mult_mux
             2'b01: next_product = (a0 * k0) >> 1;
             2'b10: next_product = (a1 * k1) >> 1;
             2'b11: next_product = (a2 * k2) >> 1;
-            // 2'b00: product = 16'b0;
-            // default: product = 16'b0;
+            default:;
         endcase
     end
 

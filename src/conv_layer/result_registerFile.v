@@ -37,6 +37,16 @@ module result_registerFile
 
     output reg [3:0] y, // for synthesis
     output reg pool_done
+
+    input wire addr_gen,
+    output reg [7:0] pixel0;
+    output reg [7:0] pixel1;
+    output reg [7:0] pixel2;
+    output reg [7:0] pixel3;
+    output reg [7:0] pixel4;
+    output reg [7:0] pixel5;
+    output reg [7:0] pixel6;
+    output reg [7:0] pixel7;
 );
 
     // Eight independent memory banks for eight output channels
@@ -134,7 +144,7 @@ module result_registerFile
             $writememh("result_mem7.mem", result_mem7);
         end
 
-        if (pool_done)
+        else if (pool_done)
         begin
             $writememh("pool0.mem", result_mem0);
             $writememh("pool1.mem", result_mem1);
@@ -145,8 +155,118 @@ module result_registerFile
             $writememh("pool6.mem", result_mem6);
             $writememh("pool7.mem", result_mem7);
         end
+
+        else if (addr_gen)
+        begin
+            pixel0 <= result_mem0[addr];
+            pixel1 <= result_mem1[addr];
+            pixel2 <= result_mem2[addr];
+            pixel3 <= result_mem3[addr];
+            pixel4 <= result_mem4[addr];
+            pixel5 <= result_mem5[addr];
+            pixel6 <= result_mem6[addr];
+            pixel7 <= result_mem7[addr];
+        end
     end
     
     assign y = out_c;
 
 endmodule
+
+
+// case (mem)
+            // 3'd0:
+            //     begin
+            //     pixel0 <= result_mem0[read_addr0];
+            //     pixel1 <= result_mem0[read_addr1];
+            //     pixel2 <= result_mem0[read_addr2];
+            //     pixel3 <= result_mem0[read_addr3];
+            //     pixel4 <= result_mem0[read_addr4];
+            //     pixel5 <= result_mem0[read_addr5];
+            //     pixel6 <= result_mem0[read_addr6];
+            //     pixel7 <= result_mem0[read_addr7];
+            //     end
+            // 3'd1:
+            //     begin
+            //     pixel0 <= result_mem1[read_addr0];
+            //     pixel1 <= result_mem1[read_addr1];
+            //     pixel2 <= result_mem1[read_addr2];
+            //     pixel3 <= result_mem1[read_addr3];
+            //     pixel4 <= result_mem1[read_addr4];
+            //     pixel5 <= result_mem1[read_addr5];
+            //     pixel6 <= result_mem1[read_addr6];
+            //     pixel7 <= result_mem1[read_addr7];
+            //     end
+
+            // 3'd2:
+            //     begin
+            //     pixel0 <= result_mem2[read_addr0];
+            //     pixel1 <= result_mem2[read_addr1];
+            //     pixel2 <= result_mem2[read_addr2];
+            //     pixel3 <= result_mem2[read_addr3];
+            //     pixel4 <= result_mem2[read_addr4];
+            //     pixel5 <= result_mem2[read_addr5];
+            //     pixel6 <= result_mem2[read_addr6];
+            //     pixel7 <= result_mem2[read_addr7];
+            //     end
+
+            // 3'd3:
+            //     begin
+            //     pixel0 <= result_mem3[read_addr0];
+            //     pixel1 <= result_mem3[read_addr1];
+            //     pixel2 <= result_mem3[read_addr2];
+            //     pixel3 <= result_mem3[read_addr3];
+            //     pixel4 <= result_mem3[read_addr4];
+            //     pixel5 <= result_mem3[read_addr5];
+            //     pixel6 <= result_mem3[read_addr6];
+            //     pixel7 <= result_mem3[read_addr7];
+            //     end
+
+            // 3'd4:
+            //     begin
+            //     pixel0 <= result_mem4[read_addr0];
+            //     pixel1 <= result_mem4[read_addr1];
+            //     pixel2 <= result_mem4[read_addr2];
+            //     pixel3 <= result_mem4[read_addr3];
+            //     pixel4 <= result_mem4[read_addr4];
+            //     pixel5 <= result_mem4[read_addr5];
+            //     pixel6 <= result_mem4[read_addr6];
+            //     pixel7 <= result_mem4[read_addr7];
+            //     end
+
+            // 3'd5:
+            //     begin
+            //     pixel0 <= result_mem5[read_addr0];
+            //     pixel1 <= result_mem5[read_addr1];
+            //     pixel2 <= result_mem5[read_addr2];
+            //     pixel3 <= result_mem5[read_addr3];
+            //     pixel4 <= result_mem5[read_addr4];
+            //     pixel5 <= result_mem5[read_addr5];
+            //     pixel6 <= result_mem5[read_addr6];
+            //     pixel7 <= result_mem5[read_addr7];
+            //     end
+
+            // 3'd6:
+            //     begin
+            //     pixel0 <= result_mem6[read_addr0];
+            //     pixel1 <= result_mem6[read_addr1];
+            //     pixel2 <= result_mem6[read_addr2];
+            //     pixel3 <= result_mem6[read_addr3];
+            //     pixel4 <= result_mem6[read_addr4];
+            //     pixel5 <= result_mem6[read_addr5];
+            //     pixel6 <= result_mem6[read_addr6];
+            //     pixel7 <= result_mem6[read_addr7];
+            //     end
+
+            // 3'd7:
+            //     begin
+            //     pixel0 <= result_mem7[read_addr0];
+            //     pixel1 <= result_mem7[read_addr1];
+            //     pixel2 <= result_mem7[read_addr2];
+            //     pixel3 <= result_mem7[read_addr3];
+            //     pixel4 <= result_mem7[read_addr4];
+            //     pixel5 <= result_mem7[read_addr5];
+            //     pixel6 <= result_mem7[read_addr6];
+            //     pixel7 <= result_mem7[read_addr7];
+            //     end
+            // endcase
