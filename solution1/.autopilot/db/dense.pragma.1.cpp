@@ -6371,6 +6371,8 @@ void dense(
 );
 # 3 "cnn/src/dense.cpp" 2
 
+
+
 void dense(
   fixed input[], fixed outputDense[],
   fixed fcWeight[], fixed fcBias[],
@@ -6383,17 +6385,27 @@ void dense(
   for(int i=0; i<size; i++) {
    temp[i] = input[i];
   }
-_ssdm_SpecArrayPartition( temp, 1, "CYCLIC", 16, "");
+ int weightSize = 7840;
+ fixed tempWeight[7840];
+   for(int i=0; i<weightSize; i++) {
+    tempWeight[i] = fcWeight[i];
+   }
+
+_ssdm_SpecArrayPartition( temp, 1, "CYCLIC", 8, "");
+_ssdm_SpecArrayPartition( tempWeight, 1, "CYCLIC", 8, "");
+
 
 
 
  for (int c = 0; c < numClasses; c++) {
         fixed sum = fcBias[c];
 
-  for (int i = 0; i < inputFeatures; i++) {
-_ssdm_Unroll(1, 0, 28, "");
- sum += temp[i] * fcWeight[c * inputFeatures + i];
-  }
-  outputDense[c] = sum;
+        for (int i = 0; i < inputFeatures; i++) {
+_ssdm_Unroll(1, 0, 112, "");
+ int offset = c*inputFeatures + i;
+         int multRes = temp[i] * tempWeight[offset];
+                sum += multRes;
+            }
+        outputDense[c] = sum;
     }
 }

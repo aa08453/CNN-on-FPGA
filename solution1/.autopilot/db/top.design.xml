@@ -5,20 +5,20 @@
 <ModuleName>top</ModuleName>
 <InstancesList>
 <Instance>
-<InstName>grp_conv2_fu_188</InstName>
-<ModuleName>conv2</ModuleName>
+<InstName>grp_dense_fu_188</InstName>
+<ModuleName>dense</ModuleName>
 <IsCompInst>true</IsCompInst>
 <ID>188</ID>
 </Instance>
 <Instance>
-<InstName>grp_conv1_fu_198</InstName>
-<ModuleName>conv1</ModuleName>
+<InstName>grp_conv2_fu_198</InstName>
+<ModuleName>conv2</ModuleName>
 <IsCompInst>true</IsCompInst>
 <ID>198</ID>
 </Instance>
 <Instance>
-<InstName>grp_dense_fu_208</InstName>
-<ModuleName>dense</ModuleName>
+<InstName>grp_conv1_fu_208</InstName>
+<ModuleName>conv1</ModuleName>
 <IsCompInst>true</IsCompInst>
 <ID>208</ID>
 </Instance>
@@ -39,41 +39,41 @@
 <SummaryOfTimingAnalysis>
 <TargetClockPeriod>10.00</TargetClockPeriod>
 <ClockUncertainty>1.25</ClockUncertainty>
-<EstimatedClockPeriod>11.169</EstimatedClockPeriod>
+<EstimatedClockPeriod>8.750</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
-<Best-caseLatency>65107</Best-caseLatency>
-<Average-caseLatency>65107</Average-caseLatency>
-<Worst-caseLatency>65107</Worst-caseLatency>
-<Best-caseRealTimeLatency>0.727 ms</Best-caseRealTimeLatency>
-<Average-caseRealTimeLatency>0.727 ms</Average-caseRealTimeLatency>
-<Worst-caseRealTimeLatency>0.727 ms</Worst-caseRealTimeLatency>
-<PipelineInitiationInterval>65107</PipelineInitiationInterval>
+<Best-caseLatency>64312</Best-caseLatency>
+<Average-caseLatency>64312</Average-caseLatency>
+<Worst-caseLatency>64312</Worst-caseLatency>
+<Best-caseRealTimeLatency>0.643 ms</Best-caseRealTimeLatency>
+<Average-caseRealTimeLatency>0.643 ms</Average-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>0.643 ms</Worst-caseRealTimeLatency>
+<PipelineInitiationInterval>64312</PipelineInitiationInterval>
 <PipelineType>none</PipelineType>
 </SummaryOfOverallLatency>
 <SummaryOfLoopLatency>
 <Loop1>
 <Name>Loop 1</Name>
 <TripCount>784</TripCount>
-<Latency>2352</Latency>
-<IterationLatency>3</IterationLatency>
-<PipelineDepth>3</PipelineDepth>
+<Latency>1568</Latency>
+<IterationLatency>2</IterationLatency>
+<PipelineDepth>2</PipelineDepth>
 </Loop1>
 <Loop2>
 <Name>Loop 2</Name>
 <TripCount>6272</TripCount>
-<Latency>62746</Latency>
+<Latency>62735</Latency>
 <PipelineII>10</PipelineII>
-<PipelineDepth>37</PipelineDepth>
+<PipelineDepth>26</PipelineDepth>
 </Loop2>
 </SummaryOfLoopLatency>
 </PerformanceEstimates>
 <AreaEstimates>
 <Resources>
-<BRAM_18K>0</BRAM_18K>
-<DSP48E>18</DSP48E>
-<FF>6657</FF>
-<LUT>8573</LUT>
+<BRAM_18K>1</BRAM_18K>
+<DSP48E>0</DSP48E>
+<FF>1380</FF>
+<LUT>2812</LUT>
 <URAM>0</URAM>
 </Resources>
 </AreaEstimates>
@@ -1386,46 +1386,41 @@
 <SummaryOfTimingAnalysis>
 <TargetClockPeriod>10.00</TargetClockPeriod>
 <ClockUncertainty>1.25</ClockUncertainty>
-<EstimatedClockPeriod>10.693</EstimatedClockPeriod>
+<EstimatedClockPeriod>8.750</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
-<Best-caseLatency>241502</Best-caseLatency>
-<Average-caseLatency>247774</Average-caseLatency>
-<Worst-caseLatency>247774</Worst-caseLatency>
-<Best-caseRealTimeLatency>2.582 ms</Best-caseRealTimeLatency>
-<Average-caseRealTimeLatency>2.649 ms</Average-caseRealTimeLatency>
-<Worst-caseRealTimeLatency>2.649 ms</Worst-caseRealTimeLatency>
-<PipelineInitiationInterval>241502 ~ 247774</PipelineInitiationInterval>
+<Best-caseLatency>232089</Best-caseLatency>
+<Average-caseLatency>232089</Average-caseLatency>
+<Worst-caseLatency>232089</Worst-caseLatency>
+<Best-caseRealTimeLatency>2.321 ms</Best-caseRealTimeLatency>
+<Average-caseRealTimeLatency>2.321 ms</Average-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>2.321 ms</Worst-caseRealTimeLatency>
+<PipelineInitiationInterval>232089</PipelineInitiationInterval>
 <PipelineType>none</PipelineType>
 </SummaryOfOverallLatency>
 <SummaryOfLoopLatency>
 <Loop1>
 <Name>Loop 1</Name>
-<TripCount>6272</TripCount>
-<Latency>12544 ~ 18816</Latency>
-<IterationLatency>
-<range>
-<min>2</min>
-<max>3</max>
-</range>
-</IterationLatency>
-<PipelineDepth>2 ~ 3</PipelineDepth>
+<TripCount>1568</TripCount>
+<Latency>3136</Latency>
+<IterationLatency>2</IterationLatency>
+<PipelineDepth>2</PipelineDepth>
 </Loop1>
 <Loop2>
 <Name>Loop 2</Name>
 <TripCount>3136</TripCount>
-<Latency>228949</Latency>
+<Latency>228944</Latency>
 <PipelineII>73</PipelineII>
-<PipelineDepth>95</PipelineDepth>
+<PipelineDepth>90</PipelineDepth>
 </Loop2>
 </SummaryOfLoopLatency>
 </PerformanceEstimates>
 <AreaEstimates>
 <Resources>
-<BRAM_18K>8</BRAM_18K>
-<DSP48E>72</DSP48E>
-<FF>26565</FF>
-<LUT>27234</LUT>
+<BRAM_18K>1</BRAM_18K>
+<DSP48E>0</DSP48E>
+<FF>4572</FF>
+<LUT>12876</LUT>
 <URAM>0</URAM>
 </Resources>
 </AreaEstimates>
@@ -2046,13 +2041,13 @@
 <EstimatedClockPeriod>8.750</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
-<Best-caseLatency>81220</Best-caseLatency>
-<Average-caseLatency>81220</Average-caseLatency>
-<Worst-caseLatency>81220</Worst-caseLatency>
-<Best-caseRealTimeLatency>0.812 ms</Best-caseRealTimeLatency>
-<Average-caseRealTimeLatency>0.812 ms</Average-caseRealTimeLatency>
-<Worst-caseRealTimeLatency>0.812 ms</Worst-caseRealTimeLatency>
-<PipelineInitiationInterval>81220</PipelineInitiationInterval>
+<Best-caseLatency>26977</Best-caseLatency>
+<Average-caseLatency>26977</Average-caseLatency>
+<Worst-caseLatency>26977</Worst-caseLatency>
+<Best-caseRealTimeLatency>0.270 ms</Best-caseRealTimeLatency>
+<Average-caseRealTimeLatency>0.270 ms</Average-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>0.270 ms</Worst-caseRealTimeLatency>
+<PipelineInitiationInterval>26977</PipelineInitiationInterval>
 <PipelineType>none</PipelineType>
 </SummaryOfOverallLatency>
 <SummaryOfLoopLatency>
@@ -2065,26 +2060,33 @@
 </Loop1>
 <Loop2>
 <Name>Loop 2</Name>
-<TripCount>10</TripCount>
-<Latency>78860</Latency>
-<IterationLatency>7886</IterationLatency>
-<PipelineDepth>7886</PipelineDepth>
-<Loop2.1>
-<Name>Loop 2.1</Name>
-<TripCount>28</TripCount>
-<Latency>7868</Latency>
-<IterationLatency>281</IterationLatency>
-<PipelineDepth>281</PipelineDepth>
-</Loop2.1>
+<TripCount>7840</TripCount>
+<Latency>23520</Latency>
+<IterationLatency>3</IterationLatency>
+<PipelineDepth>3</PipelineDepth>
 </Loop2>
+<Loop3>
+<Name>Loop 3</Name>
+<TripCount>10</TripCount>
+<Latency>1090</Latency>
+<IterationLatency>109</IterationLatency>
+<PipelineDepth>109</PipelineDepth>
+<Loop3.1>
+<Name>Loop 3.1</Name>
+<TripCount>7</TripCount>
+<Latency>91</Latency>
+<IterationLatency>13</IterationLatency>
+<PipelineDepth>13</PipelineDepth>
+</Loop3.1>
+</Loop3>
 </SummaryOfLoopLatency>
 </PerformanceEstimates>
 <AreaEstimates>
 <Resources>
-<BRAM_18K>0</BRAM_18K>
-<DSP48E>28</DSP48E>
-<FF>3192</FF>
-<LUT>5188</LUT>
+<BRAM_18K>8</BRAM_18K>
+<DSP48E>0</DSP48E>
+<FF>1658</FF>
+<LUT>15419</LUT>
 <URAM>0</URAM>
 </Resources>
 </AreaEstimates>
@@ -2702,25 +2704,25 @@
 <SummaryOfTimingAnalysis>
 <TargetClockPeriod>10.00</TargetClockPeriod>
 <ClockUncertainty>1.25</ClockUncertainty>
-<EstimatedClockPeriod>11.169</EstimatedClockPeriod>
+<EstimatedClockPeriod>8.750</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
-<Best-caseLatency>423377</Best-caseLatency>
+<Best-caseLatency>358926</Best-caseLatency>
 <Average-caseLatency>undef</Average-caseLatency>
-<Worst-caseLatency>677313</Worst-caseLatency>
-<Best-caseRealTimeLatency>4.729 ms</Best-caseRealTimeLatency>
+<Worst-caseLatency>606590</Worst-caseLatency>
+<Best-caseRealTimeLatency>3.589 ms</Best-caseRealTimeLatency>
 <Average-caseRealTimeLatency>undef</Average-caseRealTimeLatency>
-<Worst-caseRealTimeLatency>7.565 ms</Worst-caseRealTimeLatency>
-<PipelineInitiationInterval>423378 ~ 677314</PipelineInitiationInterval>
+<Worst-caseRealTimeLatency>6.066 ms</Worst-caseRealTimeLatency>
+<PipelineInitiationInterval>358927 ~ 606591</PipelineInitiationInterval>
 <PipelineType>none</PipelineType>
 </SummaryOfOverallLatency>
 </PerformanceEstimates>
 <AreaEstimates>
 <Resources>
-<BRAM_18K>10</BRAM_18K>
-<DSP48E>118</DSP48E>
-<FF>38483</FF>
-<LUT>44659</LUT>
+<BRAM_18K>12</BRAM_18K>
+<DSP48E>0</DSP48E>
+<FF>9679</FF>
+<LUT>34771</LUT>
 <URAM>0</URAM>
 </Resources>
 </AreaEstimates>

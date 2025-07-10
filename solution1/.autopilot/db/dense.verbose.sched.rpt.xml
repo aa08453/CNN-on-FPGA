@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'dense'" level="0">
-<item name = "Date">Wed Jul  9 15:09:00 2025
+<item name = "Date">Thu Jul 10 14:52:46 2025
 </item>
 <item name = "Version">2020.1 (Build 2897737 on Wed May 27 20:21:37 MDT 2020)</item>
 <item name = "Project">cnn</item>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">81220, 81220, 0.812 ms, 0.812 ms, 81220, 81220, none</column>
+<column name="">26977, 26977, 0.270 ms, 0.270 ms, 26977, 26977, none</column>
 </table>
 </item>
 <item name = "Detail">
@@ -36,8 +36,9 @@
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
 <column name="- Loop 1">2352, 2352, 3, -, -, 784, no</column>
-<column name="- Loop 2">78860, 78860, 7886, -, -, 10, no</column>
-<column name=" + Loop 2.1">7868, 7868, 281, -, -, 28, no</column>
+<column name="- Loop 2">23520, 23520, 3, -, -, 7840, no</column>
+<column name="- Loop 3">1090, 1090, 109, -, -, 10, no</column>
+<column name=" + Loop 3.1">91, 91, 13, -, -, 7, no</column>
 </table>
 </item>
 </section>

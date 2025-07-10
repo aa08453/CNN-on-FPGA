@@ -971,10 +971,10 @@
             <Obj>
               <type>0</type>
               <id>42</id>
-              <name>_ln39</name>
+              <name>_ln40</name>
               <fileName>cnn/src/eight.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>39</lineNumber>
+              <lineNumber>40</lineNumber>
               <contextFuncName>top</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
@@ -989,13 +989,13 @@
                         <first>cnn/src/eight.cpp</first>
                         <second>top</second>
                       </first>
-                      <second>39</second>
+                      <second>40</second>
                     </item>
                   </second>
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>grp_conv1_fu_198</rtlName>
+              <rtlName>grp_conv1_fu_208</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>0</bitwidth>
@@ -1024,10 +1024,10 @@
             <Obj>
               <type>0</type>
               <id>43</id>
-              <name>_ln40</name>
+              <name>_ln41</name>
               <fileName>cnn/src/eight.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>40</lineNumber>
+              <lineNumber>41</lineNumber>
               <contextFuncName>top</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
@@ -1042,7 +1042,7 @@
                         <first>cnn/src/eight.cpp</first>
                         <second>top</second>
                       </first>
-                      <second>40</second>
+                      <second>41</second>
                     </item>
                   </second>
                 </item>
@@ -1080,10 +1080,10 @@
             <Obj>
               <type>0</type>
               <id>44</id>
-              <name>_ln42</name>
+              <name>_ln43</name>
               <fileName>cnn/src/eight.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>42</lineNumber>
+              <lineNumber>43</lineNumber>
               <contextFuncName>top</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
@@ -1098,13 +1098,13 @@
                         <first>cnn/src/eight.cpp</first>
                         <second>top</second>
                       </first>
-                      <second>42</second>
+                      <second>43</second>
                     </item>
                   </second>
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>grp_conv2_fu_188</rtlName>
+              <rtlName>grp_conv2_fu_198</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>0</bitwidth>
@@ -1135,10 +1135,10 @@
             <Obj>
               <type>0</type>
               <id>45</id>
-              <name>_ln43</name>
+              <name>_ln44</name>
               <fileName>cnn/src/eight.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>43</lineNumber>
+              <lineNumber>44</lineNumber>
               <contextFuncName>top</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
@@ -1153,7 +1153,7 @@
                         <first>cnn/src/eight.cpp</first>
                         <second>top</second>
                       </first>
-                      <second>43</second>
+                      <second>44</second>
                     </item>
                   </second>
                 </item>
@@ -1191,10 +1191,10 @@
             <Obj>
               <type>0</type>
               <id>46</id>
-              <name>_ln45</name>
+              <name>_ln46</name>
               <fileName>cnn/src/eight.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>45</lineNumber>
+              <lineNumber>46</lineNumber>
               <contextFuncName>top</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
@@ -1209,13 +1209,13 @@
                         <first>cnn/src/eight.cpp</first>
                         <second>top</second>
                       </first>
-                      <second>45</second>
+                      <second>46</second>
                     </item>
                   </second>
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>grp_dense_fu_208</rtlName>
+              <rtlName>grp_dense_fu_188</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>0</bitwidth>
@@ -1246,10 +1246,10 @@
             <Obj>
               <type>0</type>
               <id>47</id>
-              <name>_ln48</name>
+              <name>_ln49</name>
               <fileName>cnn/src/eight.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>48</lineNumber>
+              <lineNumber>49</lineNumber>
               <contextFuncName>top</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
@@ -1264,7 +1264,7 @@
                         <first>cnn/src/eight.cpp</first>
                         <second>top</second>
                       </first>
-                      <second>48</second>
+                      <second>49</second>
                     </item>
                   </second>
                 </item>
@@ -1910,8 +1910,8 @@
         <mDepth>-1</mDepth>
         <mMinTripCount>-1</mMinTripCount>
         <mMaxTripCount>-1</mMaxTripCount>
-        <mMinLatency>423377</mMinLatency>
-        <mMaxLatency>677313</mMaxLatency>
+        <mMinLatency>358926</mMinLatency>
+        <mMaxLatency>606590</mMaxLatency>
         <mIsDfPipe>0</mIsDfPipe>
         <mDfPipe class_id="-1"/>
       </item>
@@ -2353,25 +2353,25 @@
         <count>6</count>
         <item_version>0</item_version>
         <item class_id="36" tracking_level="0" version="0">
-          <first>grp_conv1_fu_198 (conv1)</first>
+          <first>grp_conv1_fu_208 (conv1)</first>
           <second class_id="37" tracking_level="0" version="0">
             <count>5</count>
             <item_version>0</item_version>
             <item class_id="38" tracking_level="0" version="0">
               <first>BRAM</first>
-              <second>0</second>
+              <second>1</second>
             </item>
             <item>
               <first>DSP48E</first>
-              <second>18</second>
+              <second>0</second>
             </item>
             <item>
               <first>FF</first>
-              <second>6657</second>
+              <second>1380</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>8573</second>
+              <second>2812</second>
             </item>
             <item>
               <first>URAM</first>
@@ -2380,7 +2380,34 @@
           </second>
         </item>
         <item>
-          <first>grp_conv2_fu_188 (conv2)</first>
+          <first>grp_conv2_fu_198 (conv2)</first>
+          <second>
+            <count>5</count>
+            <item_version>0</item_version>
+            <item>
+              <first>BRAM</first>
+              <second>1</second>
+            </item>
+            <item>
+              <first>DSP48E</first>
+              <second>0</second>
+            </item>
+            <item>
+              <first>FF</first>
+              <second>4572</second>
+            </item>
+            <item>
+              <first>LUT</first>
+              <second>12876</second>
+            </item>
+            <item>
+              <first>URAM</first>
+              <second>0</second>
+            </item>
+          </second>
+        </item>
+        <item>
+          <first>grp_dense_fu_188 (dense)</first>
           <second>
             <count>5</count>
             <item_version>0</item_version>
@@ -2390,42 +2417,15 @@
             </item>
             <item>
               <first>DSP48E</first>
-              <second>72</second>
-            </item>
-            <item>
-              <first>FF</first>
-              <second>26565</second>
-            </item>
-            <item>
-              <first>LUT</first>
-              <second>27234</second>
-            </item>
-            <item>
-              <first>URAM</first>
-              <second>0</second>
-            </item>
-          </second>
-        </item>
-        <item>
-          <first>grp_dense_fu_208 (dense)</first>
-          <second>
-            <count>5</count>
-            <item_version>0</item_version>
-            <item>
-              <first>BRAM</first>
               <second>0</second>
             </item>
             <item>
-              <first>DSP48E</first>
-              <second>28</second>
-            </item>
-            <item>
               <first>FF</first>
-              <second>3192</second>
+              <second>1658</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>5188</second>
+              <second>15419</second>
             </item>
             <item>
               <first>URAM</first>
@@ -3480,7 +3480,7 @@
           </second>
         </item>
         <item>
-          <first>grp_conv1_fu_198_ap_start_reg</first>
+          <first>grp_conv1_fu_208_ap_start_reg</first>
           <second>
             <count>3</count>
             <item_version>0</item_version>
@@ -3499,7 +3499,7 @@
           </second>
         </item>
         <item>
-          <first>grp_conv2_fu_188_ap_start_reg</first>
+          <first>grp_conv2_fu_198_ap_start_reg</first>
           <second>
             <count>3</count>
             <item_version>0</item_version>
@@ -3518,7 +3518,7 @@
           </second>
         </item>
         <item>
-          <first>grp_dense_fu_208_ap_start_reg</first>
+          <first>grp_dense_fu_188_ap_start_reg</first>
           <second>
             <count>3</count>
             <item_version>0</item_version>
@@ -3712,21 +3712,21 @@
         <count>6</count>
         <item_version>0</item_version>
         <item>
-          <first>grp_conv1_fu_198</first>
+          <first>grp_conv1_fu_208</first>
           <second>
             <count>0</count>
             <item_version>0</item_version>
           </second>
         </item>
         <item>
-          <first>grp_conv2_fu_188</first>
+          <first>grp_conv2_fu_198</first>
           <second>
             <count>0</count>
             <item_version>0</item_version>
           </second>
         </item>
         <item>
-          <first>grp_dense_fu_208</first>
+          <first>grp_dense_fu_188</first>
           <second>
             <count>0</count>
             <item_version>0</item_version>
@@ -3758,7 +3758,7 @@
         <count>4</count>
         <item_version>0</item_version>
         <item class_id="40" tracking_level="0" version="0">
-          <first>grp_conv1_fu_198 (conv1)</first>
+          <first>grp_conv1_fu_208 (conv1)</first>
           <second>
             <count>1</count>
             <item_version>0</item_version>
@@ -3766,7 +3766,7 @@
           </second>
         </item>
         <item>
-          <first>grp_conv2_fu_188 (conv2)</first>
+          <first>grp_conv2_fu_198 (conv2)</first>
           <second>
             <count>1</count>
             <item_version>0</item_version>
@@ -3774,7 +3774,7 @@
           </second>
         </item>
         <item>
-          <first>grp_dense_fu_208 (dense)</first>
+          <first>grp_dense_fu_188 (dense)</first>
           <second>
             <count>1</count>
             <item_version>0</item_version>
@@ -4053,8 +4053,8 @@
         <second>
           <count>2</count>
           <item_version>0</item_version>
-          <item>44</item>
-          <item>44</item>
+          <item>46</item>
+          <item>46</item>
         </second>
       </item>
       <item>
@@ -4062,8 +4062,8 @@
         <second>
           <count>2</count>
           <item_version>0</item_version>
-          <item>42</item>
-          <item>42</item>
+          <item>44</item>
+          <item>44</item>
         </second>
       </item>
       <item>
@@ -4071,8 +4071,8 @@
         <second>
           <count>2</count>
           <item_version>0</item_version>
-          <item>46</item>
-          <item>46</item>
+          <item>42</item>
+          <item>42</item>
         </second>
       </item>
       <item>
@@ -4095,7 +4095,7 @@
       <count>4</count>
       <item_version>0</item_version>
       <item class_id="52" tracking_level="0" version="0">
-        <first>grp_conv1_fu_198</first>
+        <first>grp_conv1_fu_208</first>
         <second>
           <count>2</count>
           <item_version>0</item_version>
@@ -4104,7 +4104,7 @@
         </second>
       </item>
       <item>
-        <first>grp_conv2_fu_188</first>
+        <first>grp_conv2_fu_198</first>
         <second>
           <count>2</count>
           <item_version>0</item_version>
@@ -4113,7 +4113,7 @@
         </second>
       </item>
       <item>
-        <first>grp_dense_fu_208</first>
+        <first>grp_dense_fu_188</first>
         <second>
           <count>2</count>
           <item_version>0</item_version>

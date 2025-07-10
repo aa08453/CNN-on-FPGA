@@ -3,7 +3,7 @@
 ================================================================
 == Vivado HLS Report for 'pool'
 ================================================================
-* Date:           Wed Jul  9 15:08:43 2025
+* Date:           Thu Jul 10 14:52:27 2025
 
 * Version:        2020.1 (Build 2897737 on Wed May 27 20:21:37 MDT 2020)
 * Project:        cnn
@@ -129,8 +129,8 @@ IsGatedGlobalClock: 0
 * FSM state operations: 
 
 State 1 <SV = 0> <Delay = 3.51>
-ST_1 : Operation 49 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8* %input_V, [6 x i8]* @p_str7, i32 0, i32 0, [1 x i8]* @p_str18, i32 0, i32 0, [5 x i8]* @p_str29, [6 x i8]* @p_str310, [1 x i8]* @p_str18, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str18, [1 x i8]* @p_str18)"   --->   Operation 49 'specinterface' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 50 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8* %input_V, [6 x i8]* @p_str7, i32 0, i32 0, [1 x i8]* @p_str18, i32 0, i32 0, [5 x i8]* @p_str29, [6 x i8]* @p_str310, [1 x i8]* @p_str18, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str18, [1 x i8]* @p_str18)"   --->   Operation 50 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 49 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8* %input_V, [6 x i8]* @p_str9, i32 0, i32 0, [1 x i8]* @p_str110, i32 0, i32 0, [5 x i8]* @p_str211, [6 x i8]* @p_str312, [1 x i8]* @p_str110, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str110, [1 x i8]* @p_str110)"   --->   Operation 49 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 50 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8* %input_V, [6 x i8]* @p_str9, i32 0, i32 0, [1 x i8]* @p_str110, i32 0, i32 0, [5 x i8]* @p_str211, [6 x i8]* @p_str312, [1 x i8]* @p_str110, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str110, [1 x i8]* @p_str110)"   --->   Operation 50 'specinterface' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 51 [1/1] (0.00ns)   --->   "%W_read = call i6 @_ssdm_op_Read.ap_auto.i6(i6 %W)" [cnn/src/pool.cpp:5]   --->   Operation 51 'read' 'W_read' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 52 [1/1] (0.00ns)   --->   "%H_read = call i6 @_ssdm_op_Read.ap_auto.i6(i6 %H)" [cnn/src/pool.cpp:5]   --->   Operation 52 'read' 'H_read' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 53 [1/1] (0.00ns)   --->   "%Cin_read = call i6 @_ssdm_op_Read.ap_auto.i6(i6 %Cin)" [cnn/src/pool.cpp:5]   --->   Operation 53 'read' 'Cin_read' <Predicate = true> <Delay = 0.00>
@@ -169,7 +169,7 @@ ST_2 : Operation 82 [1/1] (0.00ns)   --->   "ret void" [cnn/src/pool.cpp:37]   -
 State 3 <SV = 2> <Delay = 7.99>
 ST_3 : Operation 83 [1/1] (0.00ns)   --->   "%h_0 = phi i4 [ 0, %.preheader9.preheader ], [ %h, %.preheader9.loopexit ]"   --->   Operation 83 'phi' 'h_0' <Predicate = true> <Delay = 0.00>
 ST_3 : Operation 84 [1/1] (0.00ns)   --->   "%zext_ln15_2 = zext i4 %h_0 to i8" [cnn/src/pool.cpp:15]   --->   Operation 84 'zext' 'zext_ln15_2' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 85 [1/1] (0.00ns)   --->   "%empty_15 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 7, i64 14, i64 0)"   --->   Operation 85 'speclooptripcount' 'empty_15' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 85 [1/1] (0.00ns)   --->   "%empty_13 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 7, i64 14, i64 0)"   --->   Operation 85 'speclooptripcount' 'empty_13' <Predicate = true> <Delay = 0.00>
 ST_3 : Operation 86 [1/1] (1.30ns)   --->   "%icmp_ln15 = icmp eq i4 %h_0, %Hout" [cnn/src/pool.cpp:15]   --->   Operation 86 'icmp' 'icmp_ln15' <Predicate = true> <Delay = 1.30> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.55> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
 ST_3 : Operation 87 [1/1] (1.73ns)   --->   "%h = add i4 %h_0, 1" [cnn/src/pool.cpp:15]   --->   Operation 87 'add' 'h' <Predicate = true> <Delay = 1.73> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
 ST_3 : Operation 88 [1/1] (0.00ns)   --->   "br i1 %icmp_ln15, label %.loopexit.loopexit, label %.preheader.preheader" [cnn/src/pool.cpp:15]   --->   Operation 88 'br' <Predicate = true> <Delay = 0.00>
@@ -190,7 +190,7 @@ ST_3 : Operation 101 [1/1] (0.00ns)   --->   "br label %.loopexit"   --->   Oper
 State 4 <SV = 3> <Delay = 4.36>
 ST_4 : Operation 102 [1/1] (0.00ns)   --->   "%w_0 = phi i4 [ %w, %._crit_edge.0.0 ], [ 0, %.preheader.preheader ]"   --->   Operation 102 'phi' 'w_0' <Predicate = true> <Delay = 0.00>
 ST_4 : Operation 103 [1/1] (0.00ns)   --->   "%zext_ln16 = zext i4 %w_0 to i12" [cnn/src/pool.cpp:16]   --->   Operation 103 'zext' 'zext_ln16' <Predicate = true> <Delay = 0.00>
-ST_4 : Operation 104 [1/1] (0.00ns)   --->   "%empty_16 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 7, i64 14, i64 0)"   --->   Operation 104 'speclooptripcount' 'empty_16' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 104 [1/1] (0.00ns)   --->   "%empty_14 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 7, i64 14, i64 0)"   --->   Operation 104 'speclooptripcount' 'empty_14' <Predicate = true> <Delay = 0.00>
 ST_4 : Operation 105 [1/1] (1.30ns)   --->   "%icmp_ln16 = icmp eq i4 %w_0, %Wout" [cnn/src/pool.cpp:16]   --->   Operation 105 'icmp' 'icmp_ln16' <Predicate = true> <Delay = 1.30> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.55> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
 ST_4 : Operation 106 [1/1] (1.73ns)   --->   "%w = add i4 %w_0, 1" [cnn/src/pool.cpp:16]   --->   Operation 106 'add' 'w' <Predicate = true> <Delay = 1.73> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
 ST_4 : Operation 107 [1/1] (0.00ns)   --->   "br i1 %icmp_ln16, label %.preheader9.loopexit, label %._crit_edge.0.0" [cnn/src/pool.cpp:16]   --->   Operation 107 'br' <Predicate = true> <Delay = 0.00>
@@ -453,7 +453,7 @@ br_ln15               (br               ) [ 001111111111111111111111111111111111
 ret_ln37              (ret              ) [ 0000000000000000000000000000000000000000000000000]
 h_0                   (phi              ) [ 0001000000000000000000000000000000000000000000000]
 zext_ln15_2           (zext             ) [ 0000000000000000000000000000000000000000000000000]
-empty_15              (speclooptripcount) [ 0000000000000000000000000000000000000000000000000]
+empty_13              (speclooptripcount) [ 0000000000000000000000000000000000000000000000000]
 icmp_ln15             (icmp             ) [ 0011111111111111111111111111111111111111111111111]
 h                     (add              ) [ 0011111111111111111111111111111111111111111111111]
 br_ln15               (br               ) [ 0000000000000000000000000000000000000000000000000]
@@ -472,7 +472,7 @@ br_ln16               (br               ) [ 001111111111111111111111111111111111
 br_ln0                (br               ) [ 0111111111111111111111111111111111111111111111111]
 w_0                   (phi              ) [ 0000100000000000000000000000000000000000000000000]
 zext_ln16             (zext             ) [ 0000000000000000000000000000000000000000000000000]
-empty_16              (speclooptripcount) [ 0000000000000000000000000000000000000000000000000]
+empty_14              (speclooptripcount) [ 0000000000000000000000000000000000000000000000000]
 icmp_ln16             (icmp             ) [ 0011111111111111111111111111111111111111111111111]
 w                     (add              ) [ 0011111111111111111111111111111111111111111111111]
 br_ln16               (br               ) [ 0000000000000000000000000000000000000000000000000]
@@ -613,7 +613,7 @@ br_ln16               (br               ) [ 001111111111111111111111111111111111
 <pin id="15" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="p_str7"/></StgValue>
+<StgValue><ssdm name="p_str9"/></StgValue>
 </bind>
 </comp>
 
@@ -631,7 +631,7 @@ br_ln16               (br               ) [ 001111111111111111111111111111111111
 <pin id="19" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="p_str18"/></StgValue>
+<StgValue><ssdm name="p_str110"/></StgValue>
 </bind>
 </comp>
 
@@ -640,7 +640,7 @@ br_ln16               (br               ) [ 001111111111111111111111111111111111
 <pin id="21" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="p_str29"/></StgValue>
+<StgValue><ssdm name="p_str211"/></StgValue>
 </bind>
 </comp>
 
@@ -649,7 +649,7 @@ br_ln16               (br               ) [ 001111111111111111111111111111111111
 <pin id="23" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="p_str310"/></StgValue>
+<StgValue><ssdm name="p_str312"/></StgValue>
 </bind>
 </comp>
 

@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'top'" level="0">
-<item name = "Date">Wed Jul  9 15:09:23 2025
+<item name = "Date">Thu Jul 10 14:53:22 2025
 </item>
 <item name = "Version">2020.1 (Build 2897737 on Wed May 27 20:21:37 MDT 2020)</item>
 <item name = "Project">cnn</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">10.00 ns, 11.169 ns, 1.25 ns</column>
+<column name="ap_clk">10.00 ns, 8.750 ns, 1.25 ns</column>
 </table>
 </item>
 </section>
@@ -24,17 +24,17 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">423377, 677313, 4.729 ms, 7.565 ms, 423377, 677313, none</column>
+<column name="">358926, 606590, 3.589 ms, 6.066 ms, 358926, 606590, none</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="grp_conv2_fu_188">conv2, 241502, 247774, 2.697 ms, 2.767 ms, 241502, 247774, none</column>
-<column name="grp_conv1_fu_198">conv1, 65107, 65107, 0.727 ms, 0.727 ms, 65107, 65107, none</column>
-<column name="grp_dense_fu_208">dense, 81220, 81220, 0.907 ms, 0.907 ms, 81220, 81220, none</column>
-<column name="grp_pool_fu_218">pool, 17769, 141601, 0.198 ms, 1.582 ms, 17769, 141601, none</column>
+<column name="grp_dense_fu_188">dense, 26977, 26977, 0.270 ms, 0.270 ms, 26977, 26977, none</column>
+<column name="grp_conv2_fu_198">conv2, 232089, 232089, 2.321 ms, 2.321 ms, 232089, 232089, none</column>
+<column name="grp_conv1_fu_208">conv1, 64312, 64312, 0.643 ms, 0.643 ms, 64312, 64312, none</column>
+<column name="grp_pool_fu_218">pool, 17769, 141601, 0.178 ms, 1.416 ms, 17769, 141601, none</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
@@ -53,21 +53,21 @@
 <column name="DSP">-, -, -, -, -</column>
 <column name="Expression">-, -, -, -, -</column>
 <column name="FIFO">-, -, -, -, -</column>
-<column name="Instance">10, 118, 38084, 43667, 0</column>
+<column name="Instance">12, 0, 9280, 33779, 0</column>
 <column name="Memory">-, -, -, -, -</column>
 <column name="Multiplexer">-, -, -, 992, -</column>
 <column name="Register">-, -, 399, -, -</column>
 <specialColumn name="Available">280, 220, 106400, 53200, 0</specialColumn>
-<specialColumn name="Utilization (%)">3, 53, 36, 83, 0</specialColumn>
+<specialColumn name="Utilization (%)">4, 0, 9, 65, 0</specialColumn>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="1">
 <keys size="7">Instance, Module, BRAM_18K, DSP48E, FF, LUT, URAM</keys>
-<column name="grp_conv1_fu_198">conv1, 0, 18, 6657, 8573, 0</column>
-<column name="grp_conv2_fu_188">conv2, 8, 72, 26565, 27234, 0</column>
-<column name="grp_dense_fu_208">dense, 0, 28, 3192, 5188, 0</column>
+<column name="grp_conv1_fu_208">conv1, 1, 0, 1380, 2812, 0</column>
+<column name="grp_conv2_fu_198">conv2, 1, 0, 4572, 12876, 0</column>
+<column name="grp_dense_fu_188">dense, 8, 0, 1658, 15419, 0</column>
 <column name="grp_pool_fu_218">pool, 0, 0, 630, 1164, 0</column>
 <column name="top_control_s_axi_U">top_control_s_axi, 0, 0, 492, 808, 0</column>
 <column name="top_gmem_m_axi_U">top_gmem_m_axi, 2, 0, 548, 700, 0</column>
@@ -138,9 +138,9 @@
 <column name="bias_V_read_reg_278">32, 0, 32, 0</column>
 <column name="fcBias_V_read_reg_235">32, 0, 32, 0</column>
 <column name="fcWeight_V_read_reg_240">32, 0, 32, 0</column>
-<column name="grp_conv1_fu_198_ap_start_reg">1, 0, 1, 0</column>
-<column name="grp_conv2_fu_188_ap_start_reg">1, 0, 1, 0</column>
-<column name="grp_dense_fu_208_ap_start_reg">1, 0, 1, 0</column>
+<column name="grp_conv1_fu_208_ap_start_reg">1, 0, 1, 0</column>
+<column name="grp_conv2_fu_198_ap_start_reg">1, 0, 1, 0</column>
+<column name="grp_dense_fu_188_ap_start_reg">1, 0, 1, 0</column>
 <column name="grp_pool_fu_218_ap_start_reg">1, 0, 1, 0</column>
 <column name="input_V_read_reg_294">32, 0, 32, 0</column>
 <column name="outputConv2_V_read_reg_256">32, 0, 32, 0</column>

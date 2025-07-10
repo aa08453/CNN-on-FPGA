@@ -7,7 +7,7 @@
 
 `timescale 1 ns / 1 ps 
 
-(* CORE_GENERATION_INFO="top,hls_ip_2020_1,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=1,HLS_INPUT_PART=xc7z020-clg484-1,HLS_INPUT_CLOCK=10.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=11.169000,HLS_SYN_LAT=-1,HLS_SYN_TPT=none,HLS_SYN_MEM=10,HLS_SYN_DSP=118,HLS_SYN_FF=38483,HLS_SYN_LUT=44659,HLS_VERSION=2020_1}" *)
+(* CORE_GENERATION_INFO="top,hls_ip_2020_1,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=1,HLS_INPUT_PART=xc7z020-clg484-1,HLS_INPUT_CLOCK=10.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=8.750000,HLS_SYN_LAT=-1,HLS_SYN_TPT=none,HLS_SYN_MEM=12,HLS_SYN_DSP=0,HLS_SYN_FF=9679,HLS_SYN_LUT=34771,HLS_VERSION=2020_1}" *)
 
 module top (
         ap_clk,
@@ -251,114 +251,114 @@ reg   [31:0] bias_V_read_reg_278;
 reg   [31:0] weight_V_read_reg_283;
 reg   [31:0] outputConv_V_read_reg_288;
 reg   [31:0] input_V_read_reg_294;
-wire    grp_conv2_fu_188_ap_start;
-wire    grp_conv2_fu_188_ap_done;
-wire    grp_conv2_fu_188_ap_idle;
-wire    grp_conv2_fu_188_ap_ready;
-wire    grp_conv2_fu_188_m_axi_input_V_AWVALID;
-wire   [31:0] grp_conv2_fu_188_m_axi_input_V_AWADDR;
-wire   [0:0] grp_conv2_fu_188_m_axi_input_V_AWID;
-wire   [31:0] grp_conv2_fu_188_m_axi_input_V_AWLEN;
-wire   [2:0] grp_conv2_fu_188_m_axi_input_V_AWSIZE;
-wire   [1:0] grp_conv2_fu_188_m_axi_input_V_AWBURST;
-wire   [1:0] grp_conv2_fu_188_m_axi_input_V_AWLOCK;
-wire   [3:0] grp_conv2_fu_188_m_axi_input_V_AWCACHE;
-wire   [2:0] grp_conv2_fu_188_m_axi_input_V_AWPROT;
-wire   [3:0] grp_conv2_fu_188_m_axi_input_V_AWQOS;
-wire   [3:0] grp_conv2_fu_188_m_axi_input_V_AWREGION;
-wire   [0:0] grp_conv2_fu_188_m_axi_input_V_AWUSER;
-wire    grp_conv2_fu_188_m_axi_input_V_WVALID;
-wire   [7:0] grp_conv2_fu_188_m_axi_input_V_WDATA;
-wire   [0:0] grp_conv2_fu_188_m_axi_input_V_WSTRB;
-wire    grp_conv2_fu_188_m_axi_input_V_WLAST;
-wire   [0:0] grp_conv2_fu_188_m_axi_input_V_WID;
-wire   [0:0] grp_conv2_fu_188_m_axi_input_V_WUSER;
-wire    grp_conv2_fu_188_m_axi_input_V_ARVALID;
-wire   [31:0] grp_conv2_fu_188_m_axi_input_V_ARADDR;
-wire   [0:0] grp_conv2_fu_188_m_axi_input_V_ARID;
-wire   [31:0] grp_conv2_fu_188_m_axi_input_V_ARLEN;
-wire   [2:0] grp_conv2_fu_188_m_axi_input_V_ARSIZE;
-wire   [1:0] grp_conv2_fu_188_m_axi_input_V_ARBURST;
-wire   [1:0] grp_conv2_fu_188_m_axi_input_V_ARLOCK;
-wire   [3:0] grp_conv2_fu_188_m_axi_input_V_ARCACHE;
-wire   [2:0] grp_conv2_fu_188_m_axi_input_V_ARPROT;
-wire   [3:0] grp_conv2_fu_188_m_axi_input_V_ARQOS;
-wire   [3:0] grp_conv2_fu_188_m_axi_input_V_ARREGION;
-wire   [0:0] grp_conv2_fu_188_m_axi_input_V_ARUSER;
-wire    grp_conv2_fu_188_m_axi_input_V_RREADY;
-wire    grp_conv2_fu_188_m_axi_input_V_BREADY;
-wire    grp_conv1_fu_198_ap_start;
-wire    grp_conv1_fu_198_ap_done;
-wire    grp_conv1_fu_198_ap_idle;
-wire    grp_conv1_fu_198_ap_ready;
-wire    grp_conv1_fu_198_m_axi_input_V_AWVALID;
-wire   [31:0] grp_conv1_fu_198_m_axi_input_V_AWADDR;
-wire   [0:0] grp_conv1_fu_198_m_axi_input_V_AWID;
-wire   [31:0] grp_conv1_fu_198_m_axi_input_V_AWLEN;
-wire   [2:0] grp_conv1_fu_198_m_axi_input_V_AWSIZE;
-wire   [1:0] grp_conv1_fu_198_m_axi_input_V_AWBURST;
-wire   [1:0] grp_conv1_fu_198_m_axi_input_V_AWLOCK;
-wire   [3:0] grp_conv1_fu_198_m_axi_input_V_AWCACHE;
-wire   [2:0] grp_conv1_fu_198_m_axi_input_V_AWPROT;
-wire   [3:0] grp_conv1_fu_198_m_axi_input_V_AWQOS;
-wire   [3:0] grp_conv1_fu_198_m_axi_input_V_AWREGION;
-wire   [0:0] grp_conv1_fu_198_m_axi_input_V_AWUSER;
-wire    grp_conv1_fu_198_m_axi_input_V_WVALID;
-wire   [7:0] grp_conv1_fu_198_m_axi_input_V_WDATA;
-wire   [0:0] grp_conv1_fu_198_m_axi_input_V_WSTRB;
-wire    grp_conv1_fu_198_m_axi_input_V_WLAST;
-wire   [0:0] grp_conv1_fu_198_m_axi_input_V_WID;
-wire   [0:0] grp_conv1_fu_198_m_axi_input_V_WUSER;
-wire    grp_conv1_fu_198_m_axi_input_V_ARVALID;
-wire   [31:0] grp_conv1_fu_198_m_axi_input_V_ARADDR;
-wire   [0:0] grp_conv1_fu_198_m_axi_input_V_ARID;
-wire   [31:0] grp_conv1_fu_198_m_axi_input_V_ARLEN;
-wire   [2:0] grp_conv1_fu_198_m_axi_input_V_ARSIZE;
-wire   [1:0] grp_conv1_fu_198_m_axi_input_V_ARBURST;
-wire   [1:0] grp_conv1_fu_198_m_axi_input_V_ARLOCK;
-wire   [3:0] grp_conv1_fu_198_m_axi_input_V_ARCACHE;
-wire   [2:0] grp_conv1_fu_198_m_axi_input_V_ARPROT;
-wire   [3:0] grp_conv1_fu_198_m_axi_input_V_ARQOS;
-wire   [3:0] grp_conv1_fu_198_m_axi_input_V_ARREGION;
-wire   [0:0] grp_conv1_fu_198_m_axi_input_V_ARUSER;
-wire    grp_conv1_fu_198_m_axi_input_V_RREADY;
-wire    grp_conv1_fu_198_m_axi_input_V_BREADY;
-wire    grp_dense_fu_208_ap_start;
-wire    grp_dense_fu_208_ap_done;
-wire    grp_dense_fu_208_ap_idle;
-wire    grp_dense_fu_208_ap_ready;
-wire    grp_dense_fu_208_m_axi_input_V_AWVALID;
-wire   [31:0] grp_dense_fu_208_m_axi_input_V_AWADDR;
-wire   [0:0] grp_dense_fu_208_m_axi_input_V_AWID;
-wire   [31:0] grp_dense_fu_208_m_axi_input_V_AWLEN;
-wire   [2:0] grp_dense_fu_208_m_axi_input_V_AWSIZE;
-wire   [1:0] grp_dense_fu_208_m_axi_input_V_AWBURST;
-wire   [1:0] grp_dense_fu_208_m_axi_input_V_AWLOCK;
-wire   [3:0] grp_dense_fu_208_m_axi_input_V_AWCACHE;
-wire   [2:0] grp_dense_fu_208_m_axi_input_V_AWPROT;
-wire   [3:0] grp_dense_fu_208_m_axi_input_V_AWQOS;
-wire   [3:0] grp_dense_fu_208_m_axi_input_V_AWREGION;
-wire   [0:0] grp_dense_fu_208_m_axi_input_V_AWUSER;
-wire    grp_dense_fu_208_m_axi_input_V_WVALID;
-wire   [7:0] grp_dense_fu_208_m_axi_input_V_WDATA;
-wire   [0:0] grp_dense_fu_208_m_axi_input_V_WSTRB;
-wire    grp_dense_fu_208_m_axi_input_V_WLAST;
-wire   [0:0] grp_dense_fu_208_m_axi_input_V_WID;
-wire   [0:0] grp_dense_fu_208_m_axi_input_V_WUSER;
-wire    grp_dense_fu_208_m_axi_input_V_ARVALID;
-wire   [31:0] grp_dense_fu_208_m_axi_input_V_ARADDR;
-wire   [0:0] grp_dense_fu_208_m_axi_input_V_ARID;
-wire   [31:0] grp_dense_fu_208_m_axi_input_V_ARLEN;
-wire   [2:0] grp_dense_fu_208_m_axi_input_V_ARSIZE;
-wire   [1:0] grp_dense_fu_208_m_axi_input_V_ARBURST;
-wire   [1:0] grp_dense_fu_208_m_axi_input_V_ARLOCK;
-wire   [3:0] grp_dense_fu_208_m_axi_input_V_ARCACHE;
-wire   [2:0] grp_dense_fu_208_m_axi_input_V_ARPROT;
-wire   [3:0] grp_dense_fu_208_m_axi_input_V_ARQOS;
-wire   [3:0] grp_dense_fu_208_m_axi_input_V_ARREGION;
-wire   [0:0] grp_dense_fu_208_m_axi_input_V_ARUSER;
-wire    grp_dense_fu_208_m_axi_input_V_RREADY;
-wire    grp_dense_fu_208_m_axi_input_V_BREADY;
+wire    grp_dense_fu_188_ap_start;
+wire    grp_dense_fu_188_ap_done;
+wire    grp_dense_fu_188_ap_idle;
+wire    grp_dense_fu_188_ap_ready;
+wire    grp_dense_fu_188_m_axi_input_V_AWVALID;
+wire   [31:0] grp_dense_fu_188_m_axi_input_V_AWADDR;
+wire   [0:0] grp_dense_fu_188_m_axi_input_V_AWID;
+wire   [31:0] grp_dense_fu_188_m_axi_input_V_AWLEN;
+wire   [2:0] grp_dense_fu_188_m_axi_input_V_AWSIZE;
+wire   [1:0] grp_dense_fu_188_m_axi_input_V_AWBURST;
+wire   [1:0] grp_dense_fu_188_m_axi_input_V_AWLOCK;
+wire   [3:0] grp_dense_fu_188_m_axi_input_V_AWCACHE;
+wire   [2:0] grp_dense_fu_188_m_axi_input_V_AWPROT;
+wire   [3:0] grp_dense_fu_188_m_axi_input_V_AWQOS;
+wire   [3:0] grp_dense_fu_188_m_axi_input_V_AWREGION;
+wire   [0:0] grp_dense_fu_188_m_axi_input_V_AWUSER;
+wire    grp_dense_fu_188_m_axi_input_V_WVALID;
+wire   [7:0] grp_dense_fu_188_m_axi_input_V_WDATA;
+wire   [0:0] grp_dense_fu_188_m_axi_input_V_WSTRB;
+wire    grp_dense_fu_188_m_axi_input_V_WLAST;
+wire   [0:0] grp_dense_fu_188_m_axi_input_V_WID;
+wire   [0:0] grp_dense_fu_188_m_axi_input_V_WUSER;
+wire    grp_dense_fu_188_m_axi_input_V_ARVALID;
+wire   [31:0] grp_dense_fu_188_m_axi_input_V_ARADDR;
+wire   [0:0] grp_dense_fu_188_m_axi_input_V_ARID;
+wire   [31:0] grp_dense_fu_188_m_axi_input_V_ARLEN;
+wire   [2:0] grp_dense_fu_188_m_axi_input_V_ARSIZE;
+wire   [1:0] grp_dense_fu_188_m_axi_input_V_ARBURST;
+wire   [1:0] grp_dense_fu_188_m_axi_input_V_ARLOCK;
+wire   [3:0] grp_dense_fu_188_m_axi_input_V_ARCACHE;
+wire   [2:0] grp_dense_fu_188_m_axi_input_V_ARPROT;
+wire   [3:0] grp_dense_fu_188_m_axi_input_V_ARQOS;
+wire   [3:0] grp_dense_fu_188_m_axi_input_V_ARREGION;
+wire   [0:0] grp_dense_fu_188_m_axi_input_V_ARUSER;
+wire    grp_dense_fu_188_m_axi_input_V_RREADY;
+wire    grp_dense_fu_188_m_axi_input_V_BREADY;
+wire    grp_conv2_fu_198_ap_start;
+wire    grp_conv2_fu_198_ap_done;
+wire    grp_conv2_fu_198_ap_idle;
+wire    grp_conv2_fu_198_ap_ready;
+wire    grp_conv2_fu_198_m_axi_input_V_AWVALID;
+wire   [31:0] grp_conv2_fu_198_m_axi_input_V_AWADDR;
+wire   [0:0] grp_conv2_fu_198_m_axi_input_V_AWID;
+wire   [31:0] grp_conv2_fu_198_m_axi_input_V_AWLEN;
+wire   [2:0] grp_conv2_fu_198_m_axi_input_V_AWSIZE;
+wire   [1:0] grp_conv2_fu_198_m_axi_input_V_AWBURST;
+wire   [1:0] grp_conv2_fu_198_m_axi_input_V_AWLOCK;
+wire   [3:0] grp_conv2_fu_198_m_axi_input_V_AWCACHE;
+wire   [2:0] grp_conv2_fu_198_m_axi_input_V_AWPROT;
+wire   [3:0] grp_conv2_fu_198_m_axi_input_V_AWQOS;
+wire   [3:0] grp_conv2_fu_198_m_axi_input_V_AWREGION;
+wire   [0:0] grp_conv2_fu_198_m_axi_input_V_AWUSER;
+wire    grp_conv2_fu_198_m_axi_input_V_WVALID;
+wire   [7:0] grp_conv2_fu_198_m_axi_input_V_WDATA;
+wire   [0:0] grp_conv2_fu_198_m_axi_input_V_WSTRB;
+wire    grp_conv2_fu_198_m_axi_input_V_WLAST;
+wire   [0:0] grp_conv2_fu_198_m_axi_input_V_WID;
+wire   [0:0] grp_conv2_fu_198_m_axi_input_V_WUSER;
+wire    grp_conv2_fu_198_m_axi_input_V_ARVALID;
+wire   [31:0] grp_conv2_fu_198_m_axi_input_V_ARADDR;
+wire   [0:0] grp_conv2_fu_198_m_axi_input_V_ARID;
+wire   [31:0] grp_conv2_fu_198_m_axi_input_V_ARLEN;
+wire   [2:0] grp_conv2_fu_198_m_axi_input_V_ARSIZE;
+wire   [1:0] grp_conv2_fu_198_m_axi_input_V_ARBURST;
+wire   [1:0] grp_conv2_fu_198_m_axi_input_V_ARLOCK;
+wire   [3:0] grp_conv2_fu_198_m_axi_input_V_ARCACHE;
+wire   [2:0] grp_conv2_fu_198_m_axi_input_V_ARPROT;
+wire   [3:0] grp_conv2_fu_198_m_axi_input_V_ARQOS;
+wire   [3:0] grp_conv2_fu_198_m_axi_input_V_ARREGION;
+wire   [0:0] grp_conv2_fu_198_m_axi_input_V_ARUSER;
+wire    grp_conv2_fu_198_m_axi_input_V_RREADY;
+wire    grp_conv2_fu_198_m_axi_input_V_BREADY;
+wire    grp_conv1_fu_208_ap_start;
+wire    grp_conv1_fu_208_ap_done;
+wire    grp_conv1_fu_208_ap_idle;
+wire    grp_conv1_fu_208_ap_ready;
+wire    grp_conv1_fu_208_m_axi_input_V_AWVALID;
+wire   [31:0] grp_conv1_fu_208_m_axi_input_V_AWADDR;
+wire   [0:0] grp_conv1_fu_208_m_axi_input_V_AWID;
+wire   [31:0] grp_conv1_fu_208_m_axi_input_V_AWLEN;
+wire   [2:0] grp_conv1_fu_208_m_axi_input_V_AWSIZE;
+wire   [1:0] grp_conv1_fu_208_m_axi_input_V_AWBURST;
+wire   [1:0] grp_conv1_fu_208_m_axi_input_V_AWLOCK;
+wire   [3:0] grp_conv1_fu_208_m_axi_input_V_AWCACHE;
+wire   [2:0] grp_conv1_fu_208_m_axi_input_V_AWPROT;
+wire   [3:0] grp_conv1_fu_208_m_axi_input_V_AWQOS;
+wire   [3:0] grp_conv1_fu_208_m_axi_input_V_AWREGION;
+wire   [0:0] grp_conv1_fu_208_m_axi_input_V_AWUSER;
+wire    grp_conv1_fu_208_m_axi_input_V_WVALID;
+wire   [7:0] grp_conv1_fu_208_m_axi_input_V_WDATA;
+wire   [0:0] grp_conv1_fu_208_m_axi_input_V_WSTRB;
+wire    grp_conv1_fu_208_m_axi_input_V_WLAST;
+wire   [0:0] grp_conv1_fu_208_m_axi_input_V_WID;
+wire   [0:0] grp_conv1_fu_208_m_axi_input_V_WUSER;
+wire    grp_conv1_fu_208_m_axi_input_V_ARVALID;
+wire   [31:0] grp_conv1_fu_208_m_axi_input_V_ARADDR;
+wire   [0:0] grp_conv1_fu_208_m_axi_input_V_ARID;
+wire   [31:0] grp_conv1_fu_208_m_axi_input_V_ARLEN;
+wire   [2:0] grp_conv1_fu_208_m_axi_input_V_ARSIZE;
+wire   [1:0] grp_conv1_fu_208_m_axi_input_V_ARBURST;
+wire   [1:0] grp_conv1_fu_208_m_axi_input_V_ARLOCK;
+wire   [3:0] grp_conv1_fu_208_m_axi_input_V_ARCACHE;
+wire   [2:0] grp_conv1_fu_208_m_axi_input_V_ARPROT;
+wire   [3:0] grp_conv1_fu_208_m_axi_input_V_ARQOS;
+wire   [3:0] grp_conv1_fu_208_m_axi_input_V_ARREGION;
+wire   [0:0] grp_conv1_fu_208_m_axi_input_V_ARUSER;
+wire    grp_conv1_fu_208_m_axi_input_V_RREADY;
+wire    grp_conv1_fu_208_m_axi_input_V_BREADY;
 wire    grp_pool_fu_218_ap_start;
 wire    grp_pool_fu_218_ap_done;
 wire    grp_pool_fu_218_ap_idle;
@@ -400,15 +400,15 @@ reg   [31:0] grp_pool_fu_218_outputPool_V_offset;
 reg   [5:0] grp_pool_fu_218_Cin;
 reg   [5:0] grp_pool_fu_218_H;
 reg   [5:0] grp_pool_fu_218_W;
-reg    grp_conv2_fu_188_ap_start_reg;
-wire    ap_CS_fsm_state6;
-wire    ap_CS_fsm_state7;
-reg    grp_conv1_fu_198_ap_start_reg;
-wire    ap_CS_fsm_state2;
-wire    ap_CS_fsm_state3;
-reg    grp_dense_fu_208_ap_start_reg;
+reg    grp_dense_fu_188_ap_start_reg;
 wire    ap_CS_fsm_state10;
 wire    ap_CS_fsm_state11;
+reg    grp_conv2_fu_198_ap_start_reg;
+wire    ap_CS_fsm_state6;
+wire    ap_CS_fsm_state7;
+reg    grp_conv1_fu_208_ap_start_reg;
+wire    ap_CS_fsm_state2;
+wire    ap_CS_fsm_state3;
 reg    grp_pool_fu_218_ap_start_reg;
 wire    ap_CS_fsm_state4;
 wire    ap_CS_fsm_state8;
@@ -419,9 +419,9 @@ reg   [10:0] ap_NS_fsm;
 // power-on initialization
 initial begin
 #0 ap_CS_fsm = 11'd1;
-#0 grp_conv2_fu_188_ap_start_reg = 1'b0;
-#0 grp_conv1_fu_198_ap_start_reg = 1'b0;
-#0 grp_dense_fu_208_ap_start_reg = 1'b0;
+#0 grp_dense_fu_188_ap_start_reg = 1'b0;
+#0 grp_conv2_fu_198_ap_start_reg = 1'b0;
+#0 grp_conv1_fu_208_ap_start_reg = 1'b0;
 #0 grp_pool_fu_218_ap_start_reg = 1'b0;
 end
 
@@ -584,55 +584,113 @@ top_gmem_m_axi_U(
     .I_BUSER(gmem_BUSER)
 );
 
-conv2 grp_conv2_fu_188(
+dense grp_dense_fu_188(
     .ap_clk(ap_clk),
     .ap_rst(ap_rst_n_inv),
-    .ap_start(grp_conv2_fu_188_ap_start),
-    .ap_done(grp_conv2_fu_188_ap_done),
-    .ap_idle(grp_conv2_fu_188_ap_idle),
-    .ap_ready(grp_conv2_fu_188_ap_ready),
-    .m_axi_input_V_AWVALID(grp_conv2_fu_188_m_axi_input_V_AWVALID),
+    .ap_start(grp_dense_fu_188_ap_start),
+    .ap_done(grp_dense_fu_188_ap_done),
+    .ap_idle(grp_dense_fu_188_ap_idle),
+    .ap_ready(grp_dense_fu_188_ap_ready),
+    .m_axi_input_V_AWVALID(grp_dense_fu_188_m_axi_input_V_AWVALID),
     .m_axi_input_V_AWREADY(gmem_AWREADY),
-    .m_axi_input_V_AWADDR(grp_conv2_fu_188_m_axi_input_V_AWADDR),
-    .m_axi_input_V_AWID(grp_conv2_fu_188_m_axi_input_V_AWID),
-    .m_axi_input_V_AWLEN(grp_conv2_fu_188_m_axi_input_V_AWLEN),
-    .m_axi_input_V_AWSIZE(grp_conv2_fu_188_m_axi_input_V_AWSIZE),
-    .m_axi_input_V_AWBURST(grp_conv2_fu_188_m_axi_input_V_AWBURST),
-    .m_axi_input_V_AWLOCK(grp_conv2_fu_188_m_axi_input_V_AWLOCK),
-    .m_axi_input_V_AWCACHE(grp_conv2_fu_188_m_axi_input_V_AWCACHE),
-    .m_axi_input_V_AWPROT(grp_conv2_fu_188_m_axi_input_V_AWPROT),
-    .m_axi_input_V_AWQOS(grp_conv2_fu_188_m_axi_input_V_AWQOS),
-    .m_axi_input_V_AWREGION(grp_conv2_fu_188_m_axi_input_V_AWREGION),
-    .m_axi_input_V_AWUSER(grp_conv2_fu_188_m_axi_input_V_AWUSER),
-    .m_axi_input_V_WVALID(grp_conv2_fu_188_m_axi_input_V_WVALID),
+    .m_axi_input_V_AWADDR(grp_dense_fu_188_m_axi_input_V_AWADDR),
+    .m_axi_input_V_AWID(grp_dense_fu_188_m_axi_input_V_AWID),
+    .m_axi_input_V_AWLEN(grp_dense_fu_188_m_axi_input_V_AWLEN),
+    .m_axi_input_V_AWSIZE(grp_dense_fu_188_m_axi_input_V_AWSIZE),
+    .m_axi_input_V_AWBURST(grp_dense_fu_188_m_axi_input_V_AWBURST),
+    .m_axi_input_V_AWLOCK(grp_dense_fu_188_m_axi_input_V_AWLOCK),
+    .m_axi_input_V_AWCACHE(grp_dense_fu_188_m_axi_input_V_AWCACHE),
+    .m_axi_input_V_AWPROT(grp_dense_fu_188_m_axi_input_V_AWPROT),
+    .m_axi_input_V_AWQOS(grp_dense_fu_188_m_axi_input_V_AWQOS),
+    .m_axi_input_V_AWREGION(grp_dense_fu_188_m_axi_input_V_AWREGION),
+    .m_axi_input_V_AWUSER(grp_dense_fu_188_m_axi_input_V_AWUSER),
+    .m_axi_input_V_WVALID(grp_dense_fu_188_m_axi_input_V_WVALID),
     .m_axi_input_V_WREADY(gmem_WREADY),
-    .m_axi_input_V_WDATA(grp_conv2_fu_188_m_axi_input_V_WDATA),
-    .m_axi_input_V_WSTRB(grp_conv2_fu_188_m_axi_input_V_WSTRB),
-    .m_axi_input_V_WLAST(grp_conv2_fu_188_m_axi_input_V_WLAST),
-    .m_axi_input_V_WID(grp_conv2_fu_188_m_axi_input_V_WID),
-    .m_axi_input_V_WUSER(grp_conv2_fu_188_m_axi_input_V_WUSER),
-    .m_axi_input_V_ARVALID(grp_conv2_fu_188_m_axi_input_V_ARVALID),
+    .m_axi_input_V_WDATA(grp_dense_fu_188_m_axi_input_V_WDATA),
+    .m_axi_input_V_WSTRB(grp_dense_fu_188_m_axi_input_V_WSTRB),
+    .m_axi_input_V_WLAST(grp_dense_fu_188_m_axi_input_V_WLAST),
+    .m_axi_input_V_WID(grp_dense_fu_188_m_axi_input_V_WID),
+    .m_axi_input_V_WUSER(grp_dense_fu_188_m_axi_input_V_WUSER),
+    .m_axi_input_V_ARVALID(grp_dense_fu_188_m_axi_input_V_ARVALID),
     .m_axi_input_V_ARREADY(gmem_ARREADY),
-    .m_axi_input_V_ARADDR(grp_conv2_fu_188_m_axi_input_V_ARADDR),
-    .m_axi_input_V_ARID(grp_conv2_fu_188_m_axi_input_V_ARID),
-    .m_axi_input_V_ARLEN(grp_conv2_fu_188_m_axi_input_V_ARLEN),
-    .m_axi_input_V_ARSIZE(grp_conv2_fu_188_m_axi_input_V_ARSIZE),
-    .m_axi_input_V_ARBURST(grp_conv2_fu_188_m_axi_input_V_ARBURST),
-    .m_axi_input_V_ARLOCK(grp_conv2_fu_188_m_axi_input_V_ARLOCK),
-    .m_axi_input_V_ARCACHE(grp_conv2_fu_188_m_axi_input_V_ARCACHE),
-    .m_axi_input_V_ARPROT(grp_conv2_fu_188_m_axi_input_V_ARPROT),
-    .m_axi_input_V_ARQOS(grp_conv2_fu_188_m_axi_input_V_ARQOS),
-    .m_axi_input_V_ARREGION(grp_conv2_fu_188_m_axi_input_V_ARREGION),
-    .m_axi_input_V_ARUSER(grp_conv2_fu_188_m_axi_input_V_ARUSER),
+    .m_axi_input_V_ARADDR(grp_dense_fu_188_m_axi_input_V_ARADDR),
+    .m_axi_input_V_ARID(grp_dense_fu_188_m_axi_input_V_ARID),
+    .m_axi_input_V_ARLEN(grp_dense_fu_188_m_axi_input_V_ARLEN),
+    .m_axi_input_V_ARSIZE(grp_dense_fu_188_m_axi_input_V_ARSIZE),
+    .m_axi_input_V_ARBURST(grp_dense_fu_188_m_axi_input_V_ARBURST),
+    .m_axi_input_V_ARLOCK(grp_dense_fu_188_m_axi_input_V_ARLOCK),
+    .m_axi_input_V_ARCACHE(grp_dense_fu_188_m_axi_input_V_ARCACHE),
+    .m_axi_input_V_ARPROT(grp_dense_fu_188_m_axi_input_V_ARPROT),
+    .m_axi_input_V_ARQOS(grp_dense_fu_188_m_axi_input_V_ARQOS),
+    .m_axi_input_V_ARREGION(grp_dense_fu_188_m_axi_input_V_ARREGION),
+    .m_axi_input_V_ARUSER(grp_dense_fu_188_m_axi_input_V_ARUSER),
     .m_axi_input_V_RVALID(gmem_RVALID),
-    .m_axi_input_V_RREADY(grp_conv2_fu_188_m_axi_input_V_RREADY),
+    .m_axi_input_V_RREADY(grp_dense_fu_188_m_axi_input_V_RREADY),
     .m_axi_input_V_RDATA(gmem_RDATA),
     .m_axi_input_V_RLAST(gmem_RLAST),
     .m_axi_input_V_RID(gmem_RID),
     .m_axi_input_V_RUSER(gmem_RUSER),
     .m_axi_input_V_RRESP(gmem_RRESP),
     .m_axi_input_V_BVALID(gmem_BVALID),
-    .m_axi_input_V_BREADY(grp_conv2_fu_188_m_axi_input_V_BREADY),
+    .m_axi_input_V_BREADY(grp_dense_fu_188_m_axi_input_V_BREADY),
+    .m_axi_input_V_BRESP(gmem_BRESP),
+    .m_axi_input_V_BID(gmem_BID),
+    .m_axi_input_V_BUSER(gmem_BUSER),
+    .input_V_offset(outputPool2_V_read_reg_250),
+    .outputDense_V_offset(outputDense_V_read_reg_245),
+    .fcWeight_V_offset(fcWeight_V_read_reg_240),
+    .fcBias_V_offset(fcBias_V_read_reg_235)
+);
+
+conv2 grp_conv2_fu_198(
+    .ap_clk(ap_clk),
+    .ap_rst(ap_rst_n_inv),
+    .ap_start(grp_conv2_fu_198_ap_start),
+    .ap_done(grp_conv2_fu_198_ap_done),
+    .ap_idle(grp_conv2_fu_198_ap_idle),
+    .ap_ready(grp_conv2_fu_198_ap_ready),
+    .m_axi_input_V_AWVALID(grp_conv2_fu_198_m_axi_input_V_AWVALID),
+    .m_axi_input_V_AWREADY(gmem_AWREADY),
+    .m_axi_input_V_AWADDR(grp_conv2_fu_198_m_axi_input_V_AWADDR),
+    .m_axi_input_V_AWID(grp_conv2_fu_198_m_axi_input_V_AWID),
+    .m_axi_input_V_AWLEN(grp_conv2_fu_198_m_axi_input_V_AWLEN),
+    .m_axi_input_V_AWSIZE(grp_conv2_fu_198_m_axi_input_V_AWSIZE),
+    .m_axi_input_V_AWBURST(grp_conv2_fu_198_m_axi_input_V_AWBURST),
+    .m_axi_input_V_AWLOCK(grp_conv2_fu_198_m_axi_input_V_AWLOCK),
+    .m_axi_input_V_AWCACHE(grp_conv2_fu_198_m_axi_input_V_AWCACHE),
+    .m_axi_input_V_AWPROT(grp_conv2_fu_198_m_axi_input_V_AWPROT),
+    .m_axi_input_V_AWQOS(grp_conv2_fu_198_m_axi_input_V_AWQOS),
+    .m_axi_input_V_AWREGION(grp_conv2_fu_198_m_axi_input_V_AWREGION),
+    .m_axi_input_V_AWUSER(grp_conv2_fu_198_m_axi_input_V_AWUSER),
+    .m_axi_input_V_WVALID(grp_conv2_fu_198_m_axi_input_V_WVALID),
+    .m_axi_input_V_WREADY(gmem_WREADY),
+    .m_axi_input_V_WDATA(grp_conv2_fu_198_m_axi_input_V_WDATA),
+    .m_axi_input_V_WSTRB(grp_conv2_fu_198_m_axi_input_V_WSTRB),
+    .m_axi_input_V_WLAST(grp_conv2_fu_198_m_axi_input_V_WLAST),
+    .m_axi_input_V_WID(grp_conv2_fu_198_m_axi_input_V_WID),
+    .m_axi_input_V_WUSER(grp_conv2_fu_198_m_axi_input_V_WUSER),
+    .m_axi_input_V_ARVALID(grp_conv2_fu_198_m_axi_input_V_ARVALID),
+    .m_axi_input_V_ARREADY(gmem_ARREADY),
+    .m_axi_input_V_ARADDR(grp_conv2_fu_198_m_axi_input_V_ARADDR),
+    .m_axi_input_V_ARID(grp_conv2_fu_198_m_axi_input_V_ARID),
+    .m_axi_input_V_ARLEN(grp_conv2_fu_198_m_axi_input_V_ARLEN),
+    .m_axi_input_V_ARSIZE(grp_conv2_fu_198_m_axi_input_V_ARSIZE),
+    .m_axi_input_V_ARBURST(grp_conv2_fu_198_m_axi_input_V_ARBURST),
+    .m_axi_input_V_ARLOCK(grp_conv2_fu_198_m_axi_input_V_ARLOCK),
+    .m_axi_input_V_ARCACHE(grp_conv2_fu_198_m_axi_input_V_ARCACHE),
+    .m_axi_input_V_ARPROT(grp_conv2_fu_198_m_axi_input_V_ARPROT),
+    .m_axi_input_V_ARQOS(grp_conv2_fu_198_m_axi_input_V_ARQOS),
+    .m_axi_input_V_ARREGION(grp_conv2_fu_198_m_axi_input_V_ARREGION),
+    .m_axi_input_V_ARUSER(grp_conv2_fu_198_m_axi_input_V_ARUSER),
+    .m_axi_input_V_RVALID(gmem_RVALID),
+    .m_axi_input_V_RREADY(grp_conv2_fu_198_m_axi_input_V_RREADY),
+    .m_axi_input_V_RDATA(gmem_RDATA),
+    .m_axi_input_V_RLAST(gmem_RLAST),
+    .m_axi_input_V_RID(gmem_RID),
+    .m_axi_input_V_RUSER(gmem_RUSER),
+    .m_axi_input_V_RRESP(gmem_RRESP),
+    .m_axi_input_V_BVALID(gmem_BVALID),
+    .m_axi_input_V_BREADY(grp_conv2_fu_198_m_axi_input_V_BREADY),
     .m_axi_input_V_BRESP(gmem_BRESP),
     .m_axi_input_V_BID(gmem_BID),
     .m_axi_input_V_BUSER(gmem_BUSER),
@@ -642,55 +700,55 @@ conv2 grp_conv2_fu_188(
     .bias_V_offset(bias2_V_read_reg_262)
 );
 
-conv1 grp_conv1_fu_198(
+conv1 grp_conv1_fu_208(
     .ap_clk(ap_clk),
     .ap_rst(ap_rst_n_inv),
-    .ap_start(grp_conv1_fu_198_ap_start),
-    .ap_done(grp_conv1_fu_198_ap_done),
-    .ap_idle(grp_conv1_fu_198_ap_idle),
-    .ap_ready(grp_conv1_fu_198_ap_ready),
-    .m_axi_input_V_AWVALID(grp_conv1_fu_198_m_axi_input_V_AWVALID),
+    .ap_start(grp_conv1_fu_208_ap_start),
+    .ap_done(grp_conv1_fu_208_ap_done),
+    .ap_idle(grp_conv1_fu_208_ap_idle),
+    .ap_ready(grp_conv1_fu_208_ap_ready),
+    .m_axi_input_V_AWVALID(grp_conv1_fu_208_m_axi_input_V_AWVALID),
     .m_axi_input_V_AWREADY(gmem_AWREADY),
-    .m_axi_input_V_AWADDR(grp_conv1_fu_198_m_axi_input_V_AWADDR),
-    .m_axi_input_V_AWID(grp_conv1_fu_198_m_axi_input_V_AWID),
-    .m_axi_input_V_AWLEN(grp_conv1_fu_198_m_axi_input_V_AWLEN),
-    .m_axi_input_V_AWSIZE(grp_conv1_fu_198_m_axi_input_V_AWSIZE),
-    .m_axi_input_V_AWBURST(grp_conv1_fu_198_m_axi_input_V_AWBURST),
-    .m_axi_input_V_AWLOCK(grp_conv1_fu_198_m_axi_input_V_AWLOCK),
-    .m_axi_input_V_AWCACHE(grp_conv1_fu_198_m_axi_input_V_AWCACHE),
-    .m_axi_input_V_AWPROT(grp_conv1_fu_198_m_axi_input_V_AWPROT),
-    .m_axi_input_V_AWQOS(grp_conv1_fu_198_m_axi_input_V_AWQOS),
-    .m_axi_input_V_AWREGION(grp_conv1_fu_198_m_axi_input_V_AWREGION),
-    .m_axi_input_V_AWUSER(grp_conv1_fu_198_m_axi_input_V_AWUSER),
-    .m_axi_input_V_WVALID(grp_conv1_fu_198_m_axi_input_V_WVALID),
+    .m_axi_input_V_AWADDR(grp_conv1_fu_208_m_axi_input_V_AWADDR),
+    .m_axi_input_V_AWID(grp_conv1_fu_208_m_axi_input_V_AWID),
+    .m_axi_input_V_AWLEN(grp_conv1_fu_208_m_axi_input_V_AWLEN),
+    .m_axi_input_V_AWSIZE(grp_conv1_fu_208_m_axi_input_V_AWSIZE),
+    .m_axi_input_V_AWBURST(grp_conv1_fu_208_m_axi_input_V_AWBURST),
+    .m_axi_input_V_AWLOCK(grp_conv1_fu_208_m_axi_input_V_AWLOCK),
+    .m_axi_input_V_AWCACHE(grp_conv1_fu_208_m_axi_input_V_AWCACHE),
+    .m_axi_input_V_AWPROT(grp_conv1_fu_208_m_axi_input_V_AWPROT),
+    .m_axi_input_V_AWQOS(grp_conv1_fu_208_m_axi_input_V_AWQOS),
+    .m_axi_input_V_AWREGION(grp_conv1_fu_208_m_axi_input_V_AWREGION),
+    .m_axi_input_V_AWUSER(grp_conv1_fu_208_m_axi_input_V_AWUSER),
+    .m_axi_input_V_WVALID(grp_conv1_fu_208_m_axi_input_V_WVALID),
     .m_axi_input_V_WREADY(gmem_WREADY),
-    .m_axi_input_V_WDATA(grp_conv1_fu_198_m_axi_input_V_WDATA),
-    .m_axi_input_V_WSTRB(grp_conv1_fu_198_m_axi_input_V_WSTRB),
-    .m_axi_input_V_WLAST(grp_conv1_fu_198_m_axi_input_V_WLAST),
-    .m_axi_input_V_WID(grp_conv1_fu_198_m_axi_input_V_WID),
-    .m_axi_input_V_WUSER(grp_conv1_fu_198_m_axi_input_V_WUSER),
-    .m_axi_input_V_ARVALID(grp_conv1_fu_198_m_axi_input_V_ARVALID),
+    .m_axi_input_V_WDATA(grp_conv1_fu_208_m_axi_input_V_WDATA),
+    .m_axi_input_V_WSTRB(grp_conv1_fu_208_m_axi_input_V_WSTRB),
+    .m_axi_input_V_WLAST(grp_conv1_fu_208_m_axi_input_V_WLAST),
+    .m_axi_input_V_WID(grp_conv1_fu_208_m_axi_input_V_WID),
+    .m_axi_input_V_WUSER(grp_conv1_fu_208_m_axi_input_V_WUSER),
+    .m_axi_input_V_ARVALID(grp_conv1_fu_208_m_axi_input_V_ARVALID),
     .m_axi_input_V_ARREADY(gmem_ARREADY),
-    .m_axi_input_V_ARADDR(grp_conv1_fu_198_m_axi_input_V_ARADDR),
-    .m_axi_input_V_ARID(grp_conv1_fu_198_m_axi_input_V_ARID),
-    .m_axi_input_V_ARLEN(grp_conv1_fu_198_m_axi_input_V_ARLEN),
-    .m_axi_input_V_ARSIZE(grp_conv1_fu_198_m_axi_input_V_ARSIZE),
-    .m_axi_input_V_ARBURST(grp_conv1_fu_198_m_axi_input_V_ARBURST),
-    .m_axi_input_V_ARLOCK(grp_conv1_fu_198_m_axi_input_V_ARLOCK),
-    .m_axi_input_V_ARCACHE(grp_conv1_fu_198_m_axi_input_V_ARCACHE),
-    .m_axi_input_V_ARPROT(grp_conv1_fu_198_m_axi_input_V_ARPROT),
-    .m_axi_input_V_ARQOS(grp_conv1_fu_198_m_axi_input_V_ARQOS),
-    .m_axi_input_V_ARREGION(grp_conv1_fu_198_m_axi_input_V_ARREGION),
-    .m_axi_input_V_ARUSER(grp_conv1_fu_198_m_axi_input_V_ARUSER),
+    .m_axi_input_V_ARADDR(grp_conv1_fu_208_m_axi_input_V_ARADDR),
+    .m_axi_input_V_ARID(grp_conv1_fu_208_m_axi_input_V_ARID),
+    .m_axi_input_V_ARLEN(grp_conv1_fu_208_m_axi_input_V_ARLEN),
+    .m_axi_input_V_ARSIZE(grp_conv1_fu_208_m_axi_input_V_ARSIZE),
+    .m_axi_input_V_ARBURST(grp_conv1_fu_208_m_axi_input_V_ARBURST),
+    .m_axi_input_V_ARLOCK(grp_conv1_fu_208_m_axi_input_V_ARLOCK),
+    .m_axi_input_V_ARCACHE(grp_conv1_fu_208_m_axi_input_V_ARCACHE),
+    .m_axi_input_V_ARPROT(grp_conv1_fu_208_m_axi_input_V_ARPROT),
+    .m_axi_input_V_ARQOS(grp_conv1_fu_208_m_axi_input_V_ARQOS),
+    .m_axi_input_V_ARREGION(grp_conv1_fu_208_m_axi_input_V_ARREGION),
+    .m_axi_input_V_ARUSER(grp_conv1_fu_208_m_axi_input_V_ARUSER),
     .m_axi_input_V_RVALID(gmem_RVALID),
-    .m_axi_input_V_RREADY(grp_conv1_fu_198_m_axi_input_V_RREADY),
+    .m_axi_input_V_RREADY(grp_conv1_fu_208_m_axi_input_V_RREADY),
     .m_axi_input_V_RDATA(gmem_RDATA),
     .m_axi_input_V_RLAST(gmem_RLAST),
     .m_axi_input_V_RID(gmem_RID),
     .m_axi_input_V_RUSER(gmem_RUSER),
     .m_axi_input_V_RRESP(gmem_RRESP),
     .m_axi_input_V_BVALID(gmem_BVALID),
-    .m_axi_input_V_BREADY(grp_conv1_fu_198_m_axi_input_V_BREADY),
+    .m_axi_input_V_BREADY(grp_conv1_fu_208_m_axi_input_V_BREADY),
     .m_axi_input_V_BRESP(gmem_BRESP),
     .m_axi_input_V_BID(gmem_BID),
     .m_axi_input_V_BUSER(gmem_BUSER),
@@ -698,64 +756,6 @@ conv1 grp_conv1_fu_198(
     .outputConv_V_offset(outputConv_V_read_reg_288),
     .weight_V_offset(weight_V_read_reg_283),
     .bias_V_offset(bias_V_read_reg_278)
-);
-
-dense grp_dense_fu_208(
-    .ap_clk(ap_clk),
-    .ap_rst(ap_rst_n_inv),
-    .ap_start(grp_dense_fu_208_ap_start),
-    .ap_done(grp_dense_fu_208_ap_done),
-    .ap_idle(grp_dense_fu_208_ap_idle),
-    .ap_ready(grp_dense_fu_208_ap_ready),
-    .m_axi_input_V_AWVALID(grp_dense_fu_208_m_axi_input_V_AWVALID),
-    .m_axi_input_V_AWREADY(gmem_AWREADY),
-    .m_axi_input_V_AWADDR(grp_dense_fu_208_m_axi_input_V_AWADDR),
-    .m_axi_input_V_AWID(grp_dense_fu_208_m_axi_input_V_AWID),
-    .m_axi_input_V_AWLEN(grp_dense_fu_208_m_axi_input_V_AWLEN),
-    .m_axi_input_V_AWSIZE(grp_dense_fu_208_m_axi_input_V_AWSIZE),
-    .m_axi_input_V_AWBURST(grp_dense_fu_208_m_axi_input_V_AWBURST),
-    .m_axi_input_V_AWLOCK(grp_dense_fu_208_m_axi_input_V_AWLOCK),
-    .m_axi_input_V_AWCACHE(grp_dense_fu_208_m_axi_input_V_AWCACHE),
-    .m_axi_input_V_AWPROT(grp_dense_fu_208_m_axi_input_V_AWPROT),
-    .m_axi_input_V_AWQOS(grp_dense_fu_208_m_axi_input_V_AWQOS),
-    .m_axi_input_V_AWREGION(grp_dense_fu_208_m_axi_input_V_AWREGION),
-    .m_axi_input_V_AWUSER(grp_dense_fu_208_m_axi_input_V_AWUSER),
-    .m_axi_input_V_WVALID(grp_dense_fu_208_m_axi_input_V_WVALID),
-    .m_axi_input_V_WREADY(gmem_WREADY),
-    .m_axi_input_V_WDATA(grp_dense_fu_208_m_axi_input_V_WDATA),
-    .m_axi_input_V_WSTRB(grp_dense_fu_208_m_axi_input_V_WSTRB),
-    .m_axi_input_V_WLAST(grp_dense_fu_208_m_axi_input_V_WLAST),
-    .m_axi_input_V_WID(grp_dense_fu_208_m_axi_input_V_WID),
-    .m_axi_input_V_WUSER(grp_dense_fu_208_m_axi_input_V_WUSER),
-    .m_axi_input_V_ARVALID(grp_dense_fu_208_m_axi_input_V_ARVALID),
-    .m_axi_input_V_ARREADY(gmem_ARREADY),
-    .m_axi_input_V_ARADDR(grp_dense_fu_208_m_axi_input_V_ARADDR),
-    .m_axi_input_V_ARID(grp_dense_fu_208_m_axi_input_V_ARID),
-    .m_axi_input_V_ARLEN(grp_dense_fu_208_m_axi_input_V_ARLEN),
-    .m_axi_input_V_ARSIZE(grp_dense_fu_208_m_axi_input_V_ARSIZE),
-    .m_axi_input_V_ARBURST(grp_dense_fu_208_m_axi_input_V_ARBURST),
-    .m_axi_input_V_ARLOCK(grp_dense_fu_208_m_axi_input_V_ARLOCK),
-    .m_axi_input_V_ARCACHE(grp_dense_fu_208_m_axi_input_V_ARCACHE),
-    .m_axi_input_V_ARPROT(grp_dense_fu_208_m_axi_input_V_ARPROT),
-    .m_axi_input_V_ARQOS(grp_dense_fu_208_m_axi_input_V_ARQOS),
-    .m_axi_input_V_ARREGION(grp_dense_fu_208_m_axi_input_V_ARREGION),
-    .m_axi_input_V_ARUSER(grp_dense_fu_208_m_axi_input_V_ARUSER),
-    .m_axi_input_V_RVALID(gmem_RVALID),
-    .m_axi_input_V_RREADY(grp_dense_fu_208_m_axi_input_V_RREADY),
-    .m_axi_input_V_RDATA(gmem_RDATA),
-    .m_axi_input_V_RLAST(gmem_RLAST),
-    .m_axi_input_V_RID(gmem_RID),
-    .m_axi_input_V_RUSER(gmem_RUSER),
-    .m_axi_input_V_RRESP(gmem_RRESP),
-    .m_axi_input_V_BVALID(gmem_BVALID),
-    .m_axi_input_V_BREADY(grp_dense_fu_208_m_axi_input_V_BREADY),
-    .m_axi_input_V_BRESP(gmem_BRESP),
-    .m_axi_input_V_BID(gmem_BID),
-    .m_axi_input_V_BUSER(gmem_BUSER),
-    .input_V_offset(outputPool2_V_read_reg_250),
-    .outputDense_V_offset(outputDense_V_read_reg_245),
-    .fcWeight_V_offset(fcWeight_V_read_reg_240),
-    .fcBias_V_offset(fcBias_V_read_reg_235)
 );
 
 pool grp_pool_fu_218(
@@ -827,36 +827,36 @@ end
 
 always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
-        grp_conv1_fu_198_ap_start_reg <= 1'b0;
+        grp_conv1_fu_208_ap_start_reg <= 1'b0;
     end else begin
         if ((1'b1 == ap_CS_fsm_state2)) begin
-            grp_conv1_fu_198_ap_start_reg <= 1'b1;
-        end else if ((grp_conv1_fu_198_ap_ready == 1'b1)) begin
-            grp_conv1_fu_198_ap_start_reg <= 1'b0;
+            grp_conv1_fu_208_ap_start_reg <= 1'b1;
+        end else if ((grp_conv1_fu_208_ap_ready == 1'b1)) begin
+            grp_conv1_fu_208_ap_start_reg <= 1'b0;
         end
     end
 end
 
 always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
-        grp_conv2_fu_188_ap_start_reg <= 1'b0;
+        grp_conv2_fu_198_ap_start_reg <= 1'b0;
     end else begin
         if ((1'b1 == ap_CS_fsm_state6)) begin
-            grp_conv2_fu_188_ap_start_reg <= 1'b1;
-        end else if ((grp_conv2_fu_188_ap_ready == 1'b1)) begin
-            grp_conv2_fu_188_ap_start_reg <= 1'b0;
+            grp_conv2_fu_198_ap_start_reg <= 1'b1;
+        end else if ((grp_conv2_fu_198_ap_ready == 1'b1)) begin
+            grp_conv2_fu_198_ap_start_reg <= 1'b0;
         end
     end
 end
 
 always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
-        grp_dense_fu_208_ap_start_reg <= 1'b0;
+        grp_dense_fu_188_ap_start_reg <= 1'b0;
     end else begin
         if ((1'b1 == ap_CS_fsm_state10)) begin
-            grp_dense_fu_208_ap_start_reg <= 1'b1;
-        end else if ((grp_dense_fu_208_ap_ready == 1'b1)) begin
-            grp_dense_fu_208_ap_start_reg <= 1'b0;
+            grp_dense_fu_188_ap_start_reg <= 1'b1;
+        end else if ((grp_dense_fu_188_ap_ready == 1'b1)) begin
+            grp_dense_fu_188_ap_start_reg <= 1'b0;
         end
     end
 end
@@ -891,7 +891,7 @@ always @ (posedge ap_clk) begin
 end
 
 always @ (*) begin
-    if (((grp_dense_fu_208_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state11))) begin
+    if (((grp_dense_fu_188_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state11))) begin
         ap_done = 1'b1;
     end else begin
         ap_done = 1'b0;
@@ -907,7 +907,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((grp_dense_fu_208_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state11))) begin
+    if (((grp_dense_fu_188_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state11))) begin
         ap_ready = 1'b1;
     end else begin
         ap_ready = 1'b0;
@@ -917,12 +917,12 @@ end
 always @ (*) begin
     if (((1'b1 == ap_CS_fsm_state9) | (1'b1 == ap_CS_fsm_state5) | (1'b1 == ap_CS_fsm_state8) | (1'b1 == ap_CS_fsm_state4))) begin
         gmem_ARADDR = grp_pool_fu_218_m_axi_input_V_ARADDR;
-    end else if (((1'b1 == ap_CS_fsm_state11) | (1'b1 == ap_CS_fsm_state10))) begin
-        gmem_ARADDR = grp_dense_fu_208_m_axi_input_V_ARADDR;
     end else if (((1'b1 == ap_CS_fsm_state3) | (1'b1 == ap_CS_fsm_state2))) begin
-        gmem_ARADDR = grp_conv1_fu_198_m_axi_input_V_ARADDR;
+        gmem_ARADDR = grp_conv1_fu_208_m_axi_input_V_ARADDR;
     end else if (((1'b1 == ap_CS_fsm_state7) | (1'b1 == ap_CS_fsm_state6))) begin
-        gmem_ARADDR = grp_conv2_fu_188_m_axi_input_V_ARADDR;
+        gmem_ARADDR = grp_conv2_fu_198_m_axi_input_V_ARADDR;
+    end else if (((1'b1 == ap_CS_fsm_state11) | (1'b1 == ap_CS_fsm_state10))) begin
+        gmem_ARADDR = grp_dense_fu_188_m_axi_input_V_ARADDR;
     end else begin
         gmem_ARADDR = 'bx;
     end
@@ -931,12 +931,12 @@ end
 always @ (*) begin
     if (((1'b1 == ap_CS_fsm_state9) | (1'b1 == ap_CS_fsm_state5) | (1'b1 == ap_CS_fsm_state8) | (1'b1 == ap_CS_fsm_state4))) begin
         gmem_ARBURST = grp_pool_fu_218_m_axi_input_V_ARBURST;
-    end else if (((1'b1 == ap_CS_fsm_state11) | (1'b1 == ap_CS_fsm_state10))) begin
-        gmem_ARBURST = grp_dense_fu_208_m_axi_input_V_ARBURST;
     end else if (((1'b1 == ap_CS_fsm_state3) | (1'b1 == ap_CS_fsm_state2))) begin
-        gmem_ARBURST = grp_conv1_fu_198_m_axi_input_V_ARBURST;
+        gmem_ARBURST = grp_conv1_fu_208_m_axi_input_V_ARBURST;
     end else if (((1'b1 == ap_CS_fsm_state7) | (1'b1 == ap_CS_fsm_state6))) begin
-        gmem_ARBURST = grp_conv2_fu_188_m_axi_input_V_ARBURST;
+        gmem_ARBURST = grp_conv2_fu_198_m_axi_input_V_ARBURST;
+    end else if (((1'b1 == ap_CS_fsm_state11) | (1'b1 == ap_CS_fsm_state10))) begin
+        gmem_ARBURST = grp_dense_fu_188_m_axi_input_V_ARBURST;
     end else begin
         gmem_ARBURST = 'bx;
     end
@@ -945,12 +945,12 @@ end
 always @ (*) begin
     if (((1'b1 == ap_CS_fsm_state9) | (1'b1 == ap_CS_fsm_state5) | (1'b1 == ap_CS_fsm_state8) | (1'b1 == ap_CS_fsm_state4))) begin
         gmem_ARCACHE = grp_pool_fu_218_m_axi_input_V_ARCACHE;
-    end else if (((1'b1 == ap_CS_fsm_state11) | (1'b1 == ap_CS_fsm_state10))) begin
-        gmem_ARCACHE = grp_dense_fu_208_m_axi_input_V_ARCACHE;
     end else if (((1'b1 == ap_CS_fsm_state3) | (1'b1 == ap_CS_fsm_state2))) begin
-        gmem_ARCACHE = grp_conv1_fu_198_m_axi_input_V_ARCACHE;
+        gmem_ARCACHE = grp_conv1_fu_208_m_axi_input_V_ARCACHE;
     end else if (((1'b1 == ap_CS_fsm_state7) | (1'b1 == ap_CS_fsm_state6))) begin
-        gmem_ARCACHE = grp_conv2_fu_188_m_axi_input_V_ARCACHE;
+        gmem_ARCACHE = grp_conv2_fu_198_m_axi_input_V_ARCACHE;
+    end else if (((1'b1 == ap_CS_fsm_state11) | (1'b1 == ap_CS_fsm_state10))) begin
+        gmem_ARCACHE = grp_dense_fu_188_m_axi_input_V_ARCACHE;
     end else begin
         gmem_ARCACHE = 'bx;
     end
@@ -959,12 +959,12 @@ end
 always @ (*) begin
     if (((1'b1 == ap_CS_fsm_state9) | (1'b1 == ap_CS_fsm_state5) | (1'b1 == ap_CS_fsm_state8) | (1'b1 == ap_CS_fsm_state4))) begin
         gmem_ARID = grp_pool_fu_218_m_axi_input_V_ARID;
-    end else if (((1'b1 == ap_CS_fsm_state11) | (1'b1 == ap_CS_fsm_state10))) begin
-        gmem_ARID = grp_dense_fu_208_m_axi_input_V_ARID;
     end else if (((1'b1 == ap_CS_fsm_state3) | (1'b1 == ap_CS_fsm_state2))) begin
-        gmem_ARID = grp_conv1_fu_198_m_axi_input_V_ARID;
+        gmem_ARID = grp_conv1_fu_208_m_axi_input_V_ARID;
     end else if (((1'b1 == ap_CS_fsm_state7) | (1'b1 == ap_CS_fsm_state6))) begin
-        gmem_ARID = grp_conv2_fu_188_m_axi_input_V_ARID;
+        gmem_ARID = grp_conv2_fu_198_m_axi_input_V_ARID;
+    end else if (((1'b1 == ap_CS_fsm_state11) | (1'b1 == ap_CS_fsm_state10))) begin
+        gmem_ARID = grp_dense_fu_188_m_axi_input_V_ARID;
     end else begin
         gmem_ARID = 'bx;
     end
@@ -973,12 +973,12 @@ end
 always @ (*) begin
     if (((1'b1 == ap_CS_fsm_state9) | (1'b1 == ap_CS_fsm_state5) | (1'b1 == ap_CS_fsm_state8) | (1'b1 == ap_CS_fsm_state4))) begin
         gmem_ARLEN = grp_pool_fu_218_m_axi_input_V_ARLEN;
-    end else if (((1'b1 == ap_CS_fsm_state11) | (1'b1 == ap_CS_fsm_state10))) begin
-        gmem_ARLEN = grp_dense_fu_208_m_axi_input_V_ARLEN;
     end else if (((1'b1 == ap_CS_fsm_state3) | (1'b1 == ap_CS_fsm_state2))) begin
-        gmem_ARLEN = grp_conv1_fu_198_m_axi_input_V_ARLEN;
+        gmem_ARLEN = grp_conv1_fu_208_m_axi_input_V_ARLEN;
     end else if (((1'b1 == ap_CS_fsm_state7) | (1'b1 == ap_CS_fsm_state6))) begin
-        gmem_ARLEN = grp_conv2_fu_188_m_axi_input_V_ARLEN;
+        gmem_ARLEN = grp_conv2_fu_198_m_axi_input_V_ARLEN;
+    end else if (((1'b1 == ap_CS_fsm_state11) | (1'b1 == ap_CS_fsm_state10))) begin
+        gmem_ARLEN = grp_dense_fu_188_m_axi_input_V_ARLEN;
     end else begin
         gmem_ARLEN = 'bx;
     end
@@ -987,12 +987,12 @@ end
 always @ (*) begin
     if (((1'b1 == ap_CS_fsm_state9) | (1'b1 == ap_CS_fsm_state5) | (1'b1 == ap_CS_fsm_state8) | (1'b1 == ap_CS_fsm_state4))) begin
         gmem_ARLOCK = grp_pool_fu_218_m_axi_input_V_ARLOCK;
-    end else if (((1'b1 == ap_CS_fsm_state11) | (1'b1 == ap_CS_fsm_state10))) begin
-        gmem_ARLOCK = grp_dense_fu_208_m_axi_input_V_ARLOCK;
     end else if (((1'b1 == ap_CS_fsm_state3) | (1'b1 == ap_CS_fsm_state2))) begin
-        gmem_ARLOCK = grp_conv1_fu_198_m_axi_input_V_ARLOCK;
+        gmem_ARLOCK = grp_conv1_fu_208_m_axi_input_V_ARLOCK;
     end else if (((1'b1 == ap_CS_fsm_state7) | (1'b1 == ap_CS_fsm_state6))) begin
-        gmem_ARLOCK = grp_conv2_fu_188_m_axi_input_V_ARLOCK;
+        gmem_ARLOCK = grp_conv2_fu_198_m_axi_input_V_ARLOCK;
+    end else if (((1'b1 == ap_CS_fsm_state11) | (1'b1 == ap_CS_fsm_state10))) begin
+        gmem_ARLOCK = grp_dense_fu_188_m_axi_input_V_ARLOCK;
     end else begin
         gmem_ARLOCK = 'bx;
     end
@@ -1001,12 +1001,12 @@ end
 always @ (*) begin
     if (((1'b1 == ap_CS_fsm_state9) | (1'b1 == ap_CS_fsm_state5) | (1'b1 == ap_CS_fsm_state8) | (1'b1 == ap_CS_fsm_state4))) begin
         gmem_ARPROT = grp_pool_fu_218_m_axi_input_V_ARPROT;
-    end else if (((1'b1 == ap_CS_fsm_state11) | (1'b1 == ap_CS_fsm_state10))) begin
-        gmem_ARPROT = grp_dense_fu_208_m_axi_input_V_ARPROT;
     end else if (((1'b1 == ap_CS_fsm_state3) | (1'b1 == ap_CS_fsm_state2))) begin
-        gmem_ARPROT = grp_conv1_fu_198_m_axi_input_V_ARPROT;
+        gmem_ARPROT = grp_conv1_fu_208_m_axi_input_V_ARPROT;
     end else if (((1'b1 == ap_CS_fsm_state7) | (1'b1 == ap_CS_fsm_state6))) begin
-        gmem_ARPROT = grp_conv2_fu_188_m_axi_input_V_ARPROT;
+        gmem_ARPROT = grp_conv2_fu_198_m_axi_input_V_ARPROT;
+    end else if (((1'b1 == ap_CS_fsm_state11) | (1'b1 == ap_CS_fsm_state10))) begin
+        gmem_ARPROT = grp_dense_fu_188_m_axi_input_V_ARPROT;
     end else begin
         gmem_ARPROT = 'bx;
     end
@@ -1015,12 +1015,12 @@ end
 always @ (*) begin
     if (((1'b1 == ap_CS_fsm_state9) | (1'b1 == ap_CS_fsm_state5) | (1'b1 == ap_CS_fsm_state8) | (1'b1 == ap_CS_fsm_state4))) begin
         gmem_ARQOS = grp_pool_fu_218_m_axi_input_V_ARQOS;
-    end else if (((1'b1 == ap_CS_fsm_state11) | (1'b1 == ap_CS_fsm_state10))) begin
-        gmem_ARQOS = grp_dense_fu_208_m_axi_input_V_ARQOS;
     end else if (((1'b1 == ap_CS_fsm_state3) | (1'b1 == ap_CS_fsm_state2))) begin
-        gmem_ARQOS = grp_conv1_fu_198_m_axi_input_V_ARQOS;
+        gmem_ARQOS = grp_conv1_fu_208_m_axi_input_V_ARQOS;
     end else if (((1'b1 == ap_CS_fsm_state7) | (1'b1 == ap_CS_fsm_state6))) begin
-        gmem_ARQOS = grp_conv2_fu_188_m_axi_input_V_ARQOS;
+        gmem_ARQOS = grp_conv2_fu_198_m_axi_input_V_ARQOS;
+    end else if (((1'b1 == ap_CS_fsm_state11) | (1'b1 == ap_CS_fsm_state10))) begin
+        gmem_ARQOS = grp_dense_fu_188_m_axi_input_V_ARQOS;
     end else begin
         gmem_ARQOS = 'bx;
     end
@@ -1029,12 +1029,12 @@ end
 always @ (*) begin
     if (((1'b1 == ap_CS_fsm_state9) | (1'b1 == ap_CS_fsm_state5) | (1'b1 == ap_CS_fsm_state8) | (1'b1 == ap_CS_fsm_state4))) begin
         gmem_ARREGION = grp_pool_fu_218_m_axi_input_V_ARREGION;
-    end else if (((1'b1 == ap_CS_fsm_state11) | (1'b1 == ap_CS_fsm_state10))) begin
-        gmem_ARREGION = grp_dense_fu_208_m_axi_input_V_ARREGION;
     end else if (((1'b1 == ap_CS_fsm_state3) | (1'b1 == ap_CS_fsm_state2))) begin
-        gmem_ARREGION = grp_conv1_fu_198_m_axi_input_V_ARREGION;
+        gmem_ARREGION = grp_conv1_fu_208_m_axi_input_V_ARREGION;
     end else if (((1'b1 == ap_CS_fsm_state7) | (1'b1 == ap_CS_fsm_state6))) begin
-        gmem_ARREGION = grp_conv2_fu_188_m_axi_input_V_ARREGION;
+        gmem_ARREGION = grp_conv2_fu_198_m_axi_input_V_ARREGION;
+    end else if (((1'b1 == ap_CS_fsm_state11) | (1'b1 == ap_CS_fsm_state10))) begin
+        gmem_ARREGION = grp_dense_fu_188_m_axi_input_V_ARREGION;
     end else begin
         gmem_ARREGION = 'bx;
     end
@@ -1043,12 +1043,12 @@ end
 always @ (*) begin
     if (((1'b1 == ap_CS_fsm_state9) | (1'b1 == ap_CS_fsm_state5) | (1'b1 == ap_CS_fsm_state8) | (1'b1 == ap_CS_fsm_state4))) begin
         gmem_ARSIZE = grp_pool_fu_218_m_axi_input_V_ARSIZE;
-    end else if (((1'b1 == ap_CS_fsm_state11) | (1'b1 == ap_CS_fsm_state10))) begin
-        gmem_ARSIZE = grp_dense_fu_208_m_axi_input_V_ARSIZE;
     end else if (((1'b1 == ap_CS_fsm_state3) | (1'b1 == ap_CS_fsm_state2))) begin
-        gmem_ARSIZE = grp_conv1_fu_198_m_axi_input_V_ARSIZE;
+        gmem_ARSIZE = grp_conv1_fu_208_m_axi_input_V_ARSIZE;
     end else if (((1'b1 == ap_CS_fsm_state7) | (1'b1 == ap_CS_fsm_state6))) begin
-        gmem_ARSIZE = grp_conv2_fu_188_m_axi_input_V_ARSIZE;
+        gmem_ARSIZE = grp_conv2_fu_198_m_axi_input_V_ARSIZE;
+    end else if (((1'b1 == ap_CS_fsm_state11) | (1'b1 == ap_CS_fsm_state10))) begin
+        gmem_ARSIZE = grp_dense_fu_188_m_axi_input_V_ARSIZE;
     end else begin
         gmem_ARSIZE = 'bx;
     end
@@ -1057,12 +1057,12 @@ end
 always @ (*) begin
     if (((1'b1 == ap_CS_fsm_state9) | (1'b1 == ap_CS_fsm_state5) | (1'b1 == ap_CS_fsm_state8) | (1'b1 == ap_CS_fsm_state4))) begin
         gmem_ARUSER = grp_pool_fu_218_m_axi_input_V_ARUSER;
-    end else if (((1'b1 == ap_CS_fsm_state11) | (1'b1 == ap_CS_fsm_state10))) begin
-        gmem_ARUSER = grp_dense_fu_208_m_axi_input_V_ARUSER;
     end else if (((1'b1 == ap_CS_fsm_state3) | (1'b1 == ap_CS_fsm_state2))) begin
-        gmem_ARUSER = grp_conv1_fu_198_m_axi_input_V_ARUSER;
+        gmem_ARUSER = grp_conv1_fu_208_m_axi_input_V_ARUSER;
     end else if (((1'b1 == ap_CS_fsm_state7) | (1'b1 == ap_CS_fsm_state6))) begin
-        gmem_ARUSER = grp_conv2_fu_188_m_axi_input_V_ARUSER;
+        gmem_ARUSER = grp_conv2_fu_198_m_axi_input_V_ARUSER;
+    end else if (((1'b1 == ap_CS_fsm_state11) | (1'b1 == ap_CS_fsm_state10))) begin
+        gmem_ARUSER = grp_dense_fu_188_m_axi_input_V_ARUSER;
     end else begin
         gmem_ARUSER = 'bx;
     end
@@ -1071,12 +1071,12 @@ end
 always @ (*) begin
     if (((1'b1 == ap_CS_fsm_state9) | (1'b1 == ap_CS_fsm_state5) | (1'b1 == ap_CS_fsm_state8) | (1'b1 == ap_CS_fsm_state4))) begin
         gmem_ARVALID = grp_pool_fu_218_m_axi_input_V_ARVALID;
-    end else if (((1'b1 == ap_CS_fsm_state11) | (1'b1 == ap_CS_fsm_state10))) begin
-        gmem_ARVALID = grp_dense_fu_208_m_axi_input_V_ARVALID;
     end else if (((1'b1 == ap_CS_fsm_state3) | (1'b1 == ap_CS_fsm_state2))) begin
-        gmem_ARVALID = grp_conv1_fu_198_m_axi_input_V_ARVALID;
+        gmem_ARVALID = grp_conv1_fu_208_m_axi_input_V_ARVALID;
     end else if (((1'b1 == ap_CS_fsm_state7) | (1'b1 == ap_CS_fsm_state6))) begin
-        gmem_ARVALID = grp_conv2_fu_188_m_axi_input_V_ARVALID;
+        gmem_ARVALID = grp_conv2_fu_198_m_axi_input_V_ARVALID;
+    end else if (((1'b1 == ap_CS_fsm_state11) | (1'b1 == ap_CS_fsm_state10))) begin
+        gmem_ARVALID = grp_dense_fu_188_m_axi_input_V_ARVALID;
     end else begin
         gmem_ARVALID = 1'b0;
     end
@@ -1085,12 +1085,12 @@ end
 always @ (*) begin
     if (((1'b1 == ap_CS_fsm_state9) | (1'b1 == ap_CS_fsm_state5) | (1'b1 == ap_CS_fsm_state8) | (1'b1 == ap_CS_fsm_state4))) begin
         gmem_AWADDR = grp_pool_fu_218_m_axi_input_V_AWADDR;
-    end else if (((1'b1 == ap_CS_fsm_state11) | (1'b1 == ap_CS_fsm_state10))) begin
-        gmem_AWADDR = grp_dense_fu_208_m_axi_input_V_AWADDR;
     end else if (((1'b1 == ap_CS_fsm_state3) | (1'b1 == ap_CS_fsm_state2))) begin
-        gmem_AWADDR = grp_conv1_fu_198_m_axi_input_V_AWADDR;
+        gmem_AWADDR = grp_conv1_fu_208_m_axi_input_V_AWADDR;
     end else if (((1'b1 == ap_CS_fsm_state7) | (1'b1 == ap_CS_fsm_state6))) begin
-        gmem_AWADDR = grp_conv2_fu_188_m_axi_input_V_AWADDR;
+        gmem_AWADDR = grp_conv2_fu_198_m_axi_input_V_AWADDR;
+    end else if (((1'b1 == ap_CS_fsm_state11) | (1'b1 == ap_CS_fsm_state10))) begin
+        gmem_AWADDR = grp_dense_fu_188_m_axi_input_V_AWADDR;
     end else begin
         gmem_AWADDR = 'bx;
     end
@@ -1099,12 +1099,12 @@ end
 always @ (*) begin
     if (((1'b1 == ap_CS_fsm_state9) | (1'b1 == ap_CS_fsm_state5) | (1'b1 == ap_CS_fsm_state8) | (1'b1 == ap_CS_fsm_state4))) begin
         gmem_AWBURST = grp_pool_fu_218_m_axi_input_V_AWBURST;
-    end else if (((1'b1 == ap_CS_fsm_state11) | (1'b1 == ap_CS_fsm_state10))) begin
-        gmem_AWBURST = grp_dense_fu_208_m_axi_input_V_AWBURST;
     end else if (((1'b1 == ap_CS_fsm_state3) | (1'b1 == ap_CS_fsm_state2))) begin
-        gmem_AWBURST = grp_conv1_fu_198_m_axi_input_V_AWBURST;
+        gmem_AWBURST = grp_conv1_fu_208_m_axi_input_V_AWBURST;
     end else if (((1'b1 == ap_CS_fsm_state7) | (1'b1 == ap_CS_fsm_state6))) begin
-        gmem_AWBURST = grp_conv2_fu_188_m_axi_input_V_AWBURST;
+        gmem_AWBURST = grp_conv2_fu_198_m_axi_input_V_AWBURST;
+    end else if (((1'b1 == ap_CS_fsm_state11) | (1'b1 == ap_CS_fsm_state10))) begin
+        gmem_AWBURST = grp_dense_fu_188_m_axi_input_V_AWBURST;
     end else begin
         gmem_AWBURST = 'bx;
     end
@@ -1113,12 +1113,12 @@ end
 always @ (*) begin
     if (((1'b1 == ap_CS_fsm_state9) | (1'b1 == ap_CS_fsm_state5) | (1'b1 == ap_CS_fsm_state8) | (1'b1 == ap_CS_fsm_state4))) begin
         gmem_AWCACHE = grp_pool_fu_218_m_axi_input_V_AWCACHE;
-    end else if (((1'b1 == ap_CS_fsm_state11) | (1'b1 == ap_CS_fsm_state10))) begin
-        gmem_AWCACHE = grp_dense_fu_208_m_axi_input_V_AWCACHE;
     end else if (((1'b1 == ap_CS_fsm_state3) | (1'b1 == ap_CS_fsm_state2))) begin
-        gmem_AWCACHE = grp_conv1_fu_198_m_axi_input_V_AWCACHE;
+        gmem_AWCACHE = grp_conv1_fu_208_m_axi_input_V_AWCACHE;
     end else if (((1'b1 == ap_CS_fsm_state7) | (1'b1 == ap_CS_fsm_state6))) begin
-        gmem_AWCACHE = grp_conv2_fu_188_m_axi_input_V_AWCACHE;
+        gmem_AWCACHE = grp_conv2_fu_198_m_axi_input_V_AWCACHE;
+    end else if (((1'b1 == ap_CS_fsm_state11) | (1'b1 == ap_CS_fsm_state10))) begin
+        gmem_AWCACHE = grp_dense_fu_188_m_axi_input_V_AWCACHE;
     end else begin
         gmem_AWCACHE = 'bx;
     end
@@ -1127,12 +1127,12 @@ end
 always @ (*) begin
     if (((1'b1 == ap_CS_fsm_state9) | (1'b1 == ap_CS_fsm_state5) | (1'b1 == ap_CS_fsm_state8) | (1'b1 == ap_CS_fsm_state4))) begin
         gmem_AWID = grp_pool_fu_218_m_axi_input_V_AWID;
-    end else if (((1'b1 == ap_CS_fsm_state11) | (1'b1 == ap_CS_fsm_state10))) begin
-        gmem_AWID = grp_dense_fu_208_m_axi_input_V_AWID;
     end else if (((1'b1 == ap_CS_fsm_state3) | (1'b1 == ap_CS_fsm_state2))) begin
-        gmem_AWID = grp_conv1_fu_198_m_axi_input_V_AWID;
+        gmem_AWID = grp_conv1_fu_208_m_axi_input_V_AWID;
     end else if (((1'b1 == ap_CS_fsm_state7) | (1'b1 == ap_CS_fsm_state6))) begin
-        gmem_AWID = grp_conv2_fu_188_m_axi_input_V_AWID;
+        gmem_AWID = grp_conv2_fu_198_m_axi_input_V_AWID;
+    end else if (((1'b1 == ap_CS_fsm_state11) | (1'b1 == ap_CS_fsm_state10))) begin
+        gmem_AWID = grp_dense_fu_188_m_axi_input_V_AWID;
     end else begin
         gmem_AWID = 'bx;
     end
@@ -1141,12 +1141,12 @@ end
 always @ (*) begin
     if (((1'b1 == ap_CS_fsm_state9) | (1'b1 == ap_CS_fsm_state5) | (1'b1 == ap_CS_fsm_state8) | (1'b1 == ap_CS_fsm_state4))) begin
         gmem_AWLEN = grp_pool_fu_218_m_axi_input_V_AWLEN;
-    end else if (((1'b1 == ap_CS_fsm_state11) | (1'b1 == ap_CS_fsm_state10))) begin
-        gmem_AWLEN = grp_dense_fu_208_m_axi_input_V_AWLEN;
     end else if (((1'b1 == ap_CS_fsm_state3) | (1'b1 == ap_CS_fsm_state2))) begin
-        gmem_AWLEN = grp_conv1_fu_198_m_axi_input_V_AWLEN;
+        gmem_AWLEN = grp_conv1_fu_208_m_axi_input_V_AWLEN;
     end else if (((1'b1 == ap_CS_fsm_state7) | (1'b1 == ap_CS_fsm_state6))) begin
-        gmem_AWLEN = grp_conv2_fu_188_m_axi_input_V_AWLEN;
+        gmem_AWLEN = grp_conv2_fu_198_m_axi_input_V_AWLEN;
+    end else if (((1'b1 == ap_CS_fsm_state11) | (1'b1 == ap_CS_fsm_state10))) begin
+        gmem_AWLEN = grp_dense_fu_188_m_axi_input_V_AWLEN;
     end else begin
         gmem_AWLEN = 'bx;
     end
@@ -1155,12 +1155,12 @@ end
 always @ (*) begin
     if (((1'b1 == ap_CS_fsm_state9) | (1'b1 == ap_CS_fsm_state5) | (1'b1 == ap_CS_fsm_state8) | (1'b1 == ap_CS_fsm_state4))) begin
         gmem_AWLOCK = grp_pool_fu_218_m_axi_input_V_AWLOCK;
-    end else if (((1'b1 == ap_CS_fsm_state11) | (1'b1 == ap_CS_fsm_state10))) begin
-        gmem_AWLOCK = grp_dense_fu_208_m_axi_input_V_AWLOCK;
     end else if (((1'b1 == ap_CS_fsm_state3) | (1'b1 == ap_CS_fsm_state2))) begin
-        gmem_AWLOCK = grp_conv1_fu_198_m_axi_input_V_AWLOCK;
+        gmem_AWLOCK = grp_conv1_fu_208_m_axi_input_V_AWLOCK;
     end else if (((1'b1 == ap_CS_fsm_state7) | (1'b1 == ap_CS_fsm_state6))) begin
-        gmem_AWLOCK = grp_conv2_fu_188_m_axi_input_V_AWLOCK;
+        gmem_AWLOCK = grp_conv2_fu_198_m_axi_input_V_AWLOCK;
+    end else if (((1'b1 == ap_CS_fsm_state11) | (1'b1 == ap_CS_fsm_state10))) begin
+        gmem_AWLOCK = grp_dense_fu_188_m_axi_input_V_AWLOCK;
     end else begin
         gmem_AWLOCK = 'bx;
     end
@@ -1169,12 +1169,12 @@ end
 always @ (*) begin
     if (((1'b1 == ap_CS_fsm_state9) | (1'b1 == ap_CS_fsm_state5) | (1'b1 == ap_CS_fsm_state8) | (1'b1 == ap_CS_fsm_state4))) begin
         gmem_AWPROT = grp_pool_fu_218_m_axi_input_V_AWPROT;
-    end else if (((1'b1 == ap_CS_fsm_state11) | (1'b1 == ap_CS_fsm_state10))) begin
-        gmem_AWPROT = grp_dense_fu_208_m_axi_input_V_AWPROT;
     end else if (((1'b1 == ap_CS_fsm_state3) | (1'b1 == ap_CS_fsm_state2))) begin
-        gmem_AWPROT = grp_conv1_fu_198_m_axi_input_V_AWPROT;
+        gmem_AWPROT = grp_conv1_fu_208_m_axi_input_V_AWPROT;
     end else if (((1'b1 == ap_CS_fsm_state7) | (1'b1 == ap_CS_fsm_state6))) begin
-        gmem_AWPROT = grp_conv2_fu_188_m_axi_input_V_AWPROT;
+        gmem_AWPROT = grp_conv2_fu_198_m_axi_input_V_AWPROT;
+    end else if (((1'b1 == ap_CS_fsm_state11) | (1'b1 == ap_CS_fsm_state10))) begin
+        gmem_AWPROT = grp_dense_fu_188_m_axi_input_V_AWPROT;
     end else begin
         gmem_AWPROT = 'bx;
     end
@@ -1183,12 +1183,12 @@ end
 always @ (*) begin
     if (((1'b1 == ap_CS_fsm_state9) | (1'b1 == ap_CS_fsm_state5) | (1'b1 == ap_CS_fsm_state8) | (1'b1 == ap_CS_fsm_state4))) begin
         gmem_AWQOS = grp_pool_fu_218_m_axi_input_V_AWQOS;
-    end else if (((1'b1 == ap_CS_fsm_state11) | (1'b1 == ap_CS_fsm_state10))) begin
-        gmem_AWQOS = grp_dense_fu_208_m_axi_input_V_AWQOS;
     end else if (((1'b1 == ap_CS_fsm_state3) | (1'b1 == ap_CS_fsm_state2))) begin
-        gmem_AWQOS = grp_conv1_fu_198_m_axi_input_V_AWQOS;
+        gmem_AWQOS = grp_conv1_fu_208_m_axi_input_V_AWQOS;
     end else if (((1'b1 == ap_CS_fsm_state7) | (1'b1 == ap_CS_fsm_state6))) begin
-        gmem_AWQOS = grp_conv2_fu_188_m_axi_input_V_AWQOS;
+        gmem_AWQOS = grp_conv2_fu_198_m_axi_input_V_AWQOS;
+    end else if (((1'b1 == ap_CS_fsm_state11) | (1'b1 == ap_CS_fsm_state10))) begin
+        gmem_AWQOS = grp_dense_fu_188_m_axi_input_V_AWQOS;
     end else begin
         gmem_AWQOS = 'bx;
     end
@@ -1197,12 +1197,12 @@ end
 always @ (*) begin
     if (((1'b1 == ap_CS_fsm_state9) | (1'b1 == ap_CS_fsm_state5) | (1'b1 == ap_CS_fsm_state8) | (1'b1 == ap_CS_fsm_state4))) begin
         gmem_AWREGION = grp_pool_fu_218_m_axi_input_V_AWREGION;
-    end else if (((1'b1 == ap_CS_fsm_state11) | (1'b1 == ap_CS_fsm_state10))) begin
-        gmem_AWREGION = grp_dense_fu_208_m_axi_input_V_AWREGION;
     end else if (((1'b1 == ap_CS_fsm_state3) | (1'b1 == ap_CS_fsm_state2))) begin
-        gmem_AWREGION = grp_conv1_fu_198_m_axi_input_V_AWREGION;
+        gmem_AWREGION = grp_conv1_fu_208_m_axi_input_V_AWREGION;
     end else if (((1'b1 == ap_CS_fsm_state7) | (1'b1 == ap_CS_fsm_state6))) begin
-        gmem_AWREGION = grp_conv2_fu_188_m_axi_input_V_AWREGION;
+        gmem_AWREGION = grp_conv2_fu_198_m_axi_input_V_AWREGION;
+    end else if (((1'b1 == ap_CS_fsm_state11) | (1'b1 == ap_CS_fsm_state10))) begin
+        gmem_AWREGION = grp_dense_fu_188_m_axi_input_V_AWREGION;
     end else begin
         gmem_AWREGION = 'bx;
     end
@@ -1211,12 +1211,12 @@ end
 always @ (*) begin
     if (((1'b1 == ap_CS_fsm_state9) | (1'b1 == ap_CS_fsm_state5) | (1'b1 == ap_CS_fsm_state8) | (1'b1 == ap_CS_fsm_state4))) begin
         gmem_AWSIZE = grp_pool_fu_218_m_axi_input_V_AWSIZE;
-    end else if (((1'b1 == ap_CS_fsm_state11) | (1'b1 == ap_CS_fsm_state10))) begin
-        gmem_AWSIZE = grp_dense_fu_208_m_axi_input_V_AWSIZE;
     end else if (((1'b1 == ap_CS_fsm_state3) | (1'b1 == ap_CS_fsm_state2))) begin
-        gmem_AWSIZE = grp_conv1_fu_198_m_axi_input_V_AWSIZE;
+        gmem_AWSIZE = grp_conv1_fu_208_m_axi_input_V_AWSIZE;
     end else if (((1'b1 == ap_CS_fsm_state7) | (1'b1 == ap_CS_fsm_state6))) begin
-        gmem_AWSIZE = grp_conv2_fu_188_m_axi_input_V_AWSIZE;
+        gmem_AWSIZE = grp_conv2_fu_198_m_axi_input_V_AWSIZE;
+    end else if (((1'b1 == ap_CS_fsm_state11) | (1'b1 == ap_CS_fsm_state10))) begin
+        gmem_AWSIZE = grp_dense_fu_188_m_axi_input_V_AWSIZE;
     end else begin
         gmem_AWSIZE = 'bx;
     end
@@ -1225,12 +1225,12 @@ end
 always @ (*) begin
     if (((1'b1 == ap_CS_fsm_state9) | (1'b1 == ap_CS_fsm_state5) | (1'b1 == ap_CS_fsm_state8) | (1'b1 == ap_CS_fsm_state4))) begin
         gmem_AWUSER = grp_pool_fu_218_m_axi_input_V_AWUSER;
-    end else if (((1'b1 == ap_CS_fsm_state11) | (1'b1 == ap_CS_fsm_state10))) begin
-        gmem_AWUSER = grp_dense_fu_208_m_axi_input_V_AWUSER;
     end else if (((1'b1 == ap_CS_fsm_state3) | (1'b1 == ap_CS_fsm_state2))) begin
-        gmem_AWUSER = grp_conv1_fu_198_m_axi_input_V_AWUSER;
+        gmem_AWUSER = grp_conv1_fu_208_m_axi_input_V_AWUSER;
     end else if (((1'b1 == ap_CS_fsm_state7) | (1'b1 == ap_CS_fsm_state6))) begin
-        gmem_AWUSER = grp_conv2_fu_188_m_axi_input_V_AWUSER;
+        gmem_AWUSER = grp_conv2_fu_198_m_axi_input_V_AWUSER;
+    end else if (((1'b1 == ap_CS_fsm_state11) | (1'b1 == ap_CS_fsm_state10))) begin
+        gmem_AWUSER = grp_dense_fu_188_m_axi_input_V_AWUSER;
     end else begin
         gmem_AWUSER = 'bx;
     end
@@ -1239,12 +1239,12 @@ end
 always @ (*) begin
     if (((1'b1 == ap_CS_fsm_state9) | (1'b1 == ap_CS_fsm_state5) | (1'b1 == ap_CS_fsm_state8) | (1'b1 == ap_CS_fsm_state4))) begin
         gmem_AWVALID = grp_pool_fu_218_m_axi_input_V_AWVALID;
-    end else if (((1'b1 == ap_CS_fsm_state11) | (1'b1 == ap_CS_fsm_state10))) begin
-        gmem_AWVALID = grp_dense_fu_208_m_axi_input_V_AWVALID;
     end else if (((1'b1 == ap_CS_fsm_state3) | (1'b1 == ap_CS_fsm_state2))) begin
-        gmem_AWVALID = grp_conv1_fu_198_m_axi_input_V_AWVALID;
+        gmem_AWVALID = grp_conv1_fu_208_m_axi_input_V_AWVALID;
     end else if (((1'b1 == ap_CS_fsm_state7) | (1'b1 == ap_CS_fsm_state6))) begin
-        gmem_AWVALID = grp_conv2_fu_188_m_axi_input_V_AWVALID;
+        gmem_AWVALID = grp_conv2_fu_198_m_axi_input_V_AWVALID;
+    end else if (((1'b1 == ap_CS_fsm_state11) | (1'b1 == ap_CS_fsm_state10))) begin
+        gmem_AWVALID = grp_dense_fu_188_m_axi_input_V_AWVALID;
     end else begin
         gmem_AWVALID = 1'b0;
     end
@@ -1253,12 +1253,12 @@ end
 always @ (*) begin
     if (((1'b1 == ap_CS_fsm_state9) | (1'b1 == ap_CS_fsm_state5) | (1'b1 == ap_CS_fsm_state8) | (1'b1 == ap_CS_fsm_state4))) begin
         gmem_BREADY = grp_pool_fu_218_m_axi_input_V_BREADY;
-    end else if (((1'b1 == ap_CS_fsm_state11) | (1'b1 == ap_CS_fsm_state10))) begin
-        gmem_BREADY = grp_dense_fu_208_m_axi_input_V_BREADY;
     end else if (((1'b1 == ap_CS_fsm_state3) | (1'b1 == ap_CS_fsm_state2))) begin
-        gmem_BREADY = grp_conv1_fu_198_m_axi_input_V_BREADY;
+        gmem_BREADY = grp_conv1_fu_208_m_axi_input_V_BREADY;
     end else if (((1'b1 == ap_CS_fsm_state7) | (1'b1 == ap_CS_fsm_state6))) begin
-        gmem_BREADY = grp_conv2_fu_188_m_axi_input_V_BREADY;
+        gmem_BREADY = grp_conv2_fu_198_m_axi_input_V_BREADY;
+    end else if (((1'b1 == ap_CS_fsm_state11) | (1'b1 == ap_CS_fsm_state10))) begin
+        gmem_BREADY = grp_dense_fu_188_m_axi_input_V_BREADY;
     end else begin
         gmem_BREADY = 1'b0;
     end
@@ -1267,12 +1267,12 @@ end
 always @ (*) begin
     if (((1'b1 == ap_CS_fsm_state9) | (1'b1 == ap_CS_fsm_state5) | (1'b1 == ap_CS_fsm_state8) | (1'b1 == ap_CS_fsm_state4))) begin
         gmem_RREADY = grp_pool_fu_218_m_axi_input_V_RREADY;
-    end else if (((1'b1 == ap_CS_fsm_state11) | (1'b1 == ap_CS_fsm_state10))) begin
-        gmem_RREADY = grp_dense_fu_208_m_axi_input_V_RREADY;
     end else if (((1'b1 == ap_CS_fsm_state3) | (1'b1 == ap_CS_fsm_state2))) begin
-        gmem_RREADY = grp_conv1_fu_198_m_axi_input_V_RREADY;
+        gmem_RREADY = grp_conv1_fu_208_m_axi_input_V_RREADY;
     end else if (((1'b1 == ap_CS_fsm_state7) | (1'b1 == ap_CS_fsm_state6))) begin
-        gmem_RREADY = grp_conv2_fu_188_m_axi_input_V_RREADY;
+        gmem_RREADY = grp_conv2_fu_198_m_axi_input_V_RREADY;
+    end else if (((1'b1 == ap_CS_fsm_state11) | (1'b1 == ap_CS_fsm_state10))) begin
+        gmem_RREADY = grp_dense_fu_188_m_axi_input_V_RREADY;
     end else begin
         gmem_RREADY = 1'b0;
     end
@@ -1281,12 +1281,12 @@ end
 always @ (*) begin
     if (((1'b1 == ap_CS_fsm_state9) | (1'b1 == ap_CS_fsm_state5) | (1'b1 == ap_CS_fsm_state8) | (1'b1 == ap_CS_fsm_state4))) begin
         gmem_WDATA = grp_pool_fu_218_m_axi_input_V_WDATA;
-    end else if (((1'b1 == ap_CS_fsm_state11) | (1'b1 == ap_CS_fsm_state10))) begin
-        gmem_WDATA = grp_dense_fu_208_m_axi_input_V_WDATA;
     end else if (((1'b1 == ap_CS_fsm_state3) | (1'b1 == ap_CS_fsm_state2))) begin
-        gmem_WDATA = grp_conv1_fu_198_m_axi_input_V_WDATA;
+        gmem_WDATA = grp_conv1_fu_208_m_axi_input_V_WDATA;
     end else if (((1'b1 == ap_CS_fsm_state7) | (1'b1 == ap_CS_fsm_state6))) begin
-        gmem_WDATA = grp_conv2_fu_188_m_axi_input_V_WDATA;
+        gmem_WDATA = grp_conv2_fu_198_m_axi_input_V_WDATA;
+    end else if (((1'b1 == ap_CS_fsm_state11) | (1'b1 == ap_CS_fsm_state10))) begin
+        gmem_WDATA = grp_dense_fu_188_m_axi_input_V_WDATA;
     end else begin
         gmem_WDATA = 'bx;
     end
@@ -1295,12 +1295,12 @@ end
 always @ (*) begin
     if (((1'b1 == ap_CS_fsm_state9) | (1'b1 == ap_CS_fsm_state5) | (1'b1 == ap_CS_fsm_state8) | (1'b1 == ap_CS_fsm_state4))) begin
         gmem_WID = grp_pool_fu_218_m_axi_input_V_WID;
-    end else if (((1'b1 == ap_CS_fsm_state11) | (1'b1 == ap_CS_fsm_state10))) begin
-        gmem_WID = grp_dense_fu_208_m_axi_input_V_WID;
     end else if (((1'b1 == ap_CS_fsm_state3) | (1'b1 == ap_CS_fsm_state2))) begin
-        gmem_WID = grp_conv1_fu_198_m_axi_input_V_WID;
+        gmem_WID = grp_conv1_fu_208_m_axi_input_V_WID;
     end else if (((1'b1 == ap_CS_fsm_state7) | (1'b1 == ap_CS_fsm_state6))) begin
-        gmem_WID = grp_conv2_fu_188_m_axi_input_V_WID;
+        gmem_WID = grp_conv2_fu_198_m_axi_input_V_WID;
+    end else if (((1'b1 == ap_CS_fsm_state11) | (1'b1 == ap_CS_fsm_state10))) begin
+        gmem_WID = grp_dense_fu_188_m_axi_input_V_WID;
     end else begin
         gmem_WID = 'bx;
     end
@@ -1309,12 +1309,12 @@ end
 always @ (*) begin
     if (((1'b1 == ap_CS_fsm_state9) | (1'b1 == ap_CS_fsm_state5) | (1'b1 == ap_CS_fsm_state8) | (1'b1 == ap_CS_fsm_state4))) begin
         gmem_WLAST = grp_pool_fu_218_m_axi_input_V_WLAST;
-    end else if (((1'b1 == ap_CS_fsm_state11) | (1'b1 == ap_CS_fsm_state10))) begin
-        gmem_WLAST = grp_dense_fu_208_m_axi_input_V_WLAST;
     end else if (((1'b1 == ap_CS_fsm_state3) | (1'b1 == ap_CS_fsm_state2))) begin
-        gmem_WLAST = grp_conv1_fu_198_m_axi_input_V_WLAST;
+        gmem_WLAST = grp_conv1_fu_208_m_axi_input_V_WLAST;
     end else if (((1'b1 == ap_CS_fsm_state7) | (1'b1 == ap_CS_fsm_state6))) begin
-        gmem_WLAST = grp_conv2_fu_188_m_axi_input_V_WLAST;
+        gmem_WLAST = grp_conv2_fu_198_m_axi_input_V_WLAST;
+    end else if (((1'b1 == ap_CS_fsm_state11) | (1'b1 == ap_CS_fsm_state10))) begin
+        gmem_WLAST = grp_dense_fu_188_m_axi_input_V_WLAST;
     end else begin
         gmem_WLAST = 'bx;
     end
@@ -1323,12 +1323,12 @@ end
 always @ (*) begin
     if (((1'b1 == ap_CS_fsm_state9) | (1'b1 == ap_CS_fsm_state5) | (1'b1 == ap_CS_fsm_state8) | (1'b1 == ap_CS_fsm_state4))) begin
         gmem_WSTRB = grp_pool_fu_218_m_axi_input_V_WSTRB;
-    end else if (((1'b1 == ap_CS_fsm_state11) | (1'b1 == ap_CS_fsm_state10))) begin
-        gmem_WSTRB = grp_dense_fu_208_m_axi_input_V_WSTRB;
     end else if (((1'b1 == ap_CS_fsm_state3) | (1'b1 == ap_CS_fsm_state2))) begin
-        gmem_WSTRB = grp_conv1_fu_198_m_axi_input_V_WSTRB;
+        gmem_WSTRB = grp_conv1_fu_208_m_axi_input_V_WSTRB;
     end else if (((1'b1 == ap_CS_fsm_state7) | (1'b1 == ap_CS_fsm_state6))) begin
-        gmem_WSTRB = grp_conv2_fu_188_m_axi_input_V_WSTRB;
+        gmem_WSTRB = grp_conv2_fu_198_m_axi_input_V_WSTRB;
+    end else if (((1'b1 == ap_CS_fsm_state11) | (1'b1 == ap_CS_fsm_state10))) begin
+        gmem_WSTRB = grp_dense_fu_188_m_axi_input_V_WSTRB;
     end else begin
         gmem_WSTRB = 'bx;
     end
@@ -1337,12 +1337,12 @@ end
 always @ (*) begin
     if (((1'b1 == ap_CS_fsm_state9) | (1'b1 == ap_CS_fsm_state5) | (1'b1 == ap_CS_fsm_state8) | (1'b1 == ap_CS_fsm_state4))) begin
         gmem_WUSER = grp_pool_fu_218_m_axi_input_V_WUSER;
-    end else if (((1'b1 == ap_CS_fsm_state11) | (1'b1 == ap_CS_fsm_state10))) begin
-        gmem_WUSER = grp_dense_fu_208_m_axi_input_V_WUSER;
     end else if (((1'b1 == ap_CS_fsm_state3) | (1'b1 == ap_CS_fsm_state2))) begin
-        gmem_WUSER = grp_conv1_fu_198_m_axi_input_V_WUSER;
+        gmem_WUSER = grp_conv1_fu_208_m_axi_input_V_WUSER;
     end else if (((1'b1 == ap_CS_fsm_state7) | (1'b1 == ap_CS_fsm_state6))) begin
-        gmem_WUSER = grp_conv2_fu_188_m_axi_input_V_WUSER;
+        gmem_WUSER = grp_conv2_fu_198_m_axi_input_V_WUSER;
+    end else if (((1'b1 == ap_CS_fsm_state11) | (1'b1 == ap_CS_fsm_state10))) begin
+        gmem_WUSER = grp_dense_fu_188_m_axi_input_V_WUSER;
     end else begin
         gmem_WUSER = 'bx;
     end
@@ -1351,12 +1351,12 @@ end
 always @ (*) begin
     if (((1'b1 == ap_CS_fsm_state9) | (1'b1 == ap_CS_fsm_state5) | (1'b1 == ap_CS_fsm_state8) | (1'b1 == ap_CS_fsm_state4))) begin
         gmem_WVALID = grp_pool_fu_218_m_axi_input_V_WVALID;
-    end else if (((1'b1 == ap_CS_fsm_state11) | (1'b1 == ap_CS_fsm_state10))) begin
-        gmem_WVALID = grp_dense_fu_208_m_axi_input_V_WVALID;
     end else if (((1'b1 == ap_CS_fsm_state3) | (1'b1 == ap_CS_fsm_state2))) begin
-        gmem_WVALID = grp_conv1_fu_198_m_axi_input_V_WVALID;
+        gmem_WVALID = grp_conv1_fu_208_m_axi_input_V_WVALID;
     end else if (((1'b1 == ap_CS_fsm_state7) | (1'b1 == ap_CS_fsm_state6))) begin
-        gmem_WVALID = grp_conv2_fu_188_m_axi_input_V_WVALID;
+        gmem_WVALID = grp_conv2_fu_198_m_axi_input_V_WVALID;
+    end else if (((1'b1 == ap_CS_fsm_state11) | (1'b1 == ap_CS_fsm_state10))) begin
+        gmem_WVALID = grp_dense_fu_188_m_axi_input_V_WVALID;
     end else begin
         gmem_WVALID = 1'b0;
     end
@@ -1425,7 +1425,7 @@ always @ (*) begin
             ap_NS_fsm = ap_ST_fsm_state3;
         end
         ap_ST_fsm_state3 : begin
-            if (((grp_conv1_fu_198_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state3))) begin
+            if (((grp_conv1_fu_208_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state3))) begin
                 ap_NS_fsm = ap_ST_fsm_state4;
             end else begin
                 ap_NS_fsm = ap_ST_fsm_state3;
@@ -1445,7 +1445,7 @@ always @ (*) begin
             ap_NS_fsm = ap_ST_fsm_state7;
         end
         ap_ST_fsm_state7 : begin
-            if (((grp_conv2_fu_188_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state7))) begin
+            if (((grp_conv2_fu_198_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state7))) begin
                 ap_NS_fsm = ap_ST_fsm_state8;
             end else begin
                 ap_NS_fsm = ap_ST_fsm_state7;
@@ -1465,7 +1465,7 @@ always @ (*) begin
             ap_NS_fsm = ap_ST_fsm_state11;
         end
         ap_ST_fsm_state11 : begin
-            if (((grp_dense_fu_208_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state11))) begin
+            if (((grp_dense_fu_188_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state11))) begin
                 ap_NS_fsm = ap_ST_fsm_state1;
             end else begin
                 ap_NS_fsm = ap_ST_fsm_state11;
@@ -1503,11 +1503,11 @@ always @ (*) begin
     ap_rst_n_inv = ~ap_rst_n;
 end
 
-assign grp_conv1_fu_198_ap_start = grp_conv1_fu_198_ap_start_reg;
+assign grp_conv1_fu_208_ap_start = grp_conv1_fu_208_ap_start_reg;
 
-assign grp_conv2_fu_188_ap_start = grp_conv2_fu_188_ap_start_reg;
+assign grp_conv2_fu_198_ap_start = grp_conv2_fu_198_ap_start_reg;
 
-assign grp_dense_fu_208_ap_start = grp_dense_fu_208_ap_start_reg;
+assign grp_dense_fu_188_ap_start = grp_dense_fu_188_ap_start_reg;
 
 assign grp_pool_fu_218_ap_start = grp_pool_fu_218_ap_start_reg;
 

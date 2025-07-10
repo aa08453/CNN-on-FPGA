@@ -6385,14 +6385,16 @@ void conv1(
  for(int i=0; i<size; i++) {
   temp[i] = input[i];
  }
-_ssdm_SpecArrayPartition( temp, 1, "BLOCK", 28, "");
 
 
+
+_ssdm_op_SpecResource(temp, "", "RAM_1P_BRAM", "", -1, "", "", "", "", "");
 
  for (int co = 0; co < Cout; co++) {
 
         for (int h = 0; h < H; h++) {
-            for (int w = 0; w < W; w++) {
+
+            for (int w = 0; w < 28; w++) {
 _ssdm_op_SpecPipeline(1, 1, 1, 0, "");
  fixed sum = bias[co];
                 for (int ci = 0; ci < 1; ci++) {
@@ -6402,14 +6404,18 @@ _ssdm_op_SpecPipeline(1, 1, 1, 0, "");
 
                         for (int kw = 0; kw < 3; kw++) {
 
-
-                            int inh = h + kh - K / 2;
+_ssdm_Unroll(1, 0, 16, "");
+ int inh = h + kh - K / 2;
                             int inw = w + kw - K / 2;
 
                             if (inh >= 0 && inh < H && inw >= 0 && inw < W) {
                                 int inputIdx = ci * H * W + inh * W + inw;
-                                int weightIdx = co * Cin * K * K + ci * K * K + kh * K + kw;
-                                sum += temp[inputIdx] * weight[weightIdx];
+                                int out1 = co * Cin * K * K;
+        int out2 = ci * K * K;
+        int out3 = kh * K;
+                                int weightIdx = out1 + out2 + out3 + kw;
+                                fixed multRes = temp[inputIdx] * weight[weightIdx];
+                                sum += multRes;
                             }
                         }
                     }
@@ -6427,12 +6433,14 @@ void conv2(
     fixed input[], fixed outputConv[],
     fixed weight[], fixed bias[]
 ) {
- int size = 8*28*28;
-  fixed temp[8*28*28];
+ int size = 8*14*14;
+  fixed temp[8*14*14];
   for(int i=0; i<size; i++) {
    temp[i] = input[i];
   }
-_ssdm_SpecArrayPartition( temp, 1, "BLOCK", 28, "");
+_ssdm_op_SpecResource(temp, "", "RAM_1P_BRAM", "", -1, "", "", "", "", "");
+
+
 
 
  int K=3, H=14, W=14, Cin =8, Cout = 16;
@@ -6444,8 +6452,8 @@ _ssdm_SpecArrayPartition( temp, 1, "BLOCK", 28, "");
 _ssdm_op_SpecPipeline(1, 1, 1, 0, "");
  fixed sum = bias[co];
                 for (int ci = 0; ci < 8; ci++) {
-
-                    for (int kh = 0; kh < 3; kh++) {
+_ssdm_Unroll(1, 0, 16, "");
+ for (int kh = 0; kh < 3; kh++) {
 
 
                         for (int kw = 0; kw < 3; kw++) {
@@ -6456,8 +6464,12 @@ _ssdm_op_SpecPipeline(1, 1, 1, 0, "");
 
                             if (inh >= 0 && inh < H && inw >= 0 && inw < W) {
                                 int inputIdx = ci * H * W + inh * W + inw;
-                                int weightIdx = co * Cin * K * K + ci * K * K + kh * K + kw;
-                                sum += temp[inputIdx] * weight[weightIdx];
+                                int out1 = co * Cin * K * K;
+                                int out2 = ci * K * K;
+                                int out3 = kh * K;
+                                int weightIdx = out1 + out2 + out3 + kw;
+                                fixed multRes = temp[inputIdx] * weight[weightIdx];
+                                sum += multRes;
                             }
                         }
                     }

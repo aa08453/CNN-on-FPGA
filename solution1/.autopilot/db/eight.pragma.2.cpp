@@ -6627,6 +6627,7 @@ void top(
  fixed outputDense[],
  fixed fcWeight[], fixed fcBias[]
 ) {
+
 _ssdm_op_SpecInterface(input, "m_axi", 0, 0, "", 0, 0, "gmem", "slave", "", 16, 16, 16, 16, "", "");
 _ssdm_op_SpecInterface(outputConv, "m_axi", 0, 0, "", 0, 0, "gmem", "slave", "", 16, 16, 16, 16, "", "");
 _ssdm_op_SpecInterface(weight, "m_axi", 0, 0, "", 0, 0, "gmem", "slave", "", 16, 16, 16, 16, "", "");

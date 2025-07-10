@@ -6627,6 +6627,7 @@ void top(
  fixed outputDense[],
  fixed fcWeight[], fixed fcBias[]
 ) {
+
 #pragma HLS INTERFACE m_axi port=&input offset=slave bundle=gmem
 #pragma HLS INTERFACE m_axi port=&outputConv offset=slave bundle=gmem
 #pragma HLS INTERFACE m_axi port=&weight offset=slave bundle=gmem

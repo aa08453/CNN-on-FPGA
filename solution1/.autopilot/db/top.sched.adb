@@ -971,10 +971,10 @@
 					<Obj>
 						<type>0</type>
 						<id>42</id>
-						<name>_ln39</name>
+						<name>_ln40</name>
 						<fileName>cnn/src/eight.cpp</fileName>
 						<fileDirectory>D:\CNN2.0\hls</fileDirectory>
-						<lineNumber>39</lineNumber>
+						<lineNumber>40</lineNumber>
 						<contextFuncName>top</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -989,7 +989,7 @@
 											<first>cnn/src/eight.cpp</first>
 											<second>top</second>
 										</first>
-										<second>39</second>
+										<second>40</second>
 									</item>
 								</second>
 							</item>
@@ -1024,10 +1024,10 @@
 					<Obj>
 						<type>0</type>
 						<id>43</id>
-						<name>_ln40</name>
+						<name>_ln41</name>
 						<fileName>cnn/src/eight.cpp</fileName>
 						<fileDirectory>D:\CNN2.0\hls</fileDirectory>
-						<lineNumber>40</lineNumber>
+						<lineNumber>41</lineNumber>
 						<contextFuncName>top</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -1042,7 +1042,7 @@
 											<first>cnn/src/eight.cpp</first>
 											<second>top</second>
 										</first>
-										<second>40</second>
+										<second>41</second>
 									</item>
 								</second>
 							</item>
@@ -1080,10 +1080,10 @@
 					<Obj>
 						<type>0</type>
 						<id>44</id>
-						<name>_ln42</name>
+						<name>_ln43</name>
 						<fileName>cnn/src/eight.cpp</fileName>
 						<fileDirectory>D:\CNN2.0\hls</fileDirectory>
-						<lineNumber>42</lineNumber>
+						<lineNumber>43</lineNumber>
 						<contextFuncName>top</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -1098,7 +1098,7 @@
 											<first>cnn/src/eight.cpp</first>
 											<second>top</second>
 										</first>
-										<second>42</second>
+										<second>43</second>
 									</item>
 								</second>
 							</item>
@@ -1135,10 +1135,10 @@
 					<Obj>
 						<type>0</type>
 						<id>45</id>
-						<name>_ln43</name>
+						<name>_ln44</name>
 						<fileName>cnn/src/eight.cpp</fileName>
 						<fileDirectory>D:\CNN2.0\hls</fileDirectory>
-						<lineNumber>43</lineNumber>
+						<lineNumber>44</lineNumber>
 						<contextFuncName>top</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -1153,7 +1153,7 @@
 											<first>cnn/src/eight.cpp</first>
 											<second>top</second>
 										</first>
-										<second>43</second>
+										<second>44</second>
 									</item>
 								</second>
 							</item>
@@ -1191,10 +1191,10 @@
 					<Obj>
 						<type>0</type>
 						<id>46</id>
-						<name>_ln45</name>
+						<name>_ln46</name>
 						<fileName>cnn/src/eight.cpp</fileName>
 						<fileDirectory>D:\CNN2.0\hls</fileDirectory>
-						<lineNumber>45</lineNumber>
+						<lineNumber>46</lineNumber>
 						<contextFuncName>top</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -1209,7 +1209,7 @@
 											<first>cnn/src/eight.cpp</first>
 											<second>top</second>
 										</first>
-										<second>45</second>
+										<second>46</second>
 									</item>
 								</second>
 							</item>
@@ -1246,10 +1246,10 @@
 					<Obj>
 						<type>0</type>
 						<id>47</id>
-						<name>_ln48</name>
+						<name>_ln49</name>
 						<fileName>cnn/src/eight.cpp</fileName>
 						<fileDirectory>D:\CNN2.0\hls</fileDirectory>
-						<lineNumber>48</lineNumber>
+						<lineNumber>49</lineNumber>
 						<contextFuncName>top</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -1264,7 +1264,7 @@
 											<first>cnn/src/eight.cpp</first>
 											<second>top</second>
 										</first>
-										<second>48</second>
+										<second>49</second>
 									</item>
 								</second>
 							</item>
@@ -1910,8 +1910,8 @@
 			<mDepth>-1</mDepth>
 			<mMinTripCount>-1</mMinTripCount>
 			<mMaxTripCount>-1</mMaxTripCount>
-			<mMinLatency>423377</mMinLatency>
-			<mMaxLatency>677313</mMaxLatency>
+			<mMinLatency>358926</mMinLatency>
+			<mMaxLatency>606590</mMaxLatency>
 			<mIsDfPipe>0</mIsDfPipe>
 			<mDfPipe class_id="-1"></mDfPipe>
 		</item>
