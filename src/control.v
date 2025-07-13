@@ -1,29 +1,28 @@
 
-module top_control 
+module control 
 (
     input wire clk,
     input wire rst_n,
 
-    input wire conv_done,            // Asserted when all patches processed
-    input wire cin_done,
-    input wire cout_done,
-    input wire pool_done,
+    input wire conv1_done,            // Asserted when all patches processed
+    input wire conv2_done,
+    input wire pool1_done,
+    input wire pool2_done,
 
     input wire is_single_input_channel,
 
-    output reg cout,
-    output reg c_load,
-    output reg cin,
-    output reg conv,
-    output reg pool
+    output reg conv1,
+    output reg store,
+    output reg conv2,
+    output reg pool1,
+    output reg pool2,
 );
 
-parameter COUNT_OUT       = 3'd0;
-parameter CHANNEL_LOAD    = 3'd1;
-parameter COUNT_IN        = 3'd2;
-parameter CONV            = 3'd3;
-parameter POOL            = 3'd4;
-parameter IDLE            = 3'd5;
+parameter CONV1    = 3'd0;
+parameter POOL1    = 3'd1;
+parameter CONV2    = 3'd2;
+parameter POOL2    = 3'd3;
+parameter IDLE     = 3'd4;
 
 reg [2:0] state;
 reg [2:0] next_state;

@@ -18,8 +18,6 @@ module mult_mux
             2'b01: product = (a0 * k0) >> 3;
             2'b10: product = (a1 * k1) >> 3;
             2'b11: product = (a2 * k2) >> 3;
-            // 2'b00: product = 16'b0;
-            // default: product = 16'b0;
         endcase
     end
 

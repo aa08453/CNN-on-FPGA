@@ -44,15 +44,9 @@ module comp
     always @(posedge clk or negedge rst) 
     begin
         if (!rst)
-        begin
             sum <= 8'sd0;
-            // inter <= 16'sd0;
-        end
         else if (add)
-        begin
             sum <= clamp(p1 + p2 + p3);
-            // sum <= clamp(inter);inter
-        end
     end
 
 endmodule

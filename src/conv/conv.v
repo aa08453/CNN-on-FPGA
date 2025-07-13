@@ -1,7 +1,8 @@
 module conv
 #(
     parameter H = 28,
-    parameter W = 28
+    parameter W = 28,
+    parameter IC = 0
 )
 (
     input wire clk,
@@ -9,16 +10,23 @@ module conv
     input wire conv,
     
     input wire signed [7:0] kernel0, kernel1, kernel2,
-        kernel3, kernel4, kernel5,
-        kernel6, kernel7, kernel8,
+                            kernel3, kernel4, kernel5,
+                            kernel6, kernel7, kernel8,
 
     output signed [7:0] result,
     output [9:0] address,
     output wire store,
-    output wire done
+    output wire done,
+
+    // External memory connection
+    input wire signed [7:0] data1,
+    input wire signed [7:0] data2,
+    output wire [9:0] addr1,
+    output wire [9:0] addr2
 );
 
-    wire addre, load, acc_enable, count_enable, flush_acc;
+
+    wire addr_gen, load, acc_enable, count_enable, flush_acc;
     wire [1:0] mux_sel;
 
     wire load_full_patch, load_done; 
@@ -36,7 +44,7 @@ module conv
 
     conv_control control_inst(
         .clk(clk), .rst_n(rst), .done(done), .load(load), .mux_sel(mux_sel), .conv(conv), .add(add), .load_done(load_done),
-        .acc_enable(acc_enable), .counter_enable(count_enable), .addr(addre), .store(store), .flush_acc(flush_acc)
+        .acc_enable(acc_enable), .counter_enable(count_enable), .addr_gen(addr_gen), .store(store), .flush_acc(flush_acc)
     );
 
     counters counters_inst(
@@ -44,8 +52,8 @@ module conv
         .i(i), .j(j), .done(done), .conv(conv)
     );
 
-    patch_addr_gen #(.H(H), .W(W)) patch_addr_inst (
-        .clk(clk), .rst(rst), .addr(addre), .i(i), .j(j),
+    patch_addr_gen #(.H(H), .W(W), .IC(IC)) patch_addr_inst (
+        .clk(clk), .rst(rst), .addr_gen(addr_gen), .i(i), .j(j),
         .pixel_addr0(pixel_addr0), .pixel_addr1(pixel_addr1), .pixel_addr2(pixel_addr2),
         .pixel_addr3(pixel_addr3), .pixel_addr4(pixel_addr4), .pixel_addr5(pixel_addr5),
         .pixel_addr6(pixel_addr6), .pixel_addr7(pixel_addr7), .pixel_addr8(pixel_addr8),
@@ -59,7 +67,11 @@ module conv
         .pixel_addr6(pixel_addr6), .pixel_addr7(pixel_addr7), .pixel_addr8(pixel_addr8),
         .pixel0(pixel0), .pixel1(pixel1), .pixel2(pixel2),
         .pixel3(pixel3), .pixel4(pixel4), .pixel5(pixel5),
-        .pixel6(pixel6), .pixel7(pixel7), .pixel8(pixel8)
+        .pixel6(pixel6), .pixel7(pixel7), .pixel8(pixel8),
+
+        // Memory interface
+        .addr1(addr1), .addr2(addr2),
+        .data1(data1), .data2(data2)
     );
 
     comp comp_inst (

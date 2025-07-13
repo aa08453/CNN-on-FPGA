@@ -1,7 +1,7 @@
 
 `timescale 1ns / 1ps
 
-module top_control_tb;
+module layer1_tb;
 
     // Inputs
     reg clk;
@@ -20,7 +20,7 @@ module top_control_tb;
     wire relu;
 
     // Instantiate the DUT
-    top_control dut (
+    layer1_control dut (
         .clk(clk),
         .rst_n(rst_n),
         .conv_done(conv_done),
