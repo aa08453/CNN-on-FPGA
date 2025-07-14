@@ -1,4 +1,8 @@
 module counters 
+#
+(
+    parameter IC = 0
+)
 (
     input wire clk,
     input wire rst_n,
@@ -9,6 +13,8 @@ module counters
     output reg done,
     input wire cout_done
 );
+
+localparam step = (IC == 0) ? 1 : 2;
 
 always @(posedge clk or negedge rst_n) 
 begin
@@ -29,14 +35,14 @@ begin
     begin
         if (j < 27) 
         begin
-            j <= j + 1;
+            j <= j + step;
         end 
         else 
         begin
             j <= 0;
             if (i < 27) 
             begin
-                i <= i + 1;
+                i <= i + step;
             end 
             else 
             begin

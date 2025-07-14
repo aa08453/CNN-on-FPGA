@@ -1,55 +1,41 @@
 
 `timescale 1ns / 1ps
 
-module layer1_tb;
+module layer_control_tb;
 
     // Inputs
     reg clk;
     reg rst_n;
     reg conv_done;
-    reg cin_done;
+    reg pool_done;
     reg cout_done;
-    reg is_single_input_channel;
 
     // Outputs
     wire cout;
     wire c_load;
-    wire bias_init;
-    wire cin;
+    wire pool;
     wire conv;
-    wire relu;
+    wire tree;
 
     // Instantiate the DUT
-    layer1_control dut (
-        .clk(clk),
-        .rst_n(rst_n),
-        .conv_done(conv_done),
-        .cin_done(cin_done),
-        .cout_done(cout_done),
-        .is_single_input_channel(is_single_input_channel),
-        .cout(cout),
-        .c_load(c_load),
-        .bias_init(bias_init),
-        .cin(cin),
-        .conv(conv),
-        .relu(relu)
-    );
+    layer_control #(.IC(IC)) dut(
+    .clk(clk), .rst_n(rst),  .cout(cout), .c_load(c_load), .pool(pool), 
+    .conv(conv), .pool_done(pool_done), .tree(tree),
+    .conv_done(conv_done), .cout_done(cout_done));
 
     // Clock generation
     always #10 clk = ~clk;
 
     // Simulation control
     initial begin
-        $dumpfile("w_top_control.vcd");
-        $dumpvars(0, top_control_tb);
+        $dumpfile("w_layer_control.vcd");
+        $dumpvars(0, layer_control_tb);
 
         // Initialize signals
         clk = 0;
         rst_n = 0;
         conv_done = 0;
-        cin_done = 0;
         cout_done = 0;
-        is_single_input_channel = 0;
 
         // Reset the system
         #20;
@@ -71,7 +57,7 @@ module layer1_tb;
         conv_done = 0;  // keep conv active
         #60;
         conv_done = 1;
-        cin_done = 1;
+        pool_done = 1;
         cout_done = 1;
         // #60;
         // conv_done = 0;
@@ -100,9 +86,9 @@ module layer1_tb;
 
     // Monitor signal outputs
     initial begin
-        $display("Time\tState\tcout\tc_load\tbias_init\tcin\tconv\trelu");
+        $display("Time\tState\tcout\tc_load\tpool\tconv\ttree");
         $monitor("%0t\t%b\t%b\t%b\t%b\t\t%b\t%b\t%b",
-                 $time, dut.state, cout, c_load, bias_init, cin, conv, relu);
+                 $time, dut.state, cout, c_load, pool, conv, tree);
     end
 
 endmodule

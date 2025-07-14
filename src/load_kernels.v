@@ -19,10 +19,12 @@
     kernel``idx``7 <= rom_data[addr + (``idx`` * 9) + 7]; \
     kernel``idx``8 <= rom_data[addr + (``idx`` * 9) + 8]
 
+`define FILE "mem_files/conv2_weight.mem"
+
+
 module load_kernels
 #(
-    parameter VAL = 1151, // 16*8*9 - 1
-    parameter string FILE = "mem_files/conv2_weight.mem"
+    parameter VAL = 1151 // 16*8*9 - 1
 )
 (
     input clk,
@@ -40,7 +42,7 @@ wire [10:0] addr = out_c * 8 * 9;
 
 initial 
 begin
-    $readmemh(FILE, rom_data);
+    $readmemh(`FILE, rom_data);
 end
 
 always @(posedge clk or negedge rst) 

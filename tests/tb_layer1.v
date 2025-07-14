@@ -12,7 +12,6 @@ module tb_layer1;
 
     // Outputs from layer1
     wire store;
-    wire first_write;  // Not used internally yet
     wire [9:0] address;
     wire signed [7:0] result;
     wire signed [7:0] bias;
@@ -35,10 +34,10 @@ module tb_layer1;
 
     // Instantiate layer1
     layer1 #(
-        .CHANNEL_SIZE(783),
         .H(28),
         .W(28),
-        .OC(7)
+        .OC(7),
+        .IC(0)
     ) dut (
         .clk(clk),
         .rst(rst),
@@ -67,7 +66,9 @@ module tb_layer1;
 
         // Run simulation until cout_done
         
-        wait(cout_done);
+        // wait(cout_done);
+        #5000000;
+
 
         $display("Layer1 finished convolution.");
         $finish;

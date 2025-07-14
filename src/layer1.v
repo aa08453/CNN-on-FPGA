@@ -19,7 +19,8 @@ module layer1
     parameter H = 28,
     parameter W = 28,
     parameter OC = 7,
-    parameter IC = 0
+    parameter IC = 0,
+    parameter ADDR_LEN = 9 // 10 - 1
 )
 (
     input wire clk,
@@ -27,7 +28,7 @@ module layer1
     output wire store,
     input wire pool_done,
     output wire pool,
-    output wire [9:0] address,
+    output wire [ADDR_LEN:0] address,
     output wire signed [7:0] result,
     output reg signed [7:0] bias,
     output wire cout_done,
@@ -43,6 +44,10 @@ module layer1
 
     wire conv_done; 
 
+    reg signed [7:0] kernel0, kernel1, kernel2,
+                     kernel3, kernel4, kernel5,
+                     kernel6, kernel7, kernel8;
+
     layer_control #(.IC(IC)) layer_control_inst(
     .clk(clk), .rst_n(rst),  .cout(cout), .c_load(c_load), .pool(pool), 
     .conv(conv), .pool_done(pool_done), .tree(tree),
@@ -53,10 +58,6 @@ module layer1
         .clk(clk), .rst_n(rst), .signal(cout),
         .count(out_c), .complete(cout_done));
 
-
-    reg signed [7:0] kernel0, kernel1, kernel2,
-        kernel3, kernel4, kernel5,
-        kernel6, kernel7, kernel8;
     // Load kernels
     load_kernel load_kernel_inst 
     (
@@ -67,14 +68,14 @@ module layer1
     );
 
     // Load bias
-    load_bias #(.OC(OC), .BIAS_FILE("mem_files/conv1_bias.mem")) 
+    load_bias #(.OC(OC)) 
     load_bias_inst (
         .clk(clk), .rst(rst), .c_load(c_load),
         .out_c(out_c), .bias(bias)
     );
 
     // Convolution
-    conv #(.H(28), .W(28), .IC(IC)) 
+    conv #(.H(H), .W(W), .IC(IC), .ADDR_LEN(ADDR_LEN)) 
     conv_inst (
         .clk(clk), .rst(rst), .conv(conv),
         .kernel0(kernel0), .kernel1(kernel1), .kernel2(kernel2),

@@ -30,7 +30,8 @@ module adder_tree
             sum0 <= 0;
             sum1 <= 0;
             sum2 <= 0;
-        end else if (tree) 
+        end 
+        else if (tree) 
         begin
             sum0 <= result_0 + result_1 + result_2;
             sum1 <= result_3 + result_4 + result_5;
@@ -39,20 +40,21 @@ module adder_tree
     end
 
     // Stage 2: Add the three group sums
-    always @(posedge clk or posedge rst) 
+    always @(posedge clk or negedge rst) 
     begin
-        if (rst) 
+        if (!rst) 
             final_sum <= 0;
         else if (tree) 
             final_sum <= sum0 + sum1 + sum2;
     end
 
     // Clamp and output (same cycle as final_sum)
-    always @(posedge clk or posedge rst) begin
-        if (rst)
-            out <= 0;
+    always @(posedge clk or negedge rst) 
+    begin
+        if (!rst)
+            result <= 0;
         else if (tree)
-            out <= clamp(final_sum);  // Clamp to signed 8-bit range
+            result <= clamp(final_sum);  // Clamp to signed 8-bit range
     end
 
 endmodule

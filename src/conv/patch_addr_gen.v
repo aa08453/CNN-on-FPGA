@@ -1,8 +1,11 @@
+function [9:0] compute_addr;
+    input integer row, col;
+    compute_addr = ((row) >= 0 && (row) < (28) && (col) >= 0 && (col) < (28)) ? ((row) * (28) + (col)) : 10'd0;
+endfunction
+
 module patch_addr_gen
 #(
-    parameter H = 28,
-    parameter W = 28,
-    parameter IC = 0 // 0 or >0
+    parameter IC = 0 
 )
 (
     input wire clk,
@@ -48,44 +51,42 @@ module patch_addr_gen
         begin
             load_full_patch <= (i != prev_i);
 
-            // IC == 0: standard address generation
             if (IC == 0)
             begin
                 mv = i - 1;
                 nv = j - 1;
 
-                pixel_addr6 <= compute_addr(mv,   nv+2, W, H);
-                pixel_addr7 <= compute_addr(mv+1, nv+2, W, H);
-                pixel_addr8 <= compute_addr(mv+2, nv+2, W, H);
+                pixel_addr6 <= compute_addr(mv,   nv+2);
+                pixel_addr7 <= compute_addr(mv+1, nv+2);
+                pixel_addr8 <= compute_addr(mv+2, nv+2);
 
                 if (load_full_patch)
                 begin
-                    pixel_addr0 <= compute_addr(mv,   nv,   W, H);
-                    pixel_addr1 <= compute_addr(mv+1, nv,   W, H);
-                    pixel_addr2 <= compute_addr(mv+2, nv,   W, H);
-                    pixel_addr3 <= compute_addr(mv,   nv+1, W, H);
-                    pixel_addr4 <= compute_addr(mv+1, nv+1, W, H);
-                    pixel_addr5 <= compute_addr(mv+2, nv+1, W, H);
+                    pixel_addr0 <= compute_addr(mv,   nv);
+                    pixel_addr1 <= compute_addr(mv+1, nv);
+                    pixel_addr2 <= compute_addr(mv+2, nv);
+                    pixel_addr3 <= compute_addr(mv,   nv+1);
+                    pixel_addr4 <= compute_addr(mv+1, nv+1);
+                    pixel_addr5 <= compute_addr(mv+2, nv+1);
                 end
             end
-            // IC > 0: 3x3 from 5x5 (strided) input
             else
             begin
                 mv = i - 2;
                 nv = j - 2;
 
-                pixel_addr6 <= compute_addr(mv,   nv+4, W, H);
-                pixel_addr7 <= compute_addr(mv+2, nv+4, W, H);
-                pixel_addr8 <= compute_addr(mv+4, nv+4, W, H);
+                pixel_addr6 <= compute_addr(mv,   nv+4);
+                pixel_addr7 <= compute_addr(mv+2, nv+4);
+                pixel_addr8 <= compute_addr(mv+4, nv+4);
 
                 if (load_full_patch)
                 begin
-                    pixel_addr0 <= compute_addr(mv,   nv,   W, H);
-                    pixel_addr1 <= compute_addr(mv+2, nv,   W, H);
-                    pixel_addr2 <= compute_addr(mv+4, nv,   W, H);
-                    pixel_addr3 <= compute_addr(mv,   nv+2, W, H);
-                    pixel_addr4 <= compute_addr(mv+2, nv+2, W, H);
-                    pixel_addr5 <= compute_addr(mv+4, nv+2, W, H);
+                    pixel_addr0 <= compute_addr(mv,   nv);
+                    pixel_addr1 <= compute_addr(mv+2, nv);
+                    pixel_addr2 <= compute_addr(mv+4, nv);
+                    pixel_addr3 <= compute_addr(mv,   nv+2);
+                    pixel_addr4 <= compute_addr(mv+2, nv+2);
+                    pixel_addr5 <= compute_addr(mv+4, nv+2);
                 end
             end
 

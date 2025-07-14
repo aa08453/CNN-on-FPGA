@@ -1,5 +1,5 @@
 `define CONV_INST(idx) \
-    conv #(.H(H), .W(W), .IC(IC)) conv_inst_``idx`` ( \
+    conv #(.H(H), .W(W), .IC(IC), .ADDR_LEN(ADDR_LEN)) conv_inst_``idx`` ( \
         .clk(clk), .rst(rst), .conv(conv), \
         .kernel0(kernel``idx``0), .kernel1(kernel``idx``1), .kernel2(kernel``idx``2), \
         .kernel3(kernel``idx``3), .kernel4(kernel``idx``4), .kernel5(kernel``idx``5), \
@@ -16,10 +16,11 @@
 
 module layer2
 #(
-    parameter H = 28,
-    parameter W = 28,
+    parameter H = 14,
+    parameter W = 14,
     parameter OC = 15,
-    parameter IC = 7
+    parameter IC = 7,
+    parameter ADDR_LEN = 7
 )
 (
     input wire clk,
@@ -27,7 +28,7 @@ module layer2
     output wire store,
     input wire pool_done,
     output wire pool,
-    output wire [9:0] address,
+    output wire [ADDR_LEN:0] address,
     output wire signed [7:0] result,
     output reg signed [7:0] bias,
     output wire cout_done,
@@ -39,7 +40,7 @@ module layer2
     input wire signed [7:0] data41, data42,
     input wire signed [7:0] data51, data52,
     input wire signed [7:0] data61, data62,
-    input wire signed [7:0] data71, data72
+    input wire signed [7:0] data71, data72,
     output wire [9:0] addr1,
     output wire [9:0] addr2,
     output wire [3:0] out_c
@@ -47,7 +48,7 @@ module layer2
 
     wire cout, c_load, conv, tree;
 
-    wire conv_done; 
+    wire conv_done;
 
     layer_control #(.IC(IC)) layer_control_inst(
     .clk(clk), .rst_n(rst),  .cout(cout), .c_load(c_load), .pool(pool), 
@@ -63,6 +64,8 @@ module layer2
     wire signed [7:0] result_0, result_1, result_2, result_3;
     wire signed [7:0] result_4, result_5, result_6, result_7;
 
+    wire store_0, store_1, store_2, store_3, store_4, store_5, store_6, store_7;
+
     // Declare kernel wires
     `DECL_KERNELS(0)
     `DECL_KERNELS(1)
@@ -73,7 +76,7 @@ module layer2
     `DECL_KERNELS(6)
     `DECL_KERNELS(7)
 
-    load_kernels #(.VAL(1151), .FILE("mem_files/conv2_weight.mem")) 
+    load_kernels #(.VAL(1151)) 
     load_kernels_inst (
     .clk(clk), .rst(rst), .c_load(c_load), .out_c(out_c),
     .kernel00(kernel00), .kernel01(kernel01), .kernel02(kernel02),
@@ -103,7 +106,7 @@ module layer2
     );
 
 
-    load_bias #(.OC(OC), .BIAS_FILE("mem_files/conv2_bias.mem")) 
+    load_bias #(.OC(OC)) 
     load_bias_inst (
         .clk(clk), .rst(rst), .c_load(c_load),
         .out_c(out_c), .bias(bias)
@@ -120,13 +123,10 @@ module layer2
     `CONV_INST(7)
 
     // Add results manually (adder tree)
-    addr_tree adder_inst(.clk(clk), .rst(rst), .tree(tree),
+    adder_tree adder_inst(.clk(clk), .rst(rst), .tree(tree),
         .result_0(result_0), .result_1(result_1), .result_2(result_2),
         .result_3(result_3), .result_4(result_4), .result_5(result_5), 
         .result_6(result_6), .result_7(result_7), .result(result));
-
-    wire store_0, store_1, store_2, store_3;
-    wire store_4, store_5, store_6, store_7;
 
     // Single store after all convs are done
     assign store = store_0 & store_1 & store_2 & store_3 & store_4 & store_5 & store_6 & store_7;

@@ -21,7 +21,7 @@ module layer_control
 parameter COUNT_OUT       = 3'd0;
 parameter CHANNEL_LOAD    = 3'd1;
 parameter CONV            = 3'd2;
-parameter tree            = 3'd3;
+parameter TREE            = 3'd3;
 parameter POOL            = 3'd4;
 parameter IDLE            = 3'd5;
 
@@ -34,6 +34,8 @@ always @(posedge clk or negedge rst_n)
 begin
     if (!rst_n)
         state <= CHANNEL_LOAD;
+    else
+        state <= next_state;
 end
 
 // Combinational logic: next state and outputs
@@ -46,7 +48,7 @@ begin
     pool           = 1'b0;
     tree           = 1'b0;
 
-    next_state = state;
+
     
     case (state)
         COUNT_OUT:

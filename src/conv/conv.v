@@ -2,7 +2,8 @@ module conv
 #(
     parameter H = 28,
     parameter W = 28,
-    parameter IC = 0
+    parameter IC = 0,
+    parameter ADDR_LEN = 9
 )
 (
     input wire clk,
@@ -14,7 +15,7 @@ module conv
                             kernel6, kernel7, kernel8,
 
     output signed [7:0] result,
-    output [9:0] address,
+    output [ADDR_LEN:0] address,
     output wire store,
     output wire done,
 
@@ -47,12 +48,12 @@ module conv
         .acc_enable(acc_enable), .counter_enable(count_enable), .addr_gen(addr_gen), .store(store), .flush_acc(flush_acc)
     );
 
-    counters counters_inst(
+    counters #(.IC(IC)) counters_inst(
         .clk(clk), .rst_n(rst), .count_enable(count_enable),
         .i(i), .j(j), .done(done), .conv(conv)
     );
 
-    patch_addr_gen #(.H(H), .W(W), .IC(IC)) patch_addr_inst (
+    patch_addr_gen #(.IC(IC)) patch_addr_inst (
         .clk(clk), .rst(rst), .addr_gen(addr_gen), .i(i), .j(j),
         .pixel_addr0(pixel_addr0), .pixel_addr1(pixel_addr1), .pixel_addr2(pixel_addr2),
         .pixel_addr3(pixel_addr3), .pixel_addr4(pixel_addr4), .pixel_addr5(pixel_addr5),
@@ -84,7 +85,7 @@ module conv
         .kernel_data6(kernel6), .kernel_data7(kernel7), .kernel_data8(kernel8)
     );
 
-    products_reg products_reg_inst (
+    products_reg #(.W(W), .ADDR_LEN(ADDR_LEN)) products_reg_inst (
         .clk(clk), .rst(rst), .i(i), .j(j), .flush_acc(flush_acc),
         .acc_enable(acc_enable), .sum(sum), .result(result), .addr(address)
     );

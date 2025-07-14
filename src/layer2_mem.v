@@ -3,17 +3,18 @@
 begin \
     max = next_addr; \
     if (mem[next_addr + 1] > mem[max])  max = next_addr + 1; \
-    if (mem[next_addr + 28] > mem[max]) max = next_addr + 28; \
-    if (mem[next_addr + 29] > mem[max]) max = next_addr + 29; \
+    if (mem[next_addr + 14] > mem[max]) max = next_addr + 14; \
+    if (mem[next_addr + 15] > mem[max]) max = next_addr + 15; \
     mem[next_addr] <= (mem[max] > 0) ? mem[max] : 0; \
 end 
 
-`define STORE(mem, result, w_addr, bias) \
+`define STORE(mem, w_addr, bias, result) \
     mem[w_addr] <= clamp(result + bias);
 
-module layer1_mem
+module layer2_mem
 #(
-    parameter CHANNEL_SIZE = 195
+    parameter CHANNEL_SIZE = 195,
+    parameter OC = 15
 )
 (
     input wire clk,
@@ -24,22 +25,22 @@ module layer1_mem
     input wire cout_done, 
 
     input wire [3:0] out_c,         // Output channel index [0–7]
-    input wire [9:0] w_addr,
+    input wire [7:0] w_addr,
     input wire signed [7:0] bias,          // Bias to initialize with
     input wire signed [7:0] value,          // Value to store
 
     output reg pool_done
 
-    input wire load,
-    input wire [9:0] addr1, addr2,
-    output reg signed [7:0] data01, data02,
-    output reg signed [7:0] data11, data12,
-    output reg signed [7:0] data21, data22,
-    output reg signed [7:0] data31, data32,
-    output reg signed [7:0] data41, data42,
-    output reg signed [7:0] data51, data52,
-    output reg signed [7:0] data61, data62,
-    output reg signed [7:0] data71, data72
+    // input wire load,
+    // input wire [9:0] addr1, addr2,
+    // output reg signed [7:0] data01, data02,
+    // output reg signed [7:0] data11, data12,
+    // output reg signed [7:0] data21, data22,
+    // output reg signed [7:0] data31, data32,
+    // output reg signed [7:0] data41, data42,
+    // output reg signed [7:0] data51, data52,
+    // output reg signed [7:0] data61, data62,
+    // output reg signed [7:0] data71, data72
 );
 
     // Eight independent memory banks for eight output channels
@@ -60,9 +61,9 @@ module layer1_mem
     (* ram_style = "block" *) reg signed [7:0] result_memE [0:CHANNEL_SIZE];
     (* ram_style = "block" *) reg signed [7:0] result_memF [0:CHANNEL_SIZE];
 
-    reg [9:0] max0, max1, max2, max3, max4, max5, max6, max7, max8, max9, maxA, maxB, maxC, maxD, maxE, maxF;
+    reg [7:0] max0, max1, max2, max3, max4, max5, max6, max7, max8, max9, maxA, maxB, maxC, maxD, maxE, maxF;
     reg [3:0] pool_count;
-    reg [9:0] next_addr;
+    reg [7:0] next_addr;
     reg [3:0] channel_count;
     // Core logic
     always @(posedge clk or negedge rst) 
@@ -118,19 +119,17 @@ module layer1_mem
 
             pool_count <= pool_count + 1;
         
-            if (pool_count < 14)
+            next_addr <= next_addr + 2;
+            
+            if (pool_count == 7)
             begin
-                next_addr <= next_addr + 2;
-            end
-            else
-            begin
-                next_addr <= next_addr + 28;
+                next_addr <= next_addr + 14;
                 pool_count <= 0;
             end
 
-            if (next_addr == 10'd784)
+            if (next_addr == 8'd196)
             begin
-                pool_done <= (channel_count == 7) ? 1'b1 : 0;
+                pool_done <= (channel_count == OC) ? 1'b1 : 0;
                 next_addr <= 0;
                 pool_count <= 0;
                 channel_count <= channel_count + 1;
@@ -179,32 +178,32 @@ module layer1_mem
             $writememh("poolF.mem", result_memF);
         end
 
-        else if (load)
-        begin
-            data01 <= result_mem0[addr1];
-            data02 <= result_mem0[addr2];
+        // else if (load)
+        // begin
+        //     data01 <= result_mem0[addr1];
+        //     data02 <= result_mem0[addr2];
 
-            data11 <= result_mem1[addr1];
-            data12 <= result_mem1[addr2];
+        //     data11 <= result_mem1[addr1];
+        //     data12 <= result_mem1[addr2];
 
-            data21 <= result_mem2[addr1];
-            data22 <= result_mem2[addr2];
+        //     data21 <= result_mem2[addr1];
+        //     data22 <= result_mem2[addr2];
 
-            data31 <= result_mem3[addr1];
-            data32 <= result_mem3[addr2];
+        //     data31 <= result_mem3[addr1];
+        //     data32 <= result_mem3[addr2];
 
-            data41 <= result_mem4[addr1];
-            data42 <= result_mem4[addr2];
+        //     data41 <= result_mem4[addr1];
+        //     data42 <= result_mem4[addr2];
 
-            data51 <= result_mem5[addr1];
-            data52 <= result_mem5[addr2];
+        //     data51 <= result_mem5[addr1];
+        //     data52 <= result_mem5[addr2];
 
-            data61 <= result_mem6[addr1];
-            data62 <= result_mem6[addr2];
+        //     data61 <= result_mem6[addr1];
+        //     data62 <= result_mem6[addr2];
 
-            data71 <= result_mem7[addr1];
-            data72 <= result_mem7[addr2];
-        end
+        //     data71 <= result_mem7[addr1];
+        //     data72 <= result_mem7[addr2];
+        // end
 
         else if (pool_done && !pool) 
         begin

@@ -1,6 +1,7 @@
 module products_reg
 #(
-    parameter W = 28
+    parameter W = 28,
+    parameter ADDR_LEN = 9 // 10 - 1
 )
 (
     input wire clk,
@@ -11,7 +12,7 @@ module products_reg
     input wire [4:0] i,
     input wire [4:0] j,
     output reg signed [7:0] result,
-    output reg [9:0] addr
+    output reg [ADDR_LEN:0] addr
 );
 
 always @(posedge clk or negedge rst) 

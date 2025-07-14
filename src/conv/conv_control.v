@@ -37,16 +37,16 @@ reg [3:0] next_state;
 always @(posedge clk or negedge rst_n) 
 begin
     if (!rst_n)
-        state <= ADDR;
+        state <= ADDR;   
     else
-        state <= next_state;
+        state <= next_state;     
 end
 
 // Combinational logic: next state and outputs
 always @(*) 
 begin
     // Default outputs
-    addr_gen           = 1'b0;
+    addr_gen       = 1'b0;
     flush_acc      = 1'b0;
     load           = 1'b0;
     mux_sel        = 2'b00;
@@ -54,7 +54,6 @@ begin
     acc_enable     = 1'b0;
     store          = 1'b0;
     counter_enable = 1'b0;
-
 
     case (state)
         IDLE: 

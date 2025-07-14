@@ -1,7 +1,9 @@
+`define FILE1 "mem_files/conv1_bias.mem"
+`define FILE2 "mem_files/conv2_bias.mem"
+
 module load_bias 
 #(
-    parameter OC = 7,                                // out_channels - 1
-    parameter string BIAS_FILE = "mem_files/conv1_bias.mem"  // default memory file
+    parameter OC = 7                                // out_channels - 1
 ) 
 (
     input clk,
@@ -13,12 +15,19 @@ module load_bias
 
     (* ram_style = "distributed" *) reg signed [7:0] rom_data [0:OC];
 
-    initial 
-    begin
-        $readmemh(BIAS_FILE, rom_data);
-    end
+    generate
+        if (OC == 7) 
+        begin : load_conv1
+            initial $readmemh(`FILE1, rom_data);
+        end 
+        else 
+        begin : load_conv2
+            initial $readmemh(`FILE2, rom_data);
+        end
+    endgenerate
 
-    always @(posedge clk or negedge rst) begin
+    always @(posedge clk or negedge rst) 
+    begin
         if (!rst)
             bias <= 8'sd0;
         else if (c_load)

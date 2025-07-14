@@ -1,7 +1,9 @@
+`define FILE_PATH "mem_files/conv1_weight.mem"
+
 module kernel_mem 
 #(
-    parameter VAL = 71,
-    parameter string FILE = "mem_files/conv1_weight.mem"  // New parameter
+    parameter VAL = 71
+    // parameter string FILE = "mem_files/conv1_weight.mem"  // New parameter
 )
 (
     input wire [3:0] addr,
@@ -11,7 +13,7 @@ module kernel_mem
 
     initial 
     begin
-        $readmemh(FILE, rom_data);  // Now uses parameterized file
+        $readmemh(`FILE_PATH, rom_data);  // Now uses parameterized file
     end
 
     assign k0 = rom_data[addr * 9];
