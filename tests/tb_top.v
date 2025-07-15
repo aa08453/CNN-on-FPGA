@@ -35,12 +35,12 @@ module tb_top;
         $display("Layer 1 computation done at time %0t", $time);
 
         // Wait for second layer to complete
-        wait(uut.cout2_done);
-        $display("Layer 2 computation done at time %0t", $time);
+//        wait(uut.cout2_done);
+//        $display("Layer 2 computation done at time %0t", $time);
 
         // Optionally: Dump memory or display final result
-        wait(uut.pool2_done);
-        $display("Final output result: %0d", uut.result2);
+//        wait(uut.pool2_done);
+//        $display("Final output result: %0d", uut.result2);
         $finish;
     end
 

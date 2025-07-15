@@ -31,7 +31,7 @@ module layer2
     output wire load0, load1, load2, load3, load4, load5, load6, load7,
     output wire [ADDR_LEN:0] address,
     output wire signed [7:0] result,
-    output reg signed [7:0] bias,
+    output wire signed [7:0] bias,
     output wire cout_done,
 
     input wire signed [7:0] data01, data02,

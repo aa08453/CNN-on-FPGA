@@ -15,7 +15,7 @@ module adder_tree
     input  wire signed [7:0] result_8,
     output reg  signed [7:0] result         // final clamped output
 );
-
+    `include "functions.v"
     // Stage 1 registers: partial sums of 3 inputs each
     reg signed [9:0] sum0, sum1, sum2;   // Wider to prevent overflow
 

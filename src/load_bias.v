@@ -1,5 +1,5 @@
-`define FILE1 "mem_files/conv1_bias.mem"
-`define FILE2 "mem_files/conv2_bias.mem"
+`define FILE1 "conv1_bias.mem"
+`define FILE2 "conv2_bias.mem"
 
 module load_bias 
 #(

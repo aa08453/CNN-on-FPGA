@@ -43,6 +43,7 @@ module layer2_mem
     // output reg signed [7:0] data61, data62,
     // output reg signed [7:0] data71, data72
 );
+`include "functions.v"
 
     // Eight independent memory banks for eight output channels
     (* ram_style = "block" *) reg signed [7:0] result_mem0 [0:CHANNEL_SIZE];

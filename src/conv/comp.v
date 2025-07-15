@@ -1,15 +1,3 @@
-function signed [7:0] clamp;
-  input signed [15:0] val;
-  begin
-    if (val > 127)
-      clamp = 8'sd127;
-    else if (val < -128)
-      clamp = -8'sd128;
-    else
-      clamp = val[7:0];
-  end
-endfunction
-
 
 module comp 
 (
@@ -24,8 +12,9 @@ module comp
     input clk,
     input rst,
     output reg signed [7:0] sum
+    
 );
-
+    `include "../functions.v"
     wire signed [7:0] p1, p2, p3;
     reg signed [15:0] inter;
 

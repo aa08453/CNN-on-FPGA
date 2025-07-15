@@ -1,7 +1,4 @@
-function [9:0] compute_addr;
-    input integer row, col;
-    compute_addr = ((row) >= 0 && (row) < (28) && (col) >= 0 && (col) < (28)) ? ((row) * (28) + (col)) : 10'd0;
-endfunction
+
 
 module patch_addr_gen
 #(
@@ -25,7 +22,7 @@ module patch_addr_gen
 
     output reg load_full_patch
 );
-
+    `include "../functions.v"
     reg [4:0] prev_i;
 
     integer mv, nv;

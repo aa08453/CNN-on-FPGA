@@ -19,7 +19,7 @@
     kernel``idx``7 <= rom_data[addr + (``idx`` * 9) + 7]; \
     kernel``idx``8 <= rom_data[addr + (``idx`` * 9) + 8]
 
-`define FILE "mem_files/conv2_weight.mem"
+`define FILE "conv2_weight.mem"
 
 
 module load_kernels

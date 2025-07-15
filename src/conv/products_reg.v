@@ -15,6 +15,7 @@ module products_reg
     output reg [ADDR_LEN:0] addr
 );
 
+`include "../functions.v"
 always @(posedge clk or negedge rst) 
 begin
     if (!rst) 

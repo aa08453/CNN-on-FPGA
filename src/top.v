@@ -24,6 +24,8 @@ module top
     wire [9:0] address1;
     wire [7:0] address2;
     wire signed [7:0] result1 , result2;
+    wire load;
+    wire load0, load1, load2, load3, load4, load5, load6, load7;
 
     wire signed [7:0] mem_data1, mem_data2;
     wire [9:0] mem_addr1, mem_addr2;
@@ -41,7 +43,7 @@ module top
     top_control control_inst (.clk(clk), .rst_n(rst), .pool1_done(pool1_done), .pool2_done(pool2_done));
 
     image_mem mem_inst (
-        .clk(clk),
+        .clk(clk), .rst(rst), .load(load),
         .addr1(mem_addr1),
         .addr2(mem_addr2),
         .data_out1(mem_data1),
@@ -58,6 +60,7 @@ module top
     layer1_inst (
         .clk(clk),
         .rst(rst),
+        .load(load),
         .store(store1),
         .address(address1),
         .result(result1),
@@ -125,7 +128,7 @@ module top
     );
 
     layer2_mem #( .CHANNEL_SIZE(195))
-    l2_mem_inst (.clk(clk), .rst(rst), .out_c(out_c2), .store(store2), .pool(pool2), .pool_done(pool2_done),
+    l2_mem_inst (.clk(clk), .rst(rst), .load(load), .out_c(out_c2), .store(store2), .pool(pool2), .pool_done(pool2_done),
             .bias(bias2),.w_addr(address2),.cout_done(cout2_done), .value(result2));
     
     

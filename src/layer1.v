@@ -1,18 +1,3 @@
-`define CONV_INST(idx) \
-    conv #(.H(H), .W(W), .IC(IC)) conv_inst_``idx`` ( \
-        .clk(clk), .rst(rst), .conv(conv), \
-        .kernel0(kernel``idx``0), .kernel1(kernel``idx``1), .kernel2(kernel``idx``2), \
-        .kernel3(kernel``idx``3), .kernel4(kernel``idx``4), .kernel5(kernel``idx``5), \
-        .kernel6(kernel``idx``6), .kernel7(kernel``idx``7), .kernel8(kernel``idx``8), \
-        .result(result_``idx``), .address(address), .store(store_``idx``), .done(done_``idx``), \
-        .data1(data1), .data2(data2), \
-        .addr1(addr1), .addr2(addr2));
-
-`define DECL_KERNELS(idx) \
-    wire signed [7:0] \
-        kernel``idx``0, kernel``idx``1, kernel``idx``2, \
-        kernel``idx``3, kernel``idx``4, kernel``idx``5, \
-        kernel``idx``6, kernel``idx``7, kernel``idx``8;
 
 module layer1
 #(
@@ -31,7 +16,7 @@ module layer1
     output wire load,
     output wire [ADDR_LEN:0] address,
     output wire signed [7:0] result,
-    output reg signed [7:0] bias,
+    output wire signed [7:0] bias,
     output wire cout_done,
 
     input wire signed [7:0] data1,
@@ -45,7 +30,7 @@ module layer1
 
     wire conv_done; 
 
-    reg signed [7:0] kernel0, kernel1, kernel2,
+    wire signed [7:0] kernel0, kernel1, kernel2,
                      kernel3, kernel4, kernel5,
                      kernel6, kernel7, kernel8;
 
