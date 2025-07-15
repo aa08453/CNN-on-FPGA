@@ -76,13 +76,15 @@ begin
 
         MAC0: 
         begin
-            add = 1'b1;
+            acc_enable = 1'b1;
+            add        = 1'b1;
             mux_sel    = 2'b01;
             next_state = MAC1;
         end
 
         MAC1: 
         begin
+            acc_enable = 1'b1;
             add        = 1'b1;
             mux_sel    = 2'b10;
             next_state = MAC2;
@@ -93,20 +95,6 @@ begin
             acc_enable = 1'b1;
             add        = 1'b1;
             mux_sel    = 2'b11;
-            next_state = SUM;
-        end
-
-        SUM:
-        begin
-            acc_enable = 1'b1;
-            add        = 1'b1;      
-            mux_sel    = 2'b00;
-            next_state = ACC;
-        end
-
-        ACC:
-        begin
-            acc_enable = 1'b1;
             next_state = STORE;
         end
 

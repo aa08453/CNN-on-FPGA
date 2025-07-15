@@ -12,6 +12,7 @@ function signed [7:0] clamp;
   end
 endfunction
 
+
 function [9:0] compute_addr;
     input integer row, col;
     compute_addr = ((row) >= 0 && (row) < (28) && (col) >= 0 && (col) < (28)) ? ((row) * (28) + (col)) : 10'd0;

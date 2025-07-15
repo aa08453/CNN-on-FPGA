@@ -14,7 +14,8 @@ module image_mem
 
     initial 
     begin
-        $readmemh("image.mem", mem);
+        // $readmemh("image.mem", mem);
+        $readmemh("mem_files/image.mem" , mem);
     end
 
     always @(posedge clk) 

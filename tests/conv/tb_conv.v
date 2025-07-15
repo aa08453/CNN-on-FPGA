@@ -28,7 +28,7 @@ module conv_tb;
 
     // Instantiate image memory
     image_mem mem_inst (
-        .clk(clk),
+        .clk(clk), .rst(rst), .load(load),
         .addr1(addr1),
         .addr2(addr2),
         .data_out1(data1),
@@ -40,6 +40,7 @@ module conv_tb;
         .clk(clk),
         .rst(rst),
         .conv(conv),
+        .load(load),
         .kernel0(kernel[0]), .kernel1(kernel[1]), .kernel2(kernel[2]),
         .kernel3(kernel[3]), .kernel4(kernel[4]), .kernel5(kernel[5]),
         .kernel6(kernel[6]), .kernel7(kernel[7]), .kernel8(kernel[8]),
@@ -88,8 +89,8 @@ module conv_tb;
     // Monitor stored outputs
     // Monitor outputs
     initial begin
-        $display("Time\tclk\trst\tconv\taddr\tresult");
-        $monitor("%g\t%b\t%b\t%b\t%h\t%d", $time, clk, rst, conv, address, result);
+        $display("addr\tresult\tflush_acc");
+        $monitor("%d\t%h\t%b", address, result, dut.flush_acc);
     end
 
 endmodule
