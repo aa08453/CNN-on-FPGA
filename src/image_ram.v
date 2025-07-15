@@ -3,6 +3,7 @@ module image_mem
 (
     input wire clk,
     input wire rst,
+    input wire load,
     input wire [9:0] addr1,
     input wire [9:0] addr2,
     output reg [7:0] data_out1,
@@ -22,7 +23,7 @@ module image_mem
         data_out1 <= 0;
         data_out2 <= 0;
     end
-    else 
+    else if (load)
     begin
         data_out1 <= mem[addr1];
         data_out2 <= mem[addr2];

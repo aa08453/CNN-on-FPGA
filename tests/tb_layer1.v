@@ -15,6 +15,7 @@ module tb_layer1;
     wire [9:0] address;
     wire signed [7:0] result;
     wire signed [7:0] bias;
+    wire [3:0] out_c;
     wire pool;
     reg pool_done;
     wire cout_done;
@@ -51,7 +52,8 @@ module tb_layer1;
         .data1(data1),
         .data2(data2),
         .addr1(addr1),
-        .addr2(addr2)
+        .addr2(addr2),
+        .out_c(out_c)
     );
 
     // Stimulus

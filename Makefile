@@ -62,10 +62,25 @@ layer1:
 	vvp layer1.vvp
 	gtkwave w_layer1.vcd &
 
+layer1_mem:
+	iverilog $(VFLAGS) -o layer1_mem.vvp $(SRC)/*.v $(SRC)/conv/*.v $(TESTS)/tb_layer1_mem.v
+	vvp layer1_mem.vvp
+	gtkwave w_layer1_mem.vcd &
+
 layer_control:
 	iverilog $(VFLAGS) -o layer_control.vvp $(SRC)/layer_control.v $(TESTS)/tb_layer_control.v
 	vvp layer_control.vvp
 	gtkwave w_layer_control.vcd &
+
+layer2:
+	iverilog $(VFLAGS) -o layer2.vvp $(SRC)/*.v $(SRC)/conv/*.v $(TESTS)/tb_layer2.v
+	vvp layer2.vvp
+	gtkwave w_layer2.vcd &
+
+top:
+	iverilog $(VFLAGS) -o top.vvp $(SRC)/*.v $(SRC)/conv/*.v $(TESTS)/tb_top.v
+	vvp top.vvp
+	gtkwave w_top.vcd &
 
 clean:
 	rm -f *.vvp *.vcd

@@ -30,7 +30,7 @@ module layer1_mem
 
     output reg pool_done,
 
-    input wire load,
+    input wire load0, load1, load2, load3, load4, load5, load6, load7,
     input wire [9:0] addr1, addr2,
     output reg signed [7:0] data01, data02,
     output reg signed [7:0] data11, data12,
@@ -137,38 +137,56 @@ module layer1_mem
             $writememh("pool7.mem", result_mem7);
         end
 
-        else if (load)
-        begin
-            data01 <= result_mem0[addr1];
-            data02 <= result_mem0[addr2];
-
-            data11 <= result_mem1[addr1];
-            data12 <= result_mem1[addr2];
-
-            data21 <= result_mem2[addr1];
-            data22 <= result_mem2[addr2];
-
-            data31 <= result_mem3[addr1];
-            data32 <= result_mem3[addr2];
-
-            data41 <= result_mem4[addr1];
-            data42 <= result_mem4[addr2];
-
-            data51 <= result_mem5[addr1];
-            data52 <= result_mem5[addr2];
-
-            data61 <= result_mem6[addr1];
-            data62 <= result_mem6[addr2];
-
-            data71 <= result_mem7[addr1];
-            data72 <= result_mem7[addr2];
-        end
-
         else if (pool_done && !pool) 
         begin
             pool_done <= 0;
             channel_count <= 0;
         end
+
+        else 
+        begin
+            if (load0)
+            begin
+                data01 <= result_mem0[addr1];
+                data02 <= result_mem0[addr2];
+            end
+            if (load1)
+            begin
+                data11 <= result_mem1[addr1];
+                data12 <= result_mem1[addr2];
+            end
+            if (load2)
+            begin
+                data21 <= result_mem2[addr1];
+                data22 <= result_mem2[addr2];
+            end
+            if (load3)
+            begin
+                data31 <= result_mem3[addr1];
+                data32 <= result_mem3[addr2];
+            end
+            if (load4)
+            begin
+                data41 <= result_mem4[addr1];
+                data42 <= result_mem4[addr2];
+            end
+            if (load5)
+            begin
+                data51 <= result_mem5[addr1];
+                data52 <= result_mem5[addr2];
+            end
+            if (load6)
+            begin
+                data61 <= result_mem6[addr1];
+                data62 <= result_mem6[addr2];
+            end
+            if (load7)
+            begin
+                data71 <= result_mem7[addr1];
+                data72 <= result_mem7[addr2];
+            end
+        end
+
     end
     
 

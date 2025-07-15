@@ -47,8 +47,6 @@ begin
     conv           = 1'b0;
     pool           = 1'b0;
     tree           = 1'b0;
-
-
     
     case (state)
         COUNT_OUT:
@@ -66,7 +64,7 @@ begin
         CONV:
         begin
             conv = 1'b1;
-            next_state = (IC > 0) ? TREE: conv_done ? COUNT_OUT : CONV;
+            next_state = (IC > 0) ? TREE : (conv_done ? COUNT_OUT : CONV);
         end
 
         TREE:

@@ -28,6 +28,7 @@ module layer1
     output wire store,
     input wire pool_done,
     output wire pool,
+    output wire load,
     output wire [ADDR_LEN:0] address,
     output wire signed [7:0] result,
     output reg signed [7:0] bias,
@@ -77,7 +78,7 @@ module layer1
     // Convolution
     conv #(.H(H), .W(W), .IC(IC), .ADDR_LEN(ADDR_LEN)) 
     conv_inst (
-        .clk(clk), .rst(rst), .conv(conv),
+        .clk(clk), .rst(rst), .conv(conv), .load(load),
         .kernel0(kernel0), .kernel1(kernel1), .kernel2(kernel2),
         .kernel3(kernel3), .kernel4(kernel4), .kernel5(kernel5),
         .kernel6(kernel6), .kernel7(kernel7), .kernel8(kernel8),

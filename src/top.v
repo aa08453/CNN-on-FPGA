@@ -18,13 +18,12 @@ module top
 
     wire cout1_done, cout2_done, pool1_done, pool2_done; 
 
-
-    reg signed [7:0] bias;
+    wire signed [7:0] bias1, bias2;
 
     wire [3:0] out_c1, out_c2;
     wire [9:0] address1;
     wire [7:0] address2;
-    wire [7:0] result1 , result2;
+    wire signed [7:0] result1 , result2;
 
     wire signed [7:0] mem_data1, mem_data2;
     wire [9:0] mem_addr1, mem_addr2;
@@ -39,6 +38,8 @@ module top
     wire signed [7:0] data71, data72;
     wire [9:0] addr1, addr2;
 
+    top_control control_inst (.clk(clk), .rst_n(rst), .pool1_done(pool1_done), .pool2_done(pool2_done));
+
     image_mem mem_inst (
         .clk(clk),
         .addr1(mem_addr1),
@@ -47,7 +48,7 @@ module top
         .data_out2(mem_data2)
     );
 
-    layer #(
+    layer1 #(
         .H(28),
         .W(28),
         .OC(7),
@@ -74,8 +75,12 @@ module top
 
     layer1_mem #( .CHANNEL_SIZE(783))
     l1_mem_inst (.clk(clk), .rst(rst), .out_c(out_c1), .store(store1), .pool(pool1), .pool_done(pool1_done),
-            .bias(bias),.w_addr(address),.cout_done(cout1_done), .value(result),
-            .load(load),.addr1(addr1), .addr2(addr2),
+            .bias(bias1),.w_addr(address1),.cout_done(cout1_done), .value(result1),
+            .load0(load0), .load1(load1), 
+            .load2(load2), .load3(load3), 
+            .load4(load4), .load5(load5), 
+            .load6(load6), .load7(load7),
+            .addr1(addr1), .addr2(addr2),
             .data01(data01), .data02(data02),
             .data11(data11), .data12(data12),
             .data21(data21), .data22(data22),
@@ -86,7 +91,7 @@ module top
             .data71(data71), .data72(data72)        
         );
 
-    layer #(
+    layer2 #(
         .H(14),
         .W(14),
         .OC(15),
@@ -103,6 +108,10 @@ module top
         .pool(pool2),
         .pool_done(pool2_done),
         .cout_done(cout2_done),
+        .load0(load0), .load1(load1), 
+        .load2(load2), .load3(load3), 
+        .load4(load4), .load5(load5), 
+        .load6(load6), .load7(load7),
         .data01(data01), .data02(data02),
         .data11(data11), .data12(data12),
         .data21(data21), .data22(data22),
@@ -116,9 +125,8 @@ module top
     );
 
     layer2_mem #( .CHANNEL_SIZE(195))
-    l1_mem_inst (.clk(clk), .rst(rst), .out_c(out_c2), .store(store2), .pool(pool2), .pool_done(pool2_done),
-            .bias(bias2),.w_addr(address2),.cout_done(cout2_done), .value(result2)       
-        );
+    l2_mem_inst (.clk(clk), .rst(rst), .out_c(out_c2), .store(store2), .pool(pool2), .pool_done(pool2_done),
+            .bias(bias2),.w_addr(address2),.cout_done(cout2_done), .value(result2));
     
     
 

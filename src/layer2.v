@@ -1,6 +1,6 @@
 `define CONV_INST(idx) \
     conv #(.H(H), .W(W), .IC(IC), .ADDR_LEN(ADDR_LEN)) conv_inst_``idx`` ( \
-        .clk(clk), .rst(rst), .conv(conv), \
+        .clk(clk), .rst(rst), .conv(conv), .load(load``idx``),\
         .kernel0(kernel``idx``0), .kernel1(kernel``idx``1), .kernel2(kernel``idx``2), \
         .kernel3(kernel``idx``3), .kernel4(kernel``idx``4), .kernel5(kernel``idx``5), \
         .kernel6(kernel``idx``6), .kernel7(kernel``idx``7), .kernel8(kernel``idx``8), \
@@ -28,6 +28,7 @@ module layer2
     output wire store,
     input wire pool_done,
     output wire pool,
+    output wire load0, load1, load2, load3, load4, load5, load6, load7,
     output wire [ADDR_LEN:0] address,
     output wire signed [7:0] result,
     output reg signed [7:0] bias,

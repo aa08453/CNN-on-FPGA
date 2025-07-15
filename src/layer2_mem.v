@@ -23,6 +23,7 @@ module layer2_mem
     input wire store,
     input wire pool,
     input wire cout_done, 
+    input wire load,
 
     input wire [3:0] out_c,         // Output channel index [0–7]
     input wire [7:0] w_addr,
@@ -74,6 +75,23 @@ module layer2_mem
             pool_count <= 0;
             pool_done <= 0;
             channel_count <= 0;
+            max0 <= 0;
+            max1 <= 0;
+            max2 <= 0;
+            max3 <= 0;
+            max4 <= 0;
+            max5 <= 0;
+            max6 <= 0;
+            max7 <= 0;
+            max8 <= 0;
+            max9 <= 0;
+            maxA <= 0;
+            maxB <= 0;
+            maxC <= 0;
+            maxD <= 0;
+            maxE <= 0;
+            maxF <= 0;
+            
         end
         else if (store) 
         begin

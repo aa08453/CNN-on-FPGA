@@ -18,6 +18,7 @@ module conv
     output [ADDR_LEN:0] address,
     output wire store,
     output wire done,
+    output wire load,
 
     // External memory connection
     input wire signed [7:0] data1,
@@ -27,7 +28,7 @@ module conv
 );
 
 
-    wire addr_gen, load, acc_enable, count_enable, flush_acc;
+    wire addr_gen, acc_enable, count_enable, flush_acc;
     wire [1:0] mux_sel;
 
     wire load_full_patch, load_done; 

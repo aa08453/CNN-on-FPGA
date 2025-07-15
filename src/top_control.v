@@ -1,25 +1,17 @@
 
-module control 
+module top_control 
 (
     input wire clk,
     input wire rst_n,
 
     input wire pool1_done,
-    input wire pool2_done,
-
-
-    output reg conv1,
-    output reg store,
-    output reg conv2,
-    output reg pool1,
-    output reg pool2,
+    input wire pool2_done
 );
 
-parameter CONV1    = 3'd0;
-parameter POOL1    = 3'd1;
-parameter CONV2    = 3'd2;
-parameter POOL2    = 3'd3;
-parameter IDLE     = 3'd4;
+parameter START     = 3'd0;
+parameter LAYER1    = 3'd1;
+parameter LAYER2    = 3'd2;
+parameter IDLE      = 3'd3;
 
 reg [2:0] state;
 reg [2:0] next_state;
@@ -29,7 +21,7 @@ reg [2:0] next_state;
 always @(posedge clk or negedge rst_n) 
 begin
     if (!rst_n)
-        state <= CHANNEL_LOAD;
+        state <= LAYER1;
         
 end
 
@@ -37,18 +29,12 @@ end
 always @(*) 
 begin
     // Default outputs
-    cout           = 1'b0;
-    c_load         = 1'b0;
-    cin            = 1'b0;
-    conv           = 1'b0;
-    pool           = 1'b0;
 
     state = next_state;
     
     case (state)
         LAYER1:
         begin
-            
             next_state = pool1_done ? LAYER2: LAYER1;
         end
 
@@ -61,7 +47,6 @@ begin
         begin
             next_state = IDLE;
         end
-    
 
         default: 
         begin
