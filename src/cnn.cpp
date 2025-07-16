@@ -177,7 +177,7 @@ void conv2(
 
             // Read input from stream or pad with zero
             for (int c = 0; c < CIN; c++) {
-#pragma HLS UNROLL
+#pragma HLS UNROLL factor=2
                 fixed pixel = 0;
 
                 if (h >= PAD && h < IMG_H + PAD && w >= PAD && w < IMG_W + PAD) {
@@ -203,12 +203,12 @@ void conv2(
 
                 // For each output channel
                 for (int f = 0; f < COUT; f++) {
-#pragma HLS UNROLL
+#pragma HLS UNROLL factor=4
                     fixed sum = bias[f];
 
                     // For each input channel
                     for (int c = 0; c < CIN; c++) {
-#pragma HLS UNROLL
+#pragma HLS UNROLL factor=2
                         // Apply 3x3 kernel
                         for (int i = 0; i < K; i++) {
                             for (int j = 0; j < K; j++) {
