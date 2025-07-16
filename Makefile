@@ -58,12 +58,12 @@ conv:
 	gtkwave w_conv.vcd &
 
 layer1:
-	iverilog $(VFLAGS) -o layer1.vvp $(SRC)/*.v $(SRC)/conv/*.v $(TESTS)/tb_layer1.v
+	iverilog $(VFLAGS) -I src -I src/conv -o layer1.vvp $(SRC)/*.v $(SRC)/conv/*.v $(TESTS)/tb_layer1.v
 	vvp layer1.vvp
 	gtkwave w_layer1.vcd &
 
 layer1_mem:
-	iverilog $(VFLAGS) -o layer1_mem.vvp $(SRC)/*.v $(SRC)/conv/*.v $(TESTS)/tb_layer1_mem.v
+	iverilog $(VFLAGS) -I src -I src/conv -o layer1_mem.vvp $(SRC)/*.v $(SRC)/conv/*.v $(TESTS)/tb_layer1_mem.v
 	vvp layer1_mem.vvp
 	gtkwave w_layer1_mem.vcd &
 

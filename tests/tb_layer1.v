@@ -11,7 +11,7 @@ module tb_layer1;
     wire [9:0] addr1, addr2;
 
     // Outputs from layer1
-    wire store;
+    wire store, load;
     wire [9:0] address;
     wire signed [7:0] result;
     wire signed [7:0] bias;
@@ -26,7 +26,7 @@ module tb_layer1;
 
     // Instantiate image memory
     image_mem mem_inst (
-        .clk(clk),
+        .clk(clk), .rst(rst), .load(load),
         .addr1(addr1),
         .addr2(addr2),
         .data_out1(data1),
@@ -42,6 +42,7 @@ module tb_layer1;
     ) dut (
         .clk(clk),
         .rst(rst),
+        .load(load),
         .store(store),
         .address(address),
         .result(result),
@@ -68,8 +69,8 @@ module tb_layer1;
 
         // Run simulation until cout_done
         
-        // wait(cout_done);
-        #5000000;
+        wait(cout_done);
+        // #5000000;
 
 
         $display("Layer1 finished convolution.");
@@ -78,14 +79,10 @@ module tb_layer1;
 
     // Monitor useful outputs
     initial begin
-        $display("Time\tconv\tconv_done\tcout_done\tresult\taddress");
-        $monitor("%t\t%b\t%b\t%b\t%d\t%h", 
-            $time, 
-            dut.conv, 
-            dut.conv_done, 
-            dut.cout_done, 
-            dut.result, 
-            dut.address);
+        $display("address\tresult");
+        $monitor("%d\t%h", 
+            dut.address, 
+            dut.result);
     end
 
 endmodule

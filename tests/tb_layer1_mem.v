@@ -39,7 +39,7 @@ module tb_layer1_mem;
 
     // === Instantiate image_mem ===
     image_mem mem_inst (
-        .clk(clk),
+        .clk(clk), .rst(rst), .load(load),
         .addr1(addr1),
         .addr2(addr2),
         .data_out1(data1),
@@ -59,6 +59,7 @@ module tb_layer1_mem;
         .address(address),
         .result(result),
         .bias(bias),
+        .load(load),
         .pool(pool),
         .pool_done(pool_done),
         .cout_done(cout_done),
@@ -109,8 +110,10 @@ module tb_layer1_mem;
         rst = 1;
 
         // Wait for convolution to complete and memory pooling to finish
-        wait(pool_done);
-        $display("Pooling complete. Verifying memory contents...");
+        wait(cout_done);
+        $display("Convolution complete");
+        // wait(pool_done);
+        // $display("Pooling complete. Verifying memory contents...");
 
         // Wait a few cycles for memory write
         #100;
@@ -120,15 +123,10 @@ module tb_layer1_mem;
 
     // === Debug monitor ===
     initial begin
-        $display("Time\tstore\taddress\tresult\tbias\tpool\tcout_done");
-        $monitor("%t\t%b\t%h\t%d\t%d\t%b\t%b",
-            $time,
-            store,
+        $display("address\tresult");
+        $monitor("%d\t%h",
             address,
-            result,
-            bias,
-            pool,
-            cout_done
+            result
         );
     end
 

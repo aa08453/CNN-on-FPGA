@@ -1,4 +1,4 @@
-`define FILE_PATH "conv1_weight.mem"
+`define FILE_PATH "mem_files/conv1_weight.mem"
 
 module kernel_mem 
 #(

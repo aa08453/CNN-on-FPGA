@@ -1,14 +1,28 @@
-
 import numpy as np
 import matplotlib.pyplot as plt
+import sys
+import re
 
 def read_mem_file(path):
+    data = []
+
     with open(path, 'r') as f:
-        lines = f.readlines()
-    
-    # Convert hex-like strings to integers
-    data = [int(line.strip(), 10) for line in lines if line.strip()]
-    
+        for line in f:
+            line = line.strip()
+
+            # Skip address headers like "// 0x00000000"
+            if line.startswith("//"):
+                continue
+
+            # Skip empty lines
+            if not line:
+                continue
+
+            # Check if it's a valid hex byte (2 hex digits)
+            if re.fullmatch(r'[0-9a-fA-F]{2}', line):
+                value = int(line, 16)
+                data.append(value)
+
     if len(data) != 28 * 28:
         raise ValueError(f"Expected 784 values, got {len(data)}")
 
@@ -21,7 +35,6 @@ def visualize(data, cmap='gray'):
     plt.show()
 
 if __name__ == "__main__":
-    import sys
     if len(sys.argv) < 2:
         print("Usage: python script.py path/to/file.mem")
         sys.exit(1)

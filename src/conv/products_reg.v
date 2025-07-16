@@ -6,7 +6,7 @@ module products_reg
 (
     input wire clk,
     input wire rst,
-    input wire acc_enable,
+    input wire add,
     input wire flush_acc,
     input wire signed [7:0] sum,
     input wire [4:0] i,
@@ -23,7 +23,7 @@ begin
         result <= 8'sd0;
         addr <= 10'd0;
     end 
-    else if (acc_enable)
+    else if (add)
     begin
         result <= clamp(result + sum);
         addr <= i * W + j;
