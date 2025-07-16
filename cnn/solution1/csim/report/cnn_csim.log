@@ -1,0 +1,9 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch GCC as the compiler.
+   Compiling ../../../../src/tb.cpp in debug mode
+   Compiling ../../../../src/cnn.cpp in debug mode
+   Generating csim.exe
+-8.75 -11.25 -6.875 0.875 -7.625 0.875 -11 -9.125 -0.75 -2.625 Prediction: 3
+4.75 -14.25 -6.625 -6.875 -9.75 -8.5 -4 -7.75 -2.875 -2.25 Prediction: 0
+INFO: [SIM 1] CSim done with 0 errors.
+INFO: [SIM 3] *************** CSIM finish ***************

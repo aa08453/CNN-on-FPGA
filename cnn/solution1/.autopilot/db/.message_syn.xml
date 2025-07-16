@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Messages>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_631" tag="SCHEDULE" content="Option &apos;relax_ii_for_timing&apos; is enabled, will increase II to preserve clock frequency constraints."/>
+	<Message severity="WARNING" prefix="[HLS 200-40]" key="HLS_40_1310" tag="" content="Cannot find source file cnn/src/cnn.cpp; skipping it."/>
+	<Message severity="WARNING" prefix="[HLS 200-40]" key="HLS_40_1310" tag="" content="Cannot find source file cnn/src/conv1_bias.h; skipping it."/>
+	<Message severity="WARNING" prefix="[HLS 200-40]" key="HLS_40_1310" tag="" content="Cannot find source file cnn/src/conv1_weight.h; skipping it."/>
+	<Message severity="WARNING" prefix="[HLS 200-40]" key="HLS_40_1310" tag="" content="Cannot find source file cnn/src/conv2_bias.h; skipping it."/>
+	<Message severity="WARNING" prefix="[HLS 200-40]" key="HLS_40_1310" tag="" content="Cannot find source file cnn/src/conv2_weight.h; skipping it."/>
+	<Message severity="WARNING" prefix="[HLS 200-40]" key="HLS_40_1310" tag="" content="Cannot find source file cnn/src/fc1_bias.h; skipping it."/>
+	<Message severity="WARNING" prefix="[HLS 200-40]" key="HLS_40_1310" tag="" content="Cannot find source file cnn/src/fc1_weight.h; skipping it."/>
+	<Message severity="WARNING" prefix="[HLS 200-40]" key="HLS_40_1310" tag="" content="Cannot find source file cnn/src/labels.h; skipping it."/>
+	<Message severity="WARNING" prefix="[HLS 200-40]" key="HLS_40_1310" tag="" content="Cannot find source file cnn/src/mnist_dataset.h; skipping it."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1312" tag="" content="Analyzing design file &apos;D:/vivado/cnn/src/cnn.cpp&apos; ..."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Linking Time (s): cpu = 00:00:03 ; elapsed = 00:00:31 . Memory (MB): peak = 947.984 ; gain = 854.105"/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Checking Pragmas Time (s): cpu = 00:00:03 ; elapsed = 00:00:31 . Memory (MB): peak = 947.984 ; gain = 854.105"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1467" tag="" content="Starting code transformations ..."/>
+	<Message severity="INFO" prefix="[HLS 200-489]" key="HLS 200-489" tag="" content="Unrolling loop &apos;Loop-3.1.1&apos; (D:/vivado/cnn/src/cnn.cpp:45) in function &apos;conv(hls::stream&lt;ap_fixed&lt;8, 5, (ap_q_mode)5, (ap_o_mode)3, 0&gt;, 0&gt;&amp;, hls::stream&lt;ap_fixed&lt;8, 5, (ap_q_mode)5, (ap_o_mode)3, 0&gt;, 0&gt;*, ap_fixed&lt;8, 5, (ap_q_mode)5, (ap_o_mode)3, 0&gt; const (*) [1][3][3], ap_fixed&lt;8, 5, (ap_q_mode)5, (ap_o_mode)3, 0&gt; const*)&apos; completely with a factor of 1."/>
+	<Message severity="INFO" prefix="[HLS 200-489]" key="HLS 200-489" tag="" content="Unrolling loop &apos;Loop-3.1.2.1&apos; (D:/vivado/cnn/src/cnn.cpp:76) in function &apos;conv(hls::stream&lt;ap_fixed&lt;8, 5, (ap_q_mode)5, (ap_o_mode)3, 0&gt;, 0&gt;&amp;, hls::stream&lt;ap_fixed&lt;8, 5, (ap_q_mode)5, (ap_o_mode)3, 0&gt;, 0&gt;*, ap_fixed&lt;8, 5, (ap_q_mode)5, (ap_o_mode)3, 0&gt; const (*) [1][3][3], ap_fixed&lt;8, 5, (ap_q_mode)5, (ap_o_mode)3, 0&gt; const*)&apos; completely with a factor of 1."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Standard Transforms Time (s): cpu = 00:00:03 ; elapsed = 00:00:32 . Memory (MB): peak = 947.984 ; gain = 854.105"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1472" tag="" content="Checking synthesizability ..."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Checking Synthesizability Time (s): cpu = 00:00:03 ; elapsed = 00:00:32 . Memory (MB): peak = 947.984 ; gain = 854.105"/>
+	<Message severity="INFO" prefix="[XFORM 203-502]" key="XFORM_AUTO_UNROLL_STATUS_246" tag="" content="Unrolling all sub-loops inside loop &apos;Loop-1.1&apos; (D:/vivado/cnn/src/cnn.cpp:247) in function &apos;pool2&apos; for pipelining."/>
+	<Message severity="INFO" prefix="[XFORM 203-502]" key="XFORM_AUTO_UNROLL_STATUS_246" tag="" content="Unrolling all sub-loops inside loop &apos;Loop-1.1&apos; (D:/vivado/cnn/src/cnn.cpp:175) in function &apos;conv2&apos; for pipelining."/>
+	<Message severity="INFO" prefix="[XFORM 203-502]" key="XFORM_AUTO_UNROLL_STATUS_246" tag="" content="Unrolling all sub-loops inside loop &apos;Loop-1.1&apos; (D:/vivado/cnn/src/cnn.cpp:112) in function &apos;pool1&apos; for pipelining."/>
+	<Message severity="INFO" prefix="[XFORM 203-502]" key="XFORM_AUTO_UNROLL_STATUS_246" tag="" content="Unrolling all sub-loops inside loop &apos;Loop-1.1&apos; (D:/vivado/cnn/src/cnn.cpp:41) in function &apos;conv&apos; for pipelining."/>
+	<Message severity="INFO" prefix="[HLS 200-489]" key="HLS 200-489" tag="" content="Unrolling loop &apos;Loop-2&apos; (D:/vivado/cnn/src/cnn.cpp:312) in function &apos;dense&apos; completely with a factor of 10."/>
+	<Message severity="INFO" prefix="[HLS 200-489]" key="HLS 200-489" tag="" content="Unrolling loop &apos;Loop-1.1.1&apos; (D:/vivado/cnn/src/cnn.cpp:249) in function &apos;pool2&apos; completely with a factor of 16."/>
+	<Message severity="INFO" prefix="[HLS 200-489]" key="HLS 200-489" tag="" content="Unrolling loop &apos;Loop-1.1.2&apos; (D:/vivado/cnn/src/cnn.cpp:264) in function &apos;pool2&apos; completely with a factor of 16."/>
+	<Message severity="INFO" prefix="[HLS 200-489]" key="HLS 200-489" tag="" content="Unrolling loop &apos;Loop-1.1.1&apos; (D:/vivado/cnn/src/cnn.cpp:179) in function &apos;conv2&apos; completely with a factor of 8."/>
+	<Message severity="INFO" prefix="[HLS 200-489]" key="HLS 200-489" tag="" content="Unrolling loop &apos;Loop-1.1.2&apos; (D:/vivado/cnn/src/cnn.cpp:205) in function &apos;conv2&apos; completely with a factor of 16."/>
+	<Message severity="INFO" prefix="[HLS 200-489]" key="HLS 200-489" tag="" content="Unrolling loop &apos;Loop-1.1.2.1&apos; (D:/vivado/cnn/src/cnn.cpp:210) in function &apos;conv2&apos; completely with a factor of 8."/>
+	<Message severity="INFO" prefix="[HLS 200-489]" key="HLS 200-489" tag="" content="Unrolling loop &apos;Loop-1.1.2.1.1&apos; (D:/vivado/cnn/src/cnn.cpp:213) in function &apos;conv2&apos; completely with a factor of 3."/>
+	<Message severity="INFO" prefix="[HLS 200-489]" key="HLS 200-489" tag="" content="Unrolling loop &apos;Loop-1.1.2.1.1.1&apos; (D:/vivado/cnn/src/cnn.cpp:214) in function &apos;conv2&apos; completely with a factor of 3."/>
+	<Message severity="INFO" prefix="[HLS 200-489]" key="HLS 200-489" tag="" content="Unrolling loop &apos;Loop-1.1.1&apos; (D:/vivado/cnn/src/cnn.cpp:114) in function &apos;pool1&apos; completely with a factor of 8."/>
+	<Message severity="INFO" prefix="[HLS 200-489]" key="HLS 200-489" tag="" content="Unrolling loop &apos;Loop-1.1.2&apos; (D:/vivado/cnn/src/cnn.cpp:129) in function &apos;pool1&apos; completely with a factor of 8."/>
+	<Message severity="INFO" prefix="[HLS 200-489]" key="HLS 200-489" tag="" content="Unrolling loop &apos;Loop-1.1.1&apos; (D:/vivado/cnn/src/cnn.cpp:71) in function &apos;conv&apos; completely with a factor of 8."/>
+	<Message severity="INFO" prefix="[HLS 200-489]" key="HLS 200-489" tag="" content="Unrolling loop &apos;Loop-1.1.1.1&apos; (D:/vivado/cnn/src/cnn.cpp:79) in function &apos;conv&apos; completely with a factor of 3."/>
+	<Message severity="INFO" prefix="[HLS 200-489]" key="HLS 200-489" tag="" content="Unrolling loop &apos;Loop-1.1.1.1.1&apos; (D:/vivado/cnn/src/cnn.cpp:80) in function &apos;conv&apos; completely with a factor of 3."/>
+	<Message severity="INFO" prefix="[XFORM 203-102]" key="XFORM_AUTO_PARTITION_STATUS_112" tag="" content="Automatically partitioning streamed array &apos;conv1Out.V.V&apos; (D:/vivado/cnn/src/cnn.cpp:350) ."/>
+	<Message severity="INFO" prefix="[XFORM 203-102]" key="XFORM_AUTO_PARTITION_STATUS_112" tag="" content="Automatically partitioning streamed array &apos;pool1Out.V.V&apos; (D:/vivado/cnn/src/cnn.cpp:353) ."/>
+	<Message severity="INFO" prefix="[XFORM 203-102]" key="XFORM_AUTO_PARTITION_STATUS_112" tag="" content="Automatically partitioning streamed array &apos;conv2Out&apos; ."/>
+	<Message severity="INFO" prefix="[XFORM 203-102]" key="XFORM_AUTO_PARTITION_STATUS_112" tag="" content="Automatically partitioning streamed array &apos;pool2Out&apos; ."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;conv1Out.V.V&apos; (D:/vivado/cnn/src/cnn.cpp:350) in dimension 1 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;pool1Out.V.V&apos; (D:/vivado/cnn/src/cnn.cpp:353) in dimension 1 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;conv2Out&apos;  in dimension 1 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;pool2Out&apos;  in dimension 1 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;fcWeight.V&apos; (D:/vivado/cnn/src/cnn.cpp:335) in dimension 1 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;fcBias.V&apos; (D:/vivado/cnn/src/cnn.cpp:336) in dimension 1 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_109" tag="" content="Partitioning array &apos;input_buffer.V&apos; (D:/vivado/cnn/src/cnn.cpp:298) in dimension 1 with a cyclic factor 16."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;row_buffer.V&apos; (D:/vivado/cnn/src/cnn.cpp:242) in dimension 1 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;line_buffer.V&apos; (D:/vivado/cnn/src/cnn.cpp:167) in dimension 1 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;weights2.V&apos; (D:/vivado/cnn/src/cnn.cpp:333) in dimension 4 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;row_buffer.V&apos; (D:/vivado/cnn/src/cnn.cpp:107) in dimension 1 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;line_buffer.V&apos; (D:/vivado/cnn/src/cnn.cpp:31) in dimension 1 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;weights.V&apos; (D:/vivado/cnn/src/cnn.cpp:331) in dimension 2 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;row_buffer.V&apos; (D:/vivado/cnn/src/cnn.cpp:242) in dimension 2 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;line_buffer.V&apos; (D:/vivado/cnn/src/cnn.cpp:167) in dimension 2 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;row_buffer.V&apos; (D:/vivado/cnn/src/cnn.cpp:107) in dimension 2 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;line_buffer.V&apos; (D:/vivado/cnn/src/cnn.cpp:31) in dimension 2 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;weights.V&apos; (D:/vivado/cnn/src/cnn.cpp:331) in dimension 3 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;weights.V&apos; (D:/vivado/cnn/src/cnn.cpp:331) in dimension 4 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-712]" key="XFORM_DATAFLOW_TRANSFORM_230" tag="DATAFLOW" content="Applying dataflow to function &apos;cnn&apos;, detected/extracted 5 process function(s): 
+	 &apos;conv&apos;
+	 &apos;pool1&apos;
+	 &apos;conv2&apos;
+	 &apos;pool2&apos;
+	 &apos;dense&apos;."/>
+	<Message severity="INFO" prefix="[XFORM 203-11]" key="XFORM_EXPR_BALANCE_STATUS_178" tag="" content="Balancing expressions in function &apos;conv2&apos; (D:/vivado/cnn/src/cnn.cpp:148)...3 expression(s) balanced."/>
+	<Message severity="INFO" prefix="[XFORM 203-11]" key="XFORM_EXPR_BALANCE_STATUS_178" tag="" content="Balancing expressions in function &apos;conv&apos; (D:/vivado/cnn/src/cnn.cpp:11)...3 expression(s) balanced."/>
+</Messages>

@@ -1,0 +1,119 @@
+{"sourceFile": [{
+      "name": "",
+      "directive": [
+        {
+          "functionName": "dense",
+          "label": "",
+          "functionLabel": "",
+          "pragma": {
+            "name": "RESOURCE",
+            "option": [
+              {
+                "name": "variable",
+                "value": "multRes",
+                "positionalBoolean": "4"
+              },
+              {
+                "name": "core",
+                "value": "Mul"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "dense",
+          "label": "",
+          "functionLabel": "",
+          "pragma": {
+            "name": "RESOURCE",
+            "option": [
+              {
+                "name": "variable",
+                "value": "acc",
+                "positionalBoolean": "4"
+              },
+              {
+                "name": "core",
+                "value": "AddSub"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "conv",
+          "label": "",
+          "functionLabel": "",
+          "pragma": {
+            "name": "RESOURCE",
+            "option": [
+              {
+                "name": "variable",
+                "value": "multRes",
+                "positionalBoolean": "4"
+              },
+              {
+                "name": "core",
+                "value": "Mul"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "conv",
+          "label": "",
+          "functionLabel": "",
+          "pragma": {
+            "name": "RESOURCE",
+            "option": [
+              {
+                "name": "variable",
+                "value": "sum",
+                "positionalBoolean": "4"
+              },
+              {
+                "name": "core",
+                "value": "AddSub"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "conv2",
+          "label": "",
+          "functionLabel": "",
+          "pragma": {
+            "name": "RESOURCE",
+            "option": [
+              {
+                "name": "variable",
+                "value": "multRes",
+                "positionalBoolean": "4"
+              },
+              {
+                "name": "core",
+                "value": "Mul"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "conv2",
+          "label": "",
+          "functionLabel": "",
+          "pragma": {
+            "name": "RESOURCE",
+            "option": [
+              {
+                "name": "variable",
+                "value": "sum",
+                "positionalBoolean": "4"
+              },
+              {
+                "name": "core",
+                "value": "AddSub"
+              }
+            ]
+          }
+        }
+      ]
+    }]}
