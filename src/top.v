@@ -55,7 +55,8 @@ module top
         .W(28),
         .OC(7),
         .IC(0),
-        .ADDR_LEN(9)
+        .ADDR_LEN(9),
+        .LOOP(27)
     )
     layer1_inst (
         .clk(clk),
@@ -100,7 +101,8 @@ module top
         .W(14),
         .OC(15),
         .IC(7),
-        .ADDR_LEN(7)
+        .ADDR_LEN(7),
+        .LOOP(13)
     ) 
     layer2_inst (
         .clk(clk),

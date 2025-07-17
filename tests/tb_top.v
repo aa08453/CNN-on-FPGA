@@ -44,7 +44,7 @@ module tb_top;
 
         // Optionally: Dump memory or display final result
         wait(uut.pool2_done);
-        $display("Final output result: %0d", uut.result2);
+        $display("Pooling complete layer2 at time %0t", $time);
         $finish;
     end
 

@@ -25,6 +25,7 @@ parameter CONV            = 3'd2;
 parameter TREE            = 3'd3;
 parameter POOL            = 3'd4;
 parameter IDLE            = 3'd5;
+parameter STOP            = 3'd6;
 
 reg [2:0] state;
 reg [2:0] next_state;
@@ -77,8 +78,13 @@ begin
         POOL:
         begin
             pool = 1'b1;
-            next_state = pool_done ? IDLE : POOL;
+            next_state = pool_done ? STOP : POOL;
         end  
+        
+        STOP:
+        begin
+            next_state = STOP;
+        end
 
         IDLE:
         begin

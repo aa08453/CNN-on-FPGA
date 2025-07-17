@@ -46,10 +46,9 @@ module patch_addr_gen
         end 
         else if (addr_gen) 
         begin
-            load_full_patch <= (i != prev_i);
-
             if (IC == 0)
             begin
+                load_full_patch <= (i != prev_i);
                 mv = i - 1;
                 nv = j - 1;
 
@@ -66,11 +65,14 @@ module patch_addr_gen
                     pixel_addr4 <= compute_addr(mv+1, nv+1);
                     pixel_addr5 <= compute_addr(mv+2, nv+1);
                 end
+                
+                prev_i <= i;
             end
             else
             begin
-                mv = i - 2;
-                nv = j - 2;
+                load_full_patch <= ((i << 1) != prev_i);
+                mv = (i << 1) - 2;
+                nv = (j << 1) - 2;
 
                 pixel_addr6 <= compute_addr(mv,   nv+4);
                 pixel_addr7 <= compute_addr(mv+2, nv+4);
@@ -85,9 +87,10 @@ module patch_addr_gen
                     pixel_addr4 <= compute_addr(mv+2, nv+2);
                     pixel_addr5 <= compute_addr(mv+4, nv+2);
                 end
+                
+                prev_i <= (i << 1);
             end
 
-            prev_i <= i;
         end
     end
 

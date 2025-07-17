@@ -3,7 +3,8 @@ module conv
     parameter H = 28,
     parameter W = 28,
     parameter IC = 0,
-    parameter ADDR_LEN = 9
+    parameter ADDR_LEN = 9,
+    parameter LOOP = 27
 )
 (
     input wire clk,
@@ -49,7 +50,7 @@ module conv
         .counter_enable(count_enable), .addr_gen(addr_gen), .store(store), .flush_acc(flush_acc)
     );
 
-    counters #(.IC(IC)) counters_inst(
+    counters #(.LOOP(LOOP)) counters_inst(
         .clk(clk), .rst_n(rst), .count_enable(count_enable),
         .i(i), .j(j), .done(done), .conv(conv)
     );

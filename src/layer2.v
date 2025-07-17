@@ -1,5 +1,5 @@
 `define CONV_INST(idx) \
-    conv #(.H(H), .W(W), .IC(IC), .ADDR_LEN(ADDR_LEN)) conv_inst_``idx`` ( \
+    conv #(.H(H), .W(W), .IC(IC), .ADDR_LEN(ADDR_LEN), .LOOP(LOOP)) conv_inst_``idx`` ( \
         .clk(clk), .rst(rst), .conv(conv), .load(load``idx``),\
         .kernel0(kernel``idx``0), .kernel1(kernel``idx``1), .kernel2(kernel``idx``2), \
         .kernel3(kernel``idx``3), .kernel4(kernel``idx``4), .kernel5(kernel``idx``5), \
@@ -20,7 +20,8 @@ module layer2
     parameter W = 14,
     parameter OC = 15,
     parameter IC = 7,
-    parameter ADDR_LEN = 7
+    parameter ADDR_LEN = 7,
+    parameter LOOP = 13
 )
 (
     input wire clk,
@@ -65,7 +66,7 @@ module layer2
     // Declare result wires
     wire signed [7:0] result_0, result_1, result_2, result_3;
     wire signed [7:0] result_4, result_5, result_6, result_7;
-    wire done0, done1, don2, done3, done4, done5, done6, done7;
+    wire done0, done1, done2, done3, done4, done5, done6, done7;
     wire store_0, store_1, store_2, store_3, store_4, store_5, store_6, store_7;
 
     // Declare kernel wires

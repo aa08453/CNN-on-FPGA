@@ -159,14 +159,14 @@ module layer2_mem
         else if (cout_done) 
         begin
             // Optional: write to file for verification
-            $writememh("result_mem0.mem", result_mem0);
-            $writememh("result_mem1.mem", result_mem1);
-            $writememh("result_mem2.mem", result_mem2);
-            $writememh("result_mem3.mem", result_mem3);
-            $writememh("result_mem4.mem", result_mem4);
-            $writememh("result_mem5.mem", result_mem5);
-            $writememh("result_mem6.mem", result_mem6);
-            $writememh("result_mem7.mem", result_mem7);
+            $writememh("result_mem00.mem", result_mem0);
+            $writememh("result_mem01.mem", result_mem1);
+            $writememh("result_mem02.mem", result_mem2);
+            $writememh("result_mem03.mem", result_mem3);
+            $writememh("result_mem04.mem", result_mem4);
+            $writememh("result_mem05.mem", result_mem5);
+            $writememh("result_mem06.mem", result_mem6);
+            $writememh("result_mem07.mem", result_mem7);
             $writememh("result_mem8.mem", result_mem8);
             $writememh("result_mem9.mem", result_mem9);
             $writememh("result_memA.mem", result_memA);
@@ -175,6 +175,12 @@ module layer2_mem
             $writememh("result_memD.mem", result_memD);
             $writememh("result_memE.mem", result_memE);
             $writememh("result_memF.mem", result_memF);
+        end
+        
+        else if (pool_done && !pool) 
+        begin
+            pool_done <= 0;
+            channel_count <= 0;
         end
 
         else if (pool_done)
@@ -223,12 +229,6 @@ module layer2_mem
         //     data71 <= result_mem7[addr1];
         //     data72 <= result_mem7[addr2];
         // end
-
-        else if (pool_done && !pool) 
-        begin
-            pool_done <= 0;
-            channel_count <= 0;
-        end
     end
     
 

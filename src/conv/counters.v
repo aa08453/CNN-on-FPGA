@@ -1,7 +1,7 @@
 module counters 
 #
 (
-    parameter IC = 0
+    parameter LOOP = 13
 )
 (
     input wire clk,
@@ -13,7 +13,7 @@ module counters
     output reg done
 );
 
-localparam step = (IC == 0) ? 1 : 2;
+//localparam step = (IC == 0) ? 1 : 2;
 
 always @(posedge clk or negedge rst_n) 
 begin
@@ -32,16 +32,16 @@ begin
     end
     if (count_enable && !done) 
     begin
-        if (j < 27) 
+        if (j < LOOP) 
         begin
-            j <= j + step;
+            j <= j + 1;
         end 
         else 
         begin
             j <= 0;
-            if (i < 27) 
+            if (i < LOOP) 
             begin
-                i <= i + step;
+                i <= i + 1;
             end 
             else 
             begin

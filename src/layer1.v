@@ -5,7 +5,8 @@ module layer1
     parameter W = 28,
     parameter OC = 7,
     parameter IC = 0,
-    parameter ADDR_LEN = 9 // 10 - 1
+    parameter ADDR_LEN = 9, // 10 - 1
+    parameter LOOP = 27
 )
 (
     input wire clk,
@@ -62,7 +63,7 @@ module layer1
     );
 
     // Convolution
-    conv #(.H(H), .W(W), .IC(IC), .ADDR_LEN(ADDR_LEN)) 
+    conv #(.H(H), .W(W), .IC(IC), .ADDR_LEN(ADDR_LEN), .LOOP(LOOP)) 
     conv_inst (
         .clk(clk), .rst(rst), .conv(conv), .load(load),
         .kernel0(kernel0), .kernel1(kernel1), .kernel2(kernel2),

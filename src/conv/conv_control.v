@@ -36,7 +36,7 @@ reg [3:0] next_state;
 always @(posedge clk or negedge rst_n) 
 begin
     if (!rst_n)
-        state <= ADDR;   
+        state <= IDLE;   
     else
         state <= next_state;     
 end
@@ -107,7 +107,7 @@ begin
 
         CHECK_DONE: 
         begin
-            next_state = done ? IDLE : ADDR;
+            next_state = done ? CHECK_DONE : IDLE;
         end
 
         default: 
