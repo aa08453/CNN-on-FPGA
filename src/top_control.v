@@ -5,8 +5,7 @@ module top_control
     input wire rst_n,
 
     input wire pool1_done,
-    input wire pool2_done,
-    output reg start
+    input wire pool2_done
 );
 
 parameter START     = 3'd0;
@@ -33,7 +32,6 @@ always @(*)
 begin
     // Default outputs
 
-    start = 1'b0;
     
     case (state)
         LAYER1:

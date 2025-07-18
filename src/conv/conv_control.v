@@ -9,7 +9,7 @@ module conv_control
 
     output reg addr_gen,
     output reg load,
-    output reg [1:0] mux_sel,
+//    output reg [1:0] mux_sel,
     output reg add,
     output reg counter_enable,
     output reg flush_acc,
@@ -22,7 +22,7 @@ parameter ADDR            = 4'd1;
 parameter LOAD            = 4'd2;
 parameter MAC0            = 4'd3;
 parameter MAC1            = 4'd4;
-parameter MAC2            = 4'd5;
+//parameter MAC2            = 4'd5;
 parameter SUM             = 4'd6;
 parameter ACC             = 4'd7;
 parameter STORE           = 4'd8;
@@ -48,7 +48,7 @@ begin
     addr_gen       = 1'b0;
     flush_acc      = 1'b0;
     load           = 1'b0;
-    mux_sel        = 2'b00;
+//    mux_sel        = 2'b00;
     add            = 1'b0;
     store          = 1'b0;
     counter_enable = 1'b0;
@@ -75,23 +75,24 @@ begin
         MAC0: 
         begin
             add        = 1'b1;
-            mux_sel    = 2'b01;
+//            mux_sel    = 2'b01;
             next_state = MAC1;
         end
 
         MAC1: 
         begin
             add        = 1'b1;
-            mux_sel    = 2'b10;
-            next_state = MAC2;
-        end
-
-        MAC2: 
-        begin
-            add        = 1'b1;
-            mux_sel    = 2'b11;
+//            mux_sel    = 2'b10;
+//            next_state = MAC2;
             next_state = STORE;
         end
+
+//        MAC2: 
+//        begin
+//            add        = 1'b1;
+//            mux_sel    = 2'b11;
+//            next_state = STORE;
+//        end
 
         STORE:
         begin

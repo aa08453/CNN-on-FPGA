@@ -12,7 +12,7 @@ module adder_tree
     input  wire signed [7:0] result_5,
     input  wire signed [7:0] result_6,
     input  wire signed [7:0] result_7,
-    input  wire signed [7:0] result_8,
+    input wire signed [7:0] result_8,
     output reg  signed [7:0] result         // final clamped output
 );
     `include "functions.v"
@@ -23,9 +23,9 @@ module adder_tree
     reg signed [11:0] final_sum;
 
     // Stage 1: Add three groups of 3 inputs
-    always @(posedge clk or posedge rst) 
+    always @(posedge clk or negedge rst) 
     begin
-        if (rst) 
+        if (!rst) 
         begin
             sum0 <= 0;
             sum1 <= 0;

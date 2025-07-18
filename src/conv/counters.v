@@ -23,14 +23,14 @@ begin
         j <= 0;
         done <= 0;
     end
-    if (conv && done) 
+    else if (conv && done) 
     begin
         i <= 0;
         j <= 0;
         done <= 0;
         // $display("HERE");
     end
-    if (count_enable && !done) 
+    else if (count_enable && !done) 
     begin
         if (j < LOOP) 
         begin

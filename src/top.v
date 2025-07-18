@@ -11,7 +11,8 @@ module top
 )
 (
     input wire clk,
-    input wire rst
+    input wire rst,
+    output [7:0] y
 );
 
     wire store1, store2, pool1, pool2;
@@ -24,9 +25,7 @@ module top
     wire [9:0] address1;
     wire [7:0] address2;
     wire signed [7:0] result1 , result2;
-    wire load;
-    wire load0, load1, load2, load3, load4, load5, load6, load7;
-
+    wire load1, load2;
     wire signed [7:0] mem_data1, mem_data2;
     wire [9:0] mem_addr1, mem_addr2;
 
@@ -40,10 +39,8 @@ module top
     wire signed [7:0] data71, data72;
     wire [9:0] addr1, addr2;
 
-    top_control control_inst (.clk(clk), .rst_n(rst), .pool1_done(pool1_done), .pool2_done(pool2_done));
-
     image_mem mem_inst (
-        .clk(clk), .rst(rst), .load(load),
+        .clk(clk), .rst(rst), .load(load1),
         .addr1(mem_addr1),
         .addr2(mem_addr2),
         .data_out1(mem_data1),
@@ -61,7 +58,7 @@ module top
     layer1_inst (
         .clk(clk),
         .rst(rst),
-        .load(load),
+        .load(load1),
         .store(store1),
         .address(address1),
         .result(result1),
@@ -81,10 +78,7 @@ module top
     layer1_mem #( .CHANNEL_SIZE(783))
     l1_mem_inst (.clk(clk), .rst(rst), .out_c(out_c1), .store(store1), .pool(pool1), .pool_done(pool1_done),
             .bias(bias1),.w_addr(address1),.cout_done(cout1_done), .value(result1),
-            .load0(load0), .load1(load1), 
-            .load2(load2), .load3(load3), 
-            .load4(load4), .load5(load5), 
-            .load6(load6), .load7(load7),
+            .load(load2),
             .addr1(addr1), .addr2(addr2),
             .data01(data01), .data02(data02),
             .data11(data11), .data12(data12),
@@ -115,10 +109,7 @@ module top
         .start(pool1_done),
         .pool_done(pool2_done),
         .cout_done(cout2_done),
-        .load0(load0), .load1(load1), 
-        .load2(load2), .load3(load3), 
-        .load4(load4), .load5(load5), 
-        .load6(load6), .load7(load7),
+        .load(load2),
         .data01(data01), .data02(data02),
         .data11(data11), .data12(data12),
         .data21(data21), .data22(data22),
@@ -135,7 +126,7 @@ module top
     l2_mem_inst (.clk(clk), .rst(rst), .load(load), .out_c(out_c2), .store(store2), .pool(pool2), .pool_done(pool2_done),
             .bias(bias2),.w_addr(address2),.cout_done(cout2_done), .value(result2));
     
-    
+    assign y = result2;
 
 
 

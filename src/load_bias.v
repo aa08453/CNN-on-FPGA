@@ -13,7 +13,7 @@ module load_bias
     output reg signed [7:0] bias
 );
 
-    (* ram_style = "distributed" *) reg signed [7:0] rom_data [0:OC];
+    reg signed [7:0] rom_data [0:OC];
 
     generate
         if (OC == 7) 

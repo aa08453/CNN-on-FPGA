@@ -19,13 +19,14 @@ module layer_control
     output reg tree
 );
 
-parameter COUNT_OUT       = 3'd0;
-parameter CHANNEL_LOAD    = 3'd1;
-parameter CONV            = 3'd2;
-parameter TREE            = 3'd3;
-parameter POOL            = 3'd4;
-parameter IDLE            = 3'd5;
-parameter STOP            = 3'd6;
+localparam COUNT_OUT       = 3'd0;
+localparam CHANNEL_LOAD    = 3'd1;
+localparam CONV            = 3'd2;
+localparam TREE            = 3'd3;
+localparam POOL            = 3'd4;
+localparam IDLE            = 3'd5;
+localparam STOP            = 3'd6;
+localparam TREE2           = 3'd7;
 
 reg [2:0] state;
 reg [2:0] next_state;
@@ -70,6 +71,12 @@ begin
         end
 
         TREE:
+        begin
+            tree = 1'b1;
+            next_state = TREE2;
+        end
+        
+        TREE2:
         begin
             tree = 1'b1;
             next_state = conv_done ? COUNT_OUT : CONV;

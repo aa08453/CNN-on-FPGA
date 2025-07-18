@@ -1,5 +1,5 @@
 
-`define POOL(mem, max, next_addr) \
+`define POOL2(mem, max, next_addr) \
 begin \
     max = next_addr; \
     if (mem[next_addr + 1] > mem[max])  max = next_addr + 1; \
@@ -94,6 +94,7 @@ module layer2_mem
             maxF <= 0;
             
         end
+        
         else if (store) 
         begin
             case (out_c)
@@ -119,22 +120,22 @@ module layer2_mem
         else if (pool && !pool_done) 
         begin
             
-            `POOL(result_mem0, max0, next_addr);
-            `POOL(result_mem1, max1, next_addr);
-            `POOL(result_mem2, max2, next_addr);
-            `POOL(result_mem3, max3, next_addr);
-            `POOL(result_mem4, max4, next_addr);
-            `POOL(result_mem5, max5, next_addr);
-            `POOL(result_mem6, max6, next_addr);
-            `POOL(result_mem7, max7, next_addr);
-            `POOL(result_mem8, max8, next_addr);
-            `POOL(result_mem9, max9, next_addr);
-            `POOL(result_memA, maxA, next_addr);
-            `POOL(result_memB, maxB, next_addr);
-            `POOL(result_memC, maxC, next_addr);
-            `POOL(result_memD, maxD, next_addr);
-            `POOL(result_memE, maxE, next_addr);
-            `POOL(result_memF, maxF, next_addr);
+            `POOL2(result_mem0, max0, next_addr);
+            `POOL2(result_mem1, max1, next_addr);
+            `POOL2(result_mem2, max2, next_addr);
+            `POOL2(result_mem3, max3, next_addr);
+            `POOL2(result_mem4, max4, next_addr);
+            `POOL2(result_mem5, max5, next_addr);
+            `POOL2(result_mem6, max6, next_addr);
+            `POOL2(result_mem7, max7, next_addr);
+            `POOL2(result_mem8, max8, next_addr);
+            `POOL2(result_mem9, max9, next_addr);
+            `POOL2(result_memA, maxA, next_addr);
+            `POOL2(result_memB, maxB, next_addr);
+            `POOL2(result_memC, maxC, next_addr);
+            `POOL2(result_memD, maxD, next_addr);
+            `POOL2(result_memE, maxE, next_addr);
+            `POOL2(result_memF, maxF, next_addr);
 
             pool_count <= pool_count + 1;
         

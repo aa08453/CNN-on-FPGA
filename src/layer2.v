@@ -30,12 +30,12 @@ module layer2
     input wire pool_done,
     output wire pool,
     input wire start,
-    output wire load0, load1, load2, load3, load4, load5, load6, load7,
+    
     output wire [ADDR_LEN:0] address,
     output wire signed [7:0] result,
     output wire signed [7:0] bias,
     output wire cout_done,
-
+    output wire load,
     input wire signed [7:0] data01, data02,
     input wire signed [7:0] data11, data12,
     input wire signed [7:0] data21, data22,
@@ -52,6 +52,8 @@ module layer2
     wire cout, c_load, conv, tree;
 
     wire conv_done;
+    
+    
 
     layer_control #(.IC(IC)) layer_control_inst( .start(start),
     .clk(clk), .rst_n(rst),  .cout(cout), .c_load(c_load), .pool(pool), 
@@ -66,6 +68,7 @@ module layer2
     // Declare result wires
     wire signed [7:0] result_0, result_1, result_2, result_3;
     wire signed [7:0] result_4, result_5, result_6, result_7;
+    wire load0, load1, load2, load3, load4, load5, load6, load7;
     wire done0, done1, done2, done3, done4, done5, done6, done7;
     wire store_0, store_1, store_2, store_3, store_4, store_5, store_6, store_7;
 
@@ -129,11 +132,13 @@ module layer2
     adder_tree adder_inst(.clk(clk), .rst(rst), .tree(tree),
         .result_0(result_0), .result_1(result_1), .result_2(result_2),
         .result_3(result_3), .result_4(result_4), .result_5(result_5), 
-        .result_6(result_6), .result_7(result_7), .result(result));
+        .result_6(result_6), .result_7(result_7), .result_8(8'sd0), .result(result));
 
     // Single store after all convs are done
     assign store = store_0 & store_1 & store_2 & store_3 & store_4 & store_5 & store_6 & store_7;
     assign conv_done = done0 & done1 & done2 & done3 & done4 & done5 & done6 & done7;
+    assign load = load0 & load1 & load2 & load3 & load4 & load5 & load6 & load7;
+    
 
 
 endmodule

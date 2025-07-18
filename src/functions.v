@@ -15,5 +15,11 @@ endfunction
 
 function [9:0] compute_addr;
     input integer row, col;
-    compute_addr = ((row) >= 0 && (row) < (28) && (col) >= 0 && (col) < (28)) ? ((row) * (28) + (col)) : 10'd0;
+    compute_addr = ((row) >= 0 && (row) < (28) && (col) >= 0 && (col) < (28)) ? ((row * 28) + (col)) : 10'd0;
+endfunction
+
+function [10:0] kernel_addr;
+    input integer channel, idx;
+    input [10:0] addr;
+    kernel_addr = (addr + channel) + (idx * 9);
 endfunction

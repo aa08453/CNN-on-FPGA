@@ -9,15 +9,15 @@
     kernel``idx``6 <= 0; kernel``idx``7 <= 0; kernel``idx``8 <= 0
 
 `define LOAD_KERNELS(idx) \
-    kernel``idx``0 <= rom_data[addr + (``idx`` * 9) + 0]; \
-    kernel``idx``1 <= rom_data[addr + (``idx`` * 9) + 1]; \
-    kernel``idx``2 <= rom_data[addr + (``idx`` * 9) + 2]; \
-    kernel``idx``3 <= rom_data[addr + (``idx`` * 9) + 3]; \
-    kernel``idx``4 <= rom_data[addr + (``idx`` * 9) + 4]; \
-    kernel``idx``5 <= rom_data[addr + (``idx`` * 9) + 5]; \
-    kernel``idx``6 <= rom_data[addr + (``idx`` * 9) + 6]; \
-    kernel``idx``7 <= rom_data[addr + (``idx`` * 9) + 7]; \
-    kernel``idx``8 <= rom_data[addr + (``idx`` * 9) + 8]
+    kernel``idx``0 <= rom_data[kernel_addr(0, idx, addr)]; \
+    kernel``idx``1 <= rom_data[kernel_addr(1, idx, addr)]; \
+    kernel``idx``2 <= rom_data[kernel_addr(2, idx, addr)]; \
+    kernel``idx``3 <= rom_data[kernel_addr(3, idx, addr)]; \
+    kernel``idx``4 <= rom_data[kernel_addr(4, idx, addr)]; \
+    kernel``idx``5 <= rom_data[kernel_addr(5, idx, addr)]; \
+    kernel``idx``6 <= rom_data[kernel_addr(6, idx, addr)]; \
+    kernel``idx``7 <= rom_data[kernel_addr(7, idx, addr)]; \
+    kernel``idx``8 <= rom_data[kernel_addr(8, idx, addr)];
 
 `define FILE "conv2_weight.mem"
 
@@ -36,8 +36,9 @@ module load_kernels
     `KERNEL_OUTPUTS(4), `KERNEL_OUTPUTS(5), `KERNEL_OUTPUTS(6), `KERNEL_OUTPUTS(7)
 );
 
+`include "functions.v"
 // ROM: total values = OC * IC * 9 = 16 * 8 * 9 = 1152
-(* rom_style = "distributed" *) reg signed [7:0] rom_data [0:VAL];
+(* rom_style = "block" *) reg signed [7:0] rom_data [0:VAL];
 wire [10:0] addr = out_c * 8 * 9;
 
 initial 

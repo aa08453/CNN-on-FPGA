@@ -46,7 +46,9 @@ module conv
     wire [4:0] i, j;
 
     conv_control control_inst(
-        .clk(clk), .rst_n(rst), .done(done), .load(load), .mux_sel(mux_sel), .conv(conv), .add(add), .load_done(load_done),
+        .clk(clk), .rst_n(rst), .done(done), .load(load), 
+//        .mux_sel(mux_sel), 
+        .conv(conv), .add(add), .load_done(load_done),
         .counter_enable(count_enable), .addr_gen(addr_gen), .store(store), .flush_acc(flush_acc)
     );
 
@@ -78,7 +80,9 @@ module conv
     );
 
     comp comp_inst (
-        .clk(clk), .select(mux_sel), .sum(sum), .rst(rst), .add(add),
+        .clk(clk), 
+//        .select(mux_sel), 
+        .sum(sum), .rst(rst), .add(add),
         .image_data0(pixel0), .image_data1(pixel1), .image_data2(pixel2),
         .image_data3(pixel3), .image_data4(pixel4), .image_data5(pixel5),
         .image_data6(pixel6), .image_data7(pixel7), .image_data8(pixel8),
