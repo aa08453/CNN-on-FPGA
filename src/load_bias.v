@@ -1,3 +1,5 @@
+`timescale 1ns / 1ps
+
 `define FILE1 "conv1_bias.mem"
 `define FILE2 "conv2_bias.mem"
 
