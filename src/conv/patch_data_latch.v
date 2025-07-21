@@ -40,6 +40,8 @@ module patch_data_latch
         begin
             load_done <= 0;
             state <= 0;
+            addr1 <= 0;
+            addr2 <= 0;
 
             pixel0 <= 8'sd0;
             pixel1 <= 8'sd0;
@@ -128,7 +130,5 @@ module patch_data_latch
             load_done <= 0;
             state <= 0;
         end
-        addr1 <= addr1;
-        addr2 <= addr2; 
     end
 endmodule

@@ -21,8 +21,7 @@ module layer2
     output wire cout_done,
     output wire load,
     input wire signed [7:0] data_out [0:IC][0:1],
-    output wire [ADDR_LEN:0] addr1,
-    output wire [ADDR_LEN:0] addr2,
+    output wire [9:0] addr1, addr2,
     output wire [3:0] out_c
 );
 
@@ -30,6 +29,17 @@ module layer2
 
     wire conv_done;    
 
+    // Declare result wires
+    wire signed [7:0] result_arr [0:IC];
+    wire load_arr  [0:IC];
+    wire done_arr  [0:IC];
+    wire store_arr [0:IC];
+    wire [ADDR_LEN:0] addr1_arr [0:IC];
+    wire [ADDR_LEN:0] addr2_arr [0:IC];
+
+    // Declare kernel wires
+    wire signed [7:0] kernel [0:OC][0:8];
+    
     layer_control #(.IC(IC)) layer_control_inst( .start(start),
     .clk(clk), .rst_n(rst),  .cout(cout), .c_load(c_load), .pool(pool), 
     .conv(conv), .pool_done(pool_done), .tree(tree),
@@ -40,14 +50,6 @@ module layer2
         .clk(clk), .rst_n(rst), .signal(cout),
         .count(out_c), .complete(cout_done));
 
-    // Declare result wires
-    wire signed [7:0] result_arr [0:OC];
-    wire load_arr  [0:OC];
-    wire done_arr  [0:OC];
-    wire store_arr [0:OC];
-
-    // Declare kernel wires
-    wire signed [7:0] kernel [0:OC][0:8];
 
 
     load_kernels #(.VAL(1151), .OC(OC)) 
@@ -65,7 +67,7 @@ module layer2
     // Instantiate 8 conv blocks 
     genvar i;
     generate
-        for (i = 0; i <= OC; i = i + 1) 
+        for (i = 0; i <= IC; i = i + 1) 
         begin : conv_blocks
             conv #(.H(H), .W(W), .IC(IC), .ADDR_LEN(ADDR_LEN), .LOOP(LOOP)) 
             conv_inst (
@@ -75,7 +77,7 @@ module layer2
                 .kernel6(kernel[i][6]), .kernel7(kernel[i][7]), .kernel8(kernel[i][8]),
                 .result(result_arr[i]), .address(address), .store(store_arr[i]), .done(done_arr[i]),
                 .data1(data_out[i][0]), .data2(data_out[i][1]),
-                .addr1(addr1), .addr2(addr2)
+                .addr1(addr1_arr[i]), .addr2(addr2_arr[i])
             );
         end
     endgenerate
@@ -94,7 +96,7 @@ module layer2
         store_tmp = 1'b1;
         load_tmp = 1'b1;
         done_tmp = 1'b1;
-        for (j = 0; j <= OC; j = j + 1) 
+        for (j = 0; j <= IC; j = j + 1) 
         begin
             store_tmp = store_tmp & store_arr[j];
             load_tmp  = load_tmp & load_arr[j];
@@ -105,6 +107,8 @@ module layer2
     assign store = store_tmp;
     assign load  = load_tmp;
     assign conv_done = done_tmp;
+    assign addr1 = addr1_arr[0];
+    assign addr2 = addr2_arr[0];
 
 endmodule
 

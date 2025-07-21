@@ -57,6 +57,7 @@ module patch_addr_gen
                 pixel_addr7 <= compute_addr(i,   j+1);
                 pixel_addr8 <= compute_addr(i+1, j+1);
 
+
                 if (load_full_patch)
                 begin
                     pixel_addr0 <= compute_addr(i-1, j-1);

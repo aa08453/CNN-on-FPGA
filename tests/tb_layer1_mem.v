@@ -71,7 +71,7 @@ module tb_layer1_mem;
     );
 
     // === Instantiate layer1_mem ===
-    layer1_mem #(
+    layer_mem #(
         .CHANNEL_SIZE(783),
         .OC(7)
     ) mem_write_inst (

@@ -23,8 +23,7 @@ module layer1
 
     input wire signed [7:0] data1,
     input wire signed [7:0] data2,
-    output wire [9:0] addr1,
-    output wire [9:0] addr2,
+    output wire [9:0] addr1, addr2,
     output wire [3:0] out_c
 );
 
@@ -36,10 +35,6 @@ module layer1
                      kernel3, kernel4, kernel5,
                      kernel6, kernel7, kernel8;
                      
-   wire [9:0] addr_1, addr_2;
-                     
-    assign addr1 = (!rst) ? 0 : addr1;
-    assign addr2 = (!rst) ? 0 : addr2;
 
     layer_control #(.IC(IC)) layer_control_inst( .start(start),
     .clk(clk), .rst_n(rst),  .cout(cout), .c_load(c_load), .pool(pool), 
@@ -78,7 +73,7 @@ module layer1
         .store(store), .done(conv_done),
 
         // Memory interface pass-through
-        .addr1(addr_1), .addr2(addr_2),
+        .addr1(addr1), .addr2(addr2),
         .data1(data1), .data2(data2)
     );
     

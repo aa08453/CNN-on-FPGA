@@ -29,12 +29,16 @@ wire [10:0] base_addr;
 assign base_addr = out_c * 8 * 9;  // Each output channel has 72 weights
 
 integer oc, k;
-always @(posedge clk or negedge rst) begin
-    if (!rst) begin
+always @(posedge clk or negedge rst) 
+begin
+    if (!rst) 
+    begin
         for (oc = 0; oc <= OC; oc = oc + 1)
             for (k = 0; k < 9; k = k + 1)
                 kernel[oc][k] <= 0;
-    end else if (c_load) begin
+    end 
+    else if (c_load) 
+    begin
         for (oc = 0; oc <= OC; oc = oc + 1)
             for (k = 0; k < 9; k = k + 1)
                 kernel[oc][k] <= rom_data[kernel_addr(k, oc, base_addr)];

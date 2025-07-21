@@ -21,12 +21,12 @@ module layer_mem
     input wire signed [7:0] value,
 
     input wire load,
-    input wire [ADDR_LEN:0] addr1, addr2,
+    input wire [9:0] addr1, addr2,
 
-    output wire signed [7:0] data_out [0:OC][0:1],
+    output signed [7:0] data_out [0:OC][0:1],
     output reg pool_done
 );
-
+    `include "functions.v"
     // Pooling control
     reg [3:0] pool_count;
     reg [ADDR_LEN:0] next_addr;
@@ -39,7 +39,6 @@ module layer_mem
     generate
         for (i = 0; i <= OC; i = i + 1) 
         begin : brams
-            wire [7:0] pooled_data;
             mem #( .DEPTH(CHANNEL_SIZE), .W(W), .ADDR_LEN(ADDR_LEN)) 
             mem_inst (
                 .clk(clk),
@@ -47,6 +46,7 @@ module layer_mem
                 .addr(pool ? next_addr : w_addr),
                 .din(wr_data),
                 .pool(pool && (channel_count == i)),
+                .load(load),
                 .addr1(addr1),
                 .addr2(addr2),
                 .dout1(data_out[i][0]),
@@ -54,6 +54,7 @@ module layer_mem
             );
         end
     endgenerate
+    
 
     // Shared control logic for pooling
     always @(posedge clk or negedge rst) 

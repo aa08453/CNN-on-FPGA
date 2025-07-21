@@ -9,7 +9,7 @@ module kernel_mem
     input wire [3:0] addr,
     output wire [7:0] k0, k1, k2, k3, k4, k5, k6, k7, k8
 );
-    (* rom_style = "block" *) reg [7:0] rom_data [0:VAL];
+    (* rom_style = "distributed" *) reg [7:0] rom_data [0:VAL];
 
     initial 
     begin

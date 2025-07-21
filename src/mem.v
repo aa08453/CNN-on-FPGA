@@ -11,7 +11,7 @@ module mem
     input wire [ADDR_LEN:0] addr,
     input wire signed [7:0] din,
 
-    input wire pool,
+    input wire pool, load,
 
     input wire [ADDR_LEN:0] addr1, addr2,
     output reg signed [7:0] dout1, dout2
@@ -33,8 +33,11 @@ module mem
             if (mem[addr + W + 1] > mem[max]) max = addr + W + 1;
             mem[addr] <= (mem[max] > 0) ? mem[max] : 0;
         end
-
-        dout1 <= mem[addr1];
-        dout2 <= mem[addr2];
+        
+        if (load)
+        begin
+            dout1 <= mem[addr1];
+            dout2 <= mem[addr2];
+        end
     end
 endmodule

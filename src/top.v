@@ -90,7 +90,7 @@ module top
         .store(store1),
         .pool(pool1),
         .cout_done(cout1_done),
-        .out_c(out_c),
+        .out_c(out_c1),
         .w_addr(address1),
         .bias(bias1),
         .value(result1),
