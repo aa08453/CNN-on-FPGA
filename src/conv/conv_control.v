@@ -12,25 +12,25 @@ module conv_control
 //    output reg [1:0] mux_sel,
     output reg add,
     output reg counter_enable,
-    output reg flush_acc,
+//    output reg flush_acc,
     output reg store
 );
 
 
-parameter IDLE            = 4'd0;
-parameter ADDR            = 4'd1;
-parameter LOAD            = 4'd2;
-parameter MAC0            = 4'd3;
-parameter MAC1            = 4'd4;
+parameter IDLE            = 3'd0;
+parameter ADDR            = 3'd1;
+parameter LOAD            = 3'd2;
+parameter MAC0            = 3'd3;
+parameter MAC1            = 3'd4;
 //parameter MAC2            = 4'd5;
-parameter SUM             = 4'd6;
-parameter ACC             = 4'd7;
-parameter STORE           = 4'd8;
-parameter UPDATE_COUNTERS = 4'd9;
-parameter CHECK_DONE      = 4'd10;
+//parameter SUM             = 4'd6;
+//parameter ACC             = 4'd7;
+parameter STORE           = 3'd5;
+parameter UPDATE_COUNTERS = 3'd6;
+parameter CHECK_DONE      = 3'd7;
 
-reg [3:0] state;
-reg [3:0] next_state;
+reg [2:0] state;
+reg [2:0] next_state;
 
 // Sequential logic: state register
 always @(posedge clk or negedge rst_n) 
@@ -46,7 +46,7 @@ always @(*)
 begin
     // Default outputs
     addr_gen       = 1'b0;
-    flush_acc      = 1'b0;
+//    flush_acc      = 1'b0;
     load           = 1'b0;
 //    mux_sel        = 2'b00;
     add            = 1'b0;
@@ -62,7 +62,7 @@ begin
         ADDR:
         begin
             addr_gen = 1'b1;
-            flush_acc = 1'b1;
+//            flush_acc = 1'b1;
             next_state = LOAD;
         end
 

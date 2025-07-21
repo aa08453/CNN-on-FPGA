@@ -1,10 +1,11 @@
+`timescale 1ns / 1ps
 
-
-module layer2_mem
+module layer_mem
 #(
-    parameter CHANNEL_SIZE = 195,
-    parameter OC = 15,
-    parameter ADDR_LEN = 7 // 8 - 1
+    parameter CHANNEL_SIZE = 783,
+    parameter ADDR_LEN = 9, //10 - 1
+    parameter W = 28,
+    parameter OC = 7
 )
 (
     input wire clk,
@@ -12,29 +13,28 @@ module layer2_mem
 
     input wire store,
     input wire pool,
-    input wire cout_done, 
-    input wire load,
+    input wire cout_done,
 
-    input wire [3:0] out_c,         // Output channel index [0–7]
+    input wire [3:0] out_c,
     input wire [ADDR_LEN:0] w_addr,
-    input wire signed [7:0] bias,          // Bias to initialize with
-    input wire signed [7:0] value,          // Value to store
+    input wire signed [7:0] bias,
+    input wire signed [7:0] value,
 
-    output reg pool_done,
-    output wire signed [7:0] data_out [0:OC][1:0]
+    input wire load,
+    input wire [ADDR_LEN:0] addr1, addr2,
 
+    output wire signed [7:0] data_out [0:OC][0:1],
+    output reg pool_done
 );
 
-
-`include "functions.v"
-
+    // Pooling control
     reg [3:0] pool_count;
     reg [ADDR_LEN:0] next_addr;
     reg [3:0] channel_count;
 
     wire signed [7:0] wr_data = (store) ? clamp(value + bias) : 8'd0;
 
-    // Eight independent memory banks for eight output channels
+    // Instantiate BRAMs
     genvar i;
     generate
         for (i = 0; i <= OC; i = i + 1) 
@@ -44,7 +44,7 @@ module layer2_mem
             mem_inst (
                 .clk(clk),
                 .we(store && (out_c == i)),
-                .addr_wr(pool ? next_addr : w_addr),
+                .addr(pool ? next_addr : w_addr),
                 .din(wr_data),
                 .pool(pool && (channel_count == i)),
                 .addr1(addr1),
@@ -55,6 +55,7 @@ module layer2_mem
         end
     endgenerate
 
+    // Shared control logic for pooling
     always @(posedge clk or negedge rst) 
     begin
         if (!rst) 
@@ -97,7 +98,11 @@ module layer2_mem
             end
         end
     end
-    
 
 endmodule
+
+
+
+
+
 

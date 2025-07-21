@@ -15,8 +15,8 @@ module conv
                             kernel3, kernel4, kernel5,
                             kernel6, kernel7, kernel8,
 
-    output signed [7:0] result,
-    output [ADDR_LEN:0] address,
+    output wire signed [7:0] result,
+    output wire [ADDR_LEN:0] address,
     output wire store,
     output wire done,
     output wire load,
@@ -24,13 +24,13 @@ module conv
     // External memory connection
     input wire signed [7:0] data1,
     input wire signed [7:0] data2,
-    output wire [9:0] addr1,
-    output wire [9:0] addr2
+    output wire [ADDR_LEN:0] addr1,
+    output wire [ADDR_LEN:0] addr2
 );
 
 
-    wire addr_gen, count_enable, flush_acc, add;
-    wire [1:0] mux_sel;
+    wire addr_gen, count_enable, add;
+//    wire [1:0] mux_sel;
 
     wire load_full_patch, load_done; 
 
@@ -49,7 +49,8 @@ module conv
         .clk(clk), .rst_n(rst), .done(done), .load(load), 
 //        .mux_sel(mux_sel), 
         .conv(conv), .add(add), .load_done(load_done),
-        .counter_enable(count_enable), .addr_gen(addr_gen), .store(store), .flush_acc(flush_acc)
+        .counter_enable(count_enable), .addr_gen(addr_gen), .store(store) 
+//        .flush_acc(flush_acc)
     );
 
     counters #(.LOOP(LOOP)) counters_inst(
@@ -79,10 +80,10 @@ module conv
         .data1(data1), .data2(data2)
     );
 
-    comp comp_inst (
+    comp #(.ADDR_LEN(ADDR_LEN), .W(W)) comp_inst (
         .clk(clk), 
 //        .select(mux_sel), 
-        .sum(sum), .rst(rst), .add(add),
+        .result(result), .rst(rst), .add(add), .i(i), .j(j), .addr(address),
         .image_data0(pixel0), .image_data1(pixel1), .image_data2(pixel2),
         .image_data3(pixel3), .image_data4(pixel4), .image_data5(pixel5),
         .image_data6(pixel6), .image_data7(pixel7), .image_data8(pixel8),
@@ -91,9 +92,9 @@ module conv
         .kernel_data6(kernel6), .kernel_data7(kernel7), .kernel_data8(kernel8)
     );
 
-    products_reg #(.W(W), .ADDR_LEN(ADDR_LEN)) products_reg_inst ( .add(add),
-        .clk(clk), .rst(rst), .i(i), .j(j), .flush_acc(flush_acc),
-        .sum(sum), .result(result), .addr(address)
-    );
+//    products_reg #(.W(W), .ADDR_LEN(ADDR_LEN)) products_reg_inst ( .add(add),
+//        .clk(clk), .rst(rst), .i(i), .j(j), .flush_acc(flush_acc),
+//        .sum(sum), .result(result), .addr(address)
+//    );
 
 endmodule

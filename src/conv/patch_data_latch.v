@@ -116,6 +116,10 @@ module patch_data_latch
                     load_done <= 1;
                     state <= 0;
                 end
+                
+                default: begin
+                state <= 0;
+                end
 
             endcase
         end
@@ -124,6 +128,7 @@ module patch_data_latch
             load_done <= 0;
             state <= 0;
         end
-
+        addr1 <= addr1;
+        addr2 <= addr2; 
     end
 endmodule

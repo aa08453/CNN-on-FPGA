@@ -1,19 +1,3 @@
-`define CONV_INST(idx) \
-    conv #(.H(H), .W(W), .IC(IC), .ADDR_LEN(ADDR_LEN), .LOOP(LOOP)) conv_inst_``idx`` ( \
-        .clk(clk), .rst(rst), .conv(conv), .load(load``idx``),\
-        .kernel0(kernel``idx``0), .kernel1(kernel``idx``1), .kernel2(kernel``idx``2), \
-        .kernel3(kernel``idx``3), .kernel4(kernel``idx``4), .kernel5(kernel``idx``5), \
-        .kernel6(kernel``idx``6), .kernel7(kernel``idx``7), .kernel8(kernel``idx``8), \
-        .result(result_``idx``), .address(address), .store(store_``idx``), .done(done``idx``), \
-        .data1(data``idx``1), .data2(data``idx``2), \
-        .addr1(addr1), .addr2(addr2));
-
-`define DECL_KERNELS(idx) \
-    wire signed [7:0] \
-        kernel``idx``0, kernel``idx``1, kernel``idx``2, \
-        kernel``idx``3, kernel``idx``4, kernel``idx``5, \
-        kernel``idx``6, kernel``idx``7, kernel``idx``8;
-
 module layer2
 #(
     parameter H = 14,
@@ -36,24 +20,15 @@ module layer2
     output wire signed [7:0] bias,
     output wire cout_done,
     output wire load,
-    input wire signed [7:0] data01, data02,
-    input wire signed [7:0] data11, data12,
-    input wire signed [7:0] data21, data22,
-    input wire signed [7:0] data31, data32,
-    input wire signed [7:0] data41, data42,
-    input wire signed [7:0] data51, data52,
-    input wire signed [7:0] data61, data62,
-    input wire signed [7:0] data71, data72,
-    output wire [9:0] addr1,
-    output wire [9:0] addr2,
+    input wire signed [7:0] data_out [0:IC][0:1],
+    output wire [ADDR_LEN:0] addr1,
+    output wire [ADDR_LEN:0] addr2,
     output wire [3:0] out_c
 );
 
     wire cout, c_load, conv, tree;
 
-    wire conv_done;
-    
-    
+    wire conv_done;    
 
     layer_control #(.IC(IC)) layer_control_inst( .start(start),
     .clk(clk), .rst_n(rst),  .cout(cout), .c_load(c_load), .pool(pool), 
@@ -66,50 +41,19 @@ module layer2
         .count(out_c), .complete(cout_done));
 
     // Declare result wires
-    wire signed [7:0] result_0, result_1, result_2, result_3;
-    wire signed [7:0] result_4, result_5, result_6, result_7;
-    wire load0, load1, load2, load3, load4, load5, load6, load7;
-    wire done0, done1, done2, done3, done4, done5, done6, done7;
-    wire store_0, store_1, store_2, store_3, store_4, store_5, store_6, store_7;
+    wire signed [7:0] result_arr [0:OC];
+    wire load_arr  [0:OC];
+    wire done_arr  [0:OC];
+    wire store_arr [0:OC];
 
     // Declare kernel wires
-    `DECL_KERNELS(0)
-    `DECL_KERNELS(1)
-    `DECL_KERNELS(2)
-    `DECL_KERNELS(3)
-    `DECL_KERNELS(4)
-    `DECL_KERNELS(5)
-    `DECL_KERNELS(6)
-    `DECL_KERNELS(7)
+    wire signed [7:0] kernel [0:OC][0:8];
 
-    load_kernels #(.VAL(1151)) 
+
+    load_kernels #(.VAL(1151), .OC(OC)) 
     load_kernels_inst (
     .clk(clk), .rst(rst), .c_load(c_load), .out_c(out_c),
-    .kernel00(kernel00), .kernel01(kernel01), .kernel02(kernel02),
-    .kernel03(kernel03), .kernel04(kernel04), .kernel05(kernel05),
-    .kernel06(kernel06), .kernel07(kernel07), .kernel08(kernel08),
-    .kernel10(kernel10), .kernel11(kernel11), .kernel12(kernel12),
-    .kernel13(kernel13), .kernel14(kernel14), .kernel15(kernel15),
-    .kernel16(kernel16), .kernel17(kernel17), .kernel18(kernel18),
-    .kernel20(kernel20), .kernel21(kernel21), .kernel22(kernel22),
-    .kernel23(kernel23), .kernel24(kernel24), .kernel25(kernel25),
-    .kernel26(kernel26), .kernel27(kernel27), .kernel28(kernel28),
-    .kernel30(kernel30), .kernel31(kernel31), .kernel32(kernel32),
-    .kernel33(kernel33), .kernel34(kernel34), .kernel35(kernel35),
-    .kernel36(kernel36), .kernel37(kernel37), .kernel38(kernel38),
-    .kernel40(kernel40), .kernel41(kernel41), .kernel42(kernel42),
-    .kernel43(kernel43), .kernel44(kernel44), .kernel45(kernel45),
-    .kernel46(kernel46), .kernel47(kernel47), .kernel48(kernel48),
-    .kernel50(kernel50), .kernel51(kernel51), .kernel52(kernel52),
-    .kernel53(kernel53), .kernel54(kernel54), .kernel55(kernel55),
-    .kernel56(kernel56), .kernel57(kernel57), .kernel58(kernel58),
-    .kernel60(kernel60), .kernel61(kernel61), .kernel62(kernel62),
-    .kernel63(kernel63), .kernel64(kernel64), .kernel65(kernel65),
-    .kernel66(kernel66), .kernel67(kernel67), .kernel68(kernel68),
-    .kernel70(kernel70), .kernel71(kernel71), .kernel72(kernel72),
-    .kernel73(kernel73), .kernel74(kernel74), .kernel75(kernel75),
-    .kernel76(kernel76), .kernel77(kernel77), .kernel78(kernel78)
-    );
+    .kernel(kernel));
 
 
     load_bias #(.OC(OC)) 
@@ -118,28 +62,49 @@ module layer2
         .out_c(out_c), .bias(bias)
     );
 
-    // Instantiate 8 conv blocks using macro
-    `CONV_INST(0)
-    `CONV_INST(1)
-    `CONV_INST(2)
-    `CONV_INST(3)
-    `CONV_INST(4)
-    `CONV_INST(5)
-    `CONV_INST(6)
-    `CONV_INST(7)
+    // Instantiate 8 conv blocks 
+    genvar i;
+    generate
+        for (i = 0; i <= OC; i = i + 1) 
+        begin : conv_blocks
+            conv #(.H(H), .W(W), .IC(IC), .ADDR_LEN(ADDR_LEN), .LOOP(LOOP)) 
+            conv_inst (
+                .clk(clk), .rst(rst), .conv(conv), .load(load_arr[i]),
+                .kernel0(kernel[i][0]), .kernel1(kernel[i][1]), .kernel2(kernel[i][2]),
+                .kernel3(kernel[i][3]), .kernel4(kernel[i][4]), .kernel5(kernel[i][5]),
+                .kernel6(kernel[i][6]), .kernel7(kernel[i][7]), .kernel8(kernel[i][8]),
+                .result(result_arr[i]), .address(address), .store(store_arr[i]), .done(done_arr[i]),
+                .data1(data_out[i][0]), .data2(data_out[i][1]),
+                .addr1(addr1), .addr2(addr2)
+            );
+        end
+    endgenerate
 
     // Add results manually (adder tree)
     adder_tree adder_inst(.clk(clk), .rst(rst), .tree(tree),
-        .result_0(result_0), .result_1(result_1), .result_2(result_2),
-        .result_3(result_3), .result_4(result_4), .result_5(result_5), 
-        .result_6(result_6), .result_7(result_7), .result_8(8'sd0), .result(result));
+        .result_0(result_arr[0]), .result_1(result_arr[1]), .result_2(result_arr[2]),
+        .result_3(result_arr[3]), .result_4(result_arr[4]), .result_5(result_arr[5]), 
+        .result_6(result_arr[6]), .result_7(result_arr[7]), .result_8(8'sd0), .result(result));
 
     // Single store after all convs are done
-    assign store = store_0 & store_1 & store_2 & store_3 & store_4 & store_5 & store_6 & store_7;
-    assign conv_done = done0 & done1 & done2 & done3 & done4 & done5 & done6 & done7;
-    assign load = load0 & load1 & load2 & load3 & load4 & load5 & load6 & load7;
+    reg store_tmp, load_tmp, done_tmp;
     
-
+    integer j;
+    always @(*) begin
+        store_tmp = 1'b1;
+        load_tmp = 1'b1;
+        done_tmp = 1'b1;
+        for (j = 0; j <= OC; j = j + 1) 
+        begin
+            store_tmp = store_tmp & store_arr[j];
+            load_tmp  = load_tmp & load_arr[j];
+            done_tmp  = done_tmp & done_arr[j];
+        end
+    end
+    
+    assign store = store_tmp;
+    assign load  = load_tmp;
+    assign conv_done = done_tmp;
 
 endmodule
 

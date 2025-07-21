@@ -1,5 +1,9 @@
 
 module comp 
+#(
+    parameter W = 28,
+    parameter ADDR_LEN = 9 // 10 - 1
+)
 (
     input wire signed [7:0]  image_data0, image_data1, image_data2,
     input wire signed [7:0]  image_data3, image_data4, image_data5,
@@ -11,14 +15,16 @@ module comp
     input wire add,
     input clk,
     input rst,
-    output wire signed [7:0] sum
+    input [4:0] i,
+    input [4:0] j,
+    output wire signed [7:0] result,
+    output wire [ADDR_LEN:0] addr
     
 );
     `include "../functions.v"
     wire signed [7:0] p0, p1, p2, p3, p4, p5, p6, p7, p8;
 //    wire signed [9:0] total;
-    
-    
+    assign addr = i*W + j;
    
     assign p0 = (image_data0 * kernel_data0) >>> 3;
     assign  p1 = (image_data1 * kernel_data1) >>> 3;
@@ -35,7 +41,7 @@ module comp
     adder_tree tree(.clk(clk), .rst(rst), .tree(add),
         .result_0(p0), .result_1(p1), .result_2(p2),
         .result_3(p3), .result_4(p4), .result_5(p5), 
-        .result_6(p6), .result_7(p7), .result_8(p8), .result(sum));
+        .result_6(p6), .result_7(p7), .result_8(p8), .result(result));
 //    mult_mux mux1 (.sel(select), .product(p1),
 //        .a0(image_data0), .a1(image_data1), .a2(image_data2),
 //        .k0(kernel_data0), .k1(kernel_data1), .k2(kernel_data2));

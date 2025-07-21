@@ -1,5 +1,5 @@
 
-
+//module header();
 function signed [7:0] clamp;
   input signed [15:0] val;
   begin
@@ -23,3 +23,4 @@ function [10:0] kernel_addr;
     input [10:0] addr;
     kernel_addr = (addr + channel) + (idx * 9);
 endfunction
+//endmodule
