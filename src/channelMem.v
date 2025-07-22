@@ -1,4 +1,4 @@
-module channelMem
+module memory
 #(
     parameter DEPTH = 195,
     parameter LOAD_ADDR_LEN = 7,
