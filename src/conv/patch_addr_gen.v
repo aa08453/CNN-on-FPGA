@@ -1,8 +1,9 @@
-
+`timescale 1ns / 1ps
 
 module patch_addr_gen
 #(
-    parameter IC = 0
+    parameter IC = 0,
+    parameter ADDR_LEN = 9
 )
 (
     input wire clk,
@@ -10,15 +11,15 @@ module patch_addr_gen
     input wire addr_gen,
     input wire [4:0] i, j,
 
-    output reg [9:0] pixel_addr0,
-    output reg [9:0] pixel_addr1,
-    output reg [9:0] pixel_addr2,
-    output reg [9:0] pixel_addr3,
-    output reg [9:0] pixel_addr4,
-    output reg [9:0] pixel_addr5,
-    output reg [9:0] pixel_addr6,
-    output reg [9:0] pixel_addr7,
-    output reg [9:0] pixel_addr8,
+    output reg [ADDR_LEN:0] pixel_addr0,
+    output reg [ADDR_LEN:0] pixel_addr1,
+    output reg [ADDR_LEN:0] pixel_addr2,
+    output reg [ADDR_LEN:0] pixel_addr3,
+    output reg [ADDR_LEN:0] pixel_addr4,
+    output reg [ADDR_LEN:0] pixel_addr5,
+    output reg [ADDR_LEN:0] pixel_addr6,
+    output reg [ADDR_LEN:0] pixel_addr7,
+    output reg [ADDR_LEN:0] pixel_addr8,
 
     output reg load_full_patch
 );
@@ -35,15 +36,15 @@ module patch_addr_gen
             prev_i <= 5'd28;  // Something invalid 
             load_full_patch <= 1'b1;
 
-            pixel_addr0 <= 10'd0;
-            pixel_addr1 <= 10'd0;
-            pixel_addr2 <= 10'd0;
-            pixel_addr3 <= 10'd0;
-            pixel_addr4 <= 10'd0;
-            pixel_addr5 <= 10'd0;
-            pixel_addr6 <= 10'd0;
-            pixel_addr7 <= 10'd0;
-            pixel_addr8 <= 10'd0;
+            pixel_addr0 <= 0;
+            pixel_addr1 <= 0;
+            pixel_addr2 <= 0;
+            pixel_addr3 <= 0;
+            pixel_addr4 <= 0;
+            pixel_addr5 <= 0;
+            pixel_addr6 <= 0;
+            pixel_addr7 <= 0;
+            pixel_addr8 <= 0;
         end 
         else if (addr_gen) 
         begin

@@ -1,3 +1,4 @@
+`timescale 1ns / 1ps
 
 module layer_control 
 #(
@@ -6,7 +7,8 @@ module layer_control
 (
     input wire clk,
     input wire rst_n,
-
+    
+    input wire c_load_done,
     input wire conv_done,
     input wire cout_done,
     input wire pool_done,
@@ -61,7 +63,7 @@ begin
         CHANNEL_LOAD:
         begin
             c_load = 1'b1;
-            next_state = CONV;
+            next_state = c_load_done ? CONV : CHANNEL_LOAD;
         end
 
         CONV:

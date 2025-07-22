@@ -1,24 +1,27 @@
 // Simple dual-port BRAM with pooling support
+`timescale 1ns / 1ps
+
 module mem 
 #(
     parameter DEPTH = 783,
-    parameter ADDR_LEN = 9, // 10 - 1
+    parameter LOAD_ADDR_LEN = 9,
+    parameter STORE_ADDR_LEN = 7, // 10 - 1
     parameter W = 28
 )
 (
     input wire clk,
     input wire we,
-    input wire [ADDR_LEN:0] addr,
+    input wire [STORE_ADDR_LEN:0] addr,
     input wire signed [7:0] din,
 
     input wire pool, load,
 
-    input wire [ADDR_LEN:0] addr1, addr2,
+    input wire [LOAD_ADDR_LEN:0] addr1, addr2,
     output reg signed [7:0] dout1, dout2
 );
 
     (*ram_style = "block" *) reg signed [7:0] mem [0:DEPTH];
-    reg [ADDR_LEN:0] max;
+    reg [STORE_ADDR_LEN:0] max;
 
     always @(posedge clk) 
     begin

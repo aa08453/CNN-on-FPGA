@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps
 
-`define FILE1 "conv1_bias.mem"
-`define FILE2 "conv2_bias.mem"
+`define BIAS1 "conv1_bias.mem"
+`define BIAS2 "conv2_bias.mem"
 
 module load_bias 
 #(
@@ -20,11 +20,11 @@ module load_bias
     generate
         if (OC == 7) 
         begin : load_conv1
-            initial $readmemh(`FILE1, rom_data);
+            initial $readmemh(`BIAS1, rom_data);
         end 
         else 
         begin : load_conv2
-            initial $readmemh(`FILE2, rom_data);
+            initial $readmemh(`BIAS2, rom_data);
         end
     endgenerate
 

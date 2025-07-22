@@ -1,52 +1,61 @@
-// `define KERNEL_OUTPUTS(idx) \
-//     output reg signed [7:0] kernel``idx``0, kernel``idx``1, kernel``idx``2, \
-//                             kernel``idx``3, kernel``idx``4, kernel``idx``5, \
-//                             kernel``idx``6, kernel``idx``7, kernel``idx``8
+`timescale 1ns / 1ps
 
-
-
-`define FILE "conv2_weight.mem"
+`define KERNEL1 "conv1_weight.mem"
+`define KERNEL2 "conv2_weight.mem"
 
 
 module load_kernels
 #(
     parameter VAL = 1151,      // Total number of weights
-    parameter OC = 7           // Output channels
+    parameter IC = 0
 )
 (
     input wire clk,
     input wire rst,
     input wire c_load,
     input wire [3:0] out_c,
-    output reg signed [7:0] kernel [0:OC][0:8] // Internal register array
+    output reg c_load_done,
+    output reg signed [7:0] kernel [0:IC][0:8] // Internal register array
 );
-
-`include "functions.v"
 
 (* rom_style = "distributed" *) reg signed [7:0] rom_data [0:VAL];
 wire [10:0] base_addr;
 
-assign base_addr = out_c * 8 * 9;  // Each output channel has 72 weights
+assign base_addr = out_c * (IC+1) * 9;  // Each output channel has 72 weights
 
-integer oc, k;
+integer ic, k;
 always @(posedge clk or negedge rst) 
 begin
     if (!rst) 
     begin
-        for (oc = 0; oc <= OC; oc = oc + 1)
+        for (ic = 0; ic <= IC; ic = ic + 1)
             for (k = 0; k < 9; k = k + 1)
-                kernel[oc][k] <= 0;
+                kernel[ic][k] <= 0;
+        
+        c_load_done <= 0;
     end 
-    else if (c_load) 
+    if (c_load && !c_load_done) 
     begin
-        for (oc = 0; oc <= OC; oc = oc + 1)
+        for (ic = 0; ic <= IC; ic = ic + 1)
             for (k = 0; k < 9; k = k + 1)
-                kernel[oc][k] <= rom_data[kernel_addr(k, oc, base_addr)];
+                kernel[ic][k] <= rom_data[base_addr +(IC+1)*k];
+                
+        c_load_done <= 1;
     end
+    
+    if (!c_load && c_load_done)
+        c_load_done <= 0;
 end
 
-initial begin
-    $readmemh(`FILE, rom_data);
-end
+generate
+    if (IC == 0) 
+    begin : load_conv1
+        initial $readmemh(`KERNEL1, rom_data);
+    end 
+    else 
+    begin : load_conv2
+        initial $readmemh(`KERNEL2, rom_data);
+    end
+endgenerate
 
 endmodule

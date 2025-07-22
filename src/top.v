@@ -1,4 +1,4 @@
-
+`timescale 1ns / 1ps
 
 
 module top
@@ -37,11 +37,12 @@ module top
     wire signed [7:0] mem_data1, mem_data2;
     wire [ADDR_LEN1:0] mem_addr1, mem_addr2;
     
-    wire [ADDR_LEN1:0] addr1, addr2;
+    wire [ADDR_LEN1:0] addr1_1, addr1_2;
+    wire [ADDR_LEN2:0] addr2_1, addr2_2;
     
-    wire signed [7:0] data_out1 [0:OC1][0:1];
-    wire signed [7:0] data_out2 [0:OC2][0:1];
-
+    wire signed [7:0] data_out1 [0:IC][0:1];
+    wire signed [7:0] data_out2 [0:OC1][0:1];
+    wire signed [7:0] data_out3 [0:OC2][0:1];
 
     image_mem mem_inst (
         .clk(clk), .rst(rst), .load(load1),
@@ -50,13 +51,17 @@ module top
         .data_out1(mem_data1),
         .data_out2(mem_data2)
     );
+    
+    assign data_out1[0][0] = mem_data1;
+    assign data_out1[0][1] = mem_data2;;
 
-    layer1 #(
+    layer #(
         .H(H),
         .W(W1),
         .OC(OC1),
         .IC(IC),
-        .ADDR_LEN(ADDR_LEN1),
+        .LOAD_ADDR_LEN(ADDR_LEN1),
+        .STORE_ADDR_LEN(ADDR_LEN1),
         .LOOP(W1 - 1)
     )
     layer1_inst (
@@ -71,8 +76,7 @@ module top
         .start(1'b0),
         .pool_done(pool1_done),
         .cout_done(cout1_done),
-        .data1(mem_data1),
-        .data2(mem_data2),
+        .data_out(data_out1),
         .addr1(mem_addr1),
         .addr2(mem_addr2),
         .out_c(out_c1)
@@ -82,7 +86,8 @@ module top
     layer_mem #(
         .CHANNEL_SIZE(CHANNEL_SIZE1),
         .OC(OC1),
-        .ADDR_LEN(ADDR_LEN1),
+        .LOAD_ADDR_LEN(ADDR_LEN1),
+        .STORE_ADDR_LEN(ADDR_LEN1),
         .W(W1)
     ) layer1_mem_inst (
         .clk(clk),
@@ -95,19 +100,20 @@ module top
         .bias(bias1),
         .value(result1),
         .load(load2),
-        .addr1(addr1),
-        .addr2(addr2),
-        .data_out(data_out1),
+        .addr1(addr1_1),
+        .addr2(addr1_2),
+        .data_out(data_out2),
         .pool_done(pool1_done)
     );
 
 
-    layer2 #(
+    layer #(
         .H(W2),
         .W(W2),
         .OC(OC2),
         .IC(OC1),
-        .ADDR_LEN(ADDR_LEN2),
+        .LOAD_ADDR_LEN(ADDR_LEN1),
+        .STORE_ADDR_LEN(ADDR_LEN2),
         .LOOP(W2 - 1)
     ) 
     layer2_inst (
@@ -122,19 +128,20 @@ module top
         .pool_done(pool2_done),
         .cout_done(cout2_done),
         .load(load2),
-        .data_out(data_out1),
-        .addr1(addr1), .addr2(addr2),
+        .data_out(data_out2),
+        .addr1(addr1_1), .addr2(addr1_2),
         .out_c(out_c2)
     );
 
     layer_mem #( 
         .CHANNEL_SIZE(CHANNEL_SIZE2), 
-        .ADDR_LEN(ADDR_LEN2),
+        .LOAD_ADDR_LEN(ADDR_LEN2),
+        .STORE_ADDR_LEN(ADDR_LEN2),
         .W(W2),
         .OC(OC2)
     )
     l2_mem_inst (.clk(clk), .rst(rst), .load(load3), .out_c(out_c2), .store(store2), .pool(pool2), .pool_done(pool2_done),
-            .bias(bias2),.w_addr(address2),.cout_done(cout2_done), .value(result2), .data_out(data_out2));
+            .bias(bias2),.w_addr(address2),.cout_done(cout2_done), .value(result2), .data_out(data_out3), .addr1(addr2_1), .addr2(addr2_2));
     
     assign y = result2;
 

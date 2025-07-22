@@ -5,7 +5,8 @@ module layer1
     parameter W = 28,
     parameter OC = 7,
     parameter IC = 0,
-    parameter ADDR_LEN = 9, // 10 - 1
+    parameter LOAD_ADDR_LEN = 9,
+    parameter STORE_ADDR_LEN = 9, // 10 - 1
     parameter LOOP = 27
 )
 (
@@ -16,14 +17,14 @@ module layer1
     output wire pool,
     input wire start,
     output wire load,
-    output wire [ADDR_LEN:0] address,
+    output wire [STORE_ADDR_LEN:0] address,
     output wire signed [7:0] result,
     output wire signed [7:0] bias,
     output wire cout_done,
 
     input wire signed [7:0] data1,
     input wire signed [7:0] data2,
-    output wire [9:0] addr1, addr2,
+    output wire [LOAD_ADDR_LEN:0] addr1, addr2,
     output wire [3:0] out_c
 );
 
@@ -63,7 +64,7 @@ module layer1
     );
 
     // Convolution
-    conv #(.H(H), .W(W), .IC(IC), .ADDR_LEN(ADDR_LEN), .LOOP(LOOP)) 
+    conv #(.H(H), .W(W), .IC(IC), .LOAD_ADDR_LEN(LOAD_ADDR_LEN), .STORE_ADDR_LEN(STORE_ADDR_LEN), .LOOP(LOOP)) 
     conv_inst (
         .clk(clk), .rst(rst), .conv(conv), .load(load),
         .kernel0(kernel0), .kernel1(kernel1), .kernel2(kernel2),

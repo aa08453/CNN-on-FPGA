@@ -1,9 +1,12 @@
+`timescale 1ns / 1ps
+
 module conv
 #(
     parameter H = 28,
     parameter W = 28,
     parameter IC = 0,
-    parameter ADDR_LEN = 9,
+    parameter LOAD_ADDR_LEN = 9,
+    parameter STORE_ADDR_LEN = 9,
     parameter LOOP = 27
 )
 (
@@ -16,7 +19,7 @@ module conv
                             kernel6, kernel7, kernel8,
 
     output wire signed [7:0] result,
-    output wire [ADDR_LEN:0] address,
+    output wire [STORE_ADDR_LEN:0] address,
     output wire store,
     output wire done,
     output wire load,
@@ -24,8 +27,8 @@ module conv
     // External memory connection
     input wire signed [7:0] data1,
     input wire signed [7:0] data2,
-    output wire [ADDR_LEN:0] addr1,
-    output wire [ADDR_LEN:0] addr2
+    output wire [LOAD_ADDR_LEN:0] addr1,
+    output wire [LOAD_ADDR_LEN:0] addr2
 );
 
 
@@ -54,7 +57,7 @@ module conv
         .i(i), .j(j), .done(done), .conv(conv)
     );
 
-    patch_addr_gen #(.IC(IC)) patch_addr_inst (
+    patch_addr_gen #(.IC(IC), .ADDR_LEN(LOAD_ADDR_LEN)) patch_addr_inst (
         .clk(clk), .rst(rst), .addr_gen(addr_gen), .i(i), .j(j),
         .pixel_addr0(pixel_addr0), .pixel_addr1(pixel_addr1), .pixel_addr2(pixel_addr2),
         .pixel_addr3(pixel_addr3), .pixel_addr4(pixel_addr4), .pixel_addr5(pixel_addr5),
@@ -62,7 +65,8 @@ module conv
         .load_full_patch(load_full_patch)
     );
 
-    patch_data_latch patch_data_inst (
+    patch_data_latch #(.ADDR_LEN(LOAD_ADDR_LEN)) patch_data_inst
+     (
         .clk(clk), .rst(rst), .load(load), .load_full_patch(load_full_patch), .load_done(load_done),
         .pixel_addr0(pixel_addr0), .pixel_addr1(pixel_addr1), .pixel_addr2(pixel_addr2),
         .pixel_addr3(pixel_addr3), .pixel_addr4(pixel_addr4), .pixel_addr5(pixel_addr5),
@@ -74,7 +78,7 @@ module conv
         .data1(data1), .data2(data2)
     );
 
-    comp #(.ADDR_LEN(ADDR_LEN), .W(W)) comp_inst (
+    comp #(.ADDR_LEN(STORE_ADDR_LEN), .W(W)) comp_inst (
         .clk(clk), 
         .result(result), .rst(rst), .add(add), .i(i), .j(j), .addr(address),
         .image_data0(pixel0), .image_data1(pixel1), .image_data2(pixel2),

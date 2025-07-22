@@ -4,7 +4,8 @@ module layer2
     parameter W = 14,
     parameter OC = 15,
     parameter IC = 7,
-    parameter ADDR_LEN = 7,
+    parameter LOAD_ADDR_LEN = 9,
+    parameter STORE_ADDR_LEN = 7,
     parameter LOOP = 13
 )
 (
@@ -15,13 +16,13 @@ module layer2
     output wire pool,
     input wire start,
     
-    output wire [ADDR_LEN:0] address,
+    output wire [STORE_ADDR_LEN:0] address,
     output wire signed [7:0] result,
     output wire signed [7:0] bias,
     output wire cout_done,
     output wire load,
     input wire signed [7:0] data_out [0:IC][0:1],
-    output wire [9:0] addr1, addr2,
+    output wire [LOAD_ADDR_LEN:0] addr1, addr2,
     output wire [3:0] out_c
 );
 
@@ -34,8 +35,8 @@ module layer2
     wire load_arr  [0:IC];
     wire done_arr  [0:IC];
     wire store_arr [0:IC];
-    wire [ADDR_LEN:0] addr1_arr [0:IC];
-    wire [ADDR_LEN:0] addr2_arr [0:IC];
+    wire [9:0] addr1_arr [0:IC];
+    wire [9:0] addr2_arr [0:IC];
 
     // Declare kernel wires
     wire signed [7:0] kernel [0:OC][0:8];
@@ -69,7 +70,7 @@ module layer2
     generate
         for (i = 0; i <= IC; i = i + 1) 
         begin : conv_blocks
-            conv #(.H(H), .W(W), .IC(IC), .ADDR_LEN(ADDR_LEN), .LOOP(LOOP)) 
+            conv #(.H(H), .W(W), .IC(IC), .LOAD_ADDR_LEN(LOAD_ADDR_LEN), .STORE_ADDR_LEN(STORE_ADDR_LEN), .LOOP(LOOP)) 
             conv_inst (
                 .clk(clk), .rst(rst), .conv(conv), .load(load_arr[i]),
                 .kernel0(kernel[i][0]), .kernel1(kernel[i][1]), .kernel2(kernel[i][2]),

@@ -34,17 +34,16 @@ module tb_top;
         wait(uut.cout1_done);
         $display("Layer 1 computation done at time %0t", $time);
         
-        wait(uut.pool1_done);
-        $display("pOOLING DONE LAYER1");
-//            $finish;
+//        wait(uut.pool1_done);
+//        $display("Pooling complete layer1 at time %0t", $time);
 
-        // Wait for second layer to complete
-        wait(uut.cout2_done);
-        $display("Layer 2 computation done at time %0t", $time);
+//        // Wait for second layer to complete
+//        wait(uut.cout2_done);
+//        $display("Layer 2 computation done at time %0t", $time);
 
-        // Optionally: Dump memory or display final result
-        wait(uut.pool2_done);
-        $display("Pooling complete layer2 at time %0t", $time);
+//        // Optionally: Dump memory or display final result
+//        wait(uut.pool2_done);
+//        $display("Pooling complete layer2 at time %0t", $time);
         $finish;
     end
 

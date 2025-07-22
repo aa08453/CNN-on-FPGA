@@ -3,7 +3,8 @@
 module layer_mem
 #(
     parameter CHANNEL_SIZE = 783,
-    parameter ADDR_LEN = 9, //10 - 1
+    parameter LOAD_ADDR_LEN = 9,
+    parameter STORE_ADDR_LEN = 7,
     parameter W = 28,
     parameter OC = 7
 )
@@ -16,12 +17,12 @@ module layer_mem
     input wire cout_done,
 
     input wire [3:0] out_c,
-    input wire [ADDR_LEN:0] w_addr,
+    input wire [STORE_ADDR_LEN:0] w_addr,
     input wire signed [7:0] bias,
     input wire signed [7:0] value,
 
     input wire load,
-    input wire [9:0] addr1, addr2,
+    input wire [LOAD_ADDR_LEN:0] addr1, addr2,
 
     output signed [7:0] data_out [0:OC][0:1],
     output reg pool_done
@@ -29,7 +30,7 @@ module layer_mem
     `include "functions.v"
     // Pooling control
     reg [3:0] pool_count;
-    reg [ADDR_LEN:0] next_addr;
+    reg [STORE_ADDR_LEN:0] next_addr;
     reg [3:0] channel_count;
 
     wire signed [7:0] wr_data = (store) ? clamp(value + bias) : 8'd0;
@@ -39,7 +40,7 @@ module layer_mem
     generate
         for (i = 0; i <= OC; i = i + 1) 
         begin : brams
-            mem #( .DEPTH(CHANNEL_SIZE), .W(W), .ADDR_LEN(ADDR_LEN)) 
+            mem #( .DEPTH(CHANNEL_SIZE), .W(W), .LOAD_ADDR_LEN(LOAD_ADDR_LEN), .STORE_ADDR_LEN(STORE_ADDR_LEN)) 
             mem_inst (
                 .clk(clk),
                 .we(store && (out_c == i)),
@@ -66,39 +67,37 @@ module layer_mem
             channel_count <= 0;
             pool_done <= 0;
         end 
-        else 
+        else if (pool && !pool_done) 
         begin
-            if (pool && !pool_done) 
-            begin
-                // Advance pooling steps
-                next_addr <= next_addr + 2;
-                pool_count <= pool_count + 1;
+            // Advance pooling steps
+            next_addr <= next_addr + 2;
+            pool_count <= pool_count + 1;
 
-                if (pool_count == (W >> 1)) 
+            if (pool_count == (W >> 1)) 
+            begin
+                next_addr <= next_addr + W;
+                pool_count <= 0;
+            end
+
+            if (next_addr >= (CHANNEL_SIZE + 1)) 
+            begin
+                if (channel_count == OC) 
+                    pool_done <= 1;
+                else 
                 begin
-                    next_addr <= next_addr + W;
+                    channel_count <= channel_count + 1;
+                    next_addr <= 0;
                     pool_count <= 0;
                 end
-
-                if (next_addr >= (CHANNEL_SIZE + 1)) 
-                begin
-                    if (channel_count == OC) 
-                        pool_done <= 1;
-                    else 
-                    begin
-                        channel_count <= channel_count + 1;
-                        next_addr <= 0;
-                        pool_count <= 0;
-                    end
-                end
-            end 
-            else if (!pool && pool_done) 
-            begin
-                pool_done <= 0;
-                channel_count <= 0;
             end
+        end 
+        else if (!pool && pool_done) 
+        begin
+            pool_done <= 0;
+            channel_count <= 0;
         end
     end
+
 
 endmodule
 

@@ -1,22 +1,27 @@
+`timescale 1ns / 1ps
+
 module patch_data_latch 
+#(
+    parameter ADDR_LEN = 9
+)
 (
     input wire clk,
     input wire rst,
     input wire load,
     input wire load_full_patch,
 
-    input wire [9:0] pixel_addr0,
-    input wire [9:0] pixel_addr1,
-    input wire [9:0] pixel_addr2,
-    input wire [9:0] pixel_addr3,
-    input wire [9:0] pixel_addr4,
-    input wire [9:0] pixel_addr5,
-    input wire [9:0] pixel_addr6,
-    input wire [9:0] pixel_addr7,
-    input wire [9:0] pixel_addr8,
+    input wire [ADDR_LEN:0] pixel_addr0,
+    input wire [ADDR_LEN:0] pixel_addr1,
+    input wire [ADDR_LEN:0] pixel_addr2,
+    input wire [ADDR_LEN:0] pixel_addr3,
+    input wire [ADDR_LEN:0] pixel_addr4,
+    input wire [ADDR_LEN:0] pixel_addr5,
+    input wire [ADDR_LEN:0] pixel_addr6,
+    input wire [ADDR_LEN:0] pixel_addr7,
+    input wire [ADDR_LEN:0] pixel_addr8,
 
     input wire signed [7:0] data1, data2,
-    output reg [9:0] addr1, addr2,
+    output reg [ADDR_LEN:0] addr1, addr2,
 
     output reg signed [7:0] pixel0,
     output reg signed [7:0] pixel1,
@@ -43,15 +48,15 @@ module patch_data_latch
             addr1 <= 0;
             addr2 <= 0;
 
-            pixel0 <= 8'sd0;
-            pixel1 <= 8'sd0;
-            pixel2 <= 8'sd0;
-            pixel3 <= 8'sd0;
-            pixel4 <= 8'sd0;
-            pixel5 <= 8'sd0;
-            pixel6 <= 8'sd0;
-            pixel7 <= 8'sd0;
-            pixel8 <= 8'sd0;
+//            pixel0 <= 8'sd0;
+//            pixel1 <= 8'sd0;
+//            pixel2 <= 8'sd0;
+//            pixel3 <= 8'sd0;
+//            pixel4 <= 8'sd0;
+//            pixel5 <= 8'sd0;
+//            pixel6 <= 8'sd0;
+//            pixel7 <= 8'sd0;
+//            pixel8 <= 8'sd0;
         end 
         else if (load && !load_done)
         begin

@@ -1,3 +1,5 @@
+`timescale 1ns / 1ps
+
 module conv_control 
 (
     input wire clk,
@@ -9,10 +11,8 @@ module conv_control
 
     output reg addr_gen,
     output reg load,
-//    output reg [1:0] mux_sel,
     output reg add,
     output reg counter_enable,
-//    output reg flush_acc,
     output reg store
 );
 
@@ -22,9 +22,6 @@ parameter ADDR            = 3'd1;
 parameter LOAD            = 3'd2;
 parameter MAC0            = 3'd3;
 parameter MAC1            = 3'd4;
-//parameter MAC2            = 4'd5;
-//parameter SUM             = 4'd6;
-//parameter ACC             = 4'd7;
 parameter STORE           = 3'd5;
 parameter UPDATE_COUNTERS = 3'd6;
 parameter CHECK_DONE      = 3'd7;
@@ -46,9 +43,7 @@ always @(*)
 begin
     // Default outputs
     addr_gen       = 1'b0;
-//    flush_acc      = 1'b0;
     load           = 1'b0;
-//    mux_sel        = 2'b00;
     add            = 1'b0;
     store          = 1'b0;
     counter_enable = 1'b0;
@@ -62,7 +57,6 @@ begin
         ADDR:
         begin
             addr_gen = 1'b1;
-//            flush_acc = 1'b1;
             next_state = LOAD;
         end
 
@@ -75,24 +69,14 @@ begin
         MAC0: 
         begin
             add        = 1'b1;
-//            mux_sel    = 2'b01;
             next_state = MAC1;
         end
 
         MAC1: 
         begin
             add        = 1'b1;
-//            mux_sel    = 2'b10;
-//            next_state = MAC2;
             next_state = STORE;
         end
-
-//        MAC2: 
-//        begin
-//            add        = 1'b1;
-//            mux_sel    = 2'b11;
-//            next_state = STORE;
-//        end
 
         STORE:
         begin
