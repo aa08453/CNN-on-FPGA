@@ -6,8 +6,8 @@ module memory
 )
 (
     input wire clk,
+    input wire rst,
     input wire  load,
-
     input wire [LOAD_ADDR_LEN:0] addr1, addr2,
     output reg signed [7:0] dout1, dout2
     );
@@ -19,7 +19,11 @@ module memory
     
     always @(posedge clk) 
     begin
-        if (load)
+    if(!rst) begin
+        dout1 <= 0;
+        dout2 <= 0;
+        end
+    else if (load)
         begin
             dout1 <= mem[addr1];
             dout2 <= mem[addr2];

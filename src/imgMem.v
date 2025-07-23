@@ -6,7 +6,6 @@ parameter CHANNEL_SIZE = 195
     input wire clk,
     input wire rst,
     input wire load,
-    
     input wire [LOAD_ADDR_LEN:0] addr1, addr2,
     output signed [7:0] data_out [0:OC][0:1]
     );
@@ -14,6 +13,7 @@ parameter CHANNEL_SIZE = 195
     memory #( .DEPTH(CHANNEL_SIZE), .LOAD_ADDR_LEN(LOAD_ADDR_LEN), .FILE("split_0.mem")) 
     mem_inst0(
         .clk(clk),
+        .rst(rst),
         .load(load),
         .addr1(addr1),
         .addr2(addr2),
@@ -24,6 +24,7 @@ parameter CHANNEL_SIZE = 195
     memory #( .DEPTH(CHANNEL_SIZE), .LOAD_ADDR_LEN(LOAD_ADDR_LEN), .FILE("split_1.mem")) 
     mem_inst1(
         .clk(clk),
+        .rst(rst),
         .load(load),
         .addr1(addr1),
         .addr2(addr2),
@@ -34,6 +35,7 @@ parameter CHANNEL_SIZE = 195
     memory #( .DEPTH(CHANNEL_SIZE), .LOAD_ADDR_LEN(LOAD_ADDR_LEN), .FILE("split_2.mem")) 
     mem_inst2(
         .clk(clk),
+        .rst(rst),
         .load(load),
         .addr1(addr1),
         .addr2(addr2),
@@ -44,6 +46,7 @@ parameter CHANNEL_SIZE = 195
     memory #( .DEPTH(CHANNEL_SIZE), .LOAD_ADDR_LEN(LOAD_ADDR_LEN), .FILE("split_3.mem")) 
     mem_inst3 (
         .clk(clk),
+        .rst(rst),
         .load(load),
         .addr1(addr1),
         .addr2(addr2),
@@ -54,6 +57,7 @@ parameter CHANNEL_SIZE = 195
     memory #( .DEPTH(CHANNEL_SIZE), .LOAD_ADDR_LEN(LOAD_ADDR_LEN), .FILE("split_4.mem")) 
     mem_inst4 (
         .clk(clk),
+        .rst(rst),
         .load(load),
         .addr1(addr1),
         .addr2(addr2),
@@ -64,6 +68,7 @@ parameter CHANNEL_SIZE = 195
     memory #( .DEPTH(CHANNEL_SIZE), .LOAD_ADDR_LEN(LOAD_ADDR_LEN), .FILE("split_5.mem")) 
     mem_inst5 (
         .clk(clk),
+        .rst(rst),
         .load(load),
         .addr1(addr1),
         .addr2(addr2),
@@ -74,6 +79,7 @@ parameter CHANNEL_SIZE = 195
     memory #( .DEPTH(CHANNEL_SIZE), .LOAD_ADDR_LEN(LOAD_ADDR_LEN), .FILE("split_6.mem")) 
     mem_inst6 (
         .clk(clk),
+        .rst(rst),
         .load(load),
         .addr1(addr1),
         .addr2(addr2),
@@ -84,6 +90,7 @@ parameter CHANNEL_SIZE = 195
     memory #( .DEPTH(CHANNEL_SIZE), .LOAD_ADDR_LEN(LOAD_ADDR_LEN), .FILE("split_7.mem")) 
     mem_inst7 (
         .clk(clk),
+        .rst(rst),
         .load(load),
         .addr1(addr1),
         .addr2(addr2),
@@ -94,6 +101,7 @@ parameter CHANNEL_SIZE = 195
     memory #( .DEPTH(CHANNEL_SIZE), .LOAD_ADDR_LEN(LOAD_ADDR_LEN), .FILE("split_8.mem")) 
     mem_inst8 (
         .clk(clk),
+        .rst(rst),
         .load(load),
         .addr1(addr1),
         .addr2(addr2),
@@ -104,6 +112,7 @@ parameter CHANNEL_SIZE = 195
     memory #( .DEPTH(CHANNEL_SIZE), .LOAD_ADDR_LEN(LOAD_ADDR_LEN), .FILE("split_9.mem")) 
     mem_inst9 (
         .clk(clk),
+        .rst(rst),
         .load(load),
         .addr1(addr1),
         .addr2(addr2),
@@ -114,6 +123,7 @@ parameter CHANNEL_SIZE = 195
     memory #( .DEPTH(CHANNEL_SIZE), .LOAD_ADDR_LEN(LOAD_ADDR_LEN), .FILE("split_10.mem")) 
     mem_inst10 (
         .clk(clk),
+        .rst(rst),
         .load(load),
         .addr1(addr1),
         .addr2(addr2),
@@ -124,6 +134,7 @@ parameter CHANNEL_SIZE = 195
     memory #( .DEPTH(CHANNEL_SIZE), .LOAD_ADDR_LEN(LOAD_ADDR_LEN), .FILE("split_11.mem")) 
     mem_inst11 (
         .clk(clk),
+        .rst(rst),
         .load(load),
         .addr1(addr1),
         .addr2(addr2),
@@ -134,6 +145,7 @@ parameter CHANNEL_SIZE = 195
     memory #( .DEPTH(CHANNEL_SIZE), .LOAD_ADDR_LEN(LOAD_ADDR_LEN), .FILE("split_12.mem")) 
     mem_inst12 (
         .clk(clk),
+        .rst(rst),
         .load(load),
         .addr1(addr1),
         .addr2(addr2),
@@ -144,6 +156,7 @@ parameter CHANNEL_SIZE = 195
     memory #( .DEPTH(CHANNEL_SIZE), .LOAD_ADDR_LEN(LOAD_ADDR_LEN), .FILE("split_13.mem")) 
     mem_inst13 (
         .clk(clk),
+        .rst(rst),
         .load(load),
         .addr1(addr1),
         .addr2(addr2),
@@ -154,6 +167,7 @@ parameter CHANNEL_SIZE = 195
     memory #( .DEPTH(CHANNEL_SIZE), .LOAD_ADDR_LEN(LOAD_ADDR_LEN), .FILE("split_14.mem")) 
     mem_inst14 (
         .clk(clk),
+        .rst(rst),
         .load(load),
         .addr1(addr1),
         .addr2(addr2),
@@ -165,6 +179,7 @@ parameter CHANNEL_SIZE = 195
     memory #( .DEPTH(CHANNEL_SIZE), .LOAD_ADDR_LEN(LOAD_ADDR_LEN), .FILE("split_15.mem")) 
     mem_inst15 (
         .clk(clk),
+        .rst(rst),
         .load(load),
         .addr1(addr1),
         .addr2(addr2),

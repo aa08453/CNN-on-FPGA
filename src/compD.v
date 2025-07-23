@@ -34,8 +34,8 @@ parameter FILE = "fc1_bias.mem"
             for (i = 0; i <= NC; i = i + 1) begin
                 prod0 = data[channelCount][0] * weights[i][0];
                 prod1 = data[channelCount][1] * weights[i][1];
-                accum = (prod0 >>> 3) + (prod1 >>> 3); // Optional shift if needed
-                result[i] <= result[i] + accum;
+                accum = (prod0 >>> 3) + (prod1 >>> 3); 
+                if(validData2) result[i] <= result[i] + accum;
             end
         end
     end

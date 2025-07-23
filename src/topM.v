@@ -17,7 +17,7 @@ parameter OC = 15
     assign addr1 = row*4'd14 + col;
     assign addr2 = addr1 + 2;
 
-    imgMem img (.clk(clk), .rst(rst), .load(1'b1), .addr1(addr1), .addr2(addr2), .data_out(dataOut));
+    imgMem img (.clk(clk), .rst(rst),.load(1'b1), .addr1(addr1), .addr2(addr2), .data_out(dataOut));
    
 
 endmodule
