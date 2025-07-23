@@ -43,6 +43,8 @@ module top
     wire signed [7:0] data_out1 [0:IC][0:1];
     wire signed [7:0] data_out2 [0:OC1][0:1];
     wire signed [7:0] data_out3 [0:OC2][0:1];
+    
+    wire [4:0] row, col, channel;
 
     image_mem mem_inst (
         .clk(clk), .rst(rst), .load(load1),
@@ -143,6 +145,10 @@ module top
     l2_mem_inst (.clk(clk), .rst(rst), .load(load3), .out_c(out_c2), .store(store2), .pool(pool2), .pool_done(pool2_done),
             .bias(bias2),.w_addr(address2),.cout_done(cout2_done), .value(result2), .data_out(data_out3), .addr1(addr2_1), .addr2(addr2_2));
     
+    assign addr2_1 = row*4'd14 + col;
+    assign addr2_2 = addr2_1 + 2;
+    
+    dense denseInst (.clk(clk), .rst(rst), .dataOut(data_out3), .row(row), .col(col), .channelCount(channel), .dense(cout2_done));
     assign y = result2;
 
 
