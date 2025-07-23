@@ -11,7 +11,7 @@ parameter OC = 15
     wire signed [7:0] dataOut [0:OC][0:1];
 
     
-    top dense(.clk(clk), .rst(rst), .row(row), .dense(1'b1),
+    dense dense(.clk(clk), .rst(rst), .row(row), .dense(1'b1),
     .col(col), .channelCount(channel), .dataOut(dataOut));
     
     assign addr1 = row*4'd14 + col;
