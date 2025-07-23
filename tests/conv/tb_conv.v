@@ -89,8 +89,8 @@ module conv_tb;
     // Monitor stored outputs
     // Monitor outputs
     initial begin
-        $display("addr\tresult\tflush_acc");
-        $monitor("%d\t%h\t%b", address, result, dut.flush_acc);
+        $display("addr\tresult");
+        $monitor("%d\t%h\t%b", address, result);
     end
 
 endmodule
