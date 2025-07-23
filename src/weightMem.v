@@ -6,6 +6,7 @@ module weightMem #(
    input wire clk,
    input wire rst,
    input wire load,
+   input validWeight2,
    input wire [9:0] addr1,
    input wire [9:0] addr2,
    output reg signed [7:0] weights [0:NC][0:1]
@@ -43,6 +44,15 @@ module weightMem #(
     memory # (.DEPTH(783), .LOAD_ADDR_LEN(LOAD_ADDR_LENGTH), .FILE("weightCol9.mem")) 
     wmem9 (.clk(clk), .load(load), .addr1(addr1), .addr2(addr2), .dout1(weights[9][0]), .dout2(weights[9][1]));
     
+    integer i;
+    always @(*) begin
+        if(!validWeight2) begin
+        for(i=0; i<NC; i=i+1) begin
+        
+            weights[i][1] <= 0;
+        end
+        end
+    end
     
     
     
