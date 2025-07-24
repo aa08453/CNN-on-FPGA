@@ -22,7 +22,7 @@ module top
 
     wire store1, store2, pool1, pool2;
 
-    wire cout1_done, cout2_done, pool1_done, pool2_done; 
+    wire cout1_done, cout2_done, pool1_done, pool2_done, done; 
 
     wire signed [7:0] bias1, bias2;
 
@@ -148,7 +148,7 @@ module top
     assign addr2_1 = row*4'd14 + col;
     assign addr2_2 = addr2_1 + 2;
     
-    dense denseInst (.clk(clk), .rst(rst), .dataOut(data_out3), .row(row), .col(col), .channelCount(channel), .dense(cout2_done));
+    dense denseInst (.clk(clk), .rst(rst), .dataOut(data_out3), .row(row), .col(col), .channelCount(channel), .start(pool2_done), .donePending(done));
     assign y = result2;
 
 

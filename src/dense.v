@@ -1,13 +1,13 @@
 module dense #(
 parameter NC = 9,
-parameter WEIGHT_ADDR_LEN=10,
+parameter WEIGHT_ADDR_LEN=9,
 parameter OC=15,
 parameter MAX_COL = 12
 )
 (
     input clk,
     input rst,
-    input dense,
+    input start,
     input wire signed [7:0] dataOut [0:OC][0:1],
     output wire [4:0] row, col, channelCount,
     output reg donePending
@@ -15,6 +15,7 @@ parameter MAX_COL = 12
     
 //    wire [4:0] row, col, channelCount;
 //    wire done;
+    reg dense;
     wire validData2;
     wire  signed [7:0] weights [0:NC][0:1];
     wire [WEIGHT_ADDR_LEN:0] weightAddr1, weightAddr2;
@@ -48,6 +49,7 @@ parameter MAX_COL = 12
 //                donePending <= 0; // reset pending after use
             end
                 end
+          if(start) dense <= 1;
     end
     
 //    always @ (posedge clk) begin
