@@ -66,7 +66,7 @@ parameter MAX_COL = 12
     
      
     assign validData2 = (prevCol != MAX_COL);
-    compD compute (.clk(clk), .rst(rst), .done(donePending), .validInput(validInput), .validData2(validData2), .channelCount(prevChannelCount), 
+    compD compute (.clk(clk), .rst(rst), .done(donePending), .validInput(validInput), .validData2(validData2),.col(prevCol), .row(prevRow), .channelCount(prevChannelCount), 
     .weights(weights), .data(dataOut), .result(result));
     
     
