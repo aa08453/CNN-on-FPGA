@@ -50,10 +50,10 @@ parameter MAX_COL = 12
                 end
     end
     
-    always @ (posedge clk) begin
+//    always @ (posedge clk) begin
     
-    if(prevCol == MAX_COL && prevChannelCount == OC && prevRow==MAX_COL) done <= 1;
-    end
+//    if(prevCol == MAX_COL && prevChannelCount == OC && prevRow==MAX_COL) done <= 1;
+//    end
     
     wire validInput = prevDense;
 
@@ -66,7 +66,7 @@ parameter MAX_COL = 12
     
      
     assign validData2 = (prevCol != MAX_COL);
-    compD compute (.clk(clk), .rst(rst), .validInput(validInput), .validData2(validData2), .channelCount(prevChannelCount), 
+    compD compute (.clk(clk), .rst(rst), .done(donePending), .validInput(validInput), .validData2(validData2), .channelCount(prevChannelCount), 
     .weights(weights), .data(dataOut), .result(result));
     
     
