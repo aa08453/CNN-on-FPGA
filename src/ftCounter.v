@@ -43,12 +43,12 @@ always @(posedge clk or negedge rst_n) begin
             end
         end
     end 
-    else if (signal && complete) begin
-        rowCount <= 0;
-        colCount <= 0;
-        channelCount <= 0;
-//        complete <= 0;
-    end
+//    else if (signal && complete) begin
+//        rowCount <= 0;
+//        colCount <= 0;
+//        channelCount <= 0;
+////        complete <= 0;
+//    end
 end
 
 endmodule

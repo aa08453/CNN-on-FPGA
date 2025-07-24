@@ -3,12 +3,12 @@ module tbCounter;
     reg clk;
     reg rst;
     
-    top uut (
+    topM uut (
         .clk(clk),
         .rst(rst)
         );
         
-        initial clk = 0;
+        initial clk =1;
     always #5 clk = ~clk;  
 
 

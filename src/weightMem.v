@@ -31,7 +31,7 @@ module weightMem #(
     memory # (.DEPTH(783), .LOAD_ADDR_LEN(LOAD_ADDR_LENGTH), .FILE("weightCol5.mem")) 
     wmem5 (.clk(clk), .rst(rst), .load(load), .addr1(addr1), .addr2(addr2), .dout1(weights[5][0]), .dout2(weights[5][1]));
     
-    memory # (.DEPTH(783), .LOAD_ADDR_LENGTH(LOAD_ADDR_LENGTH), .FILE("weightCol6.mem")) 
+    memory # (.DEPTH(783), .LOAD_ADDR_LEN(LOAD_ADDR_LENGTH), .FILE("weightCol6.mem")) 
     wmem6 (.clk(clk), .rst(rst), .load(load), .addr1(addr1), .addr2(addr2), .dout1(weights[6][0]), .dout2(weights[6][1]));
     
     memory # (.DEPTH(783), .LOAD_ADDR_LEN(LOAD_ADDR_LENGTH), .FILE("weightCol7.mem")) 
