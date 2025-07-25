@@ -24,7 +24,7 @@ parameter FILE = "fc1_bias.mem"
 
  integer i;
     reg signed [15:0] prod0, prod1;
-    reg signed [15:0] accum;
+    reg signed [7:0] accum;
 
     always @(posedge clk) begin
         if (!rst) begin
