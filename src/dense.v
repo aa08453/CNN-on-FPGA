@@ -10,7 +10,8 @@ parameter MAX_COL = 12
     input dense,
     input wire signed [7:0] dataOut [0:OC][0:1],
     output wire [4:0] row, col, channelCount,
-    output reg donePending
+    output reg donePending,
+    output wire signed [7:0] result [0:NC]
     );
     
 //    wire [4:0] row, col, channelCount;
@@ -18,7 +19,7 @@ parameter MAX_COL = 12
     wire validData2;
     wire  signed [7:0] weights [0:NC][0:1];
     wire [WEIGHT_ADDR_LEN:0] weightAddr1, weightAddr2;
-    wire signed [7:0] result [0:NC];
+    
     reg prevDense;
     reg [4:0] prevChannelCount, prevCol, prevRow;
     reg done;
