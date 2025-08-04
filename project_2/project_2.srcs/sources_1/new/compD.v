@@ -6,7 +6,9 @@ parameter FILE = "fc1_bias.mem"
     input clk,
     input rst,
     input validInput,
+    input done,
     input validData2,
+    input [4:0] row, col,
     input [4:0] channelCount,
     input signed [7:0] weights [0:NC] [0:1],
     input wire signed [7:0] data [0:OC][0:1],
@@ -15,7 +17,6 @@ parameter FILE = "fc1_bias.mem"
     );
     
    reg signed [7:0] bias [0:NC];
-   reg biasAdded [0:NC];
 
     initial begin
         $readmemh(FILE, bias);
@@ -23,7 +24,7 @@ parameter FILE = "fc1_bias.mem"
 
  integer i;
     reg signed [15:0] prod0, prod1;
-    reg signed [15:0] accum;
+    reg signed [7:0] accum;
 
     always @(posedge clk) begin
         if (!rst) begin
@@ -32,12 +33,14 @@ parameter FILE = "fc1_bias.mem"
             end
 //            done <= 0;
         end
-        else if (validInput) begin
+        else if (validInput && !done) begin
             for (i = 0; i <= NC; i = i + 1) begin
                 prod0 = data[channelCount][0] * weights[i][0];
-                prod1 = data[channelCount][1] * weights[i][1];
+                prod1 = validData2 ? data[channelCount][1] * weights[i][1] : 0;
                 accum = (prod0 >>> 3) + (prod1 >>> 3); 
-                if(validData2) result[i] <= result[i] + accum;
+                if(row==0 && col==0 && channelCount==0) result[i] <= result[i] + accum + bias[i]; // add bias only initially
+                else result[i] <= result[i] + accum;
+              
             end
 //            if (channelCount == OC)
 //            done <= 1;

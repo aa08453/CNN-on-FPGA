@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/aa08453/Desktop/project_2/project_2.runs/synth_1'
+HD_PWD='C:/Users/fs09192/Downloads/proj/CNN-on-FPGA/project_2/project_2.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

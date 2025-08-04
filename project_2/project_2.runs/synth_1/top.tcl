@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "C:/Users/aa08453/Desktop/project_2/project_2.runs/synth_1/top.tcl"
+  variable script "C:/Users/fs09192/Downloads/proj/CNN-on-FPGA/project_2/project_2.runs/synth_1/top.tcl"
   variable category "vivado_synth"
 }
 
@@ -76,61 +76,61 @@ create_project -in_memory -part xc7z020clg484-1
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir C:/Users/aa08453/Desktop/project_2/project_2.cache/wt [current_project]
-set_property parent.project_path C:/Users/aa08453/Desktop/project_2/project_2.xpr [current_project]
+set_property webtalk.parent_dir C:/Users/fs09192/Downloads/proj/CNN-on-FPGA/project_2/project_2.cache/wt [current_project]
+set_property parent.project_path C:/Users/fs09192/Downloads/proj/CNN-on-FPGA/project_2/project_2.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property board_part em.avnet.com:zed:part0:1.4 [current_project]
-set_property ip_output_repo c:/Users/aa08453/Desktop/project_2/project_2.cache/ip [current_project]
+set_property ip_output_repo c:/Users/fs09192/Downloads/proj/CNN-on-FPGA/project_2/project_2.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_mem {
-  C:/Users/aa08453/Desktop/mem_files/conv2_weight.mem
-  C:/Users/aa08453/Desktop/mem_files/conv1_bias.mem
-  C:/Users/aa08453/Desktop/mem_files/conv1_weight.mem
-  C:/Users/aa08453/Desktop/mem_files/image.mem
-  C:/Users/aa08453/Desktop/mem_files/conv2_bias.mem
-  C:/Users/aa08453/CNN-on-FPGA/mem/weightCol0.mem
-  C:/Users/aa08453/CNN-on-FPGA/mem/weightCol1.mem
-  C:/Users/aa08453/CNN-on-FPGA/mem/weightCol6.mem
-  C:/Users/aa08453/CNN-on-FPGA/mem/weightCol4.mem
-  C:/Users/aa08453/CNN-on-FPGA/mem/weightCol5.mem
-  C:/Users/aa08453/CNN-on-FPGA/mem/weightCol2.mem
-  C:/Users/aa08453/CNN-on-FPGA/mem/weightCol7.mem
-  C:/Users/aa08453/CNN-on-FPGA/mem/weightCol9.mem
-  C:/Users/aa08453/CNN-on-FPGA/mem/weightCol8.mem
-  C:/Users/aa08453/CNN-on-FPGA/mem/weightCol3.mem
-  C:/Users/aa08453/CNN-on-FPGA/mem/fc1_bias.mem
+  C:/Users/fs09192/Downloads/proj/CNN-on-FPGA/mem_files/conv2_weight.mem
+  C:/Users/fs09192/Downloads/proj/CNN-on-FPGA/mem_files/conv1_bias.mem
+  C:/Users/fs09192/Downloads/proj/CNN-on-FPGA/mem_files/conv1_weight.mem
+  C:/Users/fs09192/Downloads/proj/CNN-on-FPGA/mem_files/image.mem
+  C:/Users/fs09192/Downloads/proj/CNN-on-FPGA/mem_files/conv2_bias.mem
+  C:/Users/fs09192/Downloads/proj/CNN-on-FPGA/mem_files/weightCol5.mem
+  C:/Users/fs09192/Downloads/proj/CNN-on-FPGA/mem_files/weightCol6.mem
+  C:/Users/fs09192/Downloads/proj/CNN-on-FPGA/mem_files/fc1_bias.mem
+  C:/Users/fs09192/Downloads/proj/CNN-on-FPGA/mem_files/weightCol9.mem
+  C:/Users/fs09192/Downloads/proj/CNN-on-FPGA/mem_files/weightCol8.mem
+  C:/Users/fs09192/Downloads/proj/CNN-on-FPGA/mem_files/weightCol7.mem
+  C:/Users/fs09192/Downloads/proj/CNN-on-FPGA/mem_files/weightCol4.mem
+  C:/Users/fs09192/Downloads/proj/CNN-on-FPGA/mem_files/weightCol3.mem
+  C:/Users/fs09192/Downloads/proj/CNN-on-FPGA/mem_files/weightCol0.mem
+  C:/Users/fs09192/Downloads/proj/CNN-on-FPGA/mem_files/weightCol1.mem
+  C:/Users/fs09192/Downloads/proj/CNN-on-FPGA/mem_files/weightCol2.mem
 }
 read_verilog -library xil_defaultlib -sv {
-  C:/Users/aa08453/Desktop/project_2/project_2.srcs/sources_1/new/functions.v
-  C:/Users/aa08453/Desktop/project_2/project_2.srcs/sources_1/new/adder_tree.v
-  C:/Users/aa08453/Desktop/project_2/project_2.srcs/sources_1/new/comp.v
-  C:/Users/aa08453/Desktop/project_2/project_2.srcs/sources_1/new/conv.v
-  C:/Users/aa08453/Desktop/project_2/project_2.srcs/sources_1/new/counter.v
-  C:/Users/aa08453/Desktop/project_2/project_2.srcs/sources_1/new/layer_control.v
-  C:/Users/aa08453/Desktop/project_2/project_2.srcs/sources_1/new/load_bias.v
-  C:/Users/aa08453/Desktop/project_2/project_2.srcs/sources_1/new/mem.v
-  C:/Users/aa08453/Desktop/project_2/project_2.srcs/sources_1/new/patch_addr_gen.v
-  C:/Users/aa08453/Desktop/project_2/project_2.srcs/sources_1/new/patch_data_latch.v
-  C:/Users/aa08453/Desktop/project_2/project_2.srcs/sources_1/new/layer.sv
-  C:/Users/aa08453/Desktop/project_2/project_2.srcs/sources_1/new/top.v
-  C:/Users/aa08453/Desktop/project_2/project_2.srcs/sources_1/new/layer_mem.v
-  C:/Users/aa08453/Desktop/project_2/project_2.srcs/sources_1/new/image_ram.v
-  C:/Users/aa08453/Desktop/project_2/project_2.srcs/sources_1/new/load_kernels.v
-  C:/Users/aa08453/Desktop/project_2/project_2.srcs/sources_1/new/pool_control.sv
-  C:/Users/aa08453/Desktop/project_2/project_2.srcs/sources_1/new/pool_addr_gen.sv
-  C:/Users/aa08453/Desktop/project_2/project_2.srcs/sources_1/new/pool.sv
-  C:/Users/aa08453/CNN-on-FPGA/src/weightMem.v
-  C:/Users/aa08453/CNN-on-FPGA/src/compD.v
-  C:/Users/aa08453/CNN-on-FPGA/src/dense.v
-  C:/Users/aa08453/CNN-on-FPGA/src/channelMem.v
+  C:/Users/fs09192/Downloads/proj/CNN-on-FPGA/project_2/project_2.srcs/sources_1/new/functions.v
+  C:/Users/fs09192/Downloads/proj/CNN-on-FPGA/project_2/project_2.srcs/sources_1/new/adder_tree.v
+  C:/Users/fs09192/Downloads/proj/CNN-on-FPGA/project_2/project_2.srcs/sources_1/new/comp.v
+  C:/Users/fs09192/Downloads/proj/CNN-on-FPGA/project_2/project_2.srcs/sources_1/new/conv.v
+  C:/Users/fs09192/Downloads/proj/CNN-on-FPGA/project_2/project_2.srcs/sources_1/new/counter.v
+  C:/Users/fs09192/Downloads/proj/CNN-on-FPGA/project_2/project_2.srcs/sources_1/new/layer_control.v
+  C:/Users/fs09192/Downloads/proj/CNN-on-FPGA/project_2/project_2.srcs/sources_1/new/load_bias.v
+  C:/Users/fs09192/Downloads/proj/CNN-on-FPGA/project_2/project_2.srcs/sources_1/new/mem.v
+  C:/Users/fs09192/Downloads/proj/CNN-on-FPGA/project_2/project_2.srcs/sources_1/new/patch_addr_gen.v
+  C:/Users/fs09192/Downloads/proj/CNN-on-FPGA/project_2/project_2.srcs/sources_1/new/patch_data_latch.v
+  C:/Users/fs09192/Downloads/proj/CNN-on-FPGA/project_2/project_2.srcs/sources_1/new/layer.sv
+  C:/Users/fs09192/Downloads/proj/CNN-on-FPGA/project_2/project_2.srcs/sources_1/new/top.v
+  C:/Users/fs09192/Downloads/proj/CNN-on-FPGA/project_2/project_2.srcs/sources_1/new/layer_mem.v
+  C:/Users/fs09192/Downloads/proj/CNN-on-FPGA/project_2/project_2.srcs/sources_1/new/image_ram.v
+  C:/Users/fs09192/Downloads/proj/CNN-on-FPGA/project_2/project_2.srcs/sources_1/new/load_kernels.v
+  C:/Users/fs09192/Downloads/proj/CNN-on-FPGA/project_2/project_2.srcs/sources_1/new/pool_control.sv
+  C:/Users/fs09192/Downloads/proj/CNN-on-FPGA/project_2/project_2.srcs/sources_1/new/pool_addr_gen.sv
+  C:/Users/fs09192/Downloads/proj/CNN-on-FPGA/project_2/project_2.srcs/sources_1/new/pool.sv
+  C:/Users/fs09192/Downloads/proj/CNN-on-FPGA/project_2/project_2.srcs/sources_1/new/compD.v
+  C:/Users/fs09192/Downloads/proj/CNN-on-FPGA/project_2/project_2.srcs/sources_1/new/dense.v
+  C:/Users/fs09192/Downloads/proj/CNN-on-FPGA/project_2/project_2.srcs/sources_1/new/weightMem.v
+  C:/Users/fs09192/Downloads/proj/CNN-on-FPGA/project_2/project_2.srcs/sources_1/new/memory.v
 }
 read_verilog -library xil_defaultlib {
-  C:/Users/aa08453/Desktop/project_2/project_2.srcs/sources_1/new/conv_control.v
-  C:/Users/aa08453/Desktop/project_2/project_2.srcs/sources_1/new/counters.v
-  C:/Users/aa08453/CNN-on-FPGA/src/ftCounter.v
+  C:/Users/fs09192/Downloads/proj/CNN-on-FPGA/project_2/project_2.srcs/sources_1/new/conv_control.v
+  C:/Users/fs09192/Downloads/proj/CNN-on-FPGA/project_2/project_2.srcs/sources_1/new/counters.v
+  C:/Users/fs09192/Downloads/proj/CNN-on-FPGA/project_2/project_2.srcs/sources_1/new/ftCounter.v
 }
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
