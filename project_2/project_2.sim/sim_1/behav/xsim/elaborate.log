@@ -1,0 +1,84 @@
+Vivado Simulator 2020.1
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2020.1/bin/unwrapped/win64.o/xelab.exe -wto 71b8265eb37641a98b35c6c6c3b84f9e --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_top_behav xil_defaultlib.tb_top xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "C:/Users/aa08453/CNN-on-FPGA/src/dense.v" Line 1. Module dense doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/aa08453/CNN-on-FPGA/src/ftCounter.v" Line 1. Module ftCounter doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/aa08453/CNN-on-FPGA/src/channelMem.v" Line 1. Module memory(DEPTH=783,LOAD_ADDR_LEN=10,FILE="weightCol0.mem") doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/aa08453/CNN-on-FPGA/src/channelMem.v" Line 1. Module memory(DEPTH=783,LOAD_ADDR_LEN=10,FILE="weightCol1.mem") doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/aa08453/CNN-on-FPGA/src/channelMem.v" Line 1. Module memory(DEPTH=783,LOAD_ADDR_LEN=10,FILE="weightCol2.mem") doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/aa08453/CNN-on-FPGA/src/channelMem.v" Line 1. Module memory(DEPTH=783,LOAD_ADDR_LEN=10,FILE="weightCol3.mem") doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/aa08453/CNN-on-FPGA/src/channelMem.v" Line 1. Module memory(DEPTH=783,LOAD_ADDR_LEN=10,FILE="weightCol4.mem") doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/aa08453/CNN-on-FPGA/src/channelMem.v" Line 1. Module memory(DEPTH=783,LOAD_ADDR_LEN=10,FILE="weightCol5.mem") doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/aa08453/CNN-on-FPGA/src/channelMem.v" Line 1. Module memory(DEPTH=783,LOAD_ADDR_LEN=10,FILE="weightCol6.mem") doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/aa08453/CNN-on-FPGA/src/channelMem.v" Line 1. Module memory(DEPTH=783,LOAD_ADDR_LEN=10,FILE="weightCol7.mem") doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/aa08453/CNN-on-FPGA/src/channelMem.v" Line 1. Module memory(DEPTH=783,LOAD_ADDR_LEN=10,FILE="weightCol8.mem") doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/aa08453/CNN-on-FPGA/src/channelMem.v" Line 1. Module memory(DEPTH=783,LOAD_ADDR_LEN=10,FILE="weightCol9.mem") doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/aa08453/CNN-on-FPGA/src/dense.v" Line 1. Module dense doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/aa08453/CNN-on-FPGA/src/ftCounter.v" Line 1. Module ftCounter doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/aa08453/CNN-on-FPGA/src/channelMem.v" Line 1. Module memory(DEPTH=783,LOAD_ADDR_LEN=10,FILE="weightCol0.mem") doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/aa08453/CNN-on-FPGA/src/channelMem.v" Line 1. Module memory(DEPTH=783,LOAD_ADDR_LEN=10,FILE="weightCol1.mem") doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/aa08453/CNN-on-FPGA/src/channelMem.v" Line 1. Module memory(DEPTH=783,LOAD_ADDR_LEN=10,FILE="weightCol2.mem") doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/aa08453/CNN-on-FPGA/src/channelMem.v" Line 1. Module memory(DEPTH=783,LOAD_ADDR_LEN=10,FILE="weightCol3.mem") doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/aa08453/CNN-on-FPGA/src/channelMem.v" Line 1. Module memory(DEPTH=783,LOAD_ADDR_LEN=10,FILE="weightCol4.mem") doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/aa08453/CNN-on-FPGA/src/channelMem.v" Line 1. Module memory(DEPTH=783,LOAD_ADDR_LEN=10,FILE="weightCol5.mem") doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/aa08453/CNN-on-FPGA/src/channelMem.v" Line 1. Module memory(DEPTH=783,LOAD_ADDR_LEN=10,FILE="weightCol6.mem") doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/aa08453/CNN-on-FPGA/src/channelMem.v" Line 1. Module memory(DEPTH=783,LOAD_ADDR_LEN=10,FILE="weightCol7.mem") doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/aa08453/CNN-on-FPGA/src/channelMem.v" Line 1. Module memory(DEPTH=783,LOAD_ADDR_LEN=10,FILE="weightCol8.mem") doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/aa08453/CNN-on-FPGA/src/channelMem.v" Line 1. Module memory(DEPTH=783,LOAD_ADDR_LEN=10,FILE="weightCol9.mem") doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.image_mem
+Compiling module xil_defaultlib.layer_control
+Compiling module xil_defaultlib.channel_counter
+Compiling module xil_defaultlib.load_kernels(VAL=71)
+Compiling module xil_defaultlib.load_bias_default
+Compiling module xil_defaultlib.conv_control
+Compiling module xil_defaultlib.counters
+Compiling module xil_defaultlib.patch_addr_gen
+Compiling module xil_defaultlib.patch_data_latch
+Compiling module xil_defaultlib.comp
+Compiling module xil_defaultlib.conv
+Compiling module xil_defaultlib.layer_default
+Compiling module xil_defaultlib.pool_control
+Compiling module xil_defaultlib.counters(STEP=2)
+Compiling module xil_defaultlib.pool_data
+Compiling module xil_defaultlib.pool
+Compiling module xil_defaultlib.mem(STORE_ADDR_LEN=9)
+Compiling module xil_defaultlib.layer_mem(STORE_ADDR_LEN=9)
+Compiling module xil_defaultlib.layer_control(IC=7)
+Compiling module xil_defaultlib.channel_counter(CHANNELS=15)
+Compiling module xil_defaultlib.load_kernels(IC=7)
+Compiling module xil_defaultlib.load_bias(OC=15)
+Compiling module xil_defaultlib.conv_control(IC=7)
+Compiling module xil_defaultlib.patch_addr_gen(IC=7)
+Compiling module xil_defaultlib.comp(W=14,ADDR_LEN=7)
+Compiling module xil_defaultlib.conv(H=14,W=14,IC=7,STORE_ADDR_L...
+Compiling module xil_defaultlib.adder_tree
+Compiling module xil_defaultlib.layer(H=14,W=14,OC=15,IC=7,STORE...
+Compiling module xil_defaultlib.pool_data(W=14,ADDR_LEN=7)
+Compiling module xil_defaultlib.pool(LOAD_ADDR_LEN=7,W=14)
+Compiling module xil_defaultlib.mem(DEPTH=195,LOAD_ADDR_LEN=7,W=...
+Compiling module xil_defaultlib.layer_mem(CHANNEL_SIZE=195,LOAD_...
+Compiling module xil_defaultlib.ftCounter
+Compiling module xil_defaultlib.memory(DEPTH=783,LOAD_ADDR_LEN=1...
+Compiling module xil_defaultlib.memory(DEPTH=783,LOAD_ADDR_LEN=1...
+Compiling module xil_defaultlib.memory(DEPTH=783,LOAD_ADDR_LEN=1...
+Compiling module xil_defaultlib.memory(DEPTH=783,LOAD_ADDR_LEN=1...
+Compiling module xil_defaultlib.memory(DEPTH=783,LOAD_ADDR_LEN=1...
+Compiling module xil_defaultlib.memory(DEPTH=783,LOAD_ADDR_LEN=1...
+Compiling module xil_defaultlib.memory(DEPTH=783,LOAD_ADDR_LEN=1...
+Compiling module xil_defaultlib.memory(DEPTH=783,LOAD_ADDR_LEN=1...
+Compiling module xil_defaultlib.memory(DEPTH=783,LOAD_ADDR_LEN=1...
+Compiling module xil_defaultlib.memory(DEPTH=783,LOAD_ADDR_LEN=1...
+Compiling module xil_defaultlib.weightMem
+Compiling module xil_defaultlib.compD
+Compiling module xil_defaultlib.dense
+Compiling module xil_defaultlib.top
+Compiling module xil_defaultlib.tb_top
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_top_behav
