@@ -1,13 +1,13 @@
 module weightMem #(
-    parameter FILE = "weightCol0.mem",
+//    parameter FILE = "weightCol0.mem",
     parameter NC = 9,
-    parameter LOAD_ADDR_LENGTH=9
+    parameter LOAD_ADDR_LENGTH=10
 )(
    input wire clk,
    input wire rst,
    input wire load,
-   input wire [9:0] addr1,
-   input wire [9:0] addr2,
+   input wire [LOAD_ADDR_LENGTH:0] addr1,
+   input wire [LOAD_ADDR_LENGTH:0] addr2,
    output reg signed [7:0] weights [0:NC][0:1]
 
     );

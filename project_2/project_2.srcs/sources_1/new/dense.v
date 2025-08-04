@@ -10,7 +10,8 @@ parameter MAX_COL = 12
     input dense,
     input wire signed [7:0] dataOut [0:OC][0:1],
     output wire [4:0] row, col, channelCount,
-    output reg donePending
+    output reg donePending,
+    output wire signed [7:0] result [0:NC]
     );
     
 //    wire [4:0] row, col, channelCount;
@@ -18,7 +19,7 @@ parameter MAX_COL = 12
     wire validData2;
     wire  signed [7:0] weights [0:NC][0:1];
     wire [WEIGHT_ADDR_LEN:0] weightAddr1, weightAddr2;
-    wire signed [7:0] result [0:NC];
+    
     reg prevDense;
     reg [4:0] prevChannelCount, prevCol, prevRow;
     reg done;
@@ -50,10 +51,10 @@ parameter MAX_COL = 12
                 end
     end
     
-    always @ (posedge clk) begin
+//    always @ (posedge clk) begin
     
-    if(prevCol == MAX_COL && prevChannelCount == OC && prevRow==MAX_COL) done <= 1;
-    end
+//    if(prevCol == MAX_COL && prevChannelCount == OC && prevRow==MAX_COL) done <= 1;
+//    end
     
     wire validInput = prevDense;
 
@@ -66,7 +67,7 @@ parameter MAX_COL = 12
     
      
     assign validData2 = (prevCol != MAX_COL);
-    compD compute (.clk(clk), .rst(rst), .validInput(validInput), .validData2(validData2), .channelCount(prevChannelCount), 
+    compD compute (.clk(clk), .rst(rst), .done(donePending), .validInput(validInput), .validData2(validData2),.col(prevCol), .row(prevRow), .channelCount(prevChannelCount), 
     .weights(weights), .data(dataOut), .result(result));
     
     
