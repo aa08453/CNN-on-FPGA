@@ -31,10 +31,7 @@ module layer #(
     wire signed [7:0] kernel [0:IC][0:8];
 
     wire signed [7:0] result_arr [0:IC] ;
-    wire load_arr [0:IC];
-    wire done_arr [0:IC];
-    wire store_arr [0:IC];
-    wire tree_arr [0:IC];
+    wire load_done_arr [0:IC];
     wire [LOAD_ADDR_LEN:0] addr1_arr [0:IC];
     wire [LOAD_ADDR_LEN:0] addr2_arr [0:IC];
     wire [STORE_ADDR_LEN:0] addr_arr [0:OC];
@@ -51,33 +48,47 @@ module layer #(
         .count(out_c), .complete(cout_done)
     );
 
-    generate
-        if (IC == 0) 
-        begin : single_kernel
-            load_kernels #(.VAL(71), .IC(IC)) load_kernel_inst (
-                .clk(clk), .rst(rst), .out_c(out_c), .c_load(c_load),
-                .kernel(kernel), .c_load_done(c_load_done));
-        end 
-        else 
-        begin : multiple_kernels
-            load_kernels #(.VAL(1151),.IC(IC)) load_kernels_inst (
-                .clk(clk), .rst(rst), .c_load(c_load), .out_c(out_c),
-                .kernel(kernel), .c_load_done(c_load_done)
-            );
-        end
-    endgenerate
+    load_kernels #(.VAL((IC+1)*(OC+1)*9 - 1), .IC(IC)) load_kernel_inst (
+        .clk(clk), .rst(rst), .out_c(out_c), .c_load(c_load),
+        .kernel(kernel), .c_load_done(c_load_done));
 
     load_bias #(.OC(OC)) load_bias_inst (
         .clk(clk), .rst(rst), .c_load(c_load), .out_c(out_c), .bias(bias)
     );
+    
+    wire addr_gen, count_enable, add, load_done, load_full_patch;
+    wire [LOAD_ADDR_LEN:0] pixel_addr [0:8];
+    wire [4:0] i, j;
+    
+    conv_control #(.IC(IC)) control_inst(
+    .clk(clk), .rst_n(rst), .done(conv_done), .load(load), .tree(tree),
+    .conv(conv), .add(add), .load_done(load_done),
+        .counter_enable(count_enable), .addr_gen(addr_gen), .store(store)
+    );
+    
+    counters #(.LOOP(LOOP)) counters_inst(
+       .clk(clk), .rst_n(rst), .count_enable(count_enable),
+       .i(i), .j(j), .done(conv_done), .conv(conv), .load_full_patch(load_full_patch)
+    );
+
+    patch_addr_gen #(.IC(IC), .ADDR_LEN(LOAD_ADDR_LEN)) patch_addr_inst (
+        .clk(clk), .rst(rst), .addr_gen(addr_gen), .i(i), .j(j),
+        .pixel_addr(pixel_addr), .load_full_patch(load_full_patch)
+    );
+    
+    assign address = i*W + j;
 
     generate
         if (IC == 0) begin : conv_single
-            conv #(.H(H), .W(W), .IC(IC), .LOAD_ADDR_LEN(LOAD_ADDR_LEN),
-                   .STORE_ADDR_LEN(STORE_ADDR_LEN), .LOOP(LOOP)) conv_inst (
-                .clk(clk), .rst(rst), .conv(conv), .load(load_arr[0]),
-                .kernel(kernel[0]), .tree(tree_arr[0]),
-                .result(result_arr[0]), .address(addr_arr[0]), .store(store_arr[0]), .done(done_arr[0]),
+            conv #(.LOAD_ADDR_LEN(LOAD_ADDR_LEN),
+                   .STORE_ADDR_LEN(STORE_ADDR_LEN)) conv_inst (
+                .clk(clk), .rst(rst),
+                .load(load), 
+                .add(add),
+                .load_full_patch(load_full_patch), .load_done(load_done_arr[0]),
+                .pixel_addr(pixel_addr), 
+                .kernel(kernel[0]), 
+                .result(result_arr[0]), 
                 .data1(data_out[0][0]), .data2(data_out[0][1]),
                 .addr1(addr1_arr[0]), .addr2(addr2_arr[0])
             );
@@ -85,11 +96,14 @@ module layer #(
         else begin : conv_multi
             genvar i;
             for (i = 0; i <= IC; i = i + 1) begin : conv_blocks
-                conv #(.H(H), .W(W), .IC(IC), .LOAD_ADDR_LEN(LOAD_ADDR_LEN),
-                       .STORE_ADDR_LEN(STORE_ADDR_LEN), .LOOP(LOOP)) conv_inst (
-                    .clk(clk), .rst(rst), .conv(conv), .load(load_arr[i]),
-                    .kernel(kernel[i]), .tree(tree_arr[i]),
-                    .result(result_arr[i]), .address(addr_arr[i]), .store(store_arr[i]), .done(done_arr[i]),
+                conv #(.LOAD_ADDR_LEN(LOAD_ADDR_LEN),
+                       .STORE_ADDR_LEN(STORE_ADDR_LEN)) conv_inst (
+                    .clk(clk), .rst(rst),
+                    .load(load), 
+                    .add(add),
+                    .kernel(kernel[i]), .pixel_addr(pixel_addr), .load_done(load_done_arr[i]),
+                    .load_full_patch(load_full_patch),
+                    .result(result_arr[i]), 
                     .data1(data_out[i][0]), .data2(data_out[i][1]),
                     .addr1(addr1_arr[i]), .addr2(addr2_arr[i])
                 );
@@ -109,29 +123,19 @@ module layer #(
         end
     endgenerate
 
-    reg store_tmp, load_tmp, done_tmp, tree_tmp;
-    integer j;
+    reg load_done_tmp;
+    integer p;
     always @(*) 
     begin
-        store_tmp = 1'b1;
-        load_tmp = 1'b1;
-        done_tmp = 1'b1;
-        tree_tmp = 1'b1;
-        for (j = 0; j <= IC; j = j + 1) 
+        load_done_tmp = 1'b1;
+        for (p = 0; p <= IC; p = p + 1) 
         begin
-            store_tmp = store_tmp & store_arr[j];
-            load_tmp  = load_tmp & load_arr[j];
-            done_tmp  = done_tmp & done_arr[j];
-            tree_tmp = tree_tmp & tree_arr[j];
+            load_done_tmp = load_done_tmp & load_done_arr[p];
         end
     end
 
-    assign store = store_tmp;
-    assign load  = load_tmp;
-    assign conv_done = done_tmp;
+    assign load_done  = load_done_tmp;
     assign addr1 = addr1_arr[0];
     assign addr2 = addr2_arr[0];
-    assign tree = tree_tmp;
-    assign address = addr_arr[0];
 
 endmodule

@@ -12,9 +12,10 @@ module ftCounter
 
     output reg [4:0] rowCount,
     output reg [4:0] colCount,     
-    output reg [4:0] channelCount,  
-    output reg complete            
+    output reg [4:0] channelCount             
 );
+reg complete;
+
 
 always @(posedge clk or negedge rst_n) begin
     if (!rst_n) begin

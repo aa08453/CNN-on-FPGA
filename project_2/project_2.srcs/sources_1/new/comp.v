@@ -8,20 +8,15 @@ module comp
 (
     input wire signed [7:0]  image_data [0:8],
     input wire signed [7:0]  kernel [0:8],
-//    input [1:0] select,
     input wire add,
     input clk,
-    input [4:0] i,
-    input [4:0] j,
-    output reg signed [7:0] result,
-    output wire [ADDR_LEN:0] addr
+    output reg signed [7:0] result
     
 );
     `include "functions.v"
     wire signed [15:0] q [0:8];
     wire signed [7:0]  p [0:8];
-////    wire signed [9:0] total;
-    assign addr = i*W + j;
+    
     
     genvar k, m;
     generate
@@ -42,9 +37,7 @@ reg signed [7:0] sum [0:2];
 
 always @(posedge clk) begin
     
-//    else if (!add & comp_done)
-//        comp_done <= 0;
-    
+ 
     if (add) 
     begin
         sum[0] <= p[0] + p[1] + p[2];

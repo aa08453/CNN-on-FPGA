@@ -1,6 +1,6 @@
 module dense #(
 parameter NC = 9,
-parameter WEIGHT_ADDR_LEN=10,
+parameter WEIGHT_ADDR_LEN=9,
 parameter OC=15,
 parameter MAX_COL = 12
 )
@@ -9,10 +9,12 @@ parameter MAX_COL = 12
     input rst,
     input dense,
     input wire signed [7:0] dataOut [0:OC][0:1],
-    output wire [4:0] row, col, channelCount,
-    output reg donePending,
+    output wire [4:0] row, col,
+    output reg done,
     output wire signed [7:0] result [0:NC]
     );
+    
+    wire [4:0]channelCount;
     
 //    wire [4:0] row, col, channelCount;
 //    wire done;
@@ -23,7 +25,8 @@ parameter MAX_COL = 12
     reg prevDense;
     reg signal;
     reg [4:0] prevChannelCount, prevCol, prevRow;
-    reg done;
+    
+    
     
     always @(posedge clk or negedge rst) begin
         if (!rst) begin
@@ -32,7 +35,6 @@ parameter MAX_COL = 12
             prevCol <= 0;
             prevRow <= 0;
             done<=0;
-            donePending <= 0;
             signal <= 0;
 
             end
@@ -46,12 +48,7 @@ parameter MAX_COL = 12
             if(prevCol == MAX_COL && prevChannelCount == OC && prevRow == MAX_COL) begin
             done <= 1;
             end
-    
-            if (done) begin
-                donePending <= 1;
-//                donePending <= 0; // reset pending after use
-            end
-                end
+        end
     end
     
 //    always @ (posedge clk) begin
@@ -62,7 +59,7 @@ parameter MAX_COL = 12
     wire validInput = prevDense;
 
     
-    ftCounter count (.clk(clk), .rst_n(rst), .signal(signal), .rowCount(row), .colCount(col), .channelCount(channelCount), .complete(done));
+    ftCounter count (.clk(clk), .rst_n(rst), .signal(signal), .rowCount(row), .colCount(col), .channelCount(channelCount));
     
     assign weightAddr1 = channelCount*6'd49 + (row/2)*4'd7 + (col/2);
     assign weightAddr2 = weightAddr1 + 1; 
@@ -70,7 +67,7 @@ parameter MAX_COL = 12
     
      
     assign validData2 = (prevCol != MAX_COL);
-    compD compute (.clk(clk), .rst(rst), .done(donePending), .validInput(validInput), .validData2(validData2),.col(prevCol), .row(prevRow), .channelCount(prevChannelCount), 
+    compD compute (.clk(clk), .rst(rst), .done(done), .validInput(validInput), .validData2(validData2),.col(prevCol), .row(prevRow), .channelCount(prevChannelCount), 
     .weights(weights), .data(dataOut), .result(result));
     
     

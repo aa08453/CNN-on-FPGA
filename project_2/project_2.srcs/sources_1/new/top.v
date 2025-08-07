@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps
 
 
-module top
+module cnn
 #(
     parameter CHANNEL_SIZE1 = 783,
     parameter CHANNEL_SIZE2 = 195,
@@ -13,15 +13,16 @@ module top
     parameter OC1 = 7,
     parameter OC2 = 15,
     parameter IC = 0,
-    parameter CLASSES = 9
-    
+    parameter CLASSES = 9   
 )
 (
     input wire clk,
     input wire rst,
-    output wire signed [7:0] outputs [0:CLASSES]
+    output wire done,
+    output wire [3:0] number
 );
-
+    wire signed [7:0] outputs [0:CLASSES];
+    
     wire store1, store2, pool1, pool2;
 
     wire cout1_done, cout2_done, pool1_done, pool2_done, dense_done; 
@@ -34,7 +35,8 @@ module top
     
     wire signed [7:0] result1 , result2;
     
-    wire load1, load2, load3;
+    wire load1, load2;
+    reg compute;
     
     wire signed [7:0] mem_data1, mem_data2;
     wire [ADDR_LEN1:0] mem_addr1, mem_addr2;
@@ -46,7 +48,7 @@ module top
     wire signed [7:0] data_out2 [0:OC1][0:1];
     wire signed [7:0] data_out3 [0:OC2][0:1];
     
-    wire [4:0] row, col, channel;
+    wire [4:0] row, col;
     
     reg denseSignal;
 
@@ -156,8 +158,14 @@ module top
         if(pool2_done) denseSignal <= 1;
     end 
     
-    dense #(.NC(CLASSES), .WEIGHT_ADDR_LEN(10), .OC(OC2), .MAX_COL(12)) 
+    dense #(.NC(CLASSES), .WEIGHT_ADDR_LEN(ADDR_LEN1), .OC(OC2), .MAX_COL(12)) 
     dense(.clk(clk), .rst(rst), .row(row), .dense(denseSignal),
-    .col(col), .channelCount(channel), .dataOut(data_out3), .donePending(dense_done), .result(outputs));    
+    .col(col), .dataOut(data_out3), .done(dense_done), .result(outputs));  
+    
+    always @(posedge clk)
+        if (dense_done) compute <= 1;
+        
+    max #(.NC(CLASSES)) max_inst (.clk(clk), .rst(rst), .outputs(outputs), .compute(compute), .number(number), .done(done));
+              
 
 endmodule

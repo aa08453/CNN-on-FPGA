@@ -6,13 +6,15 @@ module tb_top;
     // Clock and reset
     reg clk;
     reg rst;
-    reg [7:0] outputs [0:9];
+    reg done;
+    reg [3:0] number;
 
     // Instantiate the top module
-    top uut (
+    cnn uut (
         .clk(clk),
         .rst(rst),
-        .outputs(outputs)
+        .number(number),
+        .done(done)
     );
 
     // Clock generation
@@ -101,6 +103,9 @@ module tb_top;
         
         wait(uut.dense_done);
         $display("Dense layer computation complete at time %0t", $time);
+        
+        wait(done);
+        $display("CNN complete at time %0t", $time);
        $finish;
     end
 
