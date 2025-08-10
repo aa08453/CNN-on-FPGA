@@ -46,7 +46,8 @@ module pool_data
             addr1 <= 0;
             addr2 <= 0;
         end 
-        else if (pool_load)
+        else begin
+        if (pool_load)
         begin
             max_done <= 0;  // default low unless asserted
             case (state)
@@ -97,6 +98,6 @@ module pool_data
             endcase
         end
     end
-
+end
 
 endmodule

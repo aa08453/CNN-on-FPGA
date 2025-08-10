@@ -1,3 +1,5 @@
+`timescale 1ns / 1ps
+
 module dense #(
 parameter NC = 9,
 parameter WEIGHT_ADDR_LEN=9,

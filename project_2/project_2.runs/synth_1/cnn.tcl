@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "C:/Users/aa08453/CNN-on-FPGA/project_2/project_2.runs/synth_1/cnn.tcl"
+  variable script "C:/Users/hp/Desktop/CNN-on-FPGA/project_2/project_2.runs/synth_1/cnn.tcl"
   variable category "vivado_synth"
 }
 
@@ -55,98 +55,73 @@ if {$::dispatch::connected} {
   }
 }
 
-proc create_report { reportName command } {
-  set status "."
-  append status $reportName ".fail"
-  if { [file exists $status] } {
-    eval file delete [glob $status]
-  }
-  send_msg_id runtcl-4 info "Executing : $command"
-  set retval [eval catch { $command } msg]
-  if { $retval != 0 } {
-    set fp [open $status w]
-    close $fp
-    send_msg_id runtcl-5 warning "$msg"
-  }
-}
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_param chipscope.maxJobs 2
+set_param general.usePosixSpawnForFork 1
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7z020clg484-1
 
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir C:/Users/aa08453/CNN-on-FPGA/project_2/project_2.cache/wt [current_project]
-set_property parent.project_path C:/Users/aa08453/CNN-on-FPGA/project_2/project_2.xpr [current_project]
+set_property webtalk.parent_dir C:/Users/hp/Desktop/CNN-on-FPGA/project_2/project_2.cache/wt [current_project]
+set_property parent.project_path C:/Users/hp/Desktop/CNN-on-FPGA/project_2/project_2.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property board_part em.avnet.com:zed:part0:1.4 [current_project]
-set_property ip_repo_paths c:/Users/aa08453/CNN-on-FPGA/ip_repo/myip_1.0 [current_project]
+set_property ip_repo_paths c:/Users/hp/Desktop/CNN-on-FPGA/ip_repo/myip_1.0 [current_project]
 update_ip_catalog
-set_property ip_output_repo c:/Users/aa08453/CNN-on-FPGA/project_2/project_2.cache/ip [current_project]
+set_property ip_output_repo c:/Users/hp/Desktop/CNN-on-FPGA/project_2/project_2.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_mem {
-  C:/Users/aa08453/CNN-on-FPGA/mem_files/conv2_weight.mem
-  C:/Users/aa08453/CNN-on-FPGA/mem_files/conv1_bias.mem
-  C:/Users/aa08453/CNN-on-FPGA/mem_files/conv1_weight.mem
-  C:/Users/aa08453/CNN-on-FPGA/mem_files/image.mem
-  C:/Users/aa08453/CNN-on-FPGA/mem_files/conv2_bias.mem
-  C:/Users/aa08453/CNN-on-FPGA/mem_files/weightCol5.mem
-  C:/Users/aa08453/CNN-on-FPGA/mem_files/weightCol6.mem
-  C:/Users/aa08453/CNN-on-FPGA/mem_files/fc1_bias.mem
-  C:/Users/aa08453/CNN-on-FPGA/mem_files/weightCol9.mem
-  C:/Users/aa08453/CNN-on-FPGA/mem_files/weightCol8.mem
-  C:/Users/aa08453/CNN-on-FPGA/mem_files/weightCol7.mem
-  C:/Users/aa08453/CNN-on-FPGA/mem_files/weightCol4.mem
-  C:/Users/aa08453/CNN-on-FPGA/mem_files/weightCol3.mem
-  C:/Users/aa08453/CNN-on-FPGA/mem_files/weightCol0.mem
-  C:/Users/aa08453/CNN-on-FPGA/mem_files/weightCol1.mem
-  C:/Users/aa08453/CNN-on-FPGA/mem_files/weightCol2.mem
-  C:/Users/aa08453/CNN-on-FPGA/mem_files/inputdata.mem
-  C:/Users/aa08453/Desktop/images_/inputdata4.mem
-  C:/Users/aa08453/Desktop/images_/inputdata3.mem
-  C:/Users/aa08453/Desktop/images_/inputdata9.mem
-  C:/Users/aa08453/Desktop/images_/inputdata8.mem
-  C:/Users/aa08453/Desktop/images_/inputdata7.mem
-  C:/Users/aa08453/Desktop/images_/inputdata5.mem
-  C:/Users/aa08453/Desktop/images_/inputdata6.mem
-  C:/Users/aa08453/Desktop/images_/inputdata0.mem
-  C:/Users/aa08453/Desktop/images_/inputdata1.mem
-  C:/Users/aa08453/Desktop/images_/inputdata2.mem
+  C:/Users/hp/Desktop/CNN-on-FPGA/mem_files/conv2_weight.mem
+  C:/Users/hp/Desktop/CNN-on-FPGA/mem_files/conv1_bias.mem
+  C:/Users/hp/Desktop/CNN-on-FPGA/mem_files/conv1_weight.mem
+  C:/Users/hp/Desktop/CNN-on-FPGA/mem_files/image.mem
+  C:/Users/hp/Desktop/CNN-on-FPGA/mem_files/conv2_bias.mem
+  C:/Users/hp/Desktop/CNN-on-FPGA/mem_files/weightCol5.mem
+  C:/Users/hp/Desktop/CNN-on-FPGA/mem_files/weightCol6.mem
+  C:/Users/hp/Desktop/CNN-on-FPGA/mem_files/fc1_bias.mem
+  C:/Users/hp/Desktop/CNN-on-FPGA/mem_files/weightCol9.mem
+  C:/Users/hp/Desktop/CNN-on-FPGA/mem_files/weightCol8.mem
+  C:/Users/hp/Desktop/CNN-on-FPGA/mem_files/weightCol7.mem
+  C:/Users/hp/Desktop/CNN-on-FPGA/mem_files/weightCol4.mem
+  C:/Users/hp/Desktop/CNN-on-FPGA/mem_files/weightCol3.mem
+  C:/Users/hp/Desktop/CNN-on-FPGA/mem_files/weightCol0.mem
+  C:/Users/hp/Desktop/CNN-on-FPGA/mem_files/weightCol1.mem
+  C:/Users/hp/Desktop/CNN-on-FPGA/mem_files/weightCol2.mem
+  C:/Users/hp/Desktop/CNN-on-FPGA/mem_files/fc1_weight.mem
 }
 read_verilog -library xil_defaultlib -sv {
-  C:/Users/aa08453/CNN-on-FPGA/project_2/project_2.srcs/sources_1/new/functions.v
-  C:/Users/aa08453/CNN-on-FPGA/project_2/project_2.srcs/sources_1/new/adder_tree.v
-  C:/Users/aa08453/CNN-on-FPGA/project_2/project_2.srcs/sources_1/new/comp.v
-  C:/Users/aa08453/CNN-on-FPGA/project_2/project_2.srcs/sources_1/new/conv.v
-  C:/Users/aa08453/CNN-on-FPGA/project_2/project_2.srcs/sources_1/new/counter.v
-  C:/Users/aa08453/CNN-on-FPGA/project_2/project_2.srcs/sources_1/new/layer_control.v
-  C:/Users/aa08453/CNN-on-FPGA/project_2/project_2.srcs/sources_1/new/load_bias.v
-  C:/Users/aa08453/CNN-on-FPGA/project_2/project_2.srcs/sources_1/new/mem.v
-  C:/Users/aa08453/CNN-on-FPGA/project_2/project_2.srcs/sources_1/new/patch_addr_gen.v
-  C:/Users/aa08453/CNN-on-FPGA/project_2/project_2.srcs/sources_1/new/patch_data_latch.v
-  C:/Users/aa08453/CNN-on-FPGA/project_2/project_2.srcs/sources_1/new/layer.sv
-  C:/Users/aa08453/CNN-on-FPGA/project_2/project_2.srcs/sources_1/new/top.v
-  C:/Users/aa08453/CNN-on-FPGA/project_2/project_2.srcs/sources_1/new/layer_mem.v
-  C:/Users/aa08453/CNN-on-FPGA/project_2/project_2.srcs/sources_1/new/image_ram.v
-  C:/Users/aa08453/CNN-on-FPGA/project_2/project_2.srcs/sources_1/new/load_kernels.v
-  C:/Users/aa08453/CNN-on-FPGA/project_2/project_2.srcs/sources_1/new/pool_control.sv
-  C:/Users/aa08453/CNN-on-FPGA/project_2/project_2.srcs/sources_1/new/pool_addr_gen.sv
-  C:/Users/aa08453/CNN-on-FPGA/project_2/project_2.srcs/sources_1/new/pool.sv
-  C:/Users/aa08453/CNN-on-FPGA/project_2/project_2.srcs/sources_1/new/compD.v
-  C:/Users/aa08453/CNN-on-FPGA/project_2/project_2.srcs/sources_1/new/dense.v
-  C:/Users/aa08453/CNN-on-FPGA/project_2/project_2.srcs/sources_1/new/weightMem.v
-  C:/Users/aa08453/CNN-on-FPGA/project_2/project_2.srcs/sources_1/new/memory.v
-  C:/Users/aa08453/CNN-on-FPGA/project_2/project_2.srcs/sources_1/new/output.sv
-  C:/Users/aa08453/CNN-on-FPGA/project_2/project_2.srcs/sources_1/new/top_control.sv
-  C:/Users/aa08453/CNN-on-FPGA/project_2/project_2.srcs/sources_1/new/top_top.sv
+  C:/Users/hp/Desktop/CNN-on-FPGA/project_2/project_2.srcs/sources_1/new/functions.v
+  C:/Users/hp/Desktop/CNN-on-FPGA/project_2/project_2.srcs/sources_1/new/adder_tree.v
+  C:/Users/hp/Desktop/CNN-on-FPGA/project_2/project_2.srcs/sources_1/new/comp.v
+  C:/Users/hp/Desktop/CNN-on-FPGA/project_2/project_2.srcs/sources_1/new/conv.v
+  C:/Users/hp/Desktop/CNN-on-FPGA/project_2/project_2.srcs/sources_1/new/counter.v
+  C:/Users/hp/Desktop/CNN-on-FPGA/project_2/project_2.srcs/sources_1/new/layer_control.v
+  C:/Users/hp/Desktop/CNN-on-FPGA/project_2/project_2.srcs/sources_1/new/load_bias.v
+  C:/Users/hp/Desktop/CNN-on-FPGA/project_2/project_2.srcs/sources_1/new/mem.v
+  C:/Users/hp/Desktop/CNN-on-FPGA/project_2/project_2.srcs/sources_1/new/patch_addr_gen.v
+  C:/Users/hp/Desktop/CNN-on-FPGA/project_2/project_2.srcs/sources_1/new/patch_data_latch.v
+  C:/Users/hp/Desktop/CNN-on-FPGA/project_2/project_2.srcs/sources_1/new/layer.sv
+  C:/Users/hp/Desktop/CNN-on-FPGA/project_2/project_2.srcs/sources_1/new/top.v
+  C:/Users/hp/Desktop/CNN-on-FPGA/project_2/project_2.srcs/sources_1/new/layer_mem.v
+  C:/Users/hp/Desktop/CNN-on-FPGA/project_2/project_2.srcs/sources_1/new/image_ram.v
+  C:/Users/hp/Desktop/CNN-on-FPGA/project_2/project_2.srcs/sources_1/new/load_kernels.v
+  C:/Users/hp/Desktop/CNN-on-FPGA/project_2/project_2.srcs/sources_1/new/pool_control.sv
+  C:/Users/hp/Desktop/CNN-on-FPGA/project_2/project_2.srcs/sources_1/new/pool_addr_gen.sv
+  C:/Users/hp/Desktop/CNN-on-FPGA/project_2/project_2.srcs/sources_1/new/pool.sv
+  C:/Users/hp/Desktop/CNN-on-FPGA/project_2/project_2.srcs/sources_1/new/compD.v
+  C:/Users/hp/Desktop/CNN-on-FPGA/project_2/project_2.srcs/sources_1/new/dense.v
+  C:/Users/hp/Desktop/CNN-on-FPGA/project_2/project_2.srcs/sources_1/new/weightMem.v
+  C:/Users/hp/Desktop/CNN-on-FPGA/project_2/project_2.srcs/sources_1/new/memory.v
+  C:/Users/hp/Desktop/CNN-on-FPGA/project_2/project_2.srcs/sources_1/new/output.sv
 }
 read_verilog -library xil_defaultlib {
-  C:/Users/aa08453/CNN-on-FPGA/project_2/project_2.srcs/sources_1/new/conv_control.v
-  C:/Users/aa08453/CNN-on-FPGA/project_2/project_2.srcs/sources_1/new/counters.v
-  C:/Users/aa08453/CNN-on-FPGA/project_2/project_2.srcs/sources_1/new/ftCounter.v
+  C:/Users/hp/Desktop/CNN-on-FPGA/project_2/project_2.srcs/sources_1/new/conv_control.v
+  C:/Users/hp/Desktop/CNN-on-FPGA/project_2/project_2.srcs/sources_1/new/counters.v
+  C:/Users/hp/Desktop/CNN-on-FPGA/project_2/project_2.srcs/sources_1/new/ftCounter.v
 }
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -157,12 +132,18 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
+read_xdc C:/Users/hp/Desktop/CNN-on-FPGA/project_2/project_2.srcs/constrs_1/new/time.xdc
+set_property used_in_implementation false [get_files C:/Users/hp/Desktop/CNN-on-FPGA/project_2/project_2.srcs/constrs_1/new/time.xdc]
+
 set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }
 synth_design -top cnn -part xc7z020clg484-1
 OPTRACE "synth_design" END { }
+if { [get_msg_config -count -severity {CRITICAL WARNING}] > 0 } {
+ send_msg_id runtcl-6 info "Synthesis results are not added to the cache due to CRITICAL_WARNING"
+}
 
 
 OPTRACE "write_checkpoint" START { CHECKPOINT }
@@ -171,7 +152,7 @@ set_param constraints.enableBinaryConstraints false
 write_checkpoint -force -noxdef cnn.dcp
 OPTRACE "write_checkpoint" END { }
 OPTRACE "synth reports" START { REPORT }
-create_report "synth_1_synth_report_utilization_0" "report_utilization -file cnn_utilization_synth.rpt -pb cnn_utilization_synth.pb"
+generate_parallel_reports -reports { "report_utilization -file cnn_utilization_synth.rpt -pb cnn_utilization_synth.pb"  } 
 OPTRACE "synth reports" END { }
 file delete __synthesis_is_running__
 close [open __synthesis_is_complete__ w]

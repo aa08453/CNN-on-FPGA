@@ -1,3 +1,5 @@
+`timescale 1ns / 1ps
+
 module ftCounter
 #(
     parameter MAX_PIXELS = 194,

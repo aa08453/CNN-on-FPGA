@@ -14,7 +14,6 @@ module layer_mem
 
     input wire store,
     input wire pool,
-    input wire cout_done,
 
     input wire [3:0] out_c,
     input wire [STORE_ADDR_LEN:0] w_addr,

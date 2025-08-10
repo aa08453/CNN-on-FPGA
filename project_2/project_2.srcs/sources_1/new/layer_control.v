@@ -20,17 +20,17 @@ module layer_control
     output reg pool
 );
 
-localparam COUNT_OUT       = 4'd0;
-localparam CHANNEL_LOAD    = 4'd1;
-localparam CONV            = 4'd2;
-localparam POOL            = 4'd3;
-localparam IDLE            = 4'd4;
-localparam STOP            = 4'd5;
-localparam STORE           = 4'd6;
-localparam CHECK           = 4'd7;
+localparam COUNT_OUT       = 3'd0;
+localparam CHANNEL_LOAD    = 3'd1;
+localparam CONV            = 3'd2;
+localparam POOL            = 3'd3;
+localparam IDLE            = 3'd4;
+localparam STOP            = 3'd5;
+localparam STORE           = 3'd6;
+localparam CHECK           = 3'd7;
 
-reg [3:0] state;
-reg [3:0] next_state;
+reg [2:0] state;
+reg [2:0] next_state;
 
 
 // Sequential logic: state register
@@ -72,7 +72,7 @@ begin
         end
 
         
-        CHECK: next_state = conv_done ? COUNT_OUT : CONV;
+//        CHECK: next_state = conv_done ? COUNT_OUT : CONV;
 
         POOL:
         begin

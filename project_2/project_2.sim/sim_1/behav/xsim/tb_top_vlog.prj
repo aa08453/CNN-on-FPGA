@@ -1,20 +1,20 @@
 # compile verilog/system verilog design source files
-sv xil_defaultlib  \
+sv xil_defaultlib  --include "../../../../../../../../../Xilinx/2025.1/Vivado/data/rsb/busdef" \
 "../../../../project_2.srcs/sources_1/new/functions.v" \
 "../../../../project_2.srcs/sources_1/new/adder_tree.v" \
 "../../../../project_2.srcs/sources_1/new/comp.v" \
 "../../../../project_2.srcs/sources_1/new/conv.v" \
 
-verilog xil_defaultlib  \
+verilog xil_defaultlib  --include "../../../../../../../../../Xilinx/2025.1/Vivado/data/rsb/busdef" \
 "../../../../project_2.srcs/sources_1/new/conv_control.v" \
 
-sv xil_defaultlib  \
+sv xil_defaultlib  --include "../../../../../../../../../Xilinx/2025.1/Vivado/data/rsb/busdef" \
 "../../../../project_2.srcs/sources_1/new/counter.v" \
 
-verilog xil_defaultlib  \
+verilog xil_defaultlib  --include "../../../../../../../../../Xilinx/2025.1/Vivado/data/rsb/busdef" \
 "../../../../project_2.srcs/sources_1/new/counters.v" \
 
-sv xil_defaultlib  \
+sv xil_defaultlib  --include "../../../../../../../../../Xilinx/2025.1/Vivado/data/rsb/busdef" \
 "../../../../project_2.srcs/sources_1/new/layer_control.v" \
 "../../../../project_2.srcs/sources_1/new/load_bias.v" \
 "../../../../project_2.srcs/sources_1/new/mem.v" \
@@ -31,48 +31,14 @@ sv xil_defaultlib  \
 "../../../../project_2.srcs/sources_1/new/compD.v" \
 "../../../../project_2.srcs/sources_1/new/dense.v" \
 
-verilog xil_defaultlib  \
+verilog xil_defaultlib  --include "../../../../../../../../../Xilinx/2025.1/Vivado/data/rsb/busdef" \
 "../../../../project_2.srcs/sources_1/new/ftCounter.v" \
 
-sv xil_defaultlib  \
+sv xil_defaultlib  --include "../../../../../../../../../Xilinx/2025.1/Vivado/data/rsb/busdef" \
 "../../../../project_2.srcs/sources_1/new/weightMem.v" \
 "../../../../project_2.srcs/sources_1/new/memory.v" \
 "../../../../project_2.srcs/sources_1/new/output.sv" \
-"../../../../project_2.srcs/sources_1/new/top_control.sv" \
-"../../../../project_2.srcs/sources_1/new/top_top.sv" \
-
-verilog xil_defaultlib  \
-"../../../../project_2.srcs/sim_1/new/tb_counters.v" \
-
-sv xil_defaultlib  \
-"../../../../project_2.srcs/sim_1/new/tb_layer1_mem.v" \
 "../../../../project_2.srcs/sim_1/new/tb_top.v" \
-
-verilog xil_defaultlib  \
-"../../../../project_2.srcs/sim_1/new/tb_layer_control.v" \
-"../../../../project_2.srcs/sim_1/new/tb_result.v" \
-"../../../../project_2.srcs/sim_1/new/tb_layer2.v" \
-"../../../../project_2.srcs/sim_1/new/tb_conv_control.v" \
-
-sv xil_defaultlib  \
-"../../../../project_2.srcs/sim_1/new/tb_layer1.v" \
-
-verilog xil_defaultlib  \
-"../../../../project_2.srcs/sim_1/new/tb_load_kernel.v" \
-"../../../../project_2.srcs/sim_1/new/tb_image_ram.v" \
-
-sv xil_defaultlib  \
-"../../../../project_2.srcs/sim_1/new/tb_comp.v" \
-"../../../../project_2.srcs/sim_1/new/tb_conv.v" \
-
-verilog xil_defaultlib  \
-"../../../../project_2.srcs/sim_1/new/tb_counter.v" \
-"../../../../project_2.srcs/sim_1/new/tb_mult_mux.v" \
-"../../../../project_2.srcs/sim_1/new/tb_products_reg.v" \
-"../../../../project_2.srcs/sim_1/new/tb_load_bias.v" \
-
-sv xil_defaultlib  \
-"../../../../project_2.srcs/sim_1/new/pool_tb.sv" \
 
 # compile glbl module
 verilog xil_defaultlib "glbl.v"
