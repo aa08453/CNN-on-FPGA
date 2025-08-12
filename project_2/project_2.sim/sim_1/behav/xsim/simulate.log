@@ -1,0 +1,10 @@
+Vivado Simulator 2020.1
+Time resolution is 1 ps
+----- Starting Top Module Testbench -----
+Layer 1 computation done at time 891785000
+Pooling complete layer1 at time 1028715000
+Layer 2 computation done at time 1513045000
+Pooling complete layer2 at time 1549665000
+Dense layer computation complete at time 1554175000
+CNN complete at time 1554215000
+$finish called at time : 1554215 ns : File "C:/Users/aa08453/CNN-on-FPGA/project_2/project_2.srcs/sim_1/new/tb_top.v" Line 109
