@@ -1,0 +1,17 @@
+#-----------------------------------------------------------
+# Webtalk v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Sat Aug  9 13:12:00 2025
+# Process ID: 21244
+# Current directory: C:/Users/Noman Traders/Desktop/habib/STRP/OLED-driver/OLED-driver.sim/sim_1/behav/xsim
+# Command line: wbtcv.exe -mode batch -source C:/Users/Noman Traders/Desktop/habib/STRP/OLED-driver/OLED-driver.sim/sim_1/behav/xsim/xsim.dir/OLED_control_behav/webtalk/xsim_webtalk.tcl -notrace
+# Log file: C:/Users/Noman Traders/Desktop/habib/STRP/OLED-driver/OLED-driver.sim/sim_1/behav/xsim/webtalk.log
+# Journal file: C:/Users/Noman Traders/Desktop/habib/STRP/OLED-driver/OLED-driver.sim/sim_1/behav/xsim\webtalk.jou
+#-----------------------------------------------------------
+source C:/Users/Noman -notrace
+invalid command name "[1178:3A88][2025-06-16T11:23:54]i001:"
+    while executing
+"[1178:3A88][2025-06-16T11:23:54]i001: Burn v3.14.1.8722, Windows v10.0 (Build 19045: Service Pack 0), path: C:\Windows\Temp\{6EBE331B-DE37-427F-82E6-1..."
+    (file "C:/Users/Noman" line 1)
+INFO: [Common 17-206] Exiting Webtalk at Sat Aug  9 13:12:00 2025...

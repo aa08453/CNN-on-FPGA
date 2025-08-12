@@ -1,0 +1,9 @@
+0.7
+2020.1
+May 27 2020
+20:09:33
+C:/Users/Noman Traders/Desktop/habib/STRP/OLED-driver/OLED-driver.sim/sim_1/behav/xsim/glbl.v,1590624368,verilog,,,,glbl,,,,,,,,
+C:/Users/Noman Traders/Desktop/habib/STRP/OLED-driver/OLED-driver.srcs/sim_1/new/tb_spicontrol.v,1754562346,verilog,,,,tb_spicontrol,,,,,,,,
+C:/Users/Noman Traders/Desktop/habib/STRP/OLED-driver/OLED-driver.srcs/sources_1/new/OLED_control.v,1754648120,verilog,,,,OLED_control,,,,,,,,
+C:/Users/Noman Traders/Desktop/habib/STRP/OLED-driver/OLED-driver.srcs/sources_1/new/delay_generator.v,1754646842,verilog,,C:/Users/Noman Traders/Desktop/habib/STRP/OLED-driver/OLED-driver.srcs/sources_1/new/spi_control.v,,delay_generator,,,,,,,,
+C:/Users/Noman Traders/Desktop/habib/STRP/OLED-driver/OLED-driver.srcs/sources_1/new/spi_control.v,1754569413,verilog,,C:/Users/Noman Traders/Desktop/habib/STRP/OLED-driver/OLED-driver.srcs/sources_1/new/OLED_control.v,,spi_control,,,,,,,,

@@ -1,0 +1,6 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Noman Traders/Desktop/habib/STRP/OLED-driver/OLED-driver.srcs/sources_1/new/delay_generator.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module delay_generator
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Noman Traders/Desktop/habib/STRP/OLED-driver/OLED-driver.srcs/sources_1/new/spi_control.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module spi_control
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Noman Traders/Desktop/habib/STRP/OLED-driver/OLED-driver.srcs/sources_1/new/OLED_control.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module OLED_control
