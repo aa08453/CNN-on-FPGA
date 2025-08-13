@@ -1,4 +1,4 @@
-module top(
+module display(
     input  clock, // 100MHz onboard clock
     input  reset,
     input [3:0] cnn_output,
