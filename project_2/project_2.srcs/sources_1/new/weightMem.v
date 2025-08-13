@@ -1,3 +1,5 @@
+`timescale 1ns / 1ps
+
 module weightMem #(
     parameter FILE = "weightCol0.mem",
     parameter NC = 9,

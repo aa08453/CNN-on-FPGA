@@ -1,0 +1,20 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/hp/Desktop/CNN-on-FPGA/project_2/project_2.sim/sim_1/synth/func/xsim/tb_top_func_synth.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cnn
+INFO: [VRFC 10-311] analyzing module compD
+INFO: [VRFC 10-311] analyzing module dense
+INFO: [VRFC 10-311] analyzing module ftCounter
+INFO: [VRFC 10-311] analyzing module layer_mem__parameterized0
+INFO: [VRFC 10-311] analyzing module max
+INFO: [VRFC 10-311] analyzing module mem__parameterized0
+INFO: [VRFC 10-311] analyzing module memory
+INFO: [VRFC 10-311] analyzing module memory__parameterized0
+INFO: [VRFC 10-311] analyzing module memory__parameterized1
+INFO: [VRFC 10-311] analyzing module memory__parameterized2
+INFO: [VRFC 10-311] analyzing module memory__parameterized3
+INFO: [VRFC 10-311] analyzing module memory__parameterized4
+INFO: [VRFC 10-311] analyzing module memory__parameterized5
+INFO: [VRFC 10-311] analyzing module memory__parameterized6
+INFO: [VRFC 10-311] analyzing module memory__parameterized7
+INFO: [VRFC 10-311] analyzing module memory__parameterized8
+INFO: [VRFC 10-311] analyzing module weightMem
+INFO: [VRFC 10-311] analyzing module glbl

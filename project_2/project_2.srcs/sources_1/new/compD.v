@@ -1,3 +1,5 @@
+`timescale 1ns / 1ps
+
 module compD #(
 parameter NC = 9,
 parameter OC=15,

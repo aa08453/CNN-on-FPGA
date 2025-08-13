@@ -38,54 +38,54 @@ module max
     
     
     reg [2:0] state;
-    always @(posedge clk or negedge rst)
-    begin
-        if (!rst)
-        begin
-            done <= 0;
-            state <= 0;
-        end
-        
-        else if (compute)
-        begin
-        
+always @(posedge clk or negedge rst) begin
+    if (!rst) begin
+        done <= 0;
+        state <= 0;
+        number <= 0;
+        max1 <= 0; max2 <= 0; max3 <= 0; max4 <= 0; max5 <= 0; max6 <= 0; max7 <= 0;
+        num1 <= 0; num2 <= 0; num3 <= 0; num4 <= 0; num5 <= 0; num6 <= 0; num7 <= 0;
+    end else begin
         case (state)
-        
-           0: begin
-                max1 <= (outputs[0] > outputs[1]) ? outputs[0] : outputs[1];
-                max2 <= (outputs[2] > outputs[3]) ? outputs[2] : outputs[3];
-                max3 <= (outputs[4] > outputs[5]) ? outputs[4] : outputs[5];
-                max4 <= (outputs[6] > outputs[7]) ? outputs[6] : outputs[7];
-                max5 <= (outputs[8] > outputs[9]) ? outputs[8] : outputs[9];
-                num1 <= (outputs[0] > outputs[1]) ? 4'd0 : 4'd1;
-                num2 <= (outputs[2] > outputs[3]) ? 4'd2 : 4'd3;
-                num3 <= (outputs[4] > outputs[5]) ? 4'd4 : 4'd5;
-                num4 <= (outputs[6] > outputs[7]) ? 4'd6 : 4'd7;
-                num5 <= (outputs[8] > outputs[9]) ? 4'd8 : 4'd9;
-                state <= 1;
-           end
-           
-           1: begin
+            0: begin
+                done <= 0;
+                if (compute) begin
+                    max1 <= (outputs[0] > outputs[1]) ? outputs[0] : outputs[1];
+                    max2 <= (outputs[2] > outputs[3]) ? outputs[2] : outputs[3];
+                    max3 <= (outputs[4] > outputs[5]) ? outputs[4] : outputs[5];
+                    max4 <= (outputs[6] > outputs[7]) ? outputs[6] : outputs[7];
+                    max5 <= (outputs[8] > outputs[9]) ? outputs[8] : outputs[9];
+
+                    num1 <= (outputs[0] > outputs[1]) ? 4'd0 : 4'd1;
+                    num2 <= (outputs[2] > outputs[3]) ? 4'd2 : 4'd3;
+                    num3 <= (outputs[4] > outputs[5]) ? 4'd4 : 4'd5;
+                    num4 <= (outputs[6] > outputs[7]) ? 4'd6 : 4'd7;
+                    num5 <= (outputs[8] > outputs[9]) ? 4'd8 : 4'd9;
+
+                    state <= 1;
+                end
+            end
+
+            1: begin
                 max6 <= (max1 > max2) ? max1 : max2;
-                max7 <= (max3 > max4) ? ((max3 > max5) ? max3 : max5) :  ((max4 > max5) ? max4 : max5);
+                max7 <= (max3 > max4) ? ((max3 > max5) ? max3 : max5) :
+                                         ((max4 > max5) ? max4 : max5);
                 num6 <= (max1 > max2) ? num1 : num2;
-                num7 <= (max3 > max4) ? ((max3 > max5) ? num3 : num5) : ((max4 > max5) ? num4 : num5);
+                num7 <= (max3 > max4) ? ((max3 > max5) ? num3 : num5) :
+                                         ((max4 > max5) ? num4 : num5);
                 state <= 2;
-           end
-           
-          2: begin
+            end
+
+            2: begin
                 number <= (max6 > max7) ? num6 : num7;
-                state <= 2;
-                done <= 1;
-           end
-           
+                done <= 1;       // Pulse high for one cycle
+                state <= 0;      // Go back to idle
+            end
 
-
-        
-           default: state <= 0;
-
+            default: state <= 0;
         endcase
-        end
     end
+end
+
     
 endmodule

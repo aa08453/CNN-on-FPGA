@@ -13,7 +13,8 @@ module conv
 
     output wire signed [7:0] result,
     input wire load_full_patch,
-    output wire load, load_done,
+    input wire load, 
+    output wire load_done,
 //     tree,
     input wire [9:0] pixel_addr [0:8],
     input wire signed [7:0] data1,

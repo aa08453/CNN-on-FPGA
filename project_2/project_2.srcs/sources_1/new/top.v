@@ -83,7 +83,6 @@ module cnn
         .pool(pool1),
         .start(1'b0),
         .pool_done(pool1_done),
-        .cout_done(cout1_done),
         .data_out(data_out1),
         .addr1(mem_addr1),
         .addr2(mem_addr2),
@@ -102,7 +101,6 @@ module cnn
         .rst(rst),
         .store(store1),
         .pool(pool1),
-        .cout_done(cout1_done),
         .out_c(out_c1),
         .w_addr(address1),
         .bias(bias1),
@@ -134,7 +132,6 @@ module cnn
         .pool(pool2),
         .start(pool1_done),
         .pool_done(pool2_done),
-        .cout_done(cout2_done),
         .load(load2),
         .data_out(data_out2),
         .addr1(addr1_1), .addr2(addr1_2),
@@ -149,7 +146,7 @@ module cnn
         .OC(OC2)
     )
     layer2_mem_inst (.clk(clk), .rst(rst), .load(denseSignal), .out_c(out_c2), .store(store2), .pool(pool2), .pool_done(pool2_done),
-            .bias(bias2),.w_addr(address2),.cout_done(cout2_done), .value(result2), .data_out(data_out3), .addr1(addr2_1), .addr2(addr2_2));
+            .bias(bias2),.w_addr(address2), .value(result2), .data_out(data_out3), .addr1(addr2_1), .addr2(addr2_2));
             
     assign addr2_1 = row*4'd14 + col;
     assign addr2_2 = addr2_1 + 2;       

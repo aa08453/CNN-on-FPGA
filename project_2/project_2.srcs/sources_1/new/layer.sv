@@ -19,7 +19,6 @@ module layer #(
     output wire [STORE_ADDR_LEN:0] address,
     output wire signed [7:0] result,
     output wire signed [7:0] bias,
-    output wire cout_done,
     input wire signed [7:0] data_out [0:IC][0:1],
     output wire [LOAD_ADDR_LEN:0] addr1, addr2,
     output wire [3:0] out_c
@@ -27,6 +26,7 @@ module layer #(
 
     wire cout, c_load, conv, tree;
     wire conv_done, c_load_done;
+    wire cout_done;
 
     wire signed [7:0] kernel [0:IC][0:8];
 

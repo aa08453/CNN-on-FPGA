@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2025.1 (64-bit)
+# SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
+# IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+# SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+# Start of session at: Sun Aug 10 21:41:33 2025
+# Process ID         : 17808
+# Current directory  : C:/Users/hp/Desktop/CNN-on-FPGA/project_2/project_2.runs/impl_1
+# Command line       : vivado.exe -log cnn.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source cnn.tcl -notrace
+# Log file           : C:/Users/hp/Desktop/CNN-on-FPGA/project_2/project_2.runs/impl_1/cnn.vdi
+# Journal file       : C:/Users/hp/Desktop/CNN-on-FPGA/project_2/project_2.runs/impl_1\vivado.jou
+# Running On         : DESKTOP-T190VGH
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26100
+# Processor Detail   : Intel(R) Core(TM) i5-8265U CPU @ 1.60GHz
+# CPU Frequency      : 1800 MHz
+# CPU Physical cores : 4
+# CPU Logical cores  : 8
+# Host memory        : 4175 MB
+# Swap memory        : 11274 MB
+# Total Virtual      : 15450 MB
+# Available Virtual  : 3750 MB
+#-----------------------------------------------------------
+source cnn.tcl -notrace
