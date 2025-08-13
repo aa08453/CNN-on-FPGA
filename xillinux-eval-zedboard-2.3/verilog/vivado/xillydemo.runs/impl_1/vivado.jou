@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Wed Aug 13 11:10:31 2025
+# Process ID: 26044
+# Current directory: C:/Users/aa08453/Documents/xillinux-eval-zedboard-2.3/verilog/vivado/xillydemo.runs/impl_1
+# Command line: vivado.exe -log xillydemo.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source xillydemo.tcl -notrace
+# Log file: C:/Users/aa08453/Documents/xillinux-eval-zedboard-2.3/verilog/vivado/xillydemo.runs/impl_1/xillydemo.vdi
+# Journal file: C:/Users/aa08453/Documents/xillinux-eval-zedboard-2.3/verilog/vivado/xillydemo.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source xillydemo.tcl -notrace
