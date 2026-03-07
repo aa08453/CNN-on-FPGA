@@ -1,0 +1,259 @@
+<ENTRY>
+{
+ "thisFile": "/home/abdullah/Desktop/CNN-on-FPGA/hls_component/top/top.hlscompile_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Sat Mar  7 18:27:50 2026",
+ "timestampMillis": "1772890070766",
+ "buildStep": {
+  "cmdId": "7af6382c-e1b7-47e5-8a9e-4475a4b55220",
+  "name": "v++",
+  "logFile": "/home/abdullah/Desktop/CNN-on-FPGA/hls_component/top/logs/top.steps.log",
+  "commandLine": "/home/abdullah/Xilinx/2025.2/Vitis/bin/unwrapped/lnx64.o/v++  -c --mode hls --config /home/abdullah/Desktop/CNN-on-FPGA/hls_component/hls_config.cfg --work_dir top ",
+  "args": [
+   "-c",
+   "--mode",
+   "hls",
+   "--config",
+   "/home/abdullah/Desktop/CNN-on-FPGA/hls_component/hls_config.cfg",
+   "--work_dir",
+   "top"
+  ],
+  "iniFiles": [
+   {
+    "path": "/home/abdullah/Desktop/CNN-on-FPGA/hls_component/hls_config.cfg",
+    "content": "part=xc7z020clg484-1\n\n[hls]\nflow_target=vivado\npackage.output.format=ip_catalog\npackage.output.syn=false\nsyn.top=top\nsyn.file=../src/dense.h\nsyn.file=../src/conv.h\nsyn.file=../src/pool.h\nsyn.file=../src/labels.h\nsyn.file=../src/mnist_dataset.h\nsyn.file=../src/fc1_weight.h\nsyn.file=../src/fc1_bias.h\nsyn.file=../src/conv2_weight.h\nsyn.file=../src/conv2_bias.h\nsyn.file=../src/conv1_weight.h\nsyn.file=../src/conv1_bias.h\nsyn.file=../src/conv.cpp\nsyn.file=../src/dense.cpp\nsyn.file=../src/eight.cpp\nsyn.file=../src/pool.cpp\ntb.file=../src/testbench.cpp\nclock=100MHz\nclock_uncertainty=12.5%"
+   }
+  ],
+  "cwd": "/home/abdullah/Desktop/CNN-on-FPGA/hls_component"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat Mar  7 18:27:50 2026",
+ "timestampMillis": "1772890070766",
+ "status": {
+  "cmdId": "7af6382c-e1b7-47e5-8a9e-4475a4b55220",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "Sat Mar  7 18:27:52 2026",
+ "timestampMillis": "1772890072641",
+ "buildSummary": {
+  "hardwarePlatform": "",
+  "hardwareDsa": "",
+  "platformDirectory": "",
+  "runtime": "",
+  "systemConfig": "",
+  "flow": "BF_COMPILE",
+  "target": "TT_HW",
+  "kernels": [
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "top",
+     "file": "",
+     "reports": [],
+     "uuid": ""
+    },
+    "sources": [
+     "/home/abdullah/Desktop/CNN-on-FPGA/src/dense.h",
+     "/home/abdullah/Desktop/CNN-on-FPGA/src/conv.h",
+     "/home/abdullah/Desktop/CNN-on-FPGA/src/pool.h",
+     "/home/abdullah/Desktop/CNN-on-FPGA/src/labels.h",
+     "/home/abdullah/Desktop/CNN-on-FPGA/src/mnist_dataset.h",
+     "/home/abdullah/Desktop/CNN-on-FPGA/src/fc1_weight.h",
+     "/home/abdullah/Desktop/CNN-on-FPGA/src/fc1_bias.h",
+     "/home/abdullah/Desktop/CNN-on-FPGA/src/conv2_weight.h",
+     "/home/abdullah/Desktop/CNN-on-FPGA/src/conv2_bias.h",
+     "/home/abdullah/Desktop/CNN-on-FPGA/src/conv1_weight.h",
+     "/home/abdullah/Desktop/CNN-on-FPGA/src/conv1_bias.h",
+     "/home/abdullah/Desktop/CNN-on-FPGA/src/conv.cpp",
+     "/home/abdullah/Desktop/CNN-on-FPGA/src/dense.cpp",
+     "/home/abdullah/Desktop/CNN-on-FPGA/src/eight.cpp",
+     "/home/abdullah/Desktop/CNN-on-FPGA/src/pool.cpp"
+    ],
+    "psSources": [],
+    "cuNames": [],
+    "type": "HLS",
+    "frequency": 0,
+    "freqUnits": ""
+   }
+  ],
+  "toolVersion": "2025.2"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Sat Mar  7 18:27:52 2026",
+ "timestampMillis": "1772890072642",
+ "buildStep": {
+  "cmdId": "495a867b-cdd6-4f58-bc52-498a09d5ee0e",
+  "name": "",
+  "logFile": "/home/abdullah/Desktop/CNN-on-FPGA/hls_component/top/hls/hls.log",
+  "commandLine": "",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "/home/abdullah/Desktop/CNN-on-FPGA/hls_component"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat Mar  7 18:27:52 2026",
+ "timestampMillis": "1772890072642",
+ "status": {
+  "cmdId": "495a867b-cdd6-4f58-bc52-498a09d5ee0e",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Mar  7 18:27:52 2026",
+ "timestampMillis": "1772890072642",
+ "report": {
+  "path": "/home/abdullah/Desktop/CNN-on-FPGA/hls_component/top/hls/hls_data.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "HLS_SYNTHESIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Mar  7 18:27:52 2026",
+ "timestampMillis": "1772890072642",
+ "report": {
+  "path": "/home/abdullah/Desktop/CNN-on-FPGA/hls_component/top/hls/syn/report/csynth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "HLS_SYNTHESIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Mar  7 18:27:52 2026",
+ "timestampMillis": "1772890072642",
+ "report": {
+  "path": "/home/abdullah/Desktop/CNN-on-FPGA/hls_component/top/hls/syn/report/csynth.xml",
+  "name": "",
+  "fileType": "XML",
+  "reportType": "HLS_SYNTHESIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Mar  7 18:28:24 2026",
+ "timestampMillis": "1772890104058",
+ "report": {
+  "path": "/home/abdullah/Desktop/CNN-on-FPGA/hls_component/top/hls",
+  "name": "",
+  "fileType": "DIR",
+  "reportType": "HLS_DATAFLOW",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Mar  7 18:28:24 2026",
+ "timestampMillis": "1772890104058",
+ "report": {
+  "path": "/home/abdullah/Desktop/CNN-on-FPGA/hls_component/top/hls",
+  "name": "",
+  "fileType": "DIR",
+  "reportType": "HLS_FUNCTION_CALL_GRAPH",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Mar  7 18:28:24 2026",
+ "timestampMillis": "1772890104058",
+ "report": {
+  "path": "/home/abdullah/Desktop/CNN-on-FPGA/hls_component/top/hls",
+  "name": "",
+  "fileType": "DIR",
+  "reportType": "HLS_SCHEDULE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat Mar  7 18:28:24 2026",
+ "timestampMillis": "1772890104058",
+ "status": {
+  "cmdId": "495a867b-cdd6-4f58-bc52-498a09d5ee0e",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat Mar  7 18:28:24 2026",
+ "timestampMillis": "1772890104175",
+ "status": {
+  "cmdId": "7af6382c-e1b7-47e5-8a9e-4475a4b55220",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Mar  7 18:28:24 2026",
+ "timestampMillis": "1772890104201",
+ "report": {
+  "path": "/home/abdullah/Desktop/CNN-on-FPGA/hls_component/top/reports/v++_compile_top_guidance.html",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Mar  7 18:28:24 2026",
+ "timestampMillis": "1772890104201",
+ "report": {
+  "path": "/home/abdullah/Desktop/CNN-on-FPGA/hls_component/top/reports/.db/v++_compile_top_guidance.pb3",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>

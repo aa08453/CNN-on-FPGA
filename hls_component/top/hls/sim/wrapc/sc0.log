@@ -1,0 +1,9 @@
+   Build using "/home/abdullah/Xilinx/2025.2/Vitis/lnx64/tools/clang-16/bin/clang++"
+   Compiling apatb_top.cpp
+   Compiling conv.cpp_pre.cpp.tb.cpp
+   Compiling dense.cpp_pre.cpp.tb.cpp
+   Compiling eight.cpp_pre.cpp.tb.cpp
+   Compiling pool.cpp_pre.cpp.tb.cpp
+   Compiling testbench.cpp_pre.cpp.tb.cpp
+   Compiling apatb_top_ir.ll
+   Generating cosim.tv.exe

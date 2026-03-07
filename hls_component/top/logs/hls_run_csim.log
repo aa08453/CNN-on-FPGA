@@ -1,0 +1,215 @@
+  **** HLS Build v2025.2 6295257
+INFO: [HLS 200-2005] Using work_dir /home/abdullah/Desktop/CNN-on-FPGA/hls_component/top 
+INFO: [HLS 200-2176] Writing Vitis IDE component file /home/abdullah/Desktop/CNN-on-FPGA/hls_component/top/vitis-comp.json
+INFO: [HLS 200-10] Creating and opening component '/home/abdullah/Desktop/CNN-on-FPGA/hls_component/top'.
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.amd.com/access/sources/dita/topic?Doc_Version=2025.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-2174] Applying component config ini file hls_config.cfg
+INFO: [HLS 200-1465] Applying config ini 'syn.file=../src/dense.h' from hls_config.cfg(8)
+INFO: [HLS 200-10] Adding design file '/home/abdullah/Desktop/CNN-on-FPGA/src/dense.h' to the project
+INFO: [HLS 200-1465] Applying config ini 'syn.file=../src/conv.h' from hls_config.cfg(9)
+INFO: [HLS 200-10] Adding design file '/home/abdullah/Desktop/CNN-on-FPGA/src/conv.h' to the project
+INFO: [HLS 200-1465] Applying config ini 'syn.file=../src/pool.h' from hls_config.cfg(10)
+INFO: [HLS 200-10] Adding design file '/home/abdullah/Desktop/CNN-on-FPGA/src/pool.h' to the project
+INFO: [HLS 200-1465] Applying config ini 'syn.file=../src/labels.h' from hls_config.cfg(11)
+INFO: [HLS 200-10] Adding design file '/home/abdullah/Desktop/CNN-on-FPGA/src/labels.h' to the project
+INFO: [HLS 200-1465] Applying config ini 'syn.file=../src/mnist_dataset.h' from hls_config.cfg(12)
+INFO: [HLS 200-10] Adding design file '/home/abdullah/Desktop/CNN-on-FPGA/src/mnist_dataset.h' to the project
+INFO: [HLS 200-1465] Applying config ini 'syn.file=../src/fc1_weight.h' from hls_config.cfg(13)
+INFO: [HLS 200-10] Adding design file '/home/abdullah/Desktop/CNN-on-FPGA/src/fc1_weight.h' to the project
+INFO: [HLS 200-1465] Applying config ini 'syn.file=../src/fc1_bias.h' from hls_config.cfg(14)
+INFO: [HLS 200-10] Adding design file '/home/abdullah/Desktop/CNN-on-FPGA/src/fc1_bias.h' to the project
+INFO: [HLS 200-1465] Applying config ini 'syn.file=../src/conv2_weight.h' from hls_config.cfg(15)
+INFO: [HLS 200-10] Adding design file '/home/abdullah/Desktop/CNN-on-FPGA/src/conv2_weight.h' to the project
+INFO: [HLS 200-1465] Applying config ini 'syn.file=../src/conv2_bias.h' from hls_config.cfg(16)
+INFO: [HLS 200-10] Adding design file '/home/abdullah/Desktop/CNN-on-FPGA/src/conv2_bias.h' to the project
+INFO: [HLS 200-1465] Applying config ini 'syn.file=../src/conv1_weight.h' from hls_config.cfg(17)
+INFO: [HLS 200-10] Adding design file '/home/abdullah/Desktop/CNN-on-FPGA/src/conv1_weight.h' to the project
+INFO: [HLS 200-1465] Applying config ini 'syn.file=../src/conv1_bias.h' from hls_config.cfg(18)
+INFO: [HLS 200-10] Adding design file '/home/abdullah/Desktop/CNN-on-FPGA/src/conv1_bias.h' to the project
+INFO: [HLS 200-1465] Applying config ini 'syn.file=../src/conv.cpp' from hls_config.cfg(19)
+INFO: [HLS 200-10] Adding design file '/home/abdullah/Desktop/CNN-on-FPGA/src/conv.cpp' to the project
+INFO: [HLS 200-1465] Applying config ini 'syn.file=../src/dense.cpp' from hls_config.cfg(20)
+INFO: [HLS 200-10] Adding design file '/home/abdullah/Desktop/CNN-on-FPGA/src/dense.cpp' to the project
+INFO: [HLS 200-1465] Applying config ini 'syn.file=../src/eight.cpp' from hls_config.cfg(21)
+INFO: [HLS 200-10] Adding design file '/home/abdullah/Desktop/CNN-on-FPGA/src/eight.cpp' to the project
+INFO: [HLS 200-1465] Applying config ini 'syn.file=../src/pool.cpp' from hls_config.cfg(22)
+INFO: [HLS 200-10] Adding design file '/home/abdullah/Desktop/CNN-on-FPGA/src/pool.cpp' to the project
+INFO: [HLS 200-1465] Applying config ini 'tb.file=../src/testbench.cpp' from hls_config.cfg(23)
+INFO: [HLS 200-10] Adding test bench file '/home/abdullah/Desktop/CNN-on-FPGA/src/testbench.cpp' to the project
+INFO: [HLS 200-1465] Applying config ini 'syn.top=top' from hls_config.cfg(7)
+INFO: [HLS 200-1465] Applying config ini 'flow_target=vivado' from hls_config.cfg(4)
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.amd.com/access/sources/dita/topic?Doc_Version=2025.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-1465] Applying config ini 'part=xc7z020clg484-1' from hls_config.cfg(1)
+INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg484-1'
+INFO: [HLS 200-1465] Applying config ini 'clock=100MHz' from hls_config.cfg(24)
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1465] Applying config ini 'clock_uncertainty=12.5%' from hls_config.cfg(25)
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-1465] Applying config ini 'package.output.format=ip_catalog' from hls_config.cfg(5)
+INFO: [HLS 200-2176] Writing Vitis IDE component file /home/abdullah/Desktop/CNN-on-FPGA/hls_component/top/vitis-comp.json
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [HLS 200-2191] C-Simulation will use clang-16 as the compiler
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+   Compiling ../../../../../src/testbench.cpp in debug mode
+   Compiling ../../../../../src/pool.cpp in debug mode
+   Compiling ../../../../../src/eight.cpp in debug mode
+   Compiling ../../../../../src/dense.cpp in debug mode
+   Compiling ../../../../../src/conv.cpp in debug mode
+   Generating csim.exe
+Testing image 0:
+
+Predicted value: 3
+Testing image 1:
+
+Predicted value: 0
+Testing image 2:
+
+Predicted value: 4
+Testing image 3:
+
+Predicted value: 1
+Testing image 4:
+
+Predicted value: 9
+Testing image 5:
+
+Predicted value: 2
+Testing image 6:
+
+Predicted value: 1
+Testing image 7:
+
+Predicted value: 6
+Testing image 8:
+
+Predicted value: 1
+Testing image 9:
+
+Predicted value: 4
+Testing image 10:
+
+Predicted value: 9
+Testing image 11:
+
+Predicted value: 5
+Testing image 12:
+
+Predicted value: 3
+Testing image 13:
+
+Predicted value: 6
+Testing image 14:
+
+Predicted value: 1
+Testing image 15:
+
+Predicted value: 7
+Testing image 16:
+
+Predicted value: 2
+Testing image 17:
+
+Predicted value: 8
+Testing image 18:
+
+Predicted value: 6
+Testing image 19:
+
+Predicted value: 9
+Testing image 20:
+
+Predicted value: 4
+Testing image 21:
+
+Predicted value: 0
+Testing image 22:
+
+Predicted value: 9
+Testing image 23:
+
+Predicted value: 1
+Testing image 24:
+
+Predicted value: 1
+Testing image 25:
+
+Predicted value: 2
+Testing image 26:
+
+Predicted value: 4
+Testing image 27:
+
+Predicted value: 6
+Testing image 28:
+
+Predicted value: 6
+Testing image 29:
+
+Predicted value: 2
+Testing image 30:
+
+Predicted value: 3
+Testing image 31:
+
+Predicted value: 8
+Testing image 32:
+
+Predicted value: 6
+Testing image 33:
+
+Predicted value: 9
+Testing image 34:
+
+Predicted value: 0
+Testing image 35:
+
+Predicted value: 5
+Testing image 36:
+
+Predicted value: 6
+Testing image 37:
+
+Predicted value: 0
+Testing image 38:
+
+Predicted value: 6
+Testing image 39:
+
+Predicted value: 6
+Testing image 40:
+
+Predicted value: 1
+Testing image 41:
+
+Predicted value: 8
+Testing image 42:
+
+Predicted value: 7
+Testing image 43:
+
+Predicted value: 9
+Testing image 44:
+
+Predicted value: 3
+Testing image 45:
+
+Predicted value: 6
+Testing image 46:
+
+Predicted value: 8
+Testing image 47:
+
+Predicted value: 5
+Testing image 48:
+
+Predicted value: 9
+Testing image 49:
+
+Predicted value: 3
+Accuracy: 84%
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-112] Total CPU user time: 11.22 seconds. Total CPU system time: 0.64 seconds. Total elapsed time: 11.77 seconds; peak allocated memory: 256.855 MB.
+INFO: [vitis-run 60-791] Total elapsed time: 0h 0m 15s

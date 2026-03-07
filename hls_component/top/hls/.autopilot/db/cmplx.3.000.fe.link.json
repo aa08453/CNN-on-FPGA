@@ -1,0 +1,93 @@
+{
+  "0": {
+    "basicblocks": 1,
+    "calls": "3 4 2 4 1",
+    "control_depth": 0,
+    "def_use_depth": 0,
+    "file": "eight.cpp",
+    "fileloc": 5,
+    "instructions": 25,
+    "memory_accesses": 0,
+    "name": "top",
+    "total_instructions": 2520
+  },
+  "1": {
+    "basicblocks": 28,
+    "calls": "",
+    "control_depth": 2,
+    "def_use_depth": 3,
+    "file": "dense.cpp",
+    "fileloc": 3,
+    "instructions": 98,
+    "loads": {
+      "L": 5
+    },
+    "memory_accesses": 9,
+    "name": "dense",
+    "stores": {
+      "G": 1,
+      "L": 4
+    },
+    "total_instructions": 514
+  },
+  "2": {
+    "basicblocks": 75,
+    "calls": "",
+    "control_depth": 5,
+    "def_use_depth": 5,
+    "file": "conv.cpp",
+    "fileloc": 61,
+    "instructions": 214,
+    "loads": {
+      "G": 1,
+      "L": 6
+    },
+    "memory_accesses": 12,
+    "name": "conv2",
+    "stores": {
+      "G": 3,
+      "L": 4
+    },
+    "total_instructions": 972
+  },
+  "3": {
+    "basicblocks": 57,
+    "calls": "",
+    "control_depth": 5,
+    "def_use_depth": 4,
+    "file": "conv.cpp",
+    "fileloc": 3,
+    "instructions": 164,
+    "loads": {
+      "G": 1,
+      "L": 5
+    },
+    "memory_accesses": 8,
+    "name": "conv1",
+    "stores": {
+      "G": 2,
+      "L": 4
+    },
+    "total_instructions": 669
+  },
+  "4": {
+    "basicblocks": 39,
+    "calls": "",
+    "control_depth": 2,
+    "def_use_depth": 6,
+    "file": "pool.cpp",
+    "fileloc": 3,
+    "instructions": 110,
+    "loads": {
+      "G": 1,
+      "L": 3
+    },
+    "memory_accesses": 7,
+    "name": "pool",
+    "stores": {
+      "G": 1,
+      "L": 3
+    },
+    "total_instructions": 170
+  }
+}

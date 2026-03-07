@@ -1,0 +1,10 @@
+{
+  "workspaceRoot": "/home/abdullah/Desktop/CNN-on-FPGA",
+  "mapping": {
+    "src/pool.cpp": "hls_component",
+    "src/conv.cpp": "hls_component",
+    "src/eight.cpp": "hls_component",
+    "src/testbench.cpp": "hls_component",
+    "src/dense.cpp": "hls_component"
+  }
+}

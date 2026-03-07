@@ -1,0 +1,87 @@
+  **** HLS Build v2025.2 6295257
+INFO: [HLS 200-2005] Using work_dir /home/abdullah/Desktop/CNN-on-FPGA/hls_component/top 
+INFO: [HLS 200-2176] Writing Vitis IDE component file /home/abdullah/Desktop/CNN-on-FPGA/hls_component/top/vitis-comp.json
+INFO: [HLS 200-10] Creating and opening component '/home/abdullah/Desktop/CNN-on-FPGA/hls_component/top'.
+INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg484-1'
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.amd.com/access/sources/dita/topic?Doc_Version=2025.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-2174] Applying component config ini file hls_config.cfg
+INFO: [HLS 200-1465] Applying config ini 'syn.file=../src/dense.h' from hls_config.cfg(8)
+INFO: [HLS 200-10] Adding design file '/home/abdullah/Desktop/CNN-on-FPGA/src/dense.h' to the project
+INFO: [HLS 200-1465] Applying config ini 'syn.file=../src/conv.h' from hls_config.cfg(9)
+INFO: [HLS 200-10] Adding design file '/home/abdullah/Desktop/CNN-on-FPGA/src/conv.h' to the project
+INFO: [HLS 200-1465] Applying config ini 'syn.file=../src/pool.h' from hls_config.cfg(10)
+INFO: [HLS 200-10] Adding design file '/home/abdullah/Desktop/CNN-on-FPGA/src/pool.h' to the project
+INFO: [HLS 200-1465] Applying config ini 'syn.file=../src/labels.h' from hls_config.cfg(11)
+INFO: [HLS 200-10] Adding design file '/home/abdullah/Desktop/CNN-on-FPGA/src/labels.h' to the project
+INFO: [HLS 200-1465] Applying config ini 'syn.file=../src/mnist_dataset.h' from hls_config.cfg(12)
+INFO: [HLS 200-10] Adding design file '/home/abdullah/Desktop/CNN-on-FPGA/src/mnist_dataset.h' to the project
+INFO: [HLS 200-1465] Applying config ini 'syn.file=../src/fc1_weight.h' from hls_config.cfg(13)
+INFO: [HLS 200-10] Adding design file '/home/abdullah/Desktop/CNN-on-FPGA/src/fc1_weight.h' to the project
+INFO: [HLS 200-1465] Applying config ini 'syn.file=../src/fc1_bias.h' from hls_config.cfg(14)
+INFO: [HLS 200-10] Adding design file '/home/abdullah/Desktop/CNN-on-FPGA/src/fc1_bias.h' to the project
+INFO: [HLS 200-1465] Applying config ini 'syn.file=../src/conv2_weight.h' from hls_config.cfg(15)
+INFO: [HLS 200-10] Adding design file '/home/abdullah/Desktop/CNN-on-FPGA/src/conv2_weight.h' to the project
+INFO: [HLS 200-1465] Applying config ini 'syn.file=../src/conv2_bias.h' from hls_config.cfg(16)
+INFO: [HLS 200-10] Adding design file '/home/abdullah/Desktop/CNN-on-FPGA/src/conv2_bias.h' to the project
+INFO: [HLS 200-1465] Applying config ini 'syn.file=../src/conv1_weight.h' from hls_config.cfg(17)
+INFO: [HLS 200-10] Adding design file '/home/abdullah/Desktop/CNN-on-FPGA/src/conv1_weight.h' to the project
+INFO: [HLS 200-1465] Applying config ini 'syn.file=../src/conv1_bias.h' from hls_config.cfg(18)
+INFO: [HLS 200-10] Adding design file '/home/abdullah/Desktop/CNN-on-FPGA/src/conv1_bias.h' to the project
+INFO: [HLS 200-1465] Applying config ini 'syn.file=../src/conv.cpp' from hls_config.cfg(19)
+INFO: [HLS 200-10] Adding design file '/home/abdullah/Desktop/CNN-on-FPGA/src/conv.cpp' to the project
+INFO: [HLS 200-1465] Applying config ini 'syn.file=../src/dense.cpp' from hls_config.cfg(20)
+INFO: [HLS 200-10] Adding design file '/home/abdullah/Desktop/CNN-on-FPGA/src/dense.cpp' to the project
+INFO: [HLS 200-1465] Applying config ini 'syn.file=../src/eight.cpp' from hls_config.cfg(21)
+INFO: [HLS 200-10] Adding design file '/home/abdullah/Desktop/CNN-on-FPGA/src/eight.cpp' to the project
+INFO: [HLS 200-1465] Applying config ini 'syn.file=../src/pool.cpp' from hls_config.cfg(22)
+INFO: [HLS 200-10] Adding design file '/home/abdullah/Desktop/CNN-on-FPGA/src/pool.cpp' to the project
+INFO: [HLS 200-1465] Applying config ini 'tb.file=../src/testbench.cpp' from hls_config.cfg(23)
+INFO: [HLS 200-10] Adding test bench file '/home/abdullah/Desktop/CNN-on-FPGA/src/testbench.cpp' to the project
+INFO: [HLS 200-1465] Applying config ini 'syn.top=top' from hls_config.cfg(7)
+INFO: [HLS 200-1465] Applying config ini 'flow_target=vivado' from hls_config.cfg(4)
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.amd.com/access/sources/dita/topic?Doc_Version=2025.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-1465] Applying config ini 'part=xc7z020clg484-1' from hls_config.cfg(1)
+INFO: [HLS 200-1465] Applying config ini 'clock=100MHz' from hls_config.cfg(24)
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1465] Applying config ini 'clock_uncertainty=12.5%' from hls_config.cfg(25)
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-1465] Applying config ini 'cosim.random_stall=1' from hls_config.cfg(26)
+INFO: [HLS 200-1465] Applying config ini 'package.output.format=ip_catalog' from hls_config.cfg(5)
+INFO: [HLS 200-2176] Writing Vitis IDE component file /home/abdullah/Desktop/CNN-on-FPGA/hls_component/top/vitis-comp.json
+INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
+
+****** Vivado v2025.2 (64-bit)
+  **** SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
+  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+  **** Start of session at: Sat Mar  7 19:15:53 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source run_ippack.tcl -notrace
+INFO: calling package_hls_ip ip_types=vitis sysgen json_file=/home/abdullah/Desktop/CNN-on-FPGA/hls_component/top/hls/hls_data.json outdir=/home/abdullah/Desktop/CNN-on-FPGA/hls_component/top/hls/impl/ip srcdir=/home/abdullah/Desktop/CNN-on-FPGA/hls_component/top/hls ippack_options_dict= ippack_options_dict=
+INFO: Copied 1 ipmisc file(s) to /home/abdullah/Desktop/CNN-on-FPGA/hls_component/top/hls/impl/ip/misc
+INFO: Copied 45 verilog file(s) to /home/abdullah/Desktop/CNN-on-FPGA/hls_component/top/hls/impl/ip/hdl/verilog
+INFO: Copied 42 vhdl file(s) to /home/abdullah/Desktop/CNN-on-FPGA/hls_component/top/hls/impl/ip/hdl/vhdl
+INFO: Copied 10 swdriver file(s) to /home/abdullah/Desktop/CNN-on-FPGA/hls_component/top/hls/impl/ip/drivers
+INFO: Import ports from HDL: /home/abdullah/Desktop/CNN-on-FPGA/hls_component/top/hls/impl/ip/hdl/vhdl/top.vhd (top)
+INFO: Add axi4lite interface s_axi_control
+INFO: Add clock interface ap_clk
+INFO: Add reset interface ap_rst_n
+INFO: Add interrupt interface interrupt
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/abdullah/Xilinx/2025.2/data/ip'.
+INFO: Add axi4full interface m_axi_gmem0
+INFO: Add axi4full interface m_axi_gmem1
+INFO: Calling post_process_vitis to specialize IP
+INFO: Calling post_process_sysgen to specialize IP
+Generating sysgen info xml from json file
+INFO: Created IP /home/abdullah/Desktop/CNN-on-FPGA/hls_component/top/hls/impl/ip/component.xml
+INFO: Created IP archive /home/abdullah/Desktop/CNN-on-FPGA/hls_component/top/hls/impl/ip/xilinx_com_hls_top_1_0.zip
+INFO: [Common 17-206] Exiting Vivado at Sat Mar  7 19:15:56 2026...
+INFO: [HLS 200-802] Generated output file top/top.zip
+INFO: [HLS 200-112] Total CPU user time: 10.74 seconds. Total CPU system time: 1.17 seconds. Total elapsed time: 6.57 seconds; peak allocated memory: 326.934 MB.
+INFO: [vitis-run 60-791] Total elapsed time: 0h 0m 10s

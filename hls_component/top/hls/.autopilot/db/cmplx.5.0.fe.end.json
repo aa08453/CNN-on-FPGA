@@ -1,0 +1,407 @@
+{
+    "0": {
+        "name": "top",
+        "file": "eight.cpp",
+        "fileloc": "5",
+        "instructions": "85",
+        "total_instructions": "2776",
+        "calls": "2 17 19 18 3 14 6",
+        "basicblocks": "1",
+        "memory_accesses": "0",
+        "control_depth": "0",
+        "def_use_depth": "2",
+        "loads": {
+            "L": "10"
+        }
+    },
+    "1": {
+        "name": "conv1_Pipeline_LOAD_B",
+        "file": "..\/src\/conv.cpp",
+        "fileloc": "25",
+        "instructions": "36",
+        "total_instructions": "36",
+        "calls": "",
+        "basicblocks": "13",
+        "memory_accesses": "11",
+        "control_depth": "2",
+        "def_use_depth": "1",
+        "loads": {
+            "L": "1"
+        },
+        "stores": {
+            "G": "8",
+            "L": "2"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "2": {
+        "name": "conv1",
+        "file": "conv.cpp",
+        "fileloc": "3",
+        "instructions": "133",
+        "total_instructions": "994",
+        "calls": "16 1 8 12",
+        "basicblocks": "1",
+        "memory_accesses": "0",
+        "control_depth": "0",
+        "def_use_depth": "1",
+        "loads": {
+            "G": "80"
+        }
+    },
+    "3": {
+        "name": "top_Pipeline_LOAD_IN",
+        "file": "..\/src\/eight.cpp",
+        "fileloc": "55",
+        "instructions": "46",
+        "total_instructions": "46",
+        "calls": "",
+        "basicblocks": "13",
+        "memory_accesses": "11",
+        "control_depth": "2",
+        "def_use_depth": "1",
+        "loads": {
+            "L": "1"
+        },
+        "stores": {
+            "G": "8",
+            "L": "2"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "4": {
+        "name": "pool.1_Pipeline_CO_LOOP_H_LOOP_W_LOOP",
+        "file": "..\/src\/pool.cpp",
+        "fileloc": "23",
+        "instructions": "155",
+        "total_instructions": "155",
+        "calls": "",
+        "basicblocks": "4",
+        "memory_accesses": "31",
+        "control_depth": "1",
+        "def_use_depth": "1",
+        "loads": {
+            "G": "20",
+            "L": "5"
+        },
+        "stores": {
+            "L": "10"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "5": {
+        "name": "conv2_Pipeline_LOAD_W",
+        "file": "..\/src\/conv.cpp",
+        "fileloc": "70",
+        "instructions": "61",
+        "total_instructions": "61",
+        "calls": "",
+        "basicblocks": "14",
+        "memory_accesses": "16",
+        "control_depth": "2",
+        "def_use_depth": "1",
+        "loads": {
+            "L": "3"
+        },
+        "stores": {
+            "G": "9",
+            "L": "6"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "6": {
+        "name": "top_Pipeline_DENSE_OUTER_DENSE_INNER",
+        "file": "..\/src\/eight.cpp",
+        "fileloc": "55",
+        "instructions": "84",
+        "total_instructions": "84",
+        "calls": "",
+        "basicblocks": "8",
+        "memory_accesses": "18",
+        "control_depth": "2",
+        "def_use_depth": "2",
+        "loads": {
+            "G": "8",
+            "L": "4"
+        },
+        "stores": {
+            "L": "7"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "7": {
+        "name": "pool.1_Pipeline_LOAD_POOL",
+        "file": "..\/src\/pool.cpp",
+        "fileloc": "17",
+        "instructions": "53",
+        "total_instructions": "53",
+        "calls": "",
+        "basicblocks": "10",
+        "memory_accesses": "12",
+        "control_depth": "2",
+        "def_use_depth": "1",
+        "loads": {
+            "L": "3"
+        },
+        "stores": {
+            "G": "5",
+            "L": "6"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "8": {
+        "name": "conv1_Pipeline_LOAD_1",
+        "file": "..\/src\/conv.cpp",
+        "fileloc": "31",
+        "instructions": "85",
+        "total_instructions": "85",
+        "calls": "",
+        "basicblocks": "21",
+        "memory_accesses": "19",
+        "control_depth": "2",
+        "def_use_depth": "1",
+        "loads": {
+            "L": "1"
+        },
+        "stores": {
+            "L": "18"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "9": {
+        "name": "conv2_Pipeline_CI_2",
+        "file": "..\/src\/conv.cpp",
+        "fileloc": "103",
+        "instructions": "744",
+        "total_instructions": "744",
+        "calls": "",
+        "basicblocks": "200",
+        "memory_accesses": "293",
+        "control_depth": "4",
+        "def_use_depth": "2",
+        "loads": {
+            "G": "73",
+            "L": "74"
+        },
+        "stores": {
+            "G": "144",
+            "L": "4"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "10": {
+        "name": "conv2_Pipeline_LOAD_B",
+        "file": "..\/src\/conv.cpp",
+        "fileloc": "74",
+        "instructions": "52",
+        "total_instructions": "52",
+        "calls": "",
+        "basicblocks": "21",
+        "memory_accesses": "19",
+        "control_depth": "2",
+        "def_use_depth": "1",
+        "loads": {
+            "L": "1"
+        },
+        "stores": {
+            "G": "16",
+            "L": "2"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "11": {
+        "name": "pool_Pipeline_CO_LOOP_H_LOOP_W_LOOP",
+        "file": "..\/src\/pool.cpp",
+        "fileloc": "23",
+        "instructions": "162",
+        "total_instructions": "162",
+        "calls": "",
+        "basicblocks": "4",
+        "memory_accesses": "31",
+        "control_depth": "1",
+        "def_use_depth": "1",
+        "loads": {
+            "G": "20",
+            "L": "5"
+        },
+        "stores": {
+            "L": "10"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "12": {
+        "name": "conv1_Pipeline_CO_1_H_1_W_1",
+        "file": "..\/src\/conv.cpp",
+        "fileloc": "36",
+        "instructions": "577",
+        "total_instructions": "577",
+        "calls": "",
+        "basicblocks": "4",
+        "memory_accesses": "155",
+        "control_depth": "1",
+        "def_use_depth": "1",
+        "loads": {
+            "L": "149"
+        },
+        "stores": {
+            "L": "10"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "13": {
+        "name": "pool_Pipeline_LOAD_POOL",
+        "file": "..\/src\/pool.cpp",
+        "fileloc": "17",
+        "instructions": "53",
+        "total_instructions": "53",
+        "calls": "",
+        "basicblocks": "10",
+        "memory_accesses": "12",
+        "control_depth": "2",
+        "def_use_depth": "1",
+        "loads": {
+            "L": "3"
+        },
+        "stores": {
+            "G": "5",
+            "L": "6"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "14": {
+        "name": "top_Pipeline_LOAD_BIAS",
+        "file": "..\/src\/eight.cpp",
+        "fileloc": "55",
+        "instructions": "70",
+        "total_instructions": "70",
+        "calls": "",
+        "basicblocks": "15",
+        "memory_accesses": "13",
+        "control_depth": "2",
+        "def_use_depth": "1",
+        "loads": {
+            "L": "11"
+        },
+        "stores": {
+            "L": "12"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "15": {
+        "name": "conv2_Pipeline_LOAD_2",
+        "file": "..\/src\/conv.cpp",
+        "fileloc": "85",
+        "instructions": "53",
+        "total_instructions": "53",
+        "calls": "",
+        "basicblocks": "13",
+        "memory_accesses": "11",
+        "control_depth": "2",
+        "def_use_depth": "1",
+        "loads": {
+            "L": "1"
+        },
+        "stores": {
+            "L": "10"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "16": {
+        "name": "conv1_Pipeline_LOAD_W",
+        "file": "..\/src\/conv.cpp",
+        "fileloc": "21",
+        "instructions": "163",
+        "total_instructions": "163",
+        "calls": "",
+        "basicblocks": "77",
+        "memory_accesses": "75",
+        "control_depth": "2",
+        "def_use_depth": "1",
+        "loads": {
+            "L": "1"
+        },
+        "stores": {
+            "G": "72",
+            "L": "2"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "17": {
+        "name": "pool",
+        "file": "pool.cpp",
+        "fileloc": "3",
+        "instructions": "16",
+        "total_instructions": "231",
+        "calls": "13 11",
+        "basicblocks": "1",
+        "memory_accesses": "0",
+        "control_depth": "0",
+        "def_use_depth": "1"
+    },
+    "18": {
+        "name": "pool",
+        "file": "pool.cpp",
+        "fileloc": "3",
+        "instructions": "16",
+        "total_instructions": "224",
+        "calls": "7 4",
+        "basicblocks": "1",
+        "memory_accesses": "0",
+        "control_depth": "0",
+        "def_use_depth": "1"
+    },
+    "19": {
+        "name": "conv2",
+        "file": "conv.cpp",
+        "fileloc": "61",
+        "instructions": "132",
+        "total_instructions": "1042",
+        "calls": "5 10 15 9",
+        "basicblocks": "10",
+        "memory_accesses": "0",
+        "control_depth": "0",
+        "def_use_depth": "1",
+        "loads": {
+            "G": "24",
+            "L": "1"
+        },
+        "stores": {
+            "G": "8",
+            "L": "2"
+        },
+        "loops": {
+            "L": "1",
+            "N": "2"
+        }
+    }
+}

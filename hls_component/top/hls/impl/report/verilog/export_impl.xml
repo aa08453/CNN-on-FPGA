@@ -1,0 +1,331 @@
+<profile>
+  <RunData>
+    <RUN_TYPE>impl</RUN_TYPE>
+    <VIVADO_VERSION>v.2025.2</VIVADO_VERSION>
+    <ROOT_MODULE_CELL>bd_0_i/hls_inst</ROOT_MODULE_CELL>
+  </RunData>
+  <TimingReport>
+    <TargetClockPeriod>10.000</TargetClockPeriod>
+    <AchievedClockPeriod>9.301</AchievedClockPeriod>
+    <CLOCK_NAME>ap_clk</CLOCK_NAME>
+    <CP_FINAL>9.301</CP_FINAL>
+    <CP_ROUTE>9.301</CP_ROUTE>
+    <CP_SYNTH>8.946</CP_SYNTH>
+    <CP_TARGET>10.000</CP_TARGET>
+    <SLACK_FINAL>0.699</SLACK_FINAL>
+    <SLACK_ROUTE>0.699</SLACK_ROUTE>
+    <SLACK_SYNTH>1.054</SLACK_SYNTH>
+    <TIMING_MET>TRUE</TIMING_MET>
+    <TNS_FINAL>0.000</TNS_FINAL>
+    <TNS_ROUTE>0.000</TNS_ROUTE>
+    <TNS_SYNTH>0.000</TNS_SYNTH>
+    <WNS_FINAL>0.699</WNS_FINAL>
+    <WNS_ROUTE>0.699</WNS_ROUTE>
+    <WNS_SYNTH>1.054</WNS_SYNTH>
+  </TimingReport>
+  <AreaReport>
+    <Resources>
+      <BRAM>48</BRAM>
+      <CLB>0</CLB>
+      <DSP>31</DSP>
+      <FF>7171</FF>
+      <LATCH>0</LATCH>
+      <LUT>6768</LUT>
+      <SLICE>2784</SLICE>
+      <SRL>357</SRL>
+      <URAM>0</URAM>
+    </Resources>
+    <AvailableResources>
+      <BRAM>280</BRAM>
+      <CLB>0</CLB>
+      <DSP>220</DSP>
+      <FF>106400</FF>
+      <LUT>53200</LUT>
+      <SLICE>13300</SLICE>
+      <URAM>0</URAM>
+    </AvailableResources>
+  </AreaReport>
+  <RtlModules>
+    <RtlModule CELL="inst" DEPTH="0" IS_TOP="1" TYPE="function" MODULENAME="top" DISPNAME="inst" RTLNAME="top">
+      <SubModules count="23">control_s_axi_U dense_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_temp_1_U dense_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_temp_2_U dense_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_temp_3_U dense_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_temp_4_U dense_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_temp_5_U dense_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_temp_6_U dense_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_temp_7_U dense_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_temp_U gmem0_m_axi_U gmem1_m_axi_U grp_conv1_fu_527 grp_conv2_fu_717 grp_pool_1_fu_795 grp_pool_fu_699 grp_top_Pipeline_DENSE_OUTER_DENSE_INNER_fu_853 grp_top_Pipeline_LOAD_BIAS_fu_836 grp_top_Pipeline_LOAD_IN_fu_813 pool_ap_fixed_ap_fixed_8_5_5_3_0_int_int_int_int_int_local_input_1_U pool_ap_fixed_ap_fixed_8_5_5_3_0_int_int_int_int_int_local_input_2_U pool_ap_fixed_ap_fixed_8_5_5_3_0_int_int_int_int_int_local_input_3_U pool_ap_fixed_ap_fixed_8_5_5_3_0_int_int_int_int_int_local_input_4_U pool_ap_fixed_ap_fixed_8_5_5_3_0_int_int_int_int_int_local_input_U</SubModules>
+      <Resources LogicLUT="6411" RAMB18="48" SRL="357"/>
+      <LocalResources SRL="1"/>
+    </RtlModule>
+    <RtlModule CELL="inst/control_s_axi_U" DEPTH="1" TYPE="resource" MODULENAME="control_s_axi" DISPNAME="control_s_axi_U" RTLNAME="top_control_s_axi">
+      <Resources LogicLUT="695"/>
+    </RtlModule>
+    <RtlModule CELL="inst/dense_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_temp_1_U" DEPTH="1" TYPE="resource" MODULENAME="dense_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_temp_7_RAM_AUTO_1R1W" DISPNAME="dense_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_temp_1_U" RTLNAME="top_dense_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_temp_7_RAM_AUTO_1R1W"/>
+    <RtlModule CELL="inst/dense_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_temp_2_U" DEPTH="1" TYPE="resource" MODULENAME="dense_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_temp_7_RAM_AUTO_1R1W" DISPNAME="dense_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_temp_2_U" RTLNAME="top_dense_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_temp_7_RAM_AUTO_1R1W"/>
+    <RtlModule CELL="inst/dense_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_temp_3_U" DEPTH="1" TYPE="resource" MODULENAME="dense_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_temp_7_RAM_AUTO_1R1W" DISPNAME="dense_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_temp_3_U" RTLNAME="top_dense_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_temp_7_RAM_AUTO_1R1W"/>
+    <RtlModule CELL="inst/dense_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_temp_4_U" DEPTH="1" TYPE="resource" MODULENAME="dense_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_temp_7_RAM_AUTO_1R1W" DISPNAME="dense_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_temp_4_U" RTLNAME="top_dense_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_temp_7_RAM_AUTO_1R1W"/>
+    <RtlModule CELL="inst/dense_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_temp_5_U" DEPTH="1" TYPE="resource" MODULENAME="dense_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_temp_7_RAM_AUTO_1R1W" DISPNAME="dense_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_temp_5_U" RTLNAME="top_dense_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_temp_7_RAM_AUTO_1R1W"/>
+    <RtlModule CELL="inst/dense_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_temp_6_U" DEPTH="1" TYPE="resource" MODULENAME="dense_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_temp_7_RAM_AUTO_1R1W" DISPNAME="dense_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_temp_6_U" RTLNAME="top_dense_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_temp_7_RAM_AUTO_1R1W"/>
+    <RtlModule CELL="inst/dense_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_temp_7_U" DEPTH="1" TYPE="resource" MODULENAME="dense_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_temp_7_RAM_AUTO_1R1W" DISPNAME="dense_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_temp_7_U" RTLNAME="top_dense_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_temp_7_RAM_AUTO_1R1W"/>
+    <RtlModule CELL="inst/dense_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_temp_U" DEPTH="1" TYPE="resource" MODULENAME="dense_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_temp_7_RAM_AUTO_1R1W" DISPNAME="dense_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_temp_U" RTLNAME="top_dense_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_temp_7_RAM_AUTO_1R1W"/>
+    <RtlModule CELL="inst/gmem0_m_axi_U" DEPTH="1" TYPE="resource" MODULENAME="gmem0_m_axi" DISPNAME="gmem0_m_axi_U" RTLNAME="top_gmem0_m_axi">
+      <Resources LogicLUT="1478" RAMB18="1" SRL="174"/>
+    </RtlModule>
+    <RtlModule CELL="inst/gmem1_m_axi_U" DEPTH="1" TYPE="resource" MODULENAME="gmem1_m_axi" DISPNAME="gmem1_m_axi_U" RTLNAME="top_gmem1_m_axi">
+      <Resources LogicLUT="823" RAMB18="1" SRL="45"/>
+    </RtlModule>
+    <RtlModule CELL="inst/grp_conv1_fu_527" DEPTH="1" TYPE="function" MODULENAME="conv1" DISPNAME="grp_conv1_fu_527" RTLNAME="top_conv1">
+      <SubModules count="20">grp_conv1_Pipeline_CO_1_H_1_W_1_fu_550 grp_conv1_Pipeline_LOAD_1_fu_527 grp_conv1_Pipeline_LOAD_B_fu_504 grp_conv1_Pipeline_LOAD_W_fu_353 temp_10_U temp_11_U temp_12_U temp_13_U temp_14_U temp_15_U temp_1_U temp_2_U temp_3_U temp_4_U temp_5_U temp_6_U temp_7_U temp_8_U temp_9_U temp_U</SubModules>
+      <Resources LogicLUT="983" RAMB18="16" SRL="29"/>
+      <LocalResources LogicLUT="78"/>
+    </RtlModule>
+    <RtlModule CELL="inst/grp_conv1_fu_527/grp_conv1_Pipeline_CO_1_H_1_W_1_fu_550" DEPTH="2" TYPE="function" MODULENAME="conv1_Pipeline_CO_1_H_1_W_1" DISPNAME="grp_conv1_Pipeline_CO_1_H_1_W_1_fu_550" RTLNAME="top_conv1_Pipeline_CO_1_H_1_W_1">
+      <SubModules count="10">flow_control_loop_pipe_sequential_init_U mac_muladd_8s_8s_11s_11_4_1_U122 mac_muladd_8s_8s_11s_11_4_1_U123 mac_muladd_8s_8s_11s_11_4_1_U124 mac_muladd_8s_8s_11s_11_4_1_U125 mac_muladd_8s_8s_11s_11_4_1_U126 mac_muladd_8s_8s_11s_11_4_1_U127 mac_muladd_8s_8s_11s_11_4_1_U128 mac_muladd_8s_8s_11s_11_4_1_U129 mac_muladd_8s_8s_11s_11_4_1_U130</SubModules>
+      <Resources LogicLUT="753" SRL="29"/>
+      <LocalResources LogicLUT="555" SRL="29"/>
+    </RtlModule>
+    <RtlModule CELL="inst/grp_conv1_fu_527/grp_conv1_Pipeline_CO_1_H_1_W_1_fu_550/flow_control_loop_pipe_sequential_init_U" DEPTH="3" TYPE="rtl" MODULENAME="flow_control_loop_pipe_sequential_init" DISPNAME="flow_control_loop_pipe_sequential_init_U" RTLNAME="top_flow_control_loop_pipe_sequential_init"/>
+    <RtlModule CELL="inst/grp_conv1_fu_527/grp_conv1_Pipeline_CO_1_H_1_W_1_fu_550/mac_muladd_8s_8s_11s_11_4_1_U122" DEPTH="3" TYPE="resource" MODULENAME="mac_muladd_8s_8s_11s_11_4_1" DISPNAME="mac_muladd_8s_8s_11s_11_4_1_U122" RTLNAME="top_mac_muladd_8s_8s_11s_11_4_1">
+      <Resources LogicLUT="82"/>
+    </RtlModule>
+    <RtlModule CELL="inst/grp_conv1_fu_527/grp_conv1_Pipeline_CO_1_H_1_W_1_fu_550/mac_muladd_8s_8s_11s_11_4_1_U123" DEPTH="3" TYPE="resource" MODULENAME="mac_muladd_8s_8s_11s_11_4_1" DISPNAME="mac_muladd_8s_8s_11s_11_4_1_U123" RTLNAME="top_mac_muladd_8s_8s_11s_11_4_1"/>
+    <RtlModule CELL="inst/grp_conv1_fu_527/grp_conv1_Pipeline_CO_1_H_1_W_1_fu_550/mac_muladd_8s_8s_11s_11_4_1_U124" DEPTH="3" TYPE="resource" MODULENAME="mac_muladd_8s_8s_11s_11_4_1" DISPNAME="mac_muladd_8s_8s_11s_11_4_1_U124" RTLNAME="top_mac_muladd_8s_8s_11s_11_4_1"/>
+    <RtlModule CELL="inst/grp_conv1_fu_527/grp_conv1_Pipeline_CO_1_H_1_W_1_fu_550/mac_muladd_8s_8s_11s_11_4_1_U125" DEPTH="3" TYPE="resource" MODULENAME="mac_muladd_8s_8s_11s_11_4_1" DISPNAME="mac_muladd_8s_8s_11s_11_4_1_U125" RTLNAME="top_mac_muladd_8s_8s_11s_11_4_1"/>
+    <RtlModule CELL="inst/grp_conv1_fu_527/grp_conv1_Pipeline_CO_1_H_1_W_1_fu_550/mac_muladd_8s_8s_11s_11_4_1_U126" DEPTH="3" TYPE="resource" MODULENAME="mac_muladd_8s_8s_11s_11_4_1" DISPNAME="mac_muladd_8s_8s_11s_11_4_1_U126" RTLNAME="top_mac_muladd_8s_8s_11s_11_4_1"/>
+    <RtlModule CELL="inst/grp_conv1_fu_527/grp_conv1_Pipeline_CO_1_H_1_W_1_fu_550/mac_muladd_8s_8s_11s_11_4_1_U127" DEPTH="3" TYPE="resource" MODULENAME="mac_muladd_8s_8s_11s_11_4_1" DISPNAME="mac_muladd_8s_8s_11s_11_4_1_U127" RTLNAME="top_mac_muladd_8s_8s_11s_11_4_1"/>
+    <RtlModule CELL="inst/grp_conv1_fu_527/grp_conv1_Pipeline_CO_1_H_1_W_1_fu_550/mac_muladd_8s_8s_11s_11_4_1_U128" DEPTH="3" TYPE="resource" MODULENAME="mac_muladd_8s_8s_11s_11_4_1" DISPNAME="mac_muladd_8s_8s_11s_11_4_1_U128" RTLNAME="top_mac_muladd_8s_8s_11s_11_4_1"/>
+    <RtlModule CELL="inst/grp_conv1_fu_527/grp_conv1_Pipeline_CO_1_H_1_W_1_fu_550/mac_muladd_8s_8s_11s_11_4_1_U129" DEPTH="3" TYPE="resource" MODULENAME="mac_muladd_8s_8s_11s_11_4_1" DISPNAME="mac_muladd_8s_8s_11s_11_4_1_U129" RTLNAME="top_mac_muladd_8s_8s_11s_11_4_1"/>
+    <RtlModule CELL="inst/grp_conv1_fu_527/grp_conv1_Pipeline_CO_1_H_1_W_1_fu_550/mac_muladd_8s_8s_11s_11_4_1_U130" DEPTH="3" TYPE="resource" MODULENAME="mac_muladd_8s_8s_11s_11_4_1" DISPNAME="mac_muladd_8s_8s_11s_11_4_1_U130" RTLNAME="top_mac_muladd_8s_8s_11s_11_4_1"/>
+    <RtlModule CELL="inst/grp_conv1_fu_527/grp_conv1_Pipeline_LOAD_1_fu_527" DEPTH="2" TYPE="function" MODULENAME="conv1_Pipeline_LOAD_1" DISPNAME="grp_conv1_Pipeline_LOAD_1_fu_527" RTLNAME="top_conv1_Pipeline_LOAD_1">
+      <SubModules count="1">flow_control_loop_pipe_sequential_init_U</SubModules>
+    </RtlModule>
+    <RtlModule CELL="inst/grp_conv1_fu_527/grp_conv1_Pipeline_LOAD_1_fu_527/flow_control_loop_pipe_sequential_init_U" DEPTH="3" TYPE="rtl" MODULENAME="flow_control_loop_pipe_sequential_init" DISPNAME="flow_control_loop_pipe_sequential_init_U" RTLNAME="top_flow_control_loop_pipe_sequential_init"/>
+    <RtlModule CELL="inst/grp_conv1_fu_527/grp_conv1_Pipeline_LOAD_B_fu_504" DEPTH="2" TYPE="function" MODULENAME="conv1_Pipeline_LOAD_B" DISPNAME="grp_conv1_Pipeline_LOAD_B_fu_504" RTLNAME="top_conv1_Pipeline_LOAD_B">
+      <SubModules count="1">flow_control_loop_pipe_sequential_init_U</SubModules>
+    </RtlModule>
+    <RtlModule CELL="inst/grp_conv1_fu_527/grp_conv1_Pipeline_LOAD_B_fu_504/flow_control_loop_pipe_sequential_init_U" DEPTH="3" TYPE="rtl" MODULENAME="flow_control_loop_pipe_sequential_init" DISPNAME="flow_control_loop_pipe_sequential_init_U" RTLNAME="top_flow_control_loop_pipe_sequential_init"/>
+    <RtlModule CELL="inst/grp_conv1_fu_527/grp_conv1_Pipeline_LOAD_W_fu_353" DEPTH="2" TYPE="function" MODULENAME="conv1_Pipeline_LOAD_W" DISPNAME="grp_conv1_Pipeline_LOAD_W_fu_353" RTLNAME="top_conv1_Pipeline_LOAD_W">
+      <SubModules count="1">flow_control_loop_pipe_sequential_init_U</SubModules>
+      <Resources LogicLUT="91"/>
+      <LocalResources LogicLUT="77"/>
+    </RtlModule>
+    <RtlModule CELL="inst/grp_conv1_fu_527/grp_conv1_Pipeline_LOAD_W_fu_353/flow_control_loop_pipe_sequential_init_U" DEPTH="3" TYPE="rtl" MODULENAME="flow_control_loop_pipe_sequential_init" DISPNAME="flow_control_loop_pipe_sequential_init_U" RTLNAME="top_flow_control_loop_pipe_sequential_init"/>
+    <RtlModule CELL="inst/grp_conv1_fu_527/temp_10_U" DEPTH="2" TYPE="resource" MODULENAME="conv1_temp_RAM_2P_BRAM_1R1W" DISPNAME="temp_10_U" RTLNAME="top_conv1_temp_RAM_2P_BRAM_1R1W"/>
+    <RtlModule CELL="inst/grp_conv1_fu_527/temp_11_U" DEPTH="2" TYPE="resource" MODULENAME="conv1_temp_RAM_2P_BRAM_1R1W" DISPNAME="temp_11_U" RTLNAME="top_conv1_temp_RAM_2P_BRAM_1R1W"/>
+    <RtlModule CELL="inst/grp_conv1_fu_527/temp_12_U" DEPTH="2" TYPE="resource" MODULENAME="conv1_temp_RAM_2P_BRAM_1R1W" DISPNAME="temp_12_U" RTLNAME="top_conv1_temp_RAM_2P_BRAM_1R1W"/>
+    <RtlModule CELL="inst/grp_conv1_fu_527/temp_13_U" DEPTH="2" TYPE="resource" MODULENAME="conv1_temp_RAM_2P_BRAM_1R1W" DISPNAME="temp_13_U" RTLNAME="top_conv1_temp_RAM_2P_BRAM_1R1W"/>
+    <RtlModule CELL="inst/grp_conv1_fu_527/temp_14_U" DEPTH="2" TYPE="resource" MODULENAME="conv1_temp_RAM_2P_BRAM_1R1W" DISPNAME="temp_14_U" RTLNAME="top_conv1_temp_RAM_2P_BRAM_1R1W"/>
+    <RtlModule CELL="inst/grp_conv1_fu_527/temp_15_U" DEPTH="2" TYPE="resource" MODULENAME="conv1_temp_RAM_2P_BRAM_1R1W" DISPNAME="temp_15_U" RTLNAME="top_conv1_temp_RAM_2P_BRAM_1R1W"/>
+    <RtlModule CELL="inst/grp_conv1_fu_527/temp_1_U" DEPTH="2" TYPE="resource" MODULENAME="conv1_temp_RAM_2P_BRAM_1R1W" DISPNAME="temp_1_U" RTLNAME="top_conv1_temp_RAM_2P_BRAM_1R1W"/>
+    <RtlModule CELL="inst/grp_conv1_fu_527/temp_2_U" DEPTH="2" TYPE="resource" MODULENAME="conv1_temp_RAM_2P_BRAM_1R1W" DISPNAME="temp_2_U" RTLNAME="top_conv1_temp_RAM_2P_BRAM_1R1W"/>
+    <RtlModule CELL="inst/grp_conv1_fu_527/temp_3_U" DEPTH="2" TYPE="resource" MODULENAME="conv1_temp_RAM_2P_BRAM_1R1W" DISPNAME="temp_3_U" RTLNAME="top_conv1_temp_RAM_2P_BRAM_1R1W"/>
+    <RtlModule CELL="inst/grp_conv1_fu_527/temp_4_U" DEPTH="2" TYPE="resource" MODULENAME="conv1_temp_RAM_2P_BRAM_1R1W" DISPNAME="temp_4_U" RTLNAME="top_conv1_temp_RAM_2P_BRAM_1R1W"/>
+    <RtlModule CELL="inst/grp_conv1_fu_527/temp_5_U" DEPTH="2" TYPE="resource" MODULENAME="conv1_temp_RAM_2P_BRAM_1R1W" DISPNAME="temp_5_U" RTLNAME="top_conv1_temp_RAM_2P_BRAM_1R1W"/>
+    <RtlModule CELL="inst/grp_conv1_fu_527/temp_6_U" DEPTH="2" TYPE="resource" MODULENAME="conv1_temp_RAM_2P_BRAM_1R1W" DISPNAME="temp_6_U" RTLNAME="top_conv1_temp_RAM_2P_BRAM_1R1W"/>
+    <RtlModule CELL="inst/grp_conv1_fu_527/temp_7_U" DEPTH="2" TYPE="resource" MODULENAME="conv1_temp_RAM_2P_BRAM_1R1W" DISPNAME="temp_7_U" RTLNAME="top_conv1_temp_RAM_2P_BRAM_1R1W"/>
+    <RtlModule CELL="inst/grp_conv1_fu_527/temp_8_U" DEPTH="2" TYPE="resource" MODULENAME="conv1_temp_RAM_2P_BRAM_1R1W" DISPNAME="temp_8_U" RTLNAME="top_conv1_temp_RAM_2P_BRAM_1R1W"/>
+    <RtlModule CELL="inst/grp_conv1_fu_527/temp_9_U" DEPTH="2" TYPE="resource" MODULENAME="conv1_temp_RAM_2P_BRAM_1R1W" DISPNAME="temp_9_U" RTLNAME="top_conv1_temp_RAM_2P_BRAM_1R1W"/>
+    <RtlModule CELL="inst/grp_conv1_fu_527/temp_U" DEPTH="2" TYPE="resource" MODULENAME="conv1_temp_RAM_2P_BRAM_1R1W" DISPNAME="temp_U" RTLNAME="top_conv1_temp_RAM_2P_BRAM_1R1W"/>
+    <RtlModule CELL="inst/grp_conv2_fu_717" DEPTH="1" TYPE="function" MODULENAME="conv2" DISPNAME="grp_conv2_fu_717" RTLNAME="top_conv2">
+      <SubModules count="21">conv2_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_local_weight_1_U conv2_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_local_weight_2_U conv2_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_local_weight_3_U conv2_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_local_weight_4_U conv2_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_local_weight_5_U conv2_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_local_weight_6_U conv2_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_local_weight_7_U conv2_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_local_weight_8_U conv2_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_local_weight_U grp_conv2_Pipeline_CI_2_fu_415 grp_conv2_Pipeline_LOAD_2_fu_400 grp_conv2_Pipeline_LOAD_B_fu_361 grp_conv2_Pipeline_LOAD_W_fu_336 temp_1_U temp_2_U temp_3_U temp_4_U temp_5_U temp_6_U temp_7_U temp_U</SubModules>
+      <Resources LogicLUT="1472" RAMB18="17" SRL="60"/>
+      <LocalResources LogicLUT="188"/>
+    </RtlModule>
+    <RtlModule CELL="inst/grp_conv2_fu_717/conv2_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_local_weight_1_U" DEPTH="2" TYPE="resource" MODULENAME="conv2_conv2_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_local_weight_8_RAM_bkb" DISPNAME="conv2_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_local_weight_1_U" RTLNAME="top_conv2_conv2_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_local_weight_8_RAM_bkb"/>
+    <RtlModule CELL="inst/grp_conv2_fu_717/conv2_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_local_weight_2_U" DEPTH="2" TYPE="resource" MODULENAME="conv2_conv2_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_local_weight_8_RAM_bkb" DISPNAME="conv2_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_local_weight_2_U" RTLNAME="top_conv2_conv2_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_local_weight_8_RAM_bkb"/>
+    <RtlModule CELL="inst/grp_conv2_fu_717/conv2_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_local_weight_3_U" DEPTH="2" TYPE="resource" MODULENAME="conv2_conv2_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_local_weight_8_RAM_bkb" DISPNAME="conv2_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_local_weight_3_U" RTLNAME="top_conv2_conv2_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_local_weight_8_RAM_bkb"/>
+    <RtlModule CELL="inst/grp_conv2_fu_717/conv2_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_local_weight_4_U" DEPTH="2" TYPE="resource" MODULENAME="conv2_conv2_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_local_weight_8_RAM_bkb" DISPNAME="conv2_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_local_weight_4_U" RTLNAME="top_conv2_conv2_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_local_weight_8_RAM_bkb"/>
+    <RtlModule CELL="inst/grp_conv2_fu_717/conv2_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_local_weight_5_U" DEPTH="2" TYPE="resource" MODULENAME="conv2_conv2_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_local_weight_8_RAM_bkb" DISPNAME="conv2_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_local_weight_5_U" RTLNAME="top_conv2_conv2_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_local_weight_8_RAM_bkb"/>
+    <RtlModule CELL="inst/grp_conv2_fu_717/conv2_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_local_weight_6_U" DEPTH="2" TYPE="resource" MODULENAME="conv2_conv2_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_local_weight_8_RAM_bkb" DISPNAME="conv2_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_local_weight_6_U" RTLNAME="top_conv2_conv2_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_local_weight_8_RAM_bkb"/>
+    <RtlModule CELL="inst/grp_conv2_fu_717/conv2_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_local_weight_7_U" DEPTH="2" TYPE="resource" MODULENAME="conv2_conv2_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_local_weight_8_RAM_bkb" DISPNAME="conv2_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_local_weight_7_U" RTLNAME="top_conv2_conv2_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_local_weight_8_RAM_bkb"/>
+    <RtlModule CELL="inst/grp_conv2_fu_717/conv2_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_local_weight_8_U" DEPTH="2" TYPE="resource" MODULENAME="conv2_conv2_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_local_weight_8_RAM_bkb" DISPNAME="conv2_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_local_weight_8_U" RTLNAME="top_conv2_conv2_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_local_weight_8_RAM_bkb"/>
+    <RtlModule CELL="inst/grp_conv2_fu_717/conv2_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_local_weight_U" DEPTH="2" TYPE="resource" MODULENAME="conv2_conv2_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_local_weight_8_RAM_bkb" DISPNAME="conv2_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_local_weight_U" RTLNAME="top_conv2_conv2_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_local_weight_8_RAM_bkb"/>
+    <RtlModule CELL="inst/grp_conv2_fu_717/grp_conv2_Pipeline_CI_2_fu_415" DEPTH="2" TYPE="function" MODULENAME="conv2_Pipeline_CI_2" DISPNAME="grp_conv2_Pipeline_CI_2_fu_415" RTLNAME="top_conv2_Pipeline_CI_2">
+      <SubModules count="10">flow_control_loop_pipe_sequential_init_U mac_muladd_8s_8s_11s_16_4_1_U342 mac_muladd_8s_8s_11s_16_4_1_U343 mac_muladd_8s_8s_11s_16_4_1_U344 mac_muladd_8s_8s_11s_16_4_1_U345 mac_muladd_8s_8s_11s_16_4_1_U346 mac_muladd_8s_8s_11s_16_4_1_U347 mac_muladd_8s_8s_11s_16_4_1_U348 mac_muladd_8s_8s_11s_16_4_1_U349 mac_muladd_8s_8s_11s_16_4_1_U350</SubModules>
+      <Resources LogicLUT="1170" SRL="60"/>
+      <LocalResources LogicLUT="567" SRL="60"/>
+    </RtlModule>
+    <RtlModule CELL="inst/grp_conv2_fu_717/grp_conv2_Pipeline_CI_2_fu_415/flow_control_loop_pipe_sequential_init_U" DEPTH="3" TYPE="rtl" MODULENAME="flow_control_loop_pipe_sequential_init" DISPNAME="flow_control_loop_pipe_sequential_init_U" RTLNAME="top_flow_control_loop_pipe_sequential_init"/>
+    <RtlModule CELL="inst/grp_conv2_fu_717/grp_conv2_Pipeline_CI_2_fu_415/mac_muladd_8s_8s_11s_16_4_1_U342" DEPTH="3" TYPE="resource" MODULENAME="mac_muladd_8s_8s_11s_16_4_1" DISPNAME="mac_muladd_8s_8s_11s_16_4_1_U342" RTLNAME="top_mac_muladd_8s_8s_11s_16_4_1">
+      <Resources LogicLUT="126"/>
+    </RtlModule>
+    <RtlModule CELL="inst/grp_conv2_fu_717/grp_conv2_Pipeline_CI_2_fu_415/mac_muladd_8s_8s_11s_16_4_1_U343" DEPTH="3" TYPE="resource" MODULENAME="mac_muladd_8s_8s_11s_16_4_1" DISPNAME="mac_muladd_8s_8s_11s_16_4_1_U343" RTLNAME="top_mac_muladd_8s_8s_11s_16_4_1"/>
+    <RtlModule CELL="inst/grp_conv2_fu_717/grp_conv2_Pipeline_CI_2_fu_415/mac_muladd_8s_8s_11s_16_4_1_U344" DEPTH="3" TYPE="resource" MODULENAME="mac_muladd_8s_8s_11s_16_4_1" DISPNAME="mac_muladd_8s_8s_11s_16_4_1_U344" RTLNAME="top_mac_muladd_8s_8s_11s_16_4_1">
+      <Resources LogicLUT="95"/>
+    </RtlModule>
+    <RtlModule CELL="inst/grp_conv2_fu_717/grp_conv2_Pipeline_CI_2_fu_415/mac_muladd_8s_8s_11s_16_4_1_U345" DEPTH="3" TYPE="resource" MODULENAME="mac_muladd_8s_8s_11s_16_4_1" DISPNAME="mac_muladd_8s_8s_11s_16_4_1_U345" RTLNAME="top_mac_muladd_8s_8s_11s_16_4_1">
+      <Resources LogicLUT="99"/>
+    </RtlModule>
+    <RtlModule CELL="inst/grp_conv2_fu_717/grp_conv2_Pipeline_CI_2_fu_415/mac_muladd_8s_8s_11s_16_4_1_U346" DEPTH="3" TYPE="resource" MODULENAME="mac_muladd_8s_8s_11s_16_4_1" DISPNAME="mac_muladd_8s_8s_11s_16_4_1_U346" RTLNAME="top_mac_muladd_8s_8s_11s_16_4_1"/>
+    <RtlModule CELL="inst/grp_conv2_fu_717/grp_conv2_Pipeline_CI_2_fu_415/mac_muladd_8s_8s_11s_16_4_1_U347" DEPTH="3" TYPE="resource" MODULENAME="mac_muladd_8s_8s_11s_16_4_1" DISPNAME="mac_muladd_8s_8s_11s_16_4_1_U347" RTLNAME="top_mac_muladd_8s_8s_11s_16_4_1">
+      <Resources LogicLUT="56"/>
+    </RtlModule>
+    <RtlModule CELL="inst/grp_conv2_fu_717/grp_conv2_Pipeline_CI_2_fu_415/mac_muladd_8s_8s_11s_16_4_1_U348" DEPTH="3" TYPE="resource" MODULENAME="mac_muladd_8s_8s_11s_16_4_1" DISPNAME="mac_muladd_8s_8s_11s_16_4_1_U348" RTLNAME="top_mac_muladd_8s_8s_11s_16_4_1">
+      <Resources LogicLUT="70"/>
+    </RtlModule>
+    <RtlModule CELL="inst/grp_conv2_fu_717/grp_conv2_Pipeline_CI_2_fu_415/mac_muladd_8s_8s_11s_16_4_1_U349" DEPTH="3" TYPE="resource" MODULENAME="mac_muladd_8s_8s_11s_16_4_1" DISPNAME="mac_muladd_8s_8s_11s_16_4_1_U349" RTLNAME="top_mac_muladd_8s_8s_11s_16_4_1"/>
+    <RtlModule CELL="inst/grp_conv2_fu_717/grp_conv2_Pipeline_CI_2_fu_415/mac_muladd_8s_8s_11s_16_4_1_U350" DEPTH="3" TYPE="resource" MODULENAME="mac_muladd_8s_8s_11s_16_4_1" DISPNAME="mac_muladd_8s_8s_11s_16_4_1_U350" RTLNAME="top_mac_muladd_8s_8s_11s_16_4_1"/>
+    <RtlModule CELL="inst/grp_conv2_fu_717/grp_conv2_Pipeline_LOAD_2_fu_400" DEPTH="2" TYPE="function" MODULENAME="conv2_Pipeline_LOAD_2" DISPNAME="grp_conv2_Pipeline_LOAD_2_fu_400" RTLNAME="top_conv2_Pipeline_LOAD_2">
+      <SubModules count="1">flow_control_loop_pipe_sequential_init_U</SubModules>
+    </RtlModule>
+    <RtlModule CELL="inst/grp_conv2_fu_717/grp_conv2_Pipeline_LOAD_2_fu_400/flow_control_loop_pipe_sequential_init_U" DEPTH="3" TYPE="rtl" MODULENAME="flow_control_loop_pipe_sequential_init" DISPNAME="flow_control_loop_pipe_sequential_init_U" RTLNAME="top_flow_control_loop_pipe_sequential_init"/>
+    <RtlModule CELL="inst/grp_conv2_fu_717/grp_conv2_Pipeline_LOAD_B_fu_361" DEPTH="2" TYPE="function" MODULENAME="conv2_Pipeline_LOAD_B" DISPNAME="grp_conv2_Pipeline_LOAD_B_fu_361" RTLNAME="top_conv2_Pipeline_LOAD_B">
+      <SubModules count="1">flow_control_loop_pipe_sequential_init_U</SubModules>
+    </RtlModule>
+    <RtlModule CELL="inst/grp_conv2_fu_717/grp_conv2_Pipeline_LOAD_B_fu_361/flow_control_loop_pipe_sequential_init_U" DEPTH="3" TYPE="rtl" MODULENAME="flow_control_loop_pipe_sequential_init" DISPNAME="flow_control_loop_pipe_sequential_init_U" RTLNAME="top_flow_control_loop_pipe_sequential_init"/>
+    <RtlModule CELL="inst/grp_conv2_fu_717/grp_conv2_Pipeline_LOAD_W_fu_336" DEPTH="2" TYPE="function" MODULENAME="conv2_Pipeline_LOAD_W" DISPNAME="grp_conv2_Pipeline_LOAD_W_fu_336" RTLNAME="top_conv2_Pipeline_LOAD_W">
+      <SubModules count="1">flow_control_loop_pipe_sequential_init_U</SubModules>
+      <Resources LogicLUT="54"/>
+      <LocalResources LogicLUT="21"/>
+    </RtlModule>
+    <RtlModule CELL="inst/grp_conv2_fu_717/grp_conv2_Pipeline_LOAD_W_fu_336/flow_control_loop_pipe_sequential_init_U" DEPTH="3" TYPE="rtl" MODULENAME="flow_control_loop_pipe_sequential_init" DISPNAME="flow_control_loop_pipe_sequential_init_U" RTLNAME="top_flow_control_loop_pipe_sequential_init"/>
+    <RtlModule CELL="inst/grp_conv2_fu_717/temp_1_U" DEPTH="2" TYPE="resource" MODULENAME="conv2_temp_RAM_2P_BRAM_1R1W" DISPNAME="temp_1_U" RTLNAME="top_conv2_temp_RAM_2P_BRAM_1R1W"/>
+    <RtlModule CELL="inst/grp_conv2_fu_717/temp_2_U" DEPTH="2" TYPE="resource" MODULENAME="conv2_temp_RAM_2P_BRAM_1R1W" DISPNAME="temp_2_U" RTLNAME="top_conv2_temp_RAM_2P_BRAM_1R1W"/>
+    <RtlModule CELL="inst/grp_conv2_fu_717/temp_3_U" DEPTH="2" TYPE="resource" MODULENAME="conv2_temp_RAM_2P_BRAM_1R1W" DISPNAME="temp_3_U" RTLNAME="top_conv2_temp_RAM_2P_BRAM_1R1W"/>
+    <RtlModule CELL="inst/grp_conv2_fu_717/temp_4_U" DEPTH="2" TYPE="resource" MODULENAME="conv2_temp_RAM_2P_BRAM_1R1W" DISPNAME="temp_4_U" RTLNAME="top_conv2_temp_RAM_2P_BRAM_1R1W"/>
+    <RtlModule CELL="inst/grp_conv2_fu_717/temp_5_U" DEPTH="2" TYPE="resource" MODULENAME="conv2_temp_RAM_2P_BRAM_1R1W" DISPNAME="temp_5_U" RTLNAME="top_conv2_temp_RAM_2P_BRAM_1R1W"/>
+    <RtlModule CELL="inst/grp_conv2_fu_717/temp_6_U" DEPTH="2" TYPE="resource" MODULENAME="conv2_temp_RAM_2P_BRAM_1R1W" DISPNAME="temp_6_U" RTLNAME="top_conv2_temp_RAM_2P_BRAM_1R1W"/>
+    <RtlModule CELL="inst/grp_conv2_fu_717/temp_7_U" DEPTH="2" TYPE="resource" MODULENAME="conv2_temp_RAM_2P_BRAM_1R1W" DISPNAME="temp_7_U" RTLNAME="top_conv2_temp_RAM_2P_BRAM_1R1W"/>
+    <RtlModule CELL="inst/grp_conv2_fu_717/temp_U" DEPTH="2" TYPE="resource" MODULENAME="conv2_temp_RAM_2P_BRAM_1R1W" DISPNAME="temp_U" RTLNAME="top_conv2_temp_RAM_2P_BRAM_1R1W"/>
+    <RtlModule CELL="inst/grp_pool_1_fu_795" DEPTH="1" TYPE="function" MODULENAME="pool_1" DISPNAME="grp_pool_1_fu_795" RTLNAME="top_pool_1">
+      <SubModules count="2">grp_pool_1_Pipeline_CO_LOOP_H_LOOP_W_LOOP_fu_110 grp_pool_1_Pipeline_LOAD_POOL_fu_93</SubModules>
+      <Resources LogicLUT="389" SRL="21"/>
+    </RtlModule>
+    <RtlModule CELL="inst/grp_pool_1_fu_795/grp_pool_1_Pipeline_CO_LOOP_H_LOOP_W_LOOP_fu_110" DEPTH="2" TYPE="function" MODULENAME="pool_1_Pipeline_CO_LOOP_H_LOOP_W_LOOP" DISPNAME="grp_pool_1_Pipeline_CO_LOOP_H_LOOP_W_LOOP_fu_110" RTLNAME="top_pool_1_Pipeline_CO_LOOP_H_LOOP_W_LOOP">
+      <SubModules count="2">flow_control_loop_pipe_sequential_init_U urem_9ns_4ns_3_13_1_U414</SubModules>
+      <Resources LogicLUT="317" SRL="21"/>
+      <LocalResources LogicLUT="224" SRL="13"/>
+    </RtlModule>
+    <RtlModule CELL="inst/grp_pool_1_fu_795/grp_pool_1_Pipeline_CO_LOOP_H_LOOP_W_LOOP_fu_110/flow_control_loop_pipe_sequential_init_U" DEPTH="3" TYPE="rtl" MODULENAME="flow_control_loop_pipe_sequential_init" DISPNAME="flow_control_loop_pipe_sequential_init_U" RTLNAME="top_flow_control_loop_pipe_sequential_init"/>
+    <RtlModule CELL="inst/grp_pool_1_fu_795/grp_pool_1_Pipeline_CO_LOOP_H_LOOP_W_LOOP_fu_110/urem_9ns_4ns_3_13_1_U414" DEPTH="3" TYPE="resource" MODULENAME="urem_9ns_4ns_3_13_1" DISPNAME="urem_9ns_4ns_3_13_1_U414" RTLNAME="top_urem_9ns_4ns_3_13_1">
+      <Resources LogicLUT="53" SRL="8"/>
+    </RtlModule>
+    <RtlModule CELL="inst/grp_pool_1_fu_795/grp_pool_1_Pipeline_LOAD_POOL_fu_93" DEPTH="2" TYPE="function" MODULENAME="pool_1_Pipeline_LOAD_POOL" DISPNAME="grp_pool_1_Pipeline_LOAD_POOL_fu_93" RTLNAME="top_pool_1_Pipeline_LOAD_POOL">
+      <SubModules count="1">flow_control_loop_pipe_sequential_init_U</SubModules>
+      <Resources LogicLUT="59"/>
+      <LocalResources LogicLUT="22"/>
+    </RtlModule>
+    <RtlModule CELL="inst/grp_pool_1_fu_795/grp_pool_1_Pipeline_LOAD_POOL_fu_93/flow_control_loop_pipe_sequential_init_U" DEPTH="3" TYPE="rtl" MODULENAME="flow_control_loop_pipe_sequential_init" DISPNAME="flow_control_loop_pipe_sequential_init_U" RTLNAME="top_flow_control_loop_pipe_sequential_init"/>
+    <RtlModule CELL="inst/grp_pool_fu_699" DEPTH="1" TYPE="function" MODULENAME="pool" DISPNAME="grp_pool_fu_699" RTLNAME="top_pool">
+      <SubModules count="2">grp_pool_Pipeline_CO_LOOP_H_LOOP_W_LOOP_fu_110 grp_pool_Pipeline_LOAD_POOL_fu_93</SubModules>
+      <Resources LogicLUT="427" SRL="23"/>
+      <LocalResources LogicLUT="62"/>
+    </RtlModule>
+    <RtlModule CELL="inst/grp_pool_fu_699/grp_pool_Pipeline_CO_LOOP_H_LOOP_W_LOOP_fu_110" DEPTH="2" TYPE="function" MODULENAME="pool_Pipeline_CO_LOOP_H_LOOP_W_LOOP" DISPNAME="grp_pool_Pipeline_CO_LOOP_H_LOOP_W_LOOP_fu_110" RTLNAME="top_pool_Pipeline_CO_LOOP_H_LOOP_W_LOOP">
+      <SubModules count="2">flow_control_loop_pipe_sequential_init_U urem_8ns_4ns_3_12_1_U254</SubModules>
+      <Resources LogicLUT="302" SRL="23"/>
+      <LocalResources LogicLUT="242" SRL="13"/>
+    </RtlModule>
+    <RtlModule CELL="inst/grp_pool_fu_699/grp_pool_Pipeline_CO_LOOP_H_LOOP_W_LOOP_fu_110/flow_control_loop_pipe_sequential_init_U" DEPTH="3" TYPE="rtl" MODULENAME="flow_control_loop_pipe_sequential_init" DISPNAME="flow_control_loop_pipe_sequential_init_U" RTLNAME="top_flow_control_loop_pipe_sequential_init"/>
+    <RtlModule CELL="inst/grp_pool_fu_699/grp_pool_Pipeline_CO_LOOP_H_LOOP_W_LOOP_fu_110/urem_8ns_4ns_3_12_1_U254" DEPTH="3" TYPE="resource" MODULENAME="urem_8ns_4ns_3_12_1" DISPNAME="urem_8ns_4ns_3_12_1_U254" RTLNAME="top_urem_8ns_4ns_3_12_1">
+      <Resources LogicLUT="40" SRL="10"/>
+    </RtlModule>
+    <RtlModule CELL="inst/grp_pool_fu_699/grp_pool_Pipeline_LOAD_POOL_fu_93" DEPTH="2" TYPE="function" MODULENAME="pool_Pipeline_LOAD_POOL" DISPNAME="grp_pool_Pipeline_LOAD_POOL_fu_93" RTLNAME="top_pool_Pipeline_LOAD_POOL">
+      <SubModules count="1">flow_control_loop_pipe_sequential_init_U</SubModules>
+      <Resources LogicLUT="64"/>
+      <LocalResources LogicLUT="24"/>
+    </RtlModule>
+    <RtlModule CELL="inst/grp_pool_fu_699/grp_pool_Pipeline_LOAD_POOL_fu_93/flow_control_loop_pipe_sequential_init_U" DEPTH="3" TYPE="rtl" MODULENAME="flow_control_loop_pipe_sequential_init" DISPNAME="flow_control_loop_pipe_sequential_init_U" RTLNAME="top_flow_control_loop_pipe_sequential_init"/>
+    <RtlModule CELL="inst/grp_top_Pipeline_DENSE_OUTER_DENSE_INNER_fu_853" DEPTH="1" TYPE="function" MODULENAME="top_Pipeline_DENSE_OUTER_DENSE_INNER" DISPNAME="grp_top_Pipeline_DENSE_OUTER_DENSE_INNER_fu_853" RTLNAME="top_top_Pipeline_DENSE_OUTER_DENSE_INNER">
+      <SubModules count="2">flow_control_loop_pipe_sequential_init_U mac_muladd_8s_8s_11s_11_4_1_U466</SubModules>
+      <Resources LogicLUT="79" SRL="4"/>
+      <LocalResources LogicLUT="49" SRL="4"/>
+    </RtlModule>
+    <RtlModule CELL="inst/grp_top_Pipeline_DENSE_OUTER_DENSE_INNER_fu_853/flow_control_loop_pipe_sequential_init_U" DEPTH="2" TYPE="rtl" MODULENAME="flow_control_loop_pipe_sequential_init" DISPNAME="flow_control_loop_pipe_sequential_init_U" RTLNAME="top_flow_control_loop_pipe_sequential_init"/>
+    <RtlModule CELL="inst/grp_top_Pipeline_DENSE_OUTER_DENSE_INNER_fu_853/mac_muladd_8s_8s_11s_11_4_1_U466" DEPTH="2" TYPE="resource" MODULENAME="mac_muladd_8s_8s_11s_11_4_1" DISPNAME="mac_muladd_8s_8s_11s_11_4_1_U466" RTLNAME="top_mac_muladd_8s_8s_11s_11_4_1"/>
+    <RtlModule CELL="inst/grp_top_Pipeline_LOAD_BIAS_fu_836" DEPTH="1" TYPE="function" MODULENAME="top_Pipeline_LOAD_BIAS" DISPNAME="grp_top_Pipeline_LOAD_BIAS_fu_836" RTLNAME="top_top_Pipeline_LOAD_BIAS">
+      <SubModules count="1">flow_control_loop_pipe_sequential_init_U</SubModules>
+      <Resources LogicLUT="43"/>
+      <LocalResources LogicLUT="34"/>
+    </RtlModule>
+    <RtlModule CELL="inst/grp_top_Pipeline_LOAD_BIAS_fu_836/flow_control_loop_pipe_sequential_init_U" DEPTH="2" TYPE="rtl" MODULENAME="flow_control_loop_pipe_sequential_init" DISPNAME="flow_control_loop_pipe_sequential_init_U" RTLNAME="top_flow_control_loop_pipe_sequential_init"/>
+    <RtlModule CELL="inst/grp_top_Pipeline_LOAD_IN_fu_813" DEPTH="1" TYPE="function" MODULENAME="top_Pipeline_LOAD_IN" DISPNAME="grp_top_Pipeline_LOAD_IN_fu_813" RTLNAME="top_top_Pipeline_LOAD_IN">
+      <SubModules count="1">flow_control_loop_pipe_sequential_init_U</SubModules>
+    </RtlModule>
+    <RtlModule CELL="inst/grp_top_Pipeline_LOAD_IN_fu_813/flow_control_loop_pipe_sequential_init_U" DEPTH="2" TYPE="rtl" MODULENAME="flow_control_loop_pipe_sequential_init" DISPNAME="flow_control_loop_pipe_sequential_init_U" RTLNAME="top_flow_control_loop_pipe_sequential_init"/>
+    <RtlModule CELL="inst/pool_ap_fixed_ap_fixed_8_5_5_3_0_int_int_int_int_int_local_input_1_U" DEPTH="1" TYPE="resource" MODULENAME="pool_ap_fixed_ap_fixed_8_5_5_3_0_int_int_int_int_int_local_input_4_RAM_2P_BRAkbM" DISPNAME="pool_ap_fixed_ap_fixed_8_5_5_3_0_int_int_int_int_int_local_input_1_U" RTLNAME="top_pool_ap_fixed_ap_fixed_8_5_5_3_0_int_int_int_int_int_local_input_4_RAM_2P_BRAkbM"/>
+    <RtlModule CELL="inst/pool_ap_fixed_ap_fixed_8_5_5_3_0_int_int_int_int_int_local_input_2_U" DEPTH="1" TYPE="resource" MODULENAME="pool_ap_fixed_ap_fixed_8_5_5_3_0_int_int_int_int_int_local_input_4_RAM_2P_BRAkbM" DISPNAME="pool_ap_fixed_ap_fixed_8_5_5_3_0_int_int_int_int_int_local_input_2_U" RTLNAME="top_pool_ap_fixed_ap_fixed_8_5_5_3_0_int_int_int_int_int_local_input_4_RAM_2P_BRAkbM"/>
+    <RtlModule CELL="inst/pool_ap_fixed_ap_fixed_8_5_5_3_0_int_int_int_int_int_local_input_3_U" DEPTH="1" TYPE="resource" MODULENAME="pool_ap_fixed_ap_fixed_8_5_5_3_0_int_int_int_int_int_local_input_4_RAM_2P_BRAkbM" DISPNAME="pool_ap_fixed_ap_fixed_8_5_5_3_0_int_int_int_int_int_local_input_3_U" RTLNAME="top_pool_ap_fixed_ap_fixed_8_5_5_3_0_int_int_int_int_int_local_input_4_RAM_2P_BRAkbM"/>
+    <RtlModule CELL="inst/pool_ap_fixed_ap_fixed_8_5_5_3_0_int_int_int_int_int_local_input_4_U" DEPTH="1" TYPE="resource" MODULENAME="pool_ap_fixed_ap_fixed_8_5_5_3_0_int_int_int_int_int_local_input_4_RAM_2P_BRAkbM" DISPNAME="pool_ap_fixed_ap_fixed_8_5_5_3_0_int_int_int_int_int_local_input_4_U" RTLNAME="top_pool_ap_fixed_ap_fixed_8_5_5_3_0_int_int_int_int_int_local_input_4_RAM_2P_BRAkbM"/>
+    <RtlModule CELL="inst/pool_ap_fixed_ap_fixed_8_5_5_3_0_int_int_int_int_int_local_input_U" DEPTH="1" TYPE="resource" MODULENAME="pool_ap_fixed_ap_fixed_8_5_5_3_0_int_int_int_int_int_local_input_4_RAM_2P_BRAkbM" DISPNAME="pool_ap_fixed_ap_fixed_8_5_5_3_0_int_int_int_int_int_local_input_U" RTLNAME="top_pool_ap_fixed_ap_fixed_8_5_5_3_0_int_int_int_int_int_local_input_4_RAM_2P_BRAkbM"/>
+  </RtlModules>
+  <TimingPaths>
+    <TPATH DATAPATH_DELAY="9.156" DATAPATH_LOGIC_DELAY="0.456" DATAPATH_NET_DELAY="8.700" ENDPOINT_PIN="grp_conv1_fu_527/conv1_ap_fixed_8_5_ap_q_mode_5_ap_o_mode_3_0_ap_fixed_8_5_ap_q_mode_5_ap_o_mode_3_0_ap_fixed_8_5_ap_q_mode_5_ap_o_mode_3_0_ap_fixed_8_5_ap_q_mode_5_ap_o_mode_3_0_local_wei_25_reg[4]/D" LOGIC_LEVELS="0" MAX_FANOUT="108" SLACK="0.699" STARTPOINT_PIN="gmem1_m_axi_U/load_unit_0/bus_wide_gen.data_buf_reg[4]/C">
+      <CELL NAME="gmem1_m_axi_U/load_unit_0/bus_wide_gen.data_buf_reg[4]" PRIMITIVE_TYPE="FLOP_LATCH.flop.FDRE" FILE_NAME="top_gmem1_m_axi.v" LINE_NUMBER="587" MODULE_INSTNAME="gmem1_m_axi_U" IS_FUNCINST="0"/>
+      <CELL NAME="grp_conv1_fu_527/conv1_ap_fixed_8_5_ap_q_mode_5_ap_o_mode_3_0_ap_fixed_8_5_ap_q_mode_5_ap_o_mode_3_0_ap_fixed_8_5_ap_q_mode_5_ap_o_mode_3_0_ap_fixed_8_5_ap_q_mode_5_ap_o_mode_3_0_local_wei_25_reg[4]" PRIMITIVE_TYPE="FLOP_LATCH.flop.FDRE" FILE_NAME="top_conv1.v" LINE_NUMBER="1776" MODULE_INSTNAME="grp_conv1_fu_527" IS_FUNCINST="0"/>
+      <MODULE_INSTANCES>gmem1_m_axi_U grp_conv1_fu_527 grp_pool_1_Pipeline_CO_LOOP_H_LOOP_W_LOOP_fu_110</MODULE_INSTANCES>
+    </TPATH>
+    <TPATH DATAPATH_DELAY="9.130" DATAPATH_LOGIC_DELAY="0.456" DATAPATH_NET_DELAY="8.674" ENDPOINT_PIN="grp_conv1_fu_527/conv1_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_local_weight_8_reg[4]/D" LOGIC_LEVELS="0" MAX_FANOUT="108" SLACK="0.758" STARTPOINT_PIN="gmem1_m_axi_U/load_unit_0/bus_wide_gen.data_buf_reg[4]/C">
+      <CELL NAME="gmem1_m_axi_U/load_unit_0/bus_wide_gen.data_buf_reg[4]" PRIMITIVE_TYPE="FLOP_LATCH.flop.FDRE" FILE_NAME="top_gmem1_m_axi.v" LINE_NUMBER="587" MODULE_INSTNAME="gmem1_m_axi_U" IS_FUNCINST="0"/>
+      <CELL NAME="grp_conv1_fu_527/conv1_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_local_weight_8_reg[4]" PRIMITIVE_TYPE="FLOP_LATCH.flop.FDRE" FILE_NAME="top_conv1.v" LINE_NUMBER="1771" MODULE_INSTNAME="grp_conv1_fu_527" IS_FUNCINST="0"/>
+      <MODULE_INSTANCES>gmem1_m_axi_U grp_conv1_fu_527 grp_pool_1_Pipeline_CO_LOOP_H_LOOP_W_LOOP_fu_110</MODULE_INSTANCES>
+    </TPATH>
+    <TPATH DATAPATH_DELAY="9.107" DATAPATH_LOGIC_DELAY="3.159" DATAPATH_NET_DELAY="5.948" ENDPOINT_PIN="grp_pool_1_fu_795/grp_pool_1_Pipeline_CO_LOOP_H_LOOP_W_LOOP_fu_110/max_val_10_reg_1225_reg[5]/D" LOGIC_LEVELS="9" MAX_FANOUT="18" SLACK="0.838" STARTPOINT_PIN="grp_pool_1_fu_795/grp_pool_1_Pipeline_CO_LOOP_H_LOOP_W_LOOP_fu_110/val_reg_1180_reg[1]/C">
+      <CELL NAME="grp_pool_1_fu_795/grp_pool_1_Pipeline_CO_LOOP_H_LOOP_W_LOOP_fu_110/val_reg_1180_reg[1]" PRIMITIVE_TYPE="FLOP_LATCH.flop.FDRE" FILE_NAME="top_flow_control_loop_pipe_sequential_init.v" LINE_NUMBER="71" MODULE_INSTNAME="grp_pool_1_Pipeline_CO_LOOP_H_LOOP_W_LOOP_fu_110" IS_FUNCINST="0"/>
+      <CELL NAME="grp_pool_1_fu_795/grp_pool_1_Pipeline_CO_LOOP_H_LOOP_W_LOOP_fu_110/icmp_ln37_1_fu_900_p2_carry_i_8" PRIMITIVE_TYPE="LUT.others.LUT4" FILE_NAME="top_pool_1_Pipeline_CO_LOOP_H_LOOP_W_LOOP.v" LINE_NUMBER="1322" MODULE_INSTNAME="grp_pool_1_Pipeline_CO_LOOP_H_LOOP_W_LOOP_fu_110" IS_FUNCINST="0"/>
+      <CELL NAME="grp_pool_1_fu_795/grp_pool_1_Pipeline_CO_LOOP_H_LOOP_W_LOOP_fu_110/icmp_ln37_1_fu_900_p2_carry" PRIMITIVE_TYPE="CARRY.others.CARRY4" FILE_NAME="top_pool_1_Pipeline_CO_LOOP_H_LOOP_W_LOOP.v" LINE_NUMBER="1322" MODULE_INSTNAME="grp_pool_1_Pipeline_CO_LOOP_H_LOOP_W_LOOP_fu_110" IS_FUNCINST="0"/>
+      <CELL NAME="grp_pool_1_fu_795/grp_pool_1_Pipeline_CO_LOOP_H_LOOP_W_LOOP_fu_110/max_val_10_reg_1225[2]_i_3" PRIMITIVE_TYPE="LUT.others.LUT3" FILE_NAME="top_pool_1_Pipeline_CO_LOOP_H_LOOP_W_LOOP.v" LINE_NUMBER="1322" MODULE_INSTNAME="grp_pool_1_Pipeline_CO_LOOP_H_LOOP_W_LOOP_fu_110" IS_FUNCINST="0"/>
+      <CELL NAME="grp_pool_1_fu_795/grp_pool_1_Pipeline_CO_LOOP_H_LOOP_W_LOOP_fu_110/icmp_ln37_2_fu_915_p2_carry_i_3" PRIMITIVE_TYPE="LUT.others.LUT6" FILE_NAME="top_pool_1_Pipeline_CO_LOOP_H_LOOP_W_LOOP.v" LINE_NUMBER="1322" MODULE_INSTNAME="grp_pool_1_Pipeline_CO_LOOP_H_LOOP_W_LOOP_fu_110" IS_FUNCINST="0"/>
+      <CELL NAME="grp_pool_1_fu_795/grp_pool_1_Pipeline_CO_LOOP_H_LOOP_W_LOOP_fu_110/icmp_ln37_2_fu_915_p2_carry" PRIMITIVE_TYPE="CARRY.others.CARRY4" FILE_NAME="top_pool_1_Pipeline_CO_LOOP_H_LOOP_W_LOOP.v" LINE_NUMBER="1322" MODULE_INSTNAME="grp_pool_1_Pipeline_CO_LOOP_H_LOOP_W_LOOP_fu_110" IS_FUNCINST="0"/>
+      <CELL NAME="grp_pool_1_fu_795/grp_pool_1_Pipeline_CO_LOOP_H_LOOP_W_LOOP_fu_110/max_val_10_reg_1225[1]_i_3" PRIMITIVE_TYPE="LUT.others.LUT5" FILE_NAME="top_pool_1_Pipeline_CO_LOOP_H_LOOP_W_LOOP.v" LINE_NUMBER="1322" MODULE_INSTNAME="grp_pool_1_Pipeline_CO_LOOP_H_LOOP_W_LOOP_fu_110" IS_FUNCINST="0"/>
+      <CELL NAME="grp_pool_1_fu_795/grp_pool_1_Pipeline_CO_LOOP_H_LOOP_W_LOOP_fu_110/icmp_ln37_3_fu_962_p2_carry_i_4" PRIMITIVE_TYPE="LUT.others.LUT6" FILE_NAME="top_pool_1_Pipeline_CO_LOOP_H_LOOP_W_LOOP.v" LINE_NUMBER="1322" MODULE_INSTNAME="grp_pool_1_Pipeline_CO_LOOP_H_LOOP_W_LOOP_fu_110" IS_FUNCINST="0"/>
+      <CELL NAME="grp_pool_1_fu_795/grp_pool_1_Pipeline_CO_LOOP_H_LOOP_W_LOOP_fu_110/icmp_ln37_3_fu_962_p2_carry" PRIMITIVE_TYPE="CARRY.others.CARRY4" FILE_NAME="top_pool_1_Pipeline_CO_LOOP_H_LOOP_W_LOOP.v" LINE_NUMBER="1322" MODULE_INSTNAME="grp_pool_1_Pipeline_CO_LOOP_H_LOOP_W_LOOP_fu_110" IS_FUNCINST="0"/>
+      <CELL NAME="grp_pool_1_fu_795/grp_pool_1_Pipeline_CO_LOOP_H_LOOP_W_LOOP_fu_110/max_val_10_reg_1225[5]_i_1" PRIMITIVE_TYPE="LUT.others.LUT3" FILE_NAME="top_pool_1_Pipeline_CO_LOOP_H_LOOP_W_LOOP.v" LINE_NUMBER="1322" MODULE_INSTNAME="grp_pool_1_Pipeline_CO_LOOP_H_LOOP_W_LOOP_fu_110" IS_FUNCINST="0"/>
+      <CELL NAME="grp_pool_1_fu_795/grp_pool_1_Pipeline_CO_LOOP_H_LOOP_W_LOOP_fu_110/max_val_10_reg_1225_reg[5]" PRIMITIVE_TYPE="FLOP_LATCH.flop.FDRE" FILE_NAME="top_pool_1_Pipeline_CO_LOOP_H_LOOP_W_LOOP.v" LINE_NUMBER="902" MODULE_INSTNAME="grp_pool_1_Pipeline_CO_LOOP_H_LOOP_W_LOOP_fu_110" IS_FUNCINST="0"/>
+      <MODULE_INSTANCES>gmem1_m_axi_U grp_conv1_fu_527 grp_pool_1_Pipeline_CO_LOOP_H_LOOP_W_LOOP_fu_110</MODULE_INSTANCES>
+    </TPATH>
+    <TPATH DATAPATH_DELAY="8.984" DATAPATH_LOGIC_DELAY="0.456" DATAPATH_NET_DELAY="8.528" ENDPOINT_PIN="grp_conv1_fu_527/conv1_ap_fixed_8_5_ap_q_mode_5_ap_o_mode_3_0_ap_fixed_8_5_ap_q_mode_5_ap_o_mode_3_0_ap_fixed_8_5_ap_q_mode_5_ap_o_mode_3_0_ap_fixed_8_5_ap_q_mode_5_ap_o_mode_3_0_local_wei_52_reg[4]/D" LOGIC_LEVELS="0" MAX_FANOUT="108" SLACK="0.851" STARTPOINT_PIN="gmem1_m_axi_U/load_unit_0/bus_wide_gen.data_buf_reg[4]/C">
+      <CELL NAME="gmem1_m_axi_U/load_unit_0/bus_wide_gen.data_buf_reg[4]" PRIMITIVE_TYPE="FLOP_LATCH.flop.FDRE" FILE_NAME="top_gmem1_m_axi.v" LINE_NUMBER="587" MODULE_INSTNAME="gmem1_m_axi_U" IS_FUNCINST="0"/>
+      <CELL NAME="grp_conv1_fu_527/conv1_ap_fixed_8_5_ap_q_mode_5_ap_o_mode_3_0_ap_fixed_8_5_ap_q_mode_5_ap_o_mode_3_0_ap_fixed_8_5_ap_q_mode_5_ap_o_mode_3_0_ap_fixed_8_5_ap_q_mode_5_ap_o_mode_3_0_local_wei_52_reg[4]" PRIMITIVE_TYPE="FLOP_LATCH.flop.FDRE" FILE_NAME="top_conv1.v" LINE_NUMBER="1773" MODULE_INSTNAME="grp_conv1_fu_527" IS_FUNCINST="0"/>
+      <MODULE_INSTANCES>gmem1_m_axi_U grp_conv1_fu_527 grp_pool_1_Pipeline_CO_LOOP_H_LOOP_W_LOOP_fu_110</MODULE_INSTANCES>
+    </TPATH>
+    <TPATH DATAPATH_DELAY="9.101" DATAPATH_LOGIC_DELAY="3.153" DATAPATH_NET_DELAY="5.948" ENDPOINT_PIN="grp_pool_1_fu_795/grp_pool_1_Pipeline_CO_LOOP_H_LOOP_W_LOOP_fu_110/max_val_10_reg_1225_reg[6]/D" LOGIC_LEVELS="9" MAX_FANOUT="18" SLACK="0.890" STARTPOINT_PIN="grp_pool_1_fu_795/grp_pool_1_Pipeline_CO_LOOP_H_LOOP_W_LOOP_fu_110/val_reg_1180_reg[1]/C">
+      <CELL NAME="grp_pool_1_fu_795/grp_pool_1_Pipeline_CO_LOOP_H_LOOP_W_LOOP_fu_110/val_reg_1180_reg[1]" PRIMITIVE_TYPE="FLOP_LATCH.flop.FDRE" FILE_NAME="top_flow_control_loop_pipe_sequential_init.v" LINE_NUMBER="71" MODULE_INSTNAME="grp_pool_1_Pipeline_CO_LOOP_H_LOOP_W_LOOP_fu_110" IS_FUNCINST="0"/>
+      <CELL NAME="grp_pool_1_fu_795/grp_pool_1_Pipeline_CO_LOOP_H_LOOP_W_LOOP_fu_110/icmp_ln37_1_fu_900_p2_carry_i_8" PRIMITIVE_TYPE="LUT.others.LUT4" FILE_NAME="top_pool_1_Pipeline_CO_LOOP_H_LOOP_W_LOOP.v" LINE_NUMBER="1322" MODULE_INSTNAME="grp_pool_1_Pipeline_CO_LOOP_H_LOOP_W_LOOP_fu_110" IS_FUNCINST="0"/>
+      <CELL NAME="grp_pool_1_fu_795/grp_pool_1_Pipeline_CO_LOOP_H_LOOP_W_LOOP_fu_110/icmp_ln37_1_fu_900_p2_carry" PRIMITIVE_TYPE="CARRY.others.CARRY4" FILE_NAME="top_pool_1_Pipeline_CO_LOOP_H_LOOP_W_LOOP.v" LINE_NUMBER="1322" MODULE_INSTNAME="grp_pool_1_Pipeline_CO_LOOP_H_LOOP_W_LOOP_fu_110" IS_FUNCINST="0"/>
+      <CELL NAME="grp_pool_1_fu_795/grp_pool_1_Pipeline_CO_LOOP_H_LOOP_W_LOOP_fu_110/max_val_10_reg_1225[2]_i_3" PRIMITIVE_TYPE="LUT.others.LUT3" FILE_NAME="top_pool_1_Pipeline_CO_LOOP_H_LOOP_W_LOOP.v" LINE_NUMBER="1322" MODULE_INSTNAME="grp_pool_1_Pipeline_CO_LOOP_H_LOOP_W_LOOP_fu_110" IS_FUNCINST="0"/>
+      <CELL NAME="grp_pool_1_fu_795/grp_pool_1_Pipeline_CO_LOOP_H_LOOP_W_LOOP_fu_110/icmp_ln37_2_fu_915_p2_carry_i_3" PRIMITIVE_TYPE="LUT.others.LUT6" FILE_NAME="top_pool_1_Pipeline_CO_LOOP_H_LOOP_W_LOOP.v" LINE_NUMBER="1322" MODULE_INSTNAME="grp_pool_1_Pipeline_CO_LOOP_H_LOOP_W_LOOP_fu_110" IS_FUNCINST="0"/>
+      <CELL NAME="grp_pool_1_fu_795/grp_pool_1_Pipeline_CO_LOOP_H_LOOP_W_LOOP_fu_110/icmp_ln37_2_fu_915_p2_carry" PRIMITIVE_TYPE="CARRY.others.CARRY4" FILE_NAME="top_pool_1_Pipeline_CO_LOOP_H_LOOP_W_LOOP.v" LINE_NUMBER="1322" MODULE_INSTNAME="grp_pool_1_Pipeline_CO_LOOP_H_LOOP_W_LOOP_fu_110" IS_FUNCINST="0"/>
+      <CELL NAME="grp_pool_1_fu_795/grp_pool_1_Pipeline_CO_LOOP_H_LOOP_W_LOOP_fu_110/max_val_10_reg_1225[1]_i_3" PRIMITIVE_TYPE="LUT.others.LUT5" FILE_NAME="top_pool_1_Pipeline_CO_LOOP_H_LOOP_W_LOOP.v" LINE_NUMBER="1322" MODULE_INSTNAME="grp_pool_1_Pipeline_CO_LOOP_H_LOOP_W_LOOP_fu_110" IS_FUNCINST="0"/>
+      <CELL NAME="grp_pool_1_fu_795/grp_pool_1_Pipeline_CO_LOOP_H_LOOP_W_LOOP_fu_110/icmp_ln37_3_fu_962_p2_carry_i_4" PRIMITIVE_TYPE="LUT.others.LUT6" FILE_NAME="top_pool_1_Pipeline_CO_LOOP_H_LOOP_W_LOOP.v" LINE_NUMBER="1322" MODULE_INSTNAME="grp_pool_1_Pipeline_CO_LOOP_H_LOOP_W_LOOP_fu_110" IS_FUNCINST="0"/>
+      <CELL NAME="grp_pool_1_fu_795/grp_pool_1_Pipeline_CO_LOOP_H_LOOP_W_LOOP_fu_110/icmp_ln37_3_fu_962_p2_carry" PRIMITIVE_TYPE="CARRY.others.CARRY4" FILE_NAME="top_pool_1_Pipeline_CO_LOOP_H_LOOP_W_LOOP.v" LINE_NUMBER="1322" MODULE_INSTNAME="grp_pool_1_Pipeline_CO_LOOP_H_LOOP_W_LOOP_fu_110" IS_FUNCINST="0"/>
+      <CELL NAME="grp_pool_1_fu_795/grp_pool_1_Pipeline_CO_LOOP_H_LOOP_W_LOOP_fu_110/max_val_10_reg_1225[6]_i_1" PRIMITIVE_TYPE="LUT.others.LUT3" FILE_NAME="top_pool_1_Pipeline_CO_LOOP_H_LOOP_W_LOOP.v" LINE_NUMBER="1322" MODULE_INSTNAME="grp_pool_1_Pipeline_CO_LOOP_H_LOOP_W_LOOP_fu_110" IS_FUNCINST="0"/>
+      <CELL NAME="grp_pool_1_fu_795/grp_pool_1_Pipeline_CO_LOOP_H_LOOP_W_LOOP_fu_110/max_val_10_reg_1225_reg[6]" PRIMITIVE_TYPE="FLOP_LATCH.flop.FDRE" FILE_NAME="top_pool_1_Pipeline_CO_LOOP_H_LOOP_W_LOOP.v" LINE_NUMBER="902" MODULE_INSTNAME="grp_pool_1_Pipeline_CO_LOOP_H_LOOP_W_LOOP_fu_110" IS_FUNCINST="0"/>
+      <MODULE_INSTANCES>gmem1_m_axi_U grp_conv1_fu_527 grp_pool_1_Pipeline_CO_LOOP_H_LOOP_W_LOOP_fu_110</MODULE_INSTANCES>
+    </TPATH>
+  </TimingPaths>
+  <VivadoReportFiles>
+    <ReportFile TYPE="design_analysis" PATH="verilog/report/top_design_analysis_routed.rpt"/>
+    <ReportFile TYPE="failfast" PATH="verilog/report/top_failfast_routed.rpt"/>
+    <ReportFile TYPE="power" PATH="verilog/report/top_power_routed.rpt"/>
+    <ReportFile TYPE="status" PATH="verilog/report/top_status_routed.rpt"/>
+    <ReportFile TYPE="timing" PATH="verilog/report/top_timing_routed.rpt"/>
+    <ReportFile TYPE="timing_paths" PATH="verilog/report/top_timing_paths_routed.rpt"/>
+    <ReportFile TYPE="utilization" PATH="verilog/report/top_utilization_routed.rpt"/>
+    <ReportFile TYPE="utilization_hierarchical" PATH="verilog/report/top_utilization_hierarchical_routed.rpt"/>
+  </VivadoReportFiles>
+  <GeneralInfo NAME="General Information">
+    <item NAME="Date" VALUE="Sat Mar 07 19:19:50 PKT 2026"/>
+    <item NAME="Version" VALUE="2025.2 (Build 6295257 on Nov 14 2025)"/>
+    <item NAME="Project" VALUE="top"/>
+    <item NAME="Solution" VALUE="hls (Vivado IP Flow Target)"/>
+    <item NAME="Product family" VALUE="zynq"/>
+    <item NAME="Target device" VALUE="xc7z020-clg484-1"/>
+  </GeneralInfo>
+  <RunOptions NAME="Run Constraints &amp; Options">
+    <General NAME="Design Constraints &amp; Options">
+      <item NAME="Place &amp; Route target clock" VALUE="10 ns"/>
+      <item NAME="C-Synthesis target clock" VALUE="10 ns"/>
+      <item NAME="C-Synthesis uncertainty" VALUE="12.5%"/>
+      <item NAME="config_export -ip_xdc_file" VALUE=""/>
+      <item NAME="config_export -ip_xdc_ooc_file" VALUE=""/>
+    </General>
+    <Syn NAME="RTL Synthesis Options">
+      <item NAME="config_export -vivado_synth_strategy" VALUE="default"/>
+      <item NAME="config_export -vivado_synth_design_args" VALUE="-directive sdx_optimization_effort_high"/>
+    </Syn>
+    <Impl NAME="Place &amp; Route Options">
+      <item NAME="config_export -vivado_impl_strategy" VALUE="default"/>
+      <item NAME="config_export -vivado_phys_opt" VALUE="auto"/>
+      <item NAME="config_export -vivado_pblock" VALUE=""/>
+    </Impl>
+    <Reporting NAME="Reporting Options">
+      <item NAME="config_export -vivado_report_level" VALUE="2"/>
+      <item NAME="config_export -vivado_max_timing_paths" VALUE="10"/>
+    </Reporting>
+  </RunOptions>
+</profile>
