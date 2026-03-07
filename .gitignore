@@ -4,7 +4,6 @@
 .cproject
 .project
 .vivado_hls_log_all.xml
-
 solution1/csim.log
 solution1/csim.*
 solution1/sim/
@@ -16,3 +15,5 @@ solution1/*.rpt
 solution1/*.html
 solution1/*.xml
 solution1/.run/
+vivado_hls.app
+

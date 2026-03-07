@@ -11,13 +11,17 @@ typedef ap_fixed<8, 5> fixed;
 
 void conv1(
     fixed input[], fixed outputConv[],
-    fixed weight[], fixed bias[],
-    int Cin, int Cout, int H, int W, int K
+    fixed weight[], fixed bias[]
 );
 
-void conv2(fixed input[], fixed outputConv[],
-	    fixed weight[], fixed bias[]
-	);
+void conv2(
+    fixed input[], fixed outputConv[],
+    fixed weight[], fixed bias[]
+);
+
+// void conv2(fixed input[], fixed outputConv[],
+// 	    fixed weight[], fixed bias[]
+// 	);
 
 
 

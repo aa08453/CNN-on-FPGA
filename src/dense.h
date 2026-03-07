@@ -11,8 +11,7 @@ typedef ap_fixed<8, 5> fixed;
 
 void dense(
 		fixed input[], fixed outputDense[],
-		fixed fcWeight[], fixed fcBias[],
-		    int inputFeatures, int numClasses
+		fixed fcWeight[], fixed fcBias[]
 );
 
 

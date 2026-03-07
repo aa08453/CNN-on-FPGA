@@ -1,44 +1,39 @@
-// dense.cpp
 #include "dense.h"
 
-
-
 void dense(
-		fixed input[], fixed outputDense[],
-		fixed fcWeight[], fixed fcBias[],
-		int inputFeatures, int numClasses
-
+    fixed input[], fixed outputDense[],
+    fixed fcWeight[], fixed fcBias[]
 ) {
+    static fixed temp[784];
+    #pragma HLS ARRAY_PARTITION variable=temp cyclic factor=8
+    
+    // 1. Load Input
+    LOAD_IN: for(int i=0; i<784; i++) {
+        #pragma HLS PIPELINE II=1
+        temp[i] = input[i];
+    }
 
-	int size = 784;
-		fixed temp[784]; // local arr for partition
-		for(int i=0; i<size; i++) {
-			temp[i] = input[i];
-		}
-	int weightSize = 7840;
-	fixed tempWeight[7840]; // local arr for partition
-			for(int i=0; i<weightSize; i++) {
-				tempWeight[i] = fcWeight[i];
-			}
+    // 2. Buffer the Bias locally (This prevents gmem1 contention during the loop)
+    fixed local_bias[10];
+    #pragma HLS ARRAY_PARTITION variable=local_bias complete
+    LOAD_BIAS: for(int i=0; i<10; i++) {
+        #pragma HLS PIPELINE II=1
+        local_bias[i] = fcBias[i];
+    }
 
-#pragma HLS ARRAY_PARTITION variable=temp cyclic factor=8 dim=1
-#pragma HLS ARRAY_PARTITION variable=tempWeight cyclic factor=8 dim=1
-
-//#pragma HLS ARRAY_PARTITION variable=fcWeight cyclic factor=16 dim=1
-
-
-    for (int c = 0; c < numClasses; c++) {
-        fixed sum = fcBias[c];
-//#pragma HLS PIPELINE II=2
-        for (int i = 0; i < inputFeatures; i++) {
-            #pragma HLS UNROLL factor=112
-        	int offset = c*inputFeatures + i;
-        	fixed multRes = temp[i] * tempWeight[offset];
-                sum += multRes;
-            }
+    // 3. Main Computation
+    DENSE_OUTER: for (int c = 0; c < 10; c++) {
+        fixed sum = local_bias[c]; // Use the local buffer
+        
+        DENSE_INNER: for (int i = 0; i < 784; i++) {
+            #pragma HLS PIPELINE II=1
+            // Use an explicit index to help the AXI compiler
+            int offset = (c * 784) + i;
+            
+            // Boundary Check for Simulation Stability
+            fixed w_val = (offset < 7840) ? fcWeight[offset] : (fixed)0;
+            sum += temp[i] * w_val;
+        }
         outputDense[c] = sum;
     }
 }
-
-
-

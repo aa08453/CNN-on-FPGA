@@ -1,52 +1,56 @@
-// eight.cpp
-
 #include "conv.h"
 #include "pool.h"
 #include "dense.h"
-#include <hls_stream.h>
 
 void top(
-	fixed input[],
-	fixed outputConv[],
-	fixed weight[],
-	fixed bias[],
-
-	fixed outputPool[],
-
-	fixed weight2[],
-	fixed bias2[],
-	fixed outputConv2[],
-
-	fixed outputPool2[],
-
-	fixed outputDense[],
-	fixed fcWeight[], fixed fcBias[]
+    fixed input[],
+    fixed outputConv[], // Intermediate
+    fixed weight[],
+    fixed bias[],
+    fixed outputPool[], // Intermediate
+    fixed weight2[],
+    fixed bias2[],
+    fixed outputConv2[], // Intermediate
+    fixed outputPool2[], // Intermediate
+    fixed outputDense[], // Final Result
+    fixed fcWeight[], 
+    fixed fcBias[]
 ) {
-	// for later storage in external mem
-#pragma HLS INTERFACE m_axi port=input       depth=784     offset=slave bundle=gmem1
-#pragma HLS INTERFACE m_axi port=outputConv  depth=6272 offset=slave bundle=gmem2
-#pragma HLS INTERFACE m_axi port=weight      depth=72   offset=slave bundle=gmem3
-#pragma HLS INTERFACE m_axi port=bias        depth=8   offset=slave bundle=gmem4
-#pragma HLS INTERFACE m_axi port=outputPool  depth=1568 offset=slave bundle=gmem5
-#pragma HLS INTERFACE m_axi port=weight2     depth=1152  offset=slave bundle=gmem6
-#pragma HLS INTERFACE m_axi port=bias2       depth=16    offset=slave bundle=gmem7
-#pragma HLS INTERFACE m_axi port=outputConv2 depth=3136 offset=slave bundle=gmem8
-#pragma HLS INTERFACE m_axi port=outputPool2 depth=784 offset=slave bundle=gmem9
-#pragma HLS INTERFACE m_axi port=outputDense depth=10 offset=slave bundle=gmem10
-#pragma HLS INTERFACE m_axi port=fcWeight    depth=7840 offset=slave bundle=gmem11
-#pragma HLS INTERFACE m_axi port=fcBias      depth=10 offset=slave bundle=gmem12
+    // GROUPING: Use gmem0 for large data flows, gmem1 for weights/constants
+// DATA BUNDLE (Padded by 64 to ensure AXI bursts never hit the boundary)
+    #pragma HLS INTERFACE m_axi port=input       depth=848  bundle=gmem0
+    #pragma HLS INTERFACE m_axi port=outputConv  depth=6336 bundle=gmem0
+    #pragma HLS INTERFACE m_axi port=outputPool  depth=1632 bundle=gmem0
+    #pragma HLS INTERFACE m_axi port=outputConv2 depth=3200 bundle=gmem0
+    #pragma HLS INTERFACE m_axi port=outputPool2 depth=848  bundle=gmem0
+    #pragma HLS INTERFACE m_axi port=outputDense depth=64   bundle=gmem0
 
-#pragma HLS INTERFACE s_axilite port=return  bundle=control
+    // WEIGHT BUNDLE (Padded by 64)
+    #pragma HLS INTERFACE m_axi port=weight      depth=136  bundle=gmem1
+    #pragma HLS INTERFACE m_axi port=bias        depth=64   bundle=gmem1
+    #pragma HLS INTERFACE m_axi port=weight2     depth=1216 bundle=gmem1
+    #pragma HLS INTERFACE m_axi port=bias2       depth=64   bundle=gmem1
+    #pragma HLS INTERFACE m_axi port=fcWeight    depth=7904 bundle=gmem1
+    #pragma HLS INTERFACE m_axi port=fcBias      depth=64   bundle=gmem1
 
-	conv1(input, outputConv, weight, bias, 1, 8, 28, 28, 3);
-	pool(outputConv, outputPool, 8, 28, 28, 2, 2);
+    #pragma HLS STABLE variable=weight
+    #pragma HLS STABLE variable=bias
+    #pragma HLS STABLE variable=weight2
+    #pragma HLS STABLE variable=bias2
+    #pragma HLS STABLE variable=fcWeight
+    #pragma HLS STABLE variable=fcBias
 
-	conv2(outputPool, outputConv2, weight2, bias2);
-	pool(outputConv2, outputPool2, 16, 14, 14, 2, 2);
+    #pragma HLS INTERFACE s_axilite port=return  bundle=control
 
-	dense(outputPool2, outputDense, fcWeight, fcBias, 784, 10);
+    // This pragma enables task-level parallelism
+    // #pragma HLS DATAFLOW
 
+    // Execution Chain
+    conv1(input, outputConv, weight, bias);
+    pool(outputConv, outputPool, 8, 28, 28, 2, 2);
 
+    conv2(outputPool, outputConv2, weight2, bias2);
+    pool(outputConv2, outputPool2, 16, 14, 14, 2, 2);
+
+    dense(outputPool2, outputDense, fcWeight, fcBias);
 }
-
-

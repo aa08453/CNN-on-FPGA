@@ -1,107 +1,131 @@
-// conv.cpp
 #include "conv.h"
 
 void conv1(
     fixed input[], fixed outputConv[],
-    fixed weight[], fixed bias[],
-    int Cin, int Cout, int H, int W, int K
+    fixed weight[], fixed bias[]
 ) {
-	int size = 28*28;
-	fixed temp[28*28];
-	for(int i=0; i<size; i++) {
-		temp[i] = input[i]; //
-	}
-//#pragma HLS ARRAY_PARTITION variable=temp cyclic factor=4 dim=1
-//#pragma HLS ARRAY_PARTITION variable=weight complete dim=1
-//#pragma HLS ARRAY_PARTITION variable=bias complete dim=1
-#pragma HLS RESOURCE variable=temp core=RAM_1P_BRAM
+    fixed temp[28*28];        
+    // #pragma HLS ARRAY_PARTITION variable=temp complete // Best for II=1
+    #pragma HLS ARRAY_PARTITION variable=temp cyclic factor=16 dim=1
+    #pragma HLS bind_storage variable=temp type=RAM_2P impl=BRAM
 
-    for (int co = 0; co < Cout; co++) {
+    // 1. Create a local buffer for weights and bias
+    static fixed local_weight[8*3*3]; // Cout * K * K
+    static fixed local_bias[8];
+    
+    // 2. Partition weights so the 3x3 unroll can read them all at once
+    #pragma HLS ARRAY_PARTITION variable=local_weight complete
+    #pragma HLS ARRAY_PARTITION variable=local_bias complete
 
-        for (int h = 0; h < H; h++) {
+    // 3. LOAD weights and bias from AXI bus into local buffers
+    LOAD_W: for(int i=0; i<72; i++) {
+        #pragma HLS PIPELINE II=1
+        local_weight[i] = weight[i];
+    }
+    LOAD_B: for(int i=0; i<8; i++) {
+        #pragma HLS PIPELINE II=1
+        local_bias[i] = bias[i];
+    }
 
-            for (int w = 0; w < 28; w++) {
-#pragma HLS PIPELINE II=1
-                fixed sum = bias[co];
-                for (int ci = 0; ci < 1; ci++) {
+    // 4. LOAD input into temp
+    LOAD_1: for(int i=0; i<784; i++) {
+        #pragma HLS PIPELINE II=1
+        temp[i] = input[i];
+    }
 
-                    for (int kh = 0; kh < 3; kh++) {
+    CO_1: for (int co = 0; co < 8; co++) {
+        H_1: for (int h = 0; h < 28; h++) {
+            W_1: for (int w = 0; w < 28; w++) {
+                #pragma HLS PIPELINE II=1
+                fixed sum = local_bias[co]; // Use local buffer
+                
+                KH_1: for (int kh = 0; kh < 3; kh++) {
+                    KW_1: for (int kw = 0; kw < 3; kw++) {
+                        int inh = h + kh - 1;
+                        int inw = w + kw - 1;
 
-
-                        for (int kw = 0; kw < 3; kw++) {
-
-#pragma HLS UNROLL factor=16
-                            int inh = h + kh - K / 2;
-                            int inw = w + kw - K / 2;
-
-                            if (inh >= 0 && inh < H && inw >= 0 && inw < W) {
-                                int inputIdx = ci * H * W + inh * W + inw;
-                                int out1 = co * Cin * K * K;
-								int out2 = ci * K * K;
-								int out3 = kh * K;
-                                int weightIdx = out1 + out2 + out3 + kw;
-                                fixed multRes = temp[inputIdx] * weight[weightIdx];
-                                sum += multRes;
-                            }
+                        if (inh >= 0 && inh < 28 && inw >= 0 && inw < 28) {
+                            int inputIdx = inh * 28 + inw;
+                            int weightIdx = (co * 9) + (kh * 3) + kw;
+                            // 5. Use local_weight instead of weight pointer
+                            sum += temp[inputIdx] * local_weight[weightIdx];
                         }
                     }
                 }
-                int outIdx = co * H * W + h * W + w;
-                outputConv[outIdx] = sum>fixed(0)? sum : fixed(0);
+                outputConv[co * 784 + h * 28 + w] = (sum > 0) ? sum : (fixed)0;
             }
         }
     }
 }
 
-
-
 void conv2(
     fixed input[], fixed outputConv[],
     fixed weight[], fixed bias[]
 ) {
-	int size = 8*14*14;
-		fixed temp[8*14*14];
-		for(int i=0; i<size; i++) {
-			temp[i] = input[i];
-		}
-#pragma HLS RESOURCE variable=temp core=RAM_1P_BRAM
+    static fixed local_weight[1152];
+    static fixed local_bias[16];
+    #pragma HLS ARRAY_PARTITION variable=local_weight cyclic factor=9 dim=1
+    #pragma HLS ARRAY_PARTITION variable=local_bias complete
+    
+    LOAD_W: for(int i=0; i<1152; i++) {
+        #pragma HLS PIPELINE II=1
+        local_weight[i] = weight[i];
+    }
+    LOAD_B: for(int i=0; i<16; i++) {
+        #pragma HLS PIPELINE II=1
+        local_bias[i] = bias[i];
+    }
+    // Fixed the size here: 8 * 14 * 14 = 1568
+    fixed temp[1568];
+    
+    // Partitioning by Cin (8) allows the ci loop to read in parallel
+    #pragma HLS ARRAY_PARTITION variable=temp cyclic factor=8 dim=1
+    #pragma HLS bind_storage variable=temp type=RAM_2P impl=BRAM
 
-//#pragma HLS ARRAY_PARTITION variable=temp cyclic factor=4 dim=1
-//#pragma HLS ARRAY_PARTITION variable=weight complete dim=1
-//#pragma HLS ARRAY_PARTITION variable=bias complete dim=1
-	int K=3, H=14, W=14, Cin =8, Cout = 16;
-    for (int co = 0; co < 16; co++) {
+    LOAD_2: for(int i=0; i < 1568; i++) {
+        #pragma HLS PIPELINE II=1
+        temp[i] = input[i];
+    }
 
+    static fixed partial_sums[8]; // One for each ci
+    #pragma HLS ARRAY_PARTITION variable=partial_sums complete
+
+    CO_2: for (int co = 0; co < 16; co++) {
         for (int h = 0; h < 14; h++) {
-
             for (int w = 0; w < 14; w++) {
-#pragma HLS PIPELINE II=1
-                fixed sum = bias[co];
-                for (int ci = 0; ci < 8; ci++) {
-#pragma HLS UNROLL factor=16
-                    for (int kh = 0; kh < 3; kh++) {
+                
+                // 1. Initialize partial sums for each output pixel
+                for(int p = 0; p < 8; p++) {
+                    #pragma HLS UNROLL
+                    partial_sums[p] = 0;
+                }
 
+                CI_2: for (int ci = 0; ci < 8; ci++) {
+                    #pragma HLS PIPELINE II=1
+                    KH_2: for (int kh = 0; kh < 3; kh++) {
+                        KW_2: for (int kw = 0; kw < 3; kw++) {
+                            int inh = h + kh - 3 / 2;
+                            int inw = w + kw - 3 / 2;
 
-                        for (int kw = 0; kw < 3; kw++) {
-
-
-                            int inh = h + kh - K / 2;
-                            int inw = w + kw - K / 2;
-
-                            if (inh >= 0 && inh < H && inw >= 0 && inw < W) {
-                                int inputIdx = ci * H * W + inh * W + inw;
-                                int out1 = co * Cin * K * K;
-                                int out2 = ci * K * K;
-                                int out3 = kh * K;
-                                int weightIdx = out1 + out2 + out3 + kw;
-                                fixed multRes = temp[inputIdx] * weight[weightIdx];
-                                sum += multRes;
+                            if (inh >= 0 && inh < 14 && inw >= 0 && inw < 14) {
+                                int inputIdx = (ci * 196) + (inh * 14) + inw;
+                                int weightIdx = (co * 8 * 9) + (ci * 9) + (kh * 3) + kw;
+                                // FIX: Use += to accumulate the 3x3 window
+                                partial_sums[ci] += temp[inputIdx] * local_weight[weightIdx];
                             }
                         }
                     }
                 }
-                int outIdx = co * H * W + h * W + w;
-                outputConv[outIdx] = sum>fixed(0)? sum : fixed(0);
+
+                // 2. Sum the channels AND add the bias
+                fixed sum = local_bias[co];
+                for(int p = 0; p < 8; p++) {
+                    #pragma HLS UNROLL
+                    sum += partial_sums[p];
+                }
+
+                int outIdx = co * 196 + h * 14 + w;
+                outputConv[outIdx] = (sum > 0) ? sum : (fixed)0;
             }
         }
     }
