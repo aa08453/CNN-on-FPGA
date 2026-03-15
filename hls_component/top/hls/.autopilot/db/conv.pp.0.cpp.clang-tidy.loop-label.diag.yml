@@ -51,50 +51,50 @@ Diagnostics:
     BuildDirectory:  '/home/abdullah/Desktop/CNN-on-FPGA/hls_component'
   - DiagnosticName:  xilinx-label-all-loops
     DiagnosticMessage:
-      Message:         'Added loop label VITIS_LOOP_94_1:  '
+      Message:         'Added loop label VITIS_LOOP_69_1:  '
       FilePath:        '/home/abdullah/Desktop/CNN-on-FPGA/src/conv.cpp'
-      FileOffset:      94
+      FileOffset:      69
       Replacements:
         - FilePath:        '/home/abdullah/Desktop/CNN-on-FPGA/hls_component/top/hls/.autopilot/db/conv.pp.0.cpp'
-          Offset:          2347371
+          Offset:          2355511
           Length:          0
-          ReplacementText: 'VITIS_LOOP_94_1: '
+          ReplacementText: 'VITIS_LOOP_69_1: '
     Level:           Remark
     BuildDirectory:  '/home/abdullah/Desktop/CNN-on-FPGA/hls_component'
   - DiagnosticName:  xilinx-label-all-loops
     DiagnosticMessage:
-      Message:         'Added loop label VITIS_LOOP_95_2:  '
+      Message:         'Added loop label VITIS_LOOP_70_2:  '
       FilePath:        '/home/abdullah/Desktop/CNN-on-FPGA/src/conv.cpp'
-      FileOffset:      95
+      FileOffset:      70
       Replacements:
         - FilePath:        '/home/abdullah/Desktop/CNN-on-FPGA/hls_component/top/hls/.autopilot/db/conv.pp.0.cpp'
-          Offset:          2347414
+          Offset:          2355554
           Length:          0
-          ReplacementText: 'VITIS_LOOP_95_2: '
+          ReplacementText: 'VITIS_LOOP_70_2: '
     Level:           Remark
     BuildDirectory:  '/home/abdullah/Desktop/CNN-on-FPGA/hls_component'
   - DiagnosticName:  xilinx-label-all-loops
     DiagnosticMessage:
-      Message:         'Added loop label VITIS_LOOP_98_3:  '
+      Message:         'Added loop label VITIS_LOOP_73_3:  '
       FilePath:        '/home/abdullah/Desktop/CNN-on-FPGA/src/conv.cpp'
-      FileOffset:      98
+      FileOffset:      73
       Replacements:
         - FilePath:        '/home/abdullah/Desktop/CNN-on-FPGA/hls_component/top/hls/.autopilot/db/conv.pp.0.cpp'
-          Offset:          2347463
+          Offset:          2355603
           Length:          0
-          ReplacementText: 'VITIS_LOOP_98_3: '
+          ReplacementText: 'VITIS_LOOP_73_3: '
     Level:           Remark
     BuildDirectory:  '/home/abdullah/Desktop/CNN-on-FPGA/hls_component'
   - DiagnosticName:  xilinx-label-all-loops
     DiagnosticMessage:
-      Message:         'Added loop label VITIS_LOOP_122_4:  '
+      Message:         'Added loop label VITIS_LOOP_99_4:  '
       FilePath:        '/home/abdullah/Desktop/CNN-on-FPGA/src/conv.cpp'
-      FileOffset:      122
+      FileOffset:      99
       Replacements:
         - FilePath:        '/home/abdullah/Desktop/CNN-on-FPGA/hls_component/top/hls/.autopilot/db/conv.pp.0.cpp'
-          Offset:          2348383
+          Offset:          2356628
           Length:          0
-          ReplacementText: 'VITIS_LOOP_122_4: '
+          ReplacementText: 'VITIS_LOOP_99_4: '
     Level:           Remark
     BuildDirectory:  '/home/abdullah/Desktop/CNN-on-FPGA/hls_component'
 ...

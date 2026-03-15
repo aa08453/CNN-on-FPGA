@@ -51,26 +51,26 @@ Diagnostics:
     BuildDirectory:  '/home/abdullah/Desktop/CNN-on-FPGA/hls_component'
   - DiagnosticName:  xilinx-label-all-loops
     DiagnosticMessage:
-      Message:         'Added loop label VITIS_LOOP_30_1:  '
+      Message:         'Added loop label VITIS_LOOP_23_1:  '
       FilePath:        '/home/abdullah/Desktop/CNN-on-FPGA/src/pool.cpp'
-      FileOffset:      30
+      FileOffset:      23
       Replacements:
         - FilePath:        '/home/abdullah/Desktop/CNN-on-FPGA/hls_component/top/hls/.autopilot/db/pool.pp.0.cpp'
-          Offset:          2345435
+          Offset:          2345270
           Length:          0
-          ReplacementText: 'VITIS_LOOP_30_1: '
+          ReplacementText: 'VITIS_LOOP_23_1: '
     Level:           Remark
     BuildDirectory:  '/home/abdullah/Desktop/CNN-on-FPGA/hls_component'
   - DiagnosticName:  xilinx-label-all-loops
     DiagnosticMessage:
-      Message:         'Added loop label VITIS_LOOP_31_2:  '
+      Message:         'Added loop label VITIS_LOOP_24_2:  '
       FilePath:        '/home/abdullah/Desktop/CNN-on-FPGA/src/pool.cpp'
-      FileOffset:      31
+      FileOffset:      24
       Replacements:
         - FilePath:        '/home/abdullah/Desktop/CNN-on-FPGA/hls_component/top/hls/.autopilot/db/pool.pp.0.cpp'
-          Offset:          2345488
+          Offset:          2345323
           Length:          0
-          ReplacementText: 'VITIS_LOOP_31_2: '
+          ReplacementText: 'VITIS_LOOP_24_2: '
     Level:           Remark
     BuildDirectory:  '/home/abdullah/Desktop/CNN-on-FPGA/hls_component'
 ...

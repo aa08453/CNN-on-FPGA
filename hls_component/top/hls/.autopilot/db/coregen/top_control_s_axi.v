@@ -8,7 +8,7 @@
 `timescale 1ns/1ps
 (* DowngradeIPIdentifiedWarnings="yes" *) module top_control_s_axi
 #(parameter
-    C_S_AXI_ADDR_WIDTH = 8,
+    C_S_AXI_ADDR_WIDTH = 6,
     C_S_AXI_DATA_WIDTH = 32
 )(
     input  wire                          ACLK,
@@ -33,17 +33,7 @@
     input  wire                          RREADY,
     output wire                          interrupt,
     output wire [63:0]                   input_r,
-    output wire [63:0]                   outputConv,
-    output wire [63:0]                   weight,
-    output wire [63:0]                   bias,
-    output wire [63:0]                   outputPool,
-    output wire [63:0]                   weight2,
-    output wire [63:0]                   bias2,
-    output wire [63:0]                   outputConv2,
-    output wire [63:0]                   outputPool2,
     output wire [63:0]                   outputDense,
-    output wire [63:0]                   fcWeight,
-    output wire [63:0]                   fcBias,
     output wire                          ap_start,
     input  wire                          ap_done,
     input  wire                          ap_ready,
@@ -76,105 +66,25 @@
 // 0x14 : Data signal of input_r
 //        bit 31~0 - input_r[63:32] (Read/Write)
 // 0x18 : reserved
-// 0x1c : Data signal of outputConv
-//        bit 31~0 - outputConv[31:0] (Read/Write)
-// 0x20 : Data signal of outputConv
-//        bit 31~0 - outputConv[63:32] (Read/Write)
-// 0x24 : reserved
-// 0x28 : Data signal of weight
-//        bit 31~0 - weight[31:0] (Read/Write)
-// 0x2c : Data signal of weight
-//        bit 31~0 - weight[63:32] (Read/Write)
-// 0x30 : reserved
-// 0x34 : Data signal of bias
-//        bit 31~0 - bias[31:0] (Read/Write)
-// 0x38 : Data signal of bias
-//        bit 31~0 - bias[63:32] (Read/Write)
-// 0x3c : reserved
-// 0x40 : Data signal of outputPool
-//        bit 31~0 - outputPool[31:0] (Read/Write)
-// 0x44 : Data signal of outputPool
-//        bit 31~0 - outputPool[63:32] (Read/Write)
-// 0x48 : reserved
-// 0x4c : Data signal of weight2
-//        bit 31~0 - weight2[31:0] (Read/Write)
-// 0x50 : Data signal of weight2
-//        bit 31~0 - weight2[63:32] (Read/Write)
-// 0x54 : reserved
-// 0x58 : Data signal of bias2
-//        bit 31~0 - bias2[31:0] (Read/Write)
-// 0x5c : Data signal of bias2
-//        bit 31~0 - bias2[63:32] (Read/Write)
-// 0x60 : reserved
-// 0x64 : Data signal of outputConv2
-//        bit 31~0 - outputConv2[31:0] (Read/Write)
-// 0x68 : Data signal of outputConv2
-//        bit 31~0 - outputConv2[63:32] (Read/Write)
-// 0x6c : reserved
-// 0x70 : Data signal of outputPool2
-//        bit 31~0 - outputPool2[31:0] (Read/Write)
-// 0x74 : Data signal of outputPool2
-//        bit 31~0 - outputPool2[63:32] (Read/Write)
-// 0x78 : reserved
-// 0x7c : Data signal of outputDense
+// 0x1c : Data signal of outputDense
 //        bit 31~0 - outputDense[31:0] (Read/Write)
-// 0x80 : Data signal of outputDense
+// 0x20 : Data signal of outputDense
 //        bit 31~0 - outputDense[63:32] (Read/Write)
-// 0x84 : reserved
-// 0x88 : Data signal of fcWeight
-//        bit 31~0 - fcWeight[31:0] (Read/Write)
-// 0x8c : Data signal of fcWeight
-//        bit 31~0 - fcWeight[63:32] (Read/Write)
-// 0x90 : reserved
-// 0x94 : Data signal of fcBias
-//        bit 31~0 - fcBias[31:0] (Read/Write)
-// 0x98 : Data signal of fcBias
-//        bit 31~0 - fcBias[63:32] (Read/Write)
-// 0x9c : reserved
+// 0x24 : reserved
 // (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
 //------------------------Parameter----------------------
 localparam
-    ADDR_AP_CTRL            = 8'h00,
-    ADDR_GIE                = 8'h04,
-    ADDR_IER                = 8'h08,
-    ADDR_ISR                = 8'h0c,
-    ADDR_INPUT_R_DATA_0     = 8'h10,
-    ADDR_INPUT_R_DATA_1     = 8'h14,
-    ADDR_INPUT_R_CTRL       = 8'h18,
-    ADDR_OUTPUTCONV_DATA_0  = 8'h1c,
-    ADDR_OUTPUTCONV_DATA_1  = 8'h20,
-    ADDR_OUTPUTCONV_CTRL    = 8'h24,
-    ADDR_WEIGHT_DATA_0      = 8'h28,
-    ADDR_WEIGHT_DATA_1      = 8'h2c,
-    ADDR_WEIGHT_CTRL        = 8'h30,
-    ADDR_BIAS_DATA_0        = 8'h34,
-    ADDR_BIAS_DATA_1        = 8'h38,
-    ADDR_BIAS_CTRL          = 8'h3c,
-    ADDR_OUTPUTPOOL_DATA_0  = 8'h40,
-    ADDR_OUTPUTPOOL_DATA_1  = 8'h44,
-    ADDR_OUTPUTPOOL_CTRL    = 8'h48,
-    ADDR_WEIGHT2_DATA_0     = 8'h4c,
-    ADDR_WEIGHT2_DATA_1     = 8'h50,
-    ADDR_WEIGHT2_CTRL       = 8'h54,
-    ADDR_BIAS2_DATA_0       = 8'h58,
-    ADDR_BIAS2_DATA_1       = 8'h5c,
-    ADDR_BIAS2_CTRL         = 8'h60,
-    ADDR_OUTPUTCONV2_DATA_0 = 8'h64,
-    ADDR_OUTPUTCONV2_DATA_1 = 8'h68,
-    ADDR_OUTPUTCONV2_CTRL   = 8'h6c,
-    ADDR_OUTPUTPOOL2_DATA_0 = 8'h70,
-    ADDR_OUTPUTPOOL2_DATA_1 = 8'h74,
-    ADDR_OUTPUTPOOL2_CTRL   = 8'h78,
-    ADDR_OUTPUTDENSE_DATA_0 = 8'h7c,
-    ADDR_OUTPUTDENSE_DATA_1 = 8'h80,
-    ADDR_OUTPUTDENSE_CTRL   = 8'h84,
-    ADDR_FCWEIGHT_DATA_0    = 8'h88,
-    ADDR_FCWEIGHT_DATA_1    = 8'h8c,
-    ADDR_FCWEIGHT_CTRL      = 8'h90,
-    ADDR_FCBIAS_DATA_0      = 8'h94,
-    ADDR_FCBIAS_DATA_1      = 8'h98,
-    ADDR_FCBIAS_CTRL        = 8'h9c,
+    ADDR_AP_CTRL            = 6'h00,
+    ADDR_GIE                = 6'h04,
+    ADDR_IER                = 6'h08,
+    ADDR_ISR                = 6'h0c,
+    ADDR_INPUT_R_DATA_0     = 6'h10,
+    ADDR_INPUT_R_DATA_1     = 6'h14,
+    ADDR_INPUT_R_CTRL       = 6'h18,
+    ADDR_OUTPUTDENSE_DATA_0 = 6'h1c,
+    ADDR_OUTPUTDENSE_DATA_1 = 6'h20,
+    ADDR_OUTPUTDENSE_CTRL   = 6'h24,
     WRIDLE                  = 2'd0,
     WRDATA                  = 2'd1,
     WRRESP                  = 2'd2,
@@ -182,7 +92,7 @@ localparam
     RDIDLE                  = 2'd0,
     RDDATA                  = 2'd1,
     RDRESET                 = 2'd2,
-    ADDR_BITS                = 8;
+    ADDR_BITS                = 6;
 
 //------------------------Local signal-------------------
     reg  [1:0]                    wstate = WRRESET;
@@ -212,17 +122,7 @@ localparam
     reg  [1:0]                    int_ier = 2'b0;
     reg  [1:0]                    int_isr = 2'b0;
     reg  [63:0]                   int_input_r = 'b0;
-    reg  [63:0]                   int_outputConv = 'b0;
-    reg  [63:0]                   int_weight = 'b0;
-    reg  [63:0]                   int_bias = 'b0;
-    reg  [63:0]                   int_outputPool = 'b0;
-    reg  [63:0]                   int_weight2 = 'b0;
-    reg  [63:0]                   int_bias2 = 'b0;
-    reg  [63:0]                   int_outputConv2 = 'b0;
-    reg  [63:0]                   int_outputPool2 = 'b0;
     reg  [63:0]                   int_outputDense = 'b0;
-    reg  [63:0]                   int_fcWeight = 'b0;
-    reg  [63:0]                   int_fcBias = 'b0;
 
 //------------------------Instantiation------------------
 
@@ -338,71 +238,11 @@ always @(posedge ACLK) begin
                 ADDR_INPUT_R_DATA_1: begin
                     rdata <= int_input_r[63:32];
                 end
-                ADDR_OUTPUTCONV_DATA_0: begin
-                    rdata <= int_outputConv[31:0];
-                end
-                ADDR_OUTPUTCONV_DATA_1: begin
-                    rdata <= int_outputConv[63:32];
-                end
-                ADDR_WEIGHT_DATA_0: begin
-                    rdata <= int_weight[31:0];
-                end
-                ADDR_WEIGHT_DATA_1: begin
-                    rdata <= int_weight[63:32];
-                end
-                ADDR_BIAS_DATA_0: begin
-                    rdata <= int_bias[31:0];
-                end
-                ADDR_BIAS_DATA_1: begin
-                    rdata <= int_bias[63:32];
-                end
-                ADDR_OUTPUTPOOL_DATA_0: begin
-                    rdata <= int_outputPool[31:0];
-                end
-                ADDR_OUTPUTPOOL_DATA_1: begin
-                    rdata <= int_outputPool[63:32];
-                end
-                ADDR_WEIGHT2_DATA_0: begin
-                    rdata <= int_weight2[31:0];
-                end
-                ADDR_WEIGHT2_DATA_1: begin
-                    rdata <= int_weight2[63:32];
-                end
-                ADDR_BIAS2_DATA_0: begin
-                    rdata <= int_bias2[31:0];
-                end
-                ADDR_BIAS2_DATA_1: begin
-                    rdata <= int_bias2[63:32];
-                end
-                ADDR_OUTPUTCONV2_DATA_0: begin
-                    rdata <= int_outputConv2[31:0];
-                end
-                ADDR_OUTPUTCONV2_DATA_1: begin
-                    rdata <= int_outputConv2[63:32];
-                end
-                ADDR_OUTPUTPOOL2_DATA_0: begin
-                    rdata <= int_outputPool2[31:0];
-                end
-                ADDR_OUTPUTPOOL2_DATA_1: begin
-                    rdata <= int_outputPool2[63:32];
-                end
                 ADDR_OUTPUTDENSE_DATA_0: begin
                     rdata <= int_outputDense[31:0];
                 end
                 ADDR_OUTPUTDENSE_DATA_1: begin
                     rdata <= int_outputDense[63:32];
-                end
-                ADDR_FCWEIGHT_DATA_0: begin
-                    rdata <= int_fcWeight[31:0];
-                end
-                ADDR_FCWEIGHT_DATA_1: begin
-                    rdata <= int_fcWeight[63:32];
-                end
-                ADDR_FCBIAS_DATA_0: begin
-                    rdata <= int_fcBias[31:0];
-                end
-                ADDR_FCBIAS_DATA_1: begin
-                    rdata <= int_fcBias[63:32];
                 end
             endcase
         end
@@ -417,17 +257,7 @@ assign task_ap_done      = (ap_done && !auto_restart_status) || auto_restart_don
 assign task_ap_ready     = ap_ready && !int_auto_restart;
 assign auto_restart_done = auto_restart_status && (ap_idle && !int_ap_idle);
 assign input_r           = int_input_r;
-assign outputConv        = int_outputConv;
-assign weight            = int_weight;
-assign bias              = int_bias;
-assign outputPool        = int_outputPool;
-assign weight2           = int_weight2;
-assign bias2             = int_bias2;
-assign outputConv2       = int_outputConv2;
-assign outputPool2       = int_outputPool2;
 assign outputDense       = int_outputDense;
-assign fcWeight          = int_fcWeight;
-assign fcBias            = int_fcBias;
 // int_interrupt
 always @(posedge ACLK) begin
     if (ARESET)
@@ -580,166 +410,6 @@ always @(posedge ACLK) begin
     end
 end
 
-// int_outputConv[31:0]
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_outputConv[31:0] <= 0;
-    else if (ACLK_EN) begin
-        if (w_hs && waddr == ADDR_OUTPUTCONV_DATA_0)
-            int_outputConv[31:0] <= (WDATA[31:0] & wmask) | (int_outputConv[31:0] & ~wmask);
-    end
-end
-
-// int_outputConv[63:32]
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_outputConv[63:32] <= 0;
-    else if (ACLK_EN) begin
-        if (w_hs && waddr == ADDR_OUTPUTCONV_DATA_1)
-            int_outputConv[63:32] <= (WDATA[31:0] & wmask) | (int_outputConv[63:32] & ~wmask);
-    end
-end
-
-// int_weight[31:0]
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_weight[31:0] <= 0;
-    else if (ACLK_EN) begin
-        if (w_hs && waddr == ADDR_WEIGHT_DATA_0)
-            int_weight[31:0] <= (WDATA[31:0] & wmask) | (int_weight[31:0] & ~wmask);
-    end
-end
-
-// int_weight[63:32]
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_weight[63:32] <= 0;
-    else if (ACLK_EN) begin
-        if (w_hs && waddr == ADDR_WEIGHT_DATA_1)
-            int_weight[63:32] <= (WDATA[31:0] & wmask) | (int_weight[63:32] & ~wmask);
-    end
-end
-
-// int_bias[31:0]
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_bias[31:0] <= 0;
-    else if (ACLK_EN) begin
-        if (w_hs && waddr == ADDR_BIAS_DATA_0)
-            int_bias[31:0] <= (WDATA[31:0] & wmask) | (int_bias[31:0] & ~wmask);
-    end
-end
-
-// int_bias[63:32]
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_bias[63:32] <= 0;
-    else if (ACLK_EN) begin
-        if (w_hs && waddr == ADDR_BIAS_DATA_1)
-            int_bias[63:32] <= (WDATA[31:0] & wmask) | (int_bias[63:32] & ~wmask);
-    end
-end
-
-// int_outputPool[31:0]
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_outputPool[31:0] <= 0;
-    else if (ACLK_EN) begin
-        if (w_hs && waddr == ADDR_OUTPUTPOOL_DATA_0)
-            int_outputPool[31:0] <= (WDATA[31:0] & wmask) | (int_outputPool[31:0] & ~wmask);
-    end
-end
-
-// int_outputPool[63:32]
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_outputPool[63:32] <= 0;
-    else if (ACLK_EN) begin
-        if (w_hs && waddr == ADDR_OUTPUTPOOL_DATA_1)
-            int_outputPool[63:32] <= (WDATA[31:0] & wmask) | (int_outputPool[63:32] & ~wmask);
-    end
-end
-
-// int_weight2[31:0]
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_weight2[31:0] <= 0;
-    else if (ACLK_EN) begin
-        if (w_hs && waddr == ADDR_WEIGHT2_DATA_0)
-            int_weight2[31:0] <= (WDATA[31:0] & wmask) | (int_weight2[31:0] & ~wmask);
-    end
-end
-
-// int_weight2[63:32]
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_weight2[63:32] <= 0;
-    else if (ACLK_EN) begin
-        if (w_hs && waddr == ADDR_WEIGHT2_DATA_1)
-            int_weight2[63:32] <= (WDATA[31:0] & wmask) | (int_weight2[63:32] & ~wmask);
-    end
-end
-
-// int_bias2[31:0]
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_bias2[31:0] <= 0;
-    else if (ACLK_EN) begin
-        if (w_hs && waddr == ADDR_BIAS2_DATA_0)
-            int_bias2[31:0] <= (WDATA[31:0] & wmask) | (int_bias2[31:0] & ~wmask);
-    end
-end
-
-// int_bias2[63:32]
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_bias2[63:32] <= 0;
-    else if (ACLK_EN) begin
-        if (w_hs && waddr == ADDR_BIAS2_DATA_1)
-            int_bias2[63:32] <= (WDATA[31:0] & wmask) | (int_bias2[63:32] & ~wmask);
-    end
-end
-
-// int_outputConv2[31:0]
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_outputConv2[31:0] <= 0;
-    else if (ACLK_EN) begin
-        if (w_hs && waddr == ADDR_OUTPUTCONV2_DATA_0)
-            int_outputConv2[31:0] <= (WDATA[31:0] & wmask) | (int_outputConv2[31:0] & ~wmask);
-    end
-end
-
-// int_outputConv2[63:32]
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_outputConv2[63:32] <= 0;
-    else if (ACLK_EN) begin
-        if (w_hs && waddr == ADDR_OUTPUTCONV2_DATA_1)
-            int_outputConv2[63:32] <= (WDATA[31:0] & wmask) | (int_outputConv2[63:32] & ~wmask);
-    end
-end
-
-// int_outputPool2[31:0]
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_outputPool2[31:0] <= 0;
-    else if (ACLK_EN) begin
-        if (w_hs && waddr == ADDR_OUTPUTPOOL2_DATA_0)
-            int_outputPool2[31:0] <= (WDATA[31:0] & wmask) | (int_outputPool2[31:0] & ~wmask);
-    end
-end
-
-// int_outputPool2[63:32]
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_outputPool2[63:32] <= 0;
-    else if (ACLK_EN) begin
-        if (w_hs && waddr == ADDR_OUTPUTPOOL2_DATA_1)
-            int_outputPool2[63:32] <= (WDATA[31:0] & wmask) | (int_outputPool2[63:32] & ~wmask);
-    end
-end
-
 // int_outputDense[31:0]
 always @(posedge ACLK) begin
     if (ARESET)
@@ -757,46 +427,6 @@ always @(posedge ACLK) begin
     else if (ACLK_EN) begin
         if (w_hs && waddr == ADDR_OUTPUTDENSE_DATA_1)
             int_outputDense[63:32] <= (WDATA[31:0] & wmask) | (int_outputDense[63:32] & ~wmask);
-    end
-end
-
-// int_fcWeight[31:0]
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_fcWeight[31:0] <= 0;
-    else if (ACLK_EN) begin
-        if (w_hs && waddr == ADDR_FCWEIGHT_DATA_0)
-            int_fcWeight[31:0] <= (WDATA[31:0] & wmask) | (int_fcWeight[31:0] & ~wmask);
-    end
-end
-
-// int_fcWeight[63:32]
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_fcWeight[63:32] <= 0;
-    else if (ACLK_EN) begin
-        if (w_hs && waddr == ADDR_FCWEIGHT_DATA_1)
-            int_fcWeight[63:32] <= (WDATA[31:0] & wmask) | (int_fcWeight[63:32] & ~wmask);
-    end
-end
-
-// int_fcBias[31:0]
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_fcBias[31:0] <= 0;
-    else if (ACLK_EN) begin
-        if (w_hs && waddr == ADDR_FCBIAS_DATA_0)
-            int_fcBias[31:0] <= (WDATA[31:0] & wmask) | (int_fcBias[31:0] & ~wmask);
-    end
-end
-
-// int_fcBias[63:32]
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_fcBias[63:32] <= 0;
-    else if (ACLK_EN) begin
-        if (w_hs && waddr == ADDR_FCBIAS_DATA_1)
-            int_fcBias[63:32] <= (WDATA[31:0] & wmask) | (int_fcBias[63:32] & ~wmask);
     end
 end
 

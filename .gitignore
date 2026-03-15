@@ -16,4 +16,5 @@ solution1/*.html
 solution1/*.xml
 solution1/.run/
 vivado_hls.app
+_ide/
 

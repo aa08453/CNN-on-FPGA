@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'pool_1'" level="0">
-<item name = "Date">Sat Mar  7 18:28:21 2026
+<item name = "Date">Sun Mar 15 23:46:46 2026
 </item>
 <item name = "Version">2025.2 (Build 6295257 on Nov 14 2025)</item>
 <item name = "Project">top</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">10.00 ns, 8.750 ns, 1.25 ns</column>
+<column name="ap_clk">10.00 ns, 8.439 ns, 1.25 ns</column>
 </table>
 </item>
 </section>
@@ -24,19 +24,18 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">3958, 3958, 39.580 us, 39.580 us, 3958, 3958, no</column>
+<column name="">790, 790, 7.900 us, 7.900 us, 0, 0, loop pipeline stp</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="grp_pool_1_Pipeline_LOAD_POOL_fu_93">pool_1_Pipeline_LOAD_POOL, 3139, 3139, 31.390 us, 31.390 us, 0, 0, loop pipeline stp</column>
-<column name="grp_pool_1_Pipeline_CO_LOOP_H_LOOP_W_LOOP_fu_110">pool_1_Pipeline_CO_LOOP_H_LOOP_W_LOOP, 802, 802, 8.020 us, 8.020 us, 0, 0, loop pipeline stp</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+<column name="- CO_LOOP_H_LOOP_W_LOOP">788, 788, 6, 1, 1, 784, yes</column>
 </table>
 </item>
 </section>

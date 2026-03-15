@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'conv1_Pipeline_LOAD_1'" level="0">
-<item name = "Date">Sat Mar  7 18:28:21 2026
+<item name = "Date">Sun Mar 15 23:46:46 2026
 </item>
 <item name = "Version">2025.2 (Build 6295257 on Nov 14 2025)</item>
 <item name = "Project">top</item>
@@ -78,9 +78,9 @@
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
-<column name="add_ln31_fu_425_p2">+, 0, 0, 13, 10, 1</column>
+<column name="add_ln16_fu_425_p2">+, 0, 0, 13, 10, 1</column>
 <column name="ap_block_pp0_stage0_11001">and, 0, 0, 2, 1, 1</column>
-<column name="icmp_ln31_fu_419_p2">icmp, 0, 0, 13, 10, 9</column>
+<column name="icmp_ln16_fu_419_p2">icmp, 0, 0, 13, 10, 9</column>
 <column name="ap_enable_pp0">xor, 0, 0, 2, 1, 2</column>
 </table>
 </item>
@@ -88,7 +88,7 @@
 <keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
 <column name="ap_done_int">9, 2, 1, 2</column>
 <column name="ap_enable_reg_pp0_iter1">9, 2, 1, 2</column>
-<column name="ap_sig_allocacmp_i_6">9, 2, 10, 20</column>
+<column name="ap_sig_allocacmp_i_4">9, 2, 10, 20</column>
 <column name="gmem0_blk_n_R">9, 2, 1, 2</column>
 <column name="i_fu_124">9, 2, 10, 20</column>
 </table>
@@ -105,8 +105,8 @@
 <column name="i_fu_124">10, 0, 10, 0</column>
 <column name="lshr_ln_reg_529">6, 0, 6, 0</column>
 <column name="lshr_ln_reg_529_pp0_iter1_reg">6, 0, 6, 0</column>
-<column name="trunc_ln31_reg_525">4, 0, 4, 0</column>
-<column name="trunc_ln31_reg_525_pp0_iter1_reg">4, 0, 4, 0</column>
+<column name="trunc_ln16_reg_525">4, 0, 4, 0</column>
+<column name="trunc_ln16_reg_525_pp0_iter1_reg">4, 0, 4, 0</column>
 </table>
 </item>
 </section>

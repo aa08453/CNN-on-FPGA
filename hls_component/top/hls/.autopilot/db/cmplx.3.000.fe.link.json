@@ -1,93 +1,186 @@
 {
   "0": {
     "basicblocks": 1,
-    "calls": "3 4 2 4 1",
+    "calls": "4 2 3 2 6",
     "control_depth": 0,
-    "def_use_depth": 0,
+    "def_use_depth": 1,
     "file": "eight.cpp",
     "fileloc": 5,
-    "instructions": 25,
+    "instructions": 37,
     "memory_accesses": 0,
     "name": "top",
-    "total_instructions": 2520
+    "total_instructions": 2407
   },
   "1": {
-    "basicblocks": 28,
+    "basicblocks": 1,
     "calls": "",
-    "control_depth": 2,
-    "def_use_depth": 3,
-    "file": "dense.cpp",
-    "fileloc": 3,
-    "instructions": 98,
-    "loads": {
-      "L": 5
-    },
-    "memory_accesses": 9,
-    "name": "dense",
-    "stores": {
-      "G": 1,
-      "L": 4
-    },
-    "total_instructions": 514
+    "control_depth": 0,
+    "def_use_depth": 0,
+    "file": "conv.pp.0.cpp",
+    "fileloc": 0,
+    "instructions": 17,
+    "memory_accesses": 0,
+    "name": "__cxx_global_var_init.3",
+    "total_instructions": 6177
+  },
+  "10": {
+    "basicblocks": 1,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 0,
+    "file": "dense.pp.0.cpp",
+    "fileloc": 0,
+    "instructions": 11,
+    "memory_accesses": 0,
+    "name": "__cxx_global_var_init",
+    "total_instructions": 3861
+  },
+  "11": {
+    "basicblocks": 1,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 0,
+    "file": "conv.pp.0.cpp",
+    "fileloc": 0,
+    "instructions": 9,
+    "memory_accesses": 0,
+    "name": "__cxx_global_var_init.1",
+    "total_instructions": 3089
+  },
+  "12": {
+    "basicblocks": 1,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 0,
+    "file": "conv.pp.0.cpp",
+    "fileloc": 0,
+    "instructions": 1153,
+    "memory_accesses": 0,
+    "name": "__cxx_global_var_init.2",
+    "total_instructions": 444673
   },
   "2": {
-    "basicblocks": 75,
-    "calls": "",
-    "control_depth": 5,
-    "def_use_depth": 5,
-    "file": "conv.cpp",
-    "fileloc": 61,
-    "instructions": 214,
-    "loads": {
-      "G": 1,
-      "L": 6
-    },
-    "memory_accesses": 12,
-    "name": "conv2",
-    "stores": {
-      "G": 3,
-      "L": 4
-    },
-    "total_instructions": 972
-  },
-  "3": {
-    "basicblocks": 57,
-    "calls": "",
-    "control_depth": 5,
-    "def_use_depth": 4,
-    "file": "conv.cpp",
-    "fileloc": 3,
-    "instructions": 164,
-    "loads": {
-      "G": 1,
-      "L": 5
-    },
-    "memory_accesses": 8,
-    "name": "conv1",
-    "stores": {
-      "G": 2,
-      "L": 4
-    },
-    "total_instructions": 669
-  },
-  "4": {
-    "basicblocks": 39,
+    "basicblocks": 33,
     "calls": "",
     "control_depth": 2,
     "def_use_depth": 6,
     "file": "pool.cpp",
     "fileloc": 3,
-    "instructions": 110,
+    "instructions": 93,
+    "loads": {
+      "L": 3
+    },
+    "memory_accesses": 5,
+    "name": "pool",
+    "stores": {
+      "L": 3
+    },
+    "total_instructions": 153
+  },
+  "3": {
+    "basicblocks": 57,
+    "calls": "",
+    "control_depth": 5,
+    "def_use_depth": 5,
+    "file": "conv.cpp",
+    "fileloc": 52,
+    "instructions": 172,
     "loads": {
       "G": 1,
       "L": 3
     },
-    "memory_accesses": 7,
-    "name": "pool",
+    "memory_accesses": 10,
+    "name": "conv2",
     "stores": {
       "G": 1,
       "L": 3
     },
-    "total_instructions": 170
+    "total_instructions": 930
+  },
+  "4": {
+    "basicblocks": 45,
+    "calls": "",
+    "control_depth": 5,
+    "def_use_depth": 4,
+    "file": "conv.cpp",
+    "fileloc": 7,
+    "instructions": 142,
+    "loads": {
+      "G": 1,
+      "L": 3
+    },
+    "memory_accesses": 8,
+    "name": "conv1",
+    "stores": {
+      "L": 4
+    },
+    "total_instructions": 647
+  },
+  "5": {
+    "basicblocks": 1,
+    "calls": "10 9",
+    "control_depth": 0,
+    "def_use_depth": 0,
+    "file": "dense.pp.0.cpp",
+    "fileloc": 0,
+    "instructions": 3,
+    "memory_accesses": 0,
+    "name": "",
+    "total_instructions": 3030105
+  },
+  "6": {
+    "basicblocks": 16,
+    "calls": "",
+    "control_depth": 2,
+    "def_use_depth": 3,
+    "file": "dense.cpp",
+    "fileloc": 5,
+    "instructions": 71,
+    "loads": {
+      "G": 2,
+      "L": 1
+    },
+    "memory_accesses": 9,
+    "name": "dense",
+    "stores": {
+      "L": 3
+    },
+    "total_instructions": 487
+  },
+  "7": {
+    "basicblocks": 1,
+    "calls": "8 11 12 1",
+    "control_depth": 0,
+    "def_use_depth": 0,
+    "file": "conv.pp.0.cpp",
+    "fileloc": 0,
+    "instructions": 5,
+    "memory_accesses": 0,
+    "name": "",
+    "total_instructions": 481737
+  },
+  "8": {
+    "basicblocks": 1,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 0,
+    "file": "conv.pp.0.cpp",
+    "fileloc": 0,
+    "instructions": 73,
+    "memory_accesses": 0,
+    "name": "__cxx_global_var_init",
+    "total_instructions": 27793
+  },
+  "9": {
+    "basicblocks": 1,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 0,
+    "file": "dense.pp.0.cpp",
+    "fileloc": 0,
+    "instructions": 7841,
+    "memory_accesses": 0,
+    "name": "__cxx_global_var_init.1",
+    "total_instructions": 3026241
   }
 }

@@ -1,7 +1,11 @@
 # Ignore build output directory
 /build
 /export
-
+top/hls/.autopilot
+top/hls/.debug
+top/hls/logs
+/.cache
+/.Xil
 # Ignore object files and dependent files
 .o
 .d

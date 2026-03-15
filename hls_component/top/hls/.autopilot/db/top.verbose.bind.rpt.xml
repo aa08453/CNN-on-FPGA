@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'top'" level="0">
-<item name = "Date">Sat Mar  7 18:28:21 2026
+<item name = "Date">Sun Mar 15 23:46:46 2026
 </item>
 <item name = "Version">2025.2 (Build 6295257 on Nov 14 2025)</item>
 <item name = "Project">top</item>
@@ -24,20 +24,18 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">140719, 140719, 1.407 ms, 1.407 ms, 140720, 140720, no</column>
+<column name="">102476, 102476, 1.025 ms, 1.025 ms, 102477, 102477, no</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="grp_conv1_fu_527">conv1, 7196, 7196, 71.960 us, 71.960 us, 7196, 7196, no</column>
-<column name="grp_pool_fu_699">pool, 7878, 7878, 78.780 us, 78.780 us, 7878, 7878, no</column>
-<column name="grp_conv2_fu_717">conv2, 113020, 113020, 1.130 ms, 1.130 ms, 113020, 113020, no</column>
-<column name="grp_pool_1_fu_795">pool_1, 3958, 3958, 39.580 us, 39.580 us, 3958, 3958, no</column>
-<column name="grp_top_Pipeline_LOAD_IN_fu_813">top_Pipeline_LOAD_IN, 787, 787, 7.870 us, 7.870 us, 0, 0, loop pipeline stp</column>
-<column name="grp_top_Pipeline_LOAD_BIAS_fu_836">top_Pipeline_LOAD_BIAS, 12, 12, 0.120 us, 0.120 us, 0, 0, loop pipeline stp</column>
-<column name="grp_top_Pipeline_DENSE_OUTER_DENSE_INNER_fu_853">top_Pipeline_DENSE_OUTER_DENSE_INNER, 7847, 7847, 78.470 us, 78.470 us, 0, 0, loop pipeline stp</column>
+<column name="grp_conv1_fu_226">conv1, 7085, 7085, 70.850 us, 70.850 us, 7085, 7085, no</column>
+<column name="grp_pool_fu_238">pool, 1586, 1586, 15.860 us, 15.860 us, 0, 0, loop pipeline stp</column>
+<column name="grp_conv2_fu_255">conv2, 85153, 85153, 0.852 ms, 0.852 ms, 85153, 85153, no</column>
+<column name="grp_pool_1_fu_303">pool_1, 790, 790, 7.900 us, 7.900 us, 0, 0, loop pipeline stp</column>
+<column name="grp_top_Pipeline_DENSE_OUTER_DENSE_INNER_fu_317">top_Pipeline_DENSE_OUTER_DENSE_INNER, 7847, 7847, 78.470 us, 78.470 us, 0, 0, loop pipeline stp</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">

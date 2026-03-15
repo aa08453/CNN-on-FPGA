@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'pool_1'
 ================================================================
-* Date:           Sat Mar  7 18:28:21 2026
+* Date:           Sun Mar 15 23:46:46 2026
 
 * Version:        2025.2 (Build 6295257 on Nov 14 2025)
 * Project:        top
@@ -20,24 +20,29 @@
     +--------+----------+----------+------------+
     |  Clock |  Target  | Estimated| Uncertainty|
     +--------+----------+----------+------------+
-    |ap_clk  |  10.00 ns|  8.750 ns|     1.25 ns|
+    |ap_clk  |  10.00 ns|  8.439 ns|     1.25 ns|
     +--------+----------+----------+------------+
 
 + Latency: 
     * Summary: 
-    +---------+---------+-----------+-----------+------+------+---------+
-    |  Latency (cycles) |   Latency (absolute)  |   Interval  | Pipeline|
-    |   min   |   max   |    min    |    max    |  min |  max |   Type  |
-    +---------+---------+-----------+-----------+------+------+---------+
-    |     3958|     3958|  39.580 us|  39.580 us|  3958|  3958|       no|
-    +---------+---------+-----------+-----------+------+------+---------+
+    +---------+---------+----------+----------+-----+-----+-------------------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval |      Pipeline     |
+    |   min   |   max   |    min   |    max   | min | max |        Type       |
+    +---------+---------+----------+----------+-----+-----+-------------------+
+    |      790|      790|  7.900 us|  7.900 us|    0|    0|  loop pipeline stp|
+    +---------+---------+----------+----------+-----+-----+-------------------+
 
     + Detail: 
         * Instance: 
         N/A
 
         * Loop: 
-        N/A
+        +-------------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                         |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |        Loop Name        |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- CO_LOOP_H_LOOP_W_LOOP  |      788|      788|         6|          1|          1|   784|       yes|
+        +-------------------------+---------+---------+----------+-----------+-----------+------+----------+
 
 ============================================================
 + Verbose Summary: Synthesis Manager
@@ -52,7 +57,7 @@ ResetActiveHigh: 1
 IsCombinational: 0
 IsDatapathOnly: 0
 HasWiredReturn: 1
-HasMFsm: 0
+HasMFsm: 2
 HasVarLatency: 1
 IsPipeline: 0
 IsRtlPipelined: 0
@@ -61,12 +66,16 @@ IsDontTouch: 0
 HasImplIP: 0
 IsGatedGlobalClock: 0
 
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 6
+
 
 ============================================================
 + Verbose Summary: Schedule
 ============================================================
-* Number of FSM states : 18
-* Pipeline : 0
+* Number of FSM states : 6
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 6, States = { 1 2 3 4 5 6 }
 * Dataflow Pipeline: 0
 
 * FSM state transitions: 
@@ -75,86 +84,144 @@ IsGatedGlobalClock: 0
 3 --> 4 
 4 --> 5 
 5 --> 6 
-6 --> 7 
-7 --> 8 
-8 --> 9 
-9 --> 10 
-10 --> 11 
-11 --> 12 
-12 --> 13 
-13 --> 14 
-14 --> 15 
-15 --> 16 
-16 --> 17 
-17 --> 18 
-18 --> 
+6 --> 
 
 * FSM state operations: 
 
-State 1 <SV = 0> <Delay = 8.75>
-ST_1 : Operation 19 [1/1] (0.00ns)   --->   "%input_read = read i64 @_ssdm_op_Read.ap_auto.i64, i64 %input_r" [../src/pool.cpp:4]   --->   Operation 19 'read' 'input_read' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%gmem0_addr = getelementptr i8 %gmem0, i64 %input_read" [../src/pool.cpp:17]   --->   Operation 20 'getelementptr' 'gmem0_addr' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 21 [8/8] (8.75ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i8, i8 %gmem0_addr, i64 3136" [../src/pool.cpp:17]   --->   Operation 21 'readreq' 'empty' <Predicate = true> <Delay = 8.75> <CoreInst = "m_axi">   --->   Core 111 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'readrequnaligned' 'writerequnaligned' 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+State 1 <SV = 0> <Delay = 6.21>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%w = alloca i32 1" [../src/pool.cpp:18]   --->   Operation 9 'alloca' 'w' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%h = alloca i32 1" [../src/pool.cpp:17]   --->   Operation 10 'alloca' 'h' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%indvar_flatten = alloca i32 1"   --->   Operation 11 'alloca' 'indvar_flatten' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%co = alloca i32 1" [../src/pool.cpp:16]   --->   Operation 12 'alloca' 'co' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%indvar_flatten12 = alloca i32 1"   --->   Operation 13 'alloca' 'indvar_flatten12' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i7 %input_0, i64 666, i64 22, i64 18446744073709551615, i1 0"   --->   Operation 14 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i7 %input_1, i64 666, i64 22, i64 18446744073709551615, i1 0"   --->   Operation 15 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 16 [1/1] (1.58ns)   --->   "%store_ln0 = store i10 0, i10 %indvar_flatten12"   --->   Operation 16 'store' 'store_ln0' <Predicate = true> <Delay = 1.58>
+ST_1 : Operation 17 [1/1] (1.58ns)   --->   "%store_ln16 = store i5 0, i5 %co" [../src/pool.cpp:16]   --->   Operation 17 'store' 'store_ln16' <Predicate = true> <Delay = 1.58>
+ST_1 : Operation 18 [1/1] (1.58ns)   --->   "%store_ln0 = store i6 0, i6 %indvar_flatten"   --->   Operation 18 'store' 'store_ln0' <Predicate = true> <Delay = 1.58>
+ST_1 : Operation 19 [1/1] (1.58ns)   --->   "%store_ln17 = store i3 0, i3 %h" [../src/pool.cpp:17]   --->   Operation 19 'store' 'store_ln17' <Predicate = true> <Delay = 1.58>
+ST_1 : Operation 20 [1/1] (1.58ns)   --->   "%store_ln18 = store i3 0, i3 %w" [../src/pool.cpp:18]   --->   Operation 20 'store' 'store_ln18' <Predicate = true> <Delay = 1.58>
+ST_1 : Operation 21 [1/1] (0.00ns)   --->   "%br_ln16 = br void %if.end.i.i.i" [../src/pool.cpp:16]   --->   Operation 21 'br' 'br_ln16' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 22 [1/1] (0.00ns)   --->   "%indvar_flatten_load = load i6 %indvar_flatten" [../src/pool.cpp:17]   --->   Operation 22 'load' 'indvar_flatten_load' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 23 [1/1] (0.00ns)   --->   "%indvar_flatten12_load = load i10 %indvar_flatten12" [../src/pool.cpp:16]   --->   Operation 23 'load' 'indvar_flatten12_load' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 24 [1/1] (1.73ns)   --->   "%icmp_ln16 = icmp_eq  i10 %indvar_flatten12_load, i10 784" [../src/pool.cpp:16]   --->   Operation 24 'icmp' 'icmp_ln16' <Predicate = true> <Delay = 1.73> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.73> <FuncUnit> <Opcode : 'seteq' 'setne' 'setle' 'setge' 'setlt' 'setgt'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 25 [1/1] (1.73ns)   --->   "%add_ln16 = add i10 %indvar_flatten12_load, i10 1" [../src/pool.cpp:16]   --->   Operation 25 'add' 'add_ln16' <Predicate = true> <Delay = 1.73> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 26 [1/1] (0.00ns)   --->   "%br_ln16 = br i1 %icmp_ln16, void %for.inc44, void %for.end46" [../src/pool.cpp:16]   --->   Operation 26 'br' 'br_ln16' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 27 [1/1] (0.00ns)   --->   "%co_load = load i5 %co" [../src/pool.cpp:16]   --->   Operation 27 'load' 'co_load' <Predicate = (!icmp_ln16)> <Delay = 0.00>
+ST_1 : Operation 28 [1/1] (1.82ns)   --->   "%icmp_ln17 = icmp_eq  i6 %indvar_flatten_load, i6 49" [../src/pool.cpp:17]   --->   Operation 28 'icmp' 'icmp_ln17' <Predicate = (!icmp_ln16)> <Delay = 1.82> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'seteq' 'setne' 'setle' 'setge' 'setlt' 'setgt'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 29 [1/1] (1.78ns)   --->   "%add_ln16_1 = add i5 %co_load, i5 1" [../src/pool.cpp:16]   --->   Operation 29 'add' 'add_ln16_1' <Predicate = (!icmp_ln16)> <Delay = 1.78> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 30 [1/1] (1.21ns)   --->   "%select_ln16_1 = select i1 %icmp_ln17, i5 %add_ln16_1, i5 %co_load" [../src/pool.cpp:16]   --->   Operation 30 'select' 'select_ln16_1' <Predicate = (!icmp_ln16)> <Delay = 1.21> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 1.21> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 31 [1/1] (0.00ns)   --->   "%zext_ln17 = zext i5 %select_ln16_1" [../src/pool.cpp:17]   --->   Operation 31 'zext' 'zext_ln17' <Predicate = (!icmp_ln16)> <Delay = 0.00>
+ST_1 : Operation 32 [1/1] (0.00ns)   --->   "%trunc_ln29 = trunc i5 %select_ln16_1" [../src/pool.cpp:29]   --->   Operation 32 'trunc' 'trunc_ln29' <Predicate = (!icmp_ln16)> <Delay = 0.00>
+ST_1 : Operation 33 [3/3] (1.05ns) (grouped into DSP with root node add_ln29)   --->   "%mul_ln17 = mul i11 %zext_ln17, i11 98" [../src/pool.cpp:17]   --->   Operation 33 'mul' 'mul_ln17' <Predicate = (!icmp_ln16)> <Delay = 1.05> <CoreInst = "DSP48">   --->   Core 116 'DSP48' <Latency = 3> <II = 1> <Delay = 2.15> <IPBlock> <Opcode : 'add' 'sub' 'mul' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_1 : Operation 34 [1/1] (1.82ns)   --->   "%add_ln17_1 = add i6 %indvar_flatten_load, i6 1" [../src/pool.cpp:17]   --->   Operation 34 'add' 'add_ln17_1' <Predicate = (!icmp_ln16)> <Delay = 1.82> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 35 [1/1] (1.18ns)   --->   "%select_ln17_1 = select i1 %icmp_ln17, i6 1, i6 %add_ln17_1" [../src/pool.cpp:17]   --->   Operation 35 'select' 'select_ln17_1' <Predicate = (!icmp_ln16)> <Delay = 1.18> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 1.18> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 36 [1/1] (1.58ns)   --->   "%store_ln16 = store i10 %add_ln16, i10 %indvar_flatten12" [../src/pool.cpp:16]   --->   Operation 36 'store' 'store_ln16' <Predicate = (!icmp_ln16)> <Delay = 1.58>
+ST_1 : Operation 37 [1/1] (1.58ns)   --->   "%store_ln16 = store i5 %select_ln16_1, i5 %co" [../src/pool.cpp:16]   --->   Operation 37 'store' 'store_ln16' <Predicate = (!icmp_ln16)> <Delay = 1.58>
+ST_1 : Operation 38 [1/1] (1.58ns)   --->   "%store_ln17 = store i6 %select_ln17_1, i6 %indvar_flatten" [../src/pool.cpp:17]   --->   Operation 38 'store' 'store_ln17' <Predicate = (!icmp_ln16)> <Delay = 1.58>
 
-State 2 <SV = 1> <Delay = 0.00>
-ST_2 : Operation 22 [7/8] (8.75ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i8, i8 %gmem0_addr, i64 3136" [../src/pool.cpp:17]   --->   Operation 22 'readreq' 'empty' <Predicate = true> <Delay = 8.75> <CoreInst = "m_axi">   --->   Core 111 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'readrequnaligned' 'writerequnaligned' 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+State 2 <SV = 1> <Delay = 7.19>
+ST_2 : Operation 39 [1/1] (0.00ns)   --->   "%w_load = load i3 %w" [../src/pool.cpp:18]   --->   Operation 39 'load' 'w_load' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 40 [1/1] (0.00ns)   --->   "%h_load = load i3 %h" [../src/pool.cpp:16]   --->   Operation 40 'load' 'h_load' <Predicate = (!icmp_ln17)> <Delay = 0.00>
+ST_2 : Operation 41 [1/1] (0.98ns)   --->   "%select_ln16 = select i1 %icmp_ln17, i3 0, i3 %h_load" [../src/pool.cpp:16]   --->   Operation 41 'select' 'select_ln16' <Predicate = true> <Delay = 0.98> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.98> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 42 [1/1] (0.00ns) (grouped into LUT with out node and_ln16)   --->   "%xor_ln16 = xor i1 %icmp_ln17, i1 1" [../src/pool.cpp:16]   --->   Operation 42 'xor' 'xor_ln16' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 43 [1/1] (1.65ns)   --->   "%icmp_ln18 = icmp_eq  i3 %w_load, i3 7" [../src/pool.cpp:18]   --->   Operation 43 'icmp' 'icmp_ln18' <Predicate = true> <Delay = 1.65> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.65> <FuncUnit> <Opcode : 'seteq' 'setne' 'setle' 'setge' 'setlt' 'setgt'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 44 [1/1] (0.97ns) (out node of the LUT)   --->   "%and_ln16 = and i1 %icmp_ln18, i1 %xor_ln16" [../src/pool.cpp:16]   --->   Operation 44 'and' 'and_ln16' <Predicate = true> <Delay = 0.97> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 45 [1/1] (1.65ns)   --->   "%add_ln17 = add i3 %select_ln16, i3 1" [../src/pool.cpp:17]   --->   Operation 45 'add' 'add_ln17' <Predicate = true> <Delay = 1.65> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.65> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 46 [1/1] (0.00ns) (grouped into LUT with out node w_mid2)   --->   "%empty = or i1 %and_ln16, i1 %icmp_ln17" [../src/pool.cpp:16]   --->   Operation 46 'or' 'empty' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 47 [1/1] (0.98ns) (out node of the LUT)   --->   "%w_mid2 = select i1 %empty, i3 0, i3 %w_load" [../src/pool.cpp:16]   --->   Operation 47 'select' 'w_mid2' <Predicate = true> <Delay = 0.98> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.98> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 48 [1/1] (0.98ns)   --->   "%select_ln17 = select i1 %and_ln16, i3 %add_ln17, i3 %select_ln16" [../src/pool.cpp:17]   --->   Operation 48 'select' 'select_ln17' <Predicate = true> <Delay = 0.98> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.98> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 49 [1/1] (0.00ns)   --->   "%zext_ln29 = zext i5 %select_ln16_1" [../src/pool.cpp:29]   --->   Operation 49 'zext' 'zext_ln29' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 50 [1/1] (0.00ns)   --->   "%p_shl1 = bitconcatenate i7 @_ssdm_op_BitConcatenate.i7.i4.i3, i4 %trunc_ln29, i3 0" [../src/pool.cpp:29]   --->   Operation 50 'bitconcatenate' 'p_shl1' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 51 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%sub_ln29 = sub i7 %p_shl1, i7 %zext_ln29" [../src/pool.cpp:29]   --->   Operation 51 'sub' 'sub_ln29' <Predicate = true> <Delay = 0.00> <CoreInst = "TAddSub">   --->   Core 10 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.86> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_2 : Operation 52 [2/3] (1.05ns) (grouped into DSP with root node add_ln29)   --->   "%mul_ln17 = mul i11 %zext_ln17, i11 98" [../src/pool.cpp:17]   --->   Operation 52 'mul' 'mul_ln17' <Predicate = true> <Delay = 1.05> <CoreInst = "DSP48">   --->   Core 116 'DSP48' <Latency = 3> <II = 1> <Delay = 2.15> <IPBlock> <Opcode : 'add' 'sub' 'mul' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_2 : Operation 53 [1/1] (0.00ns)   --->   "%zext_ln17_1 = zext i3 %select_ln17" [../src/pool.cpp:17]   --->   Operation 53 'zext' 'zext_ln17_1' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 54 [1/1] (3.58ns) (root node of TernaryAdder)   --->   "%tmp = add i7 %zext_ln17_1, i7 %sub_ln29" [../src/pool.cpp:17]   --->   Operation 54 'add' 'tmp' <Predicate = true> <Delay = 3.58> <CoreInst = "TAddSub">   --->   Core 10 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.86> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_2 : Operation 55 [1/1] (1.65ns)   --->   "%add_ln18 = add i3 %w_mid2, i3 1" [../src/pool.cpp:18]   --->   Operation 55 'add' 'add_ln18' <Predicate = true> <Delay = 1.65> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.65> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 56 [1/1] (1.58ns)   --->   "%store_ln17 = store i3 %select_ln17, i3 %h" [../src/pool.cpp:17]   --->   Operation 56 'store' 'store_ln17' <Predicate = true> <Delay = 1.58>
+ST_2 : Operation 57 [1/1] (1.58ns)   --->   "%store_ln18 = store i3 %add_ln18, i3 %w" [../src/pool.cpp:18]   --->   Operation 57 'store' 'store_ln18' <Predicate = true> <Delay = 1.58>
+ST_2 : Operation 58 [1/1] (0.00ns)   --->   "%br_ln18 = br void %if.end.i.i.i" [../src/pool.cpp:18]   --->   Operation 58 'br' 'br_ln18' <Predicate = true> <Delay = 0.00>
 
-State 3 <SV = 2> <Delay = 0.00>
-ST_3 : Operation 23 [6/8] (8.75ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i8, i8 %gmem0_addr, i64 3136" [../src/pool.cpp:17]   --->   Operation 23 'readreq' 'empty' <Predicate = true> <Delay = 8.75> <CoreInst = "m_axi">   --->   Core 111 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'readrequnaligned' 'writerequnaligned' 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+State 3 <SV = 2> <Delay = 5.37>
+ST_3 : Operation 59 [1/3] (0.00ns) (grouped into DSP with root node add_ln29)   --->   "%mul_ln17 = mul i11 %zext_ln17, i11 98" [../src/pool.cpp:17]   --->   Operation 59 'mul' 'mul_ln17' <Predicate = true> <Delay = 0.00> <CoreInst = "DSP48">   --->   Core 116 'DSP48' <Latency = 3> <II = 1> <Delay = 2.15> <IPBlock> <Opcode : 'add' 'sub' 'mul' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 60 [1/1] (0.00ns)   --->   "%zext_ln33 = zext i7 %tmp" [../src/pool.cpp:33]   --->   Operation 60 'zext' 'zext_ln33' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 61 [1/1] (0.00ns)   --->   "%p_shl2 = bitconcatenate i10 @_ssdm_op_BitConcatenate.i10.i7.i3, i7 %tmp, i3 0" [../src/pool.cpp:33]   --->   Operation 61 'bitconcatenate' 'p_shl2' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 62 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%sub_ln33 = sub i10 %p_shl2, i10 %zext_ln33" [../src/pool.cpp:33]   --->   Operation 62 'sub' 'sub_ln33' <Predicate = true> <Delay = 0.00> <CoreInst = "TAddSub">   --->   Core 10 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.86> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 63 [1/1] (0.00ns)   --->   "%zext_ln18_2 = zext i3 %w_mid2" [../src/pool.cpp:18]   --->   Operation 63 'zext' 'zext_ln18_2' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 64 [1/1] (0.00ns)   --->   "%zext_ln18_3 = zext i3 %w_mid2" [../src/pool.cpp:18]   --->   Operation 64 'zext' 'zext_ln18_3' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 65 [2/2] (2.10ns) (root node of the DSP)   --->   "%add_ln29 = add i11 %zext_ln18_3, i11 %mul_ln17" [../src/pool.cpp:29]   --->   Operation 65 'add' 'add_ln29' <Predicate = true> <Delay = 2.10> <CoreInst = "DSP48">   --->   Core 116 'DSP48' <Latency = 3> <II = 1> <Delay = 2.15> <IPBlock> <Opcode : 'add' 'sub' 'mul' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 66 [1/1] (3.72ns) (root node of TernaryAdder)   --->   "%add_ln33 = add i10 %zext_ln18_2, i10 %sub_ln33" [../src/pool.cpp:33]   --->   Operation 66 'add' 'add_ln33' <Predicate = true> <Delay = 3.72> <CoreInst = "TAddSub">   --->   Core 10 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.86> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 67 [1/1] (0.00ns)   --->   "%trunc_ln33 = trunc i10 %add_ln33" [../src/pool.cpp:33]   --->   Operation 67 'trunc' 'trunc_ln33' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 68 [1/1] (0.00ns)   --->   "%lshr_ln = partselect i7 @_ssdm_op_PartSelect.i7.i10.i32.i32, i10 %add_ln33, i32 3, i32 9" [../src/pool.cpp:33]   --->   Operation 68 'partselect' 'lshr_ln' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 69 [1/1] (1.65ns)   --->   "%switch_ln33 = switch i3 %trunc_ln33, void %arrayidx3710.case.7, i3 0, void %arrayidx3710.case.0, i3 1, void %arrayidx3710.case.1, i3 2, void %arrayidx3710.case.2, i3 3, void %arrayidx3710.case.3, i3 4, void %arrayidx3710.case.4, i3 5, void %arrayidx3710.case.5, i3 6, void %arrayidx3710.case.6" [../src/pool.cpp:33]   --->   Operation 69 'switch' 'switch_ln33' <Predicate = true> <Delay = 1.65>
 
-State 4 <SV = 3> <Delay = 0.00>
-ST_4 : Operation 24 [5/8] (8.75ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i8, i8 %gmem0_addr, i64 3136" [../src/pool.cpp:17]   --->   Operation 24 'readreq' 'empty' <Predicate = true> <Delay = 8.75> <CoreInst = "m_axi">   --->   Core 111 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'readrequnaligned' 'writerequnaligned' 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+State 4 <SV = 3> <Delay = 6.99>
+ST_4 : Operation 70 [1/1] (0.00ns)   --->   "%or_ln = bitconcatenate i4 @_ssdm_op_BitConcatenate.i4.i3.i1, i3 %select_ln17, i1 1" [../src/pool.cpp:27]   --->   Operation 70 'bitconcatenate' 'or_ln' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 71 [1/1] (0.00ns)   --->   "%zext_ln29_1 = zext i4 %or_ln" [../src/pool.cpp:29]   --->   Operation 71 'zext' 'zext_ln29_1' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 72 [1/1] (0.00ns)   --->   "%p_shl3 = bitconcatenate i7 @_ssdm_op_BitConcatenate.i7.i3.i4, i3 %select_ln17, i4 0" [../src/pool.cpp:29]   --->   Operation 72 'bitconcatenate' 'p_shl3' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 73 [1/1] (0.00ns)   --->   "%tmp_1 = bitconcatenate i4 @_ssdm_op_BitConcatenate.i4.i3.i1, i3 %select_ln17, i1 0" [../src/pool.cpp:29]   --->   Operation 73 'bitconcatenate' 'tmp_1' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 74 [1/1] (0.00ns)   --->   "%zext_ln29_5 = zext i4 %tmp_1" [../src/pool.cpp:29]   --->   Operation 74 'zext' 'zext_ln29_5' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 75 [1/1] (1.87ns)   --->   "%sub_ln29_1 = sub i7 %p_shl3, i7 %zext_ln29_5" [../src/pool.cpp:29]   --->   Operation 75 'sub' 'sub_ln29_1' <Predicate = true> <Delay = 1.87> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.87> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 76 [1/1] (0.00ns)   --->   "%zext_ln29_2 = zext i7 %sub_ln29_1" [../src/pool.cpp:29]   --->   Operation 76 'zext' 'zext_ln29_2' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 77 [1/1] (0.00ns)   --->   "%p_shl = bitconcatenate i7 @_ssdm_op_BitConcatenate.i7.i3.i4, i3 %select_ln17, i4 8" [../src/pool.cpp:29]   --->   Operation 77 'bitconcatenate' 'p_shl' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 78 [1/1] (1.87ns)   --->   "%sub_ln29_2 = sub i7 %p_shl, i7 %zext_ln29_1" [../src/pool.cpp:29]   --->   Operation 78 'sub' 'sub_ln29_2' <Predicate = true> <Delay = 1.87> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.87> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 79 [1/1] (0.00ns)   --->   "%zext_ln18 = zext i7 %sub_ln29_2" [../src/pool.cpp:18]   --->   Operation 79 'zext' 'zext_ln18' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 80 [1/2] (2.10ns) (root node of the DSP)   --->   "%add_ln29 = add i11 %zext_ln18_3, i11 %mul_ln17" [../src/pool.cpp:29]   --->   Operation 80 'add' 'add_ln29' <Predicate = true> <Delay = 2.10> <CoreInst = "DSP48">   --->   Core 116 'DSP48' <Latency = 3> <II = 1> <Delay = 2.15> <IPBlock> <Opcode : 'add' 'sub' 'mul' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_4 : Operation 81 [1/1] (1.63ns)   --->   "%add_ln29_1 = add i11 %add_ln29, i11 %zext_ln29_2" [../src/pool.cpp:29]   --->   Operation 81 'add' 'add_ln29_1' <Predicate = true> <Delay = 1.63> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.63> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 82 [1/1] (0.00ns)   --->   "%zext_ln29_3 = zext i11 %add_ln29_1" [../src/pool.cpp:29]   --->   Operation 82 'zext' 'zext_ln29_3' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 83 [1/1] (0.00ns)   --->   "%input_0_addr = getelementptr i7 %input_0, i64 0, i64 %zext_ln29_3" [../src/pool.cpp:29]   --->   Operation 83 'getelementptr' 'input_0_addr' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 84 [2/2] (3.25ns)   --->   "%val_4 = load i11 %input_0_addr" [../src/pool.cpp:29]   --->   Operation 84 'load' 'val_4' <Predicate = true> <Delay = 3.25> <CoreInst = "RAM_2P_BRAM">   --->   Core 90 'RAM_2P_BRAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 7> <Depth = 1568> <RAM>
+ST_4 : Operation 85 [1/1] (0.00ns)   --->   "%input_1_addr = getelementptr i7 %input_1, i64 0, i64 %zext_ln29_3" [../src/pool.cpp:29]   --->   Operation 85 'getelementptr' 'input_1_addr' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 86 [2/2] (3.25ns)   --->   "%val = load i11 %input_1_addr" [../src/pool.cpp:29]   --->   Operation 86 'load' 'val' <Predicate = true> <Delay = 3.25> <CoreInst = "RAM_2P_BRAM">   --->   Core 90 'RAM_2P_BRAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 7> <Depth = 1568> <RAM>
+ST_4 : Operation 87 [1/1] (1.63ns)   --->   "%add_ln29_2 = add i11 %add_ln29, i11 %zext_ln18" [../src/pool.cpp:29]   --->   Operation 87 'add' 'add_ln29_2' <Predicate = true> <Delay = 1.63> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.63> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 88 [1/1] (0.00ns)   --->   "%zext_ln29_4 = zext i11 %add_ln29_2" [../src/pool.cpp:29]   --->   Operation 88 'zext' 'zext_ln29_4' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 89 [1/1] (0.00ns)   --->   "%input_0_addr_1 = getelementptr i7 %input_0, i64 0, i64 %zext_ln29_4" [../src/pool.cpp:29]   --->   Operation 89 'getelementptr' 'input_0_addr_1' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 90 [2/2] (3.25ns)   --->   "%val_5 = load i11 %input_0_addr_1" [../src/pool.cpp:29]   --->   Operation 90 'load' 'val_5' <Predicate = true> <Delay = 3.25> <CoreInst = "RAM_2P_BRAM">   --->   Core 90 'RAM_2P_BRAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 7> <Depth = 1568> <RAM>
 
-State 5 <SV = 4> <Delay = 0.00>
-ST_5 : Operation 25 [4/8] (8.75ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i8, i8 %gmem0_addr, i64 3136" [../src/pool.cpp:17]   --->   Operation 25 'readreq' 'empty' <Predicate = true> <Delay = 8.75> <CoreInst = "m_axi">   --->   Core 111 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'readrequnaligned' 'writerequnaligned' 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+State 5 <SV = 4> <Delay = 6.11>
+ST_5 : Operation 91 [1/2] ( I:3.25ns O:3.25ns )   --->   "%val_4 = load i11 %input_0_addr" [../src/pool.cpp:29]   --->   Operation 91 'load' 'val_4' <Predicate = true> <Delay = 3.25> <CoreInst = "RAM_2P_BRAM">   --->   Core 90 'RAM_2P_BRAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 7> <Depth = 1568> <RAM>
+ST_5 : Operation 92 [1/2] ( I:3.25ns O:3.25ns )   --->   "%val = load i11 %input_1_addr" [../src/pool.cpp:29]   --->   Operation 92 'load' 'val' <Predicate = true> <Delay = 3.25> <CoreInst = "RAM_2P_BRAM">   --->   Core 90 'RAM_2P_BRAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 7> <Depth = 1568> <RAM>
+ST_5 : Operation 93 [1/1] (1.87ns)   --->   "%icmp_ln30 = icmp_ugt  i7 %val, i7 %val_4" [../src/pool.cpp:30]   --->   Operation 93 'icmp' 'icmp_ln30' <Predicate = true> <Delay = 1.87> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.87> <FuncUnit> <Opcode : 'seteq' 'setne' 'setle' 'setge' 'setlt' 'setgt'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 94 [1/1] (0.99ns)   --->   "%max_val_1 = select i1 %icmp_ln30, i7 %val, i7 %val_4" [../src/pool.cpp:30]   --->   Operation 94 'select' 'max_val_1' <Predicate = true> <Delay = 0.99> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_5 : Operation 95 [1/2] ( I:3.25ns O:3.25ns )   --->   "%val_5 = load i11 %input_0_addr_1" [../src/pool.cpp:29]   --->   Operation 95 'load' 'val_5' <Predicate = true> <Delay = 3.25> <CoreInst = "RAM_2P_BRAM">   --->   Core 90 'RAM_2P_BRAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 7> <Depth = 1568> <RAM>
+ST_5 : Operation 96 [1/1] (0.00ns)   --->   "%input_1_addr_1 = getelementptr i7 %input_1, i64 0, i64 %zext_ln29_4" [../src/pool.cpp:29]   --->   Operation 96 'getelementptr' 'input_1_addr_1' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 97 [2/2] (3.25ns)   --->   "%val_3 = load i11 %input_1_addr_1" [../src/pool.cpp:29]   --->   Operation 97 'load' 'val_3' <Predicate = true> <Delay = 3.25> <CoreInst = "RAM_2P_BRAM">   --->   Core 90 'RAM_2P_BRAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 7> <Depth = 1568> <RAM>
+ST_5 : Operation 131 [1/1] (1.58ns)   --->   "%ret_ln37 = ret" [../src/pool.cpp:37]   --->   Operation 131 'ret' 'ret_ln37' <Predicate = (icmp_ln16)> <Delay = 1.58>
 
-State 6 <SV = 5> <Delay = 0.00>
-ST_6 : Operation 26 [3/8] (8.75ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i8, i8 %gmem0_addr, i64 3136" [../src/pool.cpp:17]   --->   Operation 26 'readreq' 'empty' <Predicate = true> <Delay = 8.75> <CoreInst = "m_axi">   --->   Core 111 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'readrequnaligned' 'writerequnaligned' 'read' 'write' 'readreq' 'writereq' 'writeresp'>
-
-State 7 <SV = 6> <Delay = 0.00>
-ST_7 : Operation 27 [2/8] (8.75ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i8, i8 %gmem0_addr, i64 3136" [../src/pool.cpp:17]   --->   Operation 27 'readreq' 'empty' <Predicate = true> <Delay = 8.75> <CoreInst = "m_axi">   --->   Core 111 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'readrequnaligned' 'writerequnaligned' 'read' 'write' 'readreq' 'writereq' 'writeresp'>
-
-State 8 <SV = 7> <Delay = 8.75>
-ST_8 : Operation 28 [1/8] ( I:8.75ns O:8.75ns )   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i8, i8 %gmem0_addr, i64 3136" [../src/pool.cpp:17]   --->   Operation 28 'readreq' 'empty' <Predicate = true> <Delay = 8.75> <CoreInst = "m_axi">   --->   Core 111 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'readrequnaligned' 'writerequnaligned' 'read' 'write' 'readreq' 'writereq' 'writeresp'>
-
-State 9 <SV = 8> <Delay = 0.00>
-ST_9 : Operation 29 [2/2] (0.00ns)   --->   "%call_ln4 = call void @pool.1_Pipeline_LOAD_POOL, i8 %gmem0, i64 %input_read, i8 %pool_ap_fixed_ap_fixed_8_5_5_3_0_int_int_int_int_int_local_input_4, i8 %pool_ap_fixed_ap_fixed_8_5_5_3_0_int_int_int_int_int_local_input_3, i8 %pool_ap_fixed_ap_fixed_8_5_5_3_0_int_int_int_int_int_local_input_2, i8 %pool_ap_fixed_ap_fixed_8_5_5_3_0_int_int_int_int_int_local_input_1, i8 %pool_ap_fixed_ap_fixed_8_5_5_3_0_int_int_int_int_int_local_input" [../src/pool.cpp:4]   --->   Operation 29 'call' 'call_ln4' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Generic Core
-
-State 10 <SV = 9> <Delay = 0.00>
-ST_10 : Operation 30 [1/2] (0.00ns)   --->   "%call_ln4 = call void @pool.1_Pipeline_LOAD_POOL, i8 %gmem0, i64 %input_read, i8 %pool_ap_fixed_ap_fixed_8_5_5_3_0_int_int_int_int_int_local_input_4, i8 %pool_ap_fixed_ap_fixed_8_5_5_3_0_int_int_int_int_int_local_input_3, i8 %pool_ap_fixed_ap_fixed_8_5_5_3_0_int_int_int_int_int_local_input_2, i8 %pool_ap_fixed_ap_fixed_8_5_5_3_0_int_int_int_int_int_local_input_1, i8 %pool_ap_fixed_ap_fixed_8_5_5_3_0_int_int_int_int_int_local_input" [../src/pool.cpp:4]   --->   Operation 30 'call' 'call_ln4' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Generic Core
-
-State 11 <SV = 10> <Delay = 8.75>
-ST_11 : Operation 31 [1/1] (0.00ns)   --->   "%outputPool_read = read i64 @_ssdm_op_Read.ap_auto.i64, i64 %outputPool" [../src/pool.cpp:4]   --->   Operation 31 'read' 'outputPool_read' <Predicate = true> <Delay = 0.00>
-ST_11 : Operation 32 [1/1] (0.00ns)   --->   "%gmem0_addr_2 = getelementptr i8 %gmem0, i64 %outputPool_read" [../src/pool.cpp:23]   --->   Operation 32 'getelementptr' 'gmem0_addr_2' <Predicate = true> <Delay = 0.00>
-ST_11 : Operation 33 [1/1] ( I:8.75ns O:8.75ns )   --->   "%empty_76 = writereq i1 @_ssdm_op_WriteReq.m_axi.p1i8, i8 %gmem0_addr_2, i64 784" [../src/pool.cpp:23]   --->   Operation 33 'writereq' 'empty_76' <Predicate = true> <Delay = 8.75> <CoreInst = "m_axi">   --->   Core 111 'm_axi' <Latency = 9> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'readrequnaligned' 'writerequnaligned' 'read' 'write' 'readreq' 'writereq' 'writeresp'>
-
-State 12 <SV = 11> <Delay = 0.00>
-ST_12 : Operation 34 [2/2] (0.00ns)   --->   "%call_ln4 = call void @pool.1_Pipeline_CO_LOOP_H_LOOP_W_LOOP, i8 %gmem0, i64 %outputPool_read, i8 %pool_ap_fixed_ap_fixed_8_5_5_3_0_int_int_int_int_int_local_input_4, i8 %pool_ap_fixed_ap_fixed_8_5_5_3_0_int_int_int_int_int_local_input_3, i8 %pool_ap_fixed_ap_fixed_8_5_5_3_0_int_int_int_int_int_local_input_2, i8 %pool_ap_fixed_ap_fixed_8_5_5_3_0_int_int_int_int_int_local_input_1, i8 %pool_ap_fixed_ap_fixed_8_5_5_3_0_int_int_int_int_int_local_input" [../src/pool.cpp:4]   --->   Operation 34 'call' 'call_ln4' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Generic Core
-
-State 13 <SV = 12> <Delay = 0.00>
-ST_13 : Operation 35 [1/2] (0.00ns)   --->   "%call_ln4 = call void @pool.1_Pipeline_CO_LOOP_H_LOOP_W_LOOP, i8 %gmem0, i64 %outputPool_read, i8 %pool_ap_fixed_ap_fixed_8_5_5_3_0_int_int_int_int_int_local_input_4, i8 %pool_ap_fixed_ap_fixed_8_5_5_3_0_int_int_int_int_int_local_input_3, i8 %pool_ap_fixed_ap_fixed_8_5_5_3_0_int_int_int_int_int_local_input_2, i8 %pool_ap_fixed_ap_fixed_8_5_5_3_0_int_int_int_int_int_local_input_1, i8 %pool_ap_fixed_ap_fixed_8_5_5_3_0_int_int_int_int_int_local_input" [../src/pool.cpp:4]   --->   Operation 35 'call' 'call_ln4' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Generic Core
-
-State 14 <SV = 13> <Delay = 0.00>
-ST_14 : Operation 36 [5/5] (8.75ns)   --->   "%empty_77 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i8, i8 %gmem0_addr_2" [../src/pool.cpp:44]   --->   Operation 36 'writeresp' 'empty_77' <Predicate = true> <Delay = 8.75> <CoreInst = "m_axi">   --->   Core 111 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'readrequnaligned' 'writerequnaligned' 'read' 'write' 'readreq' 'writereq' 'writeresp'>
-
-State 15 <SV = 14> <Delay = 0.00>
-ST_15 : Operation 37 [4/5] (8.75ns)   --->   "%empty_77 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i8, i8 %gmem0_addr_2" [../src/pool.cpp:44]   --->   Operation 37 'writeresp' 'empty_77' <Predicate = true> <Delay = 8.75> <CoreInst = "m_axi">   --->   Core 111 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'readrequnaligned' 'writerequnaligned' 'read' 'write' 'readreq' 'writereq' 'writeresp'>
-
-State 16 <SV = 15> <Delay = 0.00>
-ST_16 : Operation 38 [3/5] (8.75ns)   --->   "%empty_77 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i8, i8 %gmem0_addr_2" [../src/pool.cpp:44]   --->   Operation 38 'writeresp' 'empty_77' <Predicate = true> <Delay = 8.75> <CoreInst = "m_axi">   --->   Core 111 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'readrequnaligned' 'writerequnaligned' 'read' 'write' 'readreq' 'writereq' 'writeresp'>
-
-State 17 <SV = 16> <Delay = 0.00>
-ST_17 : Operation 39 [2/5] (8.75ns)   --->   "%empty_77 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i8, i8 %gmem0_addr_2" [../src/pool.cpp:44]   --->   Operation 39 'writeresp' 'empty_77' <Predicate = true> <Delay = 8.75> <CoreInst = "m_axi">   --->   Core 111 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'readrequnaligned' 'writerequnaligned' 'read' 'write' 'readreq' 'writereq' 'writeresp'>
-
-State 18 <SV = 17> <Delay = 8.75>
-ST_18 : Operation 40 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %gmem0, void @empty_7, i32 0, i32 0, void @empty_8, i32 0, i32 848, void @empty_34, void @empty_20, void @empty_8, i32 16, i32 16, i32 16, i32 16, void @empty_8, void @empty_8, i32 4294967295, i32 0, i32 0, i32 1"   --->   Operation 40 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_18 : Operation 41 [1/1] (0.00ns)   --->   "%specmemcore_ln14 = specmemcore void @_ssdm_op_SpecMemCore, i8 %pool_ap_fixed_ap_fixed_8_5_5_3_0_int_int_int_int_int_local_input, i64 666, i64 22, i64 18446744073709551615, i1 0" [../src/pool.cpp:14]   --->   Operation 41 'specmemcore' 'specmemcore_ln14' <Predicate = true> <Delay = 0.00>
-ST_18 : Operation 42 [1/1] (0.00ns)   --->   "%specmemcore_ln14 = specmemcore void @_ssdm_op_SpecMemCore, i8 %pool_ap_fixed_ap_fixed_8_5_5_3_0_int_int_int_int_int_local_input_1, i64 666, i64 22, i64 18446744073709551615, i1 0" [../src/pool.cpp:14]   --->   Operation 42 'specmemcore' 'specmemcore_ln14' <Predicate = true> <Delay = 0.00>
-ST_18 : Operation 43 [1/1] (0.00ns)   --->   "%specmemcore_ln14 = specmemcore void @_ssdm_op_SpecMemCore, i8 %pool_ap_fixed_ap_fixed_8_5_5_3_0_int_int_int_int_int_local_input_2, i64 666, i64 22, i64 18446744073709551615, i1 0" [../src/pool.cpp:14]   --->   Operation 43 'specmemcore' 'specmemcore_ln14' <Predicate = true> <Delay = 0.00>
-ST_18 : Operation 44 [1/1] (0.00ns)   --->   "%specmemcore_ln14 = specmemcore void @_ssdm_op_SpecMemCore, i8 %pool_ap_fixed_ap_fixed_8_5_5_3_0_int_int_int_int_int_local_input_3, i64 666, i64 22, i64 18446744073709551615, i1 0" [../src/pool.cpp:14]   --->   Operation 44 'specmemcore' 'specmemcore_ln14' <Predicate = true> <Delay = 0.00>
-ST_18 : Operation 45 [1/1] (0.00ns)   --->   "%specmemcore_ln14 = specmemcore void @_ssdm_op_SpecMemCore, i8 %pool_ap_fixed_ap_fixed_8_5_5_3_0_int_int_int_int_int_local_input_4, i64 666, i64 22, i64 18446744073709551615, i1 0" [../src/pool.cpp:14]   --->   Operation 45 'specmemcore' 'specmemcore_ln14' <Predicate = true> <Delay = 0.00>
-ST_18 : Operation 46 [1/5] ( I:8.75ns O:8.75ns )   --->   "%empty_77 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i8, i8 %gmem0_addr_2" [../src/pool.cpp:44]   --->   Operation 46 'writeresp' 'empty_77' <Predicate = true> <Delay = 8.75> <CoreInst = "m_axi">   --->   Core 111 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'readrequnaligned' 'writerequnaligned' 'read' 'write' 'readreq' 'writereq' 'writeresp'>
-ST_18 : Operation 47 [1/1] (0.00ns)   --->   "%ret_ln44 = ret" [../src/pool.cpp:44]   --->   Operation 47 'ret' 'ret_ln44' <Predicate = true> <Delay = 0.00>
+State 6 <SV = 5> <Delay = 8.43>
+ST_6 : Operation 98 [1/1] (0.00ns)   --->   "%specloopname_ln0 = specloopname void @_ssdm_op_SpecLoopName, void @CO_LOOP_H_LOOP_W_LOOP_str"   --->   Operation 98 'specloopname' 'specloopname_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 99 [1/1] (0.00ns)   --->   "%speclooptripcount_ln0 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 784, i64 784, i64 784"   --->   Operation 99 'speclooptripcount' 'speclooptripcount_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 100 [1/1] (0.00ns)   --->   "%specpipeline_ln19 = specpipeline void @_ssdm_op_SpecPipeline, i32 1, i32 0, i32 0, i32 0, i32 4294967295, void @empty_22" [../src/pool.cpp:19]   --->   Operation 100 'specpipeline' 'specpipeline_ln19' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 101 [1/1] (1.87ns)   --->   "%icmp_ln30_1 = icmp_ugt  i7 %val_5, i7 %max_val_1" [../src/pool.cpp:30]   --->   Operation 101 'icmp' 'icmp_ln30_1' <Predicate = true> <Delay = 1.87> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.87> <FuncUnit> <Opcode : 'seteq' 'setne' 'setle' 'setge' 'setlt' 'setgt'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 102 [1/1] (0.99ns)   --->   "%max_val_3 = select i1 %icmp_ln30_1, i7 %val_5, i7 %max_val_1" [../src/pool.cpp:30]   --->   Operation 102 'select' 'max_val_3' <Predicate = true> <Delay = 0.99> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_6 : Operation 103 [1/2] ( I:3.25ns O:3.25ns )   --->   "%val_3 = load i11 %input_1_addr_1" [../src/pool.cpp:29]   --->   Operation 103 'load' 'val_3' <Predicate = true> <Delay = 3.25> <CoreInst = "RAM_2P_BRAM">   --->   Core 90 'RAM_2P_BRAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 7> <Depth = 1568> <RAM>
+ST_6 : Operation 104 [1/1] (1.87ns)   --->   "%icmp_ln30_2 = icmp_ugt  i7 %val_3, i7 %max_val_3" [../src/pool.cpp:30]   --->   Operation 104 'icmp' 'icmp_ln30_2' <Predicate = true> <Delay = 1.87> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.87> <FuncUnit> <Opcode : 'seteq' 'setne' 'setle' 'setge' 'setlt' 'setgt'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 105 [1/1] (0.99ns)   --->   "%max_val_4 = select i1 %icmp_ln30_2, i7 %val_3, i7 %max_val_3" [../src/pool.cpp:30]   --->   Operation 105 'select' 'max_val_4' <Predicate = true> <Delay = 0.99> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_6 : Operation 106 [1/1] (0.00ns)   --->   "%zext_ln33_1 = zext i7 %lshr_ln" [../src/pool.cpp:33]   --->   Operation 106 'zext' 'zext_ln33_1' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 107 [1/1] (0.00ns)   --->   "%outputPool_0_addr = getelementptr i7 %outputPool_0, i64 0, i64 %zext_ln33_1" [../src/pool.cpp:33]   --->   Operation 107 'getelementptr' 'outputPool_0_addr' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 108 [1/1] (0.00ns)   --->   "%outputPool_1_addr = getelementptr i7 %outputPool_1, i64 0, i64 %zext_ln33_1" [../src/pool.cpp:33]   --->   Operation 108 'getelementptr' 'outputPool_1_addr' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 109 [1/1] (0.00ns)   --->   "%outputPool_2_addr = getelementptr i7 %outputPool_2, i64 0, i64 %zext_ln33_1" [../src/pool.cpp:33]   --->   Operation 109 'getelementptr' 'outputPool_2_addr' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 110 [1/1] (0.00ns)   --->   "%outputPool_3_addr = getelementptr i7 %outputPool_3, i64 0, i64 %zext_ln33_1" [../src/pool.cpp:33]   --->   Operation 110 'getelementptr' 'outputPool_3_addr' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 111 [1/1] (0.00ns)   --->   "%outputPool_4_addr = getelementptr i7 %outputPool_4, i64 0, i64 %zext_ln33_1" [../src/pool.cpp:33]   --->   Operation 111 'getelementptr' 'outputPool_4_addr' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 112 [1/1] (0.00ns)   --->   "%outputPool_5_addr = getelementptr i7 %outputPool_5, i64 0, i64 %zext_ln33_1" [../src/pool.cpp:33]   --->   Operation 112 'getelementptr' 'outputPool_5_addr' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 113 [1/1] (0.00ns)   --->   "%outputPool_6_addr = getelementptr i7 %outputPool_6, i64 0, i64 %zext_ln33_1" [../src/pool.cpp:33]   --->   Operation 113 'getelementptr' 'outputPool_6_addr' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 114 [1/1] (0.00ns)   --->   "%outputPool_7_addr = getelementptr i7 %outputPool_7, i64 0, i64 %zext_ln33_1" [../src/pool.cpp:33]   --->   Operation 114 'getelementptr' 'outputPool_7_addr' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 115 [1/1] ( I:2.32ns O:2.32ns )   --->   "%store_ln33 = store i7 %max_val_4, i7 %outputPool_6_addr" [../src/pool.cpp:33]   --->   Operation 115 'store' 'store_ln33' <Predicate = (trunc_ln33 == 6)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 81 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 7> <Depth = 98> <RAM>
+ST_6 : Operation 116 [1/1] (0.00ns)   --->   "%br_ln33 = br void %arrayidx3710.exit" [../src/pool.cpp:33]   --->   Operation 116 'br' 'br_ln33' <Predicate = (trunc_ln33 == 6)> <Delay = 0.00>
+ST_6 : Operation 117 [1/1] ( I:2.32ns O:2.32ns )   --->   "%store_ln33 = store i7 %max_val_4, i7 %outputPool_5_addr" [../src/pool.cpp:33]   --->   Operation 117 'store' 'store_ln33' <Predicate = (trunc_ln33 == 5)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 81 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 7> <Depth = 98> <RAM>
+ST_6 : Operation 118 [1/1] (0.00ns)   --->   "%br_ln33 = br void %arrayidx3710.exit" [../src/pool.cpp:33]   --->   Operation 118 'br' 'br_ln33' <Predicate = (trunc_ln33 == 5)> <Delay = 0.00>
+ST_6 : Operation 119 [1/1] ( I:2.32ns O:2.32ns )   --->   "%store_ln33 = store i7 %max_val_4, i7 %outputPool_4_addr" [../src/pool.cpp:33]   --->   Operation 119 'store' 'store_ln33' <Predicate = (trunc_ln33 == 4)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 81 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 7> <Depth = 98> <RAM>
+ST_6 : Operation 120 [1/1] (0.00ns)   --->   "%br_ln33 = br void %arrayidx3710.exit" [../src/pool.cpp:33]   --->   Operation 120 'br' 'br_ln33' <Predicate = (trunc_ln33 == 4)> <Delay = 0.00>
+ST_6 : Operation 121 [1/1] ( I:2.32ns O:2.32ns )   --->   "%store_ln33 = store i7 %max_val_4, i7 %outputPool_3_addr" [../src/pool.cpp:33]   --->   Operation 121 'store' 'store_ln33' <Predicate = (trunc_ln33 == 3)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 81 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 7> <Depth = 98> <RAM>
+ST_6 : Operation 122 [1/1] (0.00ns)   --->   "%br_ln33 = br void %arrayidx3710.exit" [../src/pool.cpp:33]   --->   Operation 122 'br' 'br_ln33' <Predicate = (trunc_ln33 == 3)> <Delay = 0.00>
+ST_6 : Operation 123 [1/1] ( I:2.32ns O:2.32ns )   --->   "%store_ln33 = store i7 %max_val_4, i7 %outputPool_2_addr" [../src/pool.cpp:33]   --->   Operation 123 'store' 'store_ln33' <Predicate = (trunc_ln33 == 2)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 81 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 7> <Depth = 98> <RAM>
+ST_6 : Operation 124 [1/1] (0.00ns)   --->   "%br_ln33 = br void %arrayidx3710.exit" [../src/pool.cpp:33]   --->   Operation 124 'br' 'br_ln33' <Predicate = (trunc_ln33 == 2)> <Delay = 0.00>
+ST_6 : Operation 125 [1/1] ( I:2.32ns O:2.32ns )   --->   "%store_ln33 = store i7 %max_val_4, i7 %outputPool_1_addr" [../src/pool.cpp:33]   --->   Operation 125 'store' 'store_ln33' <Predicate = (trunc_ln33 == 1)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 81 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 7> <Depth = 98> <RAM>
+ST_6 : Operation 126 [1/1] (0.00ns)   --->   "%br_ln33 = br void %arrayidx3710.exit" [../src/pool.cpp:33]   --->   Operation 126 'br' 'br_ln33' <Predicate = (trunc_ln33 == 1)> <Delay = 0.00>
+ST_6 : Operation 127 [1/1] ( I:2.32ns O:2.32ns )   --->   "%store_ln33 = store i7 %max_val_4, i7 %outputPool_0_addr" [../src/pool.cpp:33]   --->   Operation 127 'store' 'store_ln33' <Predicate = (trunc_ln33 == 0)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 81 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 7> <Depth = 98> <RAM>
+ST_6 : Operation 128 [1/1] (0.00ns)   --->   "%br_ln33 = br void %arrayidx3710.exit" [../src/pool.cpp:33]   --->   Operation 128 'br' 'br_ln33' <Predicate = (trunc_ln33 == 0)> <Delay = 0.00>
+ST_6 : Operation 129 [1/1] ( I:2.32ns O:2.32ns )   --->   "%store_ln33 = store i7 %max_val_4, i7 %outputPool_7_addr" [../src/pool.cpp:33]   --->   Operation 129 'store' 'store_ln33' <Predicate = (trunc_ln33 == 7)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 81 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 7> <Depth = 98> <RAM>
+ST_6 : Operation 130 [1/1] (0.00ns)   --->   "%br_ln33 = br void %arrayidx3710.exit" [../src/pool.cpp:33]   --->   Operation 130 'br' 'br_ln33' <Predicate = (trunc_ln33 == 7)> <Delay = 0.00>
 
 
 ============================================================
@@ -162,68 +229,47 @@ ST_18 : Operation 47 [1/1] (0.00ns)   --->   "%ret_ln44 = ret" [../src/pool.cpp:
 ============================================================
 Target clock period: 10.000ns, clock uncertainty: 1.250ns.
 
- <State 1>: 8.750ns
+ <State 1>: 6.216ns
 The critical path consists of the following:
-	wire read operation ('input_read', ../src/pool.cpp:4) on port 'input_r' (../src/pool.cpp:4) [11]  (0.000 ns)
-	'getelementptr' operation 8 bit ('gmem0_addr', ../src/pool.cpp:17) [17]  (0.000 ns)
-	bus request operation ('empty', ../src/pool.cpp:17) on port 'gmem0' (../src/pool.cpp:17) [18]  (0.000 ns)
-	blocking operation 8.75 ns on control path)
+	'store' operation ('store_ln0') of constant 0 6 bit on local variable 'indvar_flatten' [20]  (1.588 ns)
+	'load' operation 6 bit ('indvar_flatten_load', ../src/pool.cpp:17) on local variable 'indvar_flatten' [25]  (0.000 ns)
+	'icmp' operation 1 bit ('icmp_ln17', ../src/pool.cpp:17) [36]  (1.825 ns)
+	'select' operation 5 bit ('select_ln16_1', ../src/pool.cpp:16) [42]  (1.215 ns)
+	'store' operation ('store_ln16', ../src/pool.cpp:16) of variable 'select_ln16_1', ../src/pool.cpp:16 5 bit on local variable 'co', ../src/pool.cpp:16 [132]  (1.588 ns)
 
- <State 2>: 0.000ns
+ <State 2>: 7.191ns
 The critical path consists of the following:
+	'load' operation 3 bit ('h_load', ../src/pool.cpp:16) on local variable 'h', ../src/pool.cpp:17 [32]  (0.000 ns)
+	'select' operation 3 bit ('select_ln16', ../src/pool.cpp:16) [37]  (0.980 ns)
+	'add' operation 3 bit ('add_ln17', ../src/pool.cpp:17) [43]  (1.650 ns)
+	'select' operation 3 bit ('select_ln17', ../src/pool.cpp:17) [46]  (0.980 ns)
+	'add' operation 7 bit ('tmp', ../src/pool.cpp:17) [54]  (3.581 ns)
 
- <State 3>: 0.000ns
+ <State 3>: 5.377ns
 The critical path consists of the following:
+	'sub' operation 10 bit ('sub_ln33', ../src/pool.cpp:33) [57]  (0.000 ns)
+	'add' operation 10 bit ('add_ln33', ../src/pool.cpp:33) [90]  (3.728 ns)
+	blocking operation 1.65 ns on control path)
 
- <State 4>: 0.000ns
+ <State 4>: 6.993ns
 The critical path consists of the following:
+	'add' operation 11 bit of DSP[71] ('add_ln29', ../src/pool.cpp:29) [71]  (2.100 ns)
+	'add' operation 11 bit ('add_ln29_1', ../src/pool.cpp:29) [72]  (1.639 ns)
+	'getelementptr' operation 11 bit ('input_0_addr', ../src/pool.cpp:29) [74]  (0.000 ns)
+	'load' operation 7 bit ('val', ../src/pool.cpp:29) on array 'input_0' [75]  (3.254 ns)
 
- <State 5>: 0.000ns
+ <State 5>: 6.117ns
 The critical path consists of the following:
+	'load' operation 7 bit ('val', ../src/pool.cpp:29) on array 'input_0' [75]  (3.254 ns)
+	'icmp' operation 1 bit ('icmp_ln30', ../src/pool.cpp:30) [78]  (1.870 ns)
+	'select' operation 7 bit ('max_val', ../src/pool.cpp:30) [79]  (0.993 ns)
 
- <State 6>: 0.000ns
+ <State 6>: 8.439ns
 The critical path consists of the following:
-
- <State 7>: 0.000ns
-The critical path consists of the following:
-
- <State 8>: 8.750ns
-The critical path consists of the following:
-	bus request operation ('empty', ../src/pool.cpp:17) on port 'gmem0' (../src/pool.cpp:17) [18]  (8.750 ns)
-
- <State 9>: 0.000ns
-The critical path consists of the following:
-
- <State 10>: 0.000ns
-The critical path consists of the following:
-
- <State 11>: 8.750ns
-The critical path consists of the following:
-	wire read operation ('outputPool_read', ../src/pool.cpp:4) on port 'outputPool' (../src/pool.cpp:4) [10]  (0.000 ns)
-	'getelementptr' operation 8 bit ('gmem0_addr_2', ../src/pool.cpp:23) [20]  (0.000 ns)
-	bus request operation ('empty_76', ../src/pool.cpp:23) on port 'gmem0' (../src/pool.cpp:23) [21]  (8.750 ns)
-
- <State 12>: 0.000ns
-The critical path consists of the following:
-
- <State 13>: 0.000ns
-The critical path consists of the following:
-
- <State 14>: 0.000ns
-The critical path consists of the following:
-
- <State 15>: 0.000ns
-The critical path consists of the following:
-
- <State 16>: 0.000ns
-The critical path consists of the following:
-
- <State 17>: 0.000ns
-The critical path consists of the following:
-
- <State 18>: 8.750ns
-The critical path consists of the following:
-	bus response operation ('empty_77', ../src/pool.cpp:44) on port 'gmem0' (../src/pool.cpp:44) [23]  (8.750 ns)
+	'load' operation 7 bit ('val', ../src/pool.cpp:29) on array 'input_1' [87]  (3.254 ns)
+	'icmp' operation 1 bit ('icmp_ln30_2', ../src/pool.cpp:30) [88]  (1.870 ns)
+	'select' operation 7 bit ('max_val', ../src/pool.cpp:30) [89]  (0.993 ns)
+	'store' operation ('store_ln33', ../src/pool.cpp:33) of variable 'max_val', ../src/pool.cpp:30 7 bit on array 'outputPool_7' [125]  (2.322 ns)
 
 
 ============================================================
@@ -240,18 +286,6 @@ N/A
 	State 4
 	State 5
 	State 6
-	State 7
-	State 8
-	State 9
-	State 10
-	State 11
-	State 12
-	State 13
-	State 14
-	State 15
-	State 16
-	State 17
-	State 18
 
 
 ============================================================

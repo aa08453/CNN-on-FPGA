@@ -1,7 +1,23 @@
 # This script segment is generated automatically by AutoPilot
 
 if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler top_sparsemux_21_4_8_1_1 BINDTYPE {op} TYPE {sparsemux} IMPL {compactencoding_dontcare}
+	::AP::rtl_comp_handler top_sparsemux_21_4_2_1_1 BINDTYPE {op} TYPE {sparsemux} IMPL {compactencoding_dontcare}
+}
+
+
+set name top_mul_7ns_4s_11_1_1
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {mul} IMPL {fabric} LATENCY 0 ALLOW_PRAGMA 1
+}
+
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler top_mac_muladd_10ns_4ns_10ns_13_4_1 BINDTYPE {op} TYPE {all} IMPL {dsp_slice} LATENCY 3
+}
+
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler top_top_Pipeline_DENSE_OUTER_DENSE_INNER_fc1_weight_ROM_AUTO_1R BINDTYPE {storage} TYPE {rom} IMPL {auto} LATENCY 2 ALLOW_PRAGMA 1
 }
 
 
@@ -16,17 +32,17 @@ if {${::AESL::PGuard_autoexp_gen}} {
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 482 \
-    name dense_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_temp_7 \
+    id 244 \
+    name outputPool2 \
     reset_level 1 \
     sync_rst true \
     dir I \
-    corename dense_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_temp_7 \
+    corename outputPool2 \
     op interface \
-    ports { dense_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_temp_7_address0 { O 7 vector } dense_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_temp_7_ce0 { O 1 bit } dense_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_temp_7_q0 { I 8 vector } } \
+    ports { outputPool2_address0 { O 7 vector } outputPool2_ce0 { O 1 bit } outputPool2_q0 { I 7 vector } } \
 } "
 } else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'dense_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_temp_7'"
+puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'outputPool2'"
 }
 }
 
@@ -35,17 +51,17 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 483 \
-    name dense_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_temp_3 \
+    id 245 \
+    name outputPool2_1 \
     reset_level 1 \
     sync_rst true \
     dir I \
-    corename dense_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_temp_3 \
+    corename outputPool2_1 \
     op interface \
-    ports { dense_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_temp_3_address0 { O 7 vector } dense_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_temp_3_ce0 { O 1 bit } dense_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_temp_3_q0 { I 8 vector } } \
+    ports { outputPool2_1_address0 { O 7 vector } outputPool2_1_ce0 { O 1 bit } outputPool2_1_q0 { I 7 vector } } \
 } "
 } else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'dense_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_temp_3'"
+puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'outputPool2_1'"
 }
 }
 
@@ -54,17 +70,17 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 484 \
-    name dense_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_temp_2 \
+    id 246 \
+    name outputPool2_2 \
     reset_level 1 \
     sync_rst true \
     dir I \
-    corename dense_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_temp_2 \
+    corename outputPool2_2 \
     op interface \
-    ports { dense_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_temp_2_address0 { O 7 vector } dense_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_temp_2_ce0 { O 1 bit } dense_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_temp_2_q0 { I 8 vector } } \
+    ports { outputPool2_2_address0 { O 7 vector } outputPool2_2_ce0 { O 1 bit } outputPool2_2_q0 { I 7 vector } } \
 } "
 } else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'dense_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_temp_2'"
+puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'outputPool2_2'"
 }
 }
 
@@ -73,17 +89,17 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 485 \
-    name dense_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_temp_1 \
+    id 247 \
+    name outputPool2_3 \
     reset_level 1 \
     sync_rst true \
     dir I \
-    corename dense_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_temp_1 \
+    corename outputPool2_3 \
     op interface \
-    ports { dense_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_temp_1_address0 { O 7 vector } dense_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_temp_1_ce0 { O 1 bit } dense_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_temp_1_q0 { I 8 vector } } \
+    ports { outputPool2_3_address0 { O 7 vector } outputPool2_3_ce0 { O 1 bit } outputPool2_3_q0 { I 7 vector } } \
 } "
 } else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'dense_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_temp_1'"
+puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'outputPool2_3'"
 }
 }
 
@@ -92,17 +108,17 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 486 \
-    name dense_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_temp \
+    id 248 \
+    name outputPool2_4 \
     reset_level 1 \
     sync_rst true \
     dir I \
-    corename dense_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_temp \
+    corename outputPool2_4 \
     op interface \
-    ports { dense_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_temp_address0 { O 7 vector } dense_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_temp_ce0 { O 1 bit } dense_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_temp_q0 { I 8 vector } } \
+    ports { outputPool2_4_address0 { O 7 vector } outputPool2_4_ce0 { O 1 bit } outputPool2_4_q0 { I 7 vector } } \
 } "
 } else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'dense_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_temp'"
+puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'outputPool2_4'"
 }
 }
 
@@ -111,17 +127,17 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 487 \
-    name dense_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_temp_6 \
+    id 249 \
+    name outputPool2_5 \
     reset_level 1 \
     sync_rst true \
     dir I \
-    corename dense_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_temp_6 \
+    corename outputPool2_5 \
     op interface \
-    ports { dense_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_temp_6_address0 { O 7 vector } dense_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_temp_6_ce0 { O 1 bit } dense_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_temp_6_q0 { I 8 vector } } \
+    ports { outputPool2_5_address0 { O 7 vector } outputPool2_5_ce0 { O 1 bit } outputPool2_5_q0 { I 7 vector } } \
 } "
 } else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'dense_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_temp_6'"
+puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'outputPool2_5'"
 }
 }
 
@@ -130,17 +146,17 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 488 \
-    name dense_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_temp_5 \
+    id 250 \
+    name outputPool2_6 \
     reset_level 1 \
     sync_rst true \
     dir I \
-    corename dense_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_temp_5 \
+    corename outputPool2_6 \
     op interface \
-    ports { dense_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_temp_5_address0 { O 7 vector } dense_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_temp_5_ce0 { O 1 bit } dense_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_temp_5_q0 { I 8 vector } } \
+    ports { outputPool2_6_address0 { O 7 vector } outputPool2_6_ce0 { O 1 bit } outputPool2_6_q0 { I 7 vector } } \
 } "
 } else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'dense_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_temp_5'"
+puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'outputPool2_6'"
 }
 }
 
@@ -149,17 +165,17 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 489 \
-    name dense_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_temp_4 \
+    id 251 \
+    name outputPool2_7 \
     reset_level 1 \
     sync_rst true \
     dir I \
-    corename dense_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_temp_4 \
+    corename outputPool2_7 \
     op interface \
-    ports { dense_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_temp_4_address0 { O 7 vector } dense_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_temp_4_ce0 { O 1 bit } dense_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_temp_4_q0 { I 8 vector } } \
+    ports { outputPool2_7_address0 { O 7 vector } outputPool2_7_ce0 { O 1 bit } outputPool2_7_q0 { I 7 vector } } \
 } "
 } else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'dense_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_temp_4'"
+puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'outputPool2_7'"
 }
 }
 
@@ -167,22 +183,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 468 \
-    name gmem1 \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_gmem1 \
-    op interface \
-    ports { m_axi_gmem1_0_AWVALID { O 1 bit } m_axi_gmem1_0_AWREADY { I 1 bit } m_axi_gmem1_0_AWADDR { O 64 vector } m_axi_gmem1_0_AWID { O 1 vector } m_axi_gmem1_0_AWLEN { O 32 vector } m_axi_gmem1_0_AWSIZE { O 3 vector } m_axi_gmem1_0_AWBURST { O 2 vector } m_axi_gmem1_0_AWLOCK { O 2 vector } m_axi_gmem1_0_AWCACHE { O 4 vector } m_axi_gmem1_0_AWPROT { O 3 vector } m_axi_gmem1_0_AWQOS { O 4 vector } m_axi_gmem1_0_AWREGION { O 4 vector } m_axi_gmem1_0_AWUSER { O 1 vector } m_axi_gmem1_0_WVALID { O 1 bit } m_axi_gmem1_0_WREADY { I 1 bit } m_axi_gmem1_0_WDATA { O 8 vector } m_axi_gmem1_0_WSTRB { O 1 vector } m_axi_gmem1_0_WLAST { O 1 bit } m_axi_gmem1_0_WID { O 1 vector } m_axi_gmem1_0_WUSER { O 1 vector } m_axi_gmem1_0_ARVALID { O 1 bit } m_axi_gmem1_0_ARREADY { I 1 bit } m_axi_gmem1_0_ARADDR { O 64 vector } m_axi_gmem1_0_ARID { O 1 vector } m_axi_gmem1_0_ARLEN { O 32 vector } m_axi_gmem1_0_ARSIZE { O 3 vector } m_axi_gmem1_0_ARBURST { O 2 vector } m_axi_gmem1_0_ARLOCK { O 2 vector } m_axi_gmem1_0_ARCACHE { O 4 vector } m_axi_gmem1_0_ARPROT { O 3 vector } m_axi_gmem1_0_ARQOS { O 4 vector } m_axi_gmem1_0_ARREGION { O 4 vector } m_axi_gmem1_0_ARUSER { O 1 vector } m_axi_gmem1_0_RVALID { I 1 bit } m_axi_gmem1_0_RREADY { O 1 bit } m_axi_gmem1_0_RDATA { I 8 vector } m_axi_gmem1_0_RLAST { I 1 bit } m_axi_gmem1_0_RID { I 1 vector } m_axi_gmem1_0_RFIFONUM { I 11 vector } m_axi_gmem1_0_RUSER { I 1 vector } m_axi_gmem1_0_RRESP { I 2 vector } m_axi_gmem1_0_BVALID { I 1 bit } m_axi_gmem1_0_BREADY { O 1 bit } m_axi_gmem1_0_BRESP { I 2 vector } m_axi_gmem1_0_BID { I 1 vector } m_axi_gmem1_0_BUSER { I 1 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 469 \
+    id 242 \
     name gmem0 \
     type other \
     dir O \
@@ -197,157 +198,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 470 \
-    name local_bias_reload \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_local_bias_reload \
-    op interface \
-    ports { local_bias_reload { I 8 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 471 \
-    name local_bias_1_reload \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_local_bias_1_reload \
-    op interface \
-    ports { local_bias_1_reload { I 8 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 472 \
-    name local_bias_2_reload \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_local_bias_2_reload \
-    op interface \
-    ports { local_bias_2_reload { I 8 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 473 \
-    name local_bias_3_reload \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_local_bias_3_reload \
-    op interface \
-    ports { local_bias_3_reload { I 8 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 474 \
-    name local_bias_4_reload \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_local_bias_4_reload \
-    op interface \
-    ports { local_bias_4_reload { I 8 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 475 \
-    name local_bias_5_reload \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_local_bias_5_reload \
-    op interface \
-    ports { local_bias_5_reload { I 8 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 476 \
-    name local_bias_6_reload \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_local_bias_6_reload \
-    op interface \
-    ports { local_bias_6_reload { I 8 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 477 \
-    name local_bias_7_reload \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_local_bias_7_reload \
-    op interface \
-    ports { local_bias_7_reload { I 8 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 478 \
-    name local_bias_8_reload \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_local_bias_8_reload \
-    op interface \
-    ports { local_bias_8_reload { I 8 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 479 \
-    name local_bias_9_reload \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_local_bias_9_reload \
-    op interface \
-    ports { local_bias_9_reload { I 8 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 480 \
+    id 243 \
     name outputDense \
     type other \
     dir I \
@@ -356,21 +207,6 @@ eval "cg_default_interface_gen_dc { \
     corename dc_outputDense \
     op interface \
     ports { outputDense { I 64 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 481 \
-    name fcWeight \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_fcWeight \
-    op interface \
-    ports { fcWeight { I 64 vector } } \
 } "
 }
 

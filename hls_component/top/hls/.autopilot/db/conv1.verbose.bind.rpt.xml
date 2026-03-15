@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'conv1'" level="0">
-<item name = "Date">Sat Mar  7 18:28:20 2026
+<item name = "Date">Sun Mar 15 23:46:45 2026
 </item>
 <item name = "Version">2025.2 (Build 6295257 on Nov 14 2025)</item>
 <item name = "Project">top</item>
@@ -24,17 +24,15 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">7196, 7196, 71.960 us, 71.960 us, 7196, 7196, no</column>
+<column name="">7085, 7085, 70.850 us, 70.850 us, 7085, 7085, no</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="grp_conv1_Pipeline_LOAD_W_fu_353">conv1_Pipeline_LOAD_W, 74, 74, 0.740 us, 0.740 us, 0, 0, loop pipeline stp</column>
-<column name="grp_conv1_Pipeline_LOAD_B_fu_504">conv1_Pipeline_LOAD_B, 10, 10, 0.100 us, 0.100 us, 0, 0, loop pipeline stp</column>
-<column name="grp_conv1_Pipeline_LOAD_1_fu_527">conv1_Pipeline_LOAD_1, 787, 787, 7.870 us, 7.870 us, 0, 0, loop pipeline stp</column>
-<column name="grp_conv1_Pipeline_CO_1_H_1_W_1_fu_550">conv1_Pipeline_CO_1_H_1_W_1, 6288, 6288, 62.880 us, 62.880 us, 0, 0, loop pipeline stp</column>
+<column name="grp_conv1_Pipeline_LOAD_1_fu_133">conv1_Pipeline_LOAD_1, 787, 787, 7.870 us, 7.870 us, 0, 0, loop pipeline stp</column>
+<column name="grp_conv1_Pipeline_CO_1_H_1_W_1_fu_156">conv1_Pipeline_CO_1_H_1_W_1, 6287, 6287, 62.870 us, 62.870 us, 0, 0, loop pipeline stp</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">

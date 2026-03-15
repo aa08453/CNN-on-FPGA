@@ -18,13 +18,13 @@
       ^
       VITIS_LOOP_1251_1: 
 /home/abdullah/Desktop/CNN-on-FPGA/hls_component/top/hls/.autopilot/db/pool.pp.0.cpp:5837:7: note: FIX-IT applied suggested code changes
-/home/abdullah/Desktop/CNN-on-FPGA/hls_component/top/hls/.autopilot/db/pool.pp.0.cpp:54648:17: remark: Added loop label VITIS_LOOP_30_1:   [xilinx-label-all-loops]
+/home/abdullah/Desktop/CNN-on-FPGA/hls_component/top/hls/.autopilot/db/pool.pp.0.cpp:54641:17: remark: Added loop label VITIS_LOOP_23_1:   [xilinx-label-all-loops]
                 for (int ph = 0; ph < 2; ph++) {
                 ^
-                VITIS_LOOP_30_1: 
-/home/abdullah/Desktop/CNN-on-FPGA/hls_component/top/hls/.autopilot/db/pool.pp.0.cpp:54648:17: note: FIX-IT applied suggested code changes
-/home/abdullah/Desktop/CNN-on-FPGA/hls_component/top/hls/.autopilot/db/pool.pp.0.cpp:54649:21: remark: Added loop label VITIS_LOOP_31_2:   [xilinx-label-all-loops]
+                VITIS_LOOP_23_1: 
+/home/abdullah/Desktop/CNN-on-FPGA/hls_component/top/hls/.autopilot/db/pool.pp.0.cpp:54641:17: note: FIX-IT applied suggested code changes
+/home/abdullah/Desktop/CNN-on-FPGA/hls_component/top/hls/.autopilot/db/pool.pp.0.cpp:54642:21: remark: Added loop label VITIS_LOOP_24_2:   [xilinx-label-all-loops]
                     for (int pw = 0; pw < 2; pw++) {
                     ^
-                    VITIS_LOOP_31_2: 
-/home/abdullah/Desktop/CNN-on-FPGA/hls_component/top/hls/.autopilot/db/pool.pp.0.cpp:54649:21: note: FIX-IT applied suggested code changes
+                    VITIS_LOOP_24_2: 
+/home/abdullah/Desktop/CNN-on-FPGA/hls_component/top/hls/.autopilot/db/pool.pp.0.cpp:54642:21: note: FIX-IT applied suggested code changes

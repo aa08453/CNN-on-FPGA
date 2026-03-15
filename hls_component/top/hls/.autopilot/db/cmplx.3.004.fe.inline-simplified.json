@@ -1,84 +1,78 @@
 {
   "0": {
-    "basicblocks": 9,
-    "calls": "1 3 2 3",
+    "basicblocks": 5,
+    "calls": "1 2 3 2",
     "control_depth": 0,
     "def_use_depth": 5,
     "file": "eight.cpp",
     "fileloc": 5,
-    "instructions": 95,
+    "instructions": 69,
     "loads": {
-      "G": 1,
-      "L": 1,
-      "T": 3
+      "G": 2,
+      "L": 1
     },
     "memory_accesses": 6,
     "name": "top",
     "stores": {
-      "G": 1,
-      "L": 1,
       "T": 1
     },
-    "total_instructions": 915
+    "total_instructions": 948
   },
   "1": {
-    "basicblocks": 29,
+    "basicblocks": 25,
     "calls": "",
     "control_depth": 4,
     "def_use_depth": 41,
     "file": "conv.cpp",
-    "fileloc": 3,
-    "instructions": 276,
+    "fileloc": 7,
+    "instructions": 316,
     "loads": {
       "G": 10,
-      "L": 12
+      "L": 10
     },
-    "memory_accesses": 24,
+    "memory_accesses": 60,
     "name": "conv1",
     "stores": {
-      "G": 2,
       "L": 2
     },
-    "total_instructions": 276
+    "total_instructions": 316
   },
   "2": {
-    "basicblocks": 49,
-    "calls": "",
-    "control_depth": 4,
-    "def_use_depth": 11,
-    "file": "conv.cpp",
-    "fileloc": 61,
-    "instructions": 362,
-    "loads": {
-      "G": 26,
-      "L": 12
-    },
-    "memory_accesses": 50,
-    "name": "conv2",
-    "stores": {
-      "G": 28,
-      "L": 2
-    },
-    "total_instructions": 362
-  },
-  "3": {
-    "basicblocks": 17,
+    "basicblocks": 13,
     "calls": "",
     "control_depth": 0,
     "def_use_depth": 12,
     "file": "pool.cpp",
     "fileloc": 3,
-    "instructions": 91,
+    "instructions": 75,
     "loads": {
-      "G": 4,
-      "L": 1
+      "L": 4
     },
-    "memory_accesses": 7,
+    "memory_accesses": 5,
     "name": "pool",
     "stores": {
-      "G": 1,
       "L": 1
     },
-    "total_instructions": 91
+    "total_instructions": 75
+  },
+  "3": {
+    "basicblocks": 43,
+    "calls": "",
+    "control_depth": 4,
+    "def_use_depth": 11,
+    "file": "conv.cpp",
+    "fileloc": 52,
+    "instructions": 413,
+    "loads": {
+      "G": 26,
+      "L": 9
+    },
+    "memory_accesses": 44,
+    "name": "conv2",
+    "stores": {
+      "G": 26,
+      "L": 1
+    },
+    "total_instructions": 413
   }
 }

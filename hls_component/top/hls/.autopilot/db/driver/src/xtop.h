@@ -101,28 +101,8 @@ void XTop_DisableAutoRestart(XTop *InstancePtr);
 
 void XTop_Set_input_r(XTop *InstancePtr, u64 Data);
 u64 XTop_Get_input_r(XTop *InstancePtr);
-void XTop_Set_outputConv(XTop *InstancePtr, u64 Data);
-u64 XTop_Get_outputConv(XTop *InstancePtr);
-void XTop_Set_weight(XTop *InstancePtr, u64 Data);
-u64 XTop_Get_weight(XTop *InstancePtr);
-void XTop_Set_bias(XTop *InstancePtr, u64 Data);
-u64 XTop_Get_bias(XTop *InstancePtr);
-void XTop_Set_outputPool(XTop *InstancePtr, u64 Data);
-u64 XTop_Get_outputPool(XTop *InstancePtr);
-void XTop_Set_weight2(XTop *InstancePtr, u64 Data);
-u64 XTop_Get_weight2(XTop *InstancePtr);
-void XTop_Set_bias2(XTop *InstancePtr, u64 Data);
-u64 XTop_Get_bias2(XTop *InstancePtr);
-void XTop_Set_outputConv2(XTop *InstancePtr, u64 Data);
-u64 XTop_Get_outputConv2(XTop *InstancePtr);
-void XTop_Set_outputPool2(XTop *InstancePtr, u64 Data);
-u64 XTop_Get_outputPool2(XTop *InstancePtr);
 void XTop_Set_outputDense(XTop *InstancePtr, u64 Data);
 u64 XTop_Get_outputDense(XTop *InstancePtr);
-void XTop_Set_fcWeight(XTop *InstancePtr, u64 Data);
-u64 XTop_Get_fcWeight(XTop *InstancePtr);
-void XTop_Set_fcBias(XTop *InstancePtr, u64 Data);
-u64 XTop_Get_fcBias(XTop *InstancePtr);
 
 void XTop_InterruptGlobalEnable(XTop *InstancePtr);
 void XTop_InterruptGlobalDisable(XTop *InstancePtr);

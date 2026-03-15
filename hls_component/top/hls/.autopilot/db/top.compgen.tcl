@@ -1,22 +1,27 @@
 # This script segment is generated automatically by AutoPilot
 
 if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler top_pool_ap_fixed_ap_fixed_8_5_5_3_0_int_int_int_int_int_local_input_4_RAM_2P_BRAkbM BINDTYPE {storage} TYPE {ram_2p} IMPL {bram} LATENCY 2 ALLOW_PRAGMA 1
+	::AP::rtl_comp_handler top_outputConv_RAM_2P_BRAM_1R1W BINDTYPE {storage} TYPE {ram_2p} IMPL {bram} LATENCY 2 ALLOW_PRAGMA 1
 }
 
 
 if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler top_dense_ap_fixed_ap_fixed_ap_fixed_ap_fixed_8_5_5_3_0_temp_7_RAM_AUTO_1R1W BINDTYPE {storage} TYPE {ram} IMPL {auto} LATENCY 2 ALLOW_PRAGMA 1
+	::AP::rtl_comp_handler top_outputPool_RAM_2P_BRAM_1R1W BINDTYPE {storage} TYPE {ram_2p} IMPL {bram} LATENCY 2 ALLOW_PRAGMA 1
+}
+
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler top_outputConv2_RAM_2P_BRAM_1R1W BINDTYPE {storage} TYPE {ram_2p} IMPL {bram} LATENCY 2 ALLOW_PRAGMA 1
+}
+
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler top_outputPool2_RAM_AUTO_1R1W BINDTYPE {storage} TYPE {ram} IMPL {auto} LATENCY 2 ALLOW_PRAGMA 1
 }
 
 
 if {${::AESL::PGuard_rtl_comp_handler}} {
 	::AP::rtl_comp_handler top_gmem0_m_axi BINDTYPE {interface} TYPE {adapter} IMPL {m_axi}
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler top_gmem1_m_axi BINDTYPE {interface} TYPE {adapter} IMPL {m_axi}
 }
 
 
@@ -37,93 +42,13 @@ input_r {
 	offset 16
 	offset_end 27
 }
-outputConv { 
+outputDense { 
 	dir I
 	width 64
 	depth 1
 	mode ap_none
 	offset 28
 	offset_end 39
-}
-weight { 
-	dir I
-	width 64
-	depth 1
-	mode ap_none
-	offset 40
-	offset_end 51
-}
-bias { 
-	dir I
-	width 64
-	depth 1
-	mode ap_none
-	offset 52
-	offset_end 63
-}
-outputPool { 
-	dir I
-	width 64
-	depth 1
-	mode ap_none
-	offset 64
-	offset_end 75
-}
-weight2 { 
-	dir I
-	width 64
-	depth 1
-	mode ap_none
-	offset 76
-	offset_end 87
-}
-bias2 { 
-	dir I
-	width 64
-	depth 1
-	mode ap_none
-	offset 88
-	offset_end 99
-}
-outputConv2 { 
-	dir I
-	width 64
-	depth 1
-	mode ap_none
-	offset 100
-	offset_end 111
-}
-outputPool2 { 
-	dir I
-	width 64
-	depth 1
-	mode ap_none
-	offset 112
-	offset_end 123
-}
-outputDense { 
-	dir I
-	width 64
-	depth 1
-	mode ap_none
-	offset 124
-	offset_end 135
-}
-fcWeight { 
-	dir I
-	width 64
-	depth 1
-	mode ap_none
-	offset 136
-	offset_end 147
-}
-fcBias { 
-	dir I
-	width 64
-	depth 1
-	mode ap_none
-	offset 148
-	offset_end 159
 }
 ap_start { }
 ap_done { }
@@ -139,7 +64,7 @@ dict set axilite_register_dict control $port_control
 if {${::AESL::PGuard_simmodel_gen}} {
 	if {[info proc ::AESL_LIB_XILADAPTER::s_axilite_gen] == "::AESL_LIB_XILADAPTER::s_axilite_gen"} {
 		eval "::AESL_LIB_XILADAPTER::s_axilite_gen { \
-			id 492 \
+			id 256 \
 			corename top_control_axilite \
 			name top_control_s_axi \
 			ports {$port_control} \

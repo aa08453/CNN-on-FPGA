@@ -54628,14 +54628,7 @@ void pool(
 
 
 
-    static fixed local_input[6272];
-#pragma HLS bind_storage variable=local_input type=RAM_2P impl=BRAM
-
-
-    LOAD_POOL: for(int i = 0; i < Cin * H * W; i++) {
-#pragma HLS PIPELINE II=1
-        local_input[i] = input[i];
-    }
+#pragma HLS bind_storage variable=input type=RAM_2P impl=BRAM
 
 
     CO_LOOP: for (int co = 0; co < Cin; co++) {
@@ -54645,13 +54638,13 @@ void pool(
 
                 fixed max_val = -1024;
 
-                VITIS_LOOP_30_1: for (int ph = 0; ph < 2; ph++) {
-                    VITIS_LOOP_31_2: for (int pw = 0; pw < 2; pw++) {
+                VITIS_LOOP_23_1: for (int ph = 0; ph < 2; ph++) {
+                    VITIS_LOOP_24_2: for (int pw = 0; pw < 2; pw++) {
                         int in_h = h * stride + ph;
                         int in_w = w * stride + pw;
                         int idx = (co * H * W) + (in_h * W) + in_w;
 
-                        fixed val = local_input[idx];
+                        fixed val = input[idx];
                         if (val > max_val) max_val = val;
                     }
                 }

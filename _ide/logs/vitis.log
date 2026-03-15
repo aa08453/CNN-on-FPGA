@@ -6,3 +6,11 @@
 18:23:29 INFO  : bash, -c, empyro get_template_data -d /tmp/rigel_lopper_abdullah13120991995596530847 -r /home/abdullah/Desktop/CNN-on-FPGA/_ide/.wsdata/.repo.yaml
 18:23:29 INFO  : Embedded Template List generated successfully
 18:27:08 INFO  : created .gitignore file for the project /home/abdullah/Desktop/CNN-on-FPGA/hls_component
+23:20:12 INFO  : updated workspace path: /home/abdullah/Desktop/CNN-on-FPGA
+23:20:12 INFO  : [INFO]: Initializing repositories
+23:20:12 INFO  : [INFO]: Successfully set the EmbeddedSW path, refer .repo.yaml for more details.
+23:20:12 INFO  : Successfully created repository data at /tmp/rigel_lopper_abdullah13354219751576596931
+23:20:12 INFO  : bash, -c, empyro get_template_data -d /tmp/rigel_lopper_abdullah6258740496053382286 -r /tmp/rigel_lopper_abdullah13354219751576596931/.repo.yaml
+23:20:13 INFO  : Embedded Template List generated successfully
+23:20:13 INFO  : bash, -c, empyro get_template_data -d /tmp/rigel_lopper_abdullah1244110150568229466 -r /home/abdullah/Desktop/CNN-on-FPGA/_ide/.wsdata/.repo.yaml
+23:20:13 INFO  : Embedded Template List generated successfully

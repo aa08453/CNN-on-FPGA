@@ -54612,13 +54612,11 @@ operator/(const complex<ap_ufixed<_AP_W, _AP_I, _AP_Q, _AP_O, _AP_N>> &__x, cons
 typedef ap_fixed<8, 5> fixed;
 
 void conv1(
-    fixed input[], fixed outputConv[],
-    fixed weight[], fixed bias[]
+    fixed input[], fixed outputConv[]
 );
 
 void conv2(
-    fixed input[], fixed outputConv[],
-    fixed weight[], fixed bias[]
+    fixed input[], fixed outputConv[]
 );
 # 2 "../src/eight.cpp" 2
 # 1 "../src/pool.h" 1
@@ -54636,64 +54634,37 @@ void pool(
 typedef ap_fixed<8, 5> fixed;
 
 void dense(
-  fixed input[], fixed outputDense[],
-  fixed fcWeight[], fixed fcBias[]
+  fixed input[], fixed outputDense[]
 );
 # 4 "../src/eight.cpp" 2
 
 __attribute__((sdx_kernel("top", 0))) void top(
     fixed input[],
-    fixed outputConv[],
-    fixed weight[],
-    fixed bias[],
-    fixed outputPool[],
-    fixed weight2[],
-    fixed bias2[],
-    fixed outputConv2[],
-    fixed outputPool2[],
-    fixed outputDense[],
-    fixed fcWeight[],
-    fixed fcBias[]
+    fixed outputDense[]
 ) {
 #line 1 "directive"
 #pragma HLSDIRECTIVE TOP name=top
-# 18 "../src/eight.cpp"
+# 8 "../src/eight.cpp"
 
 
 
 #pragma HLS INTERFACE m_axi port=input depth=848 bundle=gmem0
-#pragma HLS INTERFACE m_axi port=outputConv depth=6336 bundle=gmem0
-#pragma HLS INTERFACE m_axi port=outputPool depth=1632 bundle=gmem0
-#pragma HLS INTERFACE m_axi port=outputConv2 depth=3200 bundle=gmem0
-#pragma HLS INTERFACE m_axi port=outputPool2 depth=848 bundle=gmem0
 #pragma HLS INTERFACE m_axi port=outputDense depth=64 bundle=gmem0
-
-
-#pragma HLS INTERFACE m_axi port=weight depth=136 bundle=gmem1
-#pragma HLS INTERFACE m_axi port=bias depth=64 bundle=gmem1
-#pragma HLS INTERFACE m_axi port=weight2 depth=1216 bundle=gmem1
-#pragma HLS INTERFACE m_axi port=bias2 depth=64 bundle=gmem1
-#pragma HLS INTERFACE m_axi port=fcWeight depth=7904 bundle=gmem1
-#pragma HLS INTERFACE m_axi port=fcBias depth=64 bundle=gmem1
-
-#pragma HLS STABLE variable=weight
-#pragma HLS STABLE variable=bias
-#pragma HLS STABLE variable=weight2
-#pragma HLS STABLE variable=bias2
-#pragma HLS STABLE variable=fcWeight
-#pragma HLS STABLE variable=fcBias
 
 #pragma HLS INTERFACE s_axilite port=return bundle=control
 
 
+    fixed outputConv[8*28*28];
+    fixed outputPool[8*14*14];
+    fixed outputConv2[16*14*14];
+    fixed outputPool2[16*7*7];
 
 
-
-    conv1(input, outputConv, weight, bias);
+    conv1(input, outputConv);
     pool(outputConv, outputPool, 8, 28, 28, 2, 2);
 
-    conv2(outputPool, outputConv2, weight2, bias2);
+    conv2(outputPool, outputConv2);
     pool(outputConv2, outputPool2, 16, 14, 14, 2, 2);
 
-    dense(outputPool2, outputDense, fcWeight, fcBias);
+    dense(outputPool2, outputDense);
 }
