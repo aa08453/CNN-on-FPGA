@@ -2,15 +2,10 @@
 #include <iostream>
 #include <ap_fixed.h>
 #include "mnist_dataset.h"
-#include "conv1_weight.h"
-#include "conv1_bias.h"
-#include "conv2_weight.h"
-#include "conv2_bias.h"
-#include "fc1_weight.h"
-#include "fc1_bias.h"
 #include "conv.h"
 #include "pool.h"
 #include "labels.h"
+
 
 
 //typedef ap_fixed<16, 8> fixed;
@@ -21,44 +16,16 @@ typedef ap_fixed<8, 5> fixed;
 
 void top(
     fixed input[],
-    fixed outputConv[],
-	fixed weight[],
-	fixed bias[],
-
-	fixed outputPool[],
-
-	fixed weight2[],
-	fixed bias2[],
-
-	fixed outputConv2[],
-
-	fixed outputPool2[],
-
-	fixed outputDense[],
-	fixed fcWeight[], fixed fcBias[]
+	fixed outputDense[]
 
 );
 
 int main() {
     const int Cin = 1;
-    const int Cout = 8;
-    const int Cout2 = 16;
     const int H = 28;
     const int W = 28;
-    const int K = 3;
-
-    const int HoutConv = H;
-    const int WoutConv = W;
-    const int HoutPool = H/2;
-    const int WoutPool = W/2;
-    const int HoutPool2 = HoutPool/2;
-    const int WoutPool2 = WoutPool/2;
 
     fixed inputImage[Cin * H * W];
-    fixed outputImage[Cout * HoutConv * WoutConv];
-    fixed outputPool[Cout*HoutPool*WoutPool];
-    fixed outputConv2[Cout2*HoutPool*WoutPool];
-    fixed outputPool2[Cout2*HoutPool2*WoutPool2];
     fixed outputDense[10];
 
     int correct =0;
@@ -74,13 +41,8 @@ int main() {
         }
 
 
-        top(inputImage, outputImage, conv1_weight, conv1_bias,
-        		outputPool,
-				conv2_weight, conv2_bias,
-				outputConv2,
-				outputPool2,
-				outputDense,
-				fc1_weight, fc1_bias);
+        top(inputImage,
+				outputDense);
 
 //        // Print output for channel 0
 //        std::cout << "Output Channel 0";

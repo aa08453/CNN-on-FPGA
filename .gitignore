@@ -4,17 +4,5 @@
 .cproject
 .project
 .vivado_hls_log_all.xml
-solution1/csim.log
-solution1/csim.*
-solution1/sim/
-solution1/impl/
-solution1/.Xil/
-solution1/*.log
-solution1/*.jou
-solution1/*.rpt
-solution1/*.html
-solution1/*.xml
-solution1/.run/
 vivado_hls.app
 _ide/
-

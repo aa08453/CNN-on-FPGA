@@ -23,3 +23,5 @@ top/hls/logs
 
 _ide/logs
 _ide/.wsdata
+./top/hls/.autopilot
+./top/hls/.debug

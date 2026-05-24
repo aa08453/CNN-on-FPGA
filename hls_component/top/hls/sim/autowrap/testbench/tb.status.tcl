@@ -1,1 +1,0 @@
-set ::AESL_AUTOSIM::gTopFileName /home/abdullah/Desktop/CNN-on-FPGA/hls_component/top/hls/./sim/autowrap/testbench/eight.cpp_pre.cpp.tb.cpp

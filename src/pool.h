@@ -11,8 +11,7 @@ typedef ap_fixed<8, 5> fixed;
 
 void pool(
 		fixed input[], fixed outputPool[],
-		    int Cin, int H, int W,
-			int P, int stride
+		    int Cin, int H, int W
 );
 
 
